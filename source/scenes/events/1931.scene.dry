@@ -17,8 +17,8 @@ Q.catholics_z += 5;
 Q.rural_dvp -= 5;
 Q.old_middle_dvp -= 5;
 Q.new_middle_dvp -= 5;
-Q.old_middle_ddp -= 5;
-Q.new_middle_ddp -= 5;
+Q.old_middle_ddp -= 10;
+Q.new_middle_ddp -= 10;
 Q.sa_strength += 50;
 Q.sh_strength += 50;
 Q.sa_militancy += 0.1;
@@ -48,4 +48,4 @@ view-if: year = 1931 and month = 1
 priority: 2
 max-visits: 1
 
-A new year begins. [? if works_program = 0 : Unemployment continues to spiral upwards. The strength of the NSDAP continues to rise. ?][? if works_program > 0 : A works program has been enacted in order to reduce unemployment. ?] [? if works_program > 0 and unemployed > 15 : However, unemployment remains too high for comfort. ?]
+A new year begins. [? if works_program = 0 : Unemployment continues to spiral upwards. The strength of the NSDAP continues to rise. ?][? if works_program > 0 : A works program has been enacted in order to reduce unemployment. ?] [? if works_program > 0 and unemployment > 15 : However, unemployment remains too high for comfort. ?]
