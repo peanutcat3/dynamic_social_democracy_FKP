@@ -1,7 +1,6 @@
 title: 1933
 subtitle: A new year 
-on-arrival: {!
-// increase NSDAP vote share 
+on-arrival: {
 if (Q.works_program && Q.works_program >= 2) {
     Q.unemployed -= 1;
     Q.inflation += 1
