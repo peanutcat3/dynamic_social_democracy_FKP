@@ -20,7 +20,7 @@ if (Q.old_demographics) {
     Q.old_middle_nsdap += 5;
     Q.new_middle_nsdap += 4;
     Q.sa_strength += 50;
-} else if (Q.unemployed > 20 Q.pro_republic < 80) {
+} else if (Q.unemployed > 20 and Q.pro_republic < 80) {
     Q.rural_nsdap += 2;
     Q.unemployed_nsdap += 2;
     Q.old_middle_nsdap += 2;
