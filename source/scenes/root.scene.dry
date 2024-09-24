@@ -513,7 +513,7 @@ Q.ddp_left = 0;
 Q.ddp_right = 0;
 Q.ddp_name = "DDP";
 Q.dvp_leader = "Stresemann";
-Q.vice_chancellor_name = "Hergt";
+Q.vice_chancellor = "Hergt";
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
