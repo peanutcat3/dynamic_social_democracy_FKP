@@ -308,9 +308,6 @@ Q.old_other_r = 9;
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 
-// for changing the DDP's name to the DStP
-Q.ddp_name = "DDP";
-
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
 // party support records for every month
@@ -364,7 +361,7 @@ Q.minority_government = 0;
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
 // is the agricultural ministry useful at all?
-Q.foreign_minister = 'Streseman';
+Q.foreign_minister = 'Stresemann';
 Q.foreign_minister_party = 'DVP';
 Q.interior_minister = 'von Keudell';
 Q.interior_minister_party = 'DNVP';
@@ -509,7 +506,14 @@ Q.unemployment_insurance_timer = 0;
 Q.sa_ban_timer = 0;
 Q.sh_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
-
+Q.z_party_name = "Z";
+Q.dnvp_leader = "Westarp";
+Q.dstp_formed = 0;
+Q.ddp_left = 0;
+Q.ddp_right = 0;
+Q.ddp_name = "DDP";
+Q.dvp_leader = "Stresemann";
+Q.vice_chancellor_name = "Hergt";
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels

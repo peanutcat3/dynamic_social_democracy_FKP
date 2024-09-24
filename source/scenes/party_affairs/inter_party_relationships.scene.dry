@@ -11,7 +11,7 @@ max-visits: 12
 
 The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
-- @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
+- @liberals: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": German Democratic Party?][? if ddp_name == "DStP": German State Party?] and conservative-liberal German People's Party.
 - @center: Strengthen our bonds with the Catholic Center Party.
 - @kpd: Work towards repairing relationships with the Communist Party.
 - @spd_alone: The SPD can stand alone for now.
@@ -89,9 +89,9 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
-go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribound if year > 1930
+go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribund if year > 1930
 
-The DDP has been one of our closest allies through the course of the Republic.
+The [+ ddp_name +] has been one of our closest allies through the course of the Republic.
 
 @dvp_stresemann
 on-arrival: dvp_relation += 8*(1 - dissent)
@@ -105,10 +105,10 @@ With the death of Gustav Stresemann, the DVP is much less likely to be accommoda
 
 However, given the influence of the DVP among the other right-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 
-@dvp_moribound
+@dvp_moribund
 on-arrival: dvp_relation += 5*(1 - dissent)
 
-The liberal parties (both the DDP and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
+The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
 
 However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 

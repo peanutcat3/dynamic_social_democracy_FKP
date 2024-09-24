@@ -27,6 +27,8 @@ Q.rural_nsdap += 5;
 // TODO: economic policies should reduce NSDAP rurals
 if (!Q.works_program) {
     Q.workers -= 5;
+    Q.new_middle -= 4;
+    Q.old_middle -= 2;
     Q.unemployed_nsdap += 8;
     Q.rural_nsdap += 10; 
     Q.new_middle_nsdap += 10; 
