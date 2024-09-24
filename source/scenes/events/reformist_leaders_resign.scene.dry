@@ -3,7 +3,7 @@ new-page: true
 subtitle: Reformist disagreements with our policies have grown too severe.
 tags: event
 view-if: reformist_dissent >= 60
-on-arrival: reformist_strength *= 0.3; workers_spd -= 5 if nsdap_normalized <= 10; new_middle_spd -= 2 if nsdap_normalized <= 10; old_middle_spd -= 2 if nsdap_normalized <= 10; workers_spd -= 5; new_middle_spd -= 2; old_middle_spd -= 2; workers_ddp += 4 if dstp_formed == 0; new_middle_ddp += 2; if dstp_formed == 0; old_middle_ddp += 2; if dstp_formed == 0; new_middle_ddp += 2; old_middle_ddp += 2; workers_ddp += 4; ddp_left += 3; n_advisors -= 1 if braun_advisor == 1; n_advisors -= 1 if severing_advisor == 1; braun_advisor = 0; severing_advisor = 0; rb_strength -= 250; reformists_resign = 1
+on-arrival: reformist_strength *= 0.3; workers_spd -= 5 if nsdap_normalized <= 10; new_middle_spd -= 2 if nsdap_normalized <= 10; old_middle_spd -= 2 if nsdap_normalized <= 10; workers_spd -= 5; new_middle_spd -= 2; old_middle_spd -= 2; workers_ddp += 4 if dstp_formed == 0; new_middle_ddp += 2 if dstp_formed == 0; old_middle_ddp += 2 if dstp_formed == 0; new_middle_ddp += 2; old_middle_ddp += 2; workers_ddp += 4; ddp_left += 3; n_advisors -= 1 if braun_advisor == 1; n_advisors -= 1 if severing_advisor == 1; braun_advisor = 0; severing_advisor = 0; rb_strength -= 250; reformists_resign = 1
 max-visits: 1
 
 = Reformist leaders resign
