@@ -155,25 +155,25 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**Reichsbanner <span style="color: #000000;">**Schwarz**</span>-<span style="color: #DD0000;">**Rot**</span>-<span style="color: #FFCC00;">**Gold**</span>**: The Reichsbanner is an organization affiliated with all of the democratic parties - the SPD, Z, and [+ ddp_name +], but primarily with the SPD. Historically, this has been an unarmed organization.
+**Reichsbanner** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: The Reichsbanner is an organization affiliated with all of the democratic parties - the <span style="color: #d50000;">**SPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>, but primarily with the <span style="color: #d50000;">**SPD**</span>. Historically, this has been an unarmed organization.
 
 Strength: [+ rb_strength +] thousand
 
 Militarization: [+ rb_militancy : militancy +]
 
-**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the KPD.
+**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the <span style="color: #C43988;">**KPD**</span>.
 
 Strength: [+ rfb_strength +] thousand
 
 Militarization: [+ rfb_militancy : militancy +]
 
-**Der Stahlhelm**: A right-wing nationalist organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Associated with the DNVP.
+**Der Stahlhelm**: A right-wing nationalist organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Associated with the <span style="color: #3F7BC1;">**DNVP**</span>.
 
 Strength: [+ sh_strength +] thousand
 
 Militarization: [+ sh_militancy : militancy +]
 
-**Sturmabteilung (SA)**: This is the nazi paramilitary group.
+**Sturmabteilung (SA)**: This is the <span style="color: #954B00;">**Nazi**</span> paramilitary group.
 
 Strength: [+ sa_strength +] thousand
 
