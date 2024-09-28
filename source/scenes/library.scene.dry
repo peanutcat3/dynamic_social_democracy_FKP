@@ -155,7 +155,7 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**Reichsbanner Schwarz-Rot-Gold**: The Reichsbanner is an organization affiliated with all of the democratic parties - the SPD, Z, and [+ ddp_name +], but primarily with the SPD. Historically, this has been an unarmed organization.
+**Reichsbanner <span style="color: #000000;">**Schwarz**</span>-<span style="color: #DD0000;">**Rot**</span>-<span style="color: #FFCC00;">**Gold**</span>**: The Reichsbanner is an organization affiliated with all of the democratic parties - the SPD, Z, and [+ ddp_name +], but primarily with the SPD. Historically, this has been an unarmed organization.
 
 Strength: [+ rb_strength +] thousand
 
