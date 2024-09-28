@@ -40,7 +40,7 @@ go-to: menu
 
 **New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of liberalism. 10-15% of the population.
 
-**Rural**: Small and large farmers and independent rural workers. [? if rural_dnvp_normalized > rural_nsdap_normalized: Protestant farmers usually supports the DNVP?][? if rural_nsdap_normalized >= 25: Protestant farmers usually supports the DNVP, however the Nazis have gained an appeal among them?]. 20-30% of the population.
+**Rural**: Small and large farmers and independent rural workers. [? if rural_dnvp_normalized > rural_nsdap_normalized: Protestant farmers usually supports the DNVP?][? if rural_nsdap_normalized >= 25: Protestant farmers usually supports the DNVP, however the Nazis have gained a strong appeal among them?]. 20-30% of the population.
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the Center Party (or the Bavarian People's Party in Bavaria).
 
@@ -73,27 +73,27 @@ go-to: menu
 **Projected election results** (if the election were to be held now):
 
 # 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_votes +]%
+<span style="color: #d50000;">SPD</span>: [+ spd_votes +]%
 
-[? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
+[? if sapd_formed: <span style="color: #C40000;">SAPD</span>: [+ sapd_votes +]% ?]
 
 # 1928: 15, 1930: 15, 1932: 
 Z + BVP: [+ z_votes +]%
 
 # 1928: 10, 1930: 13
-KPD: [+ kpd_votes +]%
+<span style="color: #C43988;">KPD</span>: [+ kpd_votes +]%
 
 # 1928: 5, 1930: 4 (as DStP)
-[+ ddp_name +]: [+ ddp_votes +]%
+<span style="color: #DCCA4A;">[+ ddp_name +]</span>: [+ ddp_votes +]%
 
 # 1928: 9, 1930: 5
-DVP: [+ dvp_votes +]%
+<span style="color: #D3B454;">DVP</span>: [+ dvp_votes +]%
 
 # 1928: 14, 1930: 7
-DNVP: [+ dnvp_votes +]%
+<span style="color: #3F7BC1;">DNVP</span>: [+ dnvp_votes +]%
 
 # 1928: 3, 1930: 18
-NSDAP: [+ nsdap_votes +]%
+<span style="color: #954B00;">NSDAP</span>: [+ nsdap_votes +]%
 
 # 1928: 9, 1930: 10
 Others: [+ other_votes +]%
