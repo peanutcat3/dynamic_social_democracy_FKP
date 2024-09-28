@@ -63,7 +63,7 @@ set-jump: election_projections
 
 #Support for Nationalism: [+ nationalism +]%
 
-Support for the <span style="color: #000000;">Rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ic</span>: [+ pro_republic +]%
+Support for the Republic: [+ pro_republic +]%
 
 
 @election_projections
