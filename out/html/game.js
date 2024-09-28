@@ -209,3 +209,11 @@
   };
 
 }());
+
+document.querySelectorAll('ul.choices li div.subtitle').forEach(function (subtitle) {
+    const text = subtitle.textContent;
+    if (text.includes('SPD')) {
+      const highlightedText = text.replace(/(SPD)/g, '<span class="highlight">$1</span>');
+      subtitle.innerHTML = highlightedText; // Replace the HTML
+    }
+  });
