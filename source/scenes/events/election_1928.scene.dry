@@ -921,7 +921,7 @@ Rudolf Breitscheid has been appointed chancellor.
 
 
 @grand_coalition
-title: {<a href="#" data-choice="0" style="color: lightcoral;">We can form a Grand Coalition.</a>!}
+title: <a href="#" data-choice="0" style="color: lightcoral;">We can form a Grand Coalition.</a>
 view-if: grand_coalition >= 50 and grand_coalition_failed == 0
 subtitle: SPD + Z + BVP + [+ ddp_name +] + DVP ([+ grand_coalition +]%)
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
