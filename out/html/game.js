@@ -13,7 +13,6 @@
     game = ui.game;
 
     // Add your custom code here.
-    document.body.innerHTML = document.body.innerHTML.replace(/NSDAP/g, '<a href="#" data-choice="0" style="color: saddlebrown;">NSDAP</a>');
   };
 
   var TITLE = "Social Democracy: An Alternate History" + '_' + "Autumn Chen";
@@ -207,5 +206,5 @@
     window.dendryUI.loadSettings();
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
-
+  document.body.innerHTML = document.body.innerHTML.replace(/NSDAP/g, '<a href="#" data-choice="0" style="color: saddlebrown;">NSDAP</a>');
 }());
