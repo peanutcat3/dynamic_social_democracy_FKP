@@ -98,7 +98,7 @@ go-to: menu
 # 1928: 9, 1930: 10
 **Others**: [+ other_votes +]%
 
-**Detailed results for each demographic**
+**Detailed results for each demographic**:
 
 Workers: SPD: [+ workers_spd_normalized +]%, Z: [+ workers_z_normalized +]%, KPD: [+ workers_kpd_normalized +]%, [+ ddp_name +]: [+ workers_ddp_normalized +]%, DVP: [+ workers_dvp_normalized +]%; DNVP: [+ workers_dnvp_normalized +]%, NSDAP: [+ workers_nsdap_normalized +]%, Others: [+ workers_other_normalized +]% [? if sapd_formed: SAPD: [+ workers_sapd_normalized +]% ?]
 
