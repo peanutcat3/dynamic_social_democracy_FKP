@@ -78,7 +78,7 @@ go-to: menu
 [? if sapd_formed: <span style="color: #C40000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
 # 1928: 15, 1930: 15, 1932: 
-<span style="color: #000000;">**Z**</span>+ <span style="color: #69A2BE;">**BVP**</span>: [+ z_votes +]%
+<span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>: [+ z_votes +]%
 
 # 1928: 10, 1930: 13
 <span style="color: #C43988;">**KPD**</span>: [+ kpd_votes +]%
