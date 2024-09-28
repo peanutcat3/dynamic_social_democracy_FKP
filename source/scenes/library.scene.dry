@@ -63,7 +63,7 @@ set-jump: election_projections
 
 #Support for Nationalism: [+ nationalism +]%
 
-Support for the Republic: [+ pro_republic +]%
+Support for the <span style="color: #000000;">Rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ic</span>: [+ pro_republic +]%
 
 
 @election_projections
@@ -73,30 +73,30 @@ go-to: menu
 **Projected election results** (if the election were to be held now):
 
 # 1928: 30, 1930: 25, 1932: 22
-<span style="color: #d50000;">SPD</span>: [+ spd_votes +]%
+<span style="color: #d50000;">**SPD**</span>: [+ spd_votes +]%
 
-[? if sapd_formed: <span style="color: #C40000;">SAPD</span>: [+ sapd_votes +]% ?]
+[? if sapd_formed: <span style="color: #C40000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
 # 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_votes +]%
+**Z + BVP**: [+ z_votes +]%
 
 # 1928: 10, 1930: 13
-<span style="color: #C43988;">KPD</span>: [+ kpd_votes +]%
+<span style="color: #C43988;">**KPD**</span>: [+ kpd_votes +]%
 
 # 1928: 5, 1930: 4 (as DStP)
-<span style="color: #DCCA4A;">[+ ddp_name +]</span>: [+ ddp_votes +]%
+<span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
 
 # 1928: 9, 1930: 5
-<span style="color: #D3B454;">DVP</span>: [+ dvp_votes +]%
+<span style="color: #D3B454;">**DVP**</span>: [+ dvp_votes +]%
 
 # 1928: 14, 1930: 7
-<span style="color: #3F7BC1;">DNVP</span>: [+ dnvp_votes +]%
+<span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_votes +]%
 
 # 1928: 3, 1930: 18
-<span style="color: #954B00;">NSDAP</span>: [+ nsdap_votes +]%
+<span style="color: #954B00;">**NSDAP**</span>: [+ nsdap_votes +]%
 
 # 1928: 9, 1930: 10
-Others: [+ other_votes +]%
+**Others**: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
