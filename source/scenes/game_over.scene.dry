@@ -152,7 +152,7 @@ title: Despite the deportation of Hitler, the Nazis have still taken power...
 tags: endings
 go-to: eg_menu
 
-Despite the deportation of Hitler, the NSDAP has somehow still wormed its way into power. [? if long_war == 1 : We are fighting them for control of Germany. ?]
+Despite the deportation of Hitler, the <a href="#" data-choice="0" style="color: 954B00;">NSDAP</a> has somehow still wormed its way into power. [? if long_war == 1 : We are fighting them for control of Germany. ?]
 
 
 @civil_war_won

@@ -385,8 +385,8 @@ The Center manages to diffuse some of the hostility from the Reichswehr and the 
 
 
 @far_right_coalition
-title: <a href="#" data-choice="0" style="color: saddlebrown;">Far-right</a> <a href="#" data-choice="0" style="color: #3F7BC1;">coalition</a>
-subtitle: <a href="#" data-choice="0" style="color: saddlebrown;">NSDAP</a> + <a href="#" data-choice="0" style="color: #3F7BC1;">DNVP</a> ([+ far_right_coalition +]%)
+title: <a href="#" data-choice="0" style="color: 954B00;">Far-right</a> <a href="#" data-choice="0" style="color: #3F7BC1;">coalition</a>
+subtitle: <a href="#" data-choice="0" style="color: 954B00;">NSDAP</a> + <a href="#" data-choice="0" style="color: #3F7BC1;">DNVP</a> ([+ far_right_coalition +]%)
 view-if: far_right_coalition >= 50
 go-to: far_right_win if (year >= 1932 or nsdap_r >= 44) and president != "Braun"; far_right_fail if (year < 1932 and nsdap_r < 44) and president != "Braun"; far_right_braun if president == "Braun"
 priority: 2
