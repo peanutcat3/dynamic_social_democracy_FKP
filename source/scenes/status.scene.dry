@@ -29,7 +29,7 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #d50000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #C43988;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #954B00;">Hitler</span> ?][? if president == "Göring": <span style="color: #954B00;">Göring</span> ?]
 
-Chancellor: [+ chancellor +] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #d50000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #C43988;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #954B00;">**NSDAP**</span>) ?]
+Chancellor: [? if chancellor_party == "SPD": <span style="color: #d50000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #954B00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #C43988;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or if chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #d50000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #C43988;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #954B00;">**NSDAP**</span>) ?]
 
 Reichstag composition:
 
