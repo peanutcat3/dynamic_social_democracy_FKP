@@ -1,7 +1,7 @@
 (function() {
   var game;
   var ui;
-
+  document.body.innerHTML = document.body.innerHTML.replace(/NSDAP/g, '<a href="#" data-choice="0" style="color: saddlebrown;">NSDAP</a>');
   var DateOptions = {hour: 'numeric',
                  minute: 'numeric',
                  second: 'numeric',
