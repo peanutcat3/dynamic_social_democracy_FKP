@@ -1,6 +1,7 @@
 (function() {
   var game;
   var ui;
+
   var DateOptions = {hour: 'numeric',
                  minute: 'numeric',
                  second: 'numeric',
@@ -206,5 +207,5 @@
     window.dendryUI.loadSettings();
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
-  document.body.innerHTML = document.body.innerHTML.replace(/NSDAP/g, '<a href="#" data-choice="0" style="color: saddlebrown;">NSDAP</a>');
+
 }());
