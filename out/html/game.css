@@ -74,7 +74,7 @@ header h2:before {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-shadow: rgba(85, 85, 85, 0.75) 2px 2px 2px,
+  text-shadow: rgba(85, 85, 85, 0.75) 1px 1px 1px,
                rgba(0, 0, 0, 0.1) -1px -1px 2px;
 }
 a {
@@ -135,7 +135,7 @@ ul.choices li.unavailable {
   cursor: default !important;
 }
 ul.choices li:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 0, 0, 0.1);
   cursor: pointer;
 }
 ul.choices li:last-child {
