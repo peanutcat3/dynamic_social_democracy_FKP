@@ -27,31 +27,31 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [+ president +]
+President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #d50000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #C43988;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #954B00;">Hitler</span> ?][? if president == "Göring": <span style="color: #954B00;">Göring</span> ?]
 
-Chancellor: [+ chancellor +] ([+ chancellor_party +])
+Chancellor: [+ chancellor +] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #d50000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #C43988;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #954B00;">**NSDAP**</span>) ?]
 
 Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-SPD: [+ spd_r +]%
-[? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
+<span style="color: #d50000;">**SPD**</span>: [+ spd_r +]%
+[? if sapd_formed and sapd_r > 0: <span style="color: #C40000;">**SAPD**</span>: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-Z + BVP: [+ z_r +]%
+<span style="color: #000000;">**Z**</span> **+** <span style="color: #69A2BE;">**BVP**</span>: [+ z_r +]%
 # 1928: 10, 1930: 13
-KPD: [+ kpd_r +]%
+<span style="color: #C43988;">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DStP)
-[+ ddp_name +]: [+ ddp_r +]%
+<span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-DVP: [+ dvp_r +]%
+<span style="color: #D3B454;">**DVP**</span>: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-DNVP: [+ dnvp_r +]%
+<span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
-NSDAP: [+ nsdap_r +]%
+<span style="color: #954B00;">**NSDAP**</span>: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
-Others: [+ other_r +]%
+**Others**: [+ other_r +]%
 
-[? if spd_in_government = 1 : Budget: [+ budget +] ?]
+[? if spd_in_government = 1 : <span style="color: #85BB65;">Budget</span>: [+ budget +] ?]
 
 Inflation: [+ inflation_2 +]%
 
@@ -67,19 +67,19 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 = Inter-party Relations
 
 
-Z: [+ z_relation : relationships +]
+<span style="color: #000000;">**Z**</span>: [+ z_relation : relationships +]
 
-[+ ddp_name +]: [+ ddp_relation : relationships +]
+<span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_relation : relationships +]
 
-DVP: [+ dvp_relation : relationships +]
+<span style="color: #D3B454;">**DVP**</span>: [+ dvp_relation : relationships +]
 
-KPD: [+ kpd_relation : relationships +]
+<span style="color: #C43988;">**KPD**</span>: [+ kpd_relation : relationships +]
 
-DNVP: [+ dnvp_relation : relationships +]
+<span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_relation : relationships +]
 
-NSDAP: [+ nsdap_relation : relationships +]
+<span style="color: #954B00;">**NSDAP**</span>: [+ nsdap_relation : relationships +]
 
-= Internal Factions of the SPD
+= Internal Factions of the <span style="color: #d50000;">**SPD**</span>
 
 Left strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
 
@@ -96,21 +96,21 @@ Reformist strength: [+ reformist_strength : strength +], dissent: [+ reformist_d
 
 = Paramilitaries
 
-Reichsbanner Strength: [+ rb_strength +] thousand
+<span style="color: #d50000;">**Reichsbanner**</span> Strength: [+ rb_strength +] thousand
 
-Reichsbanner Militarization: [+ rb_militancy : militancy +]
+<span style="color: #d50000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-RFB Strength: [+ rfb_strength +] thousand
+<span style="color: #C43988;">**RFB**</span> Strength: [+ rfb_strength +] thousand
 
-RFB Militarization: [+ rfb_militancy : militancy +]
+<span style="color: #C43988;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
-Stahlhelm Strength: [+ sh_strength +] thousand
+<span style="color: #3F7BC1;">**Stahlhelm**</span> Strength: [+ sh_strength +] thousand
 
-Stahlhelm Militarization: [+ sh_militancy : militancy +]
+<span style="color: #3F7BC1;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
-SA Strength: [+ sa_strength +] thousand
+<span style="color: #954B00;">**SA**</span> Strength: [+ sa_strength +] thousand
 
-SA Militarization: [+ sa_militancy : militancy +]
+<span style="color: #954B00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
 = Official military/paramilitaries
 
@@ -128,23 +128,23 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 (if the election were to be held now):
 
-SPD: [+ spd_votes +]%
+<span style="color: #d50000;">**SPD**</span>: [+ spd_votes +]%
 
-[? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
+[? if sapd_formed: <span style="color: #C40000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
-Z + BVP: [+ z_votes +]%
+<span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>: [+ z_votes +]%
 
-KPD: [+ kpd_votes +]%
+<span style="color: #C43988;">**KPD**</span>: [+ kpd_votes +]%
 
-[+ ddp_name +]: [+ ddp_votes +]%
+<span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
 
-DVP: [+ dvp_votes +]%
+<span style="color: #D3B454;">**DVP**</span>: [+ dvp_votes +]%
 
-DNVP: [+ dnvp_votes +]%
+<span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_votes +]%
 
-NSDAP: [+ nsdap_votes +]%
+<span style="color: #954B00;">**NSDAP**</span>: [+ nsdap_votes +]%
 
-Others: [+ other_votes +]%
+**Others**: [+ other_votes +]%
 
 **Detailed results for each demographic**
 
