@@ -129,10 +129,6 @@ ul.choices li div.subtitle {
   margin-left: 2em;
   font-style: italic;
 }
-.highlight {
-  background-color: rgb(255, 0, 0);
-  font-weight: bold;
-}
 ul.choices li.unavailable {
   color: #999;
   background-color: rgba(0, 0, 0, 0.1) !important;
