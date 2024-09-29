@@ -1,0 +1,73 @@
+title: Mod Info
+go-to: flavors
+
+@flavors
+new-page: true
+
+= Dynamic Parties Mod
+
+This mod aims to expand the base game in the form of adding content to other parties triggered based on variables you can influence. There are plenty of different paths, try to find them all!
+
+- @lvp: Liberale Volkspartei
+- @cvp: Christliche Volkspartei
+- @prorepublic: Support for the Republic
+- @plans: Future Plans
+- @changelog: Changelog
+- @source: Credits
+- @root: Back
+
+@lvp
+
+= Liberal People's Party (LVP)
+
+The Liberal People's Party includes a left and right wing, to accommodate for the left-liberal DDP members and national-liberal DVPers being in the same party. The leftmost DDP members and the rightmost DVP monarchists have been split off to surrounding parties due to their differences. 
+
+An example of this is that the right wing of the party may support President Hindenburg's electoral campaign while the left wing would be more willing to work with Braun. The left-liberals may also support you in crucial votes to the discontent of their right wing. With this change however, a Weimar coalition has been changed to work more like a Grand coalition, to represent the right wing of your coalition partners.
+  
+- @flavors: Back
+
+@cvp
+
+= Christliche Volkspartei (CVP)
+
+The Center Party (Z) has an opportunity to broaden their appeal beyond Catholics and elect Adam Stegerwald, a Catholic trade unionist as their leader, if there is sufficient support for democracy and low unemployment. The event will appear in 1932 or after, three months before the next election. The CVP will have the opportunity of influencing the SPD's worker electorate while allowing the SPD to influence Catholics more easily.
+
+A custom achievement has been made for this scenario.
+
+- @flavors: Back
+
+@prorepublic
+
+= Support for the Republic
+
+The formerly useless variable in Public opinion now has a purpose! If played correctly, the player can prevent the historical collapse of the liberals and mitigate the gains of the Nazis. It also can trigger events within other parties.
+
+- @flavors: Back
+
+@changelog
+
+= Changelog
+
+Initial Release (0.1)
+
+— Mod released
+
+- @flavors: Back
+
+@plans
+
+= Future Plans
+
+Not sure, your suggestions are welcome. I plan to add some more coalition options though.
+
+- @flavors: Back
+
+@source
+
+= Credits
+
+Autumn Chen — Original creator of Social Democracy
+
+u/originalperson0 — Me! The modman.
+
+<a href="https://github.com/originn0/dynamic_social_democracy">Source Code<a>                                                                                                                                                                                 
