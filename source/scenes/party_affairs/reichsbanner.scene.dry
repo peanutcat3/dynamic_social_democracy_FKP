@@ -9,9 +9,9 @@ max-visits: 5
 
 = Reichsbanner
 
-The *Reichsbanner* <span style="color: #000000;"><b><i>Schwarz</i></b></span>-<span style="color: #DD0000;"><b><i>Rot</i></b></span>-<span style="color: #FFCC00;"><b><i>Gold</i></b></span> is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the <span style="color: #d50000;">**SPD**</span>, <span style="color: #000000;">**Center**</span>, and <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>, but by far the largest component is with the <span style="color: #d50000;">**SPD**</span>.
+The *Reichsbanner* <span style="color: #000000;"><b><i>Schwarz</i></b></span>-<span style="color: #DD0000;"><b><i>Rot</i></b></span>-<span style="color: #FFCC00;"><b><i>Gold</i></b></span> is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the <span style="color: #FF6F6F;">**SPD**</span>, <span style="color: #000000;">**Center**</span>, and <span style="color: #E8D1A0;">**[+ ddp_name +]**</span>, but by far the largest component is with the <span style="color: #FF6F6F;">**SPD**</span>.
 
-[? if workers_spd < 46 or workers_spd < workers_nsdap or workers_spd < workers_kpd : The Reichsbanner is having a more difficult time recruiting, as the <span style="color: #d50000;">**SPD**</span> is no longer the dominant party among the workers. Many of its members have left. ?]
+[? if workers_spd < 46 or workers_spd < workers_nsdap or workers_spd < workers_kpd : The Reichsbanner is having a more difficult time recruiting, as the <span style="color: #FF6F6F;">**SPD**</span> is no longer the dominant party among the workers. Many of its members have left. ?]
 
 - @militant: Fund more military-style training and equipment for the Reichsbanner.
 - @militant_2: Use our existing resources to support more training for the Reichsbanner.
@@ -28,7 +28,7 @@ unavailable-subtitle: Not enough resources ([+ rb_militarization_cost +] needed)
 subtitle: -[+ rb_militarization_cost +] resources
 on-arrival: resources -= rb_militarization_cost; rb_investment += 1; rb_strength += 100; rb_militancy += 0.05; left_strength += 2; left_dissent -= 2; reformist_dissent += 5; spd_militancy += 0.05; workers_spd += 2*(1-dissent); unemployed_spd += 2*(1-dissent); z_relation -= 5 if historical_mode 
 
-Some in our party decry the increasing militarization of the Reichsbanner. They say it is emulating the <span style="color: #3F7BC1;">right-wing nationalists</span> or the <span style="color: #8B0000;">communists</span>, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the <span style="color: #8B0000;">communists</span>.
+Some in our party decry the increasing militarization of the Reichsbanner. They say it is emulating the <span style="color: #6babda;">right-wing nationalists</span> or the <span style="color: #b14848;">communists</span>, and risks alienating our allies in the centrist parties. On the other hand, more left-leaning radicals are being lured to our organizations, away from the <span style="color: #b14848;">communists</span>.
 
 [? if historical_mode : The <span style="color: #000000;">Center Party</span> decries the militarization of the Reichsbanner, and its members are leaving the republican organization. ?]
 
@@ -51,7 +51,7 @@ The Reichsbanner is already serving the purpose it needs to serve. There is no r
 subtitle: +1 resources
 on-arrival: resources += 1; rb_strength -= 100; rb_militancy -= 0.05; left_strength -= 2; left_dissent -= 2; spd_militancy -= 0.05; workers_kpd += 2; unemployed_kpd += 2
 
-Cutting resources to the Reichsbanner causes a drop in the membership, and leads some would-be members to join the <span style="color: #8B0000;">Communists</span> instead.
+Cutting resources to the Reichsbanner causes a drop in the membership, and leads some would-be members to join the <span style="color: #b14848;">Communists</span> instead.
 
 
 @women_rb
