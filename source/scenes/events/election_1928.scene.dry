@@ -272,7 +272,7 @@ go-to: coalition_menu
 
 **Potential coalitions:**
 
-<span style="color: #DD0000;">We</span><span style="color: #000000;">im</span><span style="color: #FFCC00;">ar</span> Coalition (<span style="color: #d50000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>): [+ weimar_coalition +]%
+<span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition (<span style="color: #d50000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>): [+ weimar_coalition +]%
 
 Grand Coalition (<span style="color: #d50000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span> + <span style="color: #DCCA4A;">**[+ ddp_name +]**</span> + <span style="color: #D3B454;">**DVP**</span>): [+ grand_coalition +]%
 
@@ -306,7 +306,7 @@ There are some potential coalition arrangements.
 @popular_front_coalition
 title: A new "Popular Front" coalition?
 subtitle: <span style="color: #d50000;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>  [? if sapd_formed:+ <span style="color: #C40000;">**SAPD**</span> ?]([+ popular_front_coalition +]%)
-unavailable-subtitle: <span style="color: #d50000;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>  [? if sapd_formed:+ <span style="color: #C40000;">**SAPD**</span> ?]([+ popular_front_coalition +]%) - [? if ((kpd_relation < 65 and kpd_party_leader == "Thälmann") or (kpd_relation < 45 and kpd_party_leader == "Conciliators")): We do not have good enough relations with the <span style="color: #8B0000;">**KPD**</span>. ?][? if (z_relation < 45 and z_party_leader == "Joos") or (z_relation < 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation < 55 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators"): We do not have good enough relations with the <span style="color: #000000;">**Center Party**</span>. ?][? if communist_coalition < 3 : The <span style="color: #8B0000;">**Communists**</span> are unwilling to compromise at all. ?]
+unavailable-subtitle: <span style="color: #d50000;">SPD</span> + <span style="color: #8B0000;">KPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #DCCA4A;">[+ ddp_name +]</span>  [? if sapd_formed:+ <span style="color: #C40000;">SAPD</span> ?]([+ popular_front_coalition +]%) - [? if ((kpd_relation < 65 and kpd_party_leader == "Thälmann") or (kpd_relation < 45 and kpd_party_leader == "Conciliators")): We do not have good enough relations with the <span style="color: #8B0000;">KPD</span>. ?][? if (z_relation < 45 and z_party_leader == "Joos") or (z_relation < 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation < 55 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators"): We do not have good enough relations with the <span style="color: #000000;">Center Party</span>. ?][? if communist_coalition < 3 : The <span style="color: #8B0000;">Communists</span> are unwilling to compromise at all. ?]
 view-if: popular_front_coalition >= 50
 choose-if: (((kpd_relation >= 65 and kpd_party_leader == "Thälmann") or (kpd_relation >= 45 and kpd_party_leader == "Conciliators")) and ((z_relation >= 45 and z_party_leader == "Joos") or (z_relation >= 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation >= 50 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators")) and ddp_relation >= 50 and communist_coalition >= 3) or (z_party_leader == "Joos" and kpd_party_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)
 
@@ -366,7 +366,7 @@ Somehow, surprisingly, the coalition is successfully formed! We still need a cha
 on-arrival: kpd_goals_seen = 0; finance_minister_party = "Z"; interior_minister_party = "Z"; economy_minister_party = "Z"; labor_minister_party = "Z"; foreign_minister_party = "Z"; agriculture_minister_party = "Z"; reichswehr_minister = "I"; leverage += kpd_r
 achievement: volksfront
 
-In response to the <span style="color: #8B0000;">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the <span style="color: #DD0000;">We</span><span style="color: #000000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Our task is to prove them wrong.
+In response to the <span style="color: #8B0000;">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Our task is to prove them wrong.
 
 The <span style="color: #8B0000;">**KPD**</span> has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" within the Popular Front government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that the Popular Front would inevitably fail, and that our failure would benefit them.
 
@@ -424,12 +424,12 @@ Alternatively, Braun could use the emergency powers of the presidency. Article 4
 
 @left_coalition
 title: Is a United Left coalition possible?
-subtitle: SPD + KPD [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%)
-unavailable-subtitle: SPD + KPD [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the KPD. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
+subtitle: <span style="color: #d50000;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> [? if sapd_formed: + <span style="color: #C40000;">**SAPD**</span> ?] ([+ left_coalition +]%)
+unavailable-subtitle: <span style="color: #d50000;">SPD</span> + <span style="color: #8B0000;">KPD</span> [? if sapd_formed: + <span style="color: #C40000;">SAPD</span> ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #8B0000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #8B0000;">Communists</span> are too committed to their radical ways to partake in government. ?]
 view-if: left_coalition >= 50
 choose-if: kpd_relation >= 50 and communist_coalition >= 3
 
-There are enough votes for a SPD + KPD coalition government, if such a thing were actually possible.
+There are enough votes for a <span style="color: #d50000;">**SPD**</span> + <span style="color: #8B0000;">**KPD**</span> coalition government, if such a thing were actually possible.
 
 The far-right might attempt a coup, if such a coalition were formed.
 
@@ -444,7 +444,7 @@ A far left coalition is impossible.
 
 @left_coalition_possible
 
-The KPD is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Ernst Thälmann as chancellor in exchange for a coalition. [? if president == "Hindenburg" : There is no chance whatsoever that President Hindenburg would approve of the appointment of a die-hard communist as chancellor. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our centrist or left-leaning members as chancellor.
+The <span style="color: #8B0000;">**KPD**</span> is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Ernst Thälmann as chancellor in exchange for a coalition. [? if president == "Hindenburg" : There is no chance whatsoever that President Hindenburg would approve of the appointment of a die-hard communist as chancellor. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our centrist or left-leaning members as chancellor.
 
 - @thalmann_chancellor: Appoint Thälmann as chancellor.
 - @left_coalition_resources
@@ -458,9 +458,9 @@ on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"; kpd_relation = 8
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
 
-Immediately, [+ chancellor +] goes to work building a "Soviet Germany": consolidating as much power as possible in the KPD, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
+Immediately, [+ chancellor +] goes to work building a "Soviet Germany": consolidating as much power as possible in the <span style="color: #8B0000;">**KPD**</span>, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
 
-In response to [+ chancellor +] being appointed Chancellor, the right-wing forces launches almost immediately launch an attempted coup. Troops of the Stahlhelm and Nazi SA enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop the KPD from taking power. We are forced to be on the same side as the KPD, whether we want to or not.
+In response to [+ chancellor +] being appointed Chancellor, the right-wing forces launches almost immediately launch an attempted coup. Troops of the <span style="color: #3F7BC1;">**Stahlhelm**</span> and <span style="color: #954B00;">Nazi</span> <span style="color: #954B00;">**SA**</span> enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the <span style="color: #3F7BC1;">**Stahlhelm**</span> to stop the <span style="color: #8B0000;">**KPD**</span> from taking power. We are forced to be on the same side as the <span style="color: #8B0000;">**KPD**</span>, whether we want to or not.
 
 - @civil_war
 
@@ -474,8 +474,8 @@ on-arrival: resources -= 3
 go-to: left_coalition_success
 
 @left_coalition_relations
-title: Convince the KPD to accept democracy.
-unavailable-subtitle: Our relationships with the KPD are not good enough.
+title: Convince the <span style="color: #8B0000;">**KPD**</span> to accept democracy.
+unavailable-subtitle: Our relationships with the <span style="color: #8B0000;">KPD</span> are not good enough.
 choose-if: kpd_relation >= 60 or kpd_party_leader == "Conciliators"
 go-to: left_coalition_success
 
@@ -485,23 +485,23 @@ on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"
 go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Thälmann as chancellor. The consensus choice for chancellor, accepted by the SPD, KPD, and President [+ president +], is Rudolf Breitscheid, who belongs to the centrist faction of the SPD, but was acceptable to the left due to his previous membership in the left-wing anti-war USPD.
+Somehow, surprisingly, the left coalition is successfully formed, without appointing Thälmann as chancellor. The consensus choice for chancellor, accepted by the <span style="color: #d50000;">**SPD**</span>, <span style="color: #8B0000;">**KPD**</span>, and President [+ president +], is Rudolf Breitscheid, who belongs to the centrist faction of the <span style="color: #d50000;">**SPD**</span>, but was acceptable to the left due to his previous membership in the left-wing anti-war <span style="color: #D47B9B;">**USPD**</span>.
 
 # just raise the coup limit, don't immediately go to civil war
 
 @left_coalition_no_civil_war
 on-arrival: kpd_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05
 
-In response to the KPD's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the <span style="color: #DD0000;">We</span><span style="color: #000000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Our task is to prove them wrong.
+In response to the <span style="color: #8B0000;">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Our task is to prove them wrong.
 
-The KPD has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
+The <span style="color: #8B0000;">**KPD**</span> has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
 
-Whatever their reasoning is, the SPD has control over the ministries of government.
+Whatever their reasoning is, the <span style="color: #d50000;">**SPD**</span> has control over the ministries of government.
 
 @left_coalition_civil_war
 on-arrival: reichswehr_loyalty += 0.1
 
-In response to the KPD's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the Stahlhelm and Nazi SA enter Berlin and begin clashing with our supporters. Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop us from taking power.
+In response to the KPD's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the <span style="color: #3F7BC1;">**Stahlhelm**</span> and <span style="color: #954B00;">Nazi</span> <span style="color: #954B00;">**SA**</span> enter Berlin and begin clashing with our supporters. Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the <span style="color: #3F7BC1;">**Stahlhelm**</span> to stop us from taking power.
 
 - @civil_war: A civil war, then.
 
@@ -891,13 +891,13 @@ We have won the vote of no confidence, and are currently ruling under an SPD min
 
 
 @weimar_coalition
-title: We can form a <span style="color: #DD0000;">We</span><span style="color: #000000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
+title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
 subtitle: <span style="color: #d50000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #DCCA4A;">**[+ ddp_name +]**</span> [? if sapd_formed and kpd_r >= 30 : + <span style="color: #C40000;">**SAPD**</span> toleration ?] ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
 on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0
 achievement: weimar_coalition
 
-We have enough votes to form a "<span style="color: #DD0000;">We</span><span style="color: #000000;">im</span><span style="color: #FFCC00;">ar</span> Coalition" government consisting of the <span style="color: #d50000;">**SPD**</span>, <span style="color: #000000;">**Center**</span> and [? if ddp_name == "DDP": <span style="color: #DCCA4A;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #DCCA4A;">**State**</span>?] ([+ ddp_name +]) parties! This has been our preferred governing coalition since 1919.
+We have enough votes to form a "<span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition" government consisting of the <span style="color: #d50000;">**SPD**</span>, <span style="color: #000000;">**Center**</span> and [? if ddp_name == "DDP": <span style="color: #DCCA4A;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #DCCA4A;">**State**</span>?] ([+ ddp_name +]) parties! This has been our preferred governing coalition since 1919.
 
 Who should be the chancellor?
 
@@ -1199,7 +1199,7 @@ We are seen as responsible for the failure to form a government, and many of our
 
 @ministries
 
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the KPD. ?] [? if in_left_front and reichswehr_minister_party == "KPD" : If the KPD controls the Reichswehr Ministry, the army will most likely revolt. ?]
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the <span style="color: #8B0000;">**KPD**</span>. ?] [? if in_left_front and reichswehr_minister_party == "KPD" : If the <span style="color: #8B0000;">**KPD**</span> controls the Reichswehr Ministry, the army will most likely revolt. ?]
 
 - #mins_1928
 - #drop_mins_1928
@@ -1226,7 +1226,7 @@ view-if: interior_minister_party != "SPD"
 on-arrival: leverage -= 5; interior_minister_party = "SPD"; interior_minister = "Severing"
 go-to: ministries
 
-Carl Severing of the SPD has been appointed Interior Minister.
+Carl Severing of the <span style="color: #d50000;">**SPD**</span> has been appointed Interior Minister.
 
 @finance
 title: Finance Ministry
@@ -1238,7 +1238,7 @@ view-if: finance_minister_party != "SPD"
 on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
 go-to: ministries
 
-Rudolf Hilferding of the SPD has been appointed Finance Minister.
+Rudolf Hilferding of the <span style="color: #d50000;">**SPD**</span> has been appointed Finance Minister.
 
 @economic
 title: Economic Ministry
@@ -1250,7 +1250,7 @@ view-if: economic_minister_party != "SPD"
 on-arrival: leverage -= 10; economic_minister_party = "SPD"; economic_minister = "Schmidt"
 go-to: ministries
 
-Robert Schmidt of the SPD has been appointed Economic Minister.
+Robert Schmidt of the <span style="color: #d50000;">**SPD**</span> has been appointed Economic Minister.
 
 @justice
 title: Justice Ministry
@@ -1262,7 +1262,7 @@ view-if: justice_minister_party != "SPD"
 on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
 go-to: ministries
 
-Gustav Radbruch of the SPD has been appointed Justice Minister.
+Gustav Radbruch of the <span style="color: #d50000;">**SPD**</span> has been appointed Justice Minister.
 
 @foreign
 title: Foreign Ministry
@@ -1274,7 +1274,7 @@ view-if: foreign_minister_party != "SPD"
 on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
 go-to: ministries
 
-Rudolf Breitscheid of the SPD has been appointed Foreign Minister.
+Rudolf Breitscheid of the <span style="color: #d50000;">**SPD**</span> has been appointed Foreign Minister.
 
 
 @agriculture
@@ -1287,7 +1287,7 @@ on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_mini
 go-to: ministries
 tags: mins_1928
 
-Fritz Baade of the SPD has been appointed Agriculture Minister.
+Fritz Baade of the <span style="color: #d50000;">**SPD**</span> has been appointed Agriculture Minister.
 
 @reichswehr
 title: Reichswehr Ministry
@@ -1299,7 +1299,7 @@ view-if: reichswehr_minister_party != "SPD"
 on-arrival: leverage -= 15; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"
 go-to: ministries
 
-Julius Leber of the SPD has been appointed Reichswehr Minister.
+Julius Leber of the <span style="color: #d50000;">**SPD**</span> has been appointed Reichswehr Minister.
 
 
 

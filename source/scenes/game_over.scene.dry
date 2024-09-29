@@ -411,7 +411,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
-[? if achievement_weimar_coalition: **Weimarer Koalition** - form a <span style="color: #DD0000;">We</span><span style="color: #000000;">im</span><span style="color: #FFCC00;">ar</span> coalition. ?]
+[? if achievement_weimar_coalition: **Weimarer Koalition** - form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition. ?]
 
 [? if achievement_majority_party: **Mehrheitspartei** - form an <span style="color: #d50000;">**SPD**</span>-only majority government. ?]
 
@@ -435,7 +435,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_equality: **Gleichheit** - pass reforms for women's rights. ?]
 
-[? if achievement_hirschfeld: **Hirschfeld** - pass reforms for deported <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">ex</span><span style="color: purple;">al</span> rights. ?]
+[? if achievement_hirschfeld: **Hirschfeld** - pass reforms for deported <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">s</span><span style="color: blue;">ex</span><span style="color: purple;">al</span> rights. ?]
 
 [? if achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
 

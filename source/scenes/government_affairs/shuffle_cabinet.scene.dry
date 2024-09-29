@@ -10,21 +10,93 @@ Do we wish to shuffle our cabinet? This might upset our current coalition.
 
 Current cabinet:
 
-Labor: [+ labor_minister_party +]
+Labor: 
+[? if labor_minister_party == "SPD": <span style="color: #d50000;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "KPD": <span style="color: #8B0000;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "DDP": <span style="color: #DCCA4A;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "Z": <span style="color: #000000;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "BVP": <span style="color: #69A2BE;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "DVP": <span style="color: #D3B454;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "Others": <span style="color: #d50000;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "DNVP": <span style="color: #3F7BC1;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "NSDAP": <span style="color: #954B00;">[+ labor_minister_party +]</span> ?]
 
-Interior: [+ interior_minister_party +]
+Interior: 
+[? if interior_minister_party == "SPD": <span style="color: #d50000;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "KPD": <span style="color: #8B0000;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "DDP": <span style="color: #DCCA4A;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "Z": <span style="color: #000000;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "BVP": <span style="color: #69A2BE;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "DVP": <span style="color: #D3B454;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "Others": <span style="color: #d50000;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "DNVP": <span style="color: #3F7BC1;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "NSDAP": <span style="color: #954B00;">[+ interior_minister_party +]</span> ?]
 
-Finance: [+ finance_minister_party +]
+Finance: 
+[? if finance_minister_party == "SPD": <span style="color: #d50000;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "KPD": <span style="color: #8B0000;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "DDP": <span style="color: #DCCA4A;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "Z": <span style="color: #000000;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "BVP": <span style="color: #69A2BE;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "DVP": <span style="color: #D3B454;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "Others": <span style="color: #d50000;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "DNVP": <span style="color: #3F7BC1;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "NSDAP": <span style="color: #954B00;">[+ finance_minister_party +]</span> ?]
 
-Economic: [+ economic_minister_party +]
+Economic: 
+[? if economic_minister_party == "SPD": <span style="color: #d50000;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "KPD": <span style="color: #8B0000;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "DDP": <span style="color: #DCCA4A;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "Z": <span style="color: #000000;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "BVP": <span style="color: #69A2BE;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "DVP": <span style="color: #D3B454;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "Others": <span style="color: #d50000;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "DNVP": <span style="color: #3F7BC1;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "NSDAP": <span style="color: #954B00;">[+ economic_minister_party +]</span> ?]
 
-Justice: [+ justice_minister_party +]
+Justice: 
+[? if justice_minister_party == "SPD": <span style="color: #d50000;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "KPD": <span style="color: #8B0000;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "DDP": <span style="color: #DCCA4A;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "Z": <span style="color: #000000;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "BVP": <span style="color: #69A2BE;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "DVP": <span style="color: #D3B454;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "Others": <span style="color: #d50000;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "DNVP": <span style="color: #3F7BC1;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "NSDAP": <span style="color: #954B00;">[+ justice_minister_party +]</span> ?]
 
-Foreign: [+ foreign_minister_party +]
+Foreign: 
+[? if foreign_minister_party == "SPD": <span style="color: #d50000;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "KPD": <span style="color: #8B0000;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "DDP": <span style="color: #DCCA4A;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "Z": <span style="color: #000000;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "BVP": <span style="color: #69A2BE;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "DVP": <span style="color: #D3B454;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "Others": <span style="color: #d50000;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "DNVP": <span style="color: #3F7BC1;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "NSDAP": <span style="color: #954B00;">[+ foreign_minister_party +]</span> ?]
 
-Reichswehr: [+ reichswehr_minister_party +]
+Reichswehr: 
+[? if reichswehr_minister_party == "SPD": <span style="color: #d50000;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "KPD": <span style="color: #8B0000;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "DDP": <span style="color: #DCCA4A;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "Z": <span style="color: #000000;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "BVP": <span style="color: #69A2BE;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "DVP": <span style="color: #D3B454;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "Others": <span style="color: #d50000;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "DNVP": <span style="color: #3F7BC1;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "NSDAP": <span style="color: #954B00;">[+ reichswehr_minister_party +]</span> ?]
 
-Agriculture: [+ agriculture_minister_party +]
+Agriculture: 
+[? if agriculture_minister_party == "SPD": <span style="color: #d50000;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "KPD": <span style="color: #8B0000;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "DDP": <span style="color: #DCCA4A;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "Z": <span style="color: #000000;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "BVP": <span style="color: #69A2BE;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "DVP": <span style="color: #D3B454;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "Others": <span style="color: #d50000;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "DNVP": <span style="color: #3F7BC1;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "NSDAP": <span style="color: #954B00;">[+ agriculture_minister_party +]</span> ?]
 
 - @shuffle: Yes, do it.
 - @root: No, there is no need.
