@@ -45,7 +45,7 @@ subtitle: We could also broach the question of the <span style="color: #7A2B5C;"
 
 The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
 
-The Soviets are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our anti-communist coalition partners would be upset, but we could assuage them by asking the Soviets for secret assistance in training and equiping the Reichswehr.
+The <span style="color: #940000;">Soviets</span> are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our anti-communist coalition partners would be upset, but we could assuage them by asking the <span style="color: #940000;">Soviets</span> for secret assistance in training and equiping the Reichswehr.
 
 - @soviet_economic_aid_yes_mil: Provide aid, in exchange for Reichswehr assistance.
 - @soviet_economic_aid_yes: Provide aid, in exchange for only good relations.
@@ -56,14 +56,14 @@ choose-if: budget >= 1
 subtitle: -1 budget
 on-arrival: budget -= 1; soviet_relation += 1; reichswehr_strength += 20; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
 
-The Soviets are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
+The <span style="color: #940000;">Soviets</span> are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
 
 @soviet_economic_aid_yes
 choose-if: budget >= 1
 subtitle: -1 budget
 on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_goal_completed += 1
 
-The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
+The <span style="color: #940000;">Soviets</span> are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
 
 - @kpd: Ask if Moscow could help repair our relations with the <span style="color: #7A2B5C;">**KPD**</span>.
 - @wittorf: Do the Soviets know about the Wittorf Affair? Do they know that we know?
@@ -71,7 +71,7 @@ The Soviets are pleased that we have sent them aid, and have not asked for anyth
 
 @soviet_economic_aid_no
 
-The Soviets are slightly upset, but they seemed to expect this answer.
+The <span style="color: #940000;">Soviets</span> are slightly upset, but they seemed to expect this answer.
 
 
 @kpd
@@ -90,9 +90,9 @@ Of course Stalin and the various leaders of the Comintern know about the Wittorf
 
 
 @customs_union
-title: Form a customs union with Austria?
+title: Form a customs union with <span style="color: #EF3340;">Austria</span>?
 subtitle: This will likely incur the wrath of France.
-unavailable-subtitle: This is superseded by the European Union.
+unavailable-subtitle: This is superseded by the <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>.
 choose-if: eu = 0
 view-if: black_thursday_seen = 1 and customs_union = 0
 
@@ -107,7 +107,7 @@ However, the Allies, especially France, are likely to object. This agreement wou
 on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2; z_relation += 6; dvp_relation += 6; coalition_dissent -= 1; coup_progress -= 1
 max-visits: 1
 
-We have formed a customs union with Austria! The right-wing parties are praising us for this unexpected turn of events.
+We have formed a customs union with <span style="color: #EF3340;">Austria</span>! The right-wing parties are praising us for this unexpected turn of events.
 
 Immediately, France and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
 
@@ -118,17 +118,17 @@ subtitle: [? if young_plan_seen == 1 : After passing the Young Plan, France has 
 view-if: reparations > -2 and reparations_negotiation < 3
 on-arrival: west_relation += 1; reparations_negotiation += 1; reparations_negotiation += 1 if pacifism >= 3; reparations_negotiations += 1 if nationalism <= 50; reparations_negotiation += 1 if west_relation >= 3
 
-Negotiations procede smoothly for the most part. The Western powers are convinced of Germany's sincerity and goodwill. [? if nationalism <= 50 or pacifism >= 3 : They are pleased to see that we are renouncing militarism. ?]
+Negotiations proceed smoothly for the most part. The Western powers are convinced of Germany's sincerity and goodwill. [? if nationalism <= 50 or pacifism >= 3 : They are pleased to see that we are renouncing militarism. ?]
 
 
 @reduce_reparations
-title: The Western Allies are finally willing to pause our reparations payments!
+title: The <span style="color: #0A3161;">Western</span> <span style="color: #C8102E;">Allies</span> are finally willing to pause our reparations payments!
 subtitle: Our negotiations have been successful.
 view-if: reparations_negotiation >= 3 and black_thursday_seen == 1 and reparations > -2
 on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2
 max-visits: 1
 
-Finally, given both the economic circumstances and our continued negotiations, the Western Allies are willing to pause our reparations payments! Much of the credit must go to American president Hoover, who has been friendlier towards us than the Europeans.
+Finally, given both the economic circumstances and our continued negotiations, the <span style="color: #0A3161;">Western</span> <span style="color: #C8102E;">Allies</span> are willing to pause our reparations payments! Much of the credit must go to <span style="color: #0A3161;">Western</span> president Hoover, who has been friendlier towards us than the <span style="color: #001489;">Europeans</span>.
 
 This has reduced tensions within our government, and our party has gotten credit for the achievement.
 
@@ -156,7 +156,7 @@ title: Negotiate a Concordat between the Germany and the Vatican.
 view-if: prussian_concordat = 1 and reichskonkordat = 0 and reichskonkordat_progress < 4
 on-arrival: reichskonkordat_progress += 2; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; z_relation += 3*(1-dissent)
 
-The Roman Catholic Church is interested in furthering relations with the German Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The Center Party is especially interested in making this agreement.
+The Roman Catholic Church is interested in furthering relations with the German Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The <span style="color: #000000;">**Center Party**</span> is especially interested in making this agreement.
 
 [? if family_law : Our liberalized divorce policies make it difficult to build relations with the Vatican. ?] [? if abortion : Our legalization of abortion make it difficult to connect with the Church. ?]
 
@@ -166,7 +166,7 @@ view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
 on-arrival: reichskonkordat = 1; z_relation += 15*(1-dissent); catholics_spd += 8*(1-dissent); catholics_z += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front;
 achievement: reichskonkordat
 
-We have successfully signed a Concordat between Germany and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the German state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Germany are pleased, as are their representatives in the Center Party.
+We have successfully signed a Concordat between Germany and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the German state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Germany are pleased, as are their representatives in the <span style="color: #000000;">**Center Party**</span>.
 
 
 
@@ -178,18 +178,18 @@ view-if: reparations <= -2 and eu_progress < 2
 choose-if: west_relation >= 5 and east_relation >= 4
 on-arrival: eu_progress += 1; west_relation += 1
 
-Forming a "United States of Europe" has long been part of the Social Democratic foreign program. Finally, we are taking steps towards it. Given our positive relations with the other countries of Europe, we can begin to hold multilateral negotiations for more European federalism. It will take time to hammer out the exact shape of this future "European Union", however.
+Forming a "<span style="color: #FFDD00;">United States</span> of <span style="color: #001489;">Europe</span>" has long been part of the <span style="color: #c00000;">**Social Democratic**</span> foreign program. Finally, we are taking steps towards it. Given our positive relations with the other countries of <span style="color: #001489;">Europe</span>, we can begin to hold multilateral negotiations for more <span style="color: #001489;">European</span> <span style="color: #FFDD00;">federalism</span>. It will take time to hammer out the exact shape of this future "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>", however.
 
 
 @european_union_2
-title: We can sign a treaty to form a European Union!
+title: We can sign a treaty to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>!
 view-if: west_relation >= 5 and east_relation >= 4 and eu_progress >= 2
 on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 5*(1-dissent); rural_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1
 max-visits: 1
 achievement: eu
 
-Along with France, Great Britain, and many other states of Western and Eastern Europe, we have signed a treaty to form a European Union! It is hoped that Europe has learned the lessons of the Great War; never again will there be another war that tears the continent apart.
+Along with France, Great Britain, and many other states of Western and Eastern Europe, we have signed a treaty to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>! It is hoped that Europe has learned the lessons of the Great War; never again will there be another war that tears the continent apart.
 
 A major component of the union is the free movement of people and goods across the countries of Europe, as well as the stabilization of currency exchange rates. This provides new markets for German products and new sources of investment.
 
-Fascist Italy remains a problem, and the Soviet Union also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.
+<span style="color: #7A3C00;">fascist</span> Italy remains a problem, and the <span style="color: #750e0e;">Soviet Union</span> also lies outside the system. But for now, there is new hope for peace and prosperity throughout the continent.

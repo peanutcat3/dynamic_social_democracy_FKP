@@ -35,7 +35,7 @@ on-arrival: resources -= rb_militarization_cost; rb_militancy += 0.06; rb_streng
 
 We have increased training and purchased more armaments for the Reichsbanner.
 
-[? if historical_mode : The Center Party decries the militarization of the Reichsbanner, and its members are leaving the republican organization. ?]
+[? if historical_mode : The <span style="color: #000000;">**Center Party**</span> decries the militarization of the Reichsbanner, and its members are leaving the republican organization. ?]
 
 
 @if_training

@@ -29,7 +29,7 @@ The right-wing coalition has fallen. New elections have been set for [+ next_ele
 
 
 @vonc_no
-title: Support the rump Center-led government, voting in favor of the government.
+title: Support the rump <span style="color: #000000;">**Center**</span>-led government, voting in favor of the government.
 subtitle: We would essentially provide "toleration" to a bourgeois government.
 view-if: neo_weimar_coalition >= 50
 on-arrival: spd_toleration = 1; in_right_coalition = 0; left_dissent += 8; 

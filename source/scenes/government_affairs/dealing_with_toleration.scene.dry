@@ -53,7 +53,7 @@ Unfortunately, our negotiations have met with failure. The center-right parties 
 title: Improve relations with the parties of the coalition.
 on-arrival: z_relation += 5*(1-dissent); dvp_relation += 4*(1-dissent); left_dissent += 5;
 
-We have increased our level of contact and discussions with the parties of the coalition, primarily the Center Party and DVP.
+We have increased our level of contact and discussions with the parties of the coalition, primarily the <span style="color: #000000;">**Center Party**</span> and <span style="color: #C0A054;">**DVP**</span>.
 
 Our attempts to reach out to the center-right are met with disdain by leftists within our party.
 
@@ -65,11 +65,11 @@ title: Can we join the government in a new grand coalition?
 view-if: neo_weimar_coalition >= 50
 choose-if: z_relation >= 50 and dvp_relation >= 30 and resources >= 2
 subtitle: We will need 2 resources to smooth out the process of forming the coalition.
-unavailable-subtitle: [? if z_relation < 50 : We do not have adequate relations with the Center Party. ?][? if dvp_relation < 30 : We do not have adequate relations with the DVP. ?] [? if resources < 2 : We do not have enough resources. ?]
+unavailable-subtitle: [? if z_relation < 50 : We do not have adequate relations with the <span style="color: #000000;">**Center Party**</span>. ?][? if dvp_relation < 30 : We do not have adequate relations with the <span style="color: #C0A054;">**DVP**</span>. ?] [? if resources < 2 : We do not have enough resources. ?]
 on-arrival: resources -= 2; spd_in_government = 1; in_grand_coalition = 1; spd_toleration = 0; left_dissent += 6; reformist_strength += 5; leverage = 20 if leverage >= 20
 achievement: constitutional_coalition
 
-Our negotiations have succeeded, and the Center Party and DVP have agreed to form a new coalition government with us!
+Our negotiations have succeeded, and the <span style="color: #000000;">**Center Party**</span> and <span style="color: #C0A054;">**DVP**</span> have agreed to form a new coalition government with us!
 
 We are now part of a "constitutional coalition" government that includes all parties except the extremists of the <span style="color: #7A2B5C;">**KPD**</span>, DNVP, and NSDAP. [+ chancellor +] will remain as chancellor. Leftists in our party are skeptical of this arrangement.
 

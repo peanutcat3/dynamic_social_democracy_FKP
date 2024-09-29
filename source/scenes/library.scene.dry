@@ -143,7 +143,7 @@ Current relations: [+ kpd_relation : relationships +]
 
 Current relations: [+ nsdap_relation : relationships +]
 
-**Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others. [? if dnvp_split == 1: They also consist of splinter parties from the DNVP, as a result of Hugenberg's radical right policies as chairman. ?]Their political position usually lies between the <span style="color: #C0A054;">**DVP**</span> and the <span style="color: #2C517A;">**DNVP**</span>.
+**Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others. [? if dnvp_split == 1: They also consist of splinter parties from the <span style="color: #2C517A;">**DNVP**</span>, as a result of Hugenberg's radical right policies as chairman. ?]Their political position usually lies between the <span style="color: #C0A054;">**DVP**</span> and the <span style="color: #2C517A;">**DNVP**</span>.
 
 @paramilitaries
 on-arrival: {!
@@ -167,7 +167,7 @@ Strength: [+ rfb_strength +] thousand
 
 Militarization: [+ rfb_militancy : militancy +]
 
-**Der Stahlhelm**: A right-wing nationalist organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Associated with the <span style="color: #2C517A;">**DNVP**</span>.
+**Der Stahlhelm**: A <span style="color: #2C517A;">right-wing nationalist</span> organization of primarily Great War veterans, descended from the *Freikorps* that emerged after the war. Associated with the <span style="color: #2C517A;">**DNVP**</span>.
 
 Strength: [+ sh_strength +] thousand
 

@@ -335,7 +335,7 @@ Otto Wels is now an advisor.
 
 @add_muller
 title: Hermann Müller
-subtitle: Hermann Müller is the last Social Democratic Chancellor.
+subtitle: Hermann Müller is the last <span style="color: #c00000;">**Social Democratic**</span> Chancellor.
 is-card: true
 card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
@@ -374,7 +374,7 @@ Carl Severing is now an advisor.
 
 @add_braun
 title: Otto Braun
-subtitle: Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known Social Democratic leaders.
+subtitle: Otto Braun is the Minister-President of Prussia, and one of the most recognizable and well-known <span style="color: #c00000;">**Social Democratic**</span> leaders.
 is-card: true
 card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor

@@ -11,7 +11,7 @@ go-to: what_do if unemployment_insurance_crisis = 2
 
 The economic crisis has caused mass layoffs all throughout Germany, affecting the industrial working class the hardest. Our welfare spending is increasing due to the greater need.
 
-In the midst of all this, our right-wing coalition partners in the DVP[? if ddp_right - ddp_left >= 2 :, [+ ddp_name +]?][? if dstp_formed :, DStP?] and Center parties have a plan to cut benefits for the unemployed, lower taxes on the rich, and raise taxes on the working class, as part of a plan to balance the budget and discipline labor. They do not see a possibility for compromise. If we do not accept, they could blow up the coalition.
+In the midst of all this, our right-wing coalition partners in the <span style="color: #C0A054;">**DVP**</span>[? if ddp_right - ddp_left >= 2 :, <span style="color: #E1D85D;">**[+ ddp_name +]**</span>?][? if dstp_formed :, DStP?] and <span style="color: #000000;">**Center**</span> parties have a plan to cut benefits for the unemployed, lower taxes on the rich, and raise taxes on the working class, as part of a plan to balance the budget and discipline labor. They do not see a possibility for compromise. If we do not accept, they could blow up the coalition.
 
 [? if unemployment_insurance_crisis = 2 : This is the second such ultimatum thrown by the Right. Obviously, the bourgeoisie are trying to remove us from the government. ?]
 
@@ -43,7 +43,7 @@ on-arrival: spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0; z
 
 Fine. If the bourgeoisie wish to blow up the government, let them do so. Socialists will not be complicit in the destruction of the working class.
 
-[? if chancellor_party = "SPD" : Heinrich Brüning of the Center Party has been appointed Chancellor. ?] Brüning now leads an all-bourgeois cabinet. Using the emergency powers of Article 48, Brüning and President Hindenburg have passed the welfare cuts over the objections of the Reichstag.
+[? if chancellor_party = "SPD" : Heinrich Brüning of the <span style="color: #000000;">**Center Party**</span> has been appointed Chancellor. ?] Brüning now leads an all-bourgeois cabinet. Using the emergency powers of Article 48, Brüning and President Hindenburg have passed the welfare cuts over the objections of the Reichstag.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
@@ -59,7 +59,7 @@ The workers are furious at our betrayal, as are a good portion of our membership
 unavailable-subtitle: We do not have good enough relations with the right-wing parties.
 choose-if: dvp_relation >= 35
 
-Thanks to our good relations, the DVP have offered a compromise that raises some taxes on the wealthy, along with lesser welfare cuts. Our members have mixed opinions on accepting this compromise. Reformists and Centrists support maintaining our government to keep the fascists and communists out, while Labor generally opposes any cuts, and the Left is opposed to compromises with the bourgeoisie.
+Thanks to our good relations, the <span style="color: #C0A054;">**DVP**</span> have offered a compromise that raises some taxes on the wealthy, along with lesser welfare cuts. Our members have mixed opinions on accepting this compromise. Reformists and Centrists support maintaining our government to keep the fascists and communists out, while Labor generally opposes any cuts, and the Left is opposed to compromises with the bourgeoisie.
 
 - @accept_compromise: Accept the compromise.
 - @destroy: Reject the compromise and let this government fall.
