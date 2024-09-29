@@ -70,7 +70,7 @@ for (var c of Q.classes) {
 }
 
 // Die Rote Fahne - join the KPD in the May Day march.
-// Mehrheitspartei - form an SPD majority government in the Reichstag.
+// Mehrheitspartei - form an <span style="color: #d50000;">**SPD**</span> majority government in the Reichstag.
 // Panik im Mittelstand - have over 50% of New Middle Class support.
 if (Q.new_middle_spd_normalized && Q.new_middle_spd_normalized >= 50) {
     this.achieve('panik_im_mittelstand');
@@ -123,7 +123,7 @@ title: Adolf Hitler is in undisputed control over Germany.
 tags: endings
 go-to: eg_menu
 
-Adolf Hitler is in undisputed control over Germany. The SPD, along with all of the democratic forces, have failed.
+Adolf Hitler is in undisputed control over Germany. The <span style="color: #d50000;">**SPD**</span>, along with all of the democratic forces, have failed.
 
 [? if civil_war_seen == 1 : At the very least, we fought back. Perhaps our resistance will be celebrated in an impossible-to-forsee future. ?]
 
@@ -191,12 +191,12 @@ go-to: eg_menu
 Otto Braun has been elected as President of Germany. He had never desired to be the most powerful man in Germany, but now he is. 
 
 @spd_victorious
-title: SPD still in government
+title: <span style="color: #d50000;">**SPD**</span> still in government
 view-if: spd_in_government == 1 and chancellor_party == "SPD" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
-The SPD is still in government, under Chancellor [+ chancellor +]. Given the circumstances, this is a substantial accomplishment.
+The <span style="color: #d50000;">**SPD**</span> is still in government, under Chancellor [+ chancellor +]. Given the circumstances, this is a substantial accomplishment.
 
 @communist_victory
 title: Communist victory
@@ -242,20 +242,20 @@ Unemployment is still at dangerously high levels. Even though Hitler is not in p
 
 
 @emergency_government
-title: SPD ruling in an emergency government.
+title: <span style="color: #d50000;">**SPD**</span> ruling in an emergency government.
 view-if: in_emergency_government == 1
 tags: endings
 go-to: eg_menu
 
-The SPD is ruling as part of an emergency minority government, led by President [+ president +] and Chancellor [+ chancellor +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
+The <span style="color: #d50000;">**SPD**</span> is ruling as part of an emergency minority government, led by President [+ president +] and Chancellor [+ chancellor +]. This is a temporary and unstable arrangement, leaving the door open to further authoritarianism.
 
 @peoples_party_achieved
-title: The SPD is a "People's Party".
+title: The <span style="color: #d50000;">**SPD**</span> is a "People's Party".
 view-if: peoples_party == 1
 tags: endings
 go-to: eg_menu
 
-The SPD has been declared a "People's Party", representing all of the people, not just the working class. This policy has many supporters and detractors, and what will become of the party is still unclear.
+The <span style="color: #d50000;">**SPD**</span> has been declared a "People's Party", representing all of the people, not just the working class. This policy has many supporters and detractors, and what will become of the party is still unclear.
 
 @nationalization_achieved
 title: Socialization of the economy has commenced.
@@ -308,31 +308,31 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_red_tzar_of_prussia : **Roter Zar von Preußen** - Otto Braun is President, Chancellor, and Minister-President. ?]
 
-[? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the SPD and KPD. ?]
+[? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the <span style="color: #d50000;">**SPD**</span> and KPD. ?]
 
 [? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the KPD demands. ?]
 
-[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the SPD, KPD, Z, and DDP. ?]
+[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #d50000;">**SPD**</span>, KPD, Z, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the Center Party and the Conciliators leading the KPD, form a government consisting of the SPD, KPD, Z, and DDP. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #8B0000;">**KPD**</span>, form a government consisting of the <span style="color: #d50000;">**SPD**</span>, <span style="color: #8B0000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #DCCA4A;">**DDP**</span>. ?]
 
-[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the KPD demands. ?]
+[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #8B0000;">**KPD**</span> demands. ?]
 
 [? if game_achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
 [? if game_achievement_weimar_coalition: **Weimarer Koalition** - form a Weimar coalition. ?]
 
-[? if game_achievement_majority_party: **Mehrheitspartei** - form an SPD-only majority government. ?]
+[? if game_achievement_majority_party: **Mehrheitspartei** - form an <span style="color: #d50000;">**SPD**</span>-only majority government. ?]
 
-[? if game_achievement_minderheitsregierung: **Minderheitsregierung** - form an SPD minority government. ?]
+[? if game_achievement_minderheitsregierung: **Minderheitsregierung** - form an <span style="color: #d50000;">**SPD**</span> minority government. ?]
 
-[? if game_achievement_volkspartei: **Volkspartei** - the SPD is a People's Party. ?]
+[? if game_achievement_volkspartei: **Volkspartei** - the <span style="color: #d50000;">**SPD**</span> is a People's Party. ?]
 
 [? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
 
-[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the KPD. ?]
+[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #8B0000;">**KPD**</span>. ?]
 
-[? if game_achievement_deport_hitler : **Der österreichische Gefreiter** - deported Hitler ?]
+[? if game_achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #954B00;">Hitler</span> ?]
 
 [? if game_achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -344,7 +344,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_equality: **Gleichheit** - pass reforms for women's rights. ?]
 
-[? if game_achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
+[? if game_achievement_hirschfeld: **Hirschfeld** - pass reforms for deported <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">ex</span><span style="color: purple;">al</span> rights. ?]
 
 [? if game_achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
 
@@ -352,11 +352,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_die_rote_fahne: **Die Rote Fahne** - join the KPD in their May Day march. ?]
 
-[? if game_achievement_panik_im_mittelstand: **Panik im Mittelstand** - SPD new middle class support is at least 50%. ?]
+[? if game_achievement_panik_im_mittelstand: **Panik im Mittelstand** - <span style="color: #d50000;">**SPD**</span> new middle class support is at least 50%. ?]
 
-[? if game_achievement_bauernrevolution: **Bauernrevolution** - SPD rural support is at least 50%. ?]
+[? if game_achievement_bauernrevolution: **Bauernrevolution** - <span style="color: #d50000;">**SPD**</span> rural support is at least 50%. ?]
 
-[? if game_achievement_katholischer_sozialismus: **Katholischer Sozialismus** - SPD Catholic support is at least 50%. ?]
+[? if game_achievement_katholischer_sozialismus: **Katholischer Sozialismus** - <span style="color: #d50000;">**SPD**</span> Catholic support is at least 50%. ?]
 
 [? if game_achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 
@@ -370,7 +370,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_eu: **Vereinigte Staaten von Europa** - form a "European Union". ?]
 
-[? if game_achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the SPD's Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a European Union. ?]
+[? if game_achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the <span style="color: #d50000;">**SPD**</span>'s Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a European Union. ?]
 
 [? if game_achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
@@ -399,31 +399,31 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_red_tzar_of_prussia : **Roter Zar von Preußen** - Otto Braun is President, Chancellor, and Minister-President. ?]
 
-[? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the SPD and KPD. ?]
+[? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the <span style="color: #d50000;">**SPD**</span> and KPD. ?]
 
 [? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the KPD demands. ?]
 
-[? if achievement_volksfront: **Volksfront** - Form a government consisting of the SPD, KPD, Z, and DDP. ?]
+[? if achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #d50000;">**SPD**</span>, KPD, Z, and DDP. ?]
 
-[? if achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the Center Party and the Conciliators leading the KPD, form a government consisting of the SPD, KPD, Z, and DDP. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #8B0000;">**KPD**</span>, form a government consisting of the <span style="color: #d50000;">**SPD**</span>, <span style="color: #8B0000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #DCCA4A;">**DDP**</span>. ?]
 
-[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the KPD demands. ?]
+[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #8B0000;">**KPD**</span> demands. ?]
 
 [? if achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
-[? if achievement_weimar_coalition: **Weimarer Koalition** - form a Weimar coalition. ?]
+[? if achievement_weimar_coalition: **Weimarer Koalition** - form a <span style="color: #d50000;">We</span><span style="color: #d50000;">im</span><span style="color: #d50000;">ar</span> coalition. ?]
 
-[? if achievement_majority_party: **Mehrheitspartei** - form an SPD-only majority government. ?]
+[? if achievement_majority_party: **Mehrheitspartei** - form an <span style="color: #d50000;">**SPD**</span>-only majority government. ?]
 
-[? if achievement_minderheitsregierung: **Minderheitsregierung** - form an SPD minority government. ?]
+[? if achievement_minderheitsregierung: **Minderheitsregierung** - form an <span style="color: #d50000;">**SPD**</span> minority government. ?]
 
-[? if achievement_volkspartei: **Volkspartei** - the SPD is a People's Party. ?]
+[? if achievement_volkspartei: **Volkspartei** - the <span style="color: #d50000;">**SPD**</span> is a People's Party. ?]
 
 [? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
 
-[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the KPD. ?]
+[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #8B0000;">**KPD**</span>. ?]
 
-[? if achievement_deport_hitler : **Der österreichische Gefreiter** - deported Hitler ?]
+[? if achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #954B00;">Hitler</span> ?]
 
 [? if achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -435,7 +435,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_equality: **Gleichheit** - pass reforms for women's rights. ?]
 
-[? if achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
+[? if achievement_hirschfeld: **Hirschfeld** - pass reforms for deported <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">ex</span><span style="color: purple;">al</span> rights. ?]
 
 [? if achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
 
@@ -443,11 +443,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_die_rote_fahne: **Die Rote Fahne** - join the KPD in their May Day march. ?]
 
-[? if achievement_panik_im_mittelstand: **Panik im Mittelstand** - SPD new middle class support is at least 50%. ?]
+[? if achievement_panik_im_mittelstand: **Panik im Mittelstand** - <span style="color: #d50000;">**SPD**</span> new middle class support is at least 50%. ?]
 
-[? if achievement_bauernrevolution: **Bauernrevolution** - SPD rural support is at least 50%. ?]
+[? if achievement_bauernrevolution: **Bauernrevolution** - <span style="color: #d50000;">**SPD**</span> rural support is at least 50%. ?]
 
-[? if achievement_katholischer_sozialismus: **Katholischer Sozialismus** - SPD Catholic support is at least 50%. ?]
+[? if achievement_katholischer_sozialismus: **Katholischer Sozialismus** - <span style="color: #d50000;">**SPD**</span> Catholic support is at least 50%. ?]
 
 [? if achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 
@@ -461,7 +461,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_eu: **Vereinigte Staaten von Europa** - form a "European Union". ?]
 
-[? if achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the SPD's Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a European Union. ?]
+[? if achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the <span style="color: #d50000;">**SPD**</span>'s Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a European Union. ?]
 
 [? if achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
@@ -488,31 +488,31 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_red_tzar_of_prussia : **Roter Zar von Preußen** - Otto Braun is President, Chancellor, and Minister-President. ?]
 
-[? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the SPD and KPD. ?]
+[? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the <span style="color: #d50000;">**SPD**</span> and KPD. ?]
 
 [? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the KPD demands. ?]
 
-[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the SPD, KPD, Z, and DDP. ?]
+[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #d50000;">**SPD**</span>, KPD, Z, and DDP. ?]
 
-[? if not achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the Center Party and the Conciliators leading the KPD, form a government consisting of the SPD, KPD, Z, and DDP. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #8B0000;">**KPD**</span>, form a government consisting of the <span style="color: #d50000;">**SPD**</span>, <span style="color: #8B0000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #DCCA4A;">**DDP**</span>. ?]
 
-[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the KPD demands. ?]
+[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #8B0000;">**KPD**</span> demands. ?]
 
 [? if not achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
 [? if not achievement_weimar_coalition: **Weimarer Koalition** - form a Weimar coalition. ?]
 
-[? if not achievement_majority_party: **Mehrheitspartei** - form an SPD-only majority government. ?]
+[? if not achievement_majority_party: **Mehrheitspartei** - form an <span style="color: #d50000;">**SPD**</span>-only majority government. ?]
 
-[? if not achievement_minderheitsregierung: **Minderheitsregierung** - form an SPD minority government. ?]
+[? if not achievement_minderheitsregierung: **Minderheitsregierung** - form an <span style="color: #d50000;">**SPD**</span> minority government. ?]
 
-[? if not achievement_volkspartei: **Volkspartei** - the SPD is a People's Party. ?]
+[? if not achievement_volkspartei: **Volkspartei** - the <span style="color: #d50000;">**SPD**</span> is a People's Party. ?]
 
 [? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
 
-[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the KPD. ?]
+[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #8B0000;">**KPD**</span>. ?]
 
-[? if not achievement_deport_hitler : **Der österreichische Gefreiter** - deported Hitler ?]
+[? if not achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #954B00;">Hitler</span> ?]
 
 [? if not achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -524,7 +524,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_equality: **Gleichheit** - pass reforms for women's rights. ?]
 
-[? if not achievement_hirschfeld: **Hirschfeld** - pass reforms for homosexual rights. ?]
+[? if not achievement_hirschfeld: **Hirschfeld** - pass reforms for deported <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">ex</span><span style="color: purple;">al</span> rights. ?]
 
 [? if not achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
 
@@ -532,11 +532,11 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the KPD in their May Day march. ?]
 
-[? if not achievement_panik_im_mittelstand: **Panik im Mittelstand** - SPD new middle class support is at least 50%. ?]
+[? if not achievement_panik_im_mittelstand: **Panik im Mittelstand** - <span style="color: #d50000;">**SPD**</span> new middle class support is at least 50%. ?]
 
-[? if not achievement_bauernrevolution: **Bauernrevolution** - SPD rural support is at least 50%. ?]
+[? if not achievement_bauernrevolution: **Bauernrevolution** - <span style="color: #d50000;">**SPD**</span> rural support is at least 50%. ?]
 
-[? if not achievement_katholischer_sozialismus: **Katholischer Sozialismus** - SPD Catholic support is at least 50%. ?]
+[? if not achievement_katholischer_sozialismus: **Katholischer Sozialismus** - <span style="color: #d50000;">**SPD**</span> Catholic support is at least 50%. ?]
 
 [? if not achievement_raterepublik: **Räterepublik** - begin the transformation to a socialist economy. ?]
 
@@ -550,7 +550,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_eu: **Vereinigte Staaten von Europa** - form a "European Union". ?]
 
-[? if not achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the SPD's Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a European Union. ?]
+[? if not achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the <span style="color: #d50000;">**SPD**</span>'s Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a European Union. ?]
 
 [? if not achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 

@@ -51,7 +51,7 @@ Reichstag composition:
 # 1928: 9, 1930: 10
 **Others**: [+ other_r +]%
 
-[? if spd_in_government = 1 : <span style="color: #85BB65;">Budget</span>: [+ budget +] ?]
+[? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
 Inflation: [+ inflation_2 +]%
 
