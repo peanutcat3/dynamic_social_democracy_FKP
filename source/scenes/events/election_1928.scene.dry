@@ -501,7 +501,7 @@ Whatever their reasoning is, the <span style="color: #c00000;">**SPD**</span> ha
 @left_coalition_civil_war
 on-arrival: reichswehr_loyalty += 0.1
 
-In response to the KPD's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the <span style="color: #2C517A;">**Stahlhelm**</span> and <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> enter Berlin and begin clashing with our supporters. Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the <span style="color: #2C517A;">**Stahlhelm**</span> to stop us from taking power.
+In response to the <span style="color: #7A2B5C;">**KPD**</span>'s entrance into the government, the right-wing immediately launches a coup attempt. Troops of the <span style="color: #2C517A;">**Stahlhelm**</span> and <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> enter Berlin and begin clashing with our supporters. Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the <span style="color: #2C517A;">**Stahlhelm**</span> to stop us from taking power.
 
 - @civil_war: A civil war, then.
 

@@ -41,7 +41,7 @@ We also aim to improve relations with our eastern neighbors, Poland and Czechosl
 
 @improve_soviet
 title: Improve our relations with the Soviet Union.
-subtitle: We could also broach the question of the KPD...
+subtitle: We could also broach the question of the <span style="color: #7A2B5C;">**KPD**</span>...
 
 The Soviet Union also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
 
@@ -65,9 +65,9 @@ on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_g
 
 The Soviets are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
 
-- @kpd: Ask if Moscow could help repair our relations with the KPD.
+- @kpd: Ask if Moscow could help repair our relations with the <span style="color: #7A2B5C;">**KPD**</span>.
 - @wittorf: Do the Soviets know about the Wittorf Affair? Do they know that we know?
-- @root: Do not mention the KPD.
+- @root: Do not mention the <span style="color: #7A2B5C;">**KPD**</span>.
 
 @soviet_economic_aid_no
 
@@ -77,7 +77,7 @@ The Soviets are slightly upset, but they seemed to expect this answer.
 @kpd
 on-arrival: kpd_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
 
-We also mention the KPD in our conversations with the Soviet ambassador. They claim that the KPD is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the KPD.
+We also mention the <span style="color: #7A2B5C;">**KPD**</span> in our conversations with the Soviet ambassador. They claim that the <span style="color: #7A2B5C;">**KPD**</span> is entirely independent of the Soviet government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the <span style="color: #7A2B5C;">**KPD**</span>.
 
 @wittorf
 view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0

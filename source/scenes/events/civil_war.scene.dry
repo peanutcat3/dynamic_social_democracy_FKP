@@ -89,7 +89,7 @@ go-to: war_menu
 
 Our enemies are the nationalist Stahlhelm, with [+ sh_strength +] thousand troops, and the Nazi SA, with [+ sa_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
 
-[? if chancellor_party == "KPD" or president == "Thälmann" : The KPD's paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
+[? if chancellor_party == "KPD" or president == "Thälmann" : The <span style="color: #7A2B5C;">**KPD**</span>'s paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
 
 On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
 
@@ -120,9 +120,9 @@ view-if: chancellor_party != "KPD" and president != "Thälmann"
 go-to: war_menu
 on-arrival: war_choices += 1
 
-There are [+ rfb_strength +] thousand fighters with the Communist RFB, in addition to the workers who support the KPD.
+There are [+ rfb_strength +] thousand fighters with the Communist RFB, in addition to the workers who support the <span style="color: #7A2B5C;">**KPD**</span>.
 
-[? if kpd_relation >= 60 : The KPD is entirely on our side, owing to our good relations.. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Most of the KPD is on our side, due to their good relations with us. ?][? if kpd_relation < 45 : The KPD does not support us. ?]
+[? if kpd_relation >= 60 : The <span style="color: #7A2B5C;">**KPD**</span> is entirely on our side, owing to our good relations.. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Most of the <span style="color: #7A2B5C;">**KPD**</span> is on our side, due to their good relations with us. ?][? if kpd_relation < 45 : The <span style="color: #7A2B5C;">**KPD**</span> does not support us. ?]
 
 @general_strike
 max-visits: 1
@@ -205,7 +205,7 @@ unavailable-subtitle: Our relations are not strong enough.
 max-visits: 1
 go-to: long_war_intervention
 
-We send a call for help to the Soviet Union. The KPD receives the bulk of the aid, while the Reichsbanner and our loyal military units are left floundering. If we win, this does not bode well for our future.
+We send a call for help to the Soviet Union. The <span style="color: #7A2B5C;">**KPD**</span> receives the bulk of the aid, while the Reichsbanner and our loyal military units are left floundering. If we win, this does not bode well for our future.
 
 @east_aid
 choose-if: east_relation >= 2
