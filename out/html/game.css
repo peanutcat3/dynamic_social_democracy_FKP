@@ -515,7 +515,7 @@ table {
 
 /* Styles for parties */
 .seat.kpd {
-    fill: #8B0000;
+    fill: #7A2B5C;
 }
 .seat.spd {
     fill: #E3000F;
@@ -523,13 +523,13 @@ table {
     stroke-width: 1.5px;
 }
 .seat.ddp {
-    fill: #DCCA4A;
+    fill: #E1D85D;
 }
 .seat.z {
     fill: #000;
 }
 .seat.bvp {
-    fill: #69A2BE;
+    fill: #4B758B;
 }
 .seat.dvp {
     fill: #D5AC27;
@@ -538,12 +538,12 @@ table {
     fill: #909090;
 }
 .seat.dnvp {
-    fill: #3F7BC1;
+    fill: #2C517A;
 }
 .seat.nsdap {
-    fill: #954B00;
+    fill: #7A3C00;
 }
 .seat.sapd {
-    fill: #C40000;
+    fill: #9B0000;
 }
 

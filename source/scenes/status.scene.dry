@@ -16,8 +16,8 @@ if (Q.inflation) {
 
 Resources available: [+ resources +]
 
-<span style="color: #d50000;">**SPD**</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
-[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #d50000;">**SPD**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+<span style="color: #c00000;">**SPD**</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
+[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #c00000;">**SPD**</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
 
 [? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
@@ -27,27 +27,27 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #d50000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #8B0000;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #954B00;">Hitler</span> ?][? if president == "Göring": <span style="color: #954B00;">Göring</span> ?]
+President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #c00000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #7A2B5C;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #7A3C00;">Hitler</span> ?][? if president == "Göring": <span style="color: #7A3C00;">Göring</span> ?]
 
-Chancellor: [? if chancellor_party == "SPD": <span style="color: #d50000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #954B00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #8B0000;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #d50000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #8B0000;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #954B00;">**NSDAP**</span>) ?]
+Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #7A3C00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #7A2B5C;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #c00000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #7A2B5C;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #7A3C00;">**NSDAP**</span>) ?]
 
 Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-<span style="color: #d50000;">**SPD**</span>: [+ spd_r +]%
-[? if sapd_formed and sapd_r > 0: <span style="color: #C40000;">**SAPD**</span>: [+ sapd_r +]% ?]
+<span style="color: #c00000;">**SPD**</span>: [+ spd_r +]%
+[? if sapd_formed and sapd_r > 0: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-<span style="color: #000000;">**Z**</span> **+** <span style="color: #69A2BE;">**BVP**</span>: [+ z_r +]%
+<span style="color: #000000;">**Z**</span> **+** <span style="color: #4B758B;">**BVP**</span>: [+ z_r +]%
 # 1928: 10, 1930: 13
-<span style="color: #8B0000;">**KPD**</span>: [+ kpd_r +]%
+<span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DStP)
-<span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
+<span style="color: #E1D85D;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-<span style="color: #D3B454;">**DVP**</span>: [+ dvp_r +]%
+<span style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]%
 # 1928: 14, 1930: 7
-<span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_r +]%
+<span style="color: #2C517A;">**DNVP**</span>: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
-<span style="color: #954B00;">**NSDAP**</span>: [+ nsdap_r +]%
+<span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 **Others**: [+ other_r +]%
 
@@ -69,17 +69,17 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 <span style="color: #000000;">**Z**</span>: [+ z_relation : relationships +]
 
-<span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_relation : relationships +]
+<span style="color: #E1D85D;">**[+ ddp_name +]**</span>: [+ ddp_relation : relationships +]
 
-<span style="color: #D3B454;">**DVP**</span>: [+ dvp_relation : relationships +]
+<span style="color: #C0A054;">**DVP**</span>: [+ dvp_relation : relationships +]
 
-<span style="color: #8B0000;">**KPD**</span>: [+ kpd_relation : relationships +]
+<span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_relation : relationships +]
 
-<span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_relation : relationships +]
+<span style="color: #2C517A;">**DNVP**</span>: [+ dnvp_relation : relationships +]
 
-<span style="color: #954B00;">**NSDAP**</span>: [+ nsdap_relation : relationships +]
+<span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_relation : relationships +]
 
-= Internal Factions of the <span style="color: #d50000;">**SPD**</span>
+= Internal Factions of the <span style="color: #c00000;">**SPD**</span>
 
 Left strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
 
@@ -96,21 +96,21 @@ Reformist strength: [+ reformist_strength : strength +], dissent: [+ reformist_d
 
 = Paramilitaries
 
-<span style="color: #d50000;">**Reichsbanner**</span> Strength: [+ rb_strength +] thousand
+<span style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength +] thousand
 
-<span style="color: #d50000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
+<span style="color: #c00000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-<span style="color: #8B0000;">**RFB**</span> Strength: [+ rfb_strength +] thousand
+<span style="color: #7A2B5C;">**RFB**</span> Strength: [+ rfb_strength +] thousand
 
-<span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
+<span style="color: #7A2B5C;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
-<span style="color: #3F7BC1;">**Stahlhelm**</span> Strength: [+ sh_strength +] thousand
+<span style="color: #2C517A;">**Stahlhelm**</span> Strength: [+ sh_strength +] thousand
 
-<span style="color: #3F7BC1;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
+<span style="color: #2C517A;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
-<span style="color: #954B00;">**SA**</span> Strength: [+ sa_strength +] thousand
+<span style="color: #7A3C00;">**SA**</span> Strength: [+ sa_strength +] thousand
 
-<span style="color: #954B00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
+<span style="color: #7A3C00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
 = Official military/paramilitaries
 
@@ -128,21 +128,21 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 (if the election were to be held now):
 
-<span style="color: #d50000;">**SPD**</span>: [+ spd_votes +]%
+<span style="color: #c00000;">**SPD**</span>: [+ spd_votes +]%
 
-[? if sapd_formed: <span style="color: #C40000;">**SAPD**</span>: [+ sapd_votes +]% ?]
+[? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
-<span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>: [+ z_votes +]%
+<span style="color: #000000;">**Z**</span> + <span style="color: #4B758B;">**BVP**</span>: [+ z_votes +]%
 
-<span style="color: #8B0000;">**KPD**</span>: [+ kpd_votes +]%
+<span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_votes +]%
 
-<span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
+<span style="color: #E1D85D;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
 
-<span style="color: #D3B454;">**DVP**</span>: [+ dvp_votes +]%
+<span style="color: #C0A054;">**DVP**</span>: [+ dvp_votes +]%
 
-<span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_votes +]%
+<span style="color: #2C517A;">**DNVP**</span>: [+ dnvp_votes +]%
 
-<span style="color: #954B00;">**NSDAP**</span>: [+ nsdap_votes +]%
+<span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_votes +]%
 
 **Others**: [+ other_votes +]%
 
