@@ -152,7 +152,7 @@ title: Despite the deportation of Hitler, the Nazis have still taken power...
 tags: endings
 go-to: eg_menu
 
-<p>Despite the deportation of Hitler, the <span style="color: #b67e59;">NSDAP</span> has somehow still wormed its way into power.</p> [? if long_war == 1 : We are fighting them for control of Germany. ?]
+<p>Despite the deportation of Hitler, the <span style="color: #954B00;">NSDAP</span> has somehow still wormed its way into power.</p> [? if long_war == 1 : We are fighting them for control of Germany. ?]
 
 
 @civil_war_won
@@ -314,9 +314,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #FF6F6F;">**SPD**</span>, KPD, Z, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #b14848;">**KPD**</span>, form a government consisting of the <span style="color: #FF6F6F;">**SPD**</span>, <span style="color: #b14848;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #E8D1A0;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #8B0000;">**KPD**</span>, form a government consisting of the <span style="color: #FF6F6F;">**SPD**</span>, <span style="color: #8B0000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #DCCA4A;">**DDP**</span>. ?]
 
-[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #b14848;">**KPD**</span> demands. ?]
+[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #8B0000;">**KPD**</span> demands. ?]
 
 [? if game_achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
@@ -330,9 +330,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
 
-[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #b14848;">**KPD**</span>. ?]
+[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #8B0000;">**KPD**</span>. ?]
 
-[? if game_achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #b67e59;">Hitler</span> ?]
+[? if game_achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #954B00;">Hitler</span> ?]
 
 [? if game_achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -405,9 +405,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #FF6F6F;">**SPD**</span>, KPD, Z, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #b14848;">**KPD**</span>, form a government consisting of the <span style="color: #FF6F6F;">**SPD**</span>, <span style="color: #b14848;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #E8D1A0;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #8B0000;">**KPD**</span>, form a government consisting of the <span style="color: #FF6F6F;">**SPD**</span>, <span style="color: #8B0000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #DCCA4A;">**DDP**</span>. ?]
 
-[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #b14848;">**KPD**</span> demands. ?]
+[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #8B0000;">**KPD**</span> demands. ?]
 
 [? if achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
@@ -421,9 +421,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
 
-[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #b14848;">**KPD**</span>. ?]
+[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #8B0000;">**KPD**</span>. ?]
 
-[? if achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #b67e59;">Hitler</span> ?]
+[? if achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #954B00;">Hitler</span> ?]
 
 [? if achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -494,9 +494,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #FF6F6F;">**SPD**</span>, KPD, Z, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #b14848;">**KPD**</span>, form a government consisting of the <span style="color: #FF6F6F;">**SPD**</span>, <span style="color: #b14848;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #E8D1A0;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #8B0000;">**KPD**</span>, form a government consisting of the <span style="color: #FF6F6F;">**SPD**</span>, <span style="color: #8B0000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #DCCA4A;">**DDP**</span>. ?]
 
-[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #b14848;">**KPD**</span> demands. ?]
+[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #8B0000;">**KPD**</span> demands. ?]
 
 [? if not achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
@@ -510,9 +510,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
 
-[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #b14848;">**KPD**</span>. ?]
+[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #8B0000;">**KPD**</span>. ?]
 
-[? if not achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #b67e59;">Hitler</span> ?]
+[? if not achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #954B00;">Hitler</span> ?]
 
 [? if not achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 

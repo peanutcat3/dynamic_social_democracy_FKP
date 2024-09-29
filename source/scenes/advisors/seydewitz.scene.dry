@@ -7,7 +7,7 @@ new-page: true
 
 = Max Seydewitz
 
-Max Seydewitz is a former leader of the youth wing, current supporter of the left wing of the <span style="color: #e64949;">**SPD**</span>, and advocates for class struggle.
+Max Seydewitz is a former leader of the youth wing, current supporter of the left wing of the <span style="color: #d50000;">**SPD**</span>, and advocates for class struggle.
 
 - @class_struggle
 - @socialist_youth
@@ -36,7 +36,7 @@ Seydewitz supports building up the Socialist Youth, which attracts support to th
 @against_toleration
 title: Against toleration
 subtitle: Break our current toleration arrangement, and bring down the government via a no-confidence vote.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_toleration == 0 : The <span style="color: #e64949;">SPD</span> is not currently in toleration. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_toleration == 0 : The <span style="color: #d50000;">SPD</span> is not currently in toleration. ?]
 view-if: not constructive_vonc
 choose-if: advisor_action_timer == 0 and spd_toleration
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time + 3; next_election_year = year if next_election_time >= time + 3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; spd_toleration = 0; left_strength += 8; pro_republic -= 4; new_middle_spd -= 3; rural_spd -= 3; old_middle_spd -= 3; catholics_spd -= 3; reformist_dissent += 8

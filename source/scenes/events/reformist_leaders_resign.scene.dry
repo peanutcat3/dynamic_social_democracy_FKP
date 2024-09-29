@@ -8,4 +8,4 @@ max-visits: 1
 
 = Reformist leaders resign
 
-Our policy choices have greatly offended the reformist faction. Many of our most experienced leaders have resigned. Some may choose to reside within the left wing of the [? if dstp_formed == 1 :DStP, although, few will join the moribund party.?][? if dstp_formed == 0 :DDP?]. [? if nsdap_normalized >= 10 :The threat of the Nazis to German democracy has mitigated this however, with the <span style="color: #e64949;">**SPD**</span> being the only committed democratic party that is still fighting and relevant.?]
+Our policy choices have greatly offended the reformist faction. Many of our most experienced leaders have resigned. Some may choose to reside within the left wing of the [? if dstp_formed == 1 :DStP, although, few will join the moribund party.?][? if dstp_formed == 0 :DDP?]. [? if nsdap_normalized >= 10 :The threat of the Nazis to German democracy has mitigated this however, with the <span style="color: #d50000;">**SPD**</span> being the only committed democratic party that is still fighting and relevant.?]

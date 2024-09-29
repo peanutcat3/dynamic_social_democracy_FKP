@@ -51,7 +51,7 @@ Some political thinkers believe that the proliferation of minor parties is respo
 
 The smaller parties will obviously oppose this reform. [? if z_relation > 30 : The Center Party supports this reform, while their BVP partners oppose it. ?] [? if kpd_relation > 50 and kpd_normalized >= 0.1 : Perhaps surprisingly, the KPD supports this reform. ?] [? if nsdap_normalized >= 0.2 : The NSDAP supports this reform, as they believe they have something to gain. ?]
 
-The <span style="color: #e64949;">**SPD**</span> Left opposes this change, as they believe it to be anti-democratic.
+The <span style="color: #d50000;">**SPD**</span> Left opposes this change, as they believe it to be anti-democratic.
 
 - @vote_threshold_2: Call a constitutional referendum to pass the reform!
 - @reforms_menu: See other reform options.
