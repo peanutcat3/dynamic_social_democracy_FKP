@@ -631,7 +631,7 @@ We have assembled a new coalition under Otto Braun.
 
 @unity_government
 title: The Center Party offers a "Government of National Unity" under Chancellor Joseph Wirth.
-subtitle: SPD + Z + BVP + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%)
+subtitle: <span style="color: #e64949;">**SPD**</span> + Z + BVP + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%)
 view-if: z_party_leader == "Joos" and neo_weimar_coalition >= 50 and weimar_coalition < 50 and z_relation >= 10
 
 The Center Party leader, Joseph Joos, clearly sees the threat from the ascension of the anti-democratic extremist parties, and thus tries to negotiate a "Government of National Unity" to save the republic. This coalition would be led by Joseph Wirth, a left-leaning member of the Center Party and former chancellor, and would encompass all of the constitutional parties. Our role in this government might be limited, however.
@@ -703,13 +703,13 @@ There is no path to a majority government for now. The scheming around President
 # if NSDAP is largest party and Hindenburg is president, then Hindenburg appoints Hitler chancellor.
 
 @spd_majority
-title: SPD majority alone
-subtitle: SPD: [+ spd_r +]%
+title: <span style="color: #e64949;">**SPD**</span> majority alone
+subtitle: <span style="color: #e64949;">**SPD**</span>: [+ spd_r +]%
 view-if: spd_r >= 50
 on-arrival: chancellor = "Empty"; chancellor_party = "SPD"; spd_in_government = 1; in_spd_majority = 1; pro_republic += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05; 
 achievement: majority_party
 
-Finally, the SPD can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
+Finally, the <span style="color: #e64949;">**SPD**</span> can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
 
 Who should be chancellor?
 
@@ -723,24 +723,24 @@ view-if: not historical_mode or not spd_prussia
 on-arrival: chancellor = "Braun"
 
 [? if president == "Braun": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor must be a member of the Reichstag). Thus, we have Chancellor-President Otto Braun. ?]
-[? if president != "Braun": Otto Braun has become chancellor of the SPD majority. ?]
+[? if president != "Braun": Otto Braun has become chancellor of the <span style="color: #e64949;">**SPD**</span> majority. ?]
 
 @breitscheid_majority_chancellor
 on-arrival: chancellor = "Breitscheid"
 
-Rudolf Breitscheid has become chancellor of the SPD majority.
+Rudolf Breitscheid has become chancellor of the <span style="color: #e64949;">**SPD**</span> majority.
 
 @muller_majority_chancellor
 view-if: muller_dead = 0
 on-arrival: chancellor = "Müller"
 
-Hermann Müller has become chancellor of the SPD majority.
+Hermann Müller has become chancellor of the <span style="color: #e64949;">**SPD**</span> majority.
 
 @wels_majority_chancellor
 view-if: muller_dead = 1
 on-arrival: chancellor = "Wels"
 
-Otto Wels has become chancellor of the SPD majority.
+Otto Wels has become chancellor of the <span style="color: #e64949;">**SPD**</span> majority.
 
 
 @brauns_dilemma
@@ -764,7 +764,7 @@ title: We will form an emergency government with Braun's support.
 subtitle: This may have the effect of inflamming public sentiment against us, and the reactionaries will be against us each step of the way.
 on-arrival: sa_strength += 100; sh_strength += 100; in_emergency_government = 1;
 
-Yes, an emergency minority government, with the support of the SPD. Who should lead this emergency minority government?
+Yes, an emergency minority government, with the support of the <span style="color: #e64949;">**SPD**</span>. Who should lead this emergency minority government?
 
 - @braun_emergency_chancellor: Otto Braun for Chancellor-President!
 - @breitscheid_emergency_chancellor: Rudolf Breitscheid for emergency Chancellor.
@@ -886,7 +886,7 @@ view-if: no_confidence_votes <= 50
 on-arrival: in_minority_government = 1; in_emergency_government = 0;
 achievement: minderheitsregierung
 
-We have won the vote of no confidence, and are currently ruling under an SPD minority government. Now our task is to fix the country.
+We have won the vote of no confidence, and are currently ruling under an <span style="color: #e64949;">**SPD**</span> minority government. Now our task is to fix the country.
 
 
 @weimar_coalition
@@ -909,7 +909,7 @@ Who should be the chancellor?
 
 @breitscheid_coalition_chancellor
 title: Rudolf Breitscheid for Chancellor
-subtitle: Breitscheid is viewed as friendlier towards the left of the SPD.
+subtitle: Breitscheid is viewed as friendlier towards the left of the <span style="color: #e64949;">**SPD**</span>.
 view-if: year >= 1930
 on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD";
 go-to: ministries
@@ -1028,7 +1028,7 @@ We have decided to tolerate Brüning's government. This means that we will vote 
 @grand_coalition_fail
 on-arrival: grand_coalition_failed = 1
 
-Unfortunately, the <span style="color: #E1C272;">**DVP**</span> and <span style="color: #A4C8D8;">**BVP**</span> are unwilling to enter into another coalition with the SPD, so the grand coalition is unable to be formed.
+Unfortunately, the <span style="color: #E1C272;">**DVP**</span> and <span style="color: #A4C8D8;">**BVP**</span> are unwilling to enter into another coalition with the <span style="color: #e64949;">**SPD**</span>, so the grand coalition is unable to be formed.
 
 - @no_majority: Thus, there is no clear majority.
 - @brauns_dilemma
@@ -1213,7 +1213,7 @@ view-if: labor_minister_party != "SPD"
 on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
 go-to: ministries
 
-Rudolf Wissell of the SPD has been appointed labor minister.
+Rudolf Wissell of the <span style="color: #e64949;">**SPD**</span> has been appointed labor minister.
 
 @interior
 title: Interior Ministry

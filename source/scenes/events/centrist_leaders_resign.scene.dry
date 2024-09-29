@@ -11,4 +11,4 @@ max-visits: 1
 
 Our policy choices have greatly offended the Centrist faction. Many of our most experienced leaders have resigned.
 
-[? if left_split = 1 : Many former Centrist Marxists have joined with the SAPD, the party formed by dissident leftists. They have brought their support base and organization skills to the party, leading to its growth as a nascent rival to the SPD for the support of the working class. ?]
+[? if left_split = 1 : Many former Centrist Marxists have joined with the SAPD, the party formed by dissident leftists. They have brought their support base and organization skills to the party, leading to its growth as a nascent rival to the <span style="color: #e64949;">**SPD**</span> for the support of the working class. ?]
