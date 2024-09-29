@@ -27,9 +27,9 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #d50000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #C43988;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #954B00;">Hitler</span> ?][? if president == "Göring": <span style="color: #954B00;">Göring</span> ?]
+President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #d50000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #8B0000;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #954B00;">Hitler</span> ?][? if president == "Göring": <span style="color: #954B00;">Göring</span> ?]
 
-Chancellor: [? if chancellor_party == "SPD": <span style="color: #d50000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #954B00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #C43988;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #d50000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #C43988;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #954B00;">**NSDAP**</span>) ?]
+Chancellor: [? if chancellor_party == "SPD": <span style="color: #d50000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #954B00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #8B0000;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #d50000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #8B0000;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #954B00;">**NSDAP**</span>) ?]
 
 Reichstag composition:
 
@@ -39,7 +39,7 @@ Reichstag composition:
 # 1928: 15, 1930: 15, 1932: 
 <span style="color: #000000;">**Z**</span> **+** <span style="color: #69A2BE;">**BVP**</span>: [+ z_r +]%
 # 1928: 10, 1930: 13
-<span style="color: #C43988;">**KPD**</span>: [+ kpd_r +]%
+<span style="color: #8B0000;">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DStP)
 <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
 # 1928: 9, 1930: 5
@@ -73,7 +73,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 <span style="color: #D3B454;">**DVP**</span>: [+ dvp_relation : relationships +]
 
-<span style="color: #C43988;">**KPD**</span>: [+ kpd_relation : relationships +]
+<span style="color: #8B0000;">**KPD**</span>: [+ kpd_relation : relationships +]
 
 <span style="color: #3F7BC1;">**DNVP**</span>: [+ dnvp_relation : relationships +]
 
@@ -100,9 +100,9 @@ Reformist strength: [+ reformist_strength : strength +], dissent: [+ reformist_d
 
 <span style="color: #d50000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-<span style="color: #C43988;">**RFB**</span> Strength: [+ rfb_strength +] thousand
+<span style="color: #8B0000;">**RFB**</span> Strength: [+ rfb_strength +] thousand
 
-<span style="color: #C43988;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
+<span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
 <span style="color: #3F7BC1;">**Stahlhelm**</span> Strength: [+ sh_strength +] thousand
 
@@ -134,7 +134,7 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>: [+ z_votes +]%
 
-<span style="color: #C43988;">**KPD**</span>: [+ kpd_votes +]%
+<span style="color: #8B0000;">**KPD**</span>: [+ kpd_votes +]%
 
 <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
 

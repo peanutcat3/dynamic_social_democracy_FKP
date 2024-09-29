@@ -81,7 +81,7 @@ go-to: menu
 <span style="color: #000000;">**Z**</span> + <span style="color: #69A2BE;">**BVP**</span>: [+ z_votes +]%
 
 # 1928: 10, 1930: 13
-<span style="color: #C43988;">**KPD**</span>: [+ kpd_votes +]%
+<span style="color: #8B0000;">**KPD**</span>: [+ kpd_votes +]%
 
 # 1928: 5, 1930: 4 (as DStP)
 <span style="color: #DCCA4A;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
@@ -133,7 +133,7 @@ Current relations: [+ dvp_relation : relationships +]
 
 Current relations: [+ dnvp_relation : relationships +]
 
-<span style="color: #C43988;">**KPD**</span> - *Kommunistische Partei Deutschlands* (German Communist Party) - a radical left-wing offshoot of the SPD that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a Soviet-style revolution.
+<span style="color: #8B0000;">**KPD**</span> - *Kommunistische Partei Deutschlands* (German Communist Party) - a radical left-wing offshoot of the SPD that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a Soviet-style revolution.
 
 Current relations: [+ kpd_relation : relationships +]
 
@@ -161,7 +161,7 @@ Strength: [+ rb_strength +] thousand
 
 Militarization: [+ rb_militancy : militancy +]
 
-**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the <span style="color: #C43988;">**KPD**</span>.
+**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the <span style="color: #8B0000;">**KPD**</span>.
 
 Strength: [+ rfb_strength +] thousand
 
