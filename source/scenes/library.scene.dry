@@ -34,15 +34,15 @@ go-to: menu
 
 **Demographic Groups**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are socialist, supporting either the <span style="color: #c00000;">**SPD**</span> or <span style="color: #7A2B5C;">**KPD**</span>. They make up 40-50% of the population.
+**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are <span style="color: #c00000;">socialists</span>, supporting either the <span style="color: #c00000;">**SPD**</span> or <span style="color: #7A2B5C;">**KPD**</span>. They make up 40-50% of the population.
 
-**Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the far right. 10-15% of the population.
+**Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the <span style="color: #2C517A;">far</span>-<span style="color: #7A3C00;">right</span>. 10-15% of the population.
 
-**New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of liberalism. 10-15% of the population.
+**New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of <span style="color: #E1D85D;">liberalism</span>. 10-15% of the population.
 
-**Rural**: Small and large farmers and independent rural workers. [? if rural_dnvp_normalized > rural_nsdap_normalized: Protestant farmers usually supports the DNVP?][? if rural_nsdap_normalized >= 25: Protestant farmers usually supports the DNVP, however the Nazis have gained a strong appeal among them?]. 20-30% of the population.
+**Rural**: Small and large farmers and independent rural workers. [? if rural_dnvp_normalized > rural_nsdap_normalized: Protestant farmers usually supports the <span style="color: #2C517A;">**DNVP**</span>?][? if rural_nsdap_normalized >= 25: Protestant farmers usually supports the <span style="color: #2C517A;">**DNVP**</span>, however the <span style="color: #7A3C00;">**Nazis**</span> have gained a strong appeal among them?]. 20-30% of the population.
 
-**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the Center Party (or the Bavarian People's Party in Bavaria).
+**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the <span style="color: #000000;">**Center Party**</span> (or the <span style="color: #4B758B;">**Bavarian People's Party**</span> in <span style="color: #00CCFF;">Bavaria</span>).
 
 **Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, [? if ddp_name == "DDP": mostly the DDP?][? if ddp_name == "DStP": although the mild antisemitism of the Young German Order and it's association with the DStP has driven them away?], although substantial numbers support the <span style="color: #c00000;">**SPD**</span> or <span style="color: #7A2B5C;">**KPD**</span>.
 
