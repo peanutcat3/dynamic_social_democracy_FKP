@@ -411,7 +411,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
-[? if achievement_weimar_coalition: **Weimarer Koalition** - form a <span style="color: #d50000;">We</span><span style="color: #d50000;">im</span><span style="color: #d50000;">ar</span> coalition. ?]
+[? if achievement_weimar_coalition: **Weimarer Koalition** - form a <span style="color: #DD0000;">We</span><span style="color: #000000;">im</span><span style="color: #FFCC00;">ar</span> coalition. ?]
 
 [? if achievement_majority_party: **Mehrheitspartei** - form an <span style="color: #d50000;">**SPD**</span>-only majority government. ?]
 
