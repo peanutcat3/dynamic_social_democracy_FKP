@@ -344,7 +344,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_equality: **Gleichheit** - pass reforms for women's rights. ?]
 
-[? if game_achievement_hirschfeld: **Hirschfeld** - pass reforms for deported <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">ex</span><span style="color: purple;">al</span> rights. ?]
+[? if game_achievement_hirschfeld: **Hirschfeld** - pass reforms for deported <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">s</span><span style="color: blue;">ex</span><span style="color: purple;">al</span> rights. ?]
 
 [? if game_achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
 
@@ -524,7 +524,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_equality: **Gleichheit** - pass reforms for women's rights. ?]
 
-[? if not achievement_hirschfeld: **Hirschfeld** - pass reforms for deported <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">ex</span><span style="color: purple;">al</span> rights. ?]
+[? if not achievement_hirschfeld: **Hirschfeld** - pass reforms for deported <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">s</span><span style="color: blue;">ex</span><span style="color: purple;">al</span> rights. ?]
 
 [? if not achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
 
