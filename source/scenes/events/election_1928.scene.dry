@@ -595,7 +595,7 @@ view-if: neo_weimar_coalition >= 50 and grand_coalition < 50
 choose-if: z_relation >= 50 and dvp_relation >= 30
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #4B758B;">BVP</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 50 : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if dvp_relation < 30 : We do not have adequate relations with the <span style="color: #C0A054;">**DVP**</span>. ?]
 
-How do we convince vehemently anti-socialist parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">**Center**</span> and <span style="color: #C0A054;">**DVP**</span> may allow us some leverage.
+How do we convince vehemently anti-<span style="color: #c00000;">socialist</span> parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">**Center**</span> and <span style="color: #C0A054;">**DVP**</span> may allow us some leverage.
 
 - @use_resources
 - @toleration_bruning: No. We will tolerate a minority government.
@@ -748,7 +748,7 @@ title: There is no clear governing majority.
 subtitle: President Braun faces a dilemma.
 view-if: president == "Braun" and (grand_coalition < 50 or grand_coalition_failed == 1)
 
-President Braun faces a dilemma. He desperately desires a socialist or at least democratic government, but the electoral results are not there for such. Article 48 has been used by Hindenburg to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
+President Braun faces a dilemma. He desperately desires a <span style="color: #c00000;">socialist</span> or at least <span style="color: #E1D85D;">democratic</span> government, but the electoral results are not there for such. Article 48 has been used by Hindenburg to promulgate anti-<span style="color: #E1D85D;">democratic</span> and anti-<span style="color: #c00000;">worker</span> policies; can Article 48 be used for good as well as evil?
 
 - @emergency_braun: We will form an emergency government with Braun's support.
 - @new_elections: We will have new elections.
@@ -819,7 +819,7 @@ on-arrival: sh_strength += 150; sa_strength += 150; sh_militancy += 0.05; sa_mil
 
 The far-right parties, seeing that we are willing to deny them government by questionably democratic means, have decided that they can only take power by undemocratic means, and have risen up in force against the sitting government.
 
-Their numbers are bolstered by the many government workers who are against the prospect of a unified Socialist government. Police and soldiers defect to the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #2C517A;">**Stahlhelm**</span>.
+Their numbers are bolstered by the many government workers who are against the prospect of a unified <span style="color: #c00000;">Socialist</span> government. Police and soldiers defect to the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #2C517A;">**Stahlhelm**</span>.
 
 - @civil_war: It is war.
 

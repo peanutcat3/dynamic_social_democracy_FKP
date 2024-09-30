@@ -17,7 +17,7 @@ Breitscheid is a long-time <span style="color: #c00000;">**SPD**</span> leader, 
 
 @breitscheid_international
 title: International Party Relations
-subtitle: Breitscheid is one of our contacts with international socialist parties.
+subtitle: Breitscheid is one of our contacts with international <span style="color: #c00000;">socialist</span> parties.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; international_relations_timer -= 12;

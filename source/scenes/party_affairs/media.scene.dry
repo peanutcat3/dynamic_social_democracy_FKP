@@ -32,7 +32,7 @@ title: The purpose of our media is to elect more Social Democrats.
 subtitle: Our newspapers will focus on the electoral campaign.
 on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
 
-Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
+Our campaign media is mostly reaching the workers who are already saturated with <span style="color: #c00000;">Socialist</span> propaganda, but it must be doing *something*, or at least that is what we hope.
 
 @ideological
 title: We will have vibrant ideological debate within our newspapers.

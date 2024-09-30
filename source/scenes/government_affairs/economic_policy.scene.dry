@@ -97,9 +97,9 @@ achievement: wirtschaftspolitik
 
 [? if nationalization_progress == 1 : We have begun purchasing idling enterprises from the capitalists[? if works_councils >= 1: , and running them in coordination with empowered works councils ?]. By keeping production going, we can stave off the rising unemployment. ?]
 
-[? if nationalization_progress == 1 : The Left argues that this should only be a first step in the socialist transformation of the economy. Eventually, much of the economy must be brought under popular control. ?]
+[? if nationalization_progress == 1 : The Left argues that this should only be a first step in the <span style="color: #c00000;">socialist</span> transformation of the economy. Eventually, much of the economy must be brought under popular control. ?]
 
-[? if nationalization_progress > 1 : We purchase additional underutilized enterprises and run them in a coordinated socialist fashion with the works councils, hiring formerly laid off workers. A significant portion of the economy is now under public control. ?]
+[? if nationalization_progress > 1 : We purchase additional underutilized enterprises and run them in a coordinated <span style="color: #c00000;">socialist</span> fashion with the works councils, hiring formerly laid off workers. A significant portion of the economy is now under public control. ?]
 
 @nationalize_deficit
 
@@ -123,9 +123,9 @@ achievement: wirtschaftspolitik
 
 [? if nationalization_progress == 1 : We have begun purchasing idling enterprises from the capitalists[? if works_councils >= 1: , and running them in coordination with empowered works councils ?]. By keeping production going, we can stave off the rising unemployment. ?]
 
-[? if nationalization_progress == 1 : The Left argues that this should only be a first step in the socialist transformation of the economy. Eventually, much of the economy must be brought under popular control. ?]
+[? if nationalization_progress == 1 : The Left argues that this should only be a first step in the <span style="color: #c00000;">socialist</span> transformation of the economy. Eventually, much of the economy must be brought under popular control. ?]
 
-[? if nationalization_progress > 1 : We purchase additional underutilized enterprises and run them in a coordinated socialist fashion with the works councils, hiring formerly laid off workers. A significant portion of the economy is now under public control. ?]
+[? if nationalization_progress > 1 : We purchase additional underutilized enterprises and run them in a coordinated <span style="color: #c00000;">socialist</span> fashion with the works councils, hiring formerly laid off workers. A significant portion of the economy is now under public control. ?]
 
 @nationalize_without_compensation
 title: Nationalize without compensation.
@@ -139,7 +139,7 @@ The capitalists are, predictably, up in arms about our policy of nationalization
 
 [? if nationalization_progress == 1 : We have begun acquiring idling enterprises from the capitalists[? if works_councils >= 1: , and running them in coordination with empowered works councils ?]. By keeping production going, we can stave off the rising unemployment. ?]
 
-[? if nationalization_progress > 1 : We acquired additional underutilized enterprises and run them in a coordinated socialist fashion with the works councils, hiring formerly laid off workers. A significant portion of the economy is now under public control. ?]
+[? if nationalization_progress > 1 : We acquired additional underutilized enterprises and run them in a coordinated <span style="color: #c00000;">socialist</span> fashion with the works councils, hiring formerly laid off workers. A significant portion of the economy is now under public control. ?]
 
 @empower_workers
 title: Empower workers to take over factories.
