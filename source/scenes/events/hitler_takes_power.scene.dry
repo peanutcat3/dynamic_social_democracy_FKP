@@ -7,7 +7,7 @@ new-page: true
 
 [? if hitler_deported and president != "Hitler" and chancellor != "Hitler": The first act that Chancellor [+ chancellor +] takes upon assuming office is bringing Adolf Hitler back to Germany, and giving him citizenship and an official cabinet position. ?]
 
-Hitler has promised a campaign of revenge against the <span style="color: #c00000;">socialists</span>, and the <span style="color: #7A3C00;">Nazis</span> have already spilled much blood on the streets. In his published manifesto, he promises a campaign of unspeakable horror against our <span style="color: #005EB8;">Jews</span>, and endless wars of violent expansion that will ruin all of Europe.
+Hitler has promised a campaign of revenge against the <span style="color: #c00000;">socialists</span>, and the <span style="color: #7A3C00;">Nazis</span> have already spilled much blood on the streets. In his published manifesto, he promises a campaign of <span style="color: #7e0000;">**unspeakable**</span> <span style="color: #3f0000;">**horror**</span> against our <span style="color: #005EB8;">Jews</span>, and endless wars of violent expansion that will ruin all of Europe.
 
 What are we to do now?
 
