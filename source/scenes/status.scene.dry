@@ -100,9 +100,9 @@ Reformist strength: [+ reformist_strength : strength +], dissent: [+ reformist_d
 
 <span style="color: #c00000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-<span style="color: #7A2B5C;">**RFB**</span> Strength: [+ rfb_strength +] thousand
+<span style="color: #8B0000;">**RFB**</span> Strength: [+ rfb_strength +] thousand
 
-<span style="color: #7A2B5C;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
+<span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
 <span style="color: #2C517A;">**Stahlhelm**</span> Strength: [+ sh_strength +] thousand
 

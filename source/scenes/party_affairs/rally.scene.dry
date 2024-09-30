@@ -9,7 +9,7 @@ go-to: main_rally; sa_disrupt if sa_strength > 180
 
 @sa_disrupt
 
-The Nazi SA has disrupted our rally! Their street troops are preventing us from meeting.
+The <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has disrupted our rally! Their street troops are preventing us from meeting.
 
 - @police_protect: Call the police to protect our rally.
 - @rb_protect: Use the Reichsbanner to protect our rally.
@@ -28,7 +28,7 @@ The police successfully protected our rally, so it can go ahead as usual.
 @police_protect_lose
 on-arrival: workers_nsdap += 3
 
-Unfortunately, the police were unable or unwilling to hold back the SA mob. The Nazis have won this show of strength.
+Unfortunately, the police were unable or unwilling to hold back the <span style="color: #7A3C00;">**SA**</span> mob. The <span style="color: #7A3C00;">Nazis</span> have won this show of strength.
 
 @rb_protect
 on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy;
@@ -37,25 +37,25 @@ go-to: rb_protect_win if rb_success >= 0; rb_protect_lose if rb_success < 0
 @rb_protect_win
 go-to: main_rally
 
-The Reichsbanner has successfully protected our rally against the SA! Our meeting can go head as usual.
+The Reichsbanner has successfully protected our rally against the <span style="color: #7A3C00;">**SA**</span>! Our meeting can go head as usual.
 
 @rb_protect_lose
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
-Unfortunately, the Reichsbanner was not able to hold back the SA mob. The Nazis have won this show of strength.
+Unfortunately, the Reichsbanner was not able to hold back the <span style="color: #7A3C00;">**SA**</span> mob. The <span style="color: #7A3C00;">Nazis</span> have won this show of strength.
 
 @cancel
 on-arrival: workers_nsdap += 3;
 
-The SA have won this show of strength.
+The <span style="color: #7A3C00;">**SA**</span> have won this show of strength.
 
 @main_rally
 
-Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
+Mass rallies are a common feature of <span style="color: #c00000;">social democratic</span> life, especially in the lead-up to an election. What is the primary theme of this rally?
 
 - @class_struggle: The class struggle of the proletariat against the bourgeoisie.
 - @welfare: Sozialpolitik - the maintenance and expansion of social welfare programs.
-- @democracy: Expanding our nascent democracy and defending it against dictatorship and fascism.
+- @democracy: Expanding our nascent democracy and defending it against <span style="color: #808080;">dictatorship</span> and <span style="color: #7A3C00;">fascism</span>.
 - @pacifism: Opposing war, nationalism, and militarism at all costs.
 - @wtb: Support the WTB plan!
 - @local: A mixture of various local and national concerns that resonate most with the audience.
@@ -69,12 +69,12 @@ Our message of class struggle appeals to the left wing of the working class, whi
 @welfare
 on-arrival: workers_spd += 3*(1-dissent); workers_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;
 
-The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
+The reformist message appeals to the organized workers, whose benefits are the accomplishments of <span style="color: #c00000;">social democracy</span>. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
 
 @democracy
 on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_spd += 4*(1-dissent) if democratization >= 3; unemployed_spd += 3*(1-dissent) if democratization >= 3; pro_republic += 4*(1 - dissent) if democratization >= 3; new_middle_spd += 4*(1-dissent) if democratization >= 3 
 
-Our speakers defend the republican system and rail against the monarchists and authoritarians who threaten it.
+Our speakers defend the republican system and rail against the <span style="color: #808080;">monarchists</span> and <span style="color: #7A3C00;">authoritarians</span> who threaten it.
 
 [? if democratization < 3 : Talk of democracy does not excite the workers as much as more practical issues. But that may change; part of our job is to provide political education to the proletariat. ?]
 [? if democratization >= 3 : Since we have consistently made democratization a theme of our campaign, the workers are enthusiastic about our message. ?]

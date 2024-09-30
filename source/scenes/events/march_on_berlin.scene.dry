@@ -9,13 +9,13 @@ tags: event
 
 = March on Berlin
 
-The far right is mobilizing. Paramilitary forces of the Stahlhelm and SA, organized under the Harzburg Front, have marched on Berlin, threatening to violently overthrow the government.
+The far right is mobilizing. Paramilitary forces of the <span style="color: #2C517A;">**Stahlhelm**</span> and <span style="color: #7A3C00;">**SA**</span>, organized under the Harzburg Front, have marched on Berlin, threatening to violently overthrow the government.
 
 They demand either immediate elections under the "supervision" of the nationalist paramilitaries, or else the immediate resignation of the government and the appointment of Adolf Hitler as chancellor[? if hitler_deported : , and the revocation of his deportation ?]. It is obvious that they are threatening a civil war if their demands are not met.
 
 @non_govt_menu
 
-It appears that President [+ president +] is looking favorably upon the fascist proposals. Chancellor [+ chancellor +] has announced plans to resign.
+It appears that President [+ president +] is looking favorably upon the <span style="color: #7A3C00;">fascist</span> proposals. Chancellor [+ chancellor +] has announced plans to resign.
 
 - @fight
 - @accept
@@ -27,7 +27,7 @@ go-to: accept_election if nsdap_normalized + dnvp_normalized >= 0.45; accept_hit
 @accept_election
 on-arrival: next_election_time = time + 1 if next_election_time > time+1; next_election_month = month + 1 if next_election_time >= time+1; next_election_year = year if next_election_time >= time+1; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; old_middle_nsdap += 10; new_middle_nsdap += 10; workers_nsdap += 10; rural_nsdap += 10; unemployed_nsdap += 8; workers_spd -= 10; workers_kpd -= 10; sa_strength += 100;
 
-President [+ president +] has called for emergency elections, to be held next month, under a caretaker government. The SA is permitted to act with impunity, intimidating voters into supporting the fascists.
+President [+ president +] has called for emergency elections, to be held next month, under a caretaker government. The <span style="color: #7A3C00;">**SA**</span> is permitted to act with impunity, intimidating voters into supporting the <span style="color: #7A3C00;">fascists</span>.
 
 
 @accept_hitler
@@ -47,7 +47,7 @@ President [+ president +] has asked our government to resign.
 
 # TODO: if Hindenburg is president, he will always ask the govt to resign. If the SPD refuses, this causes a constitutional crisis. If there is a constitutional crisis, then if judicial reform >= 4, then the courts intervene against Hindenburg and preserves the government.
 
-# if Reichsbanner + Prussian Police >= SA + Stahlhelm, then the fascists retreat.
+# if Reichsbanner + Prussian Police >= <span style="color: #7A3C00;">**SA**</span> + <span style="color: #2C517A;">**Stahlhelm**</span>, then the <span style="color: #7A3C00;">fascists</span> retreat.
 
 @govt_menu
 
@@ -55,27 +55,27 @@ President [+ president +] has asked our government to resign.
 - @new_elections
 
 @fight
-title: Deploy the Reichsbanner and call a general strike to resist the fascists!
+title: Deploy the Reichsbanner and call a general strike to resist the <span style="color: #7A3C00;">fascists</span>!
 on-arrival: defense_strength = rb_strength*rb_militancy*(1-dissent/2); defense_strength += prussian_police_strength*prussian_police_militancy*prussian_police_loyalty if spd_prussia; enemy_strength = sa_strength*sa_militancy + sh_strength*sh_militancy; defense_strength += workers_spd_normalized*(2 - dissent)*(2 - unemployed/100); defense_strength += reichswehr_strength*reichswehr_loyalty*reichswehr_militancy if president=="Braun" and spd_in_government
 go-to: fight_2_win if defense_strength >= enemy_strength; fight_2_pre_civil_war if defense_strength < enemy_strength
 
-The Reichsbanner number at [+ rb_strength +] thousand; many are in Berlin to counter the fascist demonstration.
+The Reichsbanner number at [+ rb_strength +] thousand; many are in Berlin to counter the <span style="color: #7A3C00;">fascist</span> demonstration.
 
-[? if spd_prussia: The Prussian police has been deployed against the fascists. ?] [? if spd_in_government and president == "Braun" : The portions of the Reichswehr that are loyal are also deployed. ?]
+[? if spd_prussia: The Prussian police has been deployed against the <span style="color: #7A3C00;">fascists</span>. ?] [? if spd_in_government and president == "Braun" : The portions of the Reichswehr that are loyal are also deployed. ?]
 
 
 @fight_2_win
 on-arrival: coup_progress = 0; sa_strength *= 0.6; sh_strength *= 0.6; workers_nsdap -= 12*(1-dissent); unemployed_nsdap -= 10*(1-dissent); new_middle_nsdap -= 6*(1-dissent); workers_spd += 8*(1-dissent); unemployed_spd += 6*(1-dissent); pro_republic += 15
 achievement: drei_pfeile
 
-Our forces confront the fascists, and somehow, the fascists retreat! They were overwhelmed by our display of strength, and have chosen to slink away. The attempted coup is over, at least for now.
+Our forces confront the <span style="color: #7A3C00;">fascists</span>, and somehow, the <span style="color: #7A3C00;">fascists</span> retreat! They were overwhelmed by our display of strength, and have chosen to slink away. The attempted coup is over, at least for now.
 
-The show of force has reinvigorated support for the republic and for the <span style="color: #c00000;">**SPD**</span>, and has weakened the fascists.
+The show of force has reinvigorated support for the republic and for the <span style="color: #c00000;">**SPD**</span>, and has weakened the <span style="color: #7A3C00;">fascists</span>.
 
 
 @fight_2_pre_civil_war
 
-Our forces confront the fascists on the streets of Berlin, and armed fighting erupts. Neither side is dislodged from their positions.
+Our forces confront the <span style="color: #7A3C00;">fascists</span> on the streets of Berlin, and armed fighting erupts. Neither side is dislodged from their positions.
 
 - @civil_war: It is a civil war.
 
@@ -85,7 +85,7 @@ title: This is unconstitutional! We will keep our positions in government, and a
 choose-if: judicial_reform >= 3
 unavailable-subtitle: The judiciary would never agree with us.
 
-The courts agree that President [+ president +] is wrong to dismiss us, and that we should remin in the government. The President might respect the court's decision for now, but the fascists in the streets do not. They are still demanding snap elections or the resignation of the government, and will remain in the streets until we either meet their demands, or they are forced out.
+The courts agree that President [+ president +] is wrong to dismiss us, and that we should remain in the government. The President might respect the court's decision for now, but the <span style="color: #7A3C00;">fascists</span> in the streets do not. They are still demanding snap elections or the resignation of the government, and will remain in the streets until we either meet their demands, or they are forced out.
 
 - @new_elections
 - @fight
@@ -103,7 +103,7 @@ go-to: new_elections_braun_2 if nsdap_normalized + dnvp_normalized >= 0.5; new_e
 
 @new_elections_braun_reject
 
-The fascists reject our offer of free and fair elections. They are demanding that President [+ president +] dismisses the current government and appoints Hitler chancellor.
+The <span style="color: #7A3C00;">fascists</span> reject our offer of free and fair elections. They are demanding that President [+ president +] dismisses the current government and appoints Hitler chancellor.
 
 - @braun_appoints_hitler
 - @fight
@@ -111,13 +111,13 @@ The fascists reject our offer of free and fair elections. They are demanding tha
 @new_elections_braun_2
 go-to: new_elections_2
 
-The fascists seem to believe that they would win an election if one were to be held now, so they agree to our holding an election for next month.
+The <span style="color: #7A3C00;">fascists</span> seem to believe that they would win an election if one were to be held now, so they agree to our holding an election for next month.
 
 
 @new_elections_hindenburg
 go-to: new_elections_2
 
-With the mediation of various establishment figures, new elections are called for next month, without the use of fascist "electoral monitors".
+With the mediation of various establishment figures, new elections are called for next month, without the use of <span style="color: #7A3C00;">fascists</span> "electoral monitors".
 
 
 @new_elections_2
@@ -126,7 +126,7 @@ on-arrival: next_election_time = time + 1 if next_election_time > time+1; next_e
 
 @new_elections_hindenburg_reject
 
-Influenced by his inner circle and by the fascists in the streets, President Hindenburg rejects our offer of new free and fair elections, and again demands that we resign. There is no arguing.
+Influenced by his inner circle and by the <span style="color: #7A3C00;">fascists</span> in the streets, President Hindenburg rejects our offer of new free and fair elections, and again demands that we resign. There is no arguing.
 
 - @resign
 - @fight

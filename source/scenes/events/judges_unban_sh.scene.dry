@@ -1,7 +1,7 @@
-title: Stahlhelm unbanned
-subtitle: The judges have re-legalized the Stahlhelm.
+title: <span style="color: #2C517A;">**Stahlhelm**</span> unbanned
+subtitle: The judges have re-legalized the <span style="color: #2C517A;">**Stahlhelm**</span>.
 view-if: sh_banned == 1 and sh_ban_timer == 0 and judicial_reform < 2
 on-arrival: sh_banned = 0; sh_strength += 100; sh_militancy += 0.01
 tags: event
 
-Judges have ordered the Stahlhelm to be re-legalized. They immediately return to mass recruiting.
+Judges have ordered the <span style="color: #2C517A;">**Stahlhelm**</span> to be re-legalized. They immediately return to mass recruiting.

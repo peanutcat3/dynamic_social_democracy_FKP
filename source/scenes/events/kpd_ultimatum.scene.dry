@@ -54,7 +54,7 @@ At the start of this government, the <span style="color: #7A2B5C;">**KPD**</span
 
 [? if labor_goal = 1 : - Support workers in labor disputes. - [? if labor_goal_completed : success ?][? if not labor_goal_completed: failed ?] ?]
 
-[? if foreign_goal = 1 : - Improve our relations with the Soviet Union. - [? if foreign_goal_completed : success ?][? if not foreign_goal_completed: failed ?] ?]
+[? if foreign_goal = 1 : - Improve our relations with the <span style="color: #750e0e;">Soviet Union</span>. - [? if foreign_goal_completed : success ?][? if not foreign_goal_completed: failed ?] ?]
 
 [? if reichswehr_goal = 1 : - Reduce funding for the Reichswehr. - [? if reichswehr_goal_completed : success ?][? if not reichswehr_goal_completed: failed ?] ?]
 

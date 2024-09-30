@@ -87,9 +87,9 @@ go-to: war_menu
 
 = The Array of Forces
 
-Our enemies are the nationalist Stahlhelm, with [+ sh_strength +] thousand troops, and the Nazi SA, with [+ sa_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
+Our enemies are the <span style="color: #808080;">nationalist</span> <span style="color: #2C517A;">**Stahlhelm**</span>, with [+ sh_strength +] thousand troops, and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span>, with [+ sa_strength +] thousand troops. The loyalties of the Reichswehr, with its [+ reichswehr_strength +] thousand regular soldiers, and Prussian police, with [+ prussian_police_strength +] thousand members, are unclear.
 
-[? if chancellor_party == "KPD" or president == "Thälmann" : The <span style="color: #7A2B5C;">**KPD**</span>'s paramilitary, the RFB, is leading the battle, and we are their co-combatants. ?]
+[? if chancellor_party == "KPD" or president == "Thälmann" : The <span style="color: #7A2B5C;">**KPD**</span>'s paramilitary, the <span style="color: #8B0000;">**RFB**</span>, is leading the battle, and we are their co-combatants. ?]
 
 On our side, we have the Reichsbanner, at [+ rb_strength +] thousand members. [? if dissent > 0.15 and dissent <= 0.25: It is somewhat weakened by dissent within the party, and some members choose not to fight. ?][? if dissent > 0.25 and dissent < 0.5: It is weakened by dissent within the party, and many members choose not to fight. ?][? if dissent >= 0.5: It is heavily weakened by dissent within the party, and a substantial portion of members choose not to fight. ?]
 
@@ -120,7 +120,7 @@ view-if: chancellor_party != "KPD" and president != "Thälmann"
 go-to: war_menu
 on-arrival: war_choices += 1
 
-There are [+ rfb_strength +] thousand fighters with the Communist RFB, in addition to the workers who support the <span style="color: #7A2B5C;">**KPD**</span>.
+There are [+ rfb_strength +] thousand fighters with the <span style="color: #7A2B5C;">Communist</span> <span style="color: #8B0000;">**RFB**</span>, in addition to the workers who support the <span style="color: #7A2B5C;">**KPD**</span>.
 
 [? if kpd_relation >= 60 : The <span style="color: #7A2B5C;">**KPD**</span> is entirely on our side, owing to our good relations.. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Most of the <span style="color: #7A2B5C;">**KPD**</span> is on our side, due to their good relations with us. ?][? if kpd_relation < 45 : The <span style="color: #7A2B5C;">**KPD**</span> does not support us. ?]
 
@@ -129,7 +129,7 @@ max-visits: 1
 go-to: war_menu
 on-arrival: war_choices += 1
 
-A general strike stopped the Kapp Putsch in 1920, and it can stop fascism today. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
+A general strike stopped the Kapp Putsch in 1920, and it can stop <span style="color: #7A3C00;">fascism</span> today. [? if normalized_workers_total > 70 : The workers are largely united with us. ?][? if normalized_workers_total >= 50 and normalized_workers_total <= 70 : There is some dissent within labor, but a majority of workers support the general strike. ?][? if normalized_workers_total > 30 and normalized_workers_total < 50 : However, there is substantial dissent within labor, and less than half support the general strike. ?][? if normalized_workers_total <= 30 : However, labor is deeply divided, and most workers do not heed the call to strike. ?]
 
 
 @loyal_police
@@ -159,7 +159,7 @@ go-to: defeat if total_defeat = 1; long_war if long_war = 1; republic_victory if
 
 = Total Defeat
 
-Our forces are no match for those of the reactionaries. Reichsbanner fighters are quickly overpowered by the forces of the Stahlhelm, SA, and Reichswehr. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the reactionaries take absolute power over Germany.
+Our forces are no match for those of the reactionaries. Reichsbanner fighters are quickly overpowered by the forces of the <span style="color: #2C517A;">**Stahlhelm**</span>, <span style="color: #7A3C00;">**SA**</span>, and Reichswehr. Many are killed before the rest surrender. Our remaining leaders flee the country or face execution, as the reactionaries take absolute power over Germany.
 
 Our resistance will be recorded in the history books, and in the future, our names will be honored. But for now, all is lost.
 
@@ -184,9 +184,9 @@ While we might want to call for foreign assistance, the foreign powers see the "
 
 @long_war_intervention
 
-- @west_aid: Perhaps we can receive aid from the Western powers, France and Britain.
-- @soviet_aid: Perhaps we can receive aid from the Soviet Union.
-- @east_aid: Perhaps our eastern neighbors, Poland and Czechoslovakia, can help us. If they know anything, they do not want fascists coming to power in Germany.
+- @west_aid: Perhaps we can receive aid from the Western powers, <span style="color: #002654;">France</span> and <span style="color: #C8102E;">Britain</span>.
+- @soviet_aid: Perhaps we can receive aid from the <span style="color: #750e0e;">Soviet Union</span>.
+- @east_aid: Perhaps our eastern neighbors, <span style="color: #DC143C;">Pol</span><span style="color: #FFFFFF;">and</span> and <span style="color: #11457E;">Czech</span><span style="color: #FFFFFF;">oslo</span><span style="color: #D7141A;">vakia</span>, can help us. If they know anything, they do not want <span style="color: #7A3C00;">fascists</span> coming to power in Germany.
 - @game_over: Game over.
 
 @west_aid
@@ -205,7 +205,7 @@ unavailable-subtitle: Our relations are not strong enough.
 max-visits: 1
 go-to: long_war_intervention
 
-We send a call for help to the Soviet Union. The <span style="color: #7A2B5C;">**KPD**</span> receives the bulk of the aid, while the Reichsbanner and our loyal military units are left floundering. If we win, this does not bode well for our future.
+We send a call for help to the <span style="color: #750e0e;">Soviet Union</span>. The <span style="color: #7A2B5C;">**KPD**</span> receives the bulk of the aid, while the Reichsbanner and our loyal military units are left floundering. If we win, this does not bode well for our future.
 
 @east_aid
 choose-if: east_relation >= 2
@@ -214,13 +214,13 @@ unavailable-subtitle: Our relations are not strong enough.
 max-visits: 1
 go-to: long_war_intervention
 
-Poland and Czechoslovakia are largely too absorbed in their own problems to be of much help, but weapons and volunteers filter through the parts of the borders that we control.
+<span style="color: #DC143C;">Pol</span><span style="color: #FFFFFF;">and</span> and <span style="color: #11457E;">Czech</span><span style="color: #FFFFFF;">oslo</span><span style="color: #D7141A;">vakia</span> are largely too absorbed in their own problems to be of much help, but weapons and volunteers filter through the parts of the borders that we control.
 
 @republic_victory
 
 = Victory for the Republic
 
-The battle lines hold, and the SA, Stahlhelm, and pro-coup Reichswehr forces are defeated. Today, the forces of the republic prevail over the fascists and the reactionaries. There is a new revolution in Germany. Let us hope it produces a longer-lasting peace than the previous one.
+The battle lines hold, and the <span style="color: #7A3C00;">**SA**</span>, <span style="color: #2C517A;">**Stahlhelm**</span>, and pro-coup Reichswehr forces are defeated. Today, the forces of the republic prevail over the <span style="color: #7A3C00;">fascists</span> and the <span style="color: #2C517A;">reactionaries</span>. There is a new revolution in Germany. Let us hope it produces a longer-lasting peace than the previous one.
 
 - @game_over: Game over.
 

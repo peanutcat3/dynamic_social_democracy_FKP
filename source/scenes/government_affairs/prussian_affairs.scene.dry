@@ -15,12 +15,12 @@ We can enact policies in Prussia.
 - @police_loyalty: Bolster the loyalty of the police.
 - @police_strength: Recruit additional police.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
-- @ban_sa: Ban the SA, the Nazi paramilitary group.
-- @unban_sa: Reverse the SA ban.
-- @ban_rfb: Ban the RFB, the Communist paramilitary.
-- @unban_rfb: Reverse the RFB ban.
-- @ban_sh: Ban the Stahlhelm, the Nationalist paramilitary.
-- @unban_sh: Reverse the Stahlhelm ban.
+- @ban_sa: Ban the <span style="color: #7A3C00;">**SA**</span>, the Nazi paramilitary group.
+- @unban_sa: Reverse the <span style="color: #7A3C00;">**SA**</span> ban.
+- @ban_rfb: Ban the <span style="color: #8B0000;">**RFB**</span>, the Communist paramilitary.
+- @unban_rfb: Reverse the <span style="color: #8B0000;">**RFB**</span> ban.
+- @ban_sh: Ban the <span style="color: #2C517A;">**Stahlhelm**</span>, the Nationalist paramilitary.
+- @unban_sh: Reverse the <span style="color: #2C517A;">**Stahlhelm**</span> ban.
 - @negotiate_concordat: Negotiate a concordat with the Vatican.
 - @sign_concordat: Sign a concordat with the Vatican.
 - @root: No new policies are needed.

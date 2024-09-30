@@ -7,7 +7,7 @@ new-page: true
 
 [? if hitler_deported and president != "Hitler" and chancellor != "Hitler": The first act that Chancellor [+ chancellor +] takes upon assuming office is bringing Adolf Hitler back to Germany, and giving him citizenship and an official cabinet position. ?]
 
-Hitler has promised a campaign of revenge against the socialists, and the Nazis have already spilled much blood on the streets. In his published manifesto, he promises a campaign of unspeakable horror against our Jews, and endless wars of violent expansion that will ruin all of Europe.
+Hitler has promised a campaign of revenge against the <span style="color: #c00000;">socialists</span>, and the <span style="color: #7A3C00;">Nazis</span> have already spilled much blood on the streets. In his published manifesto, he promises a campaign of unspeakable horror against our <span style="color: #005EB8;">Jews</span>, and endless wars of violent expansion that will ruin all of Europe.
 
 What are we to do now?
 
@@ -24,9 +24,9 @@ Do we realize that this means civil war, against the full force of the state?
 
 @give_up
 
-Speeches are made. Votes are held. Bullets fly in the streets. Some socialists are killed or jailed. Others flee the country. What can votes even do at this juncture?
+Speeches are made. Votes are held. Bullets fly in the streets. Some <span style="color: #c00000;">socialists</span> are killed or jailed. Others flee the country. What can votes even do at this juncture?
 
-The Reichstag is burned, ostensibly by a foreign communist. In the wake, the Nazis pass decrees giving them unlimited power. They, combined with the <span style="color: #2C517A;">**DNVP**</span>, will win a majority at the next elections.
+The Reichstag is burned, ostensibly by a foreign <span style="color: #7A2B5C;">communist</span>. In the wake, the <span style="color: #7A3C00;">Nazis</span> pass decrees giving them unlimited power. They, combined with the <span style="color: #2C517A;">**DNVP**</span>, will win a majority at the next elections.
 
 Germany is lost.
 

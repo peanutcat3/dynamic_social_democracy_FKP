@@ -9,7 +9,7 @@ new-page: true
 
 Internal scheming by the camarilla surrounding the president has caused President Hindenburg to appoint Hitler as chancellor, replacing the unpopular [+ chancellor +]. [? if hitler_deported : Despite his earlier deportation, the Nazi leaders and their reactionary allies have connived for the president to give him German citizenship after all. ?] Some of the reactionaries surrounding Hindenburg believe that he will restore Germany to its supposed former glory, while others believe that they can control him and his movement.
 
-He has promised a campaign of revenge against the socialists, and the Nazis have already spilled blood. In his published manifesto, he promises a campaign of unspeakable horror against Jews, and endless wars of violent expansion that will ruin all of Europe.
+He has promised a campaign of revenge against the <span style="color: #c00000;">socialists</span>, and the <span style="color: #7A3C00;">Nazis</span> have already spilled blood. In his published manifesto, he promises a campaign of unspeakable horror against <span style="color: #005EB8;">Jews</span>, and endless wars of violent expansion that will ruin all of Europe.
 
 What are we to do now?
 
@@ -26,9 +26,9 @@ Do we realize that this means civil war, against the full force of the state?
 
 @give_up
 
-Speeches are made. Votes are held. Bullets fly in the streets. Some socialists are killed or jailed. Others flee the country. What can votes even do at this juncture?
+Speeches are made. Votes are held. Bullets fly in the streets. Some <span style="color: #c00000;">socialists</span> are killed or jailed. Others flee the country. What can votes even do at this juncture?
 
-The Reichstag is burned, ostensibly by a foreign communist. In the wake, the Nazis pass decrees giving them unlimited power. They, combined with the <span style="color: #2C517A;">**DNVP**</span>, will win a majority at the next elections.
+The Reichstag is burned, ostensibly by a foreign <span style="color: #7A2B5C;">communist</span>. In the wake, the <span style="color: #7A3C00;">Nazis</span> pass decrees giving them unlimited power. They, combined with the <span style="color: #2C517A;">**DNVP**</span>, will win a majority at the next elections.
 
 Germany is lost.
 

@@ -391,7 +391,7 @@ view-if: far_right_coalition >= 50
 go-to: far_right_win if (year >= 1932 or nsdap_r >= 44) and president != "Braun"; far_right_fail if (year < 1932 and nsdap_r < 44) and president != "Braun"; far_right_braun if president == "Braun"
 priority: 2
 
-There are enough votes for the Nazis and the <span style="color: #2C517A;">**DNVP**</span> to form a coalition. [+ nsdap_leader +] has made his participation in government contingent on being appointed chancellor. It is up to President [+ president +] to decide.
+There are enough votes for the <span style="color: #7A3C00;">Nazis</span> and the <span style="color: #2C517A;">**DNVP**</span> to form a coalition. [+ nsdap_leader +] has made his participation in government contingent on being appointed chancellor. It is up to President [+ president +] to decide.
 
 @far_right_win
 on-arrival: chancellor = nsdap_leader; chancellor_party = "NSDAP"
@@ -404,22 +404,22 @@ on-arrival: chancellor = nsdap_leader; chancellor_party = "NSDAP"
 @far_right_fail
 on-arrival: chancellor = "Schleicher"; chancellor_party = "I"; pro_republic -= 10; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12;
 
-The reactionary establishment is still very skeptical of the Nazis, so instead, [+ president +] appoints Kurt von Schleicher, a former general, as chancellor, to try to "tame" the Nazis.
+The reactionary establishment is still very skeptical of the <span style="color: #7A3C00;">Nazis</span>, so instead, [+ president +] appoints Kurt von Schleicher, a former general, as chancellor, to try to "tame" the <span style="color: #7A3C00;">Nazis</span>.
 
-Schleicher's government is deeply unpopular among all parties of the Reichstag. Despite his support for a coalition with the <span style="color: #7A3C00;">**NSDAP**</span>, the Nazis want power all to themselves, without Schleicher.
+Schleicher's government is deeply unpopular among all parties of the Reichstag. Despite his support for a coalition with the <span style="color: #7A3C00;">**NSDAP**</span>, the <span style="color: #7A3C00;">Nazis</span> want power all to themselves, without Schleicher.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @far_right_braun
 on-arrival: coup_progress += 2
 
-President Braun faces a dilemma. Is it "democratic" to let democracy be destroyed, if the majority of voters have willed it so? Some, even on the left, suggest that the Nazis would not *truly* be as horrific as their platform suggests, and that giving them power would let them discredit themselves in the eyes of the public.
+President Braun faces a dilemma. Is it "democratic" to let democracy be destroyed, if the majority of voters have willed it so? Some, even on the left, suggest that the <span style="color: #7A3C00;">Nazis</span> would not *truly* be as horrific as their platform suggests, and that giving them power would let them discredit themselves in the eyes of the public.
 
 Alternatively, Braun could use the emergency powers of the presidency. Article 48 has been used by Hindenburg to promulgate anti-democratic and anti-worker policies; can Article 48 be used for good as well as evil?
 
 - @emergency_braun: We will form an emergency government with Braun's support.
 - @new_elections: We will have new elections.
-- @far_right_win: Let the Nazis form their government.
+- @far_right_win: Let the <span style="color: #7A3C00;">Nazis</span> form their government.
 
 
 @left_coalition
@@ -444,7 +444,7 @@ A far left coalition is impossible.
 
 @left_coalition_possible
 
-The <span style="color: #7A2B5C;">**KPD**</span> is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Ernst Thälmann as chancellor in exchange for a coalition. [? if president == "Hindenburg" : There is no chance whatsoever that President Hindenburg would approve of the appointment of a die-hard communist as chancellor. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our centrist or left-leaning members as chancellor.
+The <span style="color: #7A2B5C;">**KPD**</span> is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The <span style="color: #8B0000;">Stalinist</span> leadership is vehemently against such a thing. They demand the appointment of Ernst Thälmann as chancellor in exchange for a coalition. [? if president == "Hindenburg" : There is no chance whatsoever that President Hindenburg would approve of the appointment of a die-hard communist as chancellor. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our centrist or left-leaning members as chancellor.
 
 - @thalmann_chancellor: Appoint Thälmann as chancellor.
 - @left_coalition_resources
@@ -612,7 +612,7 @@ achievement: constitutional_coalition
 
 We transfer some of our campaign funds to our putative coalition partners. Some would call this corruption, but perhaps it is necessary to save our democracy.
 
-Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-fascist and non-communist parties. Leftists in our party are somewhat skeptical of this arrangement. 
+Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-<span style="color: #7A3C00;">fascist</span> and non-<span style="color: #7A2B5C;">communist</span> parties. Leftists in our party are somewhat skeptical of this arrangement. 
 
 
 Who should be chancellor?
@@ -682,7 +682,7 @@ on-arrival: chancellor = "Schleicher"; pro_republic -= 10; next_election_time = 
 
 There is no path to a majority government. Hindenburg is displeased with Papen, and calls on him to resign. Now, former army general Kurt von Schleicher has been appointed chancellor, again as part of a presidential government.
 
-Schleicher's government is deeply unpopular among all parties of the Reichstag. Despite his support for a coalition with the <span style="color: #7A3C00;">**NSDAP**</span>, the Nazis want power all to themselves, without Schleicher.
+Schleicher's government is deeply unpopular among all parties of the Reichstag. Despite his support for a coalition with the <span style="color: #7A3C00;">**NSDAP**</span>, the <span style="color: #7A3C00;">Nazis</span> want power all to themselves, without Schleicher.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
@@ -778,10 +778,10 @@ on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; spd_in_government = 
 
 Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor *must* be a member of the Reichstag).
 
-Thus, we have Chancellor-President Otto Braun. He claims that he will resign as soon as the economic-political crisis is over. The right-wing parties, who were once clamoring to replace parliamentary rule with dictatorship or monarchy, are now clamoring for the restoration of democracy.
+Thus, we have Chancellor-President Otto Braun. He claims that he will resign as soon as the economic-political crisis is over. The right-wing parties, who were once clamoring to replace parliamentary rule with <span style="color: #7A3C00;">dictatorship</span> or <span style="color: #808080;">monarchy</span>, are now clamoring for the restoration of democracy.
 
 - @far_right_coup
-- @emergency_no_confidence: The Nazis immediately call a no-confidence vote against us...
+- @emergency_no_confidence: The <span style="color: #7A3C00;">Nazis</span> immediately call a no-confidence vote against us...
 
 @breitscheid_emergency_chancellor
 subtitle: The Communists are warming to him...
@@ -819,13 +819,13 @@ on-arrival: sh_strength += 150; sa_strength += 150; sh_militancy += 0.05; sa_mil
 
 The far-right parties, seeing that we are willing to deny them government by questionably democratic means, have decided that they can only take power by undemocratic means, and have risen up in force against the sitting government.
 
-Their numbers are bolstered by the many government workers who are against the prospect of a unified Socialist government. Police and soldiers defect to the SA and Stahlhelm.
+Their numbers are bolstered by the many government workers who are against the prospect of a unified Socialist government. Police and soldiers defect to the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #2C517A;">**Stahlhelm**</span>.
 
 - @civil_war: It is war.
 
 
 @emergency_no_confidence
-title: The Nazis immediately call a no-confidence vote against us...
+title: The <span style="color: #7A3C00;">Nazis</span> immediately call a no-confidence vote against us...
 view-if: far_right_coalition < 45
 on-arrival: z_no_confidence = 1 if z_relation < 45; kpd_no_confidence = 1 if kpd_relation < 45; others_no_confidence = 1 if (z_relation + dvp_relation)/2 < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + dnvp_r; no_confidence_votes += z_r if z_no_confidence; no_confidence_votes += kpd_r if kpd_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
 
@@ -1015,7 +1015,7 @@ if (Q.pro_republic < 45) {
 
 There is no path to a workable Reichstag majority or minority government. The next elections are set for [+ next_election_month : month +] [+ next_election_year +].
 
-The people's faith in democracy is shaken by this ordeal. Of course, the Nazis are exploiting the instability to claim that democracy is unworkable, and that Germany needs a strong leader.
+The people's faith in democracy is shaken by this ordeal. Of course, the <span style="color: #7A3C00;">Nazis</span> are exploiting the instability to claim that democracy is unworkable, and that Germany needs a strong leader.
 
 
 @toleration_bruning

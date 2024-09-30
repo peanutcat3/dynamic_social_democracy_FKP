@@ -1,4 +1,4 @@
-title: Confronting the Nazis
+title: Confronting the <span style="color: #7A3C00;">Nazis</span>
 new-page: true
 is-card: true
 view-if: (nsdap_r >= 10 and nazi_urgency > 1) and confronting_nazis_timer == 0 and iron_front_formed == 0
@@ -8,13 +8,13 @@ tags: party_affairs; antifascism
 
 # Forming the Iron Front
 
-The Nazis' strength is gaining, as shown by their recent election results and their violent presence in the streets. Their fascism threatens to plunge Germany once again into the abyss.
+The <span style="color: #7A3C00;">Nazis</span>' strength is gaining, as shown by their recent election results and their violent presence in the streets. Their <span style="color: #7A3C00;">fascism</span> threatens to plunge Germany once again into the abyss.
 
-Many in our party are calling for urgent action. The "neorevisionist" faction, led by young socialists like Carlo Mierendorff and Julius Leber, have formed specifically around this cause. But many in all factions of the party are calling for action.
+Many in our party are calling for urgent action. The "neorevisionist" faction, led by young <span style="color: #c00000;">socialists</span> like Carlo Mierendorff and Julius Leber, have formed specifically around this cause. But many in all factions of the party are calling for action.
 
-- @not_a_big_deal: The Nazis' moment will pass. Let's not get too hasty.
+- @not_a_big_deal: The <span style="color: #7A3C00;">Nazis</span>' moment will pass. Let's not get too hasty.
 - @economic_crisis
-- @major_crisis: We must do something to confront the Nazis.
+- @major_crisis: We must do something to confront the <span style="color: #7A3C00;">Nazis</span>.
 - @iron_front
 
 
@@ -22,7 +22,7 @@ Many in our party are calling for urgent action. The "neorevisionist" faction, l
 on-arrival: nazi_urgency -= 1; left_dissent += 5; neorevisionist_dissent += 15
 view-if: mierendorff_advisor = 0 and leber_advisor = 0 and schumacher_advisor = 0
 
-The Nazis are just another far-right movement that will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
+The <span style="color: #7A3C00;">Nazis</span> are just another far-right movement that will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
 
 @economic_crisis
 title: We must address the economic crisis first.
@@ -33,7 +33,7 @@ go-to: crisis_program
 view-if: nazi_urgency < 5
 on-arrival: nazi_urgency += 1; neorevisionist_dissent -= 5; neorevisionist_strength += 5
 
-The Nazis are one of the foremost threats to the German republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
+The <span style="color: #7A3C00;">Nazis</span> are one of the foremost threats to the German republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
 
 @iron_front
 title: Form the Iron Front!
@@ -47,7 +47,7 @@ The Nazi threat can no longer be ignored. We must build a new organization to co
 What do the three arrows stand for?
 
 - @unity: Unity, Activity, and Discipline.
-- @anti: Opposition to Fascism, Stalinism, and Monarchism.
+- @anti: Opposition to <span style="color: #7A3C00;">Fascism</span>, <span style="color: #8B0000;">Stalinism</span>, and <span style="color: #808080;">Monarchism</span>.
 - @orgs: The <span style="color: #c00000;">**SPD**</span>, ADGB, and Reichsbanner.
 - @wtb: Woytinsky, Tarnow, and Baade of the WTB-Plan
 - @all: All of the above.

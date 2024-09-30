@@ -8,7 +8,7 @@ max-visits: 1
 
 = Coup in Prussia
 
-A crisis! Chancellor [+ chancellor +] has ordered the dismissal of the Prussian government in a procedure known as the *Reichsexecution*. His argument is that the Prussian state government is unable to maintain order due to the battles on the streets between the SA, Reichsbanner, and other paramilitaries. This is despite his own government legalizing them.
+A crisis! Chancellor [+ chancellor +] has ordered the dismissal of the Prussian government in a procedure known as the *Reichsexecution*. His argument is that the Prussian state government is unable to maintain order due to the battles on the streets between the <span style="color: #7A3C00;">**SA**</span>, Reichsbanner, and other paramilitaries. This is despite his own government legalizing them.
 
 The legality of the action is questionable. Many of our members are ready to resist.
 
@@ -22,7 +22,7 @@ subtitle: Labor will call a general strike. The Reichsbanner and the loyal eleme
 unavailable-subtitle: We do not have the forces to resist.
 choose-if: rb_strength*rb_militancy >= 200
 
-The Reichswehr and Stahlhelm are already surrounding Berlin, and the SA is supporting them. This could be civil war. We do realize that, correct? 
+The Reichswehr and <span style="color: #2C517A;">**Stahlhelm**</span> are already surrounding Berlin, and the <span style="color: #7A3C00;">**SA**</span> is supporting them. This could be civil war. We do realize that, correct? 
 
 - @defend_2: We will fight, even if it leads to a civil war.
 - @surrender
@@ -38,7 +38,7 @@ go-to: defend_2_victory_2
 
 Our forces confront the government troops and their reactionary auxiliaries, and somehow, our enemies retreat without a fight! They were overwhelmed by our display of strength, and have chosen to slink away. Chancellor [+ chancellor +] withdraws the dismissal of the Prussian government, at least for now.
 
-The show of force has reinvigorated support for the republic and for the <span style="color: #c00000;">**SPD**</span>, and has weakened the fascists.
+The show of force has reinvigorated support for the republic and for the <span style="color: #c00000;">**SPD**</span>, and has weakened the <span style="color: #7A3C00;">fascists</span>.
 
 @defend_2_victory_2
 achievement: drei_pfeile
@@ -57,4 +57,4 @@ Our forces confront the government troops and their supporters on the streets of
 title: Give up on the Prussian government.
 on-arrival: spd_prussia = 0; workers_spd -= 5; left_dissent += 10; labor_dissent += 10; rb_militancy = rb_militancy/2; rb_strength -= 1000;
 
-A pall of hopelessness and despair descends over social democracy. We have failed. Many in the Reichsbanner simply quit, demoralized by their leaders' lack of a call to action.
+A pall of hopelessness and despair descends over <span style="color: #c00000;">Social Democracy</span>. We have failed. Many in the Reichsbanner simply quit, demoralized by their leaders' lack of a call to action.
