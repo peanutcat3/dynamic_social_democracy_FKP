@@ -22,7 +22,7 @@ choose-if: advisor_action_timer <= 0 and spd_in_government = 1
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government: The <span style="color: #c00000;">SPD</span> is not in government. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1; z_relation += 5; ddp_relation += 5; dvp_relation += 5
 
-We have improved our relations with the <span style="color: #000000;">**Center**</span>, <span style="color: #E1D85D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>, and reduced tensions with the coalition.
+We have improved our relations with the <span style="color: #000000;">**Center**</span>, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>, and reduced tensions with the coalition.
 
 
 @toleration

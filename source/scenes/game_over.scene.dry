@@ -314,7 +314,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #7A2B5C;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #E1D85D;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #7A2B5C;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
 [? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #7A2B5C;">**KPD**</span> demands. ?]
 
@@ -405,7 +405,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #7A2B5C;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #E1D85D;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #7A2B5C;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
 [? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #7A2B5C;">**KPD**</span> demands. ?]
 
@@ -494,7 +494,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #7A2B5C;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #E1D85D;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #7A2B5C;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
 [? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #7A2B5C;">**KPD**</span> demands. ?]
 

@@ -9,9 +9,9 @@ max-visits: 12
 
 = Inter-Party Relationships
 
-The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span>, and [? if ddp_name == "DDP": <span style="color: #E1D85D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #E1D85D;">**State**</span>?] parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span>, and [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
-- @liberals: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": <span style="color: #E1D85D;">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: #E1D85D;">German State Party</span>?] and conservative-liberal <span style="color: #C0A054;">German People's Party</span>.
+- @liberals: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": <span style="color: #D3C24D;">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">German State Party</span>?] and conservative-liberal <span style="color: #C0A054;">German People's Party</span>.
 - @center: Strengthen our bonds with the Catholic <span style="color: #000000;">Center Party</span>.
 - @kpd: Work towards repairing relationships with the <span style="color: #7A2B5C;">Communist Party</span>.
 - @spd_alone: The <span style="color: #c00000;">SPD</span> can stand alone for now.
@@ -91,7 +91,7 @@ unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
 go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribund if year > 1930
 
-The <span style="color: #E1D85D;">**[+ ddp_name +]**</span> has been one of our closest allies through the course of the Republic.
+The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has been one of our closest allies through the course of the Republic.
 
 @dvp_stresemann
 on-arrival: dvp_relation += 8*(1 - dissent)
@@ -101,14 +101,14 @@ Gustav Stresemann, the leader of the <span style="color: #C0A054;">**DVP**</span
 @dvp_loss
 on-arrival: dvp_relation += 5*(1 - dissent)
 
-With the death of Gustav Stresemann, the <span style="color: #C0A054;">**DVP**</span> is much less likely to be accommodating of us. In addition, the <span style="color: #E1D85D;">liberal</span> parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
+With the death of Gustav Stresemann, the <span style="color: #C0A054;">**DVP**</span> is much less likely to be accommodating of us. In addition, the <span style="color: #D3C24D;">liberal</span> parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
 
 However, given the influence of the <span style="color: #C0A054;">**DVP**</span> among the other <span style="color: #808080;">right</span>-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 
 @dvp_moribund
 on-arrival: dvp_relation += 5*(1 - dissent)
 
-The <span style="color: #E1D85D;">liberal</span> parties (both the <span style="color: #E1D85D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span>) are electorally <span style="color: #ff0000;">moribund</span>, so perhaps our efforts are best spent elsewhere.
+The <span style="color: #D3C24D;">liberal</span> parties (both the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span>) are electorally <span style="color: #ff0000;">moribund</span>, so perhaps our efforts are best spent elsewhere.
 
 However, given the influence of the <span style="color: #C0A054;">**DVP**</span> among the other <span style="color: #808080;">right</span>-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 

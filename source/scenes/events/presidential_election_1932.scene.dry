@@ -42,7 +42,7 @@ go-to: braun_campaign
 
 It takes effort to run a somewhat unexpected campaign. First, Braun has to be convinced to run. He himself had supported voting for Hindenburg, and it takes a good deal of prodding to convince him of his destiny.
 
-The miniscule remnants of the [? if ddp_name == "DDP": <span style="color: #E1D85D;">**Democratic Party**</span>?][? if ddp_name == "DStP": <span style="color: #E1D85D;">**State Party**</span>?] will likely support us. Who else will? Can we convince the <span style="color: #000000;">**Center**</span> to support Braun? What about the <span style="color: #7A2B5C;">**Communists**</span>?
+The miniscule remnants of the [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic Party**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State Party**</span>?] will likely support us. Who else will? Can we convince the <span style="color: #000000;">**Center**</span> to support Braun? What about the <span style="color: #7A2B5C;">**Communists**</span>?
 
 
 @support_thalmann
@@ -66,7 +66,7 @@ Fine. We have thrown our support to Chairman Thälmann of the <span style="color
 
 - @convince_z: Convince the <span style="color: #000000;">**Center Party**</span>.
 - @convince_kpd: Convince the <span style="color: #7A2B5C;">**Communists**</span>.
-- @convince_liberals: Convince the remaining <span style="color: #E1D85D;">liberals</span>, wherever they are.
+- @convince_liberals: Convince the remaining <span style="color: #D3C24D;">liberals</span>, wherever they are.
 - @final_election: The final vote...
 
 @convince_z
@@ -148,7 +148,7 @@ The <span style="color: #7A2B5C;">**KPD**</span> now endorses Braun in the presi
 max-visits: 1
 go-to: convince_liberals_success if dvp_relation >= 50; convince_liberals_fail if dvp_relation < 50
 
-The liberal vote (<span style="color: #E1D85D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span>) has been falling over time, so they will probably be of minimal help to us. For what it's worth, the <span style="color: #E1D85D;">**[+ ddp_name +]**</span> is already willing to support Braun.
+The liberal vote (<span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span>) has been falling over time, so they will probably be of minimal help to us. For what it's worth, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is already willing to support Braun.
 
 @convince_liberals_success
 on-arrival: dvp_support_braun = 1

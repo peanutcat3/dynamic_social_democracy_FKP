@@ -41,7 +41,7 @@ Reichstag composition:
 # 1928: 10, 1930: 13
 <span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DStP)
-<span style="color: #E1D85D;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
+<span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
 # 1928: 9, 1930: 5
 <span style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]%
 # 1928: 14, 1930: 7
@@ -69,7 +69,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 <span style="color: #000000;">**Z**</span>: [+ z_relation : relationships +]
 
-<span style="color: #E1D85D;">**[+ ddp_name +]**</span>: [+ ddp_relation : relationships +]
+<span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_relation : relationships +]
 
 <span style="color: #C0A054;">**DVP**</span>: [+ dvp_relation : relationships +]
 
@@ -136,7 +136,7 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 <span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_votes +]%
 
-<span style="color: #E1D85D;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
+<span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
 
 <span style="color: #C0A054;">**DVP**</span>: [+ dvp_votes +]%
 
