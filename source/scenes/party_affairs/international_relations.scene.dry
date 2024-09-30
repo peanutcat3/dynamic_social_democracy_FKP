@@ -10,7 +10,7 @@ max-visits: 3
 At the <span style="color: #D50032;">Labor and Socialist International</span>, we can forge contacts with our fraternal <span style="color: #c00000;">socialist</span> parties in <span style="color: #001489;">Europe</span> and across the world.
 
 - @fr_uk: Build relationships with the <span style="color: #002654;">French</span> <span style="color: #ff0000;">SFIO</span> and <span style="color: #C8102E;">British</span> <span style="color: #f0456a;">Labour Party</span> to move their governments in Germany's favor.
-- @austria: Learn organization and street fighting from the <span style="color: #EF3340;">Au</span>str<span style="color: #EF3340;">ian</span> <span style="color: #A50034;">socialists</span>.
+- @austria: Learn organization and street fighting from the <span style="color: #EF3340;">Au</span><span style="color: #ffffff;"><span style="color: #ffffff;">str</span></span><span style="color: #EF3340;">ian</span> <span style="color: #A50034;">socialists</span>.
 - @scandi: Learn the path of economics and reform from the Scandinavian <span style="color: #D70926;">social democrats</span>.
 - @comintern: Forget the second international - embed a spy in the <span style="color: #D50000;">Comintern</span>'s conference.
 - @america: Contact the Socialist party of America.
@@ -32,7 +32,7 @@ unavailable-subtitle: Not enough resources.
 audio: shuffle music/communist/workers_of_vienna_normalized.mp3
 on-arrival: left_strength += 5; radicalization += 1; rb_militancy += 0.03; resources -= 1
 
-Our Reichsbanner can learn much in paramilitary organization and training from the <span style="color: #EF3340;">Au</span>str<span style="color: #EF3340;">ian</span> Republican Protection Units.
+Our Reichsbanner can learn much in paramilitary organization and training from the <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ian</span> Republican Protection Units.
 
 @scandi
 subtitle: -1 resources
