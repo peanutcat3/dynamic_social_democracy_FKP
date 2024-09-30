@@ -263,7 +263,7 @@ view-if: nationalization_progress >= 2
 tags: endings
 go-to: eg_menu
 
-As part of our socialist economic plan, we have nationalized a substantial portion of the economy, beginning the transition to actual socialism.
+As part of our <span style="color: #c00000;">socialism</span> economic plan, we have nationalized a substantial portion of the economy, beginning the transition to actual <span style="color: #9b0000;">socialism</span>.
 
 @works_councils
 title: Works councils have more power.

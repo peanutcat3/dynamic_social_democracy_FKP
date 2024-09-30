@@ -578,7 +578,7 @@ on-arrival: no_majority_bruning_elections += 1
 
 There is no path to a majority government. One option would be to have a continuation of the current Brüning government; if we tolerate it, then it would retain a majority vote against no-confidence.
 
-Alternatively, we could try to form a "new grand coalition" of all constitutional parties except the <span style="color: #7A3C00;">**NSDAP**</span>, <span style="color: #7A2B5C;">**KPD**</span>, and <span style="color: #2C517A;">**DNVP**</span>. The stumbling block are the minor conservative parties such as the "Economic Party of the Middle Class", who detest any hint of socialism and would ruin the country before working with Marxists.
+Alternatively, we could try to form a "new grand coalition" of all constitutional parties except the <span style="color: #7A3C00;">**NSDAP**</span>, <span style="color: #7A2B5C;">**KPD**</span>, and <span style="color: #2C517A;">**DNVP**</span>. The stumbling block are the minor conservative parties such as the "Economic Party of the Middle Class", who detest any hint of <span style="color: #c00000;">socialism</span> and would ruin the country before working with <span style="color: #9b0000;">Marxists</span>.
 
 The third option is to have new elections.
 
@@ -1165,9 +1165,9 @@ Are we sure about not participating in government? This will cause significant i
 
 What are our goals here, exactly?
 
-- @majority: We hope to reach a socialist majority in the next election.
+- @majority: We hope to reach a <span style="color: #c00000;">socialist</span> majority in the next election.
 - @trap: It is a trap to form a government now. We would be unable to accomplish our goals.
-- @socialism: Revolutionary socialism is our goal.
+- @socialism: <span style="color: #9b0000;">Revolutionary</span> <span style="color: #c00000;">socialism</span> is our goal.
 
 @majority
 go-to: no_govt_2
