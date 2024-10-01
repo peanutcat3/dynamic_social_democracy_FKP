@@ -1290,7 +1290,7 @@ Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appoint
 
 @reichswehr
 title: Reichswehr Ministry
-subtitle: The Ministry responsible for the armed forces is not typically our domain; General Groener and the bourgeois-conservatives will be displeased[? if president = "Hindenburg" : along with President Hindenburg?].
+subtitle: The Ministry responsible for the armed forces is not typically our domain; General Groener and the bourgeois-conservatives will be displeased[? if president = "Hindenburg" :  along with President Hindenburg?].
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 15 
