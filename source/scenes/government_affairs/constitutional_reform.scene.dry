@@ -47,9 +47,9 @@ view-if: electoral_threshold = 0
 
 # The left is opposed to this.
 
-Some political thinkers believe that the proliferation of minor parties is responsible for the instability of the republic. They believe that a higher electoral threshold will reduce the influence of small radical parties. Parties that win a plurality in a constituency will maintain their representation, a gift to regional parties such as the <span style="color: #4B758B;">**BVP**</span>. 
+Some political thinkers believe that the proliferation of minor parties is responsible for the instability of the republic. They believe that a higher electoral threshold will reduce the influence of small radical parties. Parties that win a plurality in a constituency will maintain their representation, a gift to regional parties such as the <span style="color: #A2D8E0;">**BVP**</span>. 
 
-The smaller parties will obviously oppose this reform. [? if z_relation > 30 : The <span style="color: #000000;">**Center Party**</span> supports this reform, while their <span style="color: #4B758B;">**BVP**</span> partners oppose it. ?] [? if kpd_relation > 50 and kpd_normalized >= 0.1 : Perhaps surprisingly, the <span style="color: #7A2B5C;">**KPD**</span> supports this reform. ?] [? if nsdap_normalized >= 0.2 : The <span style="color: #7A3C00;">**NSDAP**</span> supports this reform, as they believe they have something to gain. ?]
+The smaller parties will obviously oppose this reform. [? if z_relation > 30 : The <span style="color: #000000;">**Center Party**</span> supports this reform, while their <span style="color: #A2D8E0;">**BVP**</span> partners oppose it. ?] [? if kpd_relation > 50 and kpd_normalized >= 0.1 : Perhaps surprisingly, the <span style="color: #7A2B5C;">**KPD**</span> supports this reform. ?] [? if nsdap_normalized >= 0.2 : The <span style="color: #7A3C00;">**NSDAP**</span> supports this reform, as they believe they have something to gain. ?]
 
 The <span style="color: #c00000;">**SPD**</span> Left opposes this change, as they believe it to be anti-democratic.
 

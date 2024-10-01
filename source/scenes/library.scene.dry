@@ -42,7 +42,7 @@ go-to: menu
 
 **Rural**: Small and large farmers and independent rural workers. [? if rural_dnvp_normalized > rural_nsdap_normalized: Protestant farmers usually supports the <span style="color: #2C517A;">**DNVP**</span>?][? if rural_nsdap_normalized >= 25: Protestant farmers usually supports the <span style="color: #2C517A;">**DNVP**</span>, however the <span style="color: #7A3C00;">**Nazis**</span> have gained a strong appeal among them?]. 20-30% of the population.
 
-**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the <span style="color: #000000;">**Center Party**</span> (or the <span style="color: #4B758B;">**Bavarian People's Party**</span> in <span style="color: #00CCFF;">Bavaria</span>).
+**Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the <span style="color: #000000;">**Center Party**</span> (or the <span style="color: #A2D8E0;">**Bavarian People's Party**</span> in <span style="color: #00CCFF;">Bavaria</span>).
 
 **Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, [? if ddp_name == "DDP": mostly the DDP?][? if ddp_name == "DStP": although the mild antisemitism of the Young German Order and it's association with the DStP has driven them away?], although substantial numbers support the <span style="color: #c00000;">**SPD**</span> or <span style="color: #7A2B5C;">**KPD**</span>.
 
@@ -78,7 +78,7 @@ go-to: menu
 [? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
 # 1928: 15, 1930: 15, 1932: 
-<span style="color: #000000;">**Z**</span> + <span style="color: #4B758B;">**BVP**</span>: [+ z_votes +]%
+<span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span>: [+ z_votes +]%
 
 # 1928: 10, 1930: 13
 <span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_votes +]%
@@ -117,7 +117,7 @@ go-to: menu
 
 <span style="color: #c00000;">**SPD**</span> - *Sozialdemokratische Partei Deutschlands* (Social Democratic Party of Germany) - this is us. We are a socialist and democratic party of the working class. We are the heirs of the legacy of Marx and Engels, Lassalle and Bebel. We are the foremost defenders of the Republic. The modern <span style="color: #c00000;">**SPD**</span> was formed from a merger of the "Majority" <span style="color: #c00000;">**SPD**</span>, which supported the Great War, and the "Independent" <span style="color: #c00000;">**SPD**</span> or <span style="color: #D47B9B;">**USPD**</span>, which opposed the war.
 
-<span style="color: #000000;">**Z**</span> - *Zentrumspartei* (Center Party) - a centrist to center-right Catholic party that supports the Republic, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have often been in coalitions with us. They are often associated with the <span style="color: #4B758B;">**BVP**</span> (Bavarian People's Party), which represents Catholics in <span style="color: #00CCFF;">Bavaria</span>. [? if (year >= 1930 or chancellor == "Brüning") and z_party_leader == "Kaas": They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Ludwig Kaas. ?][? if (year >= 1930 or chancellor == "Brüning") and z_party_leader == "Joos": They have appeared to take a more conservative turn recently, with the rise of Brüning and support of austerity. ?]
+<span style="color: #000000;">**Z**</span> - *Zentrumspartei* (Center Party) - a centrist to center-right Catholic party that supports the Republic, and has historically supported many of our labor, welfare, and anti-militarist priorities. They have often been in coalitions with us. They are often associated with the <span style="color: #A2D8E0;">**BVP**</span> (Bavarian People's Party), which represents Catholics in <span style="color: #00CCFF;">Bavaria</span>. [? if (year >= 1930 or chancellor == "Brüning") and z_party_leader == "Kaas": They have appeared to take a more conservative turn recently, with the rise of Brüning and the party leader, Ludwig Kaas. ?][? if (year >= 1930 or chancellor == "Brüning") and z_party_leader == "Joos": They have appeared to take a more conservative turn recently, with the rise of Brüning and support of austerity. ?]
 
 Current relations: [+ z_relation : relationships +]
 
@@ -374,7 +374,7 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#000'> </div></td><td>!} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#4B758B'> </div></td><td>!} BVP: {!</td><td>!} 3% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#A2D8E0'> </div></td><td>!} BVP: {!</td><td>!} 3% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
 

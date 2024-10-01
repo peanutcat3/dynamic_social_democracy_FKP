@@ -37,7 +37,7 @@ Reichstag composition:
 <span style="color: #c00000;">**SPD**</span>: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-<span style="color: #000000;">**Z**</span> **+** <span style="color: #4B758B;">**BVP**</span>: [+ z_r +]%
+<span style="color: #000000;">**Z**</span> **+** <span style="color: #A2D8E0;">**BVP**</span>: [+ z_r +]%
 # 1928: 10, 1930: 13
 <span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DStP)
@@ -132,7 +132,7 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 [? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
-<span style="color: #000000;">**Z**</span> + <span style="color: #4B758B;">**BVP**</span>: [+ z_votes +]%
+<span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span>: [+ z_votes +]%
 
 <span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_votes +]%
 
