@@ -72,8 +72,8 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 }
 
 for (var party of Q.parties) {
-    Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
     Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
+    Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
 }
 
 // get change arrows and signs
