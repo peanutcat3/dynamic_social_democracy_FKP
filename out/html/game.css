@@ -145,7 +145,7 @@ ul.choices a {
   text-decoration: none;
 }
 
-ul.choices li class.red {
+ul.choices li.red {
   background-color: rgba(255, 0, 0, 0.2);
 }
 
