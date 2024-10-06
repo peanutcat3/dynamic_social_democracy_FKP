@@ -158,6 +158,7 @@ Q.interior_goal_completed = 0;
 Q.reichswehr_goal_completed = 0;
 
 Q.z_minus_bvp_r = Q.z_r - 3;
+Q.z_minus_bvp_votes = Q.z_votes - 3;
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
