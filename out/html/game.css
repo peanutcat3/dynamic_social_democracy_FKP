@@ -144,11 +144,6 @@ ul.choices li:last-child {
 ul.choices a {
   text-decoration: none;
 }
-
-ul.choices li.red {
-  background-color: rgba(255, 0, 0, 0.2);
-}
-
 blockquote {
   margin: 1em 2em;
 }
