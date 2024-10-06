@@ -305,6 +305,16 @@ Q.old_dnvp_r = 21;
 Q.old_nsdap_r = 3;
 Q.old_other_r = 6;
 
+// old election votes
+Q.spd_last_election_votes = 26;
+Q.kpd_last_election_votes = 9;
+Q.z_last_election_votes = 17;
+Q.ddp_last_election_votes = 6;
+Q.dvp_last_election_votes = 10;
+Q.dnvp_last_election_votes = 21;
+Q.nsdap_last_election_votes = 3;
+Q.other_last_election_votes = 8;
+
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
