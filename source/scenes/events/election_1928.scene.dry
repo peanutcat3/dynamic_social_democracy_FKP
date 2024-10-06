@@ -72,11 +72,11 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
 }
 for (var_party of Q.parties) {
     Q[party + '_last_election_votes'] = Q[party + '_votes'];
+    Q.z_minus_bvp_votes = z_votes - 3;
+    Q.z_minus_bvp_votes.toFixed(1);
+    Q.z_minus_bvp_r.toFixed(1);
 }
 
-Q.z_minus_bvp_votes = z_votes - 3;
-Q.z_minus_bvp_votes.toFixed(1)
-Q.z_minus_bvp_r.toFixed(1)
 // get change arrows and signs
 
 
