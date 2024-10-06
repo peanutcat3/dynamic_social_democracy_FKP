@@ -246,6 +246,7 @@ Dissent: [+ neorevisionist_dissent : dissent +]
 title: Figures and Charts
 go-to: menu
 on-arrival: z_minus_bvp_r = z_r - 3;
+on-arrival: z_minus_bvp_votes = z_votes - 3;
 on-display: {!
 data = [
     {
