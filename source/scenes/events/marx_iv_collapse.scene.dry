@@ -1,0 +1,18 @@
+title: Right-wing Coalition Collapses!
+subtitle: New elections scheduled
+new-page: true
+view-if: year = 1928 and month >= 2
+tags: event
+max-visits: 1
+
+= Right-wing Coalition Dissolved
+
+The right-wing coalition consisting of the <span style="color: #000000;">Center Party</span>, <span style="color: #4B758B;">**BVP**</span>, <span style="color: #C0A054;">**DVP**</span> and <span style="color: #2C517A;">**DNVP**</span> under Chancellor Wilhelm Marx has been declared dissolved by the <span style="color: #000000;">**Center**</span> due to conflict over the regulation of school laws. The coalition parties largely stood behind the law, however the <span style="color: #C0A054;">**DVP**</span> voiced their reservations with it, wanting to secure the primacy of interdenominational schools and limit the influence of the church. Talks have collapsed and new elections have been scheduled in May of this year, the government will continue in caretaker capacity.
+
+- @good: Great!
+
+@good
+on-arrival: next_election_month = 5; Q.next_election_time = 5
+
+Our task is to prepare for the next elections.
+
