@@ -180,19 +180,23 @@ if (Q.sapd_formed && Q.sapd_r) {
             "seats": Math.round(Q.sapd_r*5),
             });
 }
-data = data.concat([
+data = data.concat[
     {
         "id": "spd",
         "legend": "SPD",
         "name": "SPD",
         "seats": Math.round(Q.spd_r*5),
-    },
-    {
-        "id": "ddp",
-        "legend": "DDP",
-        "name": "DDP",
-        "seats": Math.round(Q.ddp_r*5),
-    },
+    }
+];
+    if (Q.ddp_r) {
+        data.push({
+                "id": "ddp",
+                "legend": "DDP",
+                "name": "DDP",
+                "seats": Math.round(Q.ddp_r*5),
+                });
+    }
+data = data.concat[
     {
         "id": "z",
         "legend": "Center",
@@ -204,19 +208,24 @@ data = data.concat([
         "legend": "BVP",
         "name": "BVP",
         "seats": Math.round(3*5),
-    },
-    {
-        "id": "dvp",
-        "legend": "DVP",
-        "name": "DVP",
-        "seats": Math.round(Q.dvp_r*5),
-    },
-    {
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r*5),
-    },
+    }
+];
+    if (Q.dvp_r) {
+        data.push({
+       "id": "dvp",
+       "legend": "DVP",
+       "name": "DVP",
+       "seats": Math.round(Q.dvp_r*5),
+  });
+    }
+    if (Q.other_r) {
+        data.push({
+       "id": "other",
+       "legend": "Other",
+       "name": "Other",
+       "seats": Math.round(Q.other_r*5),
+  });
+    data = data.concat([
     {
         "id": "dnvp",
         "legend": "DNVP",
