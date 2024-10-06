@@ -12,7 +12,7 @@ The right-wing coalition consisting of the <span style="color: #000000;">Center 
 - @good: Great!
 
 @good
-on-arrival: next_election_month = 5; Q.next_election_time = 5
+on-arrival: next_election_month = 5; next_election_time = 5
 
 Our task is to prepare for the next elections.
 
