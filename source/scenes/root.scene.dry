@@ -315,7 +315,14 @@ Q.dnvp_last_election_votes = 20.5;
 Q.nsdap_last_election_votes = 3;
 Q.other_last_election_votes = 7.8;
 
+Q.spd_votes = 28.9;
+Q.kpd_votes = 10.6;
 Q.z_votes = 16.4;
+Q.ddp_votes = 4.6;
+Q.dvp_votes = 9.4;
+Q.dnvp_votes = 15.4;
+Q.nsdap_votes = 3.3;
+Q.other_votes = 11.4;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
