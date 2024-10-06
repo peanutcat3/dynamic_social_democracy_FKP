@@ -4,10 +4,9 @@ tags: event, govt_affairs
 is-card: true
 on-arrival: panzerkreuzer_seen = 1
 view-if: panzerkreuzer_seen = 0 and year = 1928 and month >= 8 and reichswehr_minister_party != "SPD" and spd_in_government = 1
+{var $li = $('<li>').addClass('red');!}
 
 = Panzerkreuzer
-
-{var $li = $('<li>').addClass('red');!}
 
 The Reichswehr Ministry is demanding the construction of a new battlecruiser, as part of Germany's rearmament. Our coalition partners are united in support. While many of our members are vehemently against new military spending, this vote may be necessary to preserve the coalition. 
 We campaigned on food for children instead of battlecruisers. Will we really betray our campaign promises?
