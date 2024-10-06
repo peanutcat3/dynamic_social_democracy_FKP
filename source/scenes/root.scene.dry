@@ -315,6 +315,8 @@ Q.dnvp_last_election_votes = 21;
 Q.nsdap_last_election_votes = 3;
 Q.other_last_election_votes = 8;
 
+Q.z_minus_bvp_votes = z_votes - 3;
+
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
