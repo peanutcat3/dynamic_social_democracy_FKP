@@ -306,14 +306,14 @@ Q.old_nsdap_r = 3;
 Q.old_other_r = 5.9;
 
 // old election votes
-Q.spd_last_election_votes = 26;
-Q.kpd_last_election_votes = 9;
-Q.z_last_election_votes = 17.3;
-Q.ddp_last_election_votes = 6.3;
-Q.dvp_last_election_votes = 10.1;
-Q.dnvp_last_election_votes = 20.5;
-Q.nsdap_last_election_votes = 3;
-Q.other_last_election_votes = 7.8;
+Q.previous_spd_last_election_votes = 26;
+Q.previous_kpd_last_election_votes = 9;
+Q.previous_z_last_election_votes = 17.3;
+Q.previous_ddp_last_election_votes = 6.3;
+Q.previous_dvp_last_election_votes = 10.1;
+Q.previous_dnvp_last_election_votes = 20.5;
+Q.previous_nsdap_last_election_votes = 3;
+Q.previous_other_last_election_votes = 7.8;
 
 Q.spd_votes = 28.9;
 Q.kpd_votes = 10.6;
