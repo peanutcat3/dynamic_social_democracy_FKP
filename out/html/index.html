@@ -271,7 +271,17 @@
             <div id='content'>
 
             </div>
-
+            <script>
+                // Your JavaScript here
+                const listItems = document.querySelectorAll('.choices li');
+            
+                listItems.forEach(item => {
+                    const link = item.querySelector('a[data-choice="0"]');
+                    if (link) {
+                        item.classList.add('red'); // Add the 'red' class
+                    }
+                });
+            </script>
             <footer>
       <!--
       <p>
