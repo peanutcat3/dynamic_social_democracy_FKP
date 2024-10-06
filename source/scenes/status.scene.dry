@@ -8,9 +8,9 @@ if (Q.unemployed) {
 if (Q.inflation) {
     Q.inflation_2 = Q.inflation.toFixed(1);
 }
-if (Q.rb_strength) {
-    Q.rb_strength_2 = Q.rb_strength.toFixed(1);
-}
+Q.rb_strength = Math.round(Q.rb_strength);
+Q.sh_strength = Math.round(Q.sh_strength);
+Q.sa_strength = Math.round(Q.sa_strength); 
 !}
 
 = Status
@@ -99,7 +99,7 @@ Reformist strength: [+ reformist_strength : strength +], dissent: [+ reformist_d
 
 = Paramilitaries
 
-<span style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength_2 +] thousand
+<span style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength +] thousand
 
 <span style="color: #c00000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
