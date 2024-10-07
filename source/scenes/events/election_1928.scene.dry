@@ -95,7 +95,8 @@ for (var party of Q.parties) {
     if (Q.other_r > 0 && Q.year >= 1931) {
         Q.other_r -= 1;
     }
-    var other_party_sum = 100 - Q.other_r;
+    var reichstag_without_other = 100 - other_r
+    var other_party_sum = ((reichstag_without_other) - (Q.other_votes - Q.other_r));
     var original_value = Q.other_r
     if (other_party_sum > 0) {
         Q[party + '_r'] = Math.round((Q[party + '_r'] * 100 / other_party_sum) * 10) / 10;
