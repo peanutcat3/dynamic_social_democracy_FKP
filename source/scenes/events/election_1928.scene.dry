@@ -95,7 +95,7 @@ for (var party of Q.parties) {
     if (Q.other_r > 0 && Q.year >= 1931) {
         Q.other_r -= 1;
     }
-    var other_party_sum += (Q[party + '_r'] - Q.other_r);
+    var other_party_sum = (Q[party + '_r'] - Q.other_r);
     var original_value = Q.other_r
     if (other_party_sum > 0) {
         Q[party + '_r'] = Math.round((Q[party + '_r'] * 100 / other_party_sum) * 10) / 10;
