@@ -234,7 +234,7 @@ Q.workers_dnvp = 5;
 Q.workers_nsdap = 0;
 Q.workers_other = 10;
 
-Q.old_middle_spd = 5;
+Q.old_middle_spd = 4;
 Q.old_middle_kpd = 0;
 Q.old_middle_z = 5;
 Q.old_middle_ddp = 9;
@@ -243,7 +243,7 @@ Q.old_middle_dnvp = 22;
 Q.old_middle_nsdap = 8;
 Q.old_middle_other = 18;
 
-Q.new_middle_spd = 5;
+Q.new_middle_spd = 4;
 Q.new_middle_kpd = 1;
 Q.new_middle_z = 10;
 Q.new_middle_ddp = 23;
