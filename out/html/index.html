@@ -32,6 +32,9 @@
                         <label for="backgrounds_yes">On</label>
                     </td>
                     <td>
+                        <input type="radio" id="backgrounds_yes" name="backgrounds" value="1" onclick="window.enableBg();">
+                    </td>
+                    <td>
                         <label for="backgrounds_no">Off</label>
                     </td>
                     <td>
@@ -50,8 +53,6 @@
                     <td>
                         <input type="radio" id="images_yes" name="images" value="1" onclick="window.enableImages();">
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <label for="images_no">Off</label>
                     </td>
@@ -62,7 +63,7 @@
                 <tr>
                     <td> <hr> </td>
                 </tr>
-
+ 
                 <tr>
                     <td>
                         Animations:
@@ -73,8 +74,6 @@
                     <td>
                         <input type="radio" id="animate_yes" name="animate" value="1" onclick="window.enableAnimate();">
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <label for="animate_no">Off</label>
                     </td>
@@ -107,6 +106,14 @@
                     <td>
                         <button onclick="window.hideOptions();">Close</button>
                     </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                   <td>
+                        <button onclick="window.showMods();">Mods</button>
+                    </td>
+
                 </tr>
             </table>
         </div>

@@ -454,7 +454,7 @@ title: Is a United Left coalition possible?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #7A2B5C;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #7A2B5C;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #7A2B5C;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #7A2B5C;">Communists</span> are too committed to their radical ways to partake in government. ?]
 view-if: left_coalition >= 50
-choose-if: kpd_relation >= 50 and communist_coalition >= 3
+choose-if: (kpd_relation >= 50 or (kpd_party_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3
 
 There are enough votes for a <span style="color: #c00000;">**SPD**</span> + <span style="color: #7A2B5C;">**KPD**</span> coalition government, if such a thing were actually possible.
 

@@ -20,8 +20,8 @@ Minor changes:
 - New advisor actions: End toleration (for some left advisors)
 - Added descriptions of the internal party factions.
 - Some more tax options.
-- Abortion rights and homosexual rights can be passed with a "progressive coalition" of the <span style="color: #c00000;">**SPD**</span>, KPD, and DDP.
-- Can only use the Shuffle Cabinet and Women's Rights cards if the chancellor is <span style="color: #c00000;">**SPD**</span>.
+- Abortion rights and homosexual rights can be passed with a "progressive coalition" of the SPD, KPD, and DDP.
+- Can only use the Shuffle Cabinet and Women's Rights cards if the chancellor is SPD.
 - Low relations with the DVP results in less leverage in a grand coalition.
 - Papen being appointed as chancellor reduces judicial reform.
 - Changed frequencies of some cards.
@@ -50,7 +50,7 @@ Minor changes:
 Future changes:
 
 - I didn't get to any of the future changes listed in the previous update, so all of those are carrying over.
-- For the post-1933 update, coups can be initiated in 1933 if the <span style="color: #c00000;">**SPD**</span> is in power and is unpopular.
+- For the post-1933 update, coups can be initiated in 1933 if the SPD is in power and is unpopular.
 - Add ability to break toleration without using a event or advisor action.
 
 
@@ -72,7 +72,7 @@ Minor changes:
 Future changes:
 
 - Government with the popular front without civil war is possible (but might have votes of no confidence from both the right and the left, and a higher likelihood of right-wing coups).
-- "Historical" difficulty that constrains <span style="color: #c00000;">**SPD**</span> actions to be more historically accurate.
+- "Historical" difficulty that constrains SPD actions to be more historically accurate.
 - Record of previous actions in the library
 - Tariffs
 - Investigating paramilitaries after banning.
@@ -113,9 +113,9 @@ Potential future changes:
 
 Notes on the Popular Front:
 
-I don't know how the KPD would contend themselves in government. A KPD that is willing to support an <span style="color: #c00000;">**SPD**</span> government would necessarily be different from Thälmann's Stalinist organization, so I looked to the earlier Paul Levi KPD as well as the French Popular Front for ideas. Originally I had the KPD ministers implementing certain policies, but reading about Paul Levi, I think that the KPD would be abstentionist in government, in that they would not have any ministers to preserve their independent course of action, and disavow themselves from any unpopular course the government may take. 
+I don't know how the KPD would contend themselves in government. A KPD that is willing to support an SPD government would necessarily be different from Thälmann's Stalinist organization, so I looked to the earlier Paul Levi KPD as well as the French Popular Front for ideas. Originally I had the KPD ministers implementing certain policies, but reading about Paul Levi, I think that the KPD would be abstentionist in government, in that they would not have any ministers to preserve their independent course of action, and disavow themselves from any unpopular course the government may take. 
 
-Ironically the hypothetical KPD position towards the Popular Front is basically analogous to the <span style="color: #c00000;">**SPD**</span> position towards the Brüning government (i.e. toleration).
+Ironically the hypothetical KPD position towards the Popular Front is basically analogous to the SPD position towards the Brüning government (i.e. toleration).
 
 Sources: Gaido, Daniel. “Paul Levi and the Origins of the United-Front Policy in the Communist International.” Historical Materialism 25, no. 1 (2017): 131–74. https://doi.org/10.1163/1569206x-12341515.
 
@@ -253,7 +253,7 @@ v0.14.2 - Heidelberg Program, bug fixes, minority government
 Changes:
 
 - New achievement: Heidelberger Programm (fulfill most of the historical goals of the Heidelberg Program)
-- New achievement: Minderheitsregierung (successfully form an <span style="color: #c00000;">**SPD**</span> minority government)
+- New achievement: Minderheitsregierung (successfully form an SPD minority government)
 - Minority/emergency governments can get votes of no confidence.
 - Tolerating Brüning cannot happen if the constitutional parties do not have a majority.
 - Bug fix: advisor actions should not reset card timers.
@@ -335,10 +335,10 @@ v0.17 - Conciliators and the SAPD
 
 Major changes:
 - The SAPD is introduced as a new party that receives Reichstag seats when both the Left and Center resign.
-- Internal manipulations of the KPD - scheming can allow the Conciliator faction to take over the KPD, making the party more friendly to the <span style="color: #c00000;">**SPD**</span> and coalitions. This is a chain of events beginning with the Wittorf Affair, a scandal involving Ernst Thälmann of the KPD, as well as foreign relations with the Soviet Union.
+- Internal manipulations of the KPD - scheming can allow the Conciliator faction to take over the KPD, making the party more friendly to the SPD and coalitions. This is a chain of events beginning with the Wittorf Affair, a scandal involving Ernst Thälmann of the KPD, as well as foreign relations with the Soviet Union.
 - New achievements: Versöhnler - have the conciliators take over the KPD; Große Volksfront - form a Popular Front with both Joos as Zentrum leader and the Conciliators as the KPD leaders; Katholischer Sozialismus - have over 50% support from Catholics.
 - Added two new pieces of music.
-- In order to build relations with the KPD, the <span style="color: #c00000;">**SPD**</span> might have to face a reckoning with its own history.
+- In order to build relations with the KPD, the SPD might have to face a reckoning with its own history.
 - A right-wing coalition in 1928 is possible.
 
 Minor changes:
@@ -351,3 +351,31 @@ Minor changes:
 Backend changes:
 - updated dendrynexus version - now there is a `call:` scene attribute that allows another scene's `on-arrival:` to be called essentially as a function.
 
+v0.17.1 - Conciliators, Wirth, Coalitions
+
+Changes:
+- Clarified right-wing coalition formation in the 1928 elections.
+- Slightly easier to form a Popular Front when Joos is Zentrum leader or the Conciliators are the KPD leaders
+- Threshold for seeing the Wittorf Affair slightly decreased
+- Fixed bug where foreign affairs option for the Wittorf Affair could only be seen in 1929.
+- Displaying KPD coalition dissent when the KPD is in the coalition.
+- More SAPD vote share displays in the polls.
+
+v0.18 - Event images, mod loader
+
+Major changes:
+- Event images are added! These are currently disabled by default, but can be enabled in the options menu. I find that while playing online, there's a bit of lag in loading the images, so they're disabled by default for now, but they should look better in one of the downloaded versions.
+- Mod loader: This uses the target mod's `game.json` file, and the base game's music and images.
+- Curated mod list: If you want to add a mod, send a pull request adding a line to `mod_list.tsv` at https://github.com/aucchen/social_democracy_mods.
+- New event: Exodus from the Reichsbanner (high militarization leads to Center and DDP exit from the Reichsbanner).
+- New achievement: Klassenkampf (high worker support, low middle-class support)
+
+Minor changes:
+- UI change for the options menu
+- various tweaks to effects and thresholds
+- Wirth is an option for chancellor after the death of Müller if Joseph Joos is the Zentrum leader.
+- Defunding the Reichswehr increases coup progress more, and increases paramilitary strength.
+
+
+Backend changes:
+- a bunch of dendrynexus updates for event images (called `face-image` in the code).
