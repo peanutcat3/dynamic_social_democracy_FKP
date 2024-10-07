@@ -315,14 +315,14 @@ Q.previous_dnvp_last_election_votes = 20.5;
 Q.previous_nsdap_last_election_votes = 3;
 Q.previous_other_last_election_votes = 7.8;
 
-Q.spd_votes = 28.9;
+Q.spd_votes = 29.2;
 Q.kpd_votes = 10.6;
-Q.z_votes = 16.4;
-Q.ddp_votes = 4.6;
-Q.dvp_votes = 9.4;
-Q.dnvp_votes = 15.4;
-Q.nsdap_votes = 3.3;
-Q.other_votes = 11.4;
+Q.z_votes = 15.1;
+Q.ddp_votes = 4.8;
+Q.dvp_votes = 8.7;
+Q.dnvp_votes = 14.3;
+Q.nsdap_votes = 2.7;
+Q.other_votes = 14.6;
 
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
