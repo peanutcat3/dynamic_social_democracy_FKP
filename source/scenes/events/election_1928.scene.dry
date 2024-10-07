@@ -42,6 +42,7 @@ on-arrival: {!
 // election threshold constitutional reform
 // banning parties
 var new_party_sum = 0;
+var other_party_sum
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
     if (Q.constitutional_reform > 0) {
@@ -81,6 +82,26 @@ for (var party of Q.parties) {
     Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
 }
 
+for (var party of Q.parties) {
+    if (Q.other_r > 0 && Q.year === 1928) {
+        Q.other_r -= 4;
+    }
+    if (Q.other_r > 0 && Q.year === 1929) {
+        Q.other_r -= 3;
+    }
+    if (Q.other_r > 0 && Q.year === 1930) {
+        Q.other_r -= 2;
+    }
+    if (Q.other_r > 0 && Q.year >= 1931) {
+        Q.other_r -= 1;
+    }
+    other_party_sum += (Q[party + '_r'] - Q.other_r);
+    var original_value = Q.other_r
+    if (other_party_sum > 0) {
+        Q[party + '_r'] = Math.round((Q[party + '_r'] * 100 / other_party_sum) * 10) / 10;
+        Q.other_r = original_value
+    }
+}
 // get change arrows and signs
 
 
