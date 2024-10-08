@@ -169,7 +169,7 @@ for (var party of Q.parties) {
         } else if (Q.year >= 1931) {
             Q.other_r = Math.max(0, Q.other_r - 1);
         }
-
+        console.log("This code is running.")
         var reichstag_without_other = 100 - Q.other_r;
         var other_party_sum = ((reichstag_without_other) - (Q.other_votes - Q.other_r));
         var original_value = Q.other_votes - (Q.other_votes - Q.other_r);
