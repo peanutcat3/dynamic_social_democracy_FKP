@@ -230,7 +230,7 @@ Q.workers_kpd = 20;
 Q.workers_z = 5;
 Q.workers_ddp = 2;
 Q.workers_dvp = 0;
-Q.workers_dnvp = 5;
+Q.workers_dnvp = 6;
 Q.workers_nsdap = 0;
 Q.workers_other = 10;
 
@@ -252,12 +252,12 @@ Q.new_middle_dnvp = 9;
 Q.new_middle_nsdap = 4;
 Q.new_middle_other = 22;
 
-Q.rural_spd = 10;
+Q.rural_spd = 8;
 Q.rural_kpd = 0;
 Q.rural_z = 5;
 Q.rural_ddp = 4;
 Q.rural_dvp = 14;
-Q.rural_dnvp = 40;
+Q.rural_dnvp = 42;
 Q.rural_nsdap = 3;
 Q.rural_other = 15;
 
