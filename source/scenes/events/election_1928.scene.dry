@@ -160,7 +160,7 @@ Q.reichswehr_goal_completed = 0;
 for (var party of Q.parties) {
     var original_value = Q.other_r
 
-    if (Q.other_r > 0) {
+    if (Q.other_r > 0 && Q.other_votes === Q.other_r) {
         if (Q.year === 1928) {
             Q.other_r = Math.max(0, Q.other_r - 4);
         } else if (Q.year === 1929) {
