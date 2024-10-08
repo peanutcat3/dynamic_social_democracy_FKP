@@ -81,6 +81,32 @@ for (var party of Q.parties) {
     Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
 }
 
+for (var party of Q.parties) {
+    var original_value = Q.other_r
+
+    if (Q.other_r > 0 && Q.other_votes === Q.other_r) {
+        if (Q.year === 1928) {
+            Q.other_r = Math.max(0, Q.other_r - 4);
+        } else if (Q.year === 1929) {
+            Q.other_r = Math.max(0, Q.other_r - 3);
+        } else if (Q.year === 1930) {
+            Q.other_r = Math.max(0, Q.other_r - 2);
+        } else if (Q.year >= 1931) {
+            Q.other_r = Math.max(0, Q.other_r - 1);
+        }
+        var reichstag_without_other = 100 - Q.other_r;
+        var other_party_sum = ((reichstag_without_other) - (Q.other_votes - Q.other_r));
+    }
+}
+for (var party of Q.parties) {
+    if (other_party_sum > 0 && Q.nsdap_votes === Q.nsdap_r) {
+        Q[party + '_r'] = Math.round((Q[party + '_r'] * reichstag_without_other / other_party_sum) * 10) / 10;
+        console.log(Q.other_r)
+    }
+}
+Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
+Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
+
 // get change arrows and signs
 
 
@@ -156,32 +182,6 @@ Q.labor_goal_completed = 0;
 Q.foreign_goal_completed = 0;
 Q.interior_goal_completed = 0;
 Q.reichswehr_goal_completed = 0;
-
-for (var party of Q.parties) {
-    var original_value = Q.other_r
-
-    if (Q.other_r > 0 && Q.other_votes === Q.other_r) {
-        if (Q.year === 1928) {
-            Q.other_r = Math.max(0, Q.other_r - 4);
-        } else if (Q.year === 1929) {
-            Q.other_r = Math.max(0, Q.other_r - 3);
-        } else if (Q.year === 1930) {
-            Q.other_r = Math.max(0, Q.other_r - 2);
-        } else if (Q.year >= 1931) {
-            Q.other_r = Math.max(0, Q.other_r - 1);
-        }
-        var reichstag_without_other = 100 - Q.other_r;
-        var other_party_sum = ((reichstag_without_other) - (Q.other_votes - Q.other_r));
-    }
-}
-for (var party of Q.parties) {
-    if (other_party_sum > 0 && Q.nsdap_votes === Q.nsdap_r) {
-        Q[party + '_r'] = Math.round((Q[party + '_r'] * reichstag_without_other / other_party_sum) * 10) / 10;
-        console.log(Q.other_r)
-    }
-}
-Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
-Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
