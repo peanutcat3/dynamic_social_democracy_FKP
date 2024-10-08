@@ -16,7 +16,8 @@ max-cards: 3
 
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
 [? if year = 1928 and month = 8 and chancellor != "Marx" : Wilhelm Marx, leader of the <span style="color: #000000;">Center Party</span> and former chancellor, has resigned from his position. A new leader is set to be elected this December. ?]
-[? if year = 1928 and month = 9 and chancellor != "Marx" : Adam Stegerwald, chairman of the Catholic trade unions, is the clear frontrunner to succeed Wilhelm Marx. He advocates for a broad interconfessional “people’s bloc” that prioritizes the national community over special interest groups. Despite his strong position in the party, he faces resistance from the party's middle class due to his ties to labor and his opposition to a proposed raise for civil servants. ?]
+[? if year = 1928 and month = 9 and chancellor != "Marx" : Adam Stegerwald, chairman of the Catholic trade unions, is the clear frontrunner to succeed Wilhelm Marx. He advocates for a broad interconfessional “people’s bloc” that prioritizes the national community over special interest groups. ?]
+[? if year = 1928 and month = 11 and chancellor != "Marx" : Despite Stegerwald's strong position in the Center Party's leadership race, he faces significant resistance from the party's middle class because of his ties to labor and his opposition to a proposed raise for civil servants. New candidates have emerged for the party congress in December. ?]
 
 - @party
 - @govt
@@ -41,7 +42,8 @@ max-cards: 4
 
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
 [? if year = 1928 and month = 8 and chancellor != "Marx" : Wilhelm Marx, leader of the <span style="color: #000000;">Center Party</span> and former chancellor, has resigned from his position. A new leader is set to be elected this December. ?]
-[? if year = 1928 and month = 9 and chancellor != "Marx" : Adam Stegerwald, chairman of the Catholic trade unions, is the clear frontrunner to succeed Wilhelm Marx. He advocates for a broad interconfessional “people’s bloc” that prioritizes the national community over special interest groups. Despite his strong position in the party, he faces resistance from the party's middle class due to his ties to labor and his opposition to a proposed raise for civil servants. ?]
+[? if year = 1928 and month = 9 and chancellor != "Marx" : Adam Stegerwald, chairman of the Catholic trade unions, is the clear frontrunner to succeed Wilhelm Marx. He advocates for a broad interconfessional “people’s bloc” that prioritizes the national community over special interest groups. ?]
+[? if year = 1928 and month = 11 and chancellor != "Marx" : Despite Stegerwald's strong position in the Center Party's leadership race, he faces significant resistance from the party's middle class because of his ties to labor and his opposition to a proposed raise for civil servants. New candidates have emerged for the party congress in December. ?]
 
 - @party
 - @govt
