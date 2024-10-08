@@ -42,7 +42,6 @@ on-arrival: {!
 // election threshold constitutional reform
 // banning parties
 var new_party_sum = 0;
-var other_party_sum
 for (var party of Q.parties) {
     Q['old_' + party + '_r'] = Q[party + '_r'];
     if (Q.constitutional_reform > 0) {
