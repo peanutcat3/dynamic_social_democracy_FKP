@@ -175,7 +175,7 @@ for (var party of Q.parties) {
     }
 }
 for (var party of Q.parties) {
-    if (other_party_sum > 0 && Q.nsdap_votes != Q.nsdap_r) {
+    if (other_party_sum > 0 && Q.nsdap_votes === Q.nsdap_r) {
         Q[party + '_r'] = Math.round((Q[party + '_r'] * reichstag_without_other / other_party_sum) * 10) / 10;
         if (Q.year === 1928) {
             Q.other_r = original_value - 4;
