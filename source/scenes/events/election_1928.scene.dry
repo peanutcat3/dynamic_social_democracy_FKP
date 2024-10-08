@@ -158,7 +158,7 @@ Q.interior_goal_completed = 0;
 Q.reichswehr_goal_completed = 0;
 
 for (var party of Q.parties) {
-    var original_value = other_r
+    var original_value = Q.other_r
 
     if (Q.other_r > 0) {
         if (Q.year === 1928) {
