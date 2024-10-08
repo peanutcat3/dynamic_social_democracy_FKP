@@ -315,12 +315,12 @@ Q.previous_dnvp_last_election_votes = 20.5;
 Q.previous_nsdap_last_election_votes = 3;
 Q.previous_other_last_election_votes = 7.8;
 
-Q.spd_votes = 29.2;
+Q.spd_votes = 28.5;
 Q.kpd_votes = 10.6;
 Q.z_votes = 15.1;
 Q.ddp_votes = 4.8;
 Q.dvp_votes = 8.7;
-Q.dnvp_votes = 14.3;
+Q.dnvp_votes = 15;
 Q.nsdap_votes = 2.7;
 Q.other_votes = 14.6;
 
