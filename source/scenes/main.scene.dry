@@ -15,6 +15,7 @@ max-cards: 3
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1928 and month = 8 and chancellor != "Marx" : Wilhelm Marx, leader of the <span style="color: #000000;">Center Party</span> and former chancellor, has resigned from his position. A new leader is set to be elected this December. ?]
 
 - @party
 - @govt
@@ -38,6 +39,7 @@ max-cards: 4
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
 [? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1928 and month = 8 and chancellor != "Marx" : Wilhelm Marx, leader of the <span style="color: #000000;">Center Party</span> and former chancellor, has resigned from his position. A new leader is set to be elected this December. ?]
 
 - @party
 - @govt
