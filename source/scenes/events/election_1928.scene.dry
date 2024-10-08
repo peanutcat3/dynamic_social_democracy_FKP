@@ -160,13 +160,13 @@ Q.reichswehr_goal_completed = 0;
 
 for (var party of Q.parties) {
     if (Q.other_r > 0) {
-        if (year === 1928) {
+        if (Q.year === 1928) {
             Q.other_r = Math.max(0, Q.other_r - 4);
-        } else if (year === 1929) {
+        } else if (Q.year === 1929) {
             Q.other_r = Math.max(0, Q.other_r - 3);
-        } else if (year === 1930) {
+        } else if (Q.year === 1930) {
             Q.other_r = Math.max(0, Q.other_r - 2);
-        } else if (year >= 1931) {
+        } else if (Q.year >= 1931) {
             Q.other_r = Math.max(0, Q.other_r - 1);
         }
 
