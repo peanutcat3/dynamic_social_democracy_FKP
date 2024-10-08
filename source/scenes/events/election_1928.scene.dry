@@ -174,7 +174,7 @@ for (var party of Q.parties) {
         var original_value = Q.other_votes - (Q.other_votes - Q.other_r);
         
         if (other_party_sum > 0) {
-            Q[party + '_r'] = Math.round((Q[party + '_r'] * reichstag_without_other / other_party_sum) * 10) / 10;
+            Q[party + '_r'] = Math.round((Q[party + '_r'] * other_party_sum / reichstag_without_other) * 10) / 10;
             Q.other_r = original_value;
         }
     }
