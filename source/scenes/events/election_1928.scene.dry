@@ -160,16 +160,24 @@ Q.reichswehr_goal_completed = 0;
 
 for (var party of Q.parties) {
     if (Q.other_r > 0) {
-    if (year === 1928) Q.other_r = Math.max(0, Q.other_r - 4);
-    else if (year === 1929) Q.other_r = Math.max(0, Q.other_r - 3);
-    else if (year === 1930) Q.other_r = Math.max(0, Q.other_r - 2);
-    else if (year >= 1931) Q.other_r = Math.max(0, Q.other_r - 1);
-    var reichstag_without_other = 100 - Q.other_r
-    var other_party_sum = ((reichstag_without_other) - (Q.other_votes - Q.other_r));
-    var original_value = other_votes + (Q.other_votes - Q.other_r)
-    if (other_party_sum > 0) {
-        Q[party + '_r'] = Math.round((Q[party + '_r'] * 100 / other_party_sum) * 10) / 10;
-        Q.other_r = original_value
+        if (year === 1928) {
+            Q.other_r = Math.max(0, Q.other_r - 4);
+        } else if (year === 1929) {
+            Q.other_r = Math.max(0, Q.other_r - 3);
+        } else if (year === 1930) {
+            Q.other_r = Math.max(0, Q.other_r - 2);
+        } else if (year >= 1931) {
+            Q.other_r = Math.max(0, Q.other_r - 1);
+        }
+
+        var reichstag_without_other = 100 - Q.other_r;
+        var other_party_sum = ((reichstag_without_other) - (Q.other_votes - Q.other_r));
+        var original_value = Q.other_votes + (Q.other_votes - Q.other_r);
+        
+        if (other_party_sum > 0) {
+            Q[party + '_r'] = Math.round((Q[party + '_r'] * 100 / other_party_sum) * 10) / 10;
+            Q.other_r = original_value;
+        }
     }
 }
 Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
