@@ -1,4 +1,4 @@
-title: Confronting the <span style="color: #7A3C00;">Nazis</span>
+title: Confronting the Nazis
 new-page: true
 is-card: true
 view-if: (nsdap_r >= 10 and nazi_urgency > 1) and confronting_nazis_timer == 0 and iron_front_formed == 0
