@@ -158,6 +158,8 @@ Q.interior_goal_completed = 0;
 Q.reichswehr_goal_completed = 0;
 
 for (var party of Q.parties) {
+    var original_value = other_r
+
     if (Q.other_r > 0) {
         if (Q.year === 1928) {
             Q.other_r = Math.max(0, Q.other_r - 4);
@@ -170,12 +172,11 @@ for (var party of Q.parties) {
         }
         var reichstag_without_other = 100 - Q.other_r;
         var other_party_sum = ((reichstag_without_other) - (Q.other_votes - Q.other_r));
-        var original_value = Q.other_votes - (Q.other_votes - Q.other_r);
         
         if (other_party_sum > 0) {
             Q[party + '_r'] = Math.round((Q[party + '_r'] * reichstag_without_other / other_party_sum) * 10) / 10;
             Q.other_r = original_value;
-            console.log("This code is running.")
+            console.log(Q.other_r)
         }
     }
 }
