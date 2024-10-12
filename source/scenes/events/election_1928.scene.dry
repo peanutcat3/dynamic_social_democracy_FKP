@@ -89,13 +89,15 @@ for (var party of Q.parties) {
 
     if (Q.other_r > 0 && Q.other_votes === Q.other_r) {
         if (Q.year === 1928) {
-            Q.other_r = Math.max(0, Q.other_r - 4);
+            Q.other_r = Math.max(0, Q.other_r*0.75);
         } else if (Q.year === 1929) {
-            Q.other_r = Math.max(0, Q.other_r - 3);
+            Q.other_r = Math.max(0, Q.other_r *0.8);
         } else if (Q.year === 1930) {
-            Q.other_r = Math.max(0, Q.other_r - 2);
-        } else if (Q.year >= 1931) {
-            Q.other_r = Math.max(0, Q.other_r - 1);
+            Q.other_r = Math.max(0, Q.other_r*0.9);
+        } else if (Q.year == 1931) {
+            Q.other_r + Math.max(0, Q.other_r)*0.8
+        } else if (Q.year >= 1932) {
+            Q.other_r = Math.max(0, Q.other_r*0.7);
         }
         var reichstag_without_other = 100 - Q.other_r;
         var other_party_sum = ((reichstag_without_other) - (Q.other_votes - Q.other_r));
