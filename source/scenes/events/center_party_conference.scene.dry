@@ -35,6 +35,6 @@ choose-if: z_relation >= 62 and resources >= 1
 view-if: z_relation < 70
 unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
 subtitle: -1 resource. Joos is likely to be friendlier to us than Kaas.
-on-arrival: resources -= 1; z_party_leader = "Joos"; catholics_spd += 5; workers_z += 3
+on-arrival: resources -= 1; z_party_leader = "Joos"; catholics_z; -= 3; catholics_spd += 5; workers_z += 3
 
 With our grassroots connections as well as a professional campaign, we have been able to influence the <span style="color: #000000;">Center</span> delegates to support Joseph Joos as the new <span style="color: #000000;">Center</span> chairman. He has long been a friend of the <span style="color: #c00000;">**SPD**</span>, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the <span style="color: #000000;">Center Party</span> to the working class.
