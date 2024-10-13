@@ -8,7 +8,7 @@ card-image: img/portraits/SchmidtRobert.jpg
 
 = Economic Policy
 
-We have already formulated an economic plan. Now we have to implement it. [? if economic_minister_party == "SPD" and finance_minister_party == "SPD" : Our control of both the finance and economic ministry is allowing us to implement economic plans more swiftly. ?]
+We have already formulated an economic plan. Now we have to implement it. [? if economic_minister_party == "SPD" and finance_minister_party == "SPD" : Our control of both the Finance and Economic Ministry is allowing us to implement economic plans more swiftly. ?]
 
 - @wtb_2
 - @wtb_2_deficit
