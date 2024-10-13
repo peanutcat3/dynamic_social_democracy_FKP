@@ -156,6 +156,7 @@ if (Q.month_actions >= 1) {
     if (Q.inflation > 8 && Q.pro_republic > 40) {
         Q.pro_republic -= 1;
     }
+    Q['pro_republic_' + month] = pro_republic
 }
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
