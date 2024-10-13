@@ -3,7 +3,7 @@ subtitle: A new year
 on-arrival: {!
 Q.unemployed += 3;
 Q.inflation -= 1;
-if (Q.old_demographics) {
+if (Q.z_party_leader == "Kaas") {
     Q.catholics_z += 3;
 }
 // increase NSDAP vote share

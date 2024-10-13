@@ -5,7 +5,7 @@ on-arrival: {!
 // increase NSDAP vote share 
 Q.unemployed += 8; 
 Q.inflation -= 4;
-if (Q.old_demographics) {
+if (Q.z_party_leader == "Kaas") {
     Q.catholics += 3;
     Q.catholics_z += 3;
 }

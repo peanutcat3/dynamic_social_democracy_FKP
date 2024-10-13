@@ -11,7 +11,7 @@ Q.sa_militancy += 0.05;
 Q.old_middle_nsdap += 6;
 Q.rural_nsdap += 4;
 Q.unemployed_nsdap += 4;
-if (Q.old_demographics) {
+if (Q.z_party_leader == "Kaas") {
     Q.catholics_z += 5;
 }
  if (Q.unemployed > 25 && Q.pro_republic < 70) {
