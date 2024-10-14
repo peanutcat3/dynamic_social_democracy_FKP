@@ -17,7 +17,7 @@ On the right is Alfred Hugenberg, a prominent industrialist and head of a media 
 go-to: hergt if pro_republic-nationalism >= 10 and pro_republic_6 >= 65; triumvirate if pro_republic-nationalism >= 5; hugenberg
 
 @hugenberg
-on-arrival: dnvp_leader = "Hugenberg"; catholics_dnvp -= 2; workers_dnvp -= 2; rural_dnvp -= 4;
+on-arrival: dnvp_leader = "Hugenberg"; catholics_dnvp -= 2; workers_dnvp -= 2; rural_dnvp -= 4; catholics_other += 2; workers_other += 2; rural_other += 4;
 
 placeholder
 
