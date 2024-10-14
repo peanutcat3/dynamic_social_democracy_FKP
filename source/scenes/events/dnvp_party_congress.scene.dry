@@ -19,14 +19,14 @@ go-to: hergt if pro_republic-nationalism >= 10 and pro_republic_6 >= 65; triumvi
 @hugenberg
 on-arrival: dnvp_leader = "Hugenberg"; catholics_dnvp -= 2; workers_dnvp -= 2; rural_dnvp -= 4;
 
-With our grassroots connections, we have been able to influence the <span style="color: #000000;">Center</span> delegates to support Joseph Joos as the new <span style="color: #000000;">Center</span> chairman. He has long been a friend of the <span style="color: #c00000;">**SPD**</span>, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the <span style="color: #000000;">Center Party</span> to the working class.
+placeholder
 
 @triumvirate
-on-arrival: dnvp_leader = "Triumvirate"; catholics_z -= 3; catholics_spd += 5; workers_z += 3
+on-arrival: dnvp_leader = "Triumvirate"
 
-With our grassroots connections as well as a professional campaign, we have been able to influence the <span style="color: #000000;">Center</span> delegates to support Joseph Joos as the new <span style="color: #000000;">Center</span> chairman. He has long been a friend of the <span style="color: #c00000;">**SPD**</span>, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the <span style="color: #000000;">Center Party</span> to the working class.
+placeholder
 
 @hergt
-on-arrival: dnvp_leader = "Hergt"; catholics_z -= 3; catholics_spd += 5; workers_z += 3
+on-arrival: dnvp_leader = "Hergt"
 
-With our grassroots connections as well as a professional campaign, we have been able to influence the <span style="color: #000000;">Center</span> delegates to support Joseph Joos as the new <span style="color: #000000;">Center</span> chairman. He has long been a friend of the <span style="color: #c00000;">**SPD**</span>, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the <span style="color: #000000;">Center Party</span> to the working class.
+placeholder
