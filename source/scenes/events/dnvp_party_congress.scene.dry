@@ -9,7 +9,7 @@ new-page: true
 
 A leadership vote is being held at the <span style="color: #2C517A;">German National People's Party</span>(<span style="color: #2C517A;">**DNVP**</span>) congress following the resignation of former leader Kuno von Westarp. The in-fighting resulting from their electoral defeat last election, coupled with the question of governmental participation in a system they're fundamentally opposed to has come to a head at this congress.
 
-On the right is Alfred Hugenberg, a prominent industrialist and head of a media empire. He is vehemently opposed by the left of the party for his "<i>Katastrophenpolitik</i>", as he prefers to see the republic fall than participate in parliamentary government. With Westarp's refusal to run for re-election, despite urgent pleas from the moderates within the party, they have convinced the reluctant Oskar Hergt, former leader of the DNVP from 1918—1924, himself ousted by the right. The results of this congress may very well be a turning point in the history of the entire German nation.
+On the right is Alfred Hugenberg, a prominent industrialist and head of a media empire. He is vehemently opposed by the left of the party for his "<i>Katastrophenpolitik</i>", as he prefers to see the republic fall than participate in parliamentary government. With Westarp's refusal to run for re-election, despite urgent pleas from the moderates within the party, they have convinced the reluctant Oskar Hergt, former leader of the <span style="color: #2C517A;">**DNVP**</span> from 1918—1924, himself ousted by the right. The results of this congress may very well be a turning point in the history of the entire German nation.
 
 - @resultsdnvp: The party votes...
 
@@ -28,5 +28,6 @@ placeholder
 
 @hugenberg
 on-arrival: dnvp_leader = "Hugenberg"; catholics_dnvp -= 2; workers_dnvp -= 2; rural_dnvp -= 4; catholics_other += 2; workers_other += 2; rural_other += 4;
+face-image: img/All_Quiet.jpg
 
 placeholder
