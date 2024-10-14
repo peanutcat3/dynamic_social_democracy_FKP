@@ -120,6 +120,8 @@ if (Q.other_r > 0 && Q.other_votes === Q.other_r) {
 for (var party of Q.parties) {
     if (other_party_sum > 0 && Q.nsdap_votes === Q.nsdap_r) {
         Q[party + '_r'] = Math.round((Q[party + '_r'] * reichstag_without_other / other_party_sum) * 10) / 10;
+        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
+        Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
         console.log(Q.other_r)
     }
 }
