@@ -107,9 +107,9 @@
   window.enableImages = function() {
     window.dendryUI.show_portraits = true;
     window.dendryUI.saveSettings();
-};
+   };
 
-window.disableImages = function() {
+  window.disableImages = function() {
     window.dendryUI.show_portraits = false;
     window.dendryUI.saveSettings();
 };
@@ -230,7 +230,7 @@ window.disableImages = function() {
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
   window.onload = function() {
-    window.dendryUI.loadSettings({show_portraits: false});
+    window.dendryUI.loadSettings({show_portraits: true});
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
   };
 
