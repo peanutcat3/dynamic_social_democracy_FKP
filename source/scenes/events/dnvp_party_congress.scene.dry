@@ -19,15 +19,15 @@ go-to: hergt if pro_republic - nationalism >= 10 and pro_republic_6 >= 65; hugen
 @hergt
 on-arrival: dnvp_leader = "Hergt"
 
-placeholder
+placeholder hergt
 
 @triumvirate
 on-arrival: dnvp_leader = "Triumvirate"
 
-placeholder
+placeholder triumvirate
 
 @hugenberg
 on-arrival: dnvp_leader = "Hugenberg"; catholics_dnvp -= 2; workers_dnvp -= 2; rural_dnvp -= 4; catholics_other += 2; workers_other += 2; rural_other += 4;
 face-image: img/AlfredHugenberg.jpg
 
-placeholder
+placeholder hugenberg
