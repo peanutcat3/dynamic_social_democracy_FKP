@@ -88,15 +88,15 @@ for (var party of Q.parties) {
     var original_value = Q.other_r
 
 if (Q.other_r > 0 && Q.other_votes === Q.other_r) {
-    if (Q.year === 1928 && Q.dnvp_leader == "Hugenberg" or Q.dnvp_leader == "Triumvirate" or Q.dnvp_leader == "Westarp") {
+    if (Q.year === 1928 && Q.dnvp_leader === "Hugenberg" or Q.dnvp_leader === "Triumvirate" or Q.dnvp_leader === "Westarp") {
         Q.other_r = Math.round(Q.other_r * 0.75 * 10) / 10;
-    } else if (Q.year === 1929 && Q.dnvp_leader == "Hugenberg" or Q.dnvp_leader == "Triumvirate") {
+    } else if (Q.year === 1929 && Q.dnvp_leader === "Hugenberg" or Q.dnvp_leader === "Triumvirate") {
         Q.other_r = Math.round(Q.other_r * 0.8 * 10) / 10;
-    } else if (Q.year === 1930 && Q.dnvp_leader == "Hugenberg") {
+    } else if (Q.year === 1930 && Q.dnvp_leader === "Hugenberg") {
         Q.other_r = Math.round(Q.other_r * 0.9 * 10) / 10;
-    } else if (Q.year === 1931 && Q.dnvp_leader == "Hugenberg") {
+    } else if (Q.year === 1931 && Q.dnvp_leader === "Hugenberg") {
         Q.other_r = Math.round(Q.other_r * 0.8 * 10) / 10;
-    } else if (Q.year >= 1932 && Q.dnvp_leader == "Hugenberg") {
+    } else if (Q.year >= 1932 && Q.dnvp_leader === "Hugenberg") {
         Q.other_r = Math.round(Q.other_r * 0.6 * 10) / 10;
     } else if (Q.year === 1928) {
         Q.other_r = Math.round(Q.other_r * 0.65 * 10) / 10;
