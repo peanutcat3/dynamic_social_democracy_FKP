@@ -1,6 +1,6 @@
 title: <span style="color: #2C517A;">**DNVP**</span> Congress
 subtitle: The <span style="color: #2C517A;">**DNVP**</span> chooses their new leader...
-view-if: year = 1928 and month = 10 and z_party_leader = "Westarp"
+view-if: year = 1928 and month = 10 and dnvp_leader = "Westarp"
 max-visits: 1
 tags: event
 new-page: true
