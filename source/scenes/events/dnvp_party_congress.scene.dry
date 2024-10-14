@@ -28,6 +28,6 @@ placeholder
 
 @hugenberg
 on-arrival: dnvp_leader = "Hugenberg"; catholics_dnvp -= 2; workers_dnvp -= 2; rural_dnvp -= 4; catholics_other += 2; workers_other += 2; rural_other += 4;
-face-image: img/All_Quiet.jpg
+face-image: img/AlfredHugenberg.jpg
 
 placeholder
