@@ -3,7 +3,7 @@ subtitle: The <span style="color: #2C517A;">DNVP</span> chooses their new leader
 view-if: year = 1928 and month = 10 and dnvp_leader = "Westarp"
 max-visits: 1
 tags: event
-face-image: img/AlfredHugenberg.jpg
+face-image: img/dnvp.jpg
 new-page: true
 
 = <span style="color: #2C517A;">**DNVP**</span> Congress
@@ -19,15 +19,18 @@ go-to: hergt if pro_republic - nationalism >= 10 and pro_republic_6 >= 65; hugen
 
 @hergt
 on-arrival: dnvp_leader = "Hergt"
+face-image: img/OskarHergt.jpg
 
 placeholder hergt
 
 @triumvirate
 on-arrival: dnvp_leader = "Triumvirate"
+face-image: img/Kuno_Von_Westarp.jpg
 
 placeholder triumvirate
 
 @hugenberg
 on-arrival: dnvp_leader = "Hugenberg"; catholics_dnvp -= 2; workers_dnvp -= 2; rural_dnvp -= 4; catholics_other += 2; workers_other += 2; rural_other += 4;
+face-image: img/AlfredHugenberg.jpg
 
 placeholder hugenberg
