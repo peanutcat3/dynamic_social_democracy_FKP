@@ -344,7 +344,7 @@ go-to: coalition_menu
 
 {!<button class="tab_button" id="demographics_tab" onclick="window.toggleDem();">Demographic Results</button>!}
 
-{!<div id="results" class="hidden">!}
+{!<div id="results">!}
     {!<div style="overflow-x:auto;">!}
     {!<table style="text-align:center;">!}
         {!<tr>!}
