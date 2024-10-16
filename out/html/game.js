@@ -13,10 +13,6 @@
     ui = dendryUI;
     game = ui.game;
 
-    function toggleDemographicTable() {
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.classList.toggle('hidden');
-    }
     // Add your custom code here.
   };
 
