@@ -390,7 +390,7 @@ go-to: coalition_menu
             {!<td>!}[+ catholics_kpd_normalized +]%[? if n_elections != 1: ([+ demo_change_catholics_kpd +])?]{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td><span style="color: #D3C24D;"><b>[+ ddp_name +]</b></span></td>!}
+            {!<td>!}<span style="color: #D3C24D;">**[+ ddp_name +]**</span>{!</td>!}
             {!<td>!}[+ workers_ddp_normalized +]%[? if n_elections != 1: ([+ demo_change_workers_ddp +])?]{!</td>!}
             {!<td>!}[+ new_middle_ddp_normalized +]%[? if n_elections != 1: ([+ demo_change_new_middle_ddp +])?]{!</td>!}
             {!<td>!}[+ old_middle_ddp_normalized +]%[? if n_elections != 1: ([+ demo_change_old_middle_ddp +])?]{!</td>!}
