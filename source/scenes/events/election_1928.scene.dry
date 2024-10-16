@@ -342,7 +342,7 @@ go-to: coalition_menu
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_votes +]% {!</td><td>!} [+ str_votes_change_nsdap +] {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
 {!</table>!}
 
-{!<button class="tab_button" id="demographics_tab" onclick="window.toggleDem;">Demographic Results</button>!}
+{!<button class="tab_button" id="demographics_tab" onclick="window.toggleDem();">Demographic Results</button>!}
 
 {!<div id="results" class="hidden">
     <div style="overflow-x:auto;">
