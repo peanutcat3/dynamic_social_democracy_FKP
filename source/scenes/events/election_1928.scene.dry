@@ -344,7 +344,7 @@ go-to: coalition_menu
 
 {!<button class="tab_button" id="demographics_tab" onclick="window.toggleDem();">Demographic Results</button>!}
 
-{!<div id="results">!}
+{!<div id="results" style="visibility: hidden;">!}
     {!<div style="overflow-x:auto;">!}
     {!<table style="text-align:center;">!}
         {!<tr>!}
@@ -384,7 +384,7 @@ go-to: coalition_menu
             {!<td>!}[+ catholics_kpd_normalized +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td><span style="color: #D3C24D;"><b>[+ ddp_name +]</b></span></td>!}
+            {!<td>!}<span style="color: #D3C24D;">**[+ ddp_name +]**</span>{!</td>!}
             {!<td>!}[+ workers_ddp_normalized +]%{!</td>!}
             {!<td>!}[+ new_middle_ddp_normalized +]%{!</td>!}
             {!<td>!}[+ old_middle_ddp_normalized +]%{!</td>!}
