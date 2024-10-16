@@ -432,7 +432,7 @@ go-to: coalition_menu
     </div>
 </div>!}
 
-{<script>
+{!<script>
     document.getElementById('showResultsButton').addEventListener('click', function() {
         const resultsDiv = document.getElementById('results');
         resultsDiv.classList.toggle('hidden');
