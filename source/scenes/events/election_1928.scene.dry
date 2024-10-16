@@ -344,91 +344,98 @@ go-to: coalition_menu
 
 {!<button id="showResultsButton">Show Demographic Election Results</button>!}
 
-    {!<div class="table-container">
-        <table>
+{!document.getElementById('showResultsButton').addEventListener('click', function() {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.classList.toggle('hidden');
+    });!}
+
+{!<div id="results" class="hidden">
+    <div style="overflow-x:auto;">
+    <table style="text-align:center;">
             <tr>
-                <th>Party</th>
-                <th>Workers</th>
-                <th>New Middle Class</th>
-                <th>Old Middle Class</th>
-                <th>Rural</th>
-                <th>Unemployed</th>
-                <th>Catholics</th>
-            </tr>
-            <tr>
-                <td><span style="color: #c00000;">SPD</span></td>
-                <td>[+ workers_spd_normalized +]%</td>
-                <td>[+ new_middle_spd_normalized +]%</td>
-                <td>[+ old_middle_spd_normalized +]%</td>
-                <td>[+ rural_spd_normalized +]%</td>
-                <td>[+ unemployed_spd_normalized +]%</td>
-                <td>[+ catholics_spd_normalized +]%</td>
-            </tr>
-            <tr>
-                <td><span style="color: #000000;">Z</span> + <span style="color: #4B758B;">BVP</span></td>
-                <td>[+ workers_z_normalized +]%</td>
-                <td>[+ new_middle_z_normalized +]%</td>
-                <td>[+ old_middle_z_normalized +]%</td>
-                <td>[+ rural_z_normalized +]%</td>
-                <td>[+ unemployed_z_normalized +]%</td>
-                <td>[+ catholics_z_normalized +]%</td>
-            </tr>
-            <tr>
-                <td><span style="color: #7A2B5C;">KPD</span></td>
-                <td>[+ workers_kpd_normalized +]%</td>
-                <td>[+ new_middle_kpd_normalized +]%</td>
-                <td>[+ old_middle_kpd_normalized +]%</td>
-                <td>[+ rural_kpd_normalized +]%</td>
-                <td>[+ unemployed_kpd_normalized +]%</td>
-                <td>[+ catholics_kpd_normalized +]%</td>
-            </tr>
-            <tr>
-                <td><span style="color: #D3C24D;">[+ ddp_name +]</span></td>
-                <td>[+ workers_ddp_normalized +]%</td>
-                <td>[+ new_middle_ddp_normalized +]%</td>
-                <td>[+ old_middle_ddp_normalized +]%</td>
-                <td>[+ rural_ddp_normalized +]%</td>
-                <td>[+ unemployed_ddp_normalized +]%</td>
-                <td>[+ catholics_ddp_normalized +]%</td>
-            </tr>
-            <tr>
-                <td><span style="color: #C0A054;">DVP</span></td>
-                <td>[+ workers_dvp_normalized +]%</td>
-                <td>[+ new_middle_dvp_normalized +]%</td>
-                <td>[+ old_middle_dvp_normalized +]%</td>
-                <td>[+ rural_dvp_normalized +]%</td>
-                <td>[+ unemployed_dvp_normalized +]%</td>
-                <td>[+ catholics_dvp_normalized +]%</td>
-            </tr>
-            <tr>
-                <td><span style="color: #2C517A;">DNVP</span></td>
-                <td>[+ workers_dnvp_normalized +]%</td>
-                <td>[+ new_middle_dnvp_normalized +]%</td>
-                <td>[+ old_middle_dnvp_normalized +]%</td>
-                <td>[+ rural_dnvp_normalized +]%</td>
-                <td>[+ unemployed_dnvp_normalized +]%</td>
-                <td>[+ catholics_dnvp_normalized +]%</td>
-            </tr>
-            <tr>
-                <td><span style="color: #7A3C00;">NSDAP</span></td>
-                <td>[+ workers_nsdap_normalized +]%</td>
-                <td>[+ new_middle_nsdap_normalized +]%</td>   
-                <td>[+ old_middle_nsdap_normalized +]%</td>
-                <td>[+ rural_nsdap_normalized +]%</td>
-                <td>[+ unemployed_nsdap_normalized +]%</td>
-                <td>[+ catholics_nsdap_normalized +]%</td>
-            </tr>
-            <tr>
-                <td>Others</td>
-                <td>[+ workers_other_normalized +]%</td>
-                <td>[+ new_middle_other_normalized +]%</td>   
-                <td>[+ old_middle_other_normalized +]%</td>
-                <td>[+ rural_other_normalized +]%</td>
-                <td>[+ unemployed_other_normalized +]%</td>
-                <td>[+ catholics_other_normalized +]%</td>
-            </tr>
-        </table>
-    </div>!}
+            <th>Party</th>
+            <th>Workers</th>
+            <th>New Middle Class</th>
+            <th>Old Middle Class</th>
+            <th>Rural</th>
+            <th>Unemployed</th>
+            <th>Catholics</th>
+        </tr>
+        <tr>
+            <td><span style="color: #c00000;">**SPD**</span></td>
+            <td>[+ workers_spd_normalized +]%</td>
+            <td>[+ new_middle_spd_normalized +]%</td>
+            <td>[+ old_middle_spd_normalized +]%</td>
+            <td>[+ rural_spd_normalized +]%</td>
+            <td>[+ unemployed_spd_normalized +]%</td>
+            <td>[+ catholics_spd_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #000000;">**Z**</span> + <span style="color: #4B758B;">**BVP**</span></td>
+            <td>[+ workers_z_normalized +]%</td>
+            <td>[+ new_middle_z_normalized +]%</td>
+            <td>[+ old_middle_z_normalized +]%</td>
+            <td>[+ rural_z_normalized +]%</td>
+            <td>[+ unemployed_z_normalized +]%</td>
+            <td>[+ catholics_z_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #7A2B5C;">**KPD**</span></td>
+            <td>[+ workers_kpd_normalized +]%</td>
+            <td>[+ new_middle_kpd_normalized +]%</td>
+            <td>[+ old_middle_kpd_normalized +]%</td>
+            <td>[+ rural_kpd_normalized +]%</td>
+            <td>[+ unemployed_kpd_normalized +]%</td>
+            <td>[+ catholics_kpd_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #D3C24D;">**[+ ddp_name +]**</span></td>
+            <td>[+ workers_ddp_normalized +]%</td>
+            <td>[+ new_middle_ddp_normalized +]%</td>
+            <td>[+ old_middle_ddp_normalized +]%</td>
+            <td>[+ rural_ddp_normalized +]%</td>
+            <td>[+ unemployed_ddp_normalized +]%</td>
+            <td>[+ catholics_ddp_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #C0A054;">**DVP**</span></td>
+            <td>[+ workers_dvp_normalized +]%</td>
+            <td>[+ new_middle_dvp_normalized +]%</td>
+            <td>[+ old_middle_dvp_normalized +]%</td>
+            <td>[+ rural_dvp_normalized +]%</td>
+            <td>[+ unemployed_dvp_normalized +]%</td>
+            <td>[+ catholics_dvp_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #2C517A;">**DNVP**</span></td>
+            <td>[+ workers_dnvp_normalized +]%</td>
+            <td>[+ new_middle_dnvp_normalized +]%</td>
+            <td>[+ old_middle_dnvp_normalized +]%</td>
+            <td>[+ rural_dnvp_normalized +]%</td>
+            <td>[+ unemployed_dnvp_normalized +]%</td>
+            <td>[+ catholics_dnvp_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #7A3C00;">**NSDAP**</span></td>
+            <td>[+ workers_nsdap_normalized +]%</td>
+            <td>[+ new_middle_nsdap_normalized +]%</td>   
+            <td>[+ old_middle_nsdap_normalized +]%</td>
+            <td>[+ rural_nsdap_normalized +]%</td>
+            <td>[+ unemployed_nsdap_normalized +]%</td>
+            <td>[+ catholics_nsdap_normalized +]%</td>
+        </tr>
+        <tr>
+            <td>**Others**</td>
+            <td>[+ workers_other_normalized +]%</td>
+            <td>[+ new_middle_other_normalized +]%</td>   
+            <td>[+ old_middle_other_normalized +]%</td>
+            <td>[+ rural_other_normalized +]%</td>
+            <td>[+ unemployed_other_normalized +]%</td>
+            <td>[+ catholics_other_normalized +]%</td>
+        </tr>
+    </table>
+</div>
+</div>!}
 
 **Potential coalitions:**
 
