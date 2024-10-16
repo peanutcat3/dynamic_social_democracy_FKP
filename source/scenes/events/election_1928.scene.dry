@@ -127,10 +127,12 @@ for (var party of Q.parties) {
     Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
 }
 for (var party of Q.parties) {
-    Q[classes + "_change" + party] = Q[classes+'_'+party] - Q['old_'+c+'_'+party]
-    var sign = Q[classes + "_change" + party] > 0 ? '+' : '';
-    Q['demo_change_' + party] = sign + parseFloat(Q[classes + "_change" + party]).toFixed(0);
-    Q['old_'+c+'_'+party] = Q[classes+'_'+party]
+    for (var c of Q.classes) {
+        Q[c + "_change" + party] = Q[c + '_' + party] - Q['old_' + c + '_' + party];
+        var sign = Q[c + "_change" + party] > 0 ? '+' : '';
+        Q['demo_change_' + party] = sign + parseFloat(Q[c + "_change" + party]).toFixed(0);
+        Q['old_' + c + '_' + party] = Q[c + '_' + party];
+    }
 }
 Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
