@@ -502,8 +502,8 @@ img {
     margin-right: 1em;
     vertical-align: top;
   }
-    #content .small-font {
-    font-size: 0.8em;
+  .small-font {
+    font-size: 0.8em !important;
 }
 }
 
