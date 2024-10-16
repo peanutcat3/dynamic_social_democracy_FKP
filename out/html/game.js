@@ -192,6 +192,11 @@
       window.updateSidebar();
   };
 
+  window.toggleDem = function toggleDemographicTable() {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.classList.toggle('hidden');
+};
+
   /*
    * This function copied from the code for Infinite Space Battle Simulator
    *
