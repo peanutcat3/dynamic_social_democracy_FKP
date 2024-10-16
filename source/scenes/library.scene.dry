@@ -344,7 +344,7 @@ go-to: menu
             <td>[+ catholics_nsdap_normalized +]%</td>
         </tr>
         <tr>
-            <td>Others</td>
+            <td>**Others**</td>
             <td>[+ workers_other_normalized +]%</td>
             <td>[+ new_middle_other_normalized +]%</td>   
             <td>[+ old_middle_other_normalized +]%</td>
