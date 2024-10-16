@@ -502,7 +502,7 @@ img {
     margin-right: 1em;
     vertical-align: top;
   }
-  .small-font {
+    #content .small-font {
     font-size: 0.8em;
 }
 }
