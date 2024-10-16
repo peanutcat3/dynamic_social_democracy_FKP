@@ -357,7 +357,7 @@ go-to: coalition_menu
             {!<th>Catholics</th>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td><span style="color: #c00000;">**SPD**</span></td>!}
+            {!<td><span style="color: #c00000;"><b>SPD</b></span></td>!}
             {!<td>!}[+ workers_spd_normalized +]%{!</td>!}
             {!<td>!}[+ new_middle_spd_normalized +]%{!</td>!}
             {!<td>!}[+ old_middle_spd_normalized +]%{!</td>!}
@@ -366,7 +366,7 @@ go-to: coalition_menu
             {!<td>!}[+ catholics_spd_normalized +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td><span style="color: #000000;">**Z**</span> + <span style="color: #4B758B;">**BVP**</span></td>!}
+            {!<td><span style="color: #000000;"><b>Z</b></span> + <span style="color: #4B758B;"><b>BVP</b></span></td>!}
             {!<td>!}[+ workers_z_normalized +]%{!</td>!}
             {!<td>!}[+ new_middle_z_normalized +]%{!</td>!}
             {!<td>!}[+ old_middle_z_normalized +]%{!</td>!}
@@ -375,7 +375,7 @@ go-to: coalition_menu
             {!<td>!}[+ catholics_z_normalized +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td><span style="color: #7A2B5C;">**KPD**</span></td>!}
+            {!<td><span style="color: #7A2B5C;"><b>KPD</b></span></td>!}
             {!<td>!}[+ workers_kpd_normalized +]%{!</td>!}
             {!<td>!}[+ new_middle_kpd_normalized +]%{!</td>!}
             {!<td>!}[+ old_middle_kpd_normalized +]%{!</td>!}
@@ -384,7 +384,7 @@ go-to: coalition_menu
             {!<td>!}[+ catholics_kpd_normalized +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td><span style="color: #D3C24D;">**[+ ddp_name +]**</span></td>!}
+            {!<td><span style="color: #D3C24D;"><b>[+ ddp_name +]</b></span></td>!}
             {!<td>!}[+ workers_ddp_normalized +]%{!</td>!}
             {!<td>!}[+ new_middle_ddp_normalized +]%{!</td>!}
             {!<td>!}[+ old_middle_ddp_normalized +]%{!</td>!}
@@ -393,7 +393,7 @@ go-to: coalition_menu
             {!<td>!}[+ catholics_ddp_normalized +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td><span style="color: #C0A054;">**DVP**</span></td>!}
+            {!<td><span style="color: #C0A054;"><b>DVP</b></span></td>!}
             {!<td>!}[+ workers_dvp_normalized +]%{!</td>!}
             {!<td>!}[+ new_middle_dvp_normalized +]%{!</td>!}
             {!<td>!}[+ old_middle_dvp_normalized +]%{!</td>!}
@@ -402,7 +402,7 @@ go-to: coalition_menu
             {!<td>!}[+ catholics_dvp_normalized +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td><span style="color: #2C517A;">**DNVP**</span></td>!}
+            {!<td><span style="color: #2C517A;"><b>DNVP</b></span></td>!}
             {!<td>!}[+ workers_dnvp_normalized +]%{!</td>!}
             {!<td>!}[+ new_middle_dnvp_normalized +]%{!</td>!}
             {!<td>!}[+ old_middle_dnvp_normalized +]%{!</td>!}
@@ -411,7 +411,7 @@ go-to: coalition_menu
             {!<td>!}[+ catholics_dnvp_normalized +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td><span style="color: #7A3C00;">**NSDAP**</span></td>!}
+            {!<td><span style="color: #7A3C00;"><b>NSDAP</b></span></td>!}
             {!<td>!}[+ workers_nsdap_normalized +]%{!</td>!}
             {!<td>!}[+ new_middle_nsdap_normalized +]%{!</td>!}
             {!<td>!}[+ old_middle_nsdap_normalized +]%{!</td>!}
@@ -420,7 +420,7 @@ go-to: coalition_menu
             {!<td>!}[+ catholics_nsdap_normalized +]%{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td>**Others**</td>!}
+            {!<td><b>Others</b></td>!}
             {!<td>!}[+ workers_other_normalized +]%{!</td>!}
             {!<td>!}[+ new_middle_other_normalized +]%{!</td>!}
             {!<td>!}[+ old_middle_other_normalized +]%{!</td>!}
