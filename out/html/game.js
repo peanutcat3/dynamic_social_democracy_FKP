@@ -194,9 +194,12 @@
 
   window.toggleDem = function toggleDemographicTable() {
     const resultsDiv = document.getElementById('results');
-    resultsDiv.classList.toggle('hidden');
+    if (resultsDiv.style.visibility === 'hidden') {
+        resultsDiv.style.visibility = 'visible';
+    } else {
+        resultsDiv.style.visibility = 'hidden';
+    }
 };
-
   /*
    * This function copied from the code for Infinite Space Battle Simulator
    *
