@@ -194,10 +194,11 @@
 
   window.toggleDem = function toggleDemographicTable() {
     const resultsDiv = document.getElementById('results');
-    if (resultsDiv.style.visibility === 'hidden') {
-        resultsDiv.style.visibility = 'visible';
+    // Toggle display between 'none' and 'block'
+    if (resultsDiv.style.display === 'none' || resultsDiv.style.display === '') {
+        resultsDiv.style.display = 'block'; // or 'table' for the table specifically
     } else {
-        resultsDiv.style.visibility = 'hidden';
+        resultsDiv.style.display = 'none';
     }
 };
   /*
