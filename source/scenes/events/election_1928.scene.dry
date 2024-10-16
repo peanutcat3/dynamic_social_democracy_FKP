@@ -344,8 +344,7 @@ go-to: coalition_menu
 
 {!<button id="showResultsButton">Show Demographic Election Results</button>!}
 
-{!<div id="results" class="hidden">
-    <div class="table-container">
+    {!<div class="table-container">
         <table>
             <tr>
                 <th>Party</th>
@@ -429,15 +428,7 @@ go-to: coalition_menu
                 <td>[+ catholics_other_normalized +]%</td>
             </tr>
         </table>
-    </div>
-</div>!}
-
-{!<script>
-    document.getElementById('showResultsButton').addEventListener('click', function() {
-        const resultsDiv = document.getElementById('results');
-        resultsDiv.classList.toggle('hidden');
-    });
-</script>!}
+    </div>!}
 
 **Potential coalitions:**
 
