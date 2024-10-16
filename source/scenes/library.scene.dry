@@ -269,17 +269,91 @@ go-to: menu
 
 **Detailed results for each demographic**:
 
-Workers: SPD: [+ workers_spd_normalized +]%, Z: [+ workers_z_normalized +]%, KPD: [+ workers_kpd_normalized +]%, [+ ddp_name +]: [+ workers_ddp_normalized +]%, DVP: [+ workers_dvp_normalized +]%, DNVP: [+ workers_dnvp_normalized +]%, NSDAP: [+ workers_nsdap_normalized +]%, Others: [+ workers_other_normalized +]% [? if sapd_formed: SAPD: [+ workers_sapd_normalized +]% ?]
-
-New Middle Class: SPD: [+ new_middle_spd_normalized +]%, Z: [+ new_middle_z_normalized +]%, KPD: [+ new_middle_kpd_normalized +]%, [+ ddp_name +]: [+ new_middle_ddp_normalized +]%, DVP: [+ new_middle_dvp_normalized +]%, DNVP: [+ new_middle_dnvp_normalized +]%, NSDAP: [+ new_middle_nsdap_normalized +]%, Others: [+ new_middle_other_normalized +]% [? if sapd_formed: SAPD: [+ new_middle_sapd_normalized +]% ?]
-
-Old Middle Class: SPD: [+ old_middle_spd_normalized +]%, Z: [+ old_middle_z_normalized +]%, KPD: [+ old_middle_kpd_normalized +]%, [+ ddp_name +]: [+ old_middle_ddp_normalized +]%, DVP: [+ old_middle_dvp_normalized +]%, DNVP: [+ old_middle_dnvp_normalized +]%, NSDAP: [+ old_middle_nsdap_normalized +]%, Others: [+ old_middle_other_normalized +]% [? if sapd_formed: SAPD: [+ old_middle_sapd_normalized +]% ?]
-
-Rural: SPD: [+ rural_spd_normalized +]%, Z: [+ rural_z_normalized +]%, KPD: [+ rural_kpd_normalized +]%, [+ ddp_name +]: [+ rural_ddp_normalized +]%, DVP: [+ rural_dvp_normalized +]%, DNVP: [+ rural_dnvp_normalized +]%, NSDAP: [+ rural_nsdap_normalized +]%, Others: [+ rural_other_normalized +]% [? if sapd_formed: SAPD: [+ rural_sapd_normalized +]% ?]
-
-Unemployed: SPD: [+ unemployed_spd_normalized +]%, Z: [+ unemployed_z_normalized +]%, KPD: [+ unemployed_kpd_normalized +]%, [+ ddp_name +]: [+ unemployed_ddp_normalized +]%, DVP: [+ unemployed_dvp_normalized +]%, DNVP: [+ unemployed_dnvp_normalized +]%, NSDAP: [+ unemployed_nsdap_normalized +]%, Others: [+ unemployed_other_normalized +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_normalized +]% ?]
-
-Catholics: SPD: [+ catholics_spd_normalized +]%, Z: [+ catholics_z_normalized +]%, KPD: [+ catholics_kpd_normalized +]%, [+ ddp_name +]: [+ catholics_ddp_normalized +]%, DVP: [+ catholics_dvp_normalized +]%, DNVP: [+ catholics_dnvp_normalized +]%, NSDAP: [+ catholics_nsdap_normalized +]%, Others: [+ catholics_other_normalized +]% [? if sapd_formed: SAPD: [+ catholics_sapd_normalized +]% ?]
+<div style="overflow-x:auto;">
+    <table style="text-align:center;">
+            <tr>
+            <th>Party</th>
+            <th>Workers</th>
+            <th>New Middle Class</th>
+            <th>Old Middle Class</th>
+            <th>Rural</th>
+            <th>Unemployed</th>
+            <th>Catholics</th>
+        </tr>
+        <tr>
+            <td><span style="color: #c00000;">**SPD**</span></td>
+            <td>[+ workers_spd_normalized +]%</td>
+            <td>[+ new_middle_spd_normalized +]%</td>
+            <td>[+ old_middle_spd_normalized +]%</td>
+            <td>[+ rural_spd_normalized +]%</td>
+            <td>[+ unemployed_spd_normalized +]%</td>
+            <td>[+ catholics_spd_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #000000;">**Z**</span> + <span style="color: #4B758B;">**BVP**</span></td>
+            <td>[+ workers_z_normalized +]%</td>
+            <td>[+ new_middle_z_normalized +]%</td>
+            <td>[+ old_middle_z_normalized +]%</td>
+            <td>[+ rural_z_normalized +]%</td>
+            <td>[+ unemployed_z_normalized +]%</td>
+            <td>[+ catholics_z_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #7A2B5C;">**KPD**</span></td>
+            <td>[+ workers_kpd_normalized +]%</td>
+            <td>[+ new_middle_kpd_normalized +]%</td>
+            <td>[+ old_middle_kpd_normalized +]%</td>
+            <td>[+ rural_kpd_normalized +]%</td>
+            <td>[+ unemployed_kpd_normalized +]%</td>
+            <td>[+ catholics_kpd_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #D3C24D;">**[+ ddp_name +]**</span></td>
+            <td>[+ workers_ddp_normalized +]%</td>
+            <td>[+ new_middle_ddp_normalized +]%</td>
+            <td>[+ old_middle_ddp_normalized +]%</td>
+            <td>[+ rural_ddp_normalized +]%</td>
+            <td>[+ unemployed_ddp_normalized +]%</td>
+            <td>[+ catholics_ddp_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #C0A054;">**DVP**</span></td>
+            <td>[+ workers_dvp_normalized +]%</td>
+            <td>[+ new_middle_dvp_normalized +]%</td>
+            <td>[+ old_middle_dvp_normalized +]%</td>
+            <td>[+ rural_dvp_normalized +]%</td>
+            <td>[+ unemployed_dvp_normalized +]%</td>
+            <td>[+ catholics_dvp_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #2C517A;">**DNVP**</span></td>
+            <td>[+ workers_dnvp_normalized +]%</td>
+            <td>[+ new_middle_dnvp_normalized +]%</td>
+            <td>[+ old_middle_dnvp_normalized +]%</td>
+            <td>[+ rural_dnvp_normalized +]%</td>
+            <td>[+ unemployed_dnvp_normalized +]%</td>
+            <td>[+ catholics_dnvp_normalized +]%</td>
+        </tr>
+        <tr>
+            <td><span style="color: #7A3C00;">**NSDAP**</span></td>
+            <td>[+ workers_nsdap_normalized +]%</td>
+            <td>[+ new_middle_nsdap_normalized +]%</td>   
+            <td>[+ old_middle_nsdap_normalized +]%</td>
+            <td>[+ rural_nsdap_normalized +]%</td>
+            <td>[+ unemployed_nsdap_normalized +]%</td>
+            <td>[+ catholics_nsdap_normalized +]%</td>
+        </tr>
+        <tr>
+            <td>Others</td>
+            <td>[+ workers_other_normalized +]%</td>
+            <td>[+ new_middle_other_normalized +]%</td>   
+            <td>[+ old_middle_other_normalized +]%</td>
+            <td>[+ rural_other_normalized +]%</td>
+            <td>[+ unemployed_other_normalized +]%</td>
+            <td>[+ catholics_other_normalized +]%</td>
+        </tr>
+    </table>
+</div>
 
 @parties
 go-to: menu
