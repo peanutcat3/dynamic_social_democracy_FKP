@@ -374,7 +374,7 @@ go-to: coalition_menu
 
 {!<div id="results" style="display: none;">!}
     {!<div style="overflow-x:auto;">!}
-    {!<table style="text-align:center;">!}
+    {!<table style="text-align:center; border-spacing: 0.2em;">!}
         {!<tr>!}
             {!<th>Party</th>!}
             {!<th>Workers</th>!}
@@ -386,7 +386,7 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td><span style="color: #c00000;"><b>SPD</b></span></td>!}
-            {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ workers_spd_normalized +]%[? if n_elections != 1 and demo_change_workers_spd_normalized != 0 : ([+ demo_change_workers_spd_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em; padding: 10px">!}[+ workers_spd_normalized +]%[? if n_elections != 1 and demo_change_workers_spd_normalized != 0 : ([+ demo_change_workers_spd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ new_middle_spd_normalized +]%[? if n_elections != 1 and demo_change_new_middle_spd_normalized != 0 : ([+ demo_change_new_middle_spd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ old_middle_spd_normalized +]%[? if n_elections != 1 and demo_change_old_middle_spd_normalized != 0 : ([+ demo_change_old_middle_spd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ rural_spd_normalized +]%[? if n_elections != 1 and demo_change_rural_spd_normalized != 0 : ([+ demo_change_rural_spd_normalized +])?]{!</td>!}
@@ -395,7 +395,7 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td><span style="color: #000000;"><b>Z</b></span> + <span style="color: #4B758B;"><b>BVP</b></span></td>!}
-            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ workers_z_normalized +]%[? if n_elections != 1 and demo_change_workers_z_normalized != 0 : ([+ demo_change_workers_z_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_z_normalized +]%[? if n_elections != 1 and demo_change_workers_z_normalized != 0 : ([+ demo_change_workers_z_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_z_normalized +]%[? if n_elections != 1 and demo_change_new_middle_z_normalized != 0 : ([+ demo_change_new_middle_z_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_z_normalized +]%[? if n_elections != 1 and demo_change_old_middle_z_normalized != 0 : ([+ demo_change_old_middle_z_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ rural_z_normalized +]%[? if n_elections != 1 and demo_change_rural_z_normalized != 0 : ([+ demo_change_rural_z_normalized +])?]{!</td>!}
@@ -404,7 +404,7 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td><span style="color: #7A2B5C;"><b>KPD</b></span></td>!}
-            {!<td style="background-color: rgba(122, 43, 92, 0.2); font-size: 0.85em;">!}[+ workers_kpd_normalized +]%[? if n_elections != 1 and demo_change_workers_kpd_normalized != 0 : ([+ demo_change_workers_kpd_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 43, 92, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_kpd_normalized +]%[? if n_elections != 1 and demo_change_workers_kpd_normalized != 0 : ([+ demo_change_workers_kpd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(122, 43, 92, 0.2); font-size: 0.85em;">!}[+ new_middle_kpd_normalized +]%[? if n_elections != 1 and demo_change_new_middle_kpd_normalized != 0 : ([+ demo_change_new_middle_kpd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(122, 43, 92, 0.2); font-size: 0.85em;">!}[+ old_middle_kpd_normalized +]%[? if n_elections != 1 and demo_change_old_middle_kpd_normalized != 0 : ([+ demo_change_old_middle_kpd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(122, 43, 92, 0.2); font-size: 0.85em;">!}[+ rural_kpd_normalized +]%[? if n_elections != 1 and demo_change_rural_kpd_normalized != 0 : ([+ demo_change_rural_kpd_normalized +])?]{!</td>!}
@@ -413,7 +413,7 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td>!}<span style="color: #D3C24D;">**[+ ddp_name +]**</span>{!</td>!}
-            {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ workers_ddp_normalized +]%[? if n_elections != 1 and demo_change_workers_ddp_normalized != 0 : ([+ demo_change_workers_ddp_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_ddp_normalized +]%[? if n_elections != 1 and demo_change_workers_ddp_normalized != 0 : ([+ demo_change_workers_ddp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ new_middle_ddp_normalized +]%[? if n_elections != 1 and demo_change_new_middle_ddp_normalized != 0 : ([+ demo_change_new_middle_ddp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ old_middle_ddp_normalized +]%[? if n_elections != 1 and demo_change_old_middle_ddp_normalized != 0 : ([+ demo_change_old_middle_ddp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em;">!}[+ rural_ddp_normalized +]%[? if n_elections != 1 and demo_change_rural_ddp_normalized != 0 : ([+ demo_change_rural_ddp_normalized +])?]{!</td>!}
@@ -422,7 +422,7 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td><span style="color: #C0A054;"><b>DVP</b></span></td>!}
-            {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ workers_dvp_normalized +]%[? if n_elections != 1 and demo_change_workers_dvp_normalized != 0 : ([+ demo_change_workers_dvp_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_dvp_normalized +]%[? if n_elections != 1 and demo_change_workers_dvp_normalized != 0 : ([+ demo_change_workers_dvp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ new_middle_dvp_normalized +]%[? if n_elections != 1 and demo_change_new_middle_dvp_normalized != 0 : ([+ demo_change_new_middle_dvp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ old_middle_dvp_normalized +]%[? if n_elections != 1 and demo_change_old_middle_dvp_normalized != 0 : ([+ demo_change_old_middle_dvp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ rural_dvp_normalized +]%[? if n_elections != 1 and demo_change_rural_dvp_normalized != 0 : ([+ demo_change_rural_dvp_normalized +])?]{!</td>!}
@@ -431,7 +431,7 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td><span style="color: #2C517A;"><b>DNVP</b></span></td>!}
-            {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ workers_dnvp_normalized +]%[? if n_elections != 1 and demo_change_workers_dnvp_normalized != 0 : ([+ demo_change_workers_dnvp_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_dnvp_normalized +]%[? if n_elections != 1 and demo_change_workers_dnvp_normalized != 0 : ([+ demo_change_workers_dnvp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ new_middle_dnvp_normalized +]%[? if n_elections != 1 and demo_change_new_middle_dnvp_normalized != 0 : ([+ demo_change_new_middle_dnvp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ old_middle_dnvp_normalized +]%[? if n_elections != 1 and demo_change_old_middle_dnvp_normalized != 0 : ([+ demo_change_old_middle_dnvp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ rural_dnvp_normalized +]%[? if n_elections != 1 and demo_change_rural_dnvp_normalized != 0 : ([+ demo_change_rural_dnvp_normalized +])?]{!</td>!}
@@ -440,7 +440,7 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td><span style="color: #7A3C00;"><b>NSDAP</b></span></td>!}
-            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ workers_nsdap_normalized +]%[? if n_elections != 1 and demo_change_workers_nsdap_normalized != 0 : ([+ demo_change_workers_nsdap_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_nsdap_normalized +]%[? if n_elections != 1 and demo_change_workers_nsdap_normalized != 0 : ([+ demo_change_workers_nsdap_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_nsdap_normalized +]%[? if n_elections != 1 and demo_change_new_middle_nsdap_normalized != 0 : ([+ demo_change_new_middle_nsdap_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_nsdap_normalized +]%[? if n_elections != 1 and demo_change_old_middle_nsdap_normalized != 0 : ([+ demo_change_old_middle_nsdap_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ rural_nsdap_normalized +]%[? if n_elections != 1 and demo_change_rural_nsdap_normalized != 0 : ([+ demo_change_rural_nsdap_normalized +])?]{!</td>!}
@@ -449,7 +449,7 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td><b>Others</b></td>!}
-            {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ workers_other_normalized +]%[? if n_elections != 1 and demo_change_workers_other_normalized != 0 : ([+ demo_change_workers_other_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_other_normalized +]%[? if n_elections != 1 and demo_change_workers_other_normalized != 0 : ([+ demo_change_workers_other_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ new_middle_other_normalized +]%[? if n_elections != 1 and demo_change_new_middle_other_normalized != 0 : ([+ demo_change_new_middle_other_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ old_middle_other_normalized +]%[? if n_elections != 1 and demo_change_old_middle_other_normalized != 0 : ([+ demo_change_old_middle_other_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ rural_other_normalized +]%[? if n_elections != 1 and demo_change_rural_other_normalized != 0 : ([+ demo_change_rural_other_normalized +])?]{!</td>!}
