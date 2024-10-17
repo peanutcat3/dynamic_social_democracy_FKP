@@ -208,6 +208,13 @@
     } else {
         svgElement.style.display = 'none';
     }
+    window.toggleElectionGraph = function toggleElectionGraph() {
+        const svgElement = document.getElementById('election_tab');
+        if (svgElement.style.display === 'none' || svgElement.style.display === '') {
+            svgElement.style.display = 'block';
+        } else {
+            svgElement.style.display = 'none';
+        }
 };
   /*
    * This function copied from the code for Infinite Space Battle Simulator
