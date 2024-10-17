@@ -300,12 +300,12 @@ go-to: menu
         </tr>
         <tr>
             <td><span style="color: #700000;">**KPD**</span></td>
-            <td style="background-color: rgba(122, 43, 92, 0.2); padding: 10px;">[+ workers_kpd_normalized +]%</td>
-            <td style="background-color: rgba(122, 43, 92, 0.2);">[+ new_middle_kpd_normalized +]%</td>
-            <td style="background-color: rgba(122, 43, 92, 0.2);">[+ old_middle_kpd_normalized +]%</td>
-            <td style="background-color: rgba(122, 43, 92, 0.2);">[+ rural_kpd_normalized +]%</td>
-            <td style="background-color: rgba(122, 43, 92, 0.2);">[+ unemployed_kpd_normalized +]%</td>
-            <td style="background-color: rgba(122, 43, 92, 0.2);">[+ catholics_kpd_normalized +]%</td>
+            <td style="background-color: rgba(112, 0, 0, 0.2); padding: 10px;">[+ workers_kpd_normalized +]%</td>
+            <td style="background-color: rgba(112, 0, 0, 0.2);">[+ new_middle_kpd_normalized +]%</td>
+            <td style="background-color: rgba(112, 0, 0, 0.2);">[+ old_middle_kpd_normalized +]%</td>
+            <td style="background-color: rgba(112, 0, 0, 0.2);">[+ rural_kpd_normalized +]%</td>
+            <td style="background-color: rgba(112, 0, 0, 0.2);">[+ unemployed_kpd_normalized +]%</td>
+            <td style="background-color: rgba(112, 0, 0, 0.2);">[+ catholics_kpd_normalized +]%</td>
         </tr>
         <tr>
             <td><span style="color: #D3C24D;">**[+ ddp_name +]**</span></td>
