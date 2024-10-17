@@ -129,7 +129,7 @@ for (var party of Q.parties) {
 for (var party of Q.parties) {
     for (var c of Q.classes) {
         Q[c + "_change_" + party + '_normalized'] = Q[c + '_' + party + '_normalized'] - Q['old_' + c + '_' + party + '_normalized'];
-        var sign = Q[c + "_change_" + party + '_normalized'] > 0 ? '<img src="img/arrowup.jpg">' : '<img src="img/arrowdown.jpg"> ';
+        var sign = Q[c + "_change_" + party + '_normalized'] > 0 ? '+' : '';
         Q['demo_change_' + c + '_' + party + '_normalized'] = sign + parseFloat(Q[c + "_change_" + party + '_normalized']).toFixed(0);
         Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
     }
