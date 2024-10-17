@@ -60,7 +60,7 @@ for (var party of Q.parties) {
         Q['change_' + party + '_votes'] = Q[party + '_votes'];
     }
     var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg" alt="Positive Change">'  : '';
-    var sign2 = Q['change_' + party + '_votes'] > 0 ? '+'  : '';
+    var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg" alt="Positive Change">'  : '';
     Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
     Q['str_votes_change_' + party] = sign2 + parseFloat(Q['change_' + party + '_votes']).toFixed(1);
 }
@@ -72,8 +72,8 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
         }
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
-        var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
-        var sign2 = Q['change_' + party + '_votes'] > 0 ? '+'  : '';
+        var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg" alt="Positive Change">'  : '';
+        var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg" alt="Positive Change">'  : '';
         Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
         Q['str_votes_change_' + party] = sign2 + parseFloat(Q['change_' + party + '_votes']).toFixed(1);
     }
@@ -123,13 +123,13 @@ for (var party of Q.parties) {
         console.log(Q.other_r)
     }
     Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-    var sign = Q['change_' + party + '_r'] > 0 ? '+'  : '';
+    var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg" alt="Positive Change">'  : '';
     Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
 }
 for (var party of Q.parties) {
     for (var c of Q.classes) {
         Q[c + "_change_" + party + '_normalized'] = Q[c + '_' + party + '_normalized'] - Q['old_' + c + '_' + party + '_normalized'];
-        var sign = Q[c + "_change_" + party + '_normalized'] > 0 ? '+' : '';
+        var sign = Q[c + "_change_" + party + '_normalized'] > 0 ? '<img src="img/arrowup.jpg" alt="Positive Change">' : '';
         Q['demo_change_' + c + '_' + party + '_normalized'] = sign + parseFloat(Q[c + "_change_" + party + '_normalized']).toFixed(0);
         Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
     }
