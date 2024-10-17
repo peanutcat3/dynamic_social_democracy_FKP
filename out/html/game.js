@@ -210,7 +210,7 @@
     }
   };
     window.toggleElectionGraph = function toggleElectionGraph() {
-        const svgElement = document.getElementById('election_tab');
+        const svgElement = document.getElementById('election_history');
         if (svgElement.style.display === 'none' || svgElement.style.display === '') {
             svgElement.style.display = 'block';
         } else {
