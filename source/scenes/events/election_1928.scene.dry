@@ -449,12 +449,12 @@ go-to: coalition_menu
         {!</tr>!}
         {!<tr>!}
             {!<td><b>Others</b></td>!}
-            {!<td style="font-size: 0.85em;">!}[+ workers_other_normalized +]%[? if n_elections != 1 and demo_change_workers_other_normalized != 0 : ([+ demo_change_workers_other_normalized +])?]{!</td>!}
-            {!<td style="font-size: 0.85em;">!}[+ new_middle_other_normalized +]%[? if n_elections != 1 and demo_change_new_middle_other_normalized != 0 : ([+ demo_change_new_middle_other_normalized +])?]{!</td>!}
-            {!<td style="font-size: 0.85em;">!}[+ old_middle_other_normalized +]%[? if n_elections != 1 and demo_change_old_middle_other_normalized != 0 : ([+ demo_change_old_middle_other_normalized +])?]{!</td>!}
-            {!<td style="font-size: 0.85em;">!}[+ rural_other_normalized +]%[? if n_elections != 1 and demo_change_rural_other_normalized != 0 : ([+ demo_change_rural_other_normalized +])?]{!</td>!}
-            {!<td style="font-size: 0.85em;">!}[+ unemployed_other_normalized +]%[? if n_elections != 1 and demo_change_unemployed_other_normalized != 0 : ([+ demo_change_unemployed_other_normalized +])?]{!</td>!}
-            {!<td style="font-size: 0.85em;">!}[+ catholics_other_normalized +]%[? if n_elections != 1 and demo_change_catholics_other_normalized != 0 : ([+ demo_change_catholics_other_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ workers_other_normalized +]%[? if n_elections != 1 and demo_change_workers_other_normalized != 0 : ([+ demo_change_workers_other_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ new_middle_other_normalized +]%[? if n_elections != 1 and demo_change_new_middle_other_normalized != 0 : ([+ demo_change_new_middle_other_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ old_middle_other_normalized +]%[? if n_elections != 1 and demo_change_old_middle_other_normalized != 0 : ([+ demo_change_old_middle_other_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ rural_other_normalized +]%[? if n_elections != 1 and demo_change_rural_other_normalized != 0 : ([+ demo_change_rural_other_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ unemployed_other_normalized +]%[? if n_elections != 1 and demo_change_unemployed_other_normalized != 0 : ([+ demo_change_unemployed_other_normalized +])?]{!</td>!}
+            {!<td style="background-color: rgba(144, 144, 144, 0.2); font-size: 0.85em;">!}[+ catholics_other_normalized +]%[? if n_elections != 1 and demo_change_catholics_other_normalized != 0 : ([+ demo_change_catholics_other_normalized +])?]{!</td>!}
         {!</tr>!}
     {!</table>!}
     {!</div>!}
