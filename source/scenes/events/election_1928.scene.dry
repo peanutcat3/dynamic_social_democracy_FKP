@@ -59,8 +59,8 @@ for (var party of Q.parties) {
     if (Q['previous_' + party + '_last_election_votes'] === undefined) {
         Q['change_' + party + '_votes'] = Q[party + '_votes'];
     }
-    var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> '  : '<img src="img/arrowdown.jpg"> ';
-    var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> '  : '<img src="img/arrowdown.jpg"> ';
+    var sign = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '';
+    var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '';
     Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
     Q['str_votes_change_' + party] = sign2 + parseFloat(Q['change_' + party + '_votes']).toFixed(1);
 }
@@ -72,8 +72,8 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
         }
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
-        var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> '  : '<img src="img/arrowdown.jpg"> ';
-        var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> '  : '<img src="img/arrowdown.jpg"> ';
+        var sign = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '';
+        var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '';
         Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
         Q['str_votes_change_' + party] = sign2 + parseFloat(Q['change_' + party + '_votes']).toFixed(1);
     }
@@ -123,7 +123,7 @@ for (var party of Q.parties) {
         console.log(Q.other_r)
     }
     Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-    var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> '  : '<img src="img/arrowdown.jpg"> ';
+    var sign = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '';
     Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
 }
 for (var party of Q.parties) {
