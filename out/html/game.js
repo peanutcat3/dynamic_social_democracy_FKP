@@ -215,6 +215,7 @@
         } else {
             svgElement.style.display = 'none';
         }
+    }
 };
   /*
    * This function copied from the code for Infinite Space Battle Simulator
