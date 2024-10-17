@@ -27,7 +27,7 @@ The bourgeois parties, as representatives of the rich industrialists, would not 
 @gift
 go-to: what_do
 
-This is a gift to the <span style="color: #7A2B5C;">Communists</span>, a boost to their theory that parliamentary democracy will never benefit the working class.
+This is a gift to the <span style="color: #700000;">Communists</span>, a boost to their theory that parliamentary democracy will never benefit the working class.
 
 @what_do
 on-arrival: dvp_relation += 5 if chancellor = "Braun"
@@ -52,14 +52,14 @@ on-arrival: workers_spd -= 0.15*workers_spd; umemployed_spd -= 0.3*unemployed_sp
 
 Unfortunately, we must accept this ultimatum if we are to maintain this coalition. The <span style="color: #7A3C00;">Nazis</span> and Communists are waiting in the wings for us to fail, ready to pounce upon the instability that would result from a breakup of the governing coalition.
 
-The workers are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the <span style="color: #7A2B5C;">**KPD**</span>'s gain, and even the <span style="color: #7A3C00;">**NSDAP**</span>, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
+The workers are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the <span style="color: #700000;">**KPD**</span>'s gain, and even the <span style="color: #7A3C00;">**NSDAP**</span>, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
 
 
 @compromise
 unavailable-subtitle: We do not have good enough relations with the right-wing parties.
 choose-if: dvp_relation >= 35
 
-Thanks to our good relations, the <span style="color: #C0A054;">**DVP**</span> have offered a compromise that raises some taxes on the wealthy, along with lesser welfare cuts. Our members have mixed opinions on accepting this compromise. Reformists and Centrists support maintaining our government to keep the <span style="color: #7A3C00;">fascists</span> and <span style="color: #7A2B5C;">communists</span> out, while Labor generally opposes any cuts, and the Left is opposed to compromises with the bourgeoisie.
+Thanks to our good relations, the <span style="color: #C0A054;">**DVP**</span> have offered a compromise that raises some taxes on the wealthy, along with lesser welfare cuts. Our members have mixed opinions on accepting this compromise. Reformists and Centrists support maintaining our government to keep the <span style="color: #7A3C00;">fascists</span> and <span style="color: #700000;">communists</span> out, while Labor generally opposes any cuts, and the Left is opposed to compromises with the bourgeoisie.
 
 - @accept_compromise: Accept the compromise.
 - @destroy: Reject the compromise and let this government fall.

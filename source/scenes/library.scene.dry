@@ -65,9 +65,9 @@ go-to: cabinet if spd_in_government; menu if not spd_in_government
 
 = Current Government
 
-President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #c00000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #7A2B5C;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #7A3C00;">Hitler</span> ?][? if president == "Göring": <span style="color: #7A3C00;">Göring</span> ?]
+President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #c00000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #700000;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #7A3C00;">Hitler</span> ?][? if president == "Göring": <span style="color: #7A3C00;">Göring</span> ?]
 
-Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #7A3C00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #7A2B5C;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #c00000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #7A2B5C;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #7A3C00;">**NSDAP**</span>) ?]
+Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #7A3C00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #700000;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #c00000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #700000;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #7A3C00;">**NSDAP**</span>) ?]
 
 Reichstag composition:
 
@@ -77,7 +77,7 @@ Reichstag composition:
 # 1928: 15, 1930: 15, 1932: 
 <span style="color: #000000;">**Z**</span> **+** <span style="color: #A2D8E0;">**BVP**</span>: [+ z_r +]%
 # 1928: 10, 1930: 13
-<span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_r +]%
+<span style="color: #700000;">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DStP)
 <span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
 # 1928: 9, 1930: 5
@@ -94,7 +94,7 @@ Reichstag composition:
 
 [? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if spd_in_government and (in_left_front or in_popular_front): <span style="color: #7A2B5C;">**KPD**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and (in_left_front or in_popular_front): <span style="color: #700000;">**KPD**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
 @cabinet
 go-to: menu
@@ -103,7 +103,7 @@ Current cabinet:
 
 Labor: 
 [? if labor_minister_party == "SPD": <span style="color: #c00000;">[+ labor_minister_party +]</span> ?]
-[? if labor_minister_party == "KPD": <span style="color: #7A2B5C;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "KPD": <span style="color: #700000;">[+ labor_minister_party +]</span> ?]
 [? if labor_minister_party == "DDP": <span style="color: #D3C24D;">[+ labor_minister_party +]</span> ?]
 [? if labor_minister_party == "Z": <span style="color: #000000;">[+ labor_minister_party +]</span> ?]
 [? if labor_minister_party == "BVP": <span style="color: #A2D8E0;">[+ labor_minister_party +]</span> ?]
@@ -115,7 +115,7 @@ Labor:
 
 Interior: 
 [? if interior_minister_party == "SPD": <span style="color: #c00000;">[+ interior_minister_party +]</span> ?]
-[? if interior_minister_party == "KPD": <span style="color: #7A2B5C;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "KPD": <span style="color: #700000;">[+ interior_minister_party +]</span> ?]
 [? if interior_minister_party == "DDP": <span style="color: #D3C24D;">[+ interior_minister_party +]</span> ?]
 [? if interior_minister_party == "Z": <span style="color: #000000;">[+ interior_minister_party +]</span> ?]
 [? if interior_minister_party == "BVP": <span style="color: #A2D8E0;">[+ interior_minister_party +]</span> ?]
@@ -127,7 +127,7 @@ Interior:
 
 Finance: 
 [? if finance_minister_party == "SPD": <span style="color: #c00000;">[+ finance_minister_party +]</span> ?]
-[? if finance_minister_party == "KPD": <span style="color: #7A2B5C;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "KPD": <span style="color: #700000;">[+ finance_minister_party +]</span> ?]
 [? if finance_minister_party == "DDP": <span style="color: #D3C24D;">[+ finance_minister_party +]</span> ?]
 [? if finance_minister_party == "Z": <span style="color: #000000;">[+ finance_minister_party +]</span> ?]
 [? if finance_minister_party == "BVP": <span style="color: #A2D8E0;">[+ finance_minister_party +]</span> ?]
@@ -139,7 +139,7 @@ Finance:
 
 Economic: 
 [? if economic_minister_party == "SPD": <span style="color: #c00000;">[+ economic_minister_party +]</span> ?]
-[? if economic_minister_party == "KPD": <span style="color: #7A2B5C;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "KPD": <span style="color: #700000;">[+ economic_minister_party +]</span> ?]
 [? if economic_minister_party == "DDP": <span style="color: #D3C24D;">[+ economic_minister_party +]</span> ?]
 [? if economic_minister_party == "Z": <span style="color: #000000;">[+ economic_minister_party +]</span> ?]
 [? if economic_minister_party == "BVP": <span style="color: #A2D8E0;">[+ economic_minister_party +]</span> ?]
@@ -151,7 +151,7 @@ Economic:
 
 Justice: 
 [? if justice_minister_party == "SPD": <span style="color: #c00000;">[+ justice_minister_party +]</span> ?]
-[? if justice_minister_party == "KPD": <span style="color: #7A2B5C;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "KPD": <span style="color: #700000;">[+ justice_minister_party +]</span> ?]
 [? if justice_minister_party == "DDP": <span style="color: #D3C24D;">[+ justice_minister_party +]</span> ?]
 [? if justice_minister_party == "Z": <span style="color: #000000;">[+ justice_minister_party +]</span> ?]
 [? if justice_minister_party == "BVP": <span style="color: #A2D8E0;">[+ justice_minister_party +]</span> ?]
@@ -163,7 +163,7 @@ Justice:
 
 Foreign: 
 [? if foreign_minister_party == "SPD": <span style="color: #c00000;">[+ foreign_minister_party +]</span> ?]
-[? if foreign_minister_party == "KPD": <span style="color: #7A2B5C;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "KPD": <span style="color: #700000;">[+ foreign_minister_party +]</span> ?]
 [? if foreign_minister_party == "DDP": <span style="color: #D3C24D;">[+ foreign_minister_party +]</span> ?]
 [? if foreign_minister_party == "Z": <span style="color: #000000;">[+ foreign_minister_party +]</span> ?]
 [? if foreign_minister_party == "BVP": <span style="color: #A2D8E0;">[+ foreign_minister_party +]</span> ?]
@@ -175,7 +175,7 @@ Foreign:
 
 Reichswehr: 
 [? if reichswehr_minister_party == "SPD": <span style="color: #c00000;">[+ reichswehr_minister_party +]</span> ?]
-[? if reichswehr_minister_party == "KPD": <span style="color: #7A2B5C;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "KPD": <span style="color: #700000;">[+ reichswehr_minister_party +]</span> ?]
 [? if reichswehr_minister_party == "DDP": <span style="color: #D3C24D;">[+ reichswehr_minister_party +]</span> ?]
 [? if reichswehr_minister_party == "Z": <span style="color: #000000;">[+ reichswehr_minister_party +]</span> ?]
 [? if reichswehr_minister_party == "BVP": <span style="color: #A2D8E0;">[+ reichswehr_minister_party +]</span> ?]
@@ -187,7 +187,7 @@ Reichswehr:
 
 Agriculture: 
 [? if agriculture_minister_party == "SPD": <span style="color: #c00000;">[+ agriculture_minister_party +]</span> ?]
-[? if agriculture_minister_party == "KPD": <span style="color: #7A2B5C;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "KPD": <span style="color: #700000;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "DDP": <span style="color: #D3C24D;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "Z": <span style="color: #000000;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "BVP": <span style="color: #A2D8E0;">[+ agriculture_minister_party +]</span> ?]
@@ -203,7 +203,7 @@ go-to: menu
 
 **Demographic Groups**
 
-**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are <span style="color: #c00000;">socialists</span>, supporting either the <span style="color: #c00000;">**SPD**</span> or <span style="color: #7A2B5C;">**KPD**</span>. They make up 40-50% of the population.
+**Working Class**: The urban working class - blue-collar workers in factories, workshops, mines, and the like. Most are <span style="color: #c00000;">socialists</span>, supporting either the <span style="color: #c00000;">**SPD**</span> or <span style="color: #700000;">**KPD**</span>. They make up 40-50% of the population.
 
 **Old Mittelstand**: The old middle class consists of independent artisans, shopkeepers, and small-time businesspeople. They tend to be conservative and are the strongest base for the <span style="color: #2C517A;">far</span>-<span style="color: #7A3C00;">right</span>. 10-15% of the population.
 
@@ -213,7 +213,7 @@ go-to: menu
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the <span style="color: #000000;">**Center Party**</span> (or the <span style="color: #A2D8E0;">**Bavarian People's Party**</span> in <span style="color: #00CCFF;">Bavaria</span>).
 
-**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, [? if ddp_name == "DDP": mostly the DDP?][? if ddp_name == "DStP": although the mild antisemitism of the Young German Order and it's association with the DStP has driven them away?], although substantial numbers support the <span style="color: #c00000;">**SPD**</span> or <span style="color: #7A2B5C;">**KPD**</span>.
+**Jews** account for between 0.5% to 1% of the population, and tend to support liberal parties, [? if ddp_name == "DDP": mostly the DDP?][? if ddp_name == "DStP": although the mild antisemitism of the Young German Order and it's association with the DStP has driven them away?], although substantial numbers support the <span style="color: #c00000;">**SPD**</span> or <span style="color: #700000;">**KPD**</span>.
 
 
 @public_opinion
@@ -250,7 +250,7 @@ go-to: menu
 <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span>: [+ z_votes +]%
 
 # 1928: 10, 1930: 13
-<span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_votes +]%
+<span style="color: #700000;">**KPD**</span>: [+ kpd_votes +]%
 
 # 1928: 5, 1930: 4 (as DStP)
 <span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
@@ -299,7 +299,7 @@ go-to: menu
             <td style="background-color: rgba(0, 0, 0, 0.2);">[+ catholics_z_normalized +]%</td>
         </tr>
         <tr>
-            <td><span style="color: #7A2B5C;">**KPD**</span></td>
+            <td><span style="color: #700000;">**KPD**</span></td>
             <td style="background-color: rgba(122, 43, 92, 0.2); padding: 10px;">[+ workers_kpd_normalized +]%</td>
             <td style="background-color: rgba(122, 43, 92, 0.2);">[+ new_middle_kpd_normalized +]%</td>
             <td style="background-color: rgba(122, 43, 92, 0.2);">[+ old_middle_kpd_normalized +]%</td>
@@ -376,11 +376,11 @@ Current relations: [+ dvp_relation : relationships +]
 
 Current relations: [+ dnvp_relation : relationships +]
 
-<span style="color: #7A2B5C;">**KPD**</span> - *Kommunistische Partei Deutschlands* (German Communist Party) - a radical left-wing offshoot of the <span style="color: #c00000;">**SPD**</span> that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a Soviet-style revolution.
+<span style="color: #700000;">**KPD**</span> - *Kommunistische Partei Deutschlands* (German Communist Party) - a radical left-wing offshoot of the <span style="color: #c00000;">**SPD**</span> that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a Soviet-style revolution.
 
 Current relations: [+ kpd_relation : relationships +]
 
-[? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span> - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Germany) - a party recently formed in a split from the <span style="color: #c00000;">**SPD**</span>, the <span style="color: #9B0000;">**SAPD**</span> is essentially an agglomeration of various left-wing splinter groups between the <span style="color: #c00000;">**SPD**</span> and <span style="color: #7A2B5C;">**KPD**</span>. ?]
+[? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span> - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Germany) - a party recently formed in a split from the <span style="color: #c00000;">**SPD**</span>, the <span style="color: #9B0000;">**SAPD**</span> is essentially an agglomeration of various left-wing splinter groups between the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>. ?]
 
 <span style="color: #7A3C00;">**NSDAP**</span> - *Nationalsozialistische Deutsche Arbeiterpartei* - (National Socialist German Worker's Party, or <span style="color: #7A3C00;">Nazis</span>) - a far-right nationalist and antisemitic party. Led by Adolf Hitler, they attempted a coup in 1923, and were banned for it, but have since been legalized.
 
@@ -404,7 +404,7 @@ Strength: [+ rb_strength +] thousand
 
 Militarization: [+ rb_militancy : militancy +]
 
-**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the <span style="color: #7A2B5C;">**KPD**</span>.
+**Rotfrontkämpferbund (RFB)**: The "Red Front Fighter's League" is associated with the <span style="color: #700000;">**KPD**</span>.
 
 Strength: [+ rfb_strength +] thousand
 
@@ -443,7 +443,7 @@ Overall dissent: [+ dissent_percent : dissent +]
 
 **Left**
 
-Many leftists are former members of the <span style="color: #D47B9B;">**USPD**</span> (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the <span style="color: #7A2B5C;">**KPD**</span>, and some support extra-parliamentary action.
+Many leftists are former members of the <span style="color: #D47B9B;">**USPD**</span> (the left-wing, anti-war Independent Social Democratic Party), or are young radicals. Many are interested in closer cooperation with the <span style="color: #700000;">**KPD**</span>, and some support extra-parliamentary action.
 
 Strength: [+ left_strength : strength +]
 
@@ -467,7 +467,7 @@ Dissent: [+ labor_dissent : dissent +]
 
 **Reformists**
 
-Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the <span style="color: #2C517A;">far</span>-<span style="color: #7A3C00;">right</span> and <span style="color: #7A2B5C;">left</span>. [? if spd_prussia : They are dominant in the state government of Prussia. ?]
+Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy against the <span style="color: #2C517A;">far</span>-<span style="color: #7A3C00;">right</span> and <span style="color: #700000;">left</span>. [? if spd_prussia : They are dominant in the state government of Prussia. ?]
 
 Strength: [+ reformist_strength : strength +]
 
@@ -594,7 +594,7 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'spd': '#E3000F', 'kpd': '#7A2B5C', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#2C517A', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000'},
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#2C517A', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000'},
             {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
@@ -605,7 +605,7 @@ if (d3 && window) {
     if (!Q.historical_mode) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'spd': '#E3000F', 'kpd': '#7A2B5C', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#2C517A', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000'},
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#2C517A', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000'},
             {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
@@ -632,7 +632,7 @@ if (d3 && window) {
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#7A2B5C'> </div></td> <td>!}KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#700000'> </div></td> <td>!}KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#D3C24D'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
 

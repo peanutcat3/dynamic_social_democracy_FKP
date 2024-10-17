@@ -41,11 +41,11 @@ We also aim to improve relations with our eastern neighbors, <span style="color:
 
 @improve_soviet
 title: Improve our relations with the <span style="color: #750e0e;">**Soviet Union**</span>.
-subtitle: We could also broach the question of the <span style="color: #7A2B5C;">**KPD**</span>...
+subtitle: We could also broach the question of the <span style="color: #700000;">**KPD**</span>...
 
 The <span style="color: #750e0e;">Soviet Union</span> also suffered from the international order created by the Treaty of Versailles; they have been participating in our secret rearmament program. The Treaty of Rapallo in 1922 affirmed our friendly relations.
 
-The <span style="color: #940000;">Soviets</span> are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our <span style="color: #FF0000;">anti</span>-<span style="color: #7A2B5C;">communist</span> coalition partners would be upset, but we could assuage them by asking the <span style="color: #940000;">Soviets</span> for secret assistance in training and equipping the Reichswehr.
+The <span style="color: #940000;">Soviets</span> are asking for economic and developmental assistance. They are still a poor country on the whole, and are desperately trying to catch up to the western powers. There is a chance that our <span style="color: #FF0000;">anti</span>-<span style="color: #700000;">communist</span> coalition partners would be upset, but we could assuage them by asking the <span style="color: #940000;">Soviets</span> for secret assistance in training and equipping the Reichswehr.
 
 - @soviet_economic_aid_yes_mil: Provide aid, in exchange for Reichswehr assistance.
 - @soviet_economic_aid_yes: Provide aid, in exchange for only good relations.
@@ -65,9 +65,9 @@ on-arrival: budget -= 1; soviet_relation += 2; coalition_dissent += 1; foreign_g
 
 The <span style="color: #940000;">Soviets</span> are pleased that we have sent them aid, and have not asked for anything specific in exchange. Our coalition partners are less pleased.
 
-- @kpd: Ask if <span style="color: #940000;">Moscow</span> could help repair our relations with the <span style="color: #7A2B5C;">**KPD**</span>.
+- @kpd: Ask if <span style="color: #940000;">Moscow</span> could help repair our relations with the <span style="color: #700000;">**KPD**</span>.
 - @wittorf: Do the <span style="color: #940000;">Soviets</span> know about the Wittorf Affair? Do they know that we know?
-- @root: Do not mention the <span style="color: #7A2B5C;">**KPD**</span>.
+- @root: Do not mention the <span style="color: #700000;">**KPD**</span>.
 
 @soviet_economic_aid_no
 
@@ -77,7 +77,7 @@ The <span style="color: #940000;">Soviets</span> are slightly upset, but they se
 @kpd
 on-arrival: kpd_relation += 8*(1-dissent); communist_coalition += 1 if kpd_foreign_seen == 0; kpd_foreign_seen = 1
 
-We also mention the <span style="color: #7A2B5C;">**KPD**</span> in our conversations with the <span style="color: #940000;">Soviet</span> ambassador. They claim that the <span style="color: #7A2B5C;">**KPD**</span> is entirely independent of the <span style="color: #940000;">Soviet</span> government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the <span style="color: #7A2B5C;">**KPD**</span>.
+We also mention the <span style="color: #700000;">**KPD**</span> in our conversations with the <span style="color: #940000;">Soviet</span> ambassador. They claim that the <span style="color: #700000;">**KPD**</span> is entirely independent of the <span style="color: #940000;">Soviet</span> government, and that the conflict is Thälmann's doing. But, soon after our conversation we notice a slight improvement in attitudes from the <span style="color: #700000;">**KPD**</span>.
 
 @wittorf
 view-if: wittorf_secret = 1 and ((year = 1929 and month < 6) or year = 1928) and wittorf_soviet_union = 0

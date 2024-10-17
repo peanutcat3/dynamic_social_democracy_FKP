@@ -24,15 +24,15 @@ Resources available: [+ resources +]
 
 [? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
-[? if spd_in_government and (in_left_front or in_popular_front): <span style="color: #7A2B5C;">**KPD**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and (in_left_front or in_popular_front): <span style="color: #700000;">**KPD**</span> coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #c00000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #7A2B5C;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #7A3C00;">Hitler</span> ?][? if president == "Göring": <span style="color: #7A3C00;">Göring</span> ?]
+President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #c00000;">Braun</span> ?][? if president == "Thälmann": <span style="color: #700000;">Thälmann</span> ?][? if president == "Hitler": <span style="color: #7A3C00;">Hitler</span> ?][? if president == "Göring": <span style="color: #7A3C00;">Göring</span> ?]
 
-Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #7A3C00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #7A2B5C;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #c00000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #7A2B5C;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #7A3C00;">**NSDAP**</span>) ?]
+Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #7A3C00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #700000;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">Z</span>) ?][? if chancellor_party == "SPD":(<span style="color: #c00000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #700000;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #7A3C00;">**NSDAP**</span>) ?]
 
 Reichstag composition:
 
@@ -42,7 +42,7 @@ Reichstag composition:
 # 1928: 15, 1930: 15, 1932: 
 <span style="color: #000000;">**Z**</span> **+** <span style="color: #A2D8E0;">**BVP**</span>: [+ z_r +]%
 # 1928: 10, 1930: 13
-<span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_r +]%
+<span style="color: #700000;">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DStP)
 <span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
 # 1928: 9, 1930: 5
@@ -76,7 +76,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 <span style="color: #C0A054;">**DVP**</span>: [+ dvp_relation : relationships +]
 
-<span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_relation : relationships +]
+<span style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
 
 <span style="color: #2C517A;">**DNVP**</span>: [+ dnvp_relation : relationships +]
 
@@ -137,7 +137,7 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span>: [+ z_votes +]%
 
-<span style="color: #7A2B5C;">**KPD**</span>: [+ kpd_votes +]%
+<span style="color: #700000;">**KPD**</span>: [+ kpd_votes +]%
 
 <span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_votes +]%
 

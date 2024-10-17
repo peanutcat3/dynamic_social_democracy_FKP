@@ -182,7 +182,7 @@ go-to: eg_menu
 
 Germany is currently in the grip of a civil war, a brutal affair that has no obvious end. Thousands of lives have already been extinguished, and it is likely that the war will not stop until Germany's cities are reduced to ruins. 
 
-[? if is_favorable == 0 : The current conditions are not favorable for us. ?][? if west_relation >= 2: Our cause is popular in the West, but their sclerotic governments are reluctant to send us aid. ?][? if soviet_aid >= 1 : The <span style="color: #750e0e;">Soviet Union</span> has aided the <span style="color: #7A2B5C;">Communists</span>, but not the <span style="color: #c00000;">socialists</span> and <span style="color: #D3C24D;">democrats</span>, in an attempt to shape Germany's future government. ?][? if east_aid >= 1 : <span style="color: #DC143C;">Pol</span><span style="color: #FFFFFF;">and</span> and <span style="color: #11457E;">Czech</span><span style="color: #FFFFFF;">oslo</span><span style="color: #D7141A;">vakia</span> have sent some assistance against the fascists. ?]
+[? if is_favorable == 0 : The current conditions are not favorable for us. ?][? if west_relation >= 2: Our cause is popular in the West, but their sclerotic governments are reluctant to send us aid. ?][? if soviet_aid >= 1 : The <span style="color: #750e0e;">Soviet Union</span> has aided the <span style="color: #700000;">Communists</span>, but not the <span style="color: #c00000;">socialists</span> and <span style="color: #D3C24D;">democrats</span>, in an attempt to shape Germany's future government. ?][? if east_aid >= 1 : <span style="color: #DC143C;">Pol</span><span style="color: #FFFFFF;">and</span> and <span style="color: #11457E;">Czech</span><span style="color: #FFFFFF;">oslo</span><span style="color: #D7141A;">vakia</span> have sent some assistance against the fascists. ?]
 
 
 @braun_victorious
@@ -207,7 +207,7 @@ view-if: chancellor_party == "KPD" or president == "Thälmann" and total_defeat 
 tags: endings
 go-to: eg_menu
 
-The <span style="color: #7A2B5C;">**KPD**</span> has won power in Germany, with our assistance. They will try to remake Germany in the Soviet image. How much they succeed is yet to be determined.
+The <span style="color: #700000;">**KPD**</span> has won power in Germany, with our assistance. They will try to remake Germany in the Soviet image. How much they succeed is yet to be determined.
 
 @works_program
 title: Works program enacted!
@@ -311,15 +311,15 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_red_tzar_of_prussia : **Roter Zar von Preußen** - Otto Braun is President, Chancellor, and Minister-President. ?]
 
-[? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span> and <span style="color: #7A2B5C;">**KPD**</span>. ?]
+[? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>. ?]
 
-[? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the <span style="color: #7A2B5C;">**KPD**</span> demands. ?]
+[? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the <span style="color: #700000;">**KPD**</span> demands. ?]
 
-[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and DDP. ?]
+[? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #7A2B5C;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #700000;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
-[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #7A2B5C;">**KPD**</span> demands. ?]
+[? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #700000;">**KPD**</span> demands. ?]
 
 [? if game_achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
@@ -333,7 +333,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
 
-[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #7A2B5C;">**KPD**</span>. ?]
+[? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #700000;">**KPD**</span>. ?]
 
 [? if game_achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #7A3C00;">Hitler</span> ?]
 
@@ -353,7 +353,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_bruder_zur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect Otto Braun president, and deport Hitler in one playthrough on at least normal difficulty. ?]
 
-[? if game_achievement_die_rote_fahne: **Die Rote Fahne** - join the <span style="color: #7A2B5C;">**KPD**</span> in their May Day march. ?]
+[? if game_achievement_die_rote_fahne: **Die Rote Fahne** - join the <span style="color: #700000;">**KPD**</span> in their May Day march. ?]
 
 [? if game_achievement_panik_im_mittelstand: **Panik im Mittelstand** - <span style="color: #c00000;">**SPD**</span> new middle class support is at least 50%. ?]
 
@@ -404,15 +404,15 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_red_tzar_of_prussia : **Roter Zar von Preußen** - Otto Braun is President, Chancellor, and Minister-President. ?]
 
-[? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span> and <span style="color: #7A2B5C;">**KPD**</span>. ?]
+[? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>. ?]
 
-[? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the <span style="color: #7A2B5C;">**KPD**</span> demands. ?]
+[? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the <span style="color: #700000;">**KPD**</span> demands. ?]
 
-[? if achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and DDP. ?]
+[? if achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #7A2B5C;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #700000;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
-[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #7A2B5C;">**KPD**</span> demands. ?]
+[? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #700000;">**KPD**</span> demands. ?]
 
 [? if achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
@@ -426,7 +426,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
 
-[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #7A2B5C;">**KPD**</span>. ?]
+[? if achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #700000;">**KPD**</span>. ?]
 
 [? if achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #7A3C00;">Hitler</span> ?]
 
@@ -446,7 +446,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_bruder_zur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect Otto Braun president, and deport Hitler in one playthrough on at least normal difficulty. ?]
 
-[? if achievement_die_rote_fahne: **Die Rote Fahne** - join the <span style="color: #7A2B5C;">**KPD**</span> in their May Day march. ?]
+[? if achievement_die_rote_fahne: **Die Rote Fahne** - join the <span style="color: #700000;">**KPD**</span> in their May Day march. ?]
 
 [? if achievement_panik_im_mittelstand: **Panik im Mittelstand** - <span style="color: #c00000;">**SPD**</span> new middle class support is at least 50%. ?]
 
@@ -495,15 +495,15 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_red_tzar_of_prussia : **Roter Zar von Preußen** - Otto Braun is President, Chancellor, and Minister-President. ?]
 
-[? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span> and <span style="color: #7A2B5C;">**KPD**</span>. ?]
+[? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>. ?]
 
-[? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the <span style="color: #7A2B5C;">**KPD**</span> demands. ?]
+[? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the <span style="color: #700000;">**KPD**</span> demands. ?]
 
-[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and DDP. ?]
+[? if not achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and DDP. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #7A2B5C;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #7A2B5C;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #700000;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
-[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #7A2B5C;">**KPD**</span> demands. ?]
+[? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #700000;">**KPD**</span> demands. ?]
 
 [? if not achievement_constitutional_coalition: **Verfassungskoalition** - form a "constitutional coalition". ?]
 
@@ -517,7 +517,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_sohn_seiner_klasse: **Sohn seiner Klasse** - Ernst Thälmann is either president or chancellor. ?]
 
-[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #7A2B5C;">**KPD**</span>. ?]
+[? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #700000;">**KPD**</span>. ?]
 
 [? if not achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #7A3C00;">Hitler</span> ?]
 
@@ -537,7 +537,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_bruder_zur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect Otto Braun president, and deport Hitler in one playthrough on at least normal difficulty. ?]
 
-[? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the <span style="color: #7A2B5C;">**KPD**</span> in their May Day march. ?]
+[? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the <span style="color: #700000;">**KPD**</span> in their May Day march. ?]
 
 [? if not achievement_panik_im_mittelstand: **Panik im Mittelstand** - <span style="color: #c00000;">**SPD**</span> new middle class support is at least 50%. ?]
 
