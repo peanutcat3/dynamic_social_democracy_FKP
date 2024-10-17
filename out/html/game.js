@@ -201,6 +201,15 @@
         resultsDiv.style.display = 'none';
     }
 };
+  window.toggleGraph = function toggleGraph() {
+    const svgElement = document.getElementById('party_support_history');
+    if (svgElement.style.display === 'none' || svgElement.style.display === '') {
+        svgElement.style.display = 'block';
+    } else {
+        svgElement.style.display = 'none';
+    }
+}
+}
   /*
    * This function copied from the code for Infinite Space Battle Simulator
    *

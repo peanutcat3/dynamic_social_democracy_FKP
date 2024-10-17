@@ -351,6 +351,7 @@ go-to: coalition_menu
 {!</table>!}
 
 {!<button class="tab_button" id="demographics_tab" onclick="window.toggleDem();">Demographic Results</button>!}
+{!<button class="tab_button" id="graph_tab" onclick="window.toggleGraph();">Party Support Graph</button>!}
 
 {!<div id="results" style="display: none;">!}
     {!<div style="overflow-x:auto;">!}
@@ -439,6 +440,7 @@ go-to: coalition_menu
     {!</table>!}
     {!</div>!}
 {!</div>!}
+{!<svg id="party_support_history" style="width: 500px; height: 400px;"> </svg>!}
 
 **Potential coalitions:**
 
