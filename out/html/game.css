@@ -518,6 +518,7 @@ img {
 }
 
 table {
+    table-layout: fixed;
     border-spacing: 0.5em;
 }
 
