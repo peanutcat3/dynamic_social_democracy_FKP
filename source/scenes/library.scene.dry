@@ -270,7 +270,7 @@ go-to: menu
 **Detailed results for each demographic**:
 
 <div style="overflow-x:auto;">
-    <table style="text-align:center;">
+    <table style="text-align:center; border-spacing: 0.3em;">
             <tr>
             <th>Party</th>
             <th>Workers</th>
