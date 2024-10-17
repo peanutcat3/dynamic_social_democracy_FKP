@@ -392,7 +392,7 @@ go-to: coalition_menu
             {!<td style="font-size: 0.85em;">!}[+ catholics_kpd_normalized +]%[? if n_elections != 1 and demo_change_catholics_kpd_normalized != 0 : ([+ demo_change_catholics_kpd_normalized +])?]{!</td>!}
         {!</tr>!}
         {!<tr>!}
-            {!<td style="font-size: 0.85em;">!}<span style="color: #D3C24D;">**[+ ddp_name +]**</span>{!</td>!}
+            {!<td>!}<span style="color: #D3C24D;">**[+ ddp_name +]**</span>{!</td>!}
             {!<td style="font-size: 0.85em;">!}[+ workers_ddp_normalized +]%[? if n_elections != 1 and demo_change_workers_ddp_normalized != 0 : ([+ demo_change_workers_ddp_normalized +])?]{!</td>!}
             {!<td style="font-size: 0.85em;">!}[+ new_middle_ddp_normalized +]%[? if n_elections != 1 and demo_change_new_middle_ddp_normalized != 0 : ([+ demo_change_new_middle_ddp_normalized +])?]{!</td>!}
             {!<td style="font-size: 0.85em;">!}[+ old_middle_ddp_normalized +]%[? if n_elections != 1 and demo_change_old_middle_ddp_normalized != 0 : ([+ demo_change_old_middle_ddp_normalized +])?]{!</td>!}
