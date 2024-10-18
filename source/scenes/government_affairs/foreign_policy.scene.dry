@@ -113,7 +113,7 @@ Immediately, <span style="color: #002654;">France</span> and other neighboring c
 
 @negotiate
 title: Negotiate regarding our remaining obligations from the Treaty of Versailles.
-subtitle: [? if young_plan_seen == 1 : After passing the Young Plan, <span style="color: #002654;">France</span> has committed to withdrawing from the Rhineland. Now, we must see if they can reduce our reparations further, given the economic depression. ?]
+subtitle: [? if young_plan_seen == 1 and black_thursday_seen : After passing the Young Plan, <span style="color: #002654;">France</span> has committed to withdrawing from the Rhineland. Now, we must see if they can reduce our reparations further, given the economic depression. ?][? if young_plan_seen == 1 and not black_thursday_seen : After passing the Young Plan, <span style="color: #002654;">France</span> has committed to withdrawing from the Rhineland. Now, we must see if they can reduce our reparations further. ?]
 view-if: reparations > -2 and reparations_negotiation < 3
 on-arrival: west_relation += 1; reparations_negotiation += 1; reparations_negotiation += 1 if pacifism >= 3; reparations_negotiations += 1 if nationalism <= 50; reparations_negotiation += 1 if west_relation >= 3
 
