@@ -22,6 +22,7 @@ Q.unemployed_nsdap += 2;
 
 Q.dnf_r = Math.round(Q.dnf_r * 10) / 10;
 Q.old_dnf_r = 0;
+Q.dnf_relation = 5
 for (var record of Q.election_records) {
     record['dnf'] = 0;
 }
