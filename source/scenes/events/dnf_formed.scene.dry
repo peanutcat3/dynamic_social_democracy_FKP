@@ -20,7 +20,7 @@ Q.old_middle_nsdap += 4;
 Q.rural_nsdap += 2;
 Q.unemployed_nsdap += 2;
 
-Q.dnf_r = Math.round(Q.dnvp_r * 10) / 10;
+Q.dnf_r = Math.round((Q.dnvp_r / 2) * 10) / 10;
 Q.dnvp_r = Q.dnvp_r - dnf_r
 Q.old_dnf_r = 0;
 Q.dnf_relation = 5
