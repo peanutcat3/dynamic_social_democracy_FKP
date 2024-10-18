@@ -13,6 +13,7 @@ Hugenberg and his supporters have went through with his plans to organize a sece
 - @goodnews: We'll watch as the enemies of the republic tear themselves apart.
 
 @goodnews
-on-arrival: dnvp_walkout = 1; 
+on-arrival: dnf_formed = 1; 
+go-to: dnf_formed
 
 The right has been considerably weakened, now is our chance to enact meaningful change without their disruption.

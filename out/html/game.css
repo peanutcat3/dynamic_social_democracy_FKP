@@ -559,4 +559,6 @@ td, th {
 .seat.sapd {
     fill: #9B0000;
 }
-
+.seat.dnf {
+  fill: #001F30;
+}
