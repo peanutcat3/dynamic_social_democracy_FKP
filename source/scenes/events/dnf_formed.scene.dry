@@ -6,13 +6,13 @@ Q.parties.push('dnf');
 Q.workers_dnf = 0;
 
 Q.new_middle_dnf = 3;
-Q.new_middle_dnvp -= 2;
+Q.new_middle_dnvp -= 3;
 
 Q.old_middle_dnf = 18;
-Q.old_middle_dnvp -= 13;
+Q.old_middle_dnvp -= 15;
 
-Q.rural_dnf = 14;
-Q.rural_dnvp -= 14;
+Q.rural_dnf = 16;
+Q.rural_dnvp -= 16;
 
 Q.unemployed_dnf = 1;
 Q.unemployed_dnvp -= 1;
@@ -21,8 +21,8 @@ Q.catholics_dnf = 0;
 
 Q.workers_nsdap += 1;
 Q.new_middle_nsdap += 1;
-Q.old_middle_nsdap += 3;
-Q.unemployed_nsdap += 2;
+Q.old_middle_nsdap += 2;
+Q.unemployed_nsdap += 1;
 
 Q.dnf_r = Math.round((Q.dnvp_r / 2) * 10) / 10;
 Q.dnvp_r = Math.round((Q.dnvp_r - Q.dnf_r) * 10) / 10;
