@@ -301,6 +301,15 @@ go-to: menu
             <td style="background-color: rgba(192, 0, 0, 0.1);">[+ unemployed_spd_normalized +]%</td>
             <td style="background-color: rgba(192, 0, 0, 0.1);">[+ catholics_spd_normalized +]%</td>
         </tr>
+        {! if Q.sapd_formed : <tr>!}
+            {! <td><span style="color: #9B0000;">!}**SAPD**{!</span></td> !}
+            {! if Q.sapd_formed : <td style="background-color: rgba(155, 0, 0, 0.2); padding: 10px;">!}[+ workers_sapd_normalized +]%{!</td>!}
+            {! if Q.sapd_formed : <td style="background-color: rgba(155, 0, 0, 0.2);">!}[+ new_middle_sapd_normalized +]%{!</td>!}
+            {! if Q.sapd_formed : <td style="background-color: rgba(155, 0, 0, 0.2);">!}[+ old_middle_sapd_normalized +]%{!</td>!}
+            {! if Q.sapd_formed : <td style="background-color: rgba(155, 0, 0, 0.2);">!}[+ rural_sapd_normalized +]%{!</td>!}
+            {! if Q.sapd_formed : <td style="background-color: rgba(155, 0, 0, 0.2);">!}[+ unemployed_sapd_normalized +]%{!</td>!}
+            {! if Q.sapd_formed : <td style="background-color: rgba(155, 0, 0, 0.2);">!}[+ catholics_sapd_normalized +]%{!</td>!}
+            {! if Q.sapd_formed : </tr>!}
         <tr>
             <td><span style="color: #000000;">**Z**</span> + <span style="color: #4B758B;">**BVP**</span></td>
             <td style="background-color: rgba(0, 0, 0, 0.2); padding: 10px;">[+ workers_z_normalized +]%</td>
@@ -346,15 +355,15 @@ go-to: menu
             <td style="background-color: rgba(44, 81, 122, 0.2);">[+ unemployed_dnvp_normalized +]%</td>
             <td style="background-color: rgba(44, 81, 122, 0.2);">[+ catholics_dnvp_normalized +]%</td>
         </tr>
-        {! if Q.dnf_formed : <tr>
-            <td><span style="color: #003755;">**DNF**</span></td>
-            <td style="background-color: rgba(0, 31, 48, 0.2); padding: 10px;">[+ workers_dnf_normalized +]%</td>
-            <td style="background-color: rgba(0, 31, 48, 0.2);">[+ new_middle_dnf_normalized +]%</td>
-            <td style="background-color: rgba(0, 31, 48, 0.2);">[+ old_middle_dnf_normalized +]%</td>
-            <td style="background-color: rgba(0, 31, 48, 0.2);">[+ rural_dnf_normalized +]%</td>
-            <td style="background-color: rgba(0, 31, 48, 0.2);">[+ unemployed_dnf_normalized +]%</td>
-            <td style="background-color: rgba(0, 31, 48, 0.2);">[+ catholics_dnf_normalized +]%</td>
-        </tr>!}
+        {! if Q.dnf_formed : <tr>!}
+            {! <td><span style="color: #003755;">!}**DNF**{!</span></td> !}
+            {! if Q.dnf_formed : <td style="background-color: rgba(0, 31, 48, 0.2); padding: 10px;">!}[+ workers_dnf_normalized +]%{!</td>!}
+            {! if Q.dnf_formed : <td style="background-color: rgba(0, 31, 48, 0.2);">!}[+ new_middle_dnf_normalized +]%{!</td>!}
+            {! if Q.dnf_formed : <td style="background-color: rgba(0, 31, 48, 0.2);">!}[+ old_middle_dnf_normalized +]%{!</td>!}
+            {! if Q.dnf_formed : <td style="background-color: rgba(0, 31, 48, 0.2);">!}[+ rural_dnf_normalized +]%{!</td>!}
+            {! if Q.dnf_formed : <td style="background-color: rgba(0, 31, 48, 0.2);">!}[+ unemployed_dnf_normalized +]%{!</td>!}
+            {! if Q.dnf_formed : <td style="background-color: rgba(0, 31, 48, 0.2);">!}[+ catholics_dnf_normalized +]%{!</td>!}
+            {! if Q.dnf_formed : </tr>!}
         <tr>
             <td><span style="color: #7A3C00;">**NSDAP**</span></td>
             <td style="background-color: rgba(122, 60, 0, 0.2); padding: 10px;">[+ workers_nsdap_normalized +]%</td>
@@ -629,8 +638,8 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#2C517A', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#2C517A', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     d3.select("#election_history").datum(Q.election_records).call(lines);
@@ -640,8 +649,8 @@ if (d3 && window) {
     if (!Q.historical_mode) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#2C517A', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD'});
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#2C517A', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
