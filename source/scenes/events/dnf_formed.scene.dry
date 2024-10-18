@@ -24,8 +24,8 @@ Q.old_middle_nsdap += 2;
 Q.rural_nsdap += 2;
 Q.unemployed_nsdap += 1;
 
-Q.dnf_r = Math.round((Q.dnvp_r / 2) * 10) / 10;
-Q.dnvp_r = Math.round((Q.dnvp_r - Q.dnf_r) * 10) / 10;
+Q.dnf_r = Math.round((Q.dnvp_r / 2) * 10) / 10 - 1;
+Q.dnvp_r = Math.round((Q.dnvp_r - Q.dnf_r) * 10) / 10 + 1;
 Q.dnf_relation = 5
 
 Q.old_workers_dnf_normalized = 0
