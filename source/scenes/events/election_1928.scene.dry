@@ -416,7 +416,7 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ unemployed_spd_normalized +]%[? if n_elections != 1 and demo_change_unemployed_spd_normalized != 0 : ([+ demo_change_unemployed_spd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ catholics_spd_normalized +]%[? if n_elections != 1 and demo_change_catholics_spd_normalized != 0 : ([+ demo_change_catholics_spd_normalized +])?]{!</td>!}
         {!</tr>!}
-        {! if Q.sapd_formed : <tr> !}
+        [? if Q.sapd_formed: {!<tr>!}
             {!<td><span style="color: #9B0000;">!}**SAPD**{!</span></td>!}
             {!<td style="background-color: rgba(155, 0, 0, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_sapd_normalized +]%[? if n_elections != 1 and demo_change_workers_sapd_normalized != 0 : ([+ demo_change_workers_sapd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_sapd_normalized +]%[? if n_elections != 1 and demo_change_new_middle_sapd_normalized != 0 : ([+ demo_change_new_middle_sapd_normalized +])?]{!</td>!}
@@ -424,7 +424,7 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ rural_sapd_normalized +]%[? if n_elections != 1 and demo_change_rural_sapd_normalized != 0 : ([+ demo_change_rural_sapd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_sapd_normalized +]%[? if n_elections != 1 and demo_change_unemployed_sapd_normalized != 0 : ([+ demo_change_unemployed_sapd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ catholics_sapd_normalized +]%[? if n_elections != 1 and demo_change_catholics_sapd_normalized != 0 : ([+ demo_change_catholics_sapd_normalized +])?]{!</td>!}
-        {!</tr>!}
+        {!</tr>!}?]
         {!<tr>!}
             {!<td><span style="color: #000000;"><b>Z</b></span> + <span style="color: #4B758B;"><b>BVP</b></span></td>!}
             {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_z_normalized +]%[? if n_elections != 1 and demo_change_workers_z_normalized != 0 : ([+ demo_change_workers_z_normalized +])?]{!</td>!}
@@ -470,7 +470,7 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ unemployed_dnvp_normalized +]%[? if n_elections != 1 and demo_change_unemployed_dnvp_normalized != 0 : ([+ demo_change_unemployed_dnvp_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ catholics_dnvp_normalized +]%[? if n_elections != 1 and demo_change_catholics_dnvp_normalized != 0 : ([+ demo_change_catholics_dnvp_normalized +])?]{!</td>!}
         {!</tr>!}
-        {! if Q.dnf_formed : <tr>!}
+        [? if Q.dnf_formed: {!<tr>!}
             {!<td><span style="color: #003755;">!}**DNF**{!</span></td>!}
             {!<td style="background-color: rgba(0, 31, 48, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_dnf_normalized +]%[? if n_elections != 1 and       demo_change_workers_dnf_normalized != 0 : ([+ demo_change_workers_dnf_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 31, 48, 0.2); font-size: 0.85em;">!}[+ new_middle_dnf_normalized +]%[? if n_elections != 1 and demo_change_new_middle_dnf_normalized != 0 : ([+ demo_change_new_middle_dnf_normalized +])?]{!</td>!}
@@ -478,7 +478,7 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(0, 31, 48, 0.2); font-size: 0.85em;">!}[+ rural_dnf_normalized +]%[? if n_elections != 1 and demo_change_rural_dnf_normalized != 0 : ([+ demo_change_rural_dnf_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 31, 48, 0.2); font-size: 0.85em;">!}[+ unemployed_dnf_normalized +]%[? if n_elections != 1 and demo_change_unemployed_dnf_normalized != 0 : ([+ demo_change_unemployed_dnf_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 31, 48, 0.2); font-size: 0.85em;">!}[+ catholics_dnf_normalized +]%[? if n_elections != 1 and demo_change_catholics_dnf_normalized != 0 : ([+ demo_change_catholics_dnf_normalized +])?]{!</td>!}
-        {!</tr>!}
+        {!</tr>!} ?]
         {!<tr>!}
             {!<td><span style="color: #7A3C00;"><b>NSDAP</b></span></td>!}
             {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_nsdap_normalized +]%[? if n_elections != 1 and demo_change_workers_nsdap_normalized != 0 : ([+ demo_change_workers_nsdap_normalized +])?]{!</td>!}
