@@ -6,13 +6,13 @@ Q.parties.push('dnf');
 Q.workers_dnf = 1;
 
 Q.new_middle_dnf = 4;
-Q.new_middle_dnvp -= 4;
+Q.new_middle_dnvp -= 5;
 
 Q.old_middle_dnf = 18;
-Q.old_middle_dnvp -= 15;
+Q.old_middle_dnvp -= 16;
 
 Q.rural_dnf = 16;
-Q.rural_dnvp -= 16;
+Q.rural_dnvp -= 18;
 
 Q.unemployed_dnf = 1;
 Q.unemployed_dnvp -= 1;
