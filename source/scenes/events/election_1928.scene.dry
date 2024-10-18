@@ -61,13 +61,9 @@ for (var party of Q.parties) {
     }
     var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
     var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
-    if (Q['change_' + party + '_r'] < 0) {
-        Q['change_' + party + '_r'] * -1
-    }
+    Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
+    Q['change_' + party + '_votes'] = Math.abs(Q['change_' + party + '_votes']);
     Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-    if (Q['change_' + party + '_votes'] < 0) {
-        Q['change_' + party + '_votes'] * -1
-    }
     Q['str_votes_change_' + party] = sign2 + parseFloat(Q['change_' + party + '_votes']).toFixed(1);
 }
 // calculate new party sum if electoral reform
@@ -83,13 +79,9 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
         }
         var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
         var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
-        if (Q['change_' + party + '_r'] < 0) {
-            Q['change_' + party + '_r'] * -1
-        }
+        Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
+        Q['change_' + party + '_votes'] = Math.abs(Q['change_' + party + '_votes']);
         Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-        if (Q['change_' + party + '_votes'] < 0) {
-            Q['change_' + party + '_votes'] * -1
-        }
         Q['str_votes_change_' + party] = sign2 + parseFloat(Q['change_' + party + '_votes']).toFixed(1);
     }
 }
