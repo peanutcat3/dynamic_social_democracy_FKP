@@ -397,9 +397,9 @@ Current relations: [+ dvp_relation : relationships +]
 
 Current relations: [+ dnvp_relation : relationships +]
 
-<span style="color: #001F30;">**DNF**</span> - *Deutschnationale Front* (German National Front) - a far-right nationalist-conservative party, led by Alfred Hugenberg, originally split from the <span style="color: #2C517A;">**DNVP**</span>. It is supported by a small but loyal base of Hugenberg supporters, consisting of former aristocrats, racists and nationalists.
+[? if dnf_formed: <span style="color: #001F30;">**DNF**</span> - *Deutschnationale Front* (German National Front) - a far-right nationalist-conservative party, led by Alfred Hugenberg, originally split from the <span style="color: #2C517A;">**DNVP**</span>. It is supported by a small but loyal base of Hugenberg supporters, consisting of former aristocrats, racists and nationalists. ?]
 
-Current relations: [+ dnf_relation : relationships +]
+[? if dnf_formed: Current relations: [+ dnf_relation : relationships +] ?]
 
 <span style="color: #700000;">**KPD**</span> - *Kommunistische Partei Deutschlands* (German Communist Party) - a radical left-wing offshoot of the <span style="color: #c00000;">**SPD**</span> that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a Soviet-style revolution.
 
