@@ -23,6 +23,14 @@ Q.unemployed_nsdap += 2;
 Q.dnf_r = Math.round((Q.dnvp_r / 2) * 10) / 10;
 Q.dnvp_r = Math.round((Q.dnvp_r - Q.dnf_r) * 10) / 10;
 Q.dnf_relation = 5
+
+Q.old_workers_dnf_normalized = 0
+Q.old_new_middle_dnf_normalized = 0
+Q.old_old_middle_dnf_normalized = 0
+Q.old_rural_dnf_normalized = 0
+Q.old_unemployed_dnf_normalized = 0
+Q.old_catholics_dnf_normalized = 0
+
 for (var record of Q.election_records) {
     record['dnf'] = 0;
 }
