@@ -157,7 +157,7 @@ if (Q.month_actions >= 1) {
         Q.pro_republic -= 1;
     }
     Q['pro_republic_' + Q.month] = Q.pro_republic
-    if (dnf_timer > 0) {
+    if (Q.dnf_timer > 0) {
         Q.rural_dnf -= 0.5;
         Q.rural_dnvp += 0.5;
         Q.old_middle_dnf -= 0.5
