@@ -8,12 +8,14 @@ new-page: true
 
 = <span style="color: #003755;">Deutschnationale Front</span> founded
 
-Hugenberg and his supporters have went through with his plans to organize a secession from the right of the <span style="color: #3E88B3;">**DNVP**</span> and formed his own political party, the <i>Deutschnationale Front</i>(<span style="color: #003755;">**DNF**</span>). Hugenberg has brought a considerable amount of party infrastructure into his own splinter party, however, it doesn't appear like the <span style="color: #003755;">**DNF**</span> would have much electoral appeal as the <span style="color: #3E88B3;">**DNVP**</span>. The agrarian, industrialist, Christian-social, and the new 'young conservative' wings of the parties have largely remained in the DNVP, and will hopefully change their attitude towards the republic. The small <span style="color: #7A3C00;">**NSDAP**</span> has gained among some radicalized Hugenberg supporters.
+Hugenberg and his supporters have went through with his plans to organize a secession from the right of the <span style="color: #3E88B3;">**DNVP**</span> and formed his own political party, the <i>Deutschnationale Front</i>(<span style="color: #003755;">**DNF**</span>). Hugenberg has brought a considerable amount of party infrastructure into his own splinter party, however, it doesn't appear like the <span style="color: #003755;">**DNF**</span> would have much electoral appeal as the <span style="color: #3E88B3;">**DNVP**</span>. It may take some time until the <span style="color: #3E88B3;">**DNVP**</span> rebuilds to fill the hole Hugenberg's influence left behind.
+
+The agrarian, industrialist, Christian-social, and the new 'young conservative' wings of the parties have largely remained in the DNVP, and will hopefully change their attitude towards the republic. The small <span style="color: #7A3C00;">**NSDAP**</span> has gained among some radicalized <span style="color: #003755;">**DNF**</span> supporters.
 
 - @goodnews: We'll watch as the enemies of the republic tear themselves apart.
 
 @goodnews
-on-arrival: dnf_formed = 1; 
+on-arrival: dnf_formed = 1; dnf_timer += 12
 go-to: dnf_formed
 
 The right has been considerably weakened, now is our chance to enact meaningful change without their disruption.

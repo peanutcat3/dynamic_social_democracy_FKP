@@ -478,7 +478,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
             'emergency_cuts', 'unemployment_insurance',
             'sa_ban', 'sh_ban',
             'kpd_policy', 'kpd_ultimatum', 'popular_front_dispute',
-            'high_inflation', 'banking_crisis'];
+            'high_inflation', 'banking_crisis', 'dnf_timer'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -537,6 +537,7 @@ Q.ddp_right = 0;
 Q.ddp_name = "DDP";
 Q.dvp_leader = "Stresemann";
 Q.vice_chancellor = "Hergt";
+Q.dnf_timer = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
