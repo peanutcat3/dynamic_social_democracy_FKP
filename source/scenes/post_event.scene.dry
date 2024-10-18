@@ -158,10 +158,12 @@ if (Q.month_actions >= 1) {
     }
     Q['pro_republic_' + Q.month] = Q.pro_republic
     if (Q.dnf_decay_timer > 0) {
-        Q.rural_dnf -= 0.5;
-        Q.rural_dnvp += 0.5;
-        Q.old_middle_dnf -= 0.5
-        Q.old_middle_dnvp += 0.5
+        Q.new_middle_dnf -= 0.25
+        Q.new_middle_dnvp += 0.3
+        Q.rural_dnf -= 0.6;
+        Q.rural_dnvp += 0.6;
+        Q.old_middle_dnf -= 0.4
+        Q.old_middle_dnvp += 0.4
     }
 }
 Q.has_event = 0;

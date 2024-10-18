@@ -3,10 +3,10 @@ on-arrival: {!
 Q.dnf_formed = 1;
 Q.parties.push('dnf');
 
-Q.workers_dnf = 0;
+Q.workers_dnf = 1;
 
-Q.new_middle_dnf = 3;
-Q.new_middle_dnvp -= 3;
+Q.new_middle_dnf = 4;
+Q.new_middle_dnvp -= 4;
 
 Q.old_middle_dnf = 18;
 Q.old_middle_dnvp -= 15;
@@ -19,9 +19,9 @@ Q.unemployed_dnvp -= 1;
 
 Q.catholics_dnf = 0;
 
-Q.workers_nsdap += 1;
 Q.new_middle_nsdap += 1;
 Q.old_middle_nsdap += 2;
+Q.rural_nsdap += 2;
 Q.unemployed_nsdap += 1;
 
 Q.dnf_r = Math.round((Q.dnvp_r / 2) * 10) / 10;
