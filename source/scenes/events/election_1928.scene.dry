@@ -131,6 +131,9 @@ for (var party of Q.parties) {
         Q[c + "_change_" + party + '_normalized'] = Q[c + '_' + party + '_normalized'] - Q['old_' + c + '_' + party + '_normalized'];
         var sign = Q[c + "_change_" + party + '_normalized'] > 0 ? '+' : '';
         Q['demo_change_' + c + '_' + party + '_normalized'] = sign + parseFloat(Q[c + "_change_" + party + '_normalized']).toFixed(0);
+        if (Q['demo_change_' + c + '_' + party + '_normalized'] === undefined) {
+            Q['demo_change_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
+        }
         Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
     }
 }
@@ -406,7 +409,7 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em;">!}[+ catholics_spd_normalized +]%[? if n_elections != 1 and demo_change_catholics_spd_normalized != 0 : ([+ demo_change_catholics_spd_normalized +])?]{!</td>!}
         {!</tr>!}
         {! if Q.sapd_formed : <tr> !}
-            {!<td><span style="color: #9B0000;">**SAPD**</span></td>!}
+            {!<td><span style="color: #9B0000;">!}**SAPD**{!</span></td>!}
             {!<td style="background-color: rgba(155, 0, 0, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_sapd_normalized +]%[? if n_elections != 1 and demo_change_workers_sapd_normalized != 0 : ([+ demo_change_workers_sapd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_sapd_normalized +]%[? if n_elections != 1 and demo_change_new_middle_sapd_normalized != 0 : ([+ demo_change_new_middle_sapd_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_sapd_normalized +]%[? if n_elections != 1 and demo_change_old_middle_sapd_normalized != 0 : ([+ demo_change_old_middle_sapd_normalized +])?]{!</td>!}
@@ -460,7 +463,7 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ catholics_dnvp_normalized +]%[? if n_elections != 1 and demo_change_catholics_dnvp_normalized != 0 : ([+ demo_change_catholics_dnvp_normalized +])?]{!</td>!}
         {!</tr>!}
         {! if Q.dnf_formed : <tr>!}
-            {!<td><span style="color: #003755;">**DNF**</span></td>!}
+            {!<td><span style="color: #003755;">!}**DNF**{!</span></td>!}
             {!<td style="background-color: rgba(0, 31, 48, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_dnf_normalized +]%[? if n_elections != 1 and       demo_change_workers_dnf_normalized != 0 : ([+ demo_change_workers_dnf_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 31, 48, 0.2); font-size: 0.85em;">!}[+ new_middle_dnf_normalized +]%[? if n_elections != 1 and demo_change_new_middle_dnf_normalized != 0 : ([+ demo_change_new_middle_dnf_normalized +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 31, 48, 0.2); font-size: 0.85em;">!}[+ old_middle_dnf_normalized +]%[? if n_elections != 1 and demo_change_old_middle_dnf_normalized != 0 : ([+ demo_change_old_middle_dnf_normalized +])?]{!</td>!}
