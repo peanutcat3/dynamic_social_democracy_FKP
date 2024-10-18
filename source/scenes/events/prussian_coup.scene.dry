@@ -23,7 +23,7 @@ subtitle: Labor will call a general strike. The Reichsbanner and the loyal eleme
 unavailable-subtitle: We do not have the forces to resist.
 choose-if: rb_strength*rb_militancy >= 200
 
-The Reichswehr and <span style="color: #2C517A;">**Stahlhelm**</span> are already surrounding Berlin, and the <span style="color: #7A3C00;">**SA**</span> is supporting them. This could be civil war. We do realize that, correct? 
+The Reichswehr and <span style="color: #3E88B3;">**Stahlhelm**</span> are already surrounding Berlin, and the <span style="color: #7A3C00;">**SA**</span> is supporting them. This could be civil war. We do realize that, correct? 
 
 - @defend_2: We will fight, even if it leads to a civil war.
 - @surrender

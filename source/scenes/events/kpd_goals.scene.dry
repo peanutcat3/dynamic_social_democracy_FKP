@@ -20,7 +20,7 @@ The <span style="color: #700000;">**KPD**</span> presents us with a list of goal
 
 [? if foreign_goal = 1 : - Improve our relations with the Soviet Union. ?]
 
-#[? if interior_goal = 1 : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #2C517A;">**Stahlhelm**</span>. ?]
+#[? if interior_goal = 1 : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>. ?]
 
 [? if reichswehr_goal = 1 : - Reduce funding for the Reichswehr. ?]
 

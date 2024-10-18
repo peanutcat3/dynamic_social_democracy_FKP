@@ -20,6 +20,6 @@ The <span style="color: #700000;">**KPD**</span> presents us with a new list of 
 
 [? if foreign_goal = 1 : - Improve our relations with the Soviet Union. ?]
 
-#[? if interior_goal = 1 : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #2C517A;">**Stahlhelm**</span>. ?]
+#[? if interior_goal = 1 : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>. ?]
 
 They say that they expect to see these goals fulfilled in [+ kpd_ultimatum_timer +] months. Otherwise, they will vote to dissolve the coalition.

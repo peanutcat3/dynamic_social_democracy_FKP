@@ -19,8 +19,8 @@ We can enact policies in Prussia.
 - @unban_sa: Reverse the <span style="color: #7A3C00;">**SA**</span> ban.
 - @ban_rfb: Ban the <span style="color: #8B0000;">**RFB**</span>, the Communist paramilitary.
 - @unban_rfb: Reverse the <span style="color: #8B0000;">**RFB**</span> ban.
-- @ban_sh: Ban the <span style="color: #2C517A;">**Stahlhelm**</span>, the Nationalist paramilitary.
-- @unban_sh: Reverse the <span style="color: #2C517A;">**Stahlhelm**</span> ban.
+- @ban_sh: Ban the <span style="color: #3E88B3;">**Stahlhelm**</span>, the Nationalist paramilitary.
+- @unban_sh: Reverse the <span style="color: #3E88B3;">**Stahlhelm**</span> ban.
 - @negotiate_concordat: Negotiate a concordat with the Vatican.
 - @sign_concordat: Sign a concordat with the Vatican.
 - @root: No new policies are needed.
@@ -31,7 +31,7 @@ view-if: prussian_police_loyalty < 1
 on-arrival: prussian_police_loyalty += 0.1
 
 # increase police loyalty
-The police have historically been overrun with <span style="color: #808080;">reactionaries</span>, and we are trying to change this, little by little. We have improved the training and recruitment process to select for a broader demographic than the traditional <span style="color: #2C517A;">conservatives</span>, and to put a tighter leash on their political activity. In addition, we set up committees to investigate the ranks of the police and remove those with <span style="color: #7A3C00;">far</span>-<span style="color: #2C517A;">right</span> sympathies. It is a slow and arduous work.
+The police have historically been overrun with <span style="color: #808080;">reactionaries</span>, and we are trying to change this, little by little. We have improved the training and recruitment process to select for a broader demographic than the traditional <span style="color: #3E88B3;">conservatives</span>, and to put a tighter leash on their political activity. In addition, we set up committees to investigate the ranks of the police and remove those with <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> sympathies. It is a slow and arduous work.
 
 Current police loyalty: [+ prussian_police_loyalty : loyalty +].
 
@@ -43,7 +43,7 @@ We have increased the size of the Prussian police.
 @bureaucracy
 on-arrival: prussian_police_loyalty += 0.05; nationalism -= 5; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5
 
-The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #2C517A;">political right</span>. By removing the <span style="color: #2C517A;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
+The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
 @ban_sa
 view-if: nazi_urgency >= 3 and sa_banned == 0
@@ -61,13 +61,13 @@ The <span style="color: #7A3C00;">**SA**</span> is no longer banned. They immedi
 on-arrival: sh_strength *= 0.85; sh_strength *= 0.7 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 5; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; sh_ban_timer = 6;
 view-if: sh_banned == 0
 
-[? if president == "Hindenburg": Banning the <span style="color: #2C517A;">**Stahlhelm**</span> weakens our relationship with President Hindenburg, as well as the political <span style="color: #2C517A;">right</span> and the police. ?][? if president != "Hindenburg": Banning the <span style="color: #2C517A;">**Stahlhelm**</span> weakens our relationship with the political <span style="color: #2C517A;">right</span> and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the <span style="color: #C0A054;">right</span> wing of our coalition. ?] In addition, the <span style="color: #2C517A;">**Stahlhelm**</span> still operates out of public sight. 
+[? if president == "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with President Hindenburg, as well as the political <span style="color: #3E88B3;">right</span> and the police. ?][? if president != "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with the political <span style="color: #3E88B3;">right</span> and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the <span style="color: #C0A054;">right</span> wing of our coalition. ?] In addition, the <span style="color: #3E88B3;">**Stahlhelm**</span> still operates out of public sight. 
 
 @unban_sh
 view-if: sh_banned = 1
 on-arrival: sh_banned = 0; sh_strength += 100
 
-The <span style="color: #2C517A;">**Stahlhelm**</span> is no longer banned.
+The <span style="color: #3E88B3;">**Stahlhelm**</span> is no longer banned.
 
 
 @ban_rfb

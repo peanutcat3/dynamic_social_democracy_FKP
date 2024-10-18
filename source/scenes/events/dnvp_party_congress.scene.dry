@@ -1,16 +1,16 @@
-title: <span style="color: #2C517A;">**DNVP**</span> Congress
-subtitle: The <span style="color: #2C517A;">DNVP</span> chooses their new leader...
+title: <span style="color: #3E88B3;">**DNVP**</span> Congress
+subtitle: The <span style="color: #3E88B3;">DNVP</span> chooses their new leader...
 view-if: year = 1928 and month = 10 and dnvp_leader = "Westarp"
 max-visits: 1
 tags: event
 face-image: img/dnvp.jpg
 new-page: true
 
-= <span style="color: #2C517A;">**DNVP**</span> Congress
+= <span style="color: #3E88B3;">**DNVP**</span> Congress
 
-A leadership vote is being held at the <span style="color: #2C517A;">German National People's Party</span>(<span style="color: #2C517A;">**DNVP**</span>) congress following the resignation of former leader Kuno von Westarp. The in-fighting resulting from their electoral defeat last election, coupled with the question of governmental participation in a system they're fundamentally opposed to has come to a head at this congress.
+A leadership vote is being held at the <span style="color: #3E88B3;">German National People's Party</span>(<span style="color: #3E88B3;">**DNVP**</span>) congress following the resignation of former leader Kuno von Westarp. The in-fighting resulting from their electoral defeat last election, coupled with the question of governmental participation in a system they're fundamentally opposed to has come to a head at this congress.
 
-On the right is Alfred Hugenberg, a prominent industrialist and head of a media empire. He is vehemently opposed by the left of the party for his "<i>Katastrophenpolitik</i>", as he prefers to see the republic fall than participate in parliamentary government. With Westarp's refusal to run for re-election, despite urgent pleas from the moderates within the party, they have convinced the reluctant Oskar Hergt, former leader of the <span style="color: #2C517A;">**DNVP**</span> from 1918—1924, himself ousted by the right. The results of this congress may very well be a turning point in the history of the entire German nation.
+On the right is Alfred Hugenberg, a prominent industrialist and head of a media empire. He is vehemently opposed by the left of the party for his "<i>Katastrophenpolitik</i>", as he prefers to see the republic fall than participate in parliamentary government. With Westarp's refusal to run for re-election, despite urgent pleas from the moderates within the party, they have convinced the reluctant Oskar Hergt, former leader of the <span style="color: #3E88B3;">**DNVP**</span> from 1918—1924, himself ousted by the right. The results of this congress may very well be a turning point in the history of the entire German nation.
 
 - @resultsdnvp: The party votes...
 
@@ -23,7 +23,7 @@ face-image: img/OskarHergt.jpg
 
 With opinions on the inflammatory Lambach article being surprisingly divided among party members, a general republican sentiment across Germany, Alfred Hugenberg and his staunch anti-democratic beliefs struggling to convince moderate party members. More and more party members are beginning to blame their decline on the thesis of the Lambach article rather than their participation in a republican government. 
 
-Oskar Hergt has been elected as the new leader of the <span style="color: #2C517A;">**DNVP**</span> following a divisive congress. Hugenberg and his supporters have hinted towards a succession from the party's right wing, and Hugenberg himself is withholding financial support to the party.
+Oskar Hergt has been elected as the new leader of the <span style="color: #3E88B3;">**DNVP**</span> following a divisive congress. Hugenberg and his supporters have hinted towards a succession from the party's right wing, and Hugenberg himself is withholding financial support to the party.
 
 @triumvirate
 on-arrival: dnvp_leader = "Triumvirate"; catholics_dnvp -= 1; workers_dnvp -= 2; rural_dnvp -= 2; catholics_other += 1; workers_other += 1; rural_other += 2; new_middle_dvp += 2; new_middle_dnvp -= 2;
