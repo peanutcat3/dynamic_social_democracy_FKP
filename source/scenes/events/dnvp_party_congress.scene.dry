@@ -15,7 +15,7 @@ On the right is Alfred Hugenberg, a prominent industrialist and head of a media 
 - @resultsdnvp: The party votes...
 
 @resultsdnvp
-go-to: hergt if pro_republic - nationalism >= 12 and pro_republic_7 >= 65; hugenberg if pro_republic - nationalism < 7 and pro_republic_7 < 65; triumvirate if not (pro_republic - nationalism >= 12 and pro_republic_7 >= 65) and not (pro_republic - nationalism < 7 and pro_republic_7 < 65)
+go-to: hergt if (pro_republic - nationalism >= 12) or (pro_republic - nationalism >= 7 and in_right_coalition) and (pro_republic_7 >= 65) or (pro_republic_7 >= 59 and in_right_coalition); hugenberg if (pro_republic - nationalism < 7) or (pro_republic - nationalism < 2 and in_right_coalition) and (pro_republic_7 < 65) or (pro_republic_7 < 59 and in_right_coalition); triumvirate if not ((pro_republic - nationalism >= 12) or (pro_republic - nationalism >= 7 and in_right_coalition) and (pro_republic_7 >= 65) or (pro_republic_7 >= 59 and in_right_coalition)) and not ((pro_republic - nationalism < 7) or (pro_republic - nationalism < 2 and in_right_coalition) and (pro_republic_7 < 65) or (pro_republic_7 < 59 and in_right_coalition))
 
 @hergt
 on-arrival: dnvp_leader = "Hergt"; workers_other -= 1; rural_other -= 1; new_middle_other -= 1; old_middle_other -= 1
