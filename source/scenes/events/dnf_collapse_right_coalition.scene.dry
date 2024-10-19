@@ -1,7 +1,7 @@
 title: Right coalition collapses
 new-page: true
 subtitle: The right-wing coalition has collapsed...
-view-if: month === 13
+view-if: month = 13
 tags: event
 max-visits: 1
 
