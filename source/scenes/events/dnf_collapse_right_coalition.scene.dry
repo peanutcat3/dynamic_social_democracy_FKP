@@ -3,6 +3,7 @@ new-page: true
 subtitle: The right-wing coalition has collapsed...
 view-if: month = 13
 tags: event
+priority: -1
 max-visits: 1
 
 = Hugenberg's exit from the coalition
