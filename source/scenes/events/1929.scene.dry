@@ -15,7 +15,7 @@ Q.workers_kpd += 1;
 Q.sa_strength += 50;
 Q.sh_strength += 100;
 Q.rural_dnvp -= 2;
-Q.rural_nsdap += 5;
+Q.rural_nsdap += 4;
 Q.unemployed_nsdap += 15;
 !}
 tags: event
