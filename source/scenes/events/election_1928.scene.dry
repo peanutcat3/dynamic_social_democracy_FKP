@@ -789,7 +789,7 @@ view-if: right_coalition >= 50
 choose-if: year < 1929
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_right_coalition = 1;
 
-Even though the <span style="color: #3E88B3;">**DNVP**</span> is very reluctant to participate in such a coalition, they still accede to President Hindenburg's wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor.
+Even though the <span style="color: #3E88B3;">**DNVP**</span> is very reluctant to participate in such a coalition, they still accede to President Hindenburg's wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor. [? if grand_coalition >= 50: This move also has the side effect of pressuring the <span style="color: #3E88B3;">**DNVP**</span> to maintain this arrangement against the impulses of their radical right faction, lest a socialist government would replace them. ?]
 
 
 
