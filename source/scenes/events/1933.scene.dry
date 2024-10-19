@@ -5,27 +5,6 @@ if (Q.works_program && Q.works_program >= 2) {
     Q.unemployed -= 1;
     Q.inflation += 1
 }
-Q.sa_strength += 100;
-Q.sh_strength += 100;
-Q.sa_militancy += 0.05;
-Q.old_middle_nsdap += 6;
-Q.rural_nsdap += 4;
-Q.unemployed_nsdap += 4;
-if (Q.z_party_leader == "Kaas") {
-    Q.catholics_z += 5;
-}
- if (Q.unemployed > 25 && Q.pro_republic < 70) {
-    Q.rural_nsdap += 5;
-    Q.unemployed_nsdap += 5;
-    Q.old_middle_nsdap += 5;
-    Q.new_middle_nsdap += 4;
-    Q.sa_strength += 50;
-} else if (Q.unemployed > 20 && Q.pro_republic < 80) {
-    Q.rural_nsdap += 2;
-    Q.unemployed_nsdap += 2;
-    Q.old_middle_nsdap += 2;
-    Q.new_middle_nsdap += 2;
-}
 !}
 tags: event
 view-if: year = 1933 and month = 1 
