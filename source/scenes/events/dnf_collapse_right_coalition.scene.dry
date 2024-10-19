@@ -6,9 +6,11 @@ max-visits: 1
 
 = Hugenberg's exit from the coalition
 
-It was expected when Hugenberg, upon creating his own party, attracted a sizeable amount of Reichstag members to go along with him to sit as opposition to the right-wing coalition. The current government lacks a majority within the Reichstag and may be taken down with a no-confidence vote. The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has signalled they are willing to enter government now, with the <span style="color: #3E88B3;">**DNVP**</span> having rid of their radical right elements. [? if center_right_coalition >= 50 : This is enough to form a functional government. ?][? if center_right_coalition < 50 : Although, this still isn't enough for a majority. ?]
+It was expected when Hugenberg, upon creating his own party, attracted a sizeable amount of Reichstag members to go along with him to sit as opposition to the right-wing coalition. The current government lacks a majority within the Reichstag and may be taken down with a no-confidence vote.
 
-[? if center_right_coalition < 50 : We can either vote to bring down the government and hold new elections, or "tolerate" a government led by the remaining bourgeois parties. It would be extremely unpopular within our party to support a government that has the participation of the <span style="color: #3E88B3;">**DNVP**</span>, even without their worst excesses. ?][? if center_right_coalition >= 50 : There is nothing we can do to prevent a new government from forming. ?]
+The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has signalled they are willing to enter government now, with the <span style="color: #3E88B3;">**DNVP**</span> having rid of their radical right elements. [? if center_right_coalition >= 50 : This is enough to form a functional government without us. ?][? if center_right_coalition < 50 : Although, this still isn't enough for a majority. ?]
+
+[? if center_right_coalition < 50 : We can either vote to bring down the government and hold new elections, or "tolerate" a government led by the remaining bourgeois parties. It would be extremely unpopular within our party to support a government that has the participation of the <span style="color: #3E88B3;">**DNVP**</span>, even without their worst excesses. ?]
 
 - @center_right
 - @vonc_no  
