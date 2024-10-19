@@ -34,7 +34,7 @@ Q.old_middle_z += 2;
 Q.new_middle_z += 2;
 Q.workers_nsdap += 3;
 Q.sa_strength += 50;
-if (dnf_formed === 0) {
+if (Q.dnf_formed === 0) {
     Q.sh_strength += 50;
 }
 if (Q.budget > 0) {
