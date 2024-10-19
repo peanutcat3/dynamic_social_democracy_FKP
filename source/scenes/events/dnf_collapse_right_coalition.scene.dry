@@ -1,9 +1,8 @@
 title: Right coalition collapses
-new-page: true
 subtitle: The right-wing coalition has collapsed...
-view-if: month = 13
+new-page: true
 tags: event
-priority: -1
+view-if: dnf_formed and year = 1928 and month = 11 and right_coalition < 50
 max-visits: 1
 
 = Hugenberg's exit from the coalition
