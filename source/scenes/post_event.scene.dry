@@ -158,12 +158,12 @@ if (Q.month_actions >= 1) {
     }
     Q['pro_republic_' + Q.month] = Q.pro_republic
     if (Q.dnf_decay_timer > 0) {
-        Q.new_middle_dnf -= 0.1
-        Q.new_middle_dnvp += 0.1
-        Q.rural_dnf -= 0.3;
-        Q.rural_dnvp += 0.3;
-        Q.old_middle_dnf -= 0.2
-        Q.old_middle_dnvp += 0.2
+        Q.new_middle_dnf -= 0.25
+        Q.new_middle_dnvp += 0.3
+        Q.rural_dnf -= 0.6;
+        Q.rural_dnvp += 0.6;
+        Q.old_middle_dnf -= 0.4
+        Q.old_middle_dnvp += 0.4
     }
     Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
 Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));

@@ -10,9 +10,9 @@ if (Q.z_party_leader == "Kaas") {
     Q.catholics_z += 3;
 }
 if (Q.dnf_formed) {
-    Q.rural_nsdap += 10; 
-    Q.rural_dnvp -= 4;
-    Q.rural_dnf -= 6;
+    Q.rural_nsdap += 8; 
+    Q.rural_dnvp -= 6;
+    Q.rural_dnf -= 2;
 } else {
     Q.rural_nsdap += 15; 
     Q.rural_dnvp -= 15;
