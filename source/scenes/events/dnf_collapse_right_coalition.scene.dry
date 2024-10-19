@@ -25,7 +25,7 @@ on-arrival: time_to_election = 3; spd_in_government = 0; in_center_right_coaliti
 The bourgeois has survived without our toleration, but it's unlikely that this governing arrangement would last.
 
 @vonc_no
-title: Support the rump <span style="color: #000000;">**Center**</span>-led government, voting in favor of the government.
+title: Support the rump <span style="color: #000000;">Center</span>-led government, voting in favor of the government.
 subtitle: We would essentially provide "toleration" to a bourgeois government.
 view-if: cordon_sanitaire >= 50 and center_right_coalition < 50
 on-arrival: spd_toleration = 1; in_right_coalition = 0; left_dissent += 15; center_dissent += 8; reformist_dissent += 4; labor_dissent += 8; workers_spd -= 3; new_middle_spd -= 6; old_middle_spd -= 6; rural_spd -= 4; catholics_spd -= 5
