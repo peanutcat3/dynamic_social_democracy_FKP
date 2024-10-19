@@ -2,7 +2,6 @@ title: Right coalition collapses
 new-page: true
 subtitle: The right-wing coalition has collapsed...
 tags: event
-view-if: year = 1928 and month >= 11 and dnf_formed = 1 and in_right_coalition and right_coalition < 50
 max-visits: 1
 
 = Hugenberg's exit from the coalition
@@ -12,7 +11,7 @@ It was expected when Hugenberg, upon creating his own party, attracted a sizeabl
 [? if center_right_coalition < 50 : We can either vote to bring down the government and hold new elections, or "tolerate" a government led by the remaining bourgeois parties. It would be extremely unpopular within our party to support a government that has the participation of the <span style="color: #3E88B3;">**DNVP**</span>, even without their worst excesses. ?][? if center_right_coalition >= 50 : There is nothing we can do to prevent a new government from forming. ?]
 
 - @center_right
-- @vonc_no
+- @vonc_no  
 - @vonc_yes
 - @no_matter
 
