@@ -819,7 +819,7 @@ Even though the opposing ends of the coalition parties are reluctant to particip
 
 @no_majority
 title: There is no clear governing majority.
-view-if: weimar_coalition < 50 and (grand_coalition < 50 or grand_coalition_failed == 1) and president = "Hindenburg" and far_right_coalition < 50 and right_coalition < 50 if (dnvp_leader != "Hugenberg" and dnvp_leader != "Triumvirate") and center_right_coalition < 50 if (dnvp_leader != "Hugenberg" and dnvp_leader != "Triumvirate")
+view-if: weimar_coalition < 50 and (grand_coalition < 50 or grand_coalition_failed == 1) and president = "Hindenburg" and far_right_coalition < 50 and right_coalition < 50 if dnvp_leader = "Hergt" or right_coalition < 50 dnvp_leader = "Westarp" and center_right_coalition < 50 if dnvp_leader = "Hergt or center_right_coalition < 50 if dnvp_leader = "Westarp"
 on-arrival: no_majority_elections += 1
 go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; no_majority_papen if chancellor = "Papen" and no_majority_papen_elections == 0; no_majority_papen_2 if chancellor == "Papen" and no_majority_papen_elections > 0; no_majority_schleicher if chancellor = "Schleicher"; no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
 
