@@ -830,7 +830,7 @@ go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; n
 @no_majority_spd
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
-There is no path to an obviously workable majority. Since President Hindenburg is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the <span style="color: #000000;">**Center Party**</span>, who could lead a [? if dnvp_leader != "Hergt": "presidential" government][? if dnvp_leader = "Hergt": [? if center_right_coalition >= 50 and right_coalition < 50: center-right][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition].
+There is no path to an obviously workable majority. Since President Hindenburg is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the <span style="color: #000000;">**Center Party**</span>, who could lead a [? if dnvp_leader != "Hergt": "presidential" government][? if dnvp_leader = "Hergt": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
 - @toleration_bruning: We will tolerate Brüning.
 - @toleration_bruning_right: We will tolerate Brüning's right coalition.
