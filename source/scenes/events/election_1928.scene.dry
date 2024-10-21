@@ -650,7 +650,7 @@ There are enough votes for the <span style="color: #7A3C00;">Nazis</span> and th
 @far_right_win
 on-arrival: chancellor = nsdap_leader; chancellor_party = "NSDAP"
 
-[? if president == "Hindenburg" : President Hindenburg's camarilla ?][? if president == "Braun" : President Braun somehow ?] has decided that [+ nsdap_leader +] must be chancellor [? if president == "Hindenburg": , and the aging president accepts their recommendations. ?][? if president == "Braun" :  because it is what the constitution would stipulate. ?]
+[? if president == "Hindenburg" : President Hindenburg's camarilla ?][? if president == "Braun" : President Braun somehow ?] has decided that [+ nsdap_leader +] must be chancellor [? if president == "Hindenburg": , and the aging president accepts their recommendations. ?][? if president == "Braun" : because it is what the constitution would stipulate. ?]
 
 - @hitler_takes_power: What do we do now?
 
@@ -1234,7 +1234,7 @@ There are enough votes to form a majority coalition consisting of the <span styl
 
 @grand_coalition_z_lead_2
 
-The <span style="color: #000000;">**Center**</span> chancellor is likely to be Heinrich Brüning of the <span style="color: #000000;">**Center Party**</span>[? if chancellor = "Brüning" : &nbsp;again?]. He is known for his conservatism and sympathy for monarchism, being on the right wing of the <span style="color: #000000;">**Center**</span>. [? if austerity >= 2 : Due to the government's austerity policies, many of our members are reluctant to participate in this coalition again. Some support a "toleration" arrangement in which we will provide outside support to prevent the far-right from either entering government or calling a successful no-confidence vote. Others support entering into pure opposition, and letting the right do what it wishes. ?]
+The <span style="color: #000000;">**Center**</span> chancellor is likely to be Heinrich Brüning of the <span style="color: #000000;">**Center Party**</span>[? if chancellor = "Brüning" : &nbsp;again. ?][? if chancellor != "Brüning": . ?] He is known for his conservatism and sympathy for monarchism, being on the right wing of the <span style="color: #000000;">**Center**</span>. [? if austerity >= 2 : Due to the government's austerity policies, many of our members are reluctant to participate in this coalition again. Some support a "toleration" arrangement in which we will provide outside support to prevent the far-right from either entering government or calling a successful no-confidence vote. Others support entering into pure opposition, and letting the right do what it wishes. ?]
 
 Brüning is not opposed to a coalition with us. Alternatively, we could enter a "toleration" agreement. [? if (right_coalition >= 50 and dnvp_leader != "Hugenberg" or dnvp_leader != "Triumvirate") or (center_right_coalition >= 50 and dnvp_leader = "Hergt") : If we enter opposition, it is likely that Brüning will enlist the support of the <span style="color: #3E88B3;">**DNVP**</span> [? if right_coalition < 50 and center_right_coalition >= 50: and the <span style="color: #D3C24D;">**[+ ddp_name +]** </span> ?]to create a functioning majority. ?]
 
