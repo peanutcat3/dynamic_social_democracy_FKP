@@ -1108,7 +1108,24 @@ Their numbers are bolstered by the many government workers who are against the p
 @emergency_no_confidence
 title: The <span style="color: #7A3C00;">Nazis</span> immediately call a no-confidence vote against us...
 view-if: far_right_coalition < 45
-on-arrival: z_no_confidence = 1 if z_relation < 45; kpd_no_confidence = 1 if kpd_relation < 45; other_no_confidence = 1 if (z_relation + dvp_relation)/2 < 45; dvp_no_confidence = 1 if dvp_relation < 45; sa_strength += 200; sh_strength += 200; no_confidence_votes = nsdap_r + dnvp_r + dnf_r; no_confidence_votes += z_r if z_no_confidence; no_confidence_votes += dvp_r if dvp_no_confidence; no_confidence_votes += kpd_r if kpd_no_confidence; no_confidence_votes += other_r if other_no_confidence; no_confidence_succeeds = 1 if no_confidence_votes > 50
+on-arrival: {!
+Q.z_no_confidence = (Q.z_relation < 45) ? 1 : 0;
+Q.kpd_no_confidence = (Q.kpd_relation < 45) ? 1 : 0;
+Q.other_no_confidence = ((Q.z_relation + Q.dvp_relation) / 2 < 45) ? 1 : 0;
+Q.dvp_no_confidence = (Q.dvp_relation < 45) ? 1 : 0;
+
+Q.sa_strength += 200;
+Q.sh_strength += 200;
+
+Q.no_confidence_votes = Q.nsdap_r + Q.dnvp_r + Q.dnf_r;
+Q.no_confidence_votes += (Q.z_no_confidence ? Q.z_r : 0);
+Q.no_confidence_votes += (Q.dvp_no_confidence ? Q.dvp_r : 0);
+Q.no_confidence_votes += (Q.kpd_no_confidence ? Q.kpd_r : 0);
+Q.no_confidence_votes += (Q.other_no_confidence ? Q.other_r : 0);
+
+Q.no_confidence_succeeds = (Q.no_confidence_votes > 50) ? 1 : 0;
+Q.no_confidence_votes = parseFloat(Q.no_confidence_votes.toFixed(1));
+!}
 
 The <span style="color: #7A3C00;">**NSDAP**</span>[? if dnf_formed: <span style="color: #003755;">, **DNF**</span>?] and <span style="color: #3E88B3;">**DNVP**</span> will vote against us, of course. The other parties vote their conscience. [? if z_no_confidence: The Center Party is voting against us. ?] [? if kpd_no_confidence: The KPD votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
 
