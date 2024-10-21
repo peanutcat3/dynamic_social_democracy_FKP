@@ -213,7 +213,7 @@ if (Q.month_actions >= 1) {
             Q.workers_kpd += 2/12;
         }
         Q.sa_strength += 100/12;
-        if (dnf_formed == 0) { 
+        if (Q.dnf_formed == 0) { 
             Q.sh_strength += 100 / 12;
         } else {
             Q.sh_strength += 50 / 12;
