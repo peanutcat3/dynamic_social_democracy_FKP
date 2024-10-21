@@ -262,7 +262,7 @@ if (Q.month_actions >= 1) {
         if (!Q.works_program) {
             Q.unemployed += 6/12;
             Q.inflation -= 2/12;
-            if (z_party_leader == "Kaas") {
+            if (Q.z_party_leader == "Kaas") {
                 Q.catholics_z += 5/12;
             }
             Q.workers -= 4/12;
