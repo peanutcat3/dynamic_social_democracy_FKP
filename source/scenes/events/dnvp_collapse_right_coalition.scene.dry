@@ -29,7 +29,8 @@ Heinrich Brüning welcomes us into his new cabinet. Now, we have our pick of min
 title: Support the vote of no confidence, voting against the government.
 subtitle: The government will collapse, and there will be new elections.
 view-if: neo_weimar_coalition >= 50
-on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 3; dvp_relation -= 4; z_relation -= 4; call: set_next_election_time
+on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 3; dvp_relation -= 4; z_relation -= 4; 
+call: set_next_election_time
 
 The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
