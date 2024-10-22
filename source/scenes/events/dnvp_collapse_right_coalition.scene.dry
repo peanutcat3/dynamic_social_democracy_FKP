@@ -21,9 +21,10 @@ title: We will join the Brüning coalition.
 subtitle: The chancellorship will remain with Brüning.
 view-if: grand_coalition >= 50 or neo_weimar_coalition >= 50
 on-arrival: spd_in_government = 1; spd_toleration = 0; in_grand_coalition = 1; in_right_coalition = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = "DDP"; justice_minister_party = "DDP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "Z"; leverage = 25 if leverage >= 25; new_middle_dnvp -= 2; old_middle_dnvp -= 2; rural_dnvp -= 2; left_dissent += 8
-go-to: ministries
 
 Heinrich Brüning welcomes us into his new cabinet. Now, we have our pick of ministries.
+
+- @election_1928.ministries: Now, we must select our ministries.
 
 @vonc_yes
 title: Support the vote of no confidence, voting against the government.
