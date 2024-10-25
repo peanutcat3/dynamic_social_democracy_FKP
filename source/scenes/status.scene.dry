@@ -8,9 +8,6 @@ if (Q.unemployed) {
 if (Q.inflation) {
     Q.inflation_2 = Q.inflation.toFixed(1);
 }
-Q.rb_strength = Math.round(Q.rb_strength);
-Q.sh_strength = Math.round(Q.sh_strength);
-Q.sa_strength = Math.round(Q.sa_strength); 
 !}
 
 = Status
@@ -99,22 +96,36 @@ Reformist strength: [+ reformist_strength : strength +], dissent: [+ reformist_d
 
 
 @paramilitaries
+on-arrival: {!
+if (Q.rb_strength) {
+    Q.rb_strength_2 = Q.rb_strength.toFixed(1);
+}
+if (Q.rfb_strength) {
+    Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
+}
+if (Q.sh_strength) {
+    Q.sh_strength_2 = Q.sh_strength.toFixed(1);
+}
+if (Q.sa_strength) {
+    Q.sa_strength_2 = Q.sa_strength.toFixed(1);
+}
+!}
 
 = Paramilitaries
 
-<span style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength +] thousand
+<span style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength_2 +] thousand
 
 <span style="color: #c00000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-<span style="color: #8B0000;">**RFB**</span> Strength: [+ rfb_strength +] thousand
+<span style="color: #8B0000;">**RFB**</span> Strength: [+ rfb_strength_2 +] thousand
 
 <span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
-<span style="color: #3E88B3;">**Stahlhelm**</span> Strength: [+ sh_strength +] thousand
+<span style="color: #3E88B3;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
 
 <span style="color: #3E88B3;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
-<span style="color: #7A3C00;">**SA**</span> Strength: [+ sa_strength +] thousand
+<span style="color: #7A3C00;">**SA**</span> Strength: [+ sa_strength_2 +] thousand
 
 <span style="color: #7A3C00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 

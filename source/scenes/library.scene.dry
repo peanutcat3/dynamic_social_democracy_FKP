@@ -642,7 +642,9 @@ if (d3 && window) {
             {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
-    d3.select("#election_history").datum(Q.election_records).call(lines);
+    if (Q.election_records) {
+        d3.select("#election_history").datum(Q.election_records).call(lines);
+    }
     //document.getElementById('election_history').innerHTML = svg.outerHTML;
 
     // party support records should not have so many ticks
