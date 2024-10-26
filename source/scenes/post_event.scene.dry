@@ -156,6 +156,12 @@ if (Q.month_actions >= 1) {
     if (Q.inflation > 8 && Q.pro_republic > 40) {
         Q.pro_republic -= 1;
     }
+    if ((Q.kpd_votes + Q.nsdap_votes + Q.dnvp_votes + Q.other_votes) - Q.pro_republic > 0 and Q.dnf_formed = 0) {
+        Q.pro_republic -= 1;
+    }
+    if ((Q.kpd_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) - Q.pro_republic > 0 and Q.dnf_formed = 1) {
+        Q.pro_republic -= 1;
+    }
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
     if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + Q.z_votes - 3)) {
@@ -198,7 +204,6 @@ if (Q.month_actions >= 1) {
         Q.rural_dnvp -= 15/12;
         Q.rural_nsdap += 10/12;
         Q.unemployed_nsdap += 18/12;
-        Q.pro_republic -= 5/12;
     }
     if (Q.year == 1930) {
         Q.rural_nsdap += 12/12;
