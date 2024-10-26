@@ -7,7 +7,9 @@ max-visits: 1
 
 = Young Plan Referendum
 
-While the Young Plan seems to be a positive development for the country, the Right are gathering signatures to initiate a referendum this December. While the referendum itself is likely to fail, their propaganda is striking a chord with many, especially amid the ongoing depression. It comes down to us to campaign against the rhetoric of those that seek to destroy our republic. [? if spd_in_government: We are able to use government resources for this campaign, lowering the cost for our party. ?]
+While the Young Plan seems to be a positive development for the country, the Right are gathering signatures to initiate a referendum this December. While the referendum itself is likely to fail, their propaganda is striking a chord with many, especially amid the ongoing depression. 
+
+It comes down to us to campaign against the rhetoric of those that seek to destroy our republic. [? if spd_in_government: We are able to use government resources for this campaign, lowering the cost for our party. ?]
 
 - @pro_plan: Campaign in favor of the Young Plan and against the referendum.
 - @no_plan: Do not campaign on the Young Plan, one way or another.
