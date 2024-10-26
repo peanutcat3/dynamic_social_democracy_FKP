@@ -324,19 +324,21 @@ if (Q.dnf_decay_timer > 0) {
 if (Q.year == 1929 && Q.month == 7) {
     Q.young_plan_seen = 1;
 }
-if (Q.year == 1932 && Q.month == 10 && (Q.dnvp_leader == "Hugenberg" || Q.dnvp_leader == "Triumvirate")) {
+if (Q.dnvp_leader == "Hugenberg" || Q.dnvp_leader == "Triumvirate") {
     Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes) * ((100 - Q.pro_republic) / 100) + 3;
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 } else if (Q.year == 1932 && Q.month == 10 && Q.dnf_formed == 1) {
     Q.young_plan_signatures = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes) * ((100 - Q.pro_republic) / 100) + 3;
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 }
-Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 
-if (Q.year == 1932 && Q.month == 12 && (Q.dnvp_leader == "Hugenberg" || Q.dnvp_leader == "Triumvirate")) {
+if (Q.dnvp_leader == "Hugenberg" || Q.dnvp_leader == "Triumvirate") {
     Q.young_plan_votes = (Q.dnvp_votes + Q.nsdap_votes) * ((100 - Q.pro_republic) / 100) + 3;
+    Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 } else if (Q.year == 1932 && Q.month == 12 && Q.dnf_formed == 1) {
     Q.young_plan_votes = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes) * ((100 - Q.pro_republic) / 100) + 3;
+    Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 }
-Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
 Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));
