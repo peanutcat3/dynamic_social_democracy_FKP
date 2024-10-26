@@ -15,10 +15,10 @@ It comes down to us to campaign against the rhetoric of those that seek to destr
 - @no_plan: Do not campaign on the Young Plan, one way or another.
 
 @pro_plan
-subtitle: [? if spd_in_government: -2 resources ?][? if not spd_in_government: -1 resources ?]
-choose-if: (resources >= 2 and spd_in_government = 1) or (resources >= 1 and spd_in_government = 0)
+subtitle: [? if spd_in_government: -1 resources ?][? if not spd_in_government: -2 resources ?]
+choose-if: (resources >= 1 and spd_in_government = 1) or (resources >= 2 and spd_in_government = 0)
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 2 if spd_in_government; resources -= 1 if not spd_in_government;
+on-arrival: resources -= 1 if spd_in_government; resources -= 2 if not spd_in_government;
 
 How should we campaign in favor of the Plan?
 
