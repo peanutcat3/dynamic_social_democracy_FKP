@@ -2,7 +2,7 @@ title: Young Plan campaigning
 new-page: true
 subtitle: How should we campaign in favor of the Plan?
 tags: event
-view-if: year = 1929 and month >= 9
+view-if: year = 1929 and month >= 10
 max-visits: 1
 
 = Young Plan Referendum
