@@ -156,10 +156,10 @@ if (Q.month_actions >= 1) {
     if (Q.inflation > 8 && Q.pro_republic > 40) {
         Q.pro_republic -= 1;
     }
-    if ((Q.kpd_votes + Q.nsdap_votes + Q.dnvp_votes + Q.other_votes) - Q.pro_republic > 0 and Q.dnf_formed = 0) {
+    if ((Q.kpd_votes + Q.nsdap_votes + Q.dnvp_votes + Q.other_votes) > (100 - Q.pro_republic) and Q.dnf_formed = 0) {
         Q.pro_republic -= 1;
     }
-    if ((Q.kpd_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) - Q.pro_republic > 0 and Q.dnf_formed = 1) {
+    if ((Q.kpd_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) > (100 - Q.pro_republic) and Q.dnf_formed = 1) {
         Q.pro_republic -= 1;
     }
     ///////////////////////////// change party support based on pro_republic
