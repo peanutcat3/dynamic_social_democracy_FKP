@@ -330,7 +330,7 @@ if (Q.dnf_decay_timer > 0) {
 if (Q.year == 1929 && Q.month == 7) {
     Q.young_plan_seen = 1;
 }
-if (Q.dnvp_leader == "Hugenberg" || Q.dnvp_leader == "Triumvirate" && year == 1929 && month == 9) {
+if (Q.dnf_formed == 0 && year == 1929 && month == 9) {
     Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 } else if (Q.year == 1929 && Q.month == 9 && Q.dnf_formed == 1) {
@@ -338,7 +338,7 @@ if (Q.dnvp_leader == "Hugenberg" || Q.dnvp_leader == "Triumvirate" && year == 19
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 }
 
-if (Q.dnvp_leader == "Hugenberg" || Q.dnvp_leader == "Triumvirate" && year == 1929 && month == 11) {
+if (Q.dnf_formed == 0 && year == 1929 && month == 11) {
     Q.young_plan_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
     Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 } else if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 1) {
