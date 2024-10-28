@@ -7,11 +7,11 @@ Q.workers_kvp = 1;
 
 Q.new_middle_kvp = 10;
 Q.new_middle_dnvp -= 6;
-Q.new_middle_other -= 4
+Q.new_middle_other -= 4;
 
 Q.old_middle_kvp = 14;
 Q.old_middle_dnvp -= 6;
-Q.old_middle_other -= 8
+Q.old_middle_other -= 8;
 
 Q.rural_kvp = 26;
 Q.rural_dnvp -= 20;
@@ -25,14 +25,14 @@ Q.catholics_other -= 4;
 
 Q.kvp_r = Math.round((Q.dnvp_r / 2) * 10) / 10 + 1;
 Q.dnvp_r = Math.round((Q.dnvp_r - Q.kvp_r) * 10) / 10 - 1;
-Q.kvp_relation = 20
+Q.kvp_relation = 20;
 
-Q.old_workers_kvp_normalized = 0
-Q.old_new_middle_kvp_normalized = 0
-Q.old_old_middle_kvp_normalized = 0
-Q.old_rural_kvp_normalized = 0
-Q.old_unemployed_kvp_normalized = 0
-Q.old_catholics_kvp_normalized = 0
+Q.old_workers_kvp_normalized = 0;
+Q.old_new_middle_kvp_normalized = 0;
+Q.old_old_middle_kvp_normalized = 0;
+Q.old_rural_kvp_normalized = 0;
+Q.old_unemployed_kvp_normalized = 0;
+Q.old_catholics_kvp_normalized = 0;
 
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
 Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));
