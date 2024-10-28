@@ -204,6 +204,7 @@ if (Q.month_actions >= 1) {
         Q.rural_dnvp -= 7/12;
         Q.rural_nsdap += 10/12;
         Q.unemployed_nsdap += 18/12;
+        Q.rural_dnvp -= 3/12;
         if (Q.dnvp_ideology == "Radical") {
             Q.rural_other += 3/12;
             Q.rural_dnvp -= 3/12;
@@ -219,9 +220,10 @@ if (Q.month_actions >= 1) {
         Q.new_middle_nsdap += 12/12;
         Q.old_middle_nsdap += 12/12;
         Q.unemployed_nsdap += 7/12;
+        Q.rural_other -= 3/12;
         if (Q.dnvp_leader == "Hugenberg") {
-            Q.rural_other += 2/12;
-            Q.rural_dnvp -= 2/12;
+            Q.rural_other += 3/12;
+            Q.rural_dnvp -= 3/12;
         }
     
         Q.workers_z += 1/12;
