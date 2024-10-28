@@ -9,19 +9,19 @@ Q.new_middle_kvp = 10;
 Q.new_middle_dnvp -= 6;
 Q.new_middle_other -= 4;
 
-Q.old_middle_kvp = 14;
-Q.old_middle_dnvp -= 6;
+Q.old_middle_kvp = 12;
+Q.old_middle_dnvp -= 4;
 Q.old_middle_other -= 8;
 
-Q.rural_kvp = 26;
+Q.rural_kvp = 24;
 Q.rural_dnvp -= 20;
-Q.rural_other -= 6;
+Q.rural_other -= 8;
 
 Q.unemployed_kvp = 0;
 
-Q.catholics_kvp = 8;
-Q.catholics_dnvp -= 4;
-Q.catholics_other -= 4;
+Q.catholics_kvp = 4;
+Q.catholics_dnvp -= 2;
+Q.catholics_other -= 2;
 
 Q.kvp_r = Math.round((Q.dnvp_r / 2) * 10) / 10 + 1;
 Q.dnvp_r = Math.round((Q.dnvp_r - Q.kvp_r) * 10) / 10 - 1;
