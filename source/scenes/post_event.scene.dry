@@ -198,12 +198,16 @@ if (Q.month_actions >= 1) {
         Q.old_middle_nsdap += 10/12;
         Q.new_middle_ddp -= 5/12;
         Q.new_middle_dvp -= 5/12;
-        Q.workers_kpd += 5/12;
+        Q.workers_kpd += 4/12;
         Q.sa_strength += 50/12;
         Q.sh_strength += 100/12;
-        Q.rural_dnvp -= 10/12;
+        Q.rural_dnvp -= 7/12;
         Q.rural_nsdap += 10/12;
         Q.unemployed_nsdap += 18/12;
+        if (Q.dnvp_ideology == "Radical") {
+            Q.rural_other += 3;
+            Q.rural_dnvp -= 3;
+        }
     }
     if (Q.year == 1930) {
         Q.rural_nsdap += 12/12;
@@ -216,8 +220,8 @@ if (Q.month_actions >= 1) {
         Q.old_middle_nsdap += 12/12;
         Q.unemployed_nsdap += 7/12;
         if (Q.dnvp_leader == "Hugenberg") {
-            Q.rural_other += 5;
-            Q.rural_dnvp -= 5;
+            Q.rural_other += 2;
+            Q.rural_dnvp -= 2;
         }
     
         Q.workers_z += 1/12;
