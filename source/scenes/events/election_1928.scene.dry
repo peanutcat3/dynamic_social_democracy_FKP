@@ -819,7 +819,7 @@ on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; 
 title: Refuse to form a government, so that a center-right coalition may be formed.
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">**Center**</span>.
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> ([+ center_right_coalition +]%)
-view-if:  dnvp_ideology == "Moderate" and center_right_coalition >= 50 and dnf_formed and right_coalition < 50
+view-if: dnvp_ideology == "Moderate" and center_right_coalition >= 50 and dnf_formed and right_coalition < 50
 choose-if: not (year = 1929 and month >= 8)
 
 There are enough votes for a broad center-right coalition of the <span style="color: #000000;">**Center**</span> (+ <span style="color: #A2D8E0;">**BVP**</span>), <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, <span style="color: #C0A054;">**DVP**</span>, <span style="color: #3E88B3;">**DNVP**</span>, and minor conservative parties. [? if largest_party == "SPD": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
