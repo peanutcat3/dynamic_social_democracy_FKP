@@ -2,7 +2,7 @@ title: Right coalition collapses
 subtitle: The right-wing coalition has collapsed...
 new-page: true
 tags: event
-view-if: dnvp_ideology === "Radical" and year == 1928 and month == 11 and in_right_coalition
+view-if: dnvp_ideology == "Radical" and year == 1928 and month == 11 and in_right_coalition
 on-arrival: was_in_right_coalition = 1
 max-visits: 1
 
