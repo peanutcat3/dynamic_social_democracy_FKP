@@ -222,6 +222,7 @@ Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 
 Q.sapd_formed = 0;
 Q.dnf_formed = 0;
+Q.kvp_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -330,6 +331,9 @@ Q.old_sapd_r = 0;
 
 Q.dnf_r = 0;
 Q.old_dnf_r = 0;
+
+Q.kvp_r = 0;
+Q.old_kvp_r = 0;
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];

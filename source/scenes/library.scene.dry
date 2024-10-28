@@ -81,7 +81,8 @@ Reichstag composition:
 # 1928: 5, 1930: 4 (as DStP)
 <span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-<span style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]%
+<span style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]%\
+[? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>: [+ kvp_r +]% ?]
 # 1928: 14, 1930: 7
 <span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
@@ -111,6 +112,7 @@ Labor:
 [? if labor_minister_party == "BVP": <span style="color: #A2D8E0;">[+ labor_minister_party +]</span> ?]
 [? if labor_minister_party == "DVP": <span style="color: #C0A054;">[+ labor_minister_party +]</span> ?]
 [? if labor_minister_party == "Others": <span style="color: #c00000;">[+ labor_minister_party +]</span> ?]
+[? if labor_minister_party == "KVP": <span style="color: #0087DC;">[+ agriculture_minister_party +]</span> ?]
 [? if labor_minister_party == "DNVP": <span style="color: #3E88B3;">[+ labor_minister_party +]</span> ?]
 [? if labor_minister_party == "DNF": <span style="color: #003755;">[+ labor_minister_party +]</span> ?]
 [? if labor_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ labor_minister_party +]</span> ?]
@@ -124,6 +126,7 @@ Interior:
 [? if interior_minister_party == "BVP": <span style="color: #A2D8E0;">[+ interior_minister_party +]</span> ?]
 [? if interior_minister_party == "DVP": <span style="color: #C0A054;">[+ interior_minister_party +]</span> ?]
 [? if interior_minister_party == "Others": <span style="color: #c00000;">[+ interior_minister_party +]</span> ?]
+[? if interior_minister_party == "KVP": <span style="color: #0087DC;">[+ agriculture_minister_party +]</span> ?]
 [? if interior_minister_party == "DNVP": <span style="color: #3E88B3;">[+ interior_minister_party +]</span> ?]
 [? if interior_minister_party == "DNF": <span style="color: #003755;">[+ interior_minister_party +]</span> ?]
 [? if interior_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ interior_minister_party +]</span> ?]
@@ -137,6 +140,7 @@ Finance:
 [? if finance_minister_party == "BVP": <span style="color: #A2D8E0;">[+ finance_minister_party +]</span> ?]
 [? if finance_minister_party == "DVP": <span style="color: #C0A054;">[+ finance_minister_party +]</span> ?]
 [? if finance_minister_party == "Others": <span style="color: #c00000;">[+ finance_minister_party +]</span> ?]
+[? if finance_minister_party == "KVP": <span style="color: #0087DC;">[+ agriculture_minister_party +]</span> ?]
 [? if finance_minister_party == "DNVP": <span style="color: #3E88B3;">[+ finance_minister_party +]</span> ?]
 [? if finance_minister_party == "DNF": <span style="color: #003755;">[+ finance_minister_party +]</span> ?]
 [? if finance_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ finance_minister_party +]</span> ?]
@@ -150,6 +154,7 @@ Economic:
 [? if economic_minister_party == "BVP": <span style="color: #A2D8E0;">[+ economic_minister_party +]</span> ?]
 [? if economic_minister_party == "DVP": <span style="color: #C0A054;">[+ economic_minister_party +]</span> ?]
 [? if economic_minister_party == "Others": <span style="color: #c00000;">[+ economic_minister_party +]</span> ?]
+[? if economic_minister_party == "KVP": <span style="color: #0087DC;">[+ agriculture_minister_party +]</span> ?]
 [? if economic_minister_party == "DNVP": <span style="color: #3E88B3;">[+ economic_minister_party +]</span> ?]
 [? if economic_minister_party == "DNF": <span style="color: #003755;">[+ economic_minister_party +]</span> ?]
 [? if economic_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ economic_minister_party +]</span> ?]
@@ -163,6 +168,7 @@ Justice:
 [? if justice_minister_party == "BVP": <span style="color: #A2D8E0;">[+ justice_minister_party +]</span> ?]
 [? if justice_minister_party == "DVP": <span style="color: #C0A054;">[+ justice_minister_party +]</span> ?]
 [? if justice_minister_party == "Others": <span style="color: #c00000;">[+ justice_minister_party +]</span> ?]
+[? if justice_minister_party == "KVP": <span style="color: #0087DC;">[+ agriculture_minister_party +]</span> ?]
 [? if justice_minister_party == "DNVP": <span style="color: #3E88B3;">[+ justice_minister_party +]</span> ?]
 [? if justice_minister_party == "DNF": <span style="color: #003755;">[+ justice_minister_party +]</span> ?]
 [? if justice_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ justice_minister_party +]</span> ?]
@@ -176,6 +182,7 @@ Foreign:
 [? if foreign_minister_party == "BVP": <span style="color: #A2D8E0;">[+ foreign_minister_party +]</span> ?]
 [? if foreign_minister_party == "DVP": <span style="color: #C0A054;">[+ foreign_minister_party +]</span> ?]
 [? if foreign_minister_party == "Others": <span style="color: #c00000;">[+ foreign_minister_party +]</span> ?]
+[? if foreign_minister_party == "KVP": <span style="color: #0087DC;">[+ agriculture_minister_party +]</span> ?]
 [? if foreign_minister_party == "DNVP": <span style="color: #3E88B3;">[+ foreign_minister_party +]</span> ?]
 [? if foreign_minister_party == "DNF": <span style="color: #003755;">[+ foreign_minister_party +]</span> ?]
 [? if foreign_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ foreign_minister_party +]</span> ?]
@@ -189,6 +196,7 @@ Reichswehr:
 [? if reichswehr_minister_party == "BVP": <span style="color: #A2D8E0;">[+ reichswehr_minister_party +]</span> ?]
 [? if reichswehr_minister_party == "DVP": <span style="color: #C0A054;">[+ reichswehr_minister_party +]</span> ?]
 [? if reichswehr_minister_party == "Others": <span style="color: #c00000;">[+ reichswehr_minister_party +]</span> ?]
+[? if reichswehr_minister_party == "KVP": <span style="color: #0087DC;">[+ agriculture_minister_party +]</span> ?]
 [? if reichswehr_minister_party == "DNVP": <span style="color: #3E88B3;">[+ reichswehr_minister_party +]</span> ?]
 [? if reichswehr_minister_party == "DNF": <span style="color: #003755;">[+ reichswehr_minister_party +]</span> ?]
 [? if reichswehr_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ reichswehr_minister_party +]</span> ?]
@@ -202,6 +210,7 @@ Agriculture:
 [? if agriculture_minister_party == "BVP": <span style="color: #A2D8E0;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "DVP": <span style="color: #C0A054;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "Others": <span style="color: #c00000;">[+ agriculture_minister_party +]</span> ?]
+[? if agriculture_minister_party == "KVP": <span style="color: #0087DC;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "DNVP": <span style="color: #3E88B3;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "DNF": <span style="color: #003755;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ agriculture_minister_party +]</span> ?]
@@ -267,6 +276,8 @@ go-to: menu
 
 # 1928: 9, 1930: 5
 <span style="color: #C0A054;">**DVP**</span>: [+ dvp_votes +]%
+
+[? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>: [+ kvp_votes +]% ?]
 
 # 1928: 14, 1930: 7
 <span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_votes +]%
@@ -346,6 +357,15 @@ go-to: menu
             <td style="background-color: rgba(192, 160, 84, 0.2);">[+ unemployed_dvp_normalized +]%</td>
             <td style="background-color: rgba(192, 160, 84, 0.2);">[+ catholics_dvp_normalized +]%</td>
         </tr>
+        [? if kvp_formed: {!<tr>!}
+            <td><span style="color: #0087DC;">**KVP**</span></td>
+            <td style="background-color: rgba(0, 135, 220, 0.2); padding: 10px;">[+ workers_kvp_normalized +]%</td>
+            <td style="background-color: rgba(0, 135, 220, 0.2);">[+ new_middle_kvp_normalized +]%</td>
+            <td style="background-color: rgba(0, 135, 220, 0.2);">[+ old_middle_kvp_normalized +]%</td>
+            <td style="background-color: rgba(0, 135, 220, 0.2);">[+ rural_kvp_normalized +]%</td>
+            <td style="background-color: rgba(0, 135, 220, 0.2);">[+ unemployed_kvp_normalized +]%</td>
+            <td style="background-color: rgba(0, 135, 220, 0.2);">[+ catholics_kvp_normalized +]%</td>
+        {!</tr>!} ?]
         <tr>
             <td><span style="color: #3E88B3;">**DNVP**</span></td>
             <td style="background-color: rgba(44, 81, 122, 0.2); padding: 10px;">[+ workers_dnvp_normalized +]%</td>
@@ -401,6 +421,10 @@ Current relations: [+ ddp_relation : relationships +]
 <span style="color: #C0A054;">**DVP**</span> - *Deutsche Volkspartei* (German People's Party) - a conservative-liberal party founded by Gustav Stresemann, supported by the middle classes, bourgeoisie and industrialists. The industrial and right wing of the party has been gaining noticeable influence in recent years with Stresemann's neglect of party affairs. [? if dvp_leader == "Scholz": The industrial wing of the party has succeeded in it's takeover of the party and are much less inclined to work with us.?] We have occasionally been in coalitions.
 
 Current relations: [+ dvp_relation : relationships +]
+
+[? if kvp_formed: <span style="color: #0087DC;">**KVP**</span> - *Konservative Volkspartei* (Conservative People's Party) - a moderate right-wing conservative nationalist party, supported by rural workers, former aristocracy, landowners and conservative Lutherans. The party seeks to emulate the Tory conservatives in Great Britain. ?]
+
+[? if kvp_formed: Current relations: [+ kvp_relation : relationships +] ?]
 
 <span style="color: #3E88B3;">**DNVP**</span> - *Deutschnationale Volkspartei* (German National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans.
 
@@ -527,14 +551,12 @@ Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
 !}
 on-display: {!
-    data = [
-        {
-            "id": "kpd",
-            "legend": "KPD",
-            "name": "KPD",
-            "seats": Math.round(Q.kpd_r * 5),
-        }
-    ];
+    data = [{
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Math.round(Q.kpd_r * 5),
+    }];
     
     if (Q.sapd_formed && Q.sapd_r) {
         data.push({
@@ -545,14 +567,12 @@ on-display: {!
         });
     }
     
-    data = data.concat([
-        {
-            "id": "spd",
-            "legend": "SPD",
-            "name": "SPD",
-            "seats": Math.round(Q.spd_r * 5),
-        }
-    ]);
+    data = data.concat([{
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Math.round(Q.spd_r * 5),
+    }]);
     
     if (Q.ddp_r) {
         data.push({
@@ -563,8 +583,7 @@ on-display: {!
         });
     }
     
-    data = data.concat([
-        {
+    data = data.concat([{
             "id": "z",
             "legend": "Center",
             "name": "Center",
@@ -596,15 +615,22 @@ on-display: {!
         });
     }
     
-    data = data.concat([
-        {
-            "id": "dnvp",
-            "legend": "DNVP",
-            "name": "DNVP",
-            "seats": Math.round(Q.dnvp_r * 5),
-        }
-    ]);
-        if (Q.dnf_formed && Q.dnf_r) {
+    if (Q.kvp_formed && Q.kvp_r) {
+        data.push({
+            "id": "kvp",
+            "legend": "KVP",
+            "name": "KVP",
+            "seats": Math.round(Q.kvp_r * 5),
+        });
+    }
+    
+    data = data.concat([{
+        "id": "dnvp",
+        "legend": "DNVP",
+        "name": "DNVP",
+        "seats": Math.round(Q.dnvp_r * 5),
+    }]);
+    if (Q.dnf_formed && Q.dnf_r) {
         data.push({
             "id": "dnf",
             "legend": "DNF",
@@ -612,14 +638,12 @@ on-display: {!
             "seats": Math.round(Q.dnf_r * 5),
         });
     }
-    data = data.concat([
-        {
-            "id": "nsdap",
-            "legend": "NSDAP",
-            "name": "NSDAP",
-            "seats": Math.round(Q.nsdap_r * 5),
-        },
-    ]);
+    data = data.concat([{
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_r * 5),
+    }, ]);
 if (d3 && window) {
     // get screen width
     var width = 500;
@@ -638,8 +662,8 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF'});
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     if (Q.election_records) {
@@ -651,8 +675,8 @@ if (d3 && window) {
     if (!Q.historical_mode) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF'});
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -689,6 +713,8 @@ if (d3 && window) {
 {!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +]% {!</td></tr>!}
+
+[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div></td><td>!} KVP: {!</td><td>!} [+ kvp_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#3E88B3'> </div></td><td>!} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td></tr>!}
 
