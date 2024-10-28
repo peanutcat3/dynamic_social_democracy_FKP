@@ -2,7 +2,7 @@ title: Young Plan
 new-page: true
 subtitle: The [? if in_right_coalition: right-wing ?][? if in_center_right_coalition: center-right ?] coalition has collapsed...
 tags: event
-view-if: year = 1929 and month >= 7 and in_right_coalition or in_center_right_coalition and dnvp_leader = "Hergt"
+view-if: year = 1929 and month >= 7 and in_right_coalition or in_center_right_coalition and dnvp_ideology === "Moderate"
 max-visits: 1
 
 = The Young Plan and the fall of the coalition

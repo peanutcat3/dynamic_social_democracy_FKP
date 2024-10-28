@@ -539,6 +539,7 @@ Q.kpd_ultimatum_timer = 0;
 Q.dnf_decay_timer = 0;
 Q.z_party_name = "Z";
 Q.dnvp_leader = "Westarp";
+Q.dnvp_ideology = "Radical";
 Q.dstp_formed = 0;
 Q.ddp_left = 0;
 Q.ddp_right = 0;

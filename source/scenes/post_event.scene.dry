@@ -201,23 +201,24 @@ if (Q.month_actions >= 1) {
         Q.workers_kpd += 5/12;
         Q.sa_strength += 50/12;
         Q.sh_strength += 100/12;
-        Q.rural_dnvp -= 15/12;
+        Q.rural_dnvp -= 10/12;
         Q.rural_nsdap += 10/12;
         Q.unemployed_nsdap += 18/12;
     }
     if (Q.year == 1930) {
         Q.rural_nsdap += 12/12;
-        Q.rural_dnvp -= 15/12;
+        Q.rural_dnvp -= 10/12;
         Q.new_middle_dvp -= 5/12;
         Q.old_middle_dvp -= 6/12;
         Q.new_middle_ddp -= 5/12;
         Q.old_middle_ddp -= 6/12;
         Q.new_middle_nsdap += 12/12;
         Q.old_middle_nsdap += 12/12;
-        Q.new_middle_other += 4/12;
-        Q.old_middle_other += 4/12;
         Q.unemployed_nsdap += 7/12;
-        Q.rural_other += 5/12;
+        if (Q.dnvp_leader == "Hugenberg") {
+            Q.rural_other += 5
+            Q.rural_dnvp -= 5
+        }
     
         Q.workers_z += 1/12;
         Q.old_middle_z += 2/12;
@@ -226,7 +227,6 @@ if (Q.month_actions >= 1) {
             Q.rural_nsdap += 3/12;
             Q.old_middle_nsdap += 5/12;
             Q.workers_nsdap += 2/12;
-            Q.workers_other += 5/12;
             Q.workers_kpd += 2/12;
         }
         Q.sa_strength += 100/12;
@@ -291,7 +291,6 @@ if (Q.month_actions >= 1) {
             }
             Q.workers -= 4/12;
             Q.rural_dnvp -= 4/12;
-            Q.rural_dnvp -= 6/12;
             Q.rural_nsdap += 8/12;
             Q.new_middle_nsdap += 10/12;
             Q.old_middle_nsdap += 10/12;
@@ -300,7 +299,6 @@ if (Q.month_actions >= 1) {
             Q.workers_nsdap += 3/12;
             Q.workers_kpd += 3/12;
             Q.sa_strength += 200/12;
-            Q.new_middle_dnvp += 4/12;
             Q.new_middle_dnvp += 4/12;
             Q.new_middle_dvp -= 4/12;
             Q.old_middle_dvp -= 4/12;
@@ -330,7 +328,7 @@ if (Q.dnf_decay_timer > 0) {
 if (Q.year == 1929 && Q.month == 7) {
     Q.young_plan_seen = 1;
 }
-if (Q.dnf_formed == 0 && year == 1929 && month == 9) {
+if (Q.dnf_formed == 0 && Q.year == 1929 && Q.month == 9) {
     Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 } else if (Q.year == 1929 && Q.month == 9 && Q.dnf_formed == 1) {
@@ -338,7 +336,7 @@ if (Q.dnf_formed == 0 && year == 1929 && month == 9) {
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 }
 
-if (Q.dnf_formed == 0 && year == 1929 && month == 11) {
+if (Q.dnf_formed == 0 && Q.year == 1929 && Q.month == 11) {
     Q.young_plan_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
     Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 } else if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 1) {
@@ -349,25 +347,33 @@ if (Q.dnf_formed == 0 && year == 1929 && month == 11) {
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
 Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));
 Q.bourgeois_coalition = parseFloat((Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r).toFixed(1));
-Q.center_right_coalition = parseFloat((Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
+if (Q.kvp_formed) {
+    Q.center_right_coalition = parseFloat((Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r + Q.kvp_r).toFixed(1));
+} else {
+    Q.center_right_coalition = parseFloat((Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
+}
 Q.right_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
-if (Q.dnvp_leader === "Hergt") {
+
+if (Q.dnvp_ideology === "Moderate") {
     Q.far_right_coalition = parseFloat((Q.dnf_r + Q.nsdap_r).toFixed(1));
 } else {
     Q.far_right_coalition = parseFloat((Q.dnvp_r + Q.nsdap_r).toFixed(1));
 }
 Q.left_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.sapd_r).toFixed(1));
 Q.popular_front_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r).toFixed(1));
-if (Q.dnvp_leader === "Hergt") {
+if (Q.dnvp_ideology === "Moderate") {
     Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.nsdap_r + Q.dnf_r).toFixed(1));
 } else {
     Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.nsdap_r + Q.dnvp_r).toFixed(1));
 }
 Q.neo_weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r).toFixed(1));
-Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
-// unused at this moment Q.hitler_right_coalition = parseFloat((Q.z_r + Q.dnvp_r + Q.nsdap_r).toFixed(1));
-Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(1));
+if (Q.kvp_formed) {
+    Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r + Q.kvp_r).toFixed(1));
+} else {
+    Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
 }
+// Q.hitler_right_coalition = parseFloat((Q.z_r + Q.dnvp_r + Q.nsdap_r).toFixed(1));
+Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(1));
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
 var scene = this.game.scenes['post_event.events_choice'];
