@@ -3,6 +3,7 @@ subtitle: The <span style="color: #3E88B3;">DNVP</span> decides their fate...
 view-if: year = 1929 and month = 11 and dnvp_leader = "Hugenberg"
 max-visits: 1
 tags: event
+face-image: img/dnvp_2.jpg
 new-page: true
 
 = 1929 <span style="color: #3E88B3;">**DNVP**</span> Congress
