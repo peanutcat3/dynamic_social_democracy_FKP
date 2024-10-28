@@ -6,16 +6,16 @@ Q.parties.push('kvp');
 Q.workers_kvp = 1;
 
 Q.new_middle_kvp = 10;
-Q.new_middle_dnvp -= 6;
-Q.new_middle_other -= 4;
+Q.new_middle_dnvp -= 4;
+Q.new_middle_other -= 6;
 
 Q.old_middle_kvp = 12;
 Q.old_middle_dnvp -= 4;
 Q.old_middle_other -= 8;
 
-Q.rural_kvp = 24;
-Q.rural_dnvp -= 20;
-Q.rural_other -= 8;
+Q.rural_kvp = 25;
+Q.rural_dnvp -= 15;
+Q.rural_other -= 10;
 
 Q.unemployed_kvp = 0;
 
