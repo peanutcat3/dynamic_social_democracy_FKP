@@ -216,8 +216,8 @@ if (Q.month_actions >= 1) {
         Q.old_middle_nsdap += 12/12;
         Q.unemployed_nsdap += 7/12;
         if (Q.dnvp_leader == "Hugenberg") {
-            Q.rural_other += 5
-            Q.rural_dnvp -= 5
+            Q.rural_other += 5;
+            Q.rural_dnvp -= 5;
         }
     
         Q.workers_z += 1/12;
