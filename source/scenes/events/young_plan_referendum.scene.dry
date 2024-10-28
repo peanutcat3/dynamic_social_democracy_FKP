@@ -1,6 +1,6 @@
 title: Young Plan Referendum
 new-page: true
-subtitle: The results have come in
+subtitle: The results have come in.
 tags: event
 view-if: year = 1929 and month >= 12 and young_plan_signatures >= 10
 max-visits: 1
