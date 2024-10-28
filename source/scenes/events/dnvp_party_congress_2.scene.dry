@@ -3,7 +3,6 @@ subtitle: The <span style="color: #3E88B3;">DNVP</span> decides their fate...
 view-if: year = 1929 and month = 11 and dnvp_leader = "Hugenberg"
 max-visits: 1
 tags: event
-face-image: img/dnvp.jpg
 new-page: true
 
 = 1929 <span style="color: #3E88B3;">**DNVP**</span> Congress
@@ -19,6 +18,7 @@ go-to: dnvpsplit if young_plan_signatures >= 10; hugenbergremoval if young_plan_
 
 @dnvpsplit
 on-arrival: dnvp_split = 1; csvd_formed = 1; dnvp_r -= 2; other_r += 2; workers_dnvp -= 4; workers_other += 4; new_middle_dnvp -= 4; old_middle_dnvp -= 2; new_middle_other += 4; old_middle_other += 2
+face-image: img/CSVD.jpg
 
 The Christian Socialists within the <span style="color: #3E88B3;">**DNVP**</span> have been wanting to separate themselves for a while now, the Young Plan referendum debacle has given them the pretext. During the vote on the "Freedom Law" in the Reichstag, they went against Westarp's compromise solution and denounced Hugenberg, causing him to expel the renegade deputies. They were soon joined in leaving the party by many members of the "Young Conservative" faction. 
 
@@ -27,6 +27,7 @@ However, the failure of them to bring the party organizations or the agrarian wi
 @hugenbergremoval
 on-arrival: dnvp_leader = "Treviranus"; dnvp_ideology = "Moderate"; hugenberg_removed = 1; dnf_decay_timer += 12; rural_other -= 5; rural_dnvp += 5; old_middle_other -= 5; old_middle_dnvp += 5; new_middle_other -= 3; new_middle_dnvp += 3; workers_other -= 1; workers_dnvp += 1
 go-to: dnf_formed_1929
+face-image: img/Treviranus.jpg
 
 The failure of the Young Plan referendum to reach the 10% threshold and the declining popularity of the <span style="color: #3E88B3;">**DNVP**</span> has convinced the majority of the party to vote out Hugenberg, replacing him with Treviranus, a member of the "Young Conservative" wing of the party. The Young Conservatives are in favor of transforming the <span style="color: #3E88B3;">**DNVP**</span> into a "Tory democracy", advancing their goals in the framework of the system.
 
@@ -35,6 +36,7 @@ In response, Hugenberg threatens to take himself and his supporters into a new s
 @completednvpsplit
 on-arrival: dnvp_split = 1; complete_dnvp_split = 1
 go-to: kvp_formed
+face-image: img/KVP.jpg
 
 The moderates within the <span style="color: #3E88B3;">**DNVP**</span>, joined by the agrarian wing, are unable to defeat Hugenberg in a vote. This is in part due to Hugenberg's efforts of consolidating power within the party organizations. The agrarian representatives in the party finally had enough with Hugenberg's "all or nothing" strategy, especially after he collapsed the right-wing coalition exactly a year ago. 
 
