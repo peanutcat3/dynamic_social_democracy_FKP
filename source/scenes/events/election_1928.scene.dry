@@ -554,7 +554,7 @@ Right-wing Coalition (<span style="color: #000000;">**Z**</span> + <span style="
 
 [? if dnvp_ideology == "Radical" and far_right_coalition >= 35: Far-right Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
-[? if dnvp_ideology == "Radical" and far_right_coalition >= 30: Far-right Coalition (<span style="color: #003755;">**DNF**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
+[? if dnvp_ideology == "Moderate" and far_right_coalition >= 30: Far-right Coalition (<span style="color: #003755;">**DNF**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
 [? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in <span style="color: #7A3C00;">**NSDAP**</span> votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
