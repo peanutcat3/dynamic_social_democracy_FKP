@@ -610,6 +610,7 @@ For more information on the politics and government of the German Republic, see 
 - @1928_main: Begin (<span style="color: #C4B156;">normal</span> difficulty)
 - @1928_hard: Begin (<span style="color: #A05252;">hard</span> difficulty)
 - @1928_historical: Begin (<span style="color: #611813;">historical</span> mode)
+- @1928_mod_mode: Begin (<span style="color: #0077FF;">dynamic</span> mode)
 
 @1928_easy
 on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49;
@@ -636,6 +637,20 @@ Q.kpd_relation = 16;
 Q.dvp_relation = 31;
 Q.budget = 2;
 this.state.disableSaves = true;
+!}
+go-to: 1928_main
+
+@1928_mod_mode
+subtitle: Intended way of experiencing this mod.
+on-arrival: {!
+Q.difficulty = -1;
+Q.resources = 3;
+Q.dues = 2;
+Q.rb_strength = 2000;
+Q.z_relation = 41;
+Q.kpd_relation = 16;
+Q.dvp_relation = 31;
+Q.budget = 2;
 !}
 go-to: 1928_main
 

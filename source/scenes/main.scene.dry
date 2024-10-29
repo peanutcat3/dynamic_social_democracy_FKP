@@ -42,6 +42,8 @@ max-cards: 3
 
 [? if year = 1929 and month = 10: The initiative against the Young Plan has finished collecting its signatures for it to become a referendum, with [+ young_plan_signatures +]% of eligible voters signing[? if young_plan_signatures >= 10: [? if young_plan_signatures < 11: &nbsp;barely ?] exceeding the 10% minimum requirement?][? if young_plan_signatures < 10: [? if young_plan_signatures > 9:&nbsp;barely ?] falling short of the 10% minimum requirement. This will certainly spark some internal dissent with the right-wing parties?].  ?]
 
+[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]
+
 - @party
 - @govt
 - #advisor
@@ -90,6 +92,7 @@ max-cards: 4
 
 [? if year = 1929 and month = 10: The initiative against the Young Plan has finished collecting its signatures for it to become a referendum, with [+ young_plan_signatures +]% of eligible voters signing[? if young_plan_signatures >= 10: [? if young_plan_signatures < 11: &nbsp;barely ?] exceeding the 10% minimum requirement?][? if young_plan_signatures < 10: [? if young_plan_signatures > 9:&nbsp;barely ?] falling short of the 10% minimum requirement. This will certainly spark some internal dissent with the right-wing parties?].  ?]
 
+[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]
 
 - @party
 - @govt
