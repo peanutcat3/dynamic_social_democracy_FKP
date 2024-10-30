@@ -210,10 +210,19 @@ if (Q.month_actions >= 1) {
         Q.rural_dnvp -= 7/12;
         Q.rural_nsdap += 10/12;
         Q.unemployed_nsdap += 18/12;
-        Q.rural_dnvp -= 3/12;
+        Q.new_middle_other -= 3/12;
+        Q.old_middle_other -= 3/12;
+        Q.rural_other -= 3/12;
+        Q.new_middle_dnvp += 3/12;
+        Q.old_middle_dnvp += 3/12;
+        Q.rural_dnvp += 3/12;
         if (Q.dnvp_ideology == "Radical") {
-            Q.rural_other += 3/12;
-            Q.rural_dnvp -= 3/12;
+        Q.new_middle_other += 3/12;
+        Q.old_middle_other += 3/12;
+        Q.rural_other += 3/12;
+        Q.rural_dnvp -= 3/12;
+        Q.new_middle_dnvp -= 3/12;
+        Q.old_middle_dnvp -= 3/12;
         }
     }
     if (Q.year == 1930) {
