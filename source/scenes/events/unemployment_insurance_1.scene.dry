@@ -73,6 +73,7 @@ Thanks to our good relations, the <span style="color: #C0A054;">**DVP**</span> h
 
 - @accept_compromise: Accept the compromise.
 - @destroy: Reject the compromise and let this government fall.
+- @prolong: Decide this at a later date.
 
 @accept_compromise
 unavailable-subtitle: [? if reformist_strength + center_strength < left_strength + labor_strength: The party won't allow this. ?]
