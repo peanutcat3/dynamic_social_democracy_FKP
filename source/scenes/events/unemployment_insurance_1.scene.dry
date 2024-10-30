@@ -60,10 +60,10 @@ The workers are furious at our betrayal, as are a good portion of our membership
 
 @prolong
 unavailable-subtitle: [? if reformist_strength + center_strength < left_strength + labor_strength: The party wants action now. ?][? if unemployment_insurance_crisis > 1: We can't prolong this any longer. ?]
-choose-if: reformist_strength + center_strength >= left_strength + labor_strength and unemployment_insurance_crisis < 2
+choose-if: reformist_strength + center_strength >= left_strength + labor_strength / 2 and unemployment_insurance_crisis < 2
 on-arrival: workers_spd -= 0.1*workers_spd; umemployed_spd -= 0.15*unemployed_spd; workers_kpd += 5; workers_nsdap += 5; unemployed_kpd += 4; unemployed_nsdap += 4; left_dissent += 12; center_dissent += 7; labor_dissent += 12; reformist_dissent += 3; welfare -= 1; unemployed += 2; month += 1; pro_republic -= 3; kpd_relation -= 8; inflation -= 1; prolonged_unemployment_insurance = 1; unemployment_insurance_timer = 6;
 
-A compromise put forward by Heinrich Brüning is put into place and the issue is delayed until the autumn. A fixed amount is loaned to the program in the meantime, although not nearly enough for the millions of unemployed. The Left and Labor factions of our party are seeing this as a betrayal of our obligation to subsidize unemployment insurance in time of crisis.
+A compromise put forward by Heinrich Brüning is put into place and the issue is delayed until the autumn. A fixed amount is loaned to the program in the meantime, although not nearly enough for the millions of unemployed. The Left and Labor factions view this as a betrayal of our duty to support unemployment insurance during a crisis.
 
 @compromise
 unavailable-subtitle: [? if dvp_relation < 35 or ddp_relation < 35 or (z_relation < 40 or (z_relation < 35 and z_party_leader == "Joos")): We do not have good enough relations with the right-wing parties.?]
