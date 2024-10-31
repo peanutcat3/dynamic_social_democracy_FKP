@@ -1,7 +1,7 @@
 title: End of the [+ chancellor +] government
 subtitle: Chancellor [+ chancellor +] proposes a controversial tax bill.
 new-page: true
-view-if: year == 1930 and month >= 7 and dnvp_ideology == "Radical" and spd_in_government == 0 and chancellor == "Bruning"
+view-if: year == 1930 and month >= 7 and dnvp_ideology == "Radical" and spd_in_government == 0 and chancellor == "Brüning"
 tags: event
 max-visits: 1
 
