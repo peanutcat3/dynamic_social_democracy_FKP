@@ -44,6 +44,8 @@ max-cards: 3
 
 [? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]
 
+[? if year = 1930 and month = 4 and spd_in_government = 0 and chancellor == "Bruning": President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]
+
 - @party
 - @govt
 - #advisor
