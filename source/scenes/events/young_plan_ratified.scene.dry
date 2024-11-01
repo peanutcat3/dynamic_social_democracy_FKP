@@ -3,7 +3,6 @@ new-page: true
 subtitle: They don't need us anymore.
 tags: event
 view-if: year = 1930 and month >= 3 and in_grand_coalition == 1
-on-arrival: budget += 1
 max-visits: 1
 
 = Young Plan Ratified

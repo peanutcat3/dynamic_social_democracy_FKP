@@ -7,6 +7,7 @@ on-arrival: month_actions += 1; constitutional_reform_timer = 12; pass_threshold
 card-image: img/portraits/RadbruchGustav.jpg
 go-to: reforms_menu
 tags: govt_affairs
+#subtitle: Major changes to government.
 
 # technically you could do some trickery to get a 2/3 quorum in the Reichstag by stopping some people from attending... if the <span style="color: #7A3C00;">**NSDAP**</span> is boycotting the Reichstag, or if the <span style="color: #7A3C00;">**NSDAP**</span> or <span style="color: #3E88B3;">**DNVP**</span> are banned in the aftermath of a coup atempt...
 
