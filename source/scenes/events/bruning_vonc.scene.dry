@@ -30,6 +30,7 @@ New elections have been set for [+ next_election_month : month +] [+ next_electi
 @vote_no_nothing
 title: Support the vote of no confidence, voting against the government.
 subtitle: Brüning looks to the right.
+on-arrival: dnvp_bruning = 1
 view-if: right_coalition >= 50
 
 We have broken with the [+ chancellor +] government, and have voted against them in a vote of no confidence. However the <span style="color: #3E88B3;">**DNVP**</span> surprisingly votes in favor with the government, preventing new elections from being called.
@@ -47,6 +48,7 @@ We try to convince the workers that this policy is necessary in order to maintai
 @vote_yes_nothing
 title: Oppose the vote of no confidence, voting for the government.
 subtitle: The bourgeois rather work with the <span style="color: #3E88B3;">**DNVP**</span> over allowing us to influence government.
+on-arrival: dnvp_bruning = 1
 view-if: right_coalition >= 50
 
 This has become unnecessary with the <span style="color: #3E88B3;">**DNVP**</span> surprisingly voting in favor of the government, preventing new elections from being called.
