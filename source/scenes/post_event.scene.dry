@@ -367,6 +367,10 @@ if (Q.dnf_formed == 0 && Q.year == 1929 && Q.month == 11) {
     Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 }
 
+Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
+Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
+Q.kvp_r = Math.round(Q.kvp_r * 10) / 10
+
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
 Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));
 if (Q.kvp_formed) {
