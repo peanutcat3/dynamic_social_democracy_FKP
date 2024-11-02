@@ -1,7 +1,7 @@
 title: No confidence vote against the new government
 subtitle: Chancellor [+ chancellor +] faces a vote of no confidence.
 new-page: true
-view-if: unemployment_insurance_gov_destroyed == 1 and year == 1930 and month >= 4 and dnvp_ideology == "Radical"
+view-if: unemployment_insurance_gov_destroyed == 1 and year == 1930 and month >= 4 and dnvp_ideology == "Radical" and not kvp_formed
 tags: event
 max-visits: 1
 
