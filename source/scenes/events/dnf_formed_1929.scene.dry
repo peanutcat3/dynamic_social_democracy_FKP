@@ -3,16 +3,16 @@ on-arrival: {!
 Q.dnf_formed = 1;
 Q.parties.push('dnf');
 
-Q.workers_dnf = 1;
+Q.workers_dnf = 0;
 
-Q.new_middle_dnf = 6;
-Q.new_middle_dnvp -= 7;
+Q.new_middle_dnf = 5;
+Q.new_middle_dnvp -= 6;
 
-Q.old_middle_dnf = 20;
-Q.old_middle_dnvp -= 18;
+Q.old_middle_dnf = 16;
+Q.old_middle_dnvp -= 14;
 
-Q.rural_dnf = 18;
-Q.rural_dnvp -= 20;
+Q.rural_dnf = 14;
+Q.rural_dnvp -= 16;
 
 Q.unemployed_dnf = 1;
 Q.unemployed_dnvp -= 1;
