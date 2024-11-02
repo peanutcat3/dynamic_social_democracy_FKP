@@ -18,7 +18,7 @@ The "unity of the no" against Marxism has been losing its force over the years, 
 go-to: dnvpsplit if young_plan_signatures >= 10 and was_in_right_coalition == 0 and tariffs <= 0; hugenbergremoval if (young_plan_signatures < 10 and was_in_right_coalition == 0) or (young_plan_signatures >= 10 and tariffs > 1 and was_in_right_coalition == 0); completednvpsplit if young_plan_signatures >= 10 and (was_in_right_coalition == 1 and tariffs > 0)
 
 @dnvpsplit
-on-arrival: dnvp_split = 1; csvd_formed = 1; dnvp_r -= 2; other_r += 2; workers_dnvp -= 4; workers_other += 4; new_middle_dnvp -= 4; old_middle_dnvp -= 2; new_middle_other += 4; old_middle_other += 2
+on-arrival: dnvp_split = 1; csvd_formed = 1; dnvp_r -= 2; other_r += 2; workers_dnvp -= 3; workers_other += 3; new_middle_dnvp -= 3; old_middle_dnvp -= 1; new_middle_other += 3; old_middle_other += 1
 face-image: img/CSVD.jpg
 
 The Christian Socialists within the <span style="color: #3E88B3;">**DNVP**</span> have been wanting to separate themselves for a while now, the Young Plan referendum debacle has given them the pretext. During the vote on the "Freedom Law" in the Reichstag, they went against Westarp's compromise solution and denounced Hugenberg, causing him to expel the renegade deputies. They were soon joined in leaving the party by many members of the "Young Conservative" faction. 
