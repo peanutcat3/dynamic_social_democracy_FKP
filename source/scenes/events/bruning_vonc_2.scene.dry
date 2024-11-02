@@ -26,6 +26,7 @@ New elections have been set for [+ next_election_month : month +] [+ next_electi
 
 @vote_yes
 title: Vote against the motion and to start a toleration agreement.
+choose-if: month == 13
 unavailable-subtitle: The plot demands we bring down [+ chancellor +].
 
 
