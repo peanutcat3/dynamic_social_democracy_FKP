@@ -214,7 +214,7 @@ if (Q.month_actions >= 1) {
         Q.unemployed_nsdap += 18/12;
         Q.new_middle_other -= 3/12;
         Q.old_middle_other -= 3/12;
-        Q.rural_other -= 3/12;
+        Q.rural_other -= 1/12;
         Q.new_middle_dnvp += 3/12;
         Q.old_middle_dnvp += 3/12;
         if (Q.dnvp_ideology == "Radical") {
@@ -237,12 +237,12 @@ if (Q.month_actions >= 1) {
         Q.new_middle_nsdap += 10/12;
         Q.old_middle_nsdap += 10/12;
         Q.unemployed_nsdap += 8/12;
-        Q.rural_other -= 5/12;
+        Q.rural_other -= 1/12;
         Q.new_middle_other -= 5/12;
         Q.old_middle_other -= 5/12;
         if (Q.dnvp_ideology == "Radical") {
-            Q.rural_other += 5/12;
-            Q.rural_dnvp -= 5/12;
+            Q.rural_other += 4/12;
+            Q.rural_dnvp -= 4/12;
         }
         Q.workers_z += 2/12;
         Q.old_middle_z += 2/12;
