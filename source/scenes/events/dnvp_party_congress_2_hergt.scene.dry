@@ -8,37 +8,33 @@ new-page: true
 
 = <span style="color: #3E88B3;">**DNVP**</span> Congress
 
-The <span style="color: #3E88B3;">**DNVP**</span> has suffered severe internal conflicts the past year over Hugenberg's leadership, the Young Plan referendum with its controversial "imprisonment" paragraph[? if young_plan_signatures >= 10:, the impending vote on it within the Reichstag ?], and the expulsion of their Reichstag member Gottfried Treviranus over a private letter suggesting a split within the party if Hugenberg is unable to be removed.
+The internal dissent within the <span style="color: #3E88B3;">**DNVP**</span> has risen again with conflict over their participation in the referendum against the Young Plan[? if was_in_right_coalition == 1:&nbsp;and their withdrawal from the government[? if spd_in_government == 1:&nbsp;leaving us in power?]?]. 
 
-The "unity of the no" against Marxism has been losing its force over the years, and the referendum against the Young Plan has only exacerbated internal party tensions. However, Hugenberg's efforts to increase control over the party will make it more difficult to force him out. [? if young_plan_signatures < 10: The failure of the initiative against the Young Plan has strengthened the dissidents position. ?] [? if tariffs > 0: The increase in tariffs has emboldened the agrarian wing go against Hugenberg's <i>Katastrophenpolitik</i>. ?]
+The "unity of the no" against Marxism has been losing its force over the years, and now is the time for the <span style="color: #3E88B3;">**DNVP**</span> to define itself through the next challenging years. [? if young_plan_signatures >= 10: The success of the Young Plan referendum to reach the adequate signatures has bolstered the current leadership.?]
 
 - @resultsdnvp: The congress unfolds...
 
 @resultsdnvp
-go-to: dnvpsplit if young_plan_signatures >= 10 and was_in_right_coalition == 0 and tariffs <= 0; hugenbergremoval if (young_plan_signatures < 10 and was_in_right_coalition == 0) or (young_plan_signatures >= 10 and tariffs > 1 and was_in_right_coalition == 0); completednvpsplit if young_plan_signatures >= 10 and (was_in_right_coalition == 1 and tariffs > 0)
+go-to: statusquo if young_plan_signatures >= 10 and not (peoples_party == 1 or workers_spd_normalized < 45 or unions_independent == 1 or workers_dnvp_normalized >= 10); christiansocial if (peoples_party == 1 or workers_spd_normalized < 45 or unions_independent == 1 or workers_dnvp_normalized >= 10) and not in_popular_front and not in_left_front; youngconservative if young_plan_signatures < 10 and pro_republic >= 70 or (nationalism < 50 and pacifism >= 3)
 
-@dnvpsplit
-on-arrival: dnvp_split = 1; csvd_formed = 1; dnvp_r -= 2; other_r += 2; workers_dnvp -= 3; workers_other += 3; new_middle_dnvp -= 3; old_middle_dnvp -= 1; new_middle_other += 3; old_middle_other += 1
-face-image: img/CSVD.jpg
+@statusquo
+on-arrival: hergt_stays = 1; old_middle_dnf -= 2; old_middle_dnvp += 2; new_middle_dnvp += 1; new_middle_dnf -= 1; nationalism += 3
+face-image: img/OskarHergt.jpg
 
-The Christian Socialists within the <span style="color: #3E88B3;">**DNVP**</span> have been wanting to separate themselves for a while now, the Young Plan referendum debacle has given them the pretext. During the vote on the "Freedom Law" in the Reichstag, they went against Westarp's compromise solution and denounced Hugenberg, causing him to expel the renegade deputies. They were soon joined in leaving the party by many members of the "Young Conservative" faction. 
+Despite some dissent from the more republican forces within the <span style="color: #3E88B3;">**DNVP**</span>, the congress goes through without incident. The willingness of their leadership to negotiate with the <span style="color: #7A3C00;">**NSDAP**</span> is certainly concerning.
 
-However, the failure of them to bring the party organizations or the agrarian wing with them has mitigated the impact. Westarp has stayed within the party, leading the remaining moderates. Despite their hopes of ousting Hugenberg in the future, his position within the party has been bolstered by the departure.
+@christiansocial
+on-arrival: dnvp_leader = "Lambach"; workers_dnvp += 10; workers_spd -= 5; labor_dissent += 10; old_middle_dnvp -= 5; old_middle_dnf += 5; new_middle_dnvp += 3; new_middle_other -= 3; workers_other -= 5; rural_dnvp -= 5; rural_dnf += 5; pro_republic += 5
+face-image: img/dnvpposter.jpg
 
-@hugenbergremoval
-on-arrival: dnvp_leader = "Treviranus"; dnvp_ideology = "Moderate"; hugenberg_removed = 1; dnf_decay_timer += 12; rural_other -= 5; rural_dnvp += 5; old_middle_other -= 5; old_middle_dnvp += 5; new_middle_other -= 3; new_middle_dnvp += 3; workers_other -= 1; workers_dnvp += 1
-go-to: dnf_formed_1929
+The exodus of workers from our support base has greatly strengthened the Christian Socialists within the <span style="color: #3E88B3;">**DNVP**</span>, who seek to take advantage of our alienation of the trade unions. 
+
+Walther Lambach has been elected leader of the <span style="color: #3E88B3;">**DNVP**</span>, a trade union leader and the center of discourse within their party in the last congress. He claims a middle ground between socialism and capitalism, and to reconcile capital and labor, it remains to be seen how his leadership would impact the political landscape.
+
+@youngconservative
+on-arrival: dnvp_leader = "Treviranus"; rural_dnf += 3; old_middle_dnf += 3; rural_other -= 3; old_middle_other -= 3; new_middle_other -= 3; new_middle_dnvp += 3; workers_dnvp += 1; catholics_dnvp += 3; catholics_other -= 3; pro_republic += 3
 face-image: img/Treviranus.jpg
 
-The failure of the Young Plan referendum to reach the 10% threshold and the declining popularity of the <span style="color: #3E88B3;">**DNVP**</span> has convinced the majority of the party to vote out Hugenberg, replacing him with Treviranus, a member of the "Young Conservative" wing of the party. The Young Conservatives are in favor of transforming the <span style="color: #3E88B3;">**DNVP**</span> into a "Tory democracy", advancing their goals in the framework of the system.
+The reluctance for the party around Hergt and Westarp to fully commit to a democratic party has been increasingly under fire from the Christian Socialists and "Young Conservatives", and the failure for the referendum against the Young Plan to reach the signature threshold has tipped the balance in their favor. 
 
-In response, Hugenberg threatens to take himself and his supporters into a new splinter party, which could cripple the <span style="color: #3E88B3;">**DNVP**</span>, especially since he has worked to eliminate moderate influences within the party organizations, who are likely to follow him.
-
-@completednvpsplit
-on-arrival: dnvp_split = 1; complete_dnvp_split = 1
-go-to: kvp_formed
-face-image: img/KVP.jpg
-
-The moderates within the <span style="color: #3E88B3;">**DNVP**</span>, joined by the agrarian wing, are unable to defeat Hugenberg in a vote. This is in part due to Hugenberg's efforts of consolidating power within the party organizations. The agrarian representatives in the party finally had enough with Hugenberg's "all or nothing" strategy, especially after he collapsed the right-wing coalition exactly a year ago. 
-
-The anti-Hugenberg forces within the party have all left to form a new <i>Konservative Volkspartei</i> (Conservative People's Party). It is a question of how long this party would last, with some members rather wanting to affiliate with the special interest parties.
+Gottfried Treviranus has been elected as leader of the <span style="color: #3E88B3;">**DNVP**</span>, a member of the "Young Conservative" faction and is supportive of transforming the party into a positive, progressive conservative force, akin to the British Tories.

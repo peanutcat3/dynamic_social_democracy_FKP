@@ -26,7 +26,7 @@ How should we campaign in favor of the Plan?
 - @rational: The Young Plan is simply the most rational choice for Germany.
 
 @internationalism
-on-arrival: pro_republic -= 3 if pacifism <= 3; workers_spd += 2 if radio >= 2; nationalism -= 5*(1-dissent) if pacifism >= 2 else nationalism += 3; pacifism += 1; workers_spd += 5*(1-dissent) if pacifism >= 3 and nationalism <= 50; workers_spd += 1; workers_nsdap += 4 if pacifism <= 3; rural_nsdap += 5; catholics_spd -= 4 if pacifism <= 3; rural_dvp -= 4
+on-arrival: pro_republic -= 3 if pacifism < 3; workers_spd += 2 if radio >= 2; nationalism -= 5*(1-dissent) if pacifism >= 2 else nationalism += 3; pacifism += 1; workers_spd += 5*(1-dissent) if pacifism >= 3 and nationalism <= 50; workers_spd += 1; workers_nsdap += 4 if pacifism < 3; rural_nsdap += 5; catholics_spd -= 4 if pacifism < 3; rural_dvp -= 4
 
 We rail hard against nationalism and in favor of pacifism and belonging to the international community of nations. [? if radio >= 2: Our radio network has helped us spread our message.&nbsp;?][? if pacifism >= 3 and nationalism <= 50 : We have rallied the workers to the cause of internationalism. ?]Although the bourgeois are not too pleased for us having monopolized the campaign for the Young Plan.
 
