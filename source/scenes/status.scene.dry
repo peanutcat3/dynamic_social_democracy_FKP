@@ -172,7 +172,7 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 **Detailed results for each demographic**
 
-Support for the Republic: [+ pro_republic_2 +]%
+Support for the Republic: [+ pro_republic +]%
 
 Workers: SPD: [+ workers_spd_normalized +]%, Z: [+ workers_z_normalized +]%, KPD: [+ workers_kpd_normalized +]%, [+ ddp_name +]: [+ workers_ddp_normalized +]%, DVP: [+ workers_dvp_normalized +]%; DNVP: [+ workers_dnvp_normalized +]%, [? if dnf_formed: DNF: [+ workers_dnf_normalized +]%  ?][? if kvp_formed: KVP: [+ workers_kvp_normalized +]%  ?]NSDAP: [+ workers_nsdap_normalized +]%, Others: [+ workers_other_normalized +]% [? if sapd_formed: SAPD: [+ workers_sapd_normalized +]% ?]
 
