@@ -28,7 +28,7 @@ How do we assuage our partners?
 - @let_it_happen: Never mind. Let the vote happen.
 
 @dvp_prussia_2
-view-if: year <= 1929 and dvp_in_prussia = 0 and in_grand_coalition = 1 and z_party_leader != "Kaas"
+view-if: year <= 1929 and dvp_in_prussia = 0 and in_grand_coalition = 1 and z_party_leader = "Kaas"
 unavailable-subtitle: [? if z_party_leader != "Kaas": The Center strongly dissents against.?]
 on-arrival: leverage += 5; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; dvp_in_prussia = 1; dvp_left += 1
 
