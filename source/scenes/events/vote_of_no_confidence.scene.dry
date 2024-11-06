@@ -20,11 +20,20 @@ tags: event
 
 How do we assuage our partners?
 
+- @dvp_prussia_2: Let the <span style="color: #C0A054;">**DVP**</span> into Prussia.
 - @give_up_prussia: Give up on leadership of Prussia.
 - @austerity: Enact a massive austerity plan.
 - @resources: Use our resources to reduce dissent within the coalition.
 - @support_kpd: Could we get the <span style="color: #700000;">**KPD**</span> to abstain?
 - @let_it_happen: Never mind. Let the vote happen.
+
+@dvp_prussia_2
+view-if: year <= 1929 and dvp_in_prussia = 0 and in_grand_coalition = 1
+on-arrival: leverage += 5; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; dvp_in_prussia = 1
+
+Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. 
+
+However, this has negatively impacted our freedom of action we previously had in the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition.
 
 @give_up_prussia
 view-if: spd_prussia == 1

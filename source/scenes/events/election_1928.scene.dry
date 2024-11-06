@@ -1495,6 +1495,7 @@ This is highly unexpected, and many in the left and center of our party are crit
 
 [? if year == 1928 : Since Wilhelm Marx resigned, Heinrich Brüning has been appointed chancellor. ?]
 [? if year > 1928: Heinrich Brüning of the <span style="color: #000000;">Center Party</span> has been appointed chancellor. ?]
+
 @z_chancellor_wirth
 title: Let Joseph Wirth of the <span style="color: #000000;">Center Party</span> be chancellor.
 view-if: z_party_leader == "Joos"
