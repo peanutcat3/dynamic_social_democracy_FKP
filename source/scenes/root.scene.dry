@@ -556,6 +556,9 @@ Q.weimar_ref_signatures = 0;
 Q.weimar_ref_votes = 0;
 Q.was_in_center_right_coalition = 0;
 Q.was_in_right_coalition = 0;
+Q.dvp_left = 0;
+Q.dvp_right = 0;
+Q.dvp_in_prussia = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
