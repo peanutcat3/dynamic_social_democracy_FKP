@@ -1423,7 +1423,7 @@ As expected, the <span style="color: #C0A054;">**DVP**</span> is too set in thei
 @dvp_prussia
 subtitle: This will restrict our actions in Prussia.
 view-if: year <= 1929 and dvp_in_prussia = 0
-on-arrival: leverage += 10; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent = -1; left_dissent += 5; dvp_in_prussia = 1
+on-arrival: leverage += 5; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent = -1; left_dissent += 5; dvp_in_prussia = 1
 go-to: grand_coalition_spd_lead
 
 Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. However, this will negatively impact our actions involving the Prussian police force due to the <span style="color: #C0A054;">**DVP**</span> has ties to right-wing organizations such as the <span style="color: #3E88B3;">Stahlhelm</span>.
@@ -1554,9 +1554,9 @@ We are seen as responsible for the failure to form a government, and many of our
 
 We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the <span style="color: #700000;">**KPD**</span>. ?] [? if in_left_front and reichswehr_minister_party == "KPD" : If the <span style="color: #700000;">**KPD**</span> controls the Reichswehr Ministry, the army will most likely revolt. ?]
 
+- @dvp_prussia_1: Offer the <span style="color: #C0A054;">**DVP**</span> a spot in the Prussian government for more leverage.
 - #mins_1928
 - #drop_mins_1928
-- @dvp_prussia_1: Offer the <span style="color: #C0A054;">**DVP**</span> a spot in the Prussian government for more leverage.
 
 @labor
 title: Labor Ministry
