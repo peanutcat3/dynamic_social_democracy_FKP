@@ -16,6 +16,6 @@ The far-right parties and paramilitaries - the <span style="color: #7A3C00;">**N
 
 @strategy
 view-if: nazi_urgency < 3
-on-arrival: nazi_urgency += 1
+on-arrival: nazi_urgency += 1; dvp_right += 3
 
 We do not yet have a coherent strategy for combatting the fascists. We must develop one as soon as possible.

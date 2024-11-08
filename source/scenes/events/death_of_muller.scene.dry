@@ -38,7 +38,7 @@ subtitle: The <span style="color: #000000;">Center Party</span> is worried about
 Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
 
 @bruning_chancellor
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; z_relation += 5; dvp_relation += 5; coalition_dissent -= 1
+on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; z_relation += 5; dvp_relation += 5; coalition_dissent -= 1; dvp_left += 1
 subtitle: The <span style="color: #000000;">Center Party</span> claims it is their turn...
 
 The <span style="color: #000000;">Center Party</span> is grateful that we have supported Brüning for Chancellor.

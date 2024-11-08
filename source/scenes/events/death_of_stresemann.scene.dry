@@ -3,6 +3,6 @@ view-if: year = 1929 and month >= 10
 frequency: 1000
 max-visits: 1
 tags: event
-on-arrival: stresemann_dead = 1; dvp_relation -= 5
+on-arrival: stresemann_dead = 1; dvp_relation -= 5; dvp_right += 3
 
 At the age of fifty-one, Germany’s leading <span style="color: #C0A054;">liberal</span> statesman had died. He was the primary force driving the party to support democracy; without him, the democratic forces in the Republic will be so much weaker. A hole has been left within the liberal movement at the worse possible time, and it is likely that the industrial wing of the party will complete their takeover and subsequently end cooperation with us.
