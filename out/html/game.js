@@ -218,13 +218,14 @@
       }
   };
   window.toggleNews = function toggleNews() {
-      const svgElement = document.getElementById('dnvp');
-      if (dnvp.style.display === 'none' || dnvp.style.display === '') {
-        dnvp.style.display = 'block';
-      } else {
-        dnvp.style.display = 'none';
-      }
-  };
+    const svgElement = document.getElementById('dnvp');
+    if (svgElement.style.display !== 'none') {
+        svgElement.style.display = 'none';
+    } else {
+        svgElement.style.display = 'block';
+    }
+};
+
   /*
    * This function copied from the code for Infinite Space Battle Simulator
    *
