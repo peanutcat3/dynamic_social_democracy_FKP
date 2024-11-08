@@ -6,6 +6,7 @@ tags: event
 view-if: year = 1929 and month >= 10
 max-visits: 1
 face-image: img/bankrun.jpg
+priority: 2
 
 = Black Thursday
 

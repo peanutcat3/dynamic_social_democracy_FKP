@@ -13,6 +13,7 @@ Our coalition is in trouble. The right-leaning members of the <span style="color
 
 How do we reduce tensions with the coalition?
 
+- @dvp_prussia_2: Let the <span style="color: #C0A054;">**DVP**</span> into Prussia.
 - @promise_cuts: Agree to the bourgeois plans to cut welfare.
 - @resources: Use our party resources to support our allies.
 - @bring_down: Instead, we will bring down the government with a no-confidence vote, and call for new elections.
@@ -20,8 +21,18 @@ How do we reduce tensions with the coalition?
 - @easy_discard
 
 
+@dvp_prussia_2
+view-if: year <= 1929 and dvp_in_prussia = 0 and in_grand_coalition = 1
+choose-if: z_party_leader != "Kaas"
+unavailable-subtitle: [? if z_party_leader = "Kaas": The Center strongly dissents against.?]
+on-arrival: leverage += 5; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; dvp_in_prussia = 1; dvp_left += 1
+
+Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. 
+
+However, this has negatively impacted our freedom of action we previously had in the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition.
+
 @promise_cuts
-on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 5; welfare -= 1; budget += 1; coalition_dissent = 0
+on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 5; welfare -= 1; budget += 1; coalition_dissent = 0; dvp_left += 1
 
 Fine. By cutting welfare, we have reduced dissent within the coalition.
 
