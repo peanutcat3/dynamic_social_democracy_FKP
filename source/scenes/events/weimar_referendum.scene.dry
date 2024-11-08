@@ -9,7 +9,7 @@ max-visits: 1
 
 After months of campaigning and propaganda by both sides, the German people have come to vote on the referendum for the revision of the Weimar Constitution, which has taken the backseat in comparison to the devastating economic depression. 
 
-Passing the referendum would need to require the approval of more than 50% of those eligible to vote, rather than a majority of those that do vote. [? if dvp_relation_9 < 40: This makes it impossible for the referendum to succeed, even with the recent economic depression?][? if dvp_relation_9 < 40: This has made it difficult for the referendum to succeed, however with the support of the <span style="color: #C0A054;">**DVP**</span> and <span style="color: #A2D8E0;">**BVP**</span> has made it a distant possibility, with the recent economic depression?]. The far-right parties are also abstaining from supporting this referendum.
+Passing the referendum would need to require the approval of more than 50% of those eligible to vote, rather than a majority of those that do vote [? if dvp_relation_9 < 40: This makes it impossible for the referendum to succeed, even with the recent economic depression?][? if dvp_relation_9 < 40: This has made it difficult for the referendum to succeed, however with the support of the <span style="color: #C0A054;">**DVP**</span> and <span style="color: #A2D8E0;">**BVP**</span> has made it a distant possibility, with the recent economic depression?]. The far-right parties are also abstaining from supporting this referendum.
 
 - @results: The nation votes...
 
