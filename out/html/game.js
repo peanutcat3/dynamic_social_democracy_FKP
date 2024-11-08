@@ -220,7 +220,7 @@
 window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
     elements.forEach(function(element) {
-        if (element.style.display !== 'block' || element.style.display == 'none') {
+        if (element.style.display !== 'none') {
             element.style.display = 'none';
         } else {
             element.style.display = 'block'; 
