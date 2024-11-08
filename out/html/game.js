@@ -217,13 +217,15 @@
           svgElement.style.display = 'none';
       }
   };
-  window.toggleNews = function toggleNews() {
-    const svgElement = document.getElementById('dnvp');
-    if (svgElement.style.display !== 'none') {
-        svgElement.style.display = 'none';
-    } else {
-        svgElement.style.display = 'block';
-    }
+window.toggleNews = function toggleNews() {
+    const elements = document.querySelectorAll('.dnvp');
+    elements.forEach(function(element) {
+        if (element.style.display !== 'block') {
+            element.style.display = 'none';
+        } else {
+            element.style.display = 'block'; 
+        }
+    });
 };
 
   /*
