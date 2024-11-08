@@ -89,6 +89,7 @@ Q.wtb_adopted = 0;
 Q.iron_front_formed = 0;
 // people's party support
 Q.peoples_party_support = 0;
+Q.peoples_party = 0;
 // support for nationalizations
 Q.nationalization_support = 0;
 Q.nationalization_adopted = 0;

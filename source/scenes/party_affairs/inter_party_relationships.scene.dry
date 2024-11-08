@@ -90,24 +90,24 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
-go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribund if year > 1930
+go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930 and dvp_normalized >= 5; dvp_moribund if year > 1930 and dvp_normalized < 5
 
 The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has been one of our closest allies through the course of the Republic.
 
 @dvp_stresemann
-on-arrival: dvp_relation += 8*(1 - dissent)
+on-arrival: dvp_relation += 8*(1 - dissent); dvp_left += 1
 
 Gustav Stresemann, the leader of the <span style="color: #C0A054;">**DVP**</span> is the best foreign policy leaders of the republic, and while he has previously expressed <span style="color: #808080;">monarchist</span> tendencies, he has been friendly towards us.
 
 @dvp_loss
-on-arrival: dvp_relation += 5*(1 - dissent)
+on-arrival: dvp_relation += 5*(1 - dissent); dvp_left += 1
 
 With the death of Gustav Stresemann, the <span style="color: #C0A054;">**DVP**</span> is much less likely to be accommodating of us. In addition, the <span style="color: #D3C24D;">liberal</span> parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
 
 However, given the influence of the <span style="color: #C0A054;">**DVP**</span> among the other <span style="color: #808080;">right</span>-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
 
 @dvp_moribund
-on-arrival: dvp_relation += 5*(1 - dissent)
+on-arrival: dvp_relation += 5*(1 - dissent); dvp_left += 1
 
 The <span style="color: #D3C24D;">liberal</span> parties (both the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span>) are electorally <span style="color: #ff0000;">moribund</span>, so perhaps our efforts are best spent elsewhere.
 
