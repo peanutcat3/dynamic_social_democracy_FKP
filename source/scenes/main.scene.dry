@@ -14,12 +14,7 @@ max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-
-{!<button class="tab_button" id="demographics_tab" onclick="window.toggleDem();">Demographic Results</button>!}
-{!<button class="tab_button" id="election_tab" onclick="window.toggleElectionGraph();">Previous Elections Graph</button>!}
-{!<button class="tab_button" id="graph_tab" onclick="window.toggleGraph();">Party Support Graph</button>!}
-
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1928 and month = 2 : <p id="dnvp">The current bourgeois-right government has fallen. The next elections are slated for May of this year.</p> ?]
 
 [? if year = 1928 and month = 3 : Special interest parties such as the <span style="color: #b8996f;">Reich Party of the Middle Class</span>—commonly referred to as the <span style="color: #b8996f;">Business Party</span>(<span style="color: #b8996f;">**WP**</span>)—and the <span style="color: #7FCEB1;">Christian-National Peasants' and Farmers' Party</span>(<span style="color: #7FCEB1;">**CNBL**</span>) are expected to gain a decent foothold in the Reichstag, due to the belief that the established political parties are neglecting their interests. This negatively impacts the <span style="color: #3E88B3;">**DNVP**</span>, having been part of the last government. ?]
 
@@ -84,6 +79,8 @@ max-cards: 3
 [? if year = 1930 and month = 8: The last <span style="color: #002654;">French</span> and <span style="color: #FFD500;">Belgian</span> troops in the Rhineland have been evacuated in accordance with the Young Plan. While this is a positive development for the Republic, conservative elites within the Reichswehr and <span style="color: #3E88B3;">**DNVP**</span> are now free from external restraints to replace our system of government with an authoritarian and militarist one. [? if next_election_time - time < 5 and dnvp_split_2 == 1: <br><br> Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBL**</span> and <span style="color: #8ED8E4;">**CSVD**</span>, who are to contest the next election. ?]?]
 
 [? if year = 1930 and month = 9 and next_election_time - time < 5 and dnvp_split_2 == 1 and kvp_formed == 0: Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of it's own, unlike the <span style="color: #8ED8E4;">Christian Socialists</span> and <span style="color: #7FCEB1;">agrarians</span>. ?]
+
+{!<button class="tab_button" id="news_tab" onclick="window.toggleNews();">Other News</button>!}
 
 - @party
 - @govt
