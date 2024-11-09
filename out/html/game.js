@@ -217,37 +217,18 @@
           svgElement.style.display = 'none';
       }
   };
-
-window.addEventListener('DOMContentLoaded', function() {
-    const elements = document.querySelectorAll('.dnvp');
-    const elements2 = document.querySelectorAll('.other');
-    const newsTabButton = document.getElementById('news_tab');
-
-    if (newsTabButton) {
-        const totalElements = elements.length + elements2.length;
-        newsTabButton.innerHTML = `Toggle Party News (${totalElements})`;
-    }
-});
-
 window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
     const elements2 = document.querySelectorAll('.other');
-    const newsTabButton = document.getElementById('news_tab');
-    
     elements.forEach(function (element) {
         if (element.style.display !== 'none') {
             element.style.display = 'none';
-            if (newsTabButton) {
-                newsTabButton.innerHTML = `Toggle DNVP News (${elements.length})`;
-            }
+            document.getElementById('news_tab').innerHTML = "Toggle DNVP News";
         } else {
             element.style.display = 'block';
-            if (newsTabButton) {
-                newsTabButton.innerHTML = `Toggle Other News (${elements2.length})`;
-            }
+            document.getElementById('news_tab').innerHTML = "Toggle Other News";
         }
     });
-
     elements2.forEach(function (element) {
         if (element.style.display !== 'block') {
             element.style.display = 'block';
@@ -256,7 +237,6 @@ window.toggleNews = function toggleNews() {
         }
     });
 };
-
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator
