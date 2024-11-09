@@ -217,18 +217,25 @@
           svgElement.style.display = 'none';
       }
   };
+const dnvpCount = document.querySelectorAll('.dnvp').length;
+const otherCount = document.querySelectorAll('.other').length;
+const totalCount = dnvpCount + otherCount;
+
+document.getElementById('news_tab').innerHTML = `Toggle Party News (${totalCount})`;
+
 window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
     const elements2 = document.querySelectorAll('.other');
+    let dnvpVisible = false;
     elements.forEach(function (element) {
         if (element.style.display !== 'none') {
             element.style.display = 'none';
-            document.getElementById('news_tab').innerHTML = "Toggle DNVP News";
         } else {
             element.style.display = 'block';
-            document.getElementById('news_tab').innerHTML = "Toggle Other News";
+            dnvpVisible = true; 
         }
     });
+
     elements2.forEach(function (element) {
         if (element.style.display !== 'block') {
             element.style.display = 'block';
@@ -236,6 +243,12 @@ window.toggleNews = function toggleNews() {
             element.style.display = 'none';
         }
     });
+
+    if (dnvpVisible) {
+        document.getElementById('news_tab').innerHTML = `Toggle DNVP News (${dnvpCount})`;
+    } else {
+        document.getElementById('news_tab').innerHTML = `Toggle Other News (${otherCount})`;
+    }
 };
 
   /*
