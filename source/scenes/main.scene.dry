@@ -169,7 +169,7 @@ max-cards: 4
 
 [? if year = 1930 and month = 9 and next_election_time - time < 5 and dnvp_split_2 == 1 and kvp_formed == 0 : <p class="dnvp">Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of its own, unlike the <span style="color: #8ED8E4;">Christian Socialists</span> and <span style="color: #7FCEB1;">agrarians</span>.</p> ?]
 
-<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="float: right;">Toggle Party News</button>
+{!<button class="tab_button" id="news_tab" onclick="window.toggleNews();">Toggle Party News</button>!}
 
 - @party
 - @govt
