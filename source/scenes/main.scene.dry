@@ -30,6 +30,11 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1928 and month = 8 : The Kellogg–Briand Pact has been signed by [+ foreign_minister +], promising not to use war to resolve disputes or conflicts in the future. During [+ foreign_minister +]'s trip to Paris, there has been success in bringing the <span style="color: #002654;">French</span> to consider withdrawing from the Rhineland early and to agree to another review of our reparations by foreign experts. <br><br> Wilhelm Marx, leader of the <span style="color: #000000;">Center Party</span>, former chancellor, and presidential candidate, has resigned following his party's poor performance in the last election. A new leader is scheduled to be elected this December. ?] {!</p>!}
 
+{!<p class="dnvp">!}[? if year = 1928 and month = 8 and pro_republic_7 < 65 and not (pro_republic_7 >= 59 and in_right_coalition): Lambach has been reinstated to the <span style="color: #3E88B3;">**DNVP**</span> and their Reichstag delegation following pressure from the Christian labor movement and white-collar organizations. ?] [? if in_right_coalition = 1: <br><br> Hugenberg's attempts to increase his influence within the party are complicated by the reality that if he were to bring down the current government when elected, the only viable alternative for a parliamentary majority would be a government led by us. ?] ?]{!</p>!}
+
+{!<p class="other">!}[? if year = 1928 and month = 9 : Adam Stegerwald, chairman of the Catholic trade unions, is the frontrunner to succeed Wilhelm Marx. He advocates for a broad interconfessional “people’s bloc” over special interest groups. He is skeptical of cooperation with us.?]{!</p>!}
+
+{!<p class="dnvp">!}[? if year = 1928 and month = 9 : Westarp's refusal to run for re-election has left the moderate anti-Hugenberg forces within the <span style="color: #3E88B3;">**DNVP**</span> without a candidate. Hugenberg has shown ambivalence in the party chairmanship himself, and has shown interest in a triumvirate of sorts. ?]{!</p>!}
 
 
 - @party
