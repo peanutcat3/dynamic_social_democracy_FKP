@@ -232,6 +232,7 @@
 
     const totalElements = countDNVP + countOther;
 
+    console.log(tests)
     if (newsTabButton) {
         newsTabButton.innerHTML = `Toggle Party News (DNVP: ${countDNVP}, Other: ${countOther}, Total: ${totalElements})`;
     }
