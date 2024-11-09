@@ -219,11 +219,19 @@
   };
 window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
-    elements.forEach(function(element) {
+    const elements2 = document.querySelectorAll('.other');
+    elements.forEach(function (element) {
         if (element.style.display !== 'none') {
             element.style.display = 'none';
         } else {
-            element.style.display = 'block'; 
+            element.style.display = 'block';
+        }
+    });
+    elements2.forEach(function (element) {
+        if (element.style.display !== 'block') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
         }
     });
 };

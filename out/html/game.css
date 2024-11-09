@@ -505,6 +505,12 @@ img {
     margin-right: 1em;
     vertical-align: top;
   }
+  .dnvp {
+    display: none
+  }
+  .other {
+    display: none
+  }
 }
 
 
