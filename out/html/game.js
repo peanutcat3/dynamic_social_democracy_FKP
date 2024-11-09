@@ -217,22 +217,34 @@
           svgElement.style.display = 'none';
       }
   };
-const dnvpCount = document.querySelectorAll('.dnvp').length;
-const otherCount = document.querySelectorAll('.other').length;
-const totalCount = dnvpCount + otherCount;
 
-document.getElementById('news_tab').innerHTML = `Toggle Party News (${totalCount})`;
+window.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.dnvp');
+    const elements2 = document.querySelectorAll('.other');
+    const newsTabButton = document.getElementById('news_tab');
+
+    if (newsTabButton) {
+        const totalElements = elements.length + elements2.length;
+        newsTabButton.innerHTML = `Toggle Party News (${totalElements})`;
+    }
+});
 
 window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
     const elements2 = document.querySelectorAll('.other');
-    let dnvpVisible = false;
+    const newsTabButton = document.getElementById('news_tab');
+    
     elements.forEach(function (element) {
         if (element.style.display !== 'none') {
             element.style.display = 'none';
+            if (newsTabButton) {
+                newsTabButton.innerHTML = `Toggle DNVP News (${elements.length})`;
+            }
         } else {
             element.style.display = 'block';
-            dnvpVisible = true; 
+            if (newsTabButton) {
+                newsTabButton.innerHTML = `Toggle Other News (${elements2.length})`;
+            }
         }
     });
 
@@ -243,13 +255,8 @@ window.toggleNews = function toggleNews() {
             element.style.display = 'none';
         }
     });
-
-    if (dnvpVisible) {
-        document.getElementById('news_tab').innerHTML = `Toggle DNVP News (${dnvpCount})`;
-    } else {
-        document.getElementById('news_tab').innerHTML = `Toggle Other News (${otherCount})`;
-    }
 };
+
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator
