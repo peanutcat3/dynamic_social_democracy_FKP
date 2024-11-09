@@ -217,6 +217,26 @@
           svgElement.style.display = 'none';
       }
   };
+
+  window.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.dnvp');
+    const elements2 = document.querySelectorAll('.other');
+    const newsTabButton = document.getElementById('news_tab');
+
+    const countTextElements = (elements) => {
+        return Array.from(elements).filter(element => element.textContent.trim() !== '').length;
+    };
+
+    const countDNVP = countTextElements(elements);
+    const countOther = countTextElements(elements2);
+
+    const totalElements = countDNVP + countOther;
+
+    if (newsTabButton) {
+        newsTabButton.innerHTML = `Toggle Party News (DNVP: ${countDNVP}, Other: ${countOther}, Total: ${totalElements})`;
+    }
+});
+
 window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
     const elements2 = document.querySelectorAll('.other');
