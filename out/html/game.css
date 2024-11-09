@@ -505,10 +505,10 @@ img {
     margin-right: 1em;
     vertical-align: top;
   }
-  .dnvp {
+  p.dnvp {
     display: none;
   }
-  .other {
+  p.other {
     display: none;
   }
 }
