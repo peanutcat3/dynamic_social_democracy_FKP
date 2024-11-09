@@ -45,7 +45,6 @@ President [+ president +] has asked our government to resign.
 - @fight_constitution
 - @resign
 
-# TODO: if Hindenburg is president, he will always ask the govt to resign. If the SPD refuses, this causes a constitutional crisis. If there is a constitutional crisis, then if judicial reform >= 4, then the courts intervene against Hindenburg and preserves the government.
 
 # if Reichsbanner + Prussian Police >= <span style="color: #7A3C00;">**SA**</span> + <span style="color: #3E88B3;">**Stahlhelm**</span>, then the <span style="color: #7A3C00;">fascists</span> retreat.
 

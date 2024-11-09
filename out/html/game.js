@@ -20,7 +20,6 @@
 
   // the url is a link to game.json
   // test url: https://aucchen.github.io/social_democracy_mods/v0.1.json
-  // TODO; 
   window.loadMod = function(url) {
       ui.loadGame(url);
   };
@@ -164,7 +163,6 @@
     }
   };
 
-  // TODO: have some code for tabbed sidebar browsing.
   window.updateSidebar = function() {
       $('#qualities').empty();
       var scene = dendryUI.game.scenes[window.statusTab];

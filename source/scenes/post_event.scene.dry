@@ -279,7 +279,6 @@ if (Q.month_actions >= 1) {
         Q.old_middle_nsdap += 10/12;
         Q.rural_other -= 5/12;
         Q.rural_nsdap += 9/12;
-        // TODO: economic policies should reduce NSDAP rurals
         if (!Q.works_program) { 
             Q.old_middle_dvp -= 6/12;
             Q.new_middle_dvp -= 6/12;
@@ -398,6 +397,14 @@ if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 
 Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
 Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
 Q.kvp_r = Math.round(Q.kvp_r * 10) / 10
+
+if (Q.dvp_right > (Q.dvp_left*1.5)) {
+    Q.dvp_ideology = "Right"
+} else if (Q.dvp_left > (Q.dvp_right*1.5)) {
+    Q.dvp_ideology = "Left"
+} else {
+    Q.dvp_ideology = "Moderate"
+}
 
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
 Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));

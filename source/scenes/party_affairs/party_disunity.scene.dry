@@ -7,7 +7,6 @@ card-image: img/Reichstagsfraktion_der_SPD.jpg
 frequency: 200
 tags: party_affairs
 
-# TODO: party dissent events for every faction, have a good image for this... 
 
 = Party Disunity
 
@@ -82,7 +81,6 @@ on-arrival: labor_dissent += 1; left_dissent += 1; center_dissent += 1; reformis
 
 Let the factions bicker; perhaps dissent is healthy for the party.
 
-# TODO: should we be allowed to preemptively expel factions?
 
 @expel_reformists
 title: Expel the dissident reformists.

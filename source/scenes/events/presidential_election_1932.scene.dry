@@ -290,7 +290,6 @@ choose-if: spd_votes >= z_votes
 unavailable-subtitle: The <span style="color: #000000;">Center</span> knows that they are more popular than us; they do not see a reason to support our candidate.
 on-arrival: {!
 Q.z_support_braun = 0;
-// TODO: if Hindenburg support is greater than Hitler and Braun support, this should be much harder
 
 if ((Q.z_relation >= 55 && Q.braun_votes >= Q.hindenburg_votes) || (Q.z_relation > 35 && Q.z_party_leader == "Joos")) {
     Q.z_support_braun = 1;

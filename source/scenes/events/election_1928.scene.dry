@@ -7,9 +7,6 @@ on-departure: month_actions += 1; in_election = 0; next_election_year = next_ele
 set-jump: post_election_1928
 #face-image: img/Rothe_Wahlen_1903.jpg
 
-# TODO: should there be an image?
-
-# the low priority means that this event is only seen after all other events are resolved for the month.
 
 = Elections, [+ month : month +] [+ year +]
 
@@ -585,7 +582,6 @@ There are some potential coalition arrangements.
 - @right_coalition
 - @center_right_coalition
 
-# TODO: black-brown coalition
 
 
 @popular_front_coalition
@@ -857,7 +853,6 @@ view-if: weimar_coalition < 50 and (grand_coalition < 50 or grand_coalition_fail
 on-arrival: no_majority_elections += 1
 go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; no_majority_papen if chancellor = "Papen" and no_majority_papen_elections == 0; no_majority_papen_2 if chancellor == "Papen" and no_majority_papen_elections > 0; no_majority_schleicher if chancellor = "Schleicher"; no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
 
-# TODO: if there is an anti-democratic coalition majority, you should appoint Papen.
 
 # either new elections, or Hindenburg appoints either Brüning, Papen, Schleicher, or Hitler.
 
@@ -1005,7 +1000,6 @@ New elections have been set for [+ next_election_month : month +] [+ next_electi
 @no_majority_schleicher
 go-to: hitler_chancellor
 
-# TODO: there should be a second Schleicher option if the NSDAP isn't the strongest
 
 
 @hitler_chancellor
@@ -1256,7 +1250,6 @@ subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #00
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
 go-to: grand_coalition_spd_lead if (n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30) or president = "Braun"; grand_coalition_z_lead if president != "Braun" and ((n_elections > 1 and spd_r < 30) or (n_elections <= 1 and largest_party != "SPD"))
 
-# TODO: if there are enough votes to form a grand coalition, who leads? Does the SPD lead or does Brüning (Z) lead? In reality this depended on Hindenburg's will, basically, which in turn depended on what his camarilla supported.
 # In the first election, SPD always leads. In subsequent elections, if spd_r >= 29 then SPD leads, otherwise Z leads?
 
 @grand_coalition_z_lead
@@ -1264,7 +1257,6 @@ go-to: grand_coalition_z_lead_2 if dvp_relation >= 30; grand_coalition_fail if d
 
 There are enough votes to form a majority coalition consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span> (<span style="color: #000000;">**Z**</span>), <span style="color: #A2D8E0;">**Bavarian People's**</span> (<span style="color: #A2D8E0;">**BVP**</span>), [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>), and <span style="color: #C0A054;">**People's**</span> (<span style="color: #C0A054;">**DVP**</span>) parties. Given our rather weak electoral performance, [? if spd_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_spd = 1 : and the vote of no confidence against us, ?] President Hindenburg has asked the <span style="color: #000000;">**Center Party**</span> to take the lead role in forming a government.
 
-# TODO: if the SPD participated in bringing down the previous government via a vote-of-no-confidence, or if we were essentially removed from government by our coalition partners, we should be more reluctant to participate in a new government.
 
 @grand_coalition_z_lead_2
 
@@ -1332,7 +1324,6 @@ Q.new_middle_nsdap += 6;
 Q.rural_nsdap += 6;
 Q.unemployed_nsdap += 5;
 if (Q.pro_republic < 45) {
-    // TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Hitler and the Center.
     Q.z_relation -= 5;
     Q.dvp_relation -= 5;
     Q.workers_spd *= 0.85;

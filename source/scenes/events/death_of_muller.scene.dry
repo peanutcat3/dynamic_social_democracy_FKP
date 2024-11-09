@@ -8,7 +8,6 @@ on-arrival: muller_dead = 1; n_advisors -= 1 if muller_advisor == 1; muller_advi
 
 @pm
 on-arrival: muller_died_in_office = 1
-# TODO: achievement for muller dying in office
 
 Chancellor Hermann Müller has died while in office. He will be greatly missed. But now, we must select a new Chancellor.
 

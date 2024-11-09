@@ -343,7 +343,6 @@ div.blank-card {
   vertical-align: top;
 }
 
-/* TODO: unavailable card */
 .unavailable-card {
   color: #999;
   background-color: rgba(0, 0, 0, 0.1) !important;

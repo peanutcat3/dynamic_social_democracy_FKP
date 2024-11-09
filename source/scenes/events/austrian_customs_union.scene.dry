@@ -6,7 +6,6 @@ tags: event
 view-if: year = 1931 and month >= 3 and foreign_minister_party != "SPD" and foreign_minister_party != "KPD" and customs_union == 0 and not eu
 max-visits: 1
 
-# TODO: this should happen regardless of the current state of the government...
 
 = <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ian</span> Customs Union
 

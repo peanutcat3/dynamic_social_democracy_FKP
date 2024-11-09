@@ -2,7 +2,6 @@ title: 1931
 subtitle: A new year 
 on-arrival: {!
 // increase NSDAP vote share 
-// TODO: if a public works program has started, unemployment is not so bad.
 Q.unemployed += 8;
 Q.inflation -= 5;
 if (Q.works_program) {

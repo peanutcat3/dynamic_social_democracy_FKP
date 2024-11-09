@@ -21,7 +21,6 @@ Q.civil_war_seen = 1;
 
 // our allies
 Q.total_power = 0;
-// TODO:  lower reichsbanner strength if the party's popularity is very low.
 Q.rb_power = Q.rb_strength*Q.rb_militancy;
 if (Q.dissent > 0.15) {
     Q.rb_power *= (1 - Q.dissent/1.5);
