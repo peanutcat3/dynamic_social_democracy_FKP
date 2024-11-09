@@ -388,10 +388,10 @@ if (Q.year == 1929 && Q.month == 9 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 4
 }
 
 if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 40 && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
-    Q.weimar_ref_votes = (Q.dnvp_votes + Q.other_votes);
+    Q.weimar_ref_votes = (Q.dnvp_votes + Q.other_votes) + 5;
     Q.weimar_ref_votes = Math.round(Q.weimar_ref_signatures * 10) / 10;
 } else if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 1 && Q.dvp_relation_9 < 40 && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
-    Q.weimar_ref_votes = (Q.dnvp_votes + Q.other_votes + Q.dvp_votes + 3);
+    Q.weimar_ref_votes = (Q.dnvp_votes + Q.other_votes + Q.dvp_votes + 8);
     Q.weimar_ref_votes = Math.round(Q.weimar_ref_signatures * 10) / 10;
 }
 
