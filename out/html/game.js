@@ -218,7 +218,9 @@
       }
   };
 
-  window.addEventListener('DOMContentLoaded', function() {
+  window.onload = function() {
+    console.log("Window loaded");
+
     const elements = document.querySelectorAll('.dnvp');
     const elements2 = document.querySelectorAll('.other');
     const newsTabButton = document.getElementById('news_tab');
@@ -232,11 +234,11 @@
 
     const totalElements = countDNVP + countOther;
 
-    console.log(tests)
     if (newsTabButton) {
         newsTabButton.innerHTML = `Toggle Party News (DNVP: ${countDNVP}, Other: ${countOther}, Total: ${totalElements})`;
     }
-});
+};
+
 
 window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
