@@ -218,28 +218,6 @@
       }
   };
 
-  window.onload = function() {
-    console.log("Window loaded");
-
-    const elements = document.querySelectorAll('.dnvp');
-    const elements2 = document.querySelectorAll('.other');
-    const newsTabButton = document.getElementById('news_tab');
-
-    const countTextElements = (elements) => {
-        return Array.from(elements).filter(element => element.textContent.trim() !== '').length;
-    };
-
-    const countDNVP = countTextElements(elements);
-    const countOther = countTextElements(elements2);
-
-    const totalElements = countDNVP + countOther;
-
-    if (newsTabButton) {
-        newsTabButton.innerHTML = `Toggle Party News (DNVP: ${countDNVP}, Other: ${countOther}, Total: ${totalElements})`;
-    }
-};
-
-
 window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
     const elements2 = document.querySelectorAll('.other');
@@ -301,6 +279,21 @@ window.toggleNews = function toggleNews() {
   window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: true});
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-  };
+    
+    const countTextElements = (elements) => {
+        return Array.from(elements).filter(element => element.textContent.trim() !== '').length;
+    };
 
+    const elements = document.querySelectorAll('.dnvp');
+    const elements2 = document.querySelectorAll('.other');
+
+    const newsTabButton = document.getElementById('news_tab');
+
+    const countDNVP = countTextElements(elements);
+    const countOther = countTextElements(elements2);
+    const totalElements = countDNVP + countOther;
+    if (newsTabButton) {
+        newsTabButton.innerHTML = `Toggle Party News (Total: ${totalElements})`;
+    }
+};
 }());
