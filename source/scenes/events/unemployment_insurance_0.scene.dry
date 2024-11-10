@@ -1,8 +1,8 @@
 title: Unemployment Insurance Crisis
-subtitle: The right wing of our coalition presents an ultimatum.
+subtitle: The <span style="color: #C0A054;">**DVP**</span> presents an ultimatum.
 new-page: true
 view-if: spd_in_government = 1 and (year = 1929 and month >= 10) and in_grand_coalition = 1
-on-arrival: budget -= 1 if budget >= 1; dvp_relation -= 3
+on-arrival: budget -= 1 if budget >= 1; dvp_relation -= 3; dvp_right += 3
 tags: event
 priority: 2
 max-visits: 1
@@ -11,10 +11,10 @@ max-visits: 1
 
 With the Young Plan not providing the necessary fiscal relief as many have hoped, the <span style="color: #C0A054;">**DVP**</span> sets it's eyes on cutting the unemployment insurance program to balance the books. The program is on the verge of financial collapse with the increasing numbers of unemployed, we need to decide what to do to prevent this.
 
-[? if dvp_right - dvp_left > 5: The <span style="color: #C0A054;">**DVP**</span> have been moving significantly rightwards in the recent year and their industrial backers want nothing less than a collapse of our government.?][? if not dvp_right - dvp_left > 5: Our cabinet has proposed a compromise featuring small cuts to the program along with a slight increase to contributions, but it is not clear if the <span style="color: #C0A054;">**DVP**</span> itself would agree. ?] But the crux of the matter is, what can we do?
+[? if dvp_right - dvp_left > 5: The <span style="color: #C0A054;">**DVP**</span> have been moving significantly rightwards in the recent year and their industrial backers want nothing less than a collapse of our government.?][? if not dvp_right - dvp_left > 5: Our cabinet has proposed a compromise featuring small cuts to the program along with a slight increase to contributions, but it is not clear if the <span style="color: #C0A054;">**DVP**</span> itself would agree. ?]
 
 - @destroy: Fine. We will end this coalition.
-- @accept: Unfortunately, we must accept the Right's demands for the sake of stability.
+- @accept: Unfortunately, we must accept the <span style="color: #C0A054;">**DVP**</span>'s demands for the sake of stability.
 - @compromise: Surely there is some compromise to be had?
 
 @destroy
