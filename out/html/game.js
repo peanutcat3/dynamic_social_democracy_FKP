@@ -221,10 +221,10 @@ window.toggleNews = function toggleNews() {
     elements.forEach(function (element) {
         if (element.style.display !== 'none') {
             element.style.display = 'none';
-            document.getElementById('news_tab').innerHTML = "Toggle DNVP News";
+            document.getElementById('news_tab').innerHTML = "Go Back";
         } else {
             element.style.display = 'block';
-            document.getElementById('news_tab').innerHTML = "Toggle Other News";
+            document.getElementById('news_tab').innerHTML = "View More News";
         }
     });
     elements2.forEach(function (element) {
