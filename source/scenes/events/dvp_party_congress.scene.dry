@@ -3,7 +3,7 @@ subtitle: The <span style="color: #C0A054;">**DVP**</span> chooses their new lea
 view-if: year = 1929 and month = 12 and dvp_leader = "Scholz"
 max-visits: 1
 tags: event
-face-image: img/German_People's_Party.jpg
+face-image: img/dvp.jpg
 new-page: true
 
 = <span style="color: #C0A054;">**DVP**</span> Congress
