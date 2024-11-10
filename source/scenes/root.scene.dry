@@ -109,11 +109,7 @@ Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
 
 Q.kpd_leader = "Thälmann";
-// alternative is the Conciliators as party leader
-Q.kpd_party_leader = "Thälmann";
-Q.z_leader = "Brüning";
-// party leader - can be Ludwig Kaas, Joseph Joos, or Adam Stegerwald after the 1928 December conference. Joos will be most friendly to the SPD.
-Q.z_party_leader = "Marx";
+Q.z_leader = "Marx";
 Q.nsdap_leader = "Hitler";
 
 // hmm... maybe we can play nice with Hindenburg???
@@ -549,6 +545,7 @@ Q.dstp_formed = 0;
 Q.ddp_left = 0;
 Q.ddp_right = 0;
 Q.ddp_name = "DDP";
+Q.ddp_leader = "Koch-Weser";
 Q.dvp_leader = "Stresemann";
 Q.vice_chancellor = "Hergt";
 Q.young_plan_signatures = 0;

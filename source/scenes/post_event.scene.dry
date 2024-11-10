@@ -265,7 +265,7 @@ if (Q.month_actions >= 1) {
         }
     }
     if (Q.year == 1931) {
-        if (Q.z_party_leader == "Kaas") {
+        if (Q.z_leader == "Kaas") {
             Q.catholics_z += 2/12;
         }
         Q.rural_dvp -= 8/12;
@@ -313,7 +313,7 @@ if (Q.month_actions >= 1) {
             Q.unemployed += 6/12;
             Q.inflation -= 2/12;
             Q.catholics_z += 2/12;
-            if (Q.z_party_leader == "Kaas") {
+            if (Q.z_leader == "Kaas") {
                 Q.catholics_z += 5/12;
             }
             Q.workers -= 4/12;

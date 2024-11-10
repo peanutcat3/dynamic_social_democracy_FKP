@@ -90,14 +90,14 @@ The <span style="color: #700000;">Communist</span> <span style="color: #700000;"
 
 @negotiate_concordat
 subtitle: The <span style="color: #C0A054;">**DVP**</span> won't like this.
-view-if: (prussian_concordat_progress < 2 and z_party_leader != "Kaas") or (prussian_concordat_progress < 1 and z_party_leader = "Kaas")
+view-if: (prussian_concordat_progress < 2 and z_leader != "Kaas") or (prussian_concordat_progress < 1 and z_leader = "Kaas")
 on-arrival: prussian_concordat_progress += 1; z_relation += 2*(1-dissent); dvp_relation -= 2;
 
-We are making progress towards negotiating a concordat between Prussia and the Catholic church. [? if z_party_leader = "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center</span> Party uses his connections. ?]
+We are making progress towards negotiating a concordat between Prussia and the Catholic church. [? if z_leader = "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center</span> Party uses his connections. ?]
 
 @sign_concordat
 subtitle: The <span style="color: #C0A054;">**DVP**</span> won't like this.
-view-if: (prussian_concordat_progress >= 2 and not z_party_leader = "Kaas") or (prussian_concordat_progress >= 1 and z_party_leader = "Kaas") and prussian_concordat = 0
+view-if: (prussian_concordat_progress >= 2 and not z_leader = "Kaas") or (prussian_concordat_progress >= 1 and z_leader = "Kaas") and prussian_concordat = 0
 on-arrival: prussian_concordat = 1; z_relation += 5; catholics_spd += 3*(1-dissent); catholics_dnvp -= 2 if dnvp_ideology == "Radical"; coalition_dissent += 1 if in_grand_coalition; dvp_relation -= 5
 
 We have signed a Concordat between the Free State of Prussia and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Prussia. This sets the stage for the negotiation of a national Concordat covering all of Germany.

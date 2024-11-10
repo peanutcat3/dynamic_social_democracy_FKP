@@ -587,9 +587,9 @@ There are some potential coalition arrangements.
 @popular_front_coalition
 title: A new "Popular Front" coalition?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>  [? if sapd_formed:+ <span style="color: #9B0000;">**SAPD**</span> ?]([+ popular_front_coalition +]%)
-unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>  [? if sapd_formed:+ <span style="color: #9B0000;">SAPD</span> ?]([+ popular_front_coalition +]%) - [? if ((kpd_relation < 65 and kpd_party_leader == "Thälmann") or (kpd_relation < 45 and kpd_party_leader == "Conciliators")): We do not have good enough relations with the <span style="color: #700000;">KPD</span>. ?][? if (z_relation < 45 and z_party_leader == "Joos") or (z_relation < 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation < 55 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators"): We do not have good enough relations with the <span style="color: #000000;">Center Party</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are unwilling to compromise at all. ?]
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>  [? if sapd_formed:+ <span style="color: #9B0000;">SAPD</span> ?]([+ popular_front_coalition +]%) - [? if ((kpd_relation < 65 and kpd_leader == "Thälmann") or (kpd_relation < 45 and kpd_leader == "Conciliators")): We do not have good enough relations with the <span style="color: #700000;">KPD</span>. ?][? if (z_relation < 45 and z_leader == "Joos") or (z_relation < 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation < 55 and z_leader != "Joos" and kpd_leader == "Conciliators"): We do not have good enough relations with the <span style="color: #000000;">Center Party</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are unwilling to compromise at all. ?]
 view-if: popular_front_coalition >= 50
-choose-if: (((kpd_relation >= 65 and kpd_party_leader == "Thälmann") or (kpd_relation >= 45 and kpd_party_leader == "Conciliators")) and ((z_relation >= 45 and z_party_leader == "Joos") or (z_relation >= 65 and z_party_leader != "Joos" and kpd_party_leader != "Conciliators") or (z_relation >= 50 and z_party_leader != "Joos" and kpd_party_leader == "Conciliators")) and ddp_relation >= 50 and communist_coalition >= 3) or (z_party_leader == "Joos" and kpd_party_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)
+choose-if: (((kpd_relation >= 65 and kpd_leader == "Thälmann") or (kpd_relation >= 45 and kpd_leader == "Conciliators")) and ((z_relation >= 45 and z_leader == "Joos") or (z_relation >= 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation >= 50 and z_leader != "Joos" and kpd_leader == "Conciliators")) and ddp_relation >= 50 and communist_coalition >= 3) or (z_leader == "Joos" and kpd_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)
 
 Could we really form a coalition that included both the <span style="color: #000000;">**Center**</span> and the <span style="color: #700000;">**Communists**</span>? It seems like an absurd concept, but given our good relationships with both sides, it is not an impossibility.
 
@@ -599,7 +599,7 @@ The far-right might attempt a coup, if such a coalition were formed.
 - @great_popular_front: Form the Popular Front!
 
 @popular_front_2
-view-if: z_party_leader != "Joos" or kpd_party_leader != "Conciliators"
+view-if: z_leader != "Joos" or kpd_leader != "Conciliators"
 
 Somehow, both the <span style="color: #700000;">**Communists**</span> and <span style="color: #000000;">**Center**</span> are at the very least willing to entertain negotiations. Of course, <span style="color: #700000;">**KPD**</span> radicals and <span style="color: #000000;">**Center**</span> conservatives derail the negotiations almost immediately. The <span style="color: #700000;">**KPD**</span> demands leadership of the coalition for themselves and their chairman Ernst Thälmann, [? if spd_r > kpd_r : despite our higher vote share, ?]while the <span style="color: #000000;">**Center**</span> is offended by the prospect of helping <span style="color: #700000;">**Bolsheviks**</span> enter government. *Something* must be done to restore balance.
 
@@ -618,9 +618,9 @@ go-to: popular_front_success
 
 @popular_front_democracy
 title: Convince the <span style="color: #700000;">**KPD**</span> to accept democracy.
-subtitle: [? if kpd_party_leader == "Conciliators" : The Conciliator leadership of the <span style="color: #700000;">**KPD**</span> at least claim to support the Popular Front. ?]
+subtitle: [? if kpd_leader == "Conciliators" : The Conciliator leadership of the <span style="color: #700000;">**KPD**</span> at least claim to support the Popular Front. ?]
 unavailable-subtitle: Our relationship with the <span style="color: #700000;">**KPD**</span> is not high enough.
-choose-if: (kpd_relation >= 60 and communist_coalition >= 3) or kpd_party_leader == "Conciliators"
+choose-if: (kpd_relation >= 60 and communist_coalition >= 3) or kpd_leader == "Conciliators"
 go-to: popular_front_success
 
 @popular_front_braun
@@ -629,7 +629,7 @@ view-if: president == "Braun"
 go-to: popular_front_success
 
 @great_popular_front
-view-if: z_party_leader == "Joos" and kpd_party_leader == "Conciliators"
+view-if: z_leader == "Joos" and kpd_leader == "Conciliators"
 on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
 achievement: grosse_volksfront
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
@@ -708,7 +708,7 @@ title: Is a United Left coalition possible?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?]
 view-if: left_coalition >= 50
-choose-if: (kpd_relation >= 50 or (kpd_party_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3
+choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3
 
 There are enough votes for a <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> coalition government, if such a thing were actually possible.
 
@@ -757,7 +757,7 @@ go-to: left_coalition_success
 @left_coalition_relations
 title: Convince the <span style="color: #700000;">**KPD**</span> to accept democracy.
 unavailable-subtitle: Our relationships with the <span style="color: #700000;">KPD</span> are not good enough.
-choose-if: kpd_relation >= 60 or kpd_party_leader == "Conciliators"
+choose-if: kpd_relation >= 60 or kpd_leader == "Conciliators"
 go-to: left_coalition_success
 
 
@@ -941,7 +941,7 @@ We have assembled a new coalition under Otto Braun.
 @unity_government
 title: The <span style="color: #000000;">**Center Party**</span> offers a "Government of National Unity" under Chancellor Joseph Wirth.
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + Others ([+ neo_weimar_coalition +]%)
-view-if: z_party_leader == "Joos" and neo_weimar_coalition >= 50 and weimar_coalition < 50 and z_relation >= 10
+view-if: z_leader == "Joos" and neo_weimar_coalition >= 50 and weimar_coalition < 50 and z_relation >= 10
 
 The <span style="color: #000000;">**Center Party**</span> leader, Joseph Joos, clearly sees the threat from the ascension of the anti-democratic extremist parties, and thus tries to negotiate a "Government of National Unity" to save the republic. This coalition would be led by Joseph Wirth, a left-leaning member of the <span style="color: #000000;">**Center Party**</span> and former chancellor, and would encompass all of the constitutional parties. Our role in this government might be limited, however.
 
@@ -970,7 +970,7 @@ Our rejection of the unity government has hurt our relations with the bourgeois 
 
 
 @toleration_wirth
-view-if: z_party_leader = "Joos"
+view-if: z_leader = "Joos"
 choose-if: president == "Braun"
 unavailable-subtitle: President Hindenburg will not support a minority government led by Joseph Wirth.
 on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 0; spd_toleration = 1; z_relation += 5; foreign_minister_party = "DVP"; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DDP"; finance_minister_party = "DVP"; agriculture_minister_party = "Z"; pro_republic -= 2;
@@ -1111,7 +1111,7 @@ The <span style="color: #000000;">**Center Party**</span> is pleased, and somewh
 - @emergency_no_confidence
 
 @wirth_emergency_chancellor
-view-if: z_party_leader == "Joos"
+view-if: z_leader == "Joos"
 on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 10; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
 
 The <span style="color: #000000;">**Center Party**</span> is pleased that we have appointed [+ chancellor +] as chancellor.
@@ -1219,7 +1219,7 @@ We have won the vote of no confidence, and are currently ruling under an <span s
 title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> [? if sapd_formed and kpd_r >= 30 : + <span style="color: #9B0000;">**SAPD**</span> toleration ?] ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
-on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = "DDP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DDP"; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if z_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = "DDP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DDP"; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: weimar_coalition
 
 We have enough votes to form a "<span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition" government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span> and [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>) parties! This has been our preferred governing coalition since 1919.
@@ -1489,7 +1489,7 @@ This is highly unexpected, and many in the left and center of our party are crit
 
 @z_chancellor_wirth
 title: Let Joseph Wirth of the <span style="color: #000000;">Center Party</span> be chancellor.
-view-if: z_party_leader == "Joos"
+view-if: z_leader == "Joos"
 subtitle: Wirth is on the left wing of the <span style="color: #000000;">Center Party</span>. This may give us a better position in negotiating for other cabinet positions.
 on-arrival: left_dissent += 2; z_relation += 6; ddp_relation += 3; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5
 go-to: ministries
