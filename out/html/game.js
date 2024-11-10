@@ -219,19 +219,19 @@ window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
     const elements2 = document.querySelectorAll('.other');
     elements.forEach(function (element) {
-        if (element.style.display !== 'none') {
-            element.style.display = 'none';
+        if (element.style.display !== 'block') {
+            element.style.display = 'block';
             document.getElementById('news_tab').innerHTML = "Go Back";
         } else {
-            element.style.display = 'block';
+            element.style.display = 'none';
             document.getElementById('news_tab').innerHTML = "View Other News";
         }
     });
     elements2.forEach(function (element) {
-        if (element.style.display !== 'block') {
-            element.style.display = 'block';
-        } else {
+        if (element.style.display !== 'none') {
             element.style.display = 'none';
+        } else {
+            element.style.display = 'block';
         }
     });
 };
