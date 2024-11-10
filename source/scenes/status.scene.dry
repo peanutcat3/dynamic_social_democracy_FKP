@@ -98,7 +98,7 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 [? if kvp_formed : <span style="color: #0087DC;">**KVP**</span>: Christian democratic (Westarp)?]
 
-<span style="color: #3E88B3;">**DNVP**</span>: [if dvnp_leader = "Hugenberg" or dnvp_leader = "Triumvirate": Authoritarian conservatism?][?if dnvp_leader = "Westarp" or dnvp_leader = "Hergt": National conservatism?][?if dnvp_leader = "Lambach": Christian socialist?][?if dnvp_leader = "Treviranus": Christian democratic?] ([+ dnvp_leader +])
+<span style="color: #3E88B3;">**DNVP**</span>: [? if dvnp_leader = "Hugenberg" or dnvp_leader = "Triumvirate": Authoritarian conservatism?][? if dnvp_leader = "Westarp" or dnvp_leader = "Hergt": National conservatism?][? if dnvp_leader = "Lambach": Christian socialist?][? if dnvp_leader = "Treviranus": Christian democratic?] ([+ dnvp_leader +])
 
 [? if dnf_formed : <span style="color: #003755;">**DNF**</span>: Authoritarian conservatism (Hugenberg) ?]
 
