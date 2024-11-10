@@ -89,6 +89,9 @@ p {
 p.dnvp {
   display: none;
 }
+p.other {
+  display: block;
+}
 /*
 #content h1 + p {
   text-indent: 0;

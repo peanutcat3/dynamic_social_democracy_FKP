@@ -224,7 +224,7 @@ window.toggleNews = function toggleNews() {
             document.getElementById('news_tab').innerHTML = "Go Back";
         } else {
             element.style.display = 'block';
-            document.getElementById('news_tab').innerHTML = "View More News";
+            document.getElementById('news_tab').innerHTML = "View Other News";
         }
     });
     elements2.forEach(function (element) {
