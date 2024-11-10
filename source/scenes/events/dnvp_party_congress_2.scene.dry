@@ -30,7 +30,7 @@ on-arrival: dnvp_leader = "Treviranus"; dnvp_ideology = "Moderate"; hugenberg_re
 go-to: dnf_formed_1929
 face-image: img/Treviranus.jpg
 
-The failure of the Young Plan referendum to reach the 10% threshold and the declining popularity of the <span style="color: #3E88B3;">**DNVP**</span> has convinced the majority of the party to vote out Hugenberg, replacing him with Treviranus, a member of the "Young Conservative" wing of the party. The Young Conservatives are in favor of transforming the <span style="color: #3E88B3;">**DNVP**</span> into a "Tory democracy", advancing their goals in the framework of the system.
+[? if young_plan_signatures < 10: The failure of the Young Plan referendum to reach the 10% threshold?][? if tariffs < -1 or land_reform > 0: The all-or-nothing policy of Hugenberg leaving the party unable to enter government and revert our [? if land_reform >= 1: land reform policies?][? if land_reform >= 1 and tariffs < -1: and ?][? if tariffs < -1: tariff reductions?]?], and the declining popularity of the <span style="color: #3E88B3;">**DNVP**</span> has convinced the majority of the party to vote out Hugenberg. He is replaced with Treviranus, a member of the "Young Conservative" wing of the party. The Young Conservatives are in favor of transforming the <span style="color: #3E88B3;">**DNVP**</span> into a "Tory democracy", advancing their goals in the framework of the system.
 
 In response, Hugenberg threatens to take himself and his supporters into a new splinter party, which could cripple the <span style="color: #3E88B3;">**DNVP**</span>, especially since he has worked to eliminate moderate influences within the party organizations, who are likely to follow him.
 
