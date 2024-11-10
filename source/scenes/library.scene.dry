@@ -81,13 +81,12 @@ Reichstag composition:
 # 1928: 5, 1930: 4 (as DStP)
 <span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-<span style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]%\
+<span style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]%
 [? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>: [+ kvp_r +]% ?]
 # 1928: 14, 1930: 7
 <span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_r +]%
 # 1928: 3, 1930: 18
 [? if dnf_formed: <span style="color: #003755;">**DNF**</span>: [+ dnf_r +]% ?]
-
 <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 **Others**: [+ other_r +]%
