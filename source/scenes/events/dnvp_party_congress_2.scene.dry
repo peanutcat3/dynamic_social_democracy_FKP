@@ -15,7 +15,7 @@ The "unity of the no" against Marxism has been losing its force over the years, 
 - @resultsdnvp: The congress unfolds...
 
 @resultsdnvp
-go-to: dnvpsplit if young_plan_signatures >= 10 and was_in_right_coalition == 0 and tariffs >= 0 and land_reform < 1; hugenbergremoval if (young_plan_signatures < 10 and was_in_right_coalition == 0) or (young_plan_signatures >= 10 and tariffs < 1 or land_reform > 0 and was_in_right_coalition == 0); completednvpsplit if young_plan_signatures >= 10 and (was_in_right_coalition == 1 and tariffs < 0 or land_reform > 0)
+go-to: dnvpsplit if young_plan_signatures >= 10 and was_in_right_coalition == 0 and tariffs >= 0 and land_reform < 1; hugenbergremoval if (young_plan_signatures < 10 and was_in_right_coalition == 0) or (young_plan_signatures >= 10 and tariffs < -1 or land_reform > 0 and was_in_right_coalition == 0); completednvpsplit if young_plan_signatures >= 10 and (was_in_right_coalition == 1 and tariffs < 0 or land_reform > 0)
 
 @dnvpsplit
 on-arrival: dnvp_split = 1; csvd_formed = 1; dnvp_r -= 2; other_r += 2; workers_dnvp -= 3; workers_other += 3; new_middle_dnvp -= 3; old_middle_dnvp -= 1; new_middle_other += 3; old_middle_other += 1
