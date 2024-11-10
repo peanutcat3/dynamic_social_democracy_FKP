@@ -38,7 +38,7 @@ Unfortunately, we must accept this if we are to maintain this coalition. The <sp
 The workers are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the <span style="color: #700000;">**KPD**</span>'s gain, and even the <span style="color: #7A3C00;">**NSDAP**</span>, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
 
 @compromise
-unavailable-subtitle: [? if dvp_relation < 20: We do not have good enough relations with the right-wing parties.?][? if dvp_right - dvp_left > 5: The <span style="color: #C0A054;">DVP</span> have changed. ?]
+unavailable-subtitle: [? if dvp_relation < 20: We do not have good enough relations with the right-wing parties.?] [? if dvp_right - dvp_left > 5: The <span style="color: #C0A054;">DVP</span> have changed. ?]
 choose-if: dvp_relation >= 20 and (dvp_right - dvp_left < 5)
 
 Stresemann has managed to rally [? if dvp_ideology == "Right" or dvp_ideology == "Moderate": a bare majority of his party (19 - 17 - 2)?][? if dvp_ideology == "Left": a majority of his party?] to vote in favor of a compromise that contains cuts to the program without increasing contributions. While this is not an ideal solution, what other choice do we have?
@@ -54,7 +54,7 @@ We have accepted the compromise offered by the bourgeoisie. Many of the workers 
 
 @accept_compromise_good
 choose-if: dvp_ideology == "Left" and dvp_relation >= 40
-unavailable-subtitle: [? if dvp_ideology != "Left": The <span style="color: #C0A054;">DVP</span> are too far gone. ?][? if dvp_relation < 40: We do not have good enough relations with the right-wing parties. ?]
+unavailable-subtitle: [? if dvp_ideology != "Left": The <span style="color: #C0A054;">DVP</span> are too far gone. ?] [? if dvp_relation < 40: We do not have good enough relations with the right-wing parties. ?]
 on-arrival: workers_spd -= 1; unemployed_spd -= 2; unemployed_kpd += 2; unemployed_nsdap += 2; workers_nsdap += 1; left_dissent += 5; labor_dissent += 3; kpd_relation -= 4; reformist_strength += 10; reformist_dissent -= 5; coalition_dissent -= 1; old_middle_dvp -= 3; old_middle_nsdap += 3; unemployment_insurance_threshold = unemployed
 
 We have pushed for an increase in both employer and employee contributions rather than to cut benefits for the program itself. The <span style="color: #C0A054;">**DVP**</span> accepts as they don't want a collapse of the government before the Young Plan is ratified.
