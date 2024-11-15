@@ -432,6 +432,7 @@ if (
 ) {
     Q.liberal_cooperation += 3;
     Q.liberal_parliament = 1;
+    Q.liberal_parliament_seen = 1;
 }
 
 if (
