@@ -221,10 +221,10 @@ window.toggleNews = function toggleNews() {
     elements.forEach(function (element) {
         if (element.style.display !== 'block') {
             element.style.display = 'block';
-            document.getElementById('news_tab').innerHTML = "Go Back";
+            document.getElementById('news_tab').innerHTML = "View Right";
         } else {
             element.style.display = 'none';
-            document.getElementById('news_tab').innerHTML = "View Other News";
+            document.getElementById('news_tab').innerHTML = "View Other";
         }
     });
     elements2.forEach(function (element) {
