@@ -221,10 +221,10 @@ window.toggleNews = function toggleNews() {
     elements.forEach(function (element) {
         if (element.style.display !== 'block') {
             element.style.display = 'block';
-            document.getElementById('news_tab').innerHTML = "View Right";
+            document.getElementById('news_tab').innerHTML = "View Other News";
         } else {
             element.style.display = 'none';
-            document.getElementById('news_tab').innerHTML = "View Other";
+            document.getElementById('news_tab').innerHTML = "View Right-Wing News";
         }
     });
     elements2.forEach(function (element) {
