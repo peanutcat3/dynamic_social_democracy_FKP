@@ -19,7 +19,7 @@ German industry isn't going to abandon their voice within the <span style="color
 go-to: left if dvp_ideology == "Left" or (dvp_left - dvp_right >= 3); right if dvp_ideology == "Right" or (dvp_right - dvp_left >= 3); left_conflict if not (dvp_ideology == "Left" or (dvp_left - dvp_right >= 3) and not (dvp_ideology == "Right" or (dvp_right - dvp_left >= 3)))
 
 @left
-on-arrival: dvp_left += 10; dvp_relation += 10; liberal_cooperation += 3; workers_dvp += 1; workers_other -= 1; new_middle_dvp += 4; new_middle_other -= 4; old_middle_dvp += 4; old_middle_other -= 4; rural_dvp += 2; rural_other -= 2; catholics_other -= 3; catholics_z -= 2; catholics_dvp += 5; coalition_dissent -= 1
+on-arrival: dvp_left += 10; dvp_relation += 10; liberal_cooperation += 3; workers_dvp += 1; workers_other -= 1; new_middle_dvp += 4; new_middle_other -= 4; old_middle_dvp += 4; old_middle_other -= 4; rural_dvp += 2; rural_other -= 2; catholics_other -= 2; catholics_z -= 2; catholics_dvp += 4; coalition_dissent -= 1
 face-image: img/Stresemann.jpg
 
 Stresemann rallies what's left of the <span style="color: #C0A054;">**DVP**</span> that aren't bought out by industry into adopting the proposed reform, not without any fierce opposition from the other half of the party. The industrialists have diverted their efforts on maintaining influence within the <span style="color: #3E88B3;">**DNVP**</span> now, to make up for their loss.
