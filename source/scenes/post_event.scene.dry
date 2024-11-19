@@ -418,6 +418,8 @@ if (
     )
 ) {
     Q.dvp_congress_trigger = 1;
+} else {
+    Q.dvp_right += 3;
 }
 
 Q.liberal_vote = (Q.ddp_votes + Q.dvp_votes)
@@ -427,18 +429,6 @@ if (
 ) {
     Q.liberal_cooperation += 3;
     Q.liberal_parliament = 1;
-}
-
-if (
-    Q.year == 1928 && 
-    Q.month == 11 && 
-    Q.in_grand_coalition && 
-    (
-        (Q.foreign_minister_party == "DVP" && Q.dvp_in_prussia == 0 && Q.coalition_dissent > 0) || 
-        (Q.foreign_minister_party != "DVP" && Q.dvp_in_prussia == 0 && Q.coalition_dissent > 1)
-    )
-) {
-    Q.dvp_right += 3;
 }
 
 if (Q.year == 1928 && Q.month == 12 && Q.in_center_right_coalition == 1) {
