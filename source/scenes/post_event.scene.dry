@@ -419,7 +419,7 @@ if (
     )
 ) {
     Q.dvp_congress_trigger = 1;
-} else {
+} else if (Q.year == 1928 && month == 11) {
     Q.dvp_right += 3;
 }
 
