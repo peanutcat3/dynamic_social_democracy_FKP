@@ -20,6 +20,7 @@ The <span style="color: #c00000;">**SPD**</span> runs a veritable media empire, 
 - @radio_4
 - @return: We should not do anything with media at the moment.
 - @easy_discard
+- @cancel_advisor_action
 
 @commercial
 title: Make our newspapers more commercialized by broadening their appeal beyond party supporters.

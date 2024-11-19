@@ -20,6 +20,7 @@ The *Reichsbanner* <span style="color: #000000;"><b><i>Schwarz</i></b></span>-<s
 - @cut_rb: Cut funding for the Reichsbanner.
 - @women_rb
 - @easy_discard
+- @cancel_advisor_action
 
 #- Orient reichsbanner towards anti-fascism (only available if we have prioritized anti fascism)
 
