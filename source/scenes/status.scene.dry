@@ -88,22 +88,22 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 = Party Leadership
 
-<span style="color: #000000;">**Z**</span>: Center to center-right ([+ z_leader +])
+<span class="tooltip-text" title="Center Party" style="color: #000000;">**Z**</span>: Center to center-right ([+ z_leader +])
 
-<span style="color: #D3C24D;">**[+ ddp_name +]**</span>: Left-liberal ([+ ddp_leader +])
+[? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: Left-liberal ([+ ddp_leader +])
 # TODO ^^^
 
-<span style="color: #C0A054;">**DVP**</span>: [? if dvp_ideology = "Left": Classical-liberal?][? if dvp_ideology = "Moderate": Conservative-liberal?][? if dvp_ideology = "Right": National-liberal?] ([+ dvp_leader +])
+<span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [? if dvp_ideology = "Left": Classical-liberal?][? if dvp_ideology = "Moderate": Conservative-liberal?][? if dvp_ideology = "Right": National-liberal?] ([+ dvp_leader +])
 
-<span style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": Luxemburgism?][? if kpd_leader = "Thälmann": Stalinist?] ([+ kpd_leader +])
+<span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": Luxemburgism?][? if kpd_leader = "Thälmann": Stalinist?] ([+ kpd_leader +])
 
-[? if kvp_formed : <span style="color: #0087DC;">**KVP**</span>: Christian democratic (Westarp)?]
+[? if kvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: Christian democratic (Westarp)?]
 
-<span style="color: #3E88B3;">**DNVP**</span>: [? if dnvp_leader = "Hugenberg" or dnvp_leader = "Triumvirate": Authoritarian conservatism?][? if dnvp_leader = "Westarp" or dnvp_leader = "Hergt": National conservatism?][? if dnvp_leader = "Lambach": Christian Socialist?][? if dnvp_leader = "Treviranus": Christian democratic?] ([+ dnvp_leader +])
+<span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [? if dnvp_leader = "Hugenberg" or dnvp_leader = "Triumvirate": Authoritarian conservatism?][? if dnvp_leader = "Westarp" or dnvp_leader = "Hergt": National conservatism?][? if dnvp_leader = "Lambach": Christian Socialist?][? if dnvp_leader = "Treviranus": Christian democratic?] ([+ dnvp_leader +])
 
-[? if dnf_formed : <span style="color: #003755;">**DNF**</span>: Authoritarian conservatism (Hugenberg) ?]
+[? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: Authoritarian conservatism (Hugenberg) ?]
 
-<span style="color: #7A3C00;">**NSDAP**</span>: Nazism ([+ nsdap_leader +])
+<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: Nazism ([+ nsdap_leader +])
 
 = Internal Factions of the <span style="color: #c00000;">**SPD**</span>
 
