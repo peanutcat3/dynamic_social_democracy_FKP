@@ -570,3 +570,7 @@ td, th {
 .seat.kvp {
   fill: #0087DC;
 }
+.tooltip-text {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}

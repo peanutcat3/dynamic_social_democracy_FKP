@@ -34,22 +34,23 @@ Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ ch
 Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-<span style="color: #c00000;">**SPD**</span>: [+ spd_r +]%
-[? if sapd_formed and sapd_r > 0: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_r +]% ?]
+
+<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #c00000;">**SPD**</span>: [+ spd_r +]%
+[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Socialist Workers' Party of Germany" style="color: #9B0000;">**SAPD**</span>: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
-<span style="color: #000000;">**Z**</span> **+** <span style="color: #A2D8E0;">**BVP**</span>: [+ z_r +]%
+<span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>: [+ z_r +]%
 # 1928: 10, 1930: 13
-<span style="color: #700000;">**KPD**</span>: [+ kpd_r +]%
+<span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_r +]%
 # 1928: 5, 1930: 4 (as DStP)
-<span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_r +]%
+[? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-<span style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]%
-[? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>: [+ kvp_r +]% ?]
+<span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]%
+[? if kvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_r +]% ?]
 # 1928: 14, 1930: 7
-<span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_r +]%
-[? if dnf_formed: <span style="color: #003755;">**DNF**</span>: [+ dnf_r +]% ?]
+<span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_r +]%
+[? if dnf_formed: <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: [+ dnf_r +]% ?]
 # 1928: 3, 1930: 18
-<span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_r +]%
+<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_r +]%
 # 1928: 9, 1930: 10
 **Others**: [+ other_r +]%
 
@@ -69,21 +70,21 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 = Inter-party Relations
 
 
-<span style="color: #000000;">**Z**</span>: [+ z_relation : relationships +]
+<span class="tooltip-text" title="Center Party" style="color: #000000;">**Z**</span>: [+ z_relation : relationships +]
 
-<span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_relation : relationships +]
+[? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_relation : relationships +]
 
-<span style="color: #C0A054;">**DVP**</span>: [+ dvp_relation : relationships +]
+<span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [+ dvp_relation : relationships +]
 
-<span style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
+<span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
 
-[? if kvp_formed : <span style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
+[? if kvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
 
-<span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_relation : relationships +]
+<span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_relation : relationships +]
 
-[? if dnf_formed : <span style="color: #003755;">**DNF**</span>: [+ dnf_relation : relationships +] ?]
+[? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: [+ dnf_relation : relationships +] ?]
 
-<span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_relation : relationships +]
+<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_relation : relationships +]
 
 = Party Leadership
 
@@ -106,15 +107,13 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 = Internal Factions of the <span style="color: #c00000;">**SPD**</span>
 
-Left strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+{!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
 
-Center strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
+{!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
 
-Labor strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
+{!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +]
 
-Reformist strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
-
-[? if neorevisionism > 0 : Neorevisionist strength: [+ neorevisionist_strength : strength +], dissent: [+ neorevisionist_dissent : dissent +] ?]
+{!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +]
 
 
 @paramilitaries
@@ -135,19 +134,19 @@ if (Q.sa_strength) {
 
 = Paramilitaries
 
-<span style="color: #c00000;">**Reichsbanner**</span> Strength: [+ rb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Reichsbanner Schwarz-Rot-Gold is a popular organization for defending democracy, mostly affiliated with the SPD." style="color: #c00000;">**Reichsbanner**</span>!} Strength: [+ rb_strength_2 +] thousand
 
 <span style="color: #c00000;">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-<span style="color: #8B0000;">**RFB**</span> Strength: [+ rfb_strength_2 +] thousand
+{!<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: #8B0000;">**RFB**</span>!} Strength: [+ rfb_strength_2 +] thousand
 
 <span style="color: #8B0000;">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
 
-<span style="color: #3E88B3;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
+{!<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP." style="color:#3E88B3;">**Stahlhelm**</span>!} Strength: [+ sh_strength_2 +] thousand
 
 <span style="color: #3E88B3;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
-<span style="color: #7A3C00;">**SA**</span> Strength: [+ sa_strength_2 +] thousand
+{!<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #7A3C00;">SA</span>!} Strength: [+ sa_strength_2 +] thousand
 
 <span style="color: #7A3C00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
@@ -160,6 +159,8 @@ Reichswehr Loyalty: [+ reichswehr_loyalty : loyalty +]
 Prussian police: [+ prussian_police_strength +] thousand members.
 
 Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
+
+[? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
 
 @polls
 
