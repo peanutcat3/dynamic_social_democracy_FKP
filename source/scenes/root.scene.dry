@@ -563,6 +563,7 @@ Q.liberal_cooperation = 0;
 Q.liberal_parliament = 0;
 Q.dvp_congress_trigger = 0;
 Q.liberal_parliament_seen = 0;
+Q.dvp_reform = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
