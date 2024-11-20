@@ -90,7 +90,7 @@ max-cards: 3
 
 {!<p class="both">!}[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
 
-{!<p class="both">!}[? if year = 1930 and month = 3: Reichsbank president Hjalmar Schacht has resigned from his position, leading to former Chancellor and <span style="color: #C0A054;">**DVP**</span> member Hans Luther taking the position. ?]{!</p>!}
+{!<p class="both">!}[? if year = 1930 and month = 3 and dvp_leader != "Luther": Reichsbank president Hjalmar Schacht has resigned from his position. Former Chancellor and <span style="color: #C0A054;">**DVP**</span> member Hans Luther has been given the position. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1930 and month = 4 and spd_in_government = 0 and chancellor == "Brüning" and dnvp_ideology == "Radical": Chancellor Brüning has introduced a sweeping reform of German finances, including unpopular consumption tax increases, which he has tied to agricultural relief. This is obviously a ploy to secure the imposition of new taxes that otherwise would have been voted down. Hugenberg has ordered his party to oppose this bill, orders not followed by Westarp and his group of moderates, who continue to support Brüning's government. ?]{!</p>!}
 
@@ -200,7 +200,7 @@ max-cards: 4
 
 {!<p class="both">!}[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
 
-{!<p class="both">!}[? if year = 1930 and month = 3: Reichsbank president Hjalmar Schacht has resigned from his position, leading to former Chancellor and <span style="color: #C0A054;">**DVP**</span> member Hans Luther taking the position. ?]{!</p>!}
+{!<p class="both">!}[? if year = 1930 and month = 3 and dvp_leader != "Luther": Reichsbank president Hjalmar Schacht has resigned from his position. Former Chancellor and <span style="color: #C0A054;">**DVP**</span> member Hans Luther has been given the position. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1930 and month = 4 and spd_in_government = 0 and chancellor == "Brüning" and dnvp_ideology == "Radical": Chancellor Brüning has introduced a sweeping reform of German finances, including unpopular consumption tax increases, which he has tied to agricultural relief. This is obviously a ploy to secure the imposition of new taxes that otherwise would have been voted down. Hugenberg has ordered his party to oppose this bill, orders not followed by Westarp and his group of moderates, who continue to support Brüning's government. ?]{!</p>!}
 

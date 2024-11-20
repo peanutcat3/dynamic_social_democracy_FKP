@@ -3,7 +3,7 @@ view-if: year = 1929 and month >= 10
 frequency: 1000
 max-visits: 1
 tags: event
-on-arrival: stresemann_dead = 1; dvp_relation -= 5; dvp_right += 3; dvp_leader = "Scholz"
+on-arrival: stresemann_dead = 1; dvp_relation -= 5; dvp_right += 3; dvp_leader = "Scholz"; foreign_minister = "Curtius" if foreign_minister = "Stresemann"
 priority: -1
 face-image: img/Stresemann.jpg
 
