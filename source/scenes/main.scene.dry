@@ -90,6 +90,8 @@ max-cards: 3
 
 {!<p class="both">!}[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
 
+{!<p class="both">!}[? if year = 1930 and month = 3: Reichsbank president Hjalmar Schacht has resigned from his position, leading to former Chancellor and <span style="color: #C0A054;">**DVP**</span> member Hans Luther taking the position. ?]{!</p>!}
+
 {!<p class="both">!}[? if year = 1930 and month = 4 and spd_in_government = 0 and chancellor == "Brüning" and dnvp_ideology == "Radical": Chancellor Brüning has introduced a sweeping reform of German finances, including unpopular consumption tax increases, which he has tied to agricultural relief. This is obviously a ploy to secure the imposition of new taxes that otherwise would have been voted down. Hugenberg has ordered his party to oppose this bill, orders not followed by Westarp and his group of moderates, who continue to support Brüning's government. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1930 and month = 7 and next_election_time - time < 5: The <span style="color: #7A3C00;">**NSDAP**</span> under Adolf Hitler have been gaining serious momentum in the run-up to the election, there is something about his charisma that attracts people of all classes, regardless of their previous political sympathies. It has become a debate within our party if they should be considered a serious threat rather than the bourgeois right. ?]{!</p>!}
@@ -197,6 +199,8 @@ max-cards: 4
 {!<p class="dnvp">!}[? if year = 1929 and month = 12 and csvd_formed = 1: The Christian Social faction of the <span style="color: #3E88B3;">**DNVP**</span> have formed their own political party by merging with the CVD, to form the Christian Social People's Service (<span style="color: #8ED8E4;">**CSVD**</span>). The party mainly has support among protestant workers, and refuses to cooperate with other bourgeois parties. They are surprisingly taking a hard stance towards the <span style="color: #7A3C00;">Nazis</span>, decrying their "un-Christian excessive hatred of Jews". ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
+
+{!<p class="both">!}[? if year = 1930 and month = 3: Reichsbank president Hjalmar Schacht has resigned from his position, leading to former Chancellor and <span style="color: #C0A054;">**DVP**</span> member Hans Luther taking the position. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1930 and month = 4 and spd_in_government = 0 and chancellor == "Brüning" and dnvp_ideology == "Radical": Chancellor Brüning has introduced a sweeping reform of German finances, including unpopular consumption tax increases, which he has tied to agricultural relief. This is obviously a ploy to secure the imposition of new taxes that otherwise would have been voted down. Hugenberg has ordered his party to oppose this bill, orders not followed by Westarp and his group of moderates, who continue to support Brüning's government. ?]{!</p>!}
 

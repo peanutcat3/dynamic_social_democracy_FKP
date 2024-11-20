@@ -16,6 +16,7 @@ Of course, this criticism is unfounded, but the bourgeois establishment does not
 - @hilferding_resign: Hilferding must resign.
 
 @expose_him
+on-arrival: schacht_exposed = 1
 view-if: investigate_far_right >= 1
 
 We expose to the public Schacht's dealings with the <span style="color: #7A3C00;">Nazis</span>. For better or worse, he is cowed, and refrains from taking further actions against us.
