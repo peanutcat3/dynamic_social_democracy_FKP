@@ -25,7 +25,7 @@ How do we reduce tensions with the coalition?
 view-if: year <= 1929 and dvp_in_prussia = 0 and in_grand_coalition = 1
 choose-if: z_leader != "Kaas"
 unavailable-subtitle: [? if z_leader = "Kaas": The Center strongly dissents against.?]
-on-arrival: leverage += 5; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; dvp_in_prussia = 1; dvp_left += 3
+on-arrival: dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; dvp_in_prussia = 1; dvp_left += 3
 
 Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. 
 
