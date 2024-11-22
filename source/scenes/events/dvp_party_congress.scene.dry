@@ -35,7 +35,7 @@ Ernst Scholz has won the vote to succeed Stresemann for the chairmanship. The le
 This is bad news for our relationship with the <span style="color: #C0A054;">**DVP**</span>, and makes the formation of future governments involving us nearly impossible[? if in_grand_coalition:, and the current government untenable?].
 
 @luther
-on-arrival: dvp_leader = "Luther"; dvp_left += 3; liberal_cooperation += 5; bourgeois_cooperation += 5; dvp_relation += 5; new_middle_dvp += 2; old_middle_dvp += 2; coalition_dissent -= 1 if in_grand_coalition; pro_republic += 5
+on-arrival: dvp_leader = "Luther"; dvp_left += 3; liberal_cooperation += 5; bourgeois_cooperation += 5; dvp_relation += 5; new_middle_dvp += 2; old_middle_dvp += 2; coalition_dissent -= 1 if in_grand_coalition; pro_republic += 3
 face-image: img/luther.jpg
 
 Hans Luther has surprisingly won the vote to succeed Stresemann for the chairmanship. Luther has support among the industrialists and the left of the party, and commands strong influence over the party. Perhaps he's what the <span style="color: #C0A054;">**DVP**</span> needs in order to survive this crisis of German democracy.
