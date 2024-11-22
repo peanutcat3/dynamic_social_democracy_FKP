@@ -42,7 +42,7 @@ However, this has negatively impacted our freedom of action we previously had in
 view-if: in_grand_coalition = 1 and dvp_beg = 0
 choose-if: in_grand_coalition = 1 and ((dvp_leader == "Stresemann" and dvp_relation >= 30) or (dvp_ideology = "Left" and dvp_relation >= 30 or (dvp_ideology = "Moderate" and dvp_relation >= 45))) and dvp_leader != "Scholz" and dvp_beg = 0
 unavailable-subtitle: What?
-on-arrival: dvp_relation -= 10; coalition_dissent -= 1; dvp_right += 5; dvp_beg = 1
+on-arrival: dvp_relation -= 10; coalition_dissent -= 1; dvp_right += 4; dvp_beg = 1
 
 The <span style="color: #C0A054;">**DVP**</span> surprisingly called off the vote due to our good relations. However, we shouldn't expect them to have much patience next time.
 
