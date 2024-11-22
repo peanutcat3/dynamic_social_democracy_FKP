@@ -48,7 +48,7 @@ Stresemann has managed to rally [? if dvp_ideology == "Right" or dvp_ideology ==
 - @destroy: Reject the compromise and end this coalition.
 
 @accept_compromise_worse
-on-arrival: workers_spd -= 3; unemployed_spd -= 3; unemployed_kpd += 3; unemployed_nsdap += 3; workers_nsdap += 3; left_dissent += 8; labor_dissent += 5; center_dissent += 3; welfare -= 1; kpd_relation -= 4; unemployment_insurance_threshold = unemployed; dvp_left += 2
+on-arrival: workers_spd -= 2; unemployed_spd -= 2; unemployed_kpd += 3; unemployed_nsdap += 2; workers_nsdap += 2; left_dissent += 8; labor_dissent += 5; center_dissent += 3; welfare -= 1; kpd_relation -= 4; unemployment_insurance_threshold = unemployed; dvp_left += 2; pro_republic -= 3
 
 We have accepted the compromise offered by the bourgeoisie. Many of the workers and unemployed see this as a betrayal, as we cut welfare without increasing employer contributions. We present it as the successful aversion of a much worse alternative.
 
