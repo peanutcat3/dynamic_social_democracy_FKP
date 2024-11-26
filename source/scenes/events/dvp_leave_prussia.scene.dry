@@ -1,0 +1,15 @@
+title: <span style="color: #C0A054;">**DVP**</span> exits Prussian coalition
+view-if: dvp_in_prussia == 1 and (in_grand_coalition == 0 and (next_election_time - time < 3) and (year >= 1929 and (year < 1932 and month < 4)) and dvp_ideology = "Right") or in_popular_front == 1
+on-arrival: dvp_in_prussia = 0; dvp_right += 3; new_middle_dvp -= 5; new_middle_ddp += 3; new_middle_nsdap += 2; pro_republic -= 5; ddp_right += 3 if (liberal_parliament == 1 or in_popular_front == 1)
+tags: event
+max-visits: 1
+
+= <span style="color: #C0A054;">**DVP**</span> exits Prussian government
+
+[? if not in_popular_front: With the collapse of the Grand coalition on the federal level, the <span style="color: #C0A054;">**DVP**</span> has also left the one present in Prussia in protest. We are able to scrape together a majority with the <span style="color: #000000;">Center</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> for a Weimar coalition, limiting the damage.?][? if in_popular_front: With the formation of the Popular Front coalition with <span style="color: #700000;">**KPD**</span> on the federal level, the <span style="color: #C0A054;">**DVP**</span> has also left the one present in Prussia in protest. We are able to scrape together a majority with the <span style="color: #000000;">Center</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> for a Weimar coalition, limiting the damage.?]
+
+- @continuing: It's their loss.
+
+@continuing
+
+Damn.
