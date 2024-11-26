@@ -12,7 +12,7 @@ go-to: what_do if unemployment_insurance_crisis = 2
 
 The economic crisis has caused mass layoffs all throughout Germany, affecting the industrial working class the hardest. Our welfare spending is increasing due to the greater need.
 
-In the midst of all this, our right-wing coalition partners in the <span style="color: #C0A054;">**DVP**</span>[? if ddp_right - ddp_left >= 2 :, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if dstp_formed :, DStP?] and <span style="color: #000000;">**Center**</span> parties have a plan to cut benefits for the unemployed, lower taxes on the rich, and raise taxes on the working class, as part of a plan to balance the budget and discipline labor. They do not see a possibility for compromise. If we do not accept, they could blow up the coalition.
+In the midst of all this, our right-wing coalition partners in the <span style="color: #C0A054;">**DVP**</span>[? if ddp_ideology == "Right" and not dstp_formed:, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if dstp_formed and ddp_ideology == "Right" :, DStP?] and <span style="color: #000000;">**Center**</span> parties have a plan to cut benefits for the unemployed, lower taxes on the rich, and raise taxes on the working class, as part of a plan to balance the budget and discipline labor. They do not see a possibility for compromise. If we do not accept, they could blow up the coalition.
 
 [? if unemployment_insurance_crisis = 2 : This is the second such ultimatum thrown by the Right. Obviously, the bourgeoisie are trying to remove us from the government. ?]
 
@@ -31,7 +31,7 @@ go-to: what_do
 This is a gift to the <span style="color: #700000;">Communists</span>, a boost to their theory that parliamentary democracy will never benefit the working class.
 
 @what_do
-on-arrival: dvp_relation += 5 if chancellor = "Braun"
+on-arrival: dvp_relation += 5 if chancellor = "Braun"; dvp_relation += 5 if dvp_in_prussia
 
 But the crux of the matter is, what can we do?
 
@@ -69,15 +69,30 @@ A compromise put forward by Heinrich Brüning is put into place and the issue is
 unavailable-subtitle: [? if dvp_relation < 35 or ddp_relation < 35 or (z_relation < 40 or (z_relation < 35 and z_leader == "Joos")): We do not have good enough relations with the right-wing parties.?]
 choose-if: dvp_relation >= 35 and ddp_relation >= 35 and (z_relation >= 40 or (z_relation >= 35 and z_leader == "Joos"))
 
-Thanks to our good relations, the <span style="color: #C0A054;">**DVP**</span> have offered a compromise that raises some taxes on the wealthy, along with lesser welfare cuts. Our members have mixed opinions on accepting this compromise. Reformists and Centrists support maintaining our government to keep the <span style="color: #7A3C00;">fascists</span> and <span style="color: #700000;">communists</span> out, while Labor generally opposes any cuts, and the Left is opposed to compromises with the bourgeoisie.
+The <span style="color: #C0A054;">**DVP**</span> ministers in the cabinet have offered a compromise that raises some taxes on the wealthy, along with lesser welfare cuts. Our members have mixed opinions on accepting this compromise. Reformists and Centrists support maintaining our government to keep the <span style="color: #7A3C00;">fascists</span> and <span style="color: #700000;">communists</span> out, while Labor generally opposes any cuts, and the Left is opposed to compromises with the bourgeoisie.
+
+The <span style="color: #C0A054;">**DVP**</span> themselves are split about this, the Reichstag delegation may go against the compromise fashioned by their own ministers. [? if dvp_ideology == "Left": However, the <span style="color: #C0A054;">**DVP**</span> has resisted the national shift towards the right for the most part. ?]If we do go ahead with this, the coalition hinges on the decision of the <span style="color: #C0A054;">**DVP**</span>.
 
 - @accept_compromise: Accept the compromise.
 - @destroy: Reject the compromise and let this government fall.
 - @prolong: Decide this at a later date.
 
 @accept_compromise
+go-to: compromised_failed if (dvp_ideology == "Moderate" and dvp_relation < 55) or dvp_ideology == "Right"; compromise_success if dvp_ideology == "Left" or (dvp_ideology == "Moderate" and dvp_relation >= 55)
+
+
+@compromised_failed
+
+We have accepted the compromise offered by the bourgeoisie. However, German industry has lobbied especially hard to foment the <span style="color: #C0A054;">**DVP**</span>'s split from the Grand coalition, and the compromise is voted down within the <span style="color: #C0A054;">**DVP**</span> itself.
+
+- @destroy: At least we tried, let this government fall.
+- @prolong: Decide this at a later date.
+
+@compromise_success
 unavailable-subtitle: [? if reformist_strength + center_strength < left_strength + labor_strength: The party won't allow this. ?]
 choose-if: reformist_strength + center_strength >= left_strength + labor_strength
-on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 8; center_dissent += 5; welfare -= 1; budget += 1; kpd_relation -= 4; inflation -= 1; dvp_left += 1
+on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 8; center_dissent += 5; welfare -= 1; budget += 1; kpd_relation -= 4; inflation -= 1; dvp_left += 3; old_middle_dvp -= 3; new_middle_dvp -= 2; rural_dvp -= 2; old_middle_dnvp += 3 if dnvp_ideology == "Moderate"; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_kvp += 3 if kvp_formed; new_middle_kvp += 2 if kvp_formed; rural_kvp += 2 if kvp_formed
 
 We have accepted the compromise offered by the bourgeoisie. Many of the workers and unemployed see this as a betrayal, although we present it as the successful aversion of a much worse alternative.
+
+Despite the intense lobbying by German industry, the <span style="color: #C0A054;">**DVP**</span> have voted for the compromise through the narrowest of votes.
