@@ -1452,7 +1452,7 @@ As expected, the <span style="color: #C0A054;">**DVP**</span> is too set in thei
 
 @dvp_prussia
 subtitle: This will restrict our actions in Prussia.
-view-if: year <= 1929 and dvp_in_prussia = 0
+view-if: year <= 1929 and dvp_in_prussia = 0 and dvp_was_in_prussia = 0
 on-arrival: leverage += 5; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent = -1; left_dissent += 5; dvp_in_prussia = 1; dvp_left += 3; new_middle_dvp += 3
 go-to: grand_coalition_spd_lead
 
@@ -1752,7 +1752,7 @@ go-to: ministries
 
 @dvp_prussia_1
 subtitle: This will restrict our actions in Prussia.
-view-if: year <= 1929 and dvp_in_prussia = 0 and not in_left_front and not in_popular_front and not in_weimar_coalition and not in_emergency_government
+view-if: year <= 1929 and dvp_in_prussia = 0 and not in_left_front and not in_popular_front and not in_weimar_coalition and not in_emergency_government and dvp_was_in_prussia == 0
 on-arrival: leverage += 5; dvp_relation += 7; z_relation -= 5; ddp_relation += 3; coalition_dissent = -1; left_dissent += 5; dvp_in_prussia = 1; dvp_left += 3; new_middle_dvp += 3
 go-to: ministries
 
