@@ -472,6 +472,16 @@ if (Q.ddp_right > (Q.ddp_left*1.5)) {
     Q.ddp_ideology = "Moderate"
 }
 
+if (Q.year == 1928 && Q.month == 9 && spd_in_government == 0) {
+    Q.panzerkreuser_seen = 1
+    Q.panzerkreuzer_funded = 1
+    Q.ddp_right += 1
+    Q.ddp_cohesion -= 1
+    Q.pacifism += 1
+    Q.workers_spd += 3
+    Q.panzerkreuser_right_seen = 1
+}
+
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
 
 Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));
