@@ -90,8 +90,9 @@ Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 <span class="tooltip-text" title="Center Party" style="color: #000000;">**Z**</span>: Center to center-right ([+ z_leader +])
 
-[? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: Left-liberal ([+ ddp_leader +])
-# TODO ^^^
+[? if ddp_name = "DDP" and ddp_ideology == "Right":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Classical liberal ([+ ddp_leader +])?][? if ddp_name = "DDP" and ddp_ideology == "Moderate":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Left-liberal ([+ ddp_leader +])?][? if ddp_name = "DDP" and ddp_ideology == "Left":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Progressive-liberal ([+ ddp_leader +])?]
+
+[? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Liberal Corporatism ([+ ddp_leader +])?]
 
 <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [? if dvp_ideology = "Left": Classical-liberal?][? if dvp_ideology = "Moderate": Conservative-liberal?][? if dvp_ideology = "Right": National-liberal?] ([+ dvp_leader +])
 
