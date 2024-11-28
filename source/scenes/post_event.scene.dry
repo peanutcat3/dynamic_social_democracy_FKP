@@ -583,7 +583,7 @@ window.toggleNews = function toggleNews() {
         }
     });
 
-    if (hasTextContent && button.style.backgroundColor !== '#6cc9f1') {
+    if (hasTextContent) {
         button.style.backgroundColor = '#6cc9f1'; // New color
     } else {
         button.style.backgroundColor = '#dddddd'; // Original color
