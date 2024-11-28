@@ -223,17 +223,18 @@
     let hasTextContent = false;
 
     elements.forEach(function (element) {
-        if (element.style.display !== 'block') {
-            element.style.display = 'block';
-            document.getElementById('news_tab').innerHTML = "View Other News";
-        } else {
-            element.style.display = 'none';
-            document.getElementById('news_tab').innerHTML = "View Right-Wing News";
-        }
-
-        // Check if the element contains text content
         if (element.textContent.trim() !== '') {
             hasTextContent = true;
+        }
+    });
+
+    elements.forEach(function (element) {
+        if (element.style.display !== 'block') {
+            element.style.display = 'block';
+            button.innerHTML = "Viewing Right-Wing News";
+        } else {
+            element.style.display = 'none';
+            button.innerHTML = "Viewing Other News";
         }
     });
 
@@ -245,8 +246,7 @@
         }
     });
 
-    // Change button background color if any `dnvp` element has text
-    if (hasTextContent) {
+    if (hasTextContent && button.style.backgroundColor !== '#6cc9f1') {
         button.style.backgroundColor = '#6cc9f1'; // New color
     } else {
         button.style.backgroundColor = '#dddddd'; // Original color
