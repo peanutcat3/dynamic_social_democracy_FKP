@@ -553,7 +553,6 @@ if (this.ui && this.ui.show_portraits) {
         }
     }
 }
-window.toggleNews();
 if (typeof window !== "undefined" && window.generateBar) {
 }
 !}
