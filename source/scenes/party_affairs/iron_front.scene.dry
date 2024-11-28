@@ -36,7 +36,7 @@ on-arrival: pacifism += 1; nationalism -= 5 if pacifism >= 3; workers_spd += 5*(
 The Iron Front rallies against nationalism and war.
 
 @republic
-on-arrival: pro_republic += 5*(1-dissent); democratization += 1; workers_spd += 5*(1-dissent) if democratization >= 4; unemployed_spd += 4*(1-dissent) if democratization >= 4; new_middle_spd += 4*(1-dissent) if democratization >= 4
+on-arrival: pro_republic += 5*(1-dissent); democratization += 1; workers_spd += 5*(1-dissent) if democratization >= 4; unemployed_spd += 4*(1-dissent) if democratization >= 4; new_middle_spd += 4*(1-dissent) if democratization >= 4; ddp_left += 1 if democratization >= 4
 
 The Iron Front rallies in defense of the democratic republic and against <span style="color: #7A3C00;">dictatorship</span>.
 
@@ -49,6 +49,6 @@ The WTB-Plan is the rallying point for the entire <span style="color: #c00000;">
 @antisemitism
 title: Rally against antisemitism and in defense of Jewish Germans.
 view-if: confronting_antisemitism > 1
-on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_nsdap -= 4*(1-dissent); unemployed_nsdap -= 4*(1-dissent);
+on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_nsdap -= 4*(1-dissent); unemployed_nsdap -= 4*(1-dissent); ddp_left += 1
 
 The <span style="color: #7A3C00;">Nazis</span> and other far-right political movements are increasingly turning their hatred against the <span style="color: #005EB8;">Jewish</span> community of Germany. The Iron Front rallies in defense of individual <span style="color: #005EB8;">Jews</span> and the broader community against violence.

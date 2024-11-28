@@ -13,7 +13,7 @@ The Reichsbanner has become increasingly militarized as of late, with ever-great
 - @keep_them: Can we convince them that a militant Reichsbanner is necessary for defending the Republic?
 
 @let_go
-on-arrival: rb_strength *= 0.9; z_relation -= 5; ddp_relation -= 5; rb_exit = 1; left_strength += 5*(1-dissent)
+on-arrival: rb_strength *= 0.9; z_relation -= 5; ddp_relation -= 5; rb_exit = 1; left_strength += 5*(1-dissent); ddp_right += 1
 
 We have judged that the Reichsbanner's militancy is more important than maintaining a coalition with the <span style="color: #000000;">**Center Party**</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. The Reichsbanner members affiliated with these parties leave, while the left of the <span style="color: #c00000;">**SPD**</span> is strengthened.
 
@@ -27,6 +27,6 @@ Bowing to the other parties' demands, we reduce the Reichsbanner's military trai
 @keep_them
 unavailable-subtitle: They are unable to be convinced at this time.
 choose-if: strife >= 5 and (z_relation >= 50 or (z_leader == "Joos" and z_relation >= 30)) and ddp_relation >= 50
-on-arrival: rb_stay = 1
+on-arrival: rb_stay = 1; ddp_left += 2; ddp_cohesion += 2
 
 Seeing the strife that has filled Germany's streets, the <span style="color: #000000;">**Center Party**</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> seem to be convinced that it is necessary for the Reichsbanner to be militarized, and will not leave the organization.

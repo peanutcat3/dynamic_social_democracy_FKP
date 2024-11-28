@@ -32,7 +32,6 @@ We can enact policies in Prussia. The inclusion of the <span style="color: #C0A0
 view-if: prussian_police_loyalty < 1
 on-arrival: prussian_police_loyalty += 0.08
 
-# increase police loyalty
 The police have historically been overrun with <span style="color: #808080;">reactionaries</span>, and we are trying to change this, little by little. We have improved the training and recruitment process to select for a broader demographic than the traditional <span style="color: #3E88B3;">conservatives</span>, and to put a tighter leash on their political activity. In addition, we set up committees to investigate the ranks of the police and remove those with <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> sympathies. It is a slow and arduous work.
 
 The <span style="color: #C0A054;">**DVP**</span> is sabotaging against our efforts in favor for the right.
@@ -45,7 +44,7 @@ on-arrival: prussian_police_strength += 15
 We have increased the size of the Prussian police.
 
 @bureaucracy
-on-arrival: prussian_police_loyalty += 0.03; nationalism -= 2; pacifism += 1; democratization += 1; pro_republic += 2*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 4; new_middle_spd += 2*(1-dissent) if democratization >= 5; coup_progress += 0.5
+on-arrival: prussian_police_loyalty += 0.03; nationalism -= 2; pacifism += 1; democratization += 1; pro_republic += 2*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 4; new_middle_spd += 2*(1-dissent) if democratization >= 5; coup_progress += 0.5; ddp_left += 0.5
 
 The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
@@ -79,7 +78,7 @@ The <span style="color: #3E88B3;">**Stahlhelm**</span> is no longer banned.
 
 @ban_rfb
 view-if: communist_coalition < 3 and rfb_banned = 0
-on-arrival: kpd_relation -= 15; rfb_strength -= 50; rfb_banned = 1; communist_coalition -= 1; z_relation += 5; dvp_relation += 5; prussian_police_loyalty += 0.1; dvp_left += 1
+on-arrival: kpd_relation -= 15; rfb_strength -= 50; rfb_banned = 1; communist_coalition -= 1; z_relation += 5; dvp_relation += 5; prussian_police_loyalty += 0.1; dvp_left += 1; ddp_left += 0.5
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The <span style="color: #700000;">Communists</span> take this as one more reason why the <span style="color: #c00000;">Socialists</span> are traitors to the <span style="color: #9B0000;">left</span>. However, the <span style="color: #000000;">moderate</span> and <span style="color: #C0A054;">center-right</span> parties approve, as do the police.
 
