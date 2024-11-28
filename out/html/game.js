@@ -247,9 +247,9 @@
 
     // Change button background color if any `dnvp` element has text
     if (hasTextContent) {
-        button.style.backgroundColor = 'red';
+        button.style.backgroundColor = '#6cc9f1'; // New color
     } else {
-        button.style.backgroundColor = ''; // Reset to default
+        button.style.backgroundColor = '#dddddd'; // Original color
     }
 };
 
