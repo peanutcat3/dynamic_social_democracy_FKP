@@ -531,6 +531,8 @@ if (Q.kvp_formed) {
 // Q.hitler_right_coalition = parseFloat((Q.z_r + Q.dnvp_r + Q.nsdap_r).toFixed(1));
 
 Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(1));
+window.toggleNews();
+window.toggleNews();
 }
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.
@@ -551,7 +553,6 @@ if (this.ui && this.ui.show_portraits) {
         }
     }
 }
-window.toggleNews();
 window.toggleNews();
 if (typeof window !== "undefined" && window.generateBar) {
 }
