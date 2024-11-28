@@ -551,45 +551,8 @@ if (this.ui && this.ui.show_portraits) {
         }
     }
 }
-
-window.toggleNews = function toggleNews() {
-    const elements = document.querySelectorAll('.dnvp');
-    const elements2 = document.querySelectorAll('.other');
-    const button = document.getElementById('news_tab');
-
-    let hasTextContent = false;
-
-    elements.forEach(function (element) {
-        if (element.textContent.trim() !== '') {
-            hasTextContent = true;
-        }
-    });
-
-    elements.forEach(function (element) {
-        if (element.style.display !== 'block') {
-            element.style.display = 'block';
-            button.innerHTML = "View Right-Wing News";
-        } else {
-            element.style.display = 'none';
-            button.innerHTML = "View Other News";
-        }
-    });
-
-    elements2.forEach(function (element) {
-        if (element.style.display !== 'none') {
-            element.style.display = 'none';
-        } else {
-            element.style.display = 'block';
-        }
-    });
-
-    if (hasTextContent) {
-        button.style.backgroundColor = '#6cc9f1'; // New color
-    } else {
-        button.style.backgroundColor = '#dddddd'; // Original color
-    }
-};
-
+window.toggleNews();
+window.toggleNews();
 if (typeof window !== "undefined" && window.generateBar) {
 }
 !}
