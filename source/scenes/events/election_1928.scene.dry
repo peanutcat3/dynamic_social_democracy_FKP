@@ -1175,7 +1175,7 @@ Q.no_confidence_succeeds = (Q.no_confidence_votes > 50) ? 1 : 0;
 Q.no_confidence_votes = parseFloat(Q.no_confidence_votes.toFixed(1));
 !}
 
-The <span style="color: #7A3C00;">**NSDAP**</span>[? if dnf_formed: <span style="color: #003755;">, **DNF**</span>?][? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>?] and <span style="color: #3E88B3;">**DNVP**</span> will vote against us, of course. The other parties vote their conscience. [? if z_no_confidence: The Center Party is voting against us. ?] [? if kpd_no_confidence: The KPD votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
+The <span style="color: #7A3C00;">**NSDAP**</span>[? if dnf_formed: <span style="color: #003755;">, **DNF**</span>?][? if kvp_formed: <span style="color: #0087DC;">, **KVP**</span>?] and <span style="color: #3E88B3;">**DNVP**</span> will vote against us, of course. The other parties vote their conscience. [? if z_no_confidence: The Center Party is voting against us. ?] [? if kpd_no_confidence: The <span style="color: #700000;">**KPD**</span> votes against us. ?] [? if other_no_confidence: The assortment of minor parties are voting against us. ?]
 
 In total, [+ no_confidence_votes +]% of the Reichstag is against us. [? if no_confidence_succeeds : We have lost the vote of no confidence. ?]
 
