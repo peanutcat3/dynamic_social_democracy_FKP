@@ -220,6 +220,11 @@
     const elements2 = document.querySelectorAll('.other');
     const button = document.getElementById('news_tab');
 
+    if (!button) {
+        console.error('Button with id "news_tab" not found.');
+        return;
+    }
+
     let hasTextContent = false;
 
     elements.forEach(function (element) {
