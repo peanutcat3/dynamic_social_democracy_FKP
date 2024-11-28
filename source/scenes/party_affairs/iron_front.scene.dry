@@ -23,11 +23,11 @@ The Iron Front is our new anti-<span style="color: #7A3C00;">fascists</span> coo
 @defense
 subtitle: -[+ rb_militarization_cost +] resources
 choose-if: resources >= rb_militarization_cost
-on-arrival: resources -= rb_militarization_cost; rb_strength += 50; rb_militancy += 0.05; z_relation -= 5 if historical_mode
+on-arrival: resources -= rb_militarization_cost; rb_strength += 50; rb_militancy += 0.05; z_relation -= 4 if strife < 5; ddp_relation -= 4 if strife < 5
 
 The Iron Front rallies for the militant defense of the republic against the <span style="color: #7A3C00;">fascists</span> paramilitaries, strengthening the Reichsbanner.
 
-[? if historical_mode : The <span style="color: #000000;">**Center Party**</span> decries the militarization of the Reichsbanner and Iron Front, and its members are leaving the republican organization. ?]
+[? if strife < 5: The <span style="color: #000000;">**Center Party**</span> decries the militarization of the Reichsbanner, and its members are leaving the republican organization. ?][? if strife >= 5: Seeing the strife that has filled Germany's streets, the <span style="color: #000000;">**Center Party**</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> seem to be convinced that it is necessary for the Reichsbanner to be militarized, and mute their criticisms. ?]
 
 
 @pacifism
