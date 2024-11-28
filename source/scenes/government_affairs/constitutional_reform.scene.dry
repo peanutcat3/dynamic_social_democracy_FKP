@@ -17,7 +17,7 @@ tags: govt_affairs
 
 # the ideas for constitutional reform here are based on the bundesrepublik basic law... I'm not sure if it's totally realistic to what someone like Mierendorff would've wanted.
 
-Many neorevisionists consider the Weimar Constitution to be inadequate. They believe that the clauses of the constitution are in part responsible for the instability of the country, and must change in order to build a more stable democratic republic. Ideas from both <span style="color: #c00000;">socialists</span> and <span style="color: #D3C24D;">liberals</span>.
+Many neorevisionists consider the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Constitution to be inadequate. They believe that the clauses of the constitution are in part responsible for the instability of the country, and must change in order to build a more stable democratic republic. Ideas from both <span style="color: #c00000;">socialists</span> and <span style="color: #D3C24D;">liberals</span>.
 
 A constitutional reform requires either a two-thirds supermajority in the Reichstag, or a constitutional referendum with support from a majority of the electorate. If we do not have a supermajority in the Reichstag, we must be assured of strong support from the other parties for the constitutional referendum.
 
@@ -83,7 +83,7 @@ if (!Q.stresemann_dead) {
 !}
 view-if: constructive_vonc = 0
 
-[? if z_relation >= 30 : The Weimar Coalition parties, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #000000;">**Center Party**</span>, support this reform, which will greatly improve the stability of the government. ?] [? if z_relation < 30 : The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> supports this reform, but the <span style="color: #000000;">**Center Party**</span> does not trust us enough to support the constitutional referendum. ?] The more conservative and radical right-wing parties and the <span style="color: #700000;">**KPD**</span> are in opposition, as they seem to relish in the republican system's instability.
+[? if z_relation >= 30 : The <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #000000;">**Center Party**</span>, support this reform, which will greatly improve the stability of the government. ?] [? if z_relation < 30 : The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> supports this reform, but the <span style="color: #000000;">**Center Party**</span> does not trust us enough to support the constitutional referendum. ?] The more conservative and radical right-wing parties and the <span style="color: #700000;">**KPD**</span> are in opposition, as they seem to relish in the republican system's instability.
 
 - @constructive_vonc_2: Call a constitutional referendum to pass the reform!
 - @reforms_menu: See other reform options.
