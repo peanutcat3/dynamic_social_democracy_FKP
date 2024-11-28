@@ -2,6 +2,7 @@ title: Next month
 set-bg: img/map_2.jpg
 is-hand: true
 on-arrival: {!
+on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - an action is available.';
 } else if (Q.advisor_action_timer == 1) {
@@ -9,7 +10,13 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
-window.toggleNews();
+if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', function() {
+        window.toggleNews();
+    });
+} else {
+    window.toggleNews();
+}
 !}
 max-cards: 3
 
@@ -139,7 +146,13 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
-window.toggleNews();
+if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', function() {
+        window.toggleNews();
+    });
+} else {
+    window.toggleNews();
+}
 !}
 max-cards: 4
 
