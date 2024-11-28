@@ -245,13 +245,13 @@
             element.style.display = 'block';
         }
     });
-};
 
-if (hasTextContent && button.style.backgroundColor !== '#6cc9f1') {
-    button.style.backgroundColor = '#6cc9f1'; // New color
-} else {
-    button.style.backgroundColor = '#dddddd'; // Original color
-}
+    if (hasTextContent) {
+        button.style.backgroundColor = '#6cc9f1'; // New color
+    } else {
+        button.style.backgroundColor = '#dddddd'; // Original color
+    }
+};
 
 
   /*
@@ -294,6 +294,7 @@ if (hasTextContent && button.style.backgroundColor !== '#6cc9f1') {
   window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: true});
     window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+    window.toggleNews();
   };
 
 }());
