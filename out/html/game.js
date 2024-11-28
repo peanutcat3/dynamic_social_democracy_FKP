@@ -215,9 +215,13 @@
           svgElement.style.display = 'none';
       }
   };
-window.toggleNews = function toggleNews() {
+  window.toggleNews = function toggleNews() {
     const elements = document.querySelectorAll('.dnvp');
     const elements2 = document.querySelectorAll('.other');
+    const button = document.getElementById('news_tab');
+
+    let hasTextContent = false;
+
     elements.forEach(function (element) {
         if (element.style.display !== 'block') {
             element.style.display = 'block';
@@ -226,7 +230,13 @@ window.toggleNews = function toggleNews() {
             element.style.display = 'none';
             document.getElementById('news_tab').innerHTML = "View Right-Wing News";
         }
+
+        // Check if the element contains text content
+        if (element.textContent.trim() !== '') {
+            hasTextContent = true;
+        }
     });
+
     elements2.forEach(function (element) {
         if (element.style.display !== 'none') {
             element.style.display = 'none';
@@ -234,7 +244,15 @@ window.toggleNews = function toggleNews() {
             element.style.display = 'block';
         }
     });
+
+    // Change button background color if any `dnvp` element has text
+    if (hasTextContent) {
+        button.style.backgroundColor = 'red';
+    } else {
+        button.style.backgroundColor = ''; // Reset to default
+    }
 };
+
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator
