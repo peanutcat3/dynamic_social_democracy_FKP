@@ -231,10 +231,10 @@
     elements.forEach(function (element) {
         if (element.style.display !== 'block') {
             element.style.display = 'block';
-            button.innerHTML = "Viewing Right-Wing News";
+            button.innerHTML = "View Other News";
         } else {
             element.style.display = 'none';
-            button.innerHTML = "Viewing Other News";
+            button.innerHTML = "View Right-Wing News";
         }
     });
 
