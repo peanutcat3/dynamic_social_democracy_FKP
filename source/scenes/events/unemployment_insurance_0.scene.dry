@@ -38,8 +38,8 @@ Unfortunately, we must accept this if we are to maintain this coalition. The <sp
 The workers are furious at our betrayal, as are a good portion of our membership throughout the factions. Our loss is the <span style="color: #700000;">**KPD**</span>'s gain, and even the <span style="color: #7A3C00;">**NSDAP**</span>, those lapdogs of the bourgeoisie, have joined in criticizing us for our austerity.
 
 @compromise
-unavailable-subtitle: [? if dvp_relation < 20: We do not have good enough relations with the right-wing parties.?] [? if dvp_right - dvp_left > 8: The <span style="color: #C0A054;">DVP</span> have changed. ?]
-choose-if: dvp_relation >= 20 and (dvp_right - dvp_left < 8)
+unavailable-subtitle: [? if dvp_relation < 25: We do not have good enough relations with the right-wing parties.?] [? if dvp_right - dvp_left > 8: The <span style="color: #C0A054;">DVP</span> have changed. ?]
+choose-if: dvp_relation >= 25 and (dvp_right - dvp_left < 8)
 
 Stresemann has managed to rally [? if dvp_ideology == "Right" or dvp_ideology == "Moderate": an extremely slim majority of his party?][? if dvp_ideology == "Left": a majority of his party?] to vote in favor of a compromise that contains cuts to the program without increasing contributions. While this is not an ideal solution, what other choice do we have?
 

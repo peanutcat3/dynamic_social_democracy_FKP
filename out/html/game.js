@@ -216,48 +216,35 @@
       }
   };
   window.toggleNews = function toggleNews() {
-    const elements = document.querySelectorAll('.dnvp');
-    const elements2 = document.querySelectorAll('.other');
-    const button = document.getElementById('news_tab');
+      const elements = document.querySelectorAll('.dnvp');
+      const elements2 = document.querySelectorAll('.other');
+      const button = document.getElementById('news_tab');
 
-    if (!button) {
-        console.error('Button with id "news_tab" not found.');
-        return;
-    }
+      if (!button) {
+          console.error('Button with id "news_tab" not found.');
+          return;
+      }
 
-    let hasTextContent = false;
+      elements.forEach(function (element) {
+          if (element.style.display !== 'block') {
+              element.style.display = 'block';
+              button.innerHTML = "View Other News";
+          } else {
+              element.style.display = 'none';
+              button.innerHTML = "View Right-Wing News";
+          }
+      });
 
-    elements.forEach(function (element) {
-        if (element.textContent.trim() !== '') {
-            hasTextContent = true;
-        }
-    });
+      elements2.forEach(function (element) {
+          if (element.style.display !== 'none') {
+              element.style.display = 'none';
+          } else {
+              element.style.display = 'block';
+          }
+      });
 
-    elements.forEach(function (element) {
-        if (element.style.display !== 'block') {
-            element.style.display = 'block';
-            button.innerHTML = "View Other News";
-        } else {
-            element.style.display = 'none';
-            button.innerHTML = "View Right-Wing News";
-        }
-    });
-
-    elements2.forEach(function (element) {
-        if (element.style.display !== 'none') {
-            element.style.display = 'none';
-        } else {
-            element.style.display = 'block';
-        }
-    });
-
-    if (hasTextContent) {
-        button.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // New color
-    } else {
-        button.style.backgroundColor = '#dddddd'; // Original color
-    }
-};
-
+      button.style.backgroundColor = '#dddddd';
+  };
 
   /*
    * This function copied from the code for Infinite Space Battle Simulator

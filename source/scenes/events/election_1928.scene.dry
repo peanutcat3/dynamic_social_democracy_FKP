@@ -869,7 +869,7 @@ Even though the opposing ends of the coalition parties are reluctant to particip
 
 @no_majority
 title: There is no clear governing majority.
-view-if: weimar_coalition < 50 and (grand_coalition < 50 or grand_coalition_failed == 1) and president == "Hindenburg" and far_right_coalition < 50 and right_coalition < 50 and center_right_coalition < 50 or (center_right_coalition >= 50 and dnvp_ideology == "Radical")
+view-if: weimar_coalition < 50 or weimar_coalition_failed == 1 and (grand_coalition < 50 or grand_coalition_failed == 1) or (grand_coalition >= 50 and (dvp_ideology == "Right" and black_thursday_seen == 1)) and president == "Hindenburg" and far_right_coalition < 50 and right_coalition < 50 and center_right_coalition < 50 or (center_right_coalition >= 50 and dnvp_ideology == "Radical")
 on-arrival: no_majority_elections += 1
 go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; no_majority_papen if chancellor = "Papen" and no_majority_papen_elections == 0; no_majority_papen_2 if chancellor == "Papen" and no_majority_papen_elections > 0; no_majority_schleicher if chancellor = "Schleicher"; no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
 
@@ -920,8 +920,8 @@ The third option is to have new elections.
 title: A "New Grand Coalition" of all the constitutional parties?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** ([+ neo_weimar_coalition +]%)
 view-if: neo_weimar_coalition >= 50 and grand_coalition < 50
-choose-if: z_relation >= 50 and dvp_relation >= 30
-unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #A2D8E0;">BVP</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 50 : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if dvp_relation < 30 : We do not have adequate relations with the <span style="color: #C0A054;">**DVP**</span>. ?]
+choose-if: z_relation >= 50 and dvp_relation >= 30 and ddp_relation >= 35
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #A2D8E0;">BVP</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 50 : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if dvp_relation < 30 : We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if ddp_relation < 35 : We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?]
 
 How do we convince vehemently anti-<span style="color: #c00000;">socialist</span> parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">**Center**</span> and <span style="color: #C0A054;">**DVP**</span> may allow us some leverage.
 
@@ -978,7 +978,7 @@ We have formed a new unity government of all the constitutional parties! We have
 
 
 @reject_unity_government
-on-arrival: z_relation -= 8; ddp_relation -= 5; dvp_relation -= 5; dvp_right += 3
+on-arrival: z_relation -= 8; ddp_relation -= 5; dvp_relation -= 5; dvp_right += 3; ddp_right += 2; ddp_cohesion -= 2
 
 Our rejection of the unity government has hurt our relations with the bourgeois and center-right parties.
 
@@ -1091,7 +1091,7 @@ President Braun faces a dilemma. He desperately desires a <span style="color: #c
 @emergency_braun
 title: We will form an emergency government with Braun's support.
 subtitle: This may have the effect of inflamming public sentiment against us, and the reactionaries will be against us each step of the way.
-on-arrival: sa_strength += 100; sh_strength += 100; in_emergency_government = 1;
+on-arrival: sa_strength += 100; sh_strength += 100; in_emergency_government = 1; ddp_relation -= 5; dvp_relation -= 5; z_relation -= 5; ddp_right += 1; ddp_cohesion -= 0.5; dvp_right += 1
 
 Yes, an emergency minority government, with the support of the <span style="color: #c00000;">**SPD**</span>. Who should lead this emergency minority government?
 
@@ -1103,7 +1103,7 @@ Yes, an emergency minority government, with the support of the <span style="colo
 @braun_emergency_chancellor
 subtitle: This is unprecedented.
 view-if: not historical_mode or not spd_prussia
-on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; spd_in_government = 1; pro_republic -= 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; 
+on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; spd_in_government = 1; pro_republic -= 5; ddp_relation -= 4; dvp_relation -= 4; z_relation -= 4; dvp_right += 2; ddp_right += 1.5; ddp_cohesion -= 1; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; 
 
 Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor *must* be a member of the Reichstag).
 
@@ -1114,7 +1114,7 @@ Thus, we have Chancellor-President Otto Braun. He claims that he will resign as 
 
 @breitscheid_emergency_chancellor
 subtitle: The Communists are warming to him...
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; spd_in_government = 1; kpd_relation += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1;
+on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; spd_in_government = 1; kpd_relation += 5; ddp_relation -= 3; dvp_relation -= 3; z_relation -= 3; dvp_right += 2; ddp_right += 1; ddp_cohesion -= 1; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1;
 
 We have appointed Rudolf Breitscheid as emergency chancellor. The Communists consider him less objectionable than the alternatives, although it is unclear whether they will tolerate this government.
 
@@ -1123,7 +1123,7 @@ We have appointed Rudolf Breitscheid as emergency chancellor. The Communists con
 
 
 @bruning_emergency_chancellor
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 10; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
+on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 10; dvp_relation += 3; ddp_relation += 3; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
 
 The <span style="color: #000000;">**Center Party**</span> is pleased, and somewhat surprised, that we have appointed [+ chancellor +] as chancellor.
 
@@ -1132,7 +1132,7 @@ The <span style="color: #000000;">**Center Party**</span> is pleased, and somewh
 
 @wirth_emergency_chancellor
 view-if: z_leader == "Joos"
-on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 10; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
+on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 10; dvp_relation += 3; ddp_relation += 3; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD" 
 
 The <span style="color: #000000;">**Center Party**</span> is pleased that we have appointed [+ chancellor +] as chancellor.
 
@@ -1161,6 +1161,7 @@ Q.z_no_confidence = (Q.z_relation < 45) ? 1 : 0;
 Q.kpd_no_confidence = (Q.kpd_relation < 45) ? 1 : 0;
 Q.other_no_confidence = ((Q.z_relation + Q.dvp_relation) / 2 < 45) ? 1 : 0;
 Q.dvp_no_confidence = (Q.dvp_relation < 45) ? 1 : 0;
+Q.ddp_no_confidence = (Q.ddp_relation < 35) ? 1 : 0;
 
 Q.sa_strength += 200;
 Q.sh_strength += 200;
@@ -1168,6 +1169,7 @@ Q.sh_strength += 200;
 Q.no_confidence_votes = Q.nsdap_r + Q.dnvp_r + Q.dnf_r + Q.kvp_r;
 Q.no_confidence_votes += (Q.z_no_confidence ? Q.z_r : 0);
 Q.no_confidence_votes += (Q.dvp_no_confidence ? Q.dvp_r : 0);
+Q.no_confidence_votes += (Q.ddp_no_confidence ? Q.ddp_r : 0);
 Q.no_confidence_votes += (Q.kpd_no_confidence ? Q.kpd_r : 0);
 Q.no_confidence_votes += (Q.other_no_confidence ? Q.other_r : 0);
 
@@ -1237,6 +1239,7 @@ We have won the vote of no confidence, and are currently ruling under an <span s
 @weimar_coalition_liberal_parliament
 title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> [? if sapd_formed and kpd_r >= 30 : + <span style="color: #9B0000;">**SAPD**</span> toleration ?] ([+ weimar_coalition +]%)
+on-arrival: weimar_coalition_failed = 1
 view-if: weimar_coalition >= 50 and liberal_parliament == 1
 
 We have enough votes to form a "<span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition" government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span> and [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>) parties. However the liberals have created a parliamentary group which prevents the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> from being included in our coalition by themselves.
@@ -1251,7 +1254,7 @@ title: Use our resources to smooth over the creation of a coalition.
 subtitle: -2 resources
 unavailable-subtitle: Not enough resources (need 2).
 choose-if: resources >= 2
-on-arrival: resources -= 2; liberal_cooperation -= 3 if liberal_parliament > 0; liberal_parliament = 0 if liberal_parliament > 0;
+on-arrival: resources -= 2; liberal_cooperation -= 3 if liberal_parliament > 0; liberal_parliament = 0 if liberal_parliament > 0; weimar_coalition_failed = 0
 go-to: weimar_coalition
 
 @weimar_coalition
@@ -1285,6 +1288,8 @@ Rudolf Breitscheid has been appointed chancellor.
 @grand_coalition
 title: We can form a Grand Coalition.
 view-if: grand_coalition >= 50 and grand_coalition_failed == 0
+choose-if: (dvp_ideology != "Right" and black_thursday_seen == 0)
+unavailable-subtitle: [? if (dvp_ideology == "Right" and black_thursday_seen == 1): The <span style="color: #C0A054;">**DVP**</span> refuses to work with us. ?]
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> ([+ grand_coalition +]%)
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0; liberal_cooperation += 1
 go-to: grand_coalition_spd_lead if (n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30) or president = "Braun"; grand_coalition_z_lead if president != "Braun" and ((n_elections > 1 and spd_r < 30) or (n_elections <= 1 and largest_party != "SPD"))
@@ -1345,6 +1350,9 @@ if (Q.next_election_month > 12) {
 if (Q.chancellor == "Brüning") {
     Q.z_relation -= 5;
     Q.dvp_relation -= 5;
+    Q.ddp_relation -= 5;
+    Q.dvp_right += 1;
+    Q.ddp_right += 1;
 }
 Q.pro_republic -= 8;
 Q.workers_spd -= 5;
@@ -1365,6 +1373,10 @@ Q.unemployed_nsdap += 5;
 if (Q.pro_republic < 45) {
     Q.z_relation -= 5;
     Q.dvp_relation -= 5;
+    Q.ddp_relation -= 5;
+    Q.dvp_right += 2;
+    Q.ddp_right += 1;
+    Q.ddp_cohesion -= 1;
     Q.workers_spd *= 0.85;
     Q.unemployed_spd -= 2;
     Q.new_middle_spd -= 5;
@@ -1461,11 +1473,11 @@ Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian gover
 The <span style="color: #000000;">Center</span> also is against this change because of the <span style="color: #C0A054;">**DVP**</span>'s opposition to a Prussian concordat.
 
 @grand_coalition_spd_lead
-on-arrival: leverage -= 15 if dvp_relation < 20
+on-arrival: leverage -= 15 if (dvp_relation < 20 or dvp_ideology == "Right")
 
 As expected, the <span style="color: #c00000;">**SPD**</span> is the largest party, and this time, we are expected to take the lead role in the formation of the next government, including selecting the chancellor. President [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun": <span style="color: #c00000;">Braun</span> ?] has asked us to form a majority coalition with the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span> (<span style="color: #000000;">**Z**</span>), <span style="color: #A2D8E0;">**Bavarian People's**</span> (<span style="color: #A2D8E0;">**BVP**</span>), [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>), and <span style="color: #C0A054;">**People's**</span> (<span style="color: #C0A054;">**DVP**</span>) parties.
 
-[? if dvp_relation < 20 : As our relation with the <span style="color: #C0A054;">**DVP**</span> is poor, they are demanding more minister posts in order to remain part of the coalition. ?]
+[? if dvp_relation < 20 or dvp_ideology == "Right" : As our relation with the <span style="color: #C0A054;">**DVP**</span> is poor, they are demanding more minister posts in order to remain part of the coalition. ?]
 
 Who should be the chancellor?
 
@@ -1518,7 +1530,7 @@ We have promised to let the <span style="color: #000000;">**Center**</span> have
 @z_chancellor
 title: Let the <span style="color: #000000;">Center Party</span> have their chancellor.
 subtitle: Heinrich Brüning will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; z_relation += 10; dvp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5
+on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; z_relation += 10; dvp_relation += 5; ddp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 1
 go-to: ministries
 
 This is highly unexpected, and many in the left and center of our party are criticizing this decision.
@@ -1530,7 +1542,7 @@ This is highly unexpected, and many in the left and center of our party are crit
 title: Let Joseph Wirth of the <span style="color: #000000;">Center Party</span> be chancellor.
 view-if: z_leader == "Joos"
 subtitle: Wirth is on the left wing of the <span style="color: #000000;">Center Party</span>. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; z_relation += 6; ddp_relation += 3; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5
+on-arrival: left_dissent += 2; z_relation += 6; ddp_relation += 3; ddp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5; dvp_left += 0.5; ddp_left += 0.5; ddp_cohesion += 1.5
 go-to: ministries
 
 
@@ -1753,7 +1765,7 @@ go-to: ministries
 @dvp_prussia_1
 subtitle: This will restrict our actions in Prussia.
 view-if: year <= 1929 and dvp_in_prussia = 0 and not in_left_front and not in_popular_front and not in_weimar_coalition and not in_emergency_government and dvp_was_in_prussia == 0
-on-arrival: leverage += 5; dvp_relation += 7; z_relation -= 5; ddp_relation += 3; coalition_dissent = -1; left_dissent += 5; dvp_in_prussia = 1; dvp_left += 3; new_middle_dvp += 3
+on-arrival: leverage += 5; dvp_relation += 7; z_relation -= 5; coalition_dissent = -1; left_dissent += 5; dvp_in_prussia = 1; dvp_left += 3; new_middle_dvp += 3
 go-to: ministries
 
 Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. However, this will negatively impact our actions involving the Prussian police force due to the <span style="color: #C0A054;">**DVP**</span> has ties to right-wing organizations such as the <span style="color: #3E88B3;">Stahlhelm</span>.
