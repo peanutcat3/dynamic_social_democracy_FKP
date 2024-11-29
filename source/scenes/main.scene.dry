@@ -11,10 +11,16 @@ if (Q.advisor_action_timer <= 0) {
 }
 !}
 on-display: {!
-<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd">View Right-Wing News</button>
+var button = document.createElement('button');
+button.style.backgroundColor = '#dddddd';
+button.className = 'tab_button';
+button.id = 'news_tab';
+button.textContent = 'View Right-Wing News';
+button.onclick = function () {
+    toggleNews();
+  };
 
 const elements = document.querySelectorAll('.dnvp');
-const button = document.getElementById('news_tab');
 let hasTextContent = false;
 elements.forEach(function (element) {
     if (element.textContent.trim() !== '') {
@@ -156,11 +162,16 @@ if (Q.advisor_action_timer <= 0) {
 }
 !}
 on-display: {!
-    <button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd">View Right-Wing News</button>
-    
+    var button = document.createElement('button');
+    button.style.backgroundColor = '#dddddd';
+    button.className = 'tab_button';
+    button.id = 'news_tab';
+    button.textContent = 'View Right-Wing News';
+    button.onclick = function () {
+        toggleNews();
+    };
+
     const elements = document.querySelectorAll('.dnvp');
-    const elements2 = document.querySelectorAll('.other');
-    const button = document.getElementById('news_tab');
     let hasTextContent = false;
     elements.forEach(function (element) {
         if (element.textContent.trim() !== '') {
