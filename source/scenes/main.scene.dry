@@ -187,11 +187,11 @@ on-arrival: {!
                 if (hrElement) {
                     // Insert button before the <hr> element
                     contentDiv.insertBefore(buttonHTML, hrElement);
+                    
+                    // Now that the button is added, call toggleNews
+                    window.toggleNews();
                 }
             }
-
-            // Call the toggleNews function after inserting the button
-            window.toggleNews();  
         });
     } else {
         // If document is already ready, immediately insert the button and call toggleNews
@@ -203,11 +203,11 @@ on-arrival: {!
             if (hrElement) {
                 // Insert button before the <hr> element
                 contentDiv.insertBefore(buttonHTML, hrElement);
+                
+                // Now that the button is added, call toggleNews
+                window.toggleNews();
             }
         }
-
-        // Call toggleNews immediately
-        window.toggleNews();  
     }
 !}
 max-cards: 4
