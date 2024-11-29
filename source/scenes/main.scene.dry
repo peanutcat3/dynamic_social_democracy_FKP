@@ -1,21 +1,30 @@
 title: Next month
 set-bg: img/map_2.jpg
 is-hand: true
-on-arrival: {!
-if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
-} else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
-} else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
-}
-if (document.readyState === 'loading') {
-    window.addEventListener('DOMContentLoaded', function() {
-        window.toggleNews();
-    });
-} else {
-    window.toggleNews();
-}
+on-arrival: {! 
+    if (Q.advisor_action_timer <= 0) {
+        Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    } else if (Q.advisor_action_timer == 1) {
+        Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    } else {
+        Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    }
+
+    // Make sure the button is part of the document when toggleNews is called
+    if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', function() {
+            // Your button HTML code here
+            const buttonHTML = '<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd;">View Right-Wing News</button>';
+            // Insert button into the DOM at a specific location (e.g., inside an element with ID "button-container")
+            document.getElementById('button-container').innerHTML = buttonHTML;
+            window.toggleNews();  // Now call toggleNews after the document is ready
+        });
+    } else {
+        // If document is already ready, immediately insert the button and call toggleNews
+        const buttonHTML = '<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd;">View Right-Wing News</button>';
+        document.getElementById('button-container').innerHTML = buttonHTML;
+        window.toggleNews();  // Call toggleNews immediately
+    }
 !}
 max-cards: 3
 
@@ -126,7 +135,6 @@ max-cards: 3
 {!<p class="dnvp">!}[? if next_election_time - time < 5 and dnvp_split_2 == 1 and year = 1930 and month = 8: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBL**</span> and <span style="color: #8ED8E4;">**CSVD**</span>, who are to contest the next election. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if year = 1930 and month = 9 and next_election_time - time < 5 and dnvp_split_2 == 1 and kvp_formed == 0 : Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of its own, unlike the <span style="color: #8ED8E4;">Christian Socialists</span> and <span style="color: #7FCEB1;">agrarians</span>. ?]{!</p>!}
-{!<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd">View Right-Wing News</button>!}
 
 
 - @party
@@ -137,21 +145,30 @@ max-cards: 3
 @main_easy
 set-bg: img/map_2.jpg
 is-hand: true
-on-arrival: {!
-if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
-} else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
-} else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
-}
-if (document.readyState === 'loading') {
-    window.addEventListener('DOMContentLoaded', function() {
-        window.toggleNews();
-    });
-} else {
-    window.toggleNews();
-}
+on-arrival: {! 
+    if (Q.advisor_action_timer <= 0) {
+        Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    } else if (Q.advisor_action_timer == 1) {
+        Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    } else {
+        Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    }
+
+    // Make sure the button is part of the document when toggleNews is called
+    if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', function() {
+            // Your button HTML code here
+            const buttonHTML = '<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd;">View Right-Wing News</button>';
+            // Insert button into the DOM at a specific location (e.g., inside an element with ID "button-container")
+            document.getElementById('button-container').innerHTML = buttonHTML;
+            window.toggleNews();  // Now call toggleNews after the document is ready
+        });
+    } else {
+        // If document is already ready, immediately insert the button and call toggleNews
+        const buttonHTML = '<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd;">View Right-Wing News</button>';
+        document.getElementById('button-container').innerHTML = buttonHTML;
+        window.toggleNews();  // Call toggleNews immediately
+    }
 !}
 max-cards: 4
 
@@ -261,7 +278,6 @@ max-cards: 4
 {!<p class="dnvp">!}[? if next_election_time - time < 5 and dnvp_split_2 == 1 and year = 1930 and month = 8: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBL**</span> and <span style="color: #8ED8E4;">**CSVD**</span>, who are to contest the next election. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if year = 1930 and month = 9 and next_election_time - time < 5 and dnvp_split_2 == 1 and kvp_formed == 0 : Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of its own, unlike the <span style="color: #8ED8E4;">Christian Socialists</span> and <span style="color: #7FCEB1;">agrarians</span>. ?]{!</p>!}
-{!<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd">View Right-Wing News</button>!}
 
 - @party
 - @govt
