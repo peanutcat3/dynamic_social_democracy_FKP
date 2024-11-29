@@ -252,7 +252,7 @@
     });
 
     if (hasTextContent) {
-        button.style.backgroundColor = '#6cc9f1'; // New color
+        button.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // New color
     } else {
         button.style.backgroundColor = '#dddddd'; // Original color
     }
