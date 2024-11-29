@@ -27,7 +27,7 @@ The failure of the Young Plan referendum to reach the 10% threshold and the decl
 In response, Hugenberg threatens to take himself and his supporters into a new splinter party, which is unlikely to gain much support, considering he remains deeply unpopular beyond his loyal following.
 
 @completednvpsplit
-on-arrival: dnvp_split = 1; complete_dnvp_split = 1
+on-arrival: dnvp_split = 1; complete_dnvp_split = 1; dnvp_leader = "Hugenberg"
 go-to: kvp_formed_2
 face-image: img/KVP.jpg
 
