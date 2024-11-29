@@ -1,7 +1,7 @@
 title: <span style="color: #C0A054;">**DVP**</span> Party Vote
 subtitle: The <span style="color: #C0A054;">**DVP**</span> chooses their new leader...
 view-if: year = 1929 and month = 12 and dvp_leader = "Scholz" and dvp_reform = 1
-on-arrival: dvp_left += 5 if pro_republic >= 70; dvp_right += 5 if pro_republic < 55
+on-arrival: dvp_left += 1 if pro_republic >= 75; dvp_right += 2 if pro_republic < 55; dvp_right += 3 if dvp_relation < 30; dvp_left += 1 if dvp_relation >= 50
 max-visits: 1
 tags: event
 face-image: img/dvp.jpg
