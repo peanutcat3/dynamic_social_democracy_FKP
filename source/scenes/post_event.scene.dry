@@ -558,6 +558,8 @@ go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0
 
 = [+ month : month +] [+ year +]
 
+{!<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd">View Right-Wing News</button>!}
+
 @events_choice
 
 - #event
