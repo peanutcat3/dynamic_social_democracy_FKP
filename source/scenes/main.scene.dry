@@ -18,8 +18,9 @@ button.id = 'news_tab';
 button.textContent = 'View Right-Wing News';
 button.onclick = function () {
     toggleNews();
-  };
-
+};
+var contentDiv = document.getElementById('content');
+contentDiv.appendChild(button);
 const elements = document.querySelectorAll('.dnvp');
 let hasTextContent = false;
 elements.forEach(function (element) {
@@ -170,6 +171,10 @@ on-display: {!
     button.onclick = function () {
         toggleNews();
     };
+
+    var contentDiv = document.getElementById('content');
+
+    contentDiv.appendChild(button);
 
     const elements = document.querySelectorAll('.dnvp');
     let hasTextContent = false;
