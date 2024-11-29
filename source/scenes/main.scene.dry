@@ -1,6 +1,9 @@
 title: Next month
 set-bg: img/map_2.jpg
 is-hand: true
+@main_easy
+set-bg: img/map_2.jpg
+is-hand: true
 on-arrival: {! 
     if (Q.advisor_action_timer <= 0) {
         Q.pinnedCardsDescription = 'Advisors - an action is available.';
@@ -13,19 +16,42 @@ on-arrival: {!
     // Make sure the button is part of the document when toggleNews is called
     if (document.readyState === 'loading') {
         window.addEventListener('DOMContentLoaded', function() {
-            // Your button HTML code here
+            // Button HTML code
             const buttonHTML = '<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd;">View Right-Wing News</button>';
-            // Insert button into the DOM at a specific location (e.g., inside an element with ID "button-container")
-            document.getElementById('button-container').innerHTML = buttonHTML;
-            window.toggleNews();  // Now call toggleNews after the document is ready
+            
+            // Find the #content div and insert the button before the <hr> tag
+            const contentDiv = document.getElementById('content');
+            if (contentDiv) {
+                const hrElement = contentDiv.querySelector('hr');
+                if (hrElement) {
+                    // Insert button before the <hr> element
+                    contentDiv.insertBefore(buttonHTML, hrElement);
+                }
+            }
+
+            // Call the toggleNews function after inserting the button
+            window.toggleNews();  
         });
     } else {
         // If document is already ready, immediately insert the button and call toggleNews
         const buttonHTML = '<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd;">View Right-Wing News</button>';
-        document.getElementById('button-container').innerHTML = buttonHTML;
-        window.toggleNews();  // Call toggleNews immediately
+        
+        const contentDiv = document.getElementById('content');
+        if (contentDiv) {
+            const hrElement = contentDiv.querySelector('hr');
+            if (hrElement) {
+                // Insert button before the <hr> element
+                contentDiv.insertBefore(buttonHTML, hrElement);
+            }
+        }
+
+        // Call toggleNews immediately
+        window.toggleNews();  
     }
 !}
+
+max-cards: 4
+
 max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
@@ -145,6 +171,9 @@ max-cards: 3
 @main_easy
 set-bg: img/map_2.jpg
 is-hand: true
+@main_easy
+set-bg: img/map_2.jpg
+is-hand: true
 on-arrival: {! 
     if (Q.advisor_action_timer <= 0) {
         Q.pinnedCardsDescription = 'Advisors - an action is available.';
@@ -157,19 +186,42 @@ on-arrival: {!
     // Make sure the button is part of the document when toggleNews is called
     if (document.readyState === 'loading') {
         window.addEventListener('DOMContentLoaded', function() {
-            // Your button HTML code here
+            // Button HTML code
             const buttonHTML = '<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd;">View Right-Wing News</button>';
-            // Insert button into the DOM at a specific location (e.g., inside an element with ID "button-container")
-            document.getElementById('button-container').innerHTML = buttonHTML;
-            window.toggleNews();  // Now call toggleNews after the document is ready
+            
+            // Find the #content div and insert the button before the <hr> tag
+            const contentDiv = document.getElementById('content');
+            if (contentDiv) {
+                const hrElement = contentDiv.querySelector('hr');
+                if (hrElement) {
+                    // Insert button before the <hr> element
+                    contentDiv.insertBefore(buttonHTML, hrElement);
+                }
+            }
+
+            // Call the toggleNews function after inserting the button
+            window.toggleNews();  
         });
     } else {
         // If document is already ready, immediately insert the button and call toggleNews
         const buttonHTML = '<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd;">View Right-Wing News</button>';
-        document.getElementById('button-container').innerHTML = buttonHTML;
-        window.toggleNews();  // Call toggleNews immediately
+        
+        const contentDiv = document.getElementById('content');
+        if (contentDiv) {
+            const hrElement = contentDiv.querySelector('hr');
+            if (hrElement) {
+                // Insert button before the <hr> element
+                contentDiv.insertBefore(buttonHTML, hrElement);
+            }
+        }
+
+        // Call toggleNews immediately
+        window.toggleNews();  
     }
 !}
+
+max-cards: 4
+
 max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
