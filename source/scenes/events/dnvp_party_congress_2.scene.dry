@@ -18,7 +18,7 @@ The "unity of the no" against Marxism has been losing its force over the years, 
 go-to: dnvpsplit if young_plan_signatures >= 10 and was_in_right_coalition == 0 and tariffs >= 0 and land_reform < 1; hugenbergremoval if (young_plan_signatures < 10 and was_in_right_coalition == 0) or (young_plan_signatures >= 10 and tariffs < -1 or land_reform > 0 and was_in_right_coalition == 0); completednvpsplit if young_plan_signatures >= 10 and (was_in_right_coalition == 1 and (tariffs < 0 or land_reform > 0 or dvp_reform = 1))
 
 @dnvpsplit
-on-arrival: dnvp_split = 1; csvd_formed = 1; dnvp_r -= 2; other_r += 2; workers_dnvp -= 3; workers_other += 3; new_middle_dnvp -= 3; old_middle_dnvp -= 1; new_middle_other += 3; old_middle_other += 1; pro_republic -= 3
+on-arrival: dnvp_split = 1; csvd_formed = 1; dnvp_r -= 2; other_r += 2; workers_dnvp -= 3; workers_other += 3; new_middle_dnvp -= 3; old_middle_dnvp -= 1; new_middle_other += 3; old_middle_other += 1; pro_republic -= 3; dvp_right += 1; ddp_right += 1
 face-image: img/CSVD.jpg
 
 The Christian Socialists within the <span style="color: #3E88B3;">**DNVP**</span> have been wanting to separate themselves for a while now, the Young Plan referendum debacle has given them the pretext. During the vote on the "Freedom Law" in the Reichstag, they went against Westarp's compromise solution and denounced Hugenberg, causing him to expel the renegade deputies. They were soon joined in leaving the party by many members of the "Young Conservative" faction. 
@@ -26,7 +26,7 @@ The Christian Socialists within the <span style="color: #3E88B3;">**DNVP**</span
 However, the failure of them to bring the party organizations or the agrarian wing with them has mitigated the impact. Westarp has stayed within the party, leading the remaining moderates. Despite their hopes of ousting Hugenberg in the future, his position within the party has been bolstered by the departure.
 
 @hugenbergremoval
-on-arrival: dnvp_leader = "Treviranus"; dnvp_ideology = "Moderate"; hugenberg_removed = 1; dnf_decay_timer += 12; rural_other -= 5; rural_dnvp += 5; old_middle_other -= 5; old_middle_dnvp += 5; new_middle_other -= 3; new_middle_dnvp += 3; workers_other -= 1; workers_dnvp += 1; pro_republic += 5
+on-arrival: dnvp_leader = "Treviranus"; dnvp_ideology = "Moderate"; hugenberg_removed = 1; dnf_decay_timer += 12; rural_other -= 5; rural_dnvp += 5; old_middle_other -= 5; old_middle_dnvp += 5; new_middle_other -= 3; new_middle_dnvp += 3; workers_other -= 1; workers_dnvp += 1; pro_republic += 5; dvp_left += 1; ddp_left += 1
 go-to: dnf_formed_1929
 face-image: img/Treviranus.jpg
 
