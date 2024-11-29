@@ -10,7 +10,9 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 !}
-on-display: {!<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd">View Right-Wing News</button>!}
+on-display: {!
+<button class="tab_button" id="news_tab" onclick="window.toggleNews();" style="background-color: #dddddd">View Right-Wing News</button>
+!}
 max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
