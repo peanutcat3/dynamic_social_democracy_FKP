@@ -55,6 +55,6 @@ We have accepted the compromise offered by the bourgeoisie. Many of the workers 
 @accept_compromise_good
 choose-if: dvp_ideology == "Left" and dvp_relation >= 40
 unavailable-subtitle: [? if dvp_ideology != "Left": The <span style="color: #C0A054;">DVP</span> are too far gone. ?] [? if dvp_relation < 40: We do not have good enough relations with the right-wing parties. ?]
-on-arrival: workers_spd -= 1; unemployed_spd -= 2; unemployed_kpd += 2; unemployed_nsdap += 2; workers_nsdap += 1; left_dissent += 5; labor_dissent += 3; kpd_relation -= 4; reformist_strength += 10; reformist_dissent -= 5; coalition_dissent -= 1; old_middle_dvp -= 3; old_middle_nsdap += 3; unemployment_insurance_threshold = unemployed; dvp_left += 3
+on-arrival: workers_spd -= 1; unemployed_spd -= 2; unemployed_kpd += 2; unemployed_nsdap += 2; workers_nsdap += 1; left_dissent += 5; labor_dissent += 3; kpd_relation -= 4; reformist_strength += 10; reformist_dissent -= 5; coalition_dissent -= 1; old_middle_dvp -= 3; old_middle_nsdap += 3; unemployment_insurance_threshold = unemployed; dvp_left += 3; ddp_left += 1; ddp_cohesion += 1
 
 We have pushed for an increase in both employer and employee contributions rather than to cut benefits for the program itself. The <span style="color: #C0A054;">**DVP**</span> accepts with the influence of Stresemann and their left wing.

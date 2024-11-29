@@ -360,6 +360,7 @@ if (Q.month_actions >= 1) {
     }
 Q['pro_republic_' + Q.month] = Q.pro_republic
 Q['dvp_relation_' + Q.month] = Q.dvp_relation
+Q['dvp_ideology_' + Q.month] = Q.dvp_ideology
 if (Q.dnf_decay_timer > 0) {
     Q.new_middle_dnf -= 0.25;
     Q.new_middle_dnvp += 0.3;
@@ -393,19 +394,19 @@ if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 0) {
     Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 }
 
-if (Q.year == 1929 && Q.month == 9 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 40 && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
+if (Q.year == 1929 && Q.month == 9 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 40 && dvp_ideology_9 !== "Right" && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
     Q.weimar_ref_signatures = (Q.dnvp_votes + Q.other_votes);
     Q.weimar_ref_signatures = Math.round(Q.weimar_ref_signatures * 10) / 10;
-} else if (Q.year == 1929 && Q.month == 9 && Q.dnf_formed == 1 && Q.dvp_relation_9 < 40 && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
+} else if (Q.year == 1929 && Q.month == 9 && Q.dnf_formed == 1 && Q.dvp_relation_9 < 40 && dvp_ideology_9 !== "Left" && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
     Q.weimar_ref_signatures = (Q.dnvp_votes + Q.other_votes + Q.dvp_votes + 3);
     Q.weimar_ref_signatures = Math.round(Q.weimar_ref_signatures * 10) / 10;
 }
 
-if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 40 && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
-    Q.weimar_ref_votes = (Q.dnvp_votes + Q.other_votes) + 5;
+if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 40 && dvp_ideology_9 !== "Right" && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
+    Q.weimar_ref_votes = (Q.dnvp_votes + Q.other_votes) + ((100 - pro_republic) / 2);
     Q.weimar_ref_votes = Math.round(Q.weimar_ref_signatures * 10) / 10;
-} else if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 1 && Q.dvp_relation_9 < 40 && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
-    Q.weimar_ref_votes = (Q.dnvp_votes + Q.other_votes + Q.dvp_votes + 8);
+} else if (Q.year == 1929 && Q.month == 11 && Q.dnf_formed == 1 && && Q.dvp_relation_9 < 40 && dvp_ideology_9 !== "Left" && Q.was_in_center_right_coalition == 0 && Q.pro_republic_8 >= 70) {
+    Q.weimar_ref_votes = (Q.dnvp_votes + Q.other_votes + Q.dvp_votes + 3 + ((100 - pro_republic) / 2));
     Q.weimar_ref_votes = Math.round(Q.weimar_ref_signatures * 10) / 10;
 }
 
