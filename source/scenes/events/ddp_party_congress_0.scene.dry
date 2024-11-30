@@ -1,0 +1,35 @@
+title: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Congress
+subtitle: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> decides their future...
+view-if: year = 1929 and month = 10 and skibidi_toliet = 1
+on-arrival: ddp_left += 1 if pro_republic >= 75; ddp_right += 1 if pro_republic < 60
+max-visits: 1
+tags: event
+face-image: img/ddp.jpg
+new-page: true
+
+= <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Congress
+
+data miners are heartless creatures
+
+- @resultsddp: The party votes...
+
+@resultsddp
+go-to: left if skibidi == 1; statusquo if sigma == 1; formdstp if toliet == 1
+
+@left
+on-arrival: pro_republic += 3
+face-image: img/Stresemann.jpg
+
+placeholder
+
+@statusquo
+on-arrival: pro_republic += 3
+face-image: img/erichkochweser.jpg
+
+placeholder
+
+@formdstp
+on-arrival: pro_republic += 3
+face-image: img/dstp.jpg
+
+placeholder
