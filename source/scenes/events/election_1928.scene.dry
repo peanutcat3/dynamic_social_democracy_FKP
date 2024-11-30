@@ -1075,7 +1075,7 @@ Otto Wels has become chancellor of the <span style="color: #c00000;">**SPD**</sp
 @brauns_dilemma
 title: There is no clear governing majority.
 subtitle: President Braun faces a dilemma.
-view-if: president == "Braun" and (grand_coalition < 50 or grand_coalition_failed == 1)
+view-if: president == "Braun" and (grand_coalition < 50 or grand_coalition_failed == 1) or weimar_coalition_failed
 
 President Braun faces a dilemma. He desperately desires a <span style="color: #c00000;">socialist</span> or at least <span style="color: #D3C24D;">democratic</span> government, but the electoral results are not there for such. Article 48 has been used by Hindenburg to promulgate anti-<span style="color: #D3C24D;">democratic</span> and anti-<span style="color: #c00000;">worker</span> policies; can Article 48 be used for good as well as evil?
 
