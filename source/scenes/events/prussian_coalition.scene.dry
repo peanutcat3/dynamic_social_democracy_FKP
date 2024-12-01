@@ -187,8 +187,6 @@ for (var party of Q.parties) {
         Q['old_' + c + '_' + party + '_normalized_prussia'] = Q[c + '_' + party + '_normalized_prussia'];
     }
 }
-Q.z_minus_bvp_r = parseFloat((Q.z_r_prussia - 3).toFixed(1));
-Q.z_minus_bvp_votes = parseFloat((Q.z_votes_prussia - 3).toFixed(1));
 
 Q.largest_party = 'SPD';
 if (Q.nsdap_r_prussia >= Q.spd_r_prussia && Q.nsdap_r_prussia >= Q.kpd_r_prussia) {
@@ -293,12 +291,6 @@ data = data.concat([{
         "legend": "Center",
         "name": "Center",
         "seats": Math.round((Q.z_r_prussia - 3) * 4.5),
-    },
-    {
-        "id": "bvp",
-        "legend": "BVP",
-        "name": "BVP",
-        "seats": Math.round(3 * 4.5),
     }
 ]);
 
@@ -366,7 +358,7 @@ go-to: coalitions_menu
 
 {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_ddp +] {!</td><td>!} [+ ddp_r_prussia +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#000'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_z +] {!</td><td>!} [+ z_minus_bvp_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000'> </div> !} Z: {!</td><td>!} [+ z_votes_prussia +]% {!</td><td>!} [+ str_votes_change_z +] {!</td><td>!} [+ z_r_prussia +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r_prussia +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!}
  
