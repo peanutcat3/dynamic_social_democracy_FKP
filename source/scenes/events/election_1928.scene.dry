@@ -71,6 +71,15 @@ on-arrival: {!
         Q['change_' + party + '_r'] = Math.abs(Q[party + '_r'] - Q['old_' + party + '_r']);
         var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
         Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(1);
+
+        // Calculate changes in votes
+        Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
+        if (Q['previous_' + party + '_last_election_votes'] === undefined) {
+            Q['change_' + party + '_votes'] = Q[party + '_votes'];
+        }
+
+        var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
+        Q['str_votes_change_' + party] = sign2 + Math.abs(Q['change_' + party + '_votes']).toFixed(1);
     }
 
     // Handle demographic changes for all parties
@@ -82,6 +91,7 @@ on-arrival: {!
             Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
         }
     }
+}
 
 Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
