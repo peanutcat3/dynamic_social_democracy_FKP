@@ -1,0 +1,209 @@
+title: Prussian Government Collapses
+subtitle: Our coalition partners are dissolving the Prussian government.
+view-if: ((z_relation < 40 and z_leader == "Kaas") or (z_relation < 30 and z_leader == "Joos") or (ddp_relation < 40 and ddp_ideology == "Right") or (ddp_relation < 35 and ddp_ideology == "Moderate") or (ddp_relation < 30 and ddp_ideology == "Left" and ddp_cohesion < 8)) and dvp_in_prussia == 0 and not (year == 1928 and month < 6) and not (year >= 1932 and month >= 4) and kvp_formed
+on-arrival: z_relation -= 4; ddp_relation -= 4; coalition_dissent += 2 if not in_left_front
+new-page: true
+tags: event
+max-visits: 1
+face-image: img/weimar_coalition.jpg
+
+= Democratic Bulwark Dismantled
+
+We have somehow antagonized the parties involved in the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ruling over Prussia, and our coalition partners have called a vote of no confidence against us. 
+
+The only alternative coalition that can be formed with the current composition of the state parliament is a broad right-wing coalition, ranging from the <span style="color: #000000;">Center</span> to the <span style="color: #3E88B3;">**DNVP**</span>. However, this is heavily unlikely with the <span style="color: #3E88B3;">**DNVP**</span>'s all-or-nothing stance on governance. If a coalition is unable to be formed, new elections will be called.
+
+- @center_right_coalition_formed
+- @progressive_coalition
+- @new_elections: New elections will be called.
+
+@center_right_coalition_formed
+title: A Bürgerblock is formed.
+subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #0087DC;">**KVP**</span> (47.8%)
+unavailable-subtitle: They lack a majority.
+choose-if: ohio_skibidi_rizz_sigma == 1
+on-arrival: right_in_prussia = 1; spd_in_prussia = 0; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; ddp_right += 3; ddp_cohesion -= 3
+
+A center-right coalition is formed. 
+
+It won't take long for the government to collapse and for us to take power through new elections.
+
+@progressive_coalition
+title: A progressive coalition is formed.
+view-if: ddp_relation >= 60 and ddp_ideology == "Left" and (kpd_relation >= 60 and kpd_leader == "Thälmann") or (kpd_relation >= 40 and kpd_leader == "Conciliators")
+unavailable-subtitle: What...?
+choose-if: ohio_skibidi_rizz_sigma == 69
+on-arrival: workers_spd = 100; secret_mode = 1
+
+Data miners are heartless creatures
+
+@new_elections
+on-arrival: prussian_elections_called += 1
+face-image: img/Rothe_Wahlen_1903.jpg
+on-display: {!
+data = [{
+    "id": "kpd",
+    "legend": "KPD",
+    "name": "KPD",
+    "seats": Math.round(Q.kpd_r * 4.5),
+}];
+
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
+        "id": "sapd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Math.round(Q.sapd_r * 4.5),
+    });
+}
+
+data = data.concat([{
+    "id": "spd",
+    "legend": "SPD",
+    "name": "SPD",
+    "seats": Math.round(Q.spd_r * 4.5),
+}]);
+
+if (Q.ddp_r) {
+    data.push({
+        "id": "ddp",
+        "legend": "DDP",
+        "name": "DDP",
+        "seats": Math.round(Q.ddp_r * 4.5),
+    });
+}
+
+data = data.concat([{
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round((Q.z_r - 3) * 4.5),
+    },
+    {
+        "id": "bvp",
+        "legend": "BVP",
+        "name": "BVP",
+        "seats": Math.round(3 * 4.5),
+    }
+]);
+
+if (Q.dvp_r) {
+    data.push({
+        "id": "dvp",
+        "legend": "DVP",
+        "name": "DVP",
+        "seats": Math.round(Q.dvp_r * 4.5),
+    });
+}
+
+if (Q.other_r) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_r * 4.5),
+    });
+}
+
+if (Q.kvp_formed && Q.kvp_r) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round(Q.kvp_r * 4.5),
+    });
+}
+
+data = data.concat([{
+    "id": "dnvp",
+    "legend": "DNVP",
+    "name": "DNVP",
+    "seats": Math.round(Q.dnvp_r * 4.5),
+}]);
+if (Q.dnf_formed && Q.dnf_r) {
+    data.push({
+        "id": "dnf",
+        "legend": "DNF",
+        "name": "DNF",
+        "seats": Math.round(Q.dnf_r * 4.5),
+    });
+}
+data = data.concat([{
+    "id": "nsdap",
+    "legend": "NSDAP",
+    "name": "NSDAP",
+    "seats": Math.round(Q.nsdap_r * 4.5),
+}, ]);
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+
+    var lines = d3.linegraph(false, false,
+            Q.parties,
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP'});
+    lines.width(width).height(400);
+    //var svg = lines(Q.election_records);
+    d3.select("#election_history").datum(Q.election_records).call(lines);
+    //document.getElementById('election_history').innerHTML = svg.outerHTML;
+
+    // party support records should not have so many ticks
+    if (!Q.historical_mode) {
+        var lines_2 = d3.linegraph(true, true,
+            Q.parties,
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP'});
+        lines_2.width(width).height(400);
+        d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
+    }
+}
+!}
+go-to: coalitions_menu
+
+**Election results:**
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Reichstag Seats</td><td>% Change</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_votes +]%** {!</td><td>!} **[+ str_votes_change_spd +]** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!}
+
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_votes +]% {!</td><td>!} [+ str_votes_change_sapd +] {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_votes +]% {!</td><td>!} [+ str_votes_change_kpd +] {!</td><td>!} [+ kpd_r +]% {!</td><td>!} [+ str_change_kpd +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_votes +]% {!</td><td>!} [+ str_votes_change_ddp +] {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#000'> </div> !} Z: {!</td><td>!} [+ z_minus_bvp_votes +]% {!</td><td>!} [+ str_votes_change_z +] {!</td><td>!} [+ z_minus_bvp_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#A2D8E0'> </div> !} BVP: {!</td><td>!} 3%{!</td><td>!} {!<img src="img/steady.jpg"> !}0.0 {!</td><td>!} 3% {!</td><td>!} {!<img src="img/steady.jpg"> !}0.0 {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!}
+ 
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+
+[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_votes +]% {!</td><td>!} [+ str_votes_change_dnvp +] {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
+
+[? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_votes +]% {!</td><td>!} [+ str_votes_change_dnf +] {!</td><td>!} [+ dnf_r +]% {!</td><td>!} [+ str_change_dnf +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_votes +]% {!</td><td>!} [+ str_votes_change_nsdap +] {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
+{!</table>!}
+
+@coalitions_menu
+on-arrival: 
+
+Menu
