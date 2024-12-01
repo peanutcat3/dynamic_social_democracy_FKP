@@ -414,8 +414,51 @@ go-to: coalitions_menu
 - @weimar_coalition
 - @weimar_coalition_liberal_parliament
 - @grand_coalition
+- @new_grand_coalition
+- @unity_government
+- @far_right_coalition
 - @no_majority
+- @brauns_dilemma
+- @left_coalition
 - @popular_front_coalition
 - @right_coalition
 - @center_right_coalition
+
+@spd_majority
+
+
+@weimar_coalition
+
+
+@weimar_coalition_liberal_parliament
+
+
+@grand_coalition
+
+
+@new_grand_coalition
+
+
+@unity_government
+
+
+@far_right_coalition
+
+
+@no_majority
+
+
+@brauns_dilemma
+
+
+@left_coalition
+
+
+@popular_front_coalition
+
+
+@right_coalition
+
+
+@center_right_coalition
 
