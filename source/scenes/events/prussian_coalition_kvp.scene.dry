@@ -1,6 +1,6 @@
 title: Prussian Government Collapses
 subtitle: Our coalition partners are dissolving the Prussian government.
-view-if: ((z_relation < 40 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 30 and z_leader == "Joos") or (ddp_relation < 40 and ddp_ideology == "Right") or (ddp_relation < 35 and ddp_ideology == "Moderate") or (ddp_relation < 30 and ddp_ideology == "Left" and ddp_cohesion < 8)) and dvp_in_prussia == 0 and not (year == 1928 and month < 6) and not (year >= 1932 and month >= 4) and kvp_formed
+view-if: ((z_relation < 35 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 30 and z_leader == "Joos") or (ddp_relation < 35 and ddp_ideology == "Right") or (ddp_relation < 30 and ddp_ideology == "Moderate") or (ddp_relation < 25 and ddp_ideology == "Left" and ddp_cohesion < 8)) and dvp_in_prussia == 0 and not (year == 1928 and month < 6) and not (year >= 1932 and month >= 4) and kvp_formed
 on-arrival: z_relation -= 4; ddp_relation -= 4; coalition_dissent += 2 if not in_left_front
 new-page: true
 tags: event
