@@ -39,7 +39,6 @@ Data miners are heartless creatures
 
 @new_elections
 on-arrival: prussian_elections_called += 1
-face-image: img/Rothe_Wahlen_1903.jpg
 on-display: {!
 data = [{
     "id": "kpd",
