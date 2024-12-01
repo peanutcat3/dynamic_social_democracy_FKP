@@ -362,6 +362,8 @@ Q.old_dnf_r = 0;
 Q.kvp_r = 0;
 Q.old_kvp_r = 0;
 
+Q.adjustmentFactors_other = 0.75
+
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
 // party support records for every month

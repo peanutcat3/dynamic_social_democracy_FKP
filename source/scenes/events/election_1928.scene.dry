@@ -34,20 +34,15 @@ Fine. President [+ president +] has taken the unprecedented step of canceling th
 Let us hope this does not backfire.
 
 @post_election_1928
-on-arrival: {!
-    // Define adjustment factors for all parties
-    var adjustmentFactors = {
-        "other": 0.75 // Example adjustment for "other"
-    };
-
+on-arrival: {!  
     // Initialize old results and calculate adjusted votes
     var new_party_sum = 0;
     for (var party of Q.parties) {
         // Store old results for reference
         Q['old_' + party + '_r'] = Q[party + '_r'];
 
-        // Apply adjustments if defined, or default to 1.0 (no change)
-        let factor = adjustmentFactors[party] || 1.0;
+        // Dynamically apply adjustments based on Q['adjustmentFactors_' + party], default to 1.0 (no change) if not defined
+        let factor = Q['adjustmentFactors_' + party] || 1.0; // Look for the adjustment factor for the current party
         Q[party + '_r'] = (Q.constitutional_reform > 0 &&
                           (Q[party + '_votes'] < Q.electoral_threshold || 
                           (Q.electoral_threshold > 1 && party === 'other') || 
@@ -89,7 +84,7 @@ on-arrival: {!
             Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
         }
     }
-
+    
 Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
 
