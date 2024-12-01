@@ -37,17 +37,17 @@ Let us hope this does not backfire.
 on-arrival: {!
     // Define adjustment factors for all parties
     var adjustmentFactors = {
-        "spd": 1.5, // No adjustment
-        "z": 0.5, // Reduce by 10%
-        "dnvp": 5.0, // Increase by 10%
-        "other": 0.75 // Apply special adjustment for "other"
+        "spd": 1.5, // Example factor for SPD
+        "z": 0.5,   // Example factor for Zentrum
+        "dnvp": 5.0, // Example factor for DNVP
+        "other": 0.75 // Example adjustment for "other"
     };
     
-    // Initialize old results and new_party_sum
+    // Initialize old results and calculate adjusted votes
     var new_party_sum = 0;
     for (var party of Q.parties) {
         Q['old_' + party + '_r'] = Q[party + '_r'];
-    
+
         // Apply adjustments if defined, or default to 1.0 (no change)
         let factor = adjustmentFactors[party] || 1.0;
         Q[party + '_r'] = (Q.constitutional_reform > 0 && 
@@ -58,24 +58,42 @@ on-arrival: {!
         new_party_sum += Q[party + '_r'];
     }
     
-    // Normalize results based on new_party_sum
+    // Redistribute results to ensure total is 100%
     for (var party of Q.parties) {
-        if (Q.electoral_threshold > 0 && Q[party + '_r'] > 0) {
+        if (Q[party + '_r'] > 0) {
             Q[party + '_r'] = Math.round((Q[party + '_r'] * 100 / new_party_sum) * 10) / 10;
         }
-    
+    }
+
+    // Calculate changes in results
+    for (var party of Q.parties) {
         Q['change_' + party + '_r'] = Math.abs(Q[party + '_r'] - Q['old_' + party + '_r']);
         var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
         Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(1);
     }
-for (var party of Q.parties) {
-    for (var c of Q.classes) {
-        Q[c + "_change_" + party + '_normalized'] = Q[c + '_' + party + '_normalized'] - Q['old_' + c + '_' + party + '_normalized'];
-        var sign3 = Q[c + "_change_" + party + '_normalized'] > 0 ? '+' : '';
-        Q['demo_change_' + c + '_' + party + '_normalized'] = sign3 + parseFloat(Q[c + "_change_" + party + '_normalized']).toFixed(0);
-        Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
+
+    // Handle demographic changes for all parties
+    for (var party of Q.parties) {
+        for (var c of Q.classes) {
+            Q[c + "_change_" + party + '_normalized'] = Q[c + '_' + party + '_normalized'] - Q['old_' + c + '_' + party + '_normalized'];
+            var sign3 = Q[c + "_change_" + party + '_normalized'] > 0 ? '+' : '';
+            Q['demo_change_' + c + '_' + party + '_normalized'] = sign3 + parseFloat(Q[c + "_change_" + party + '_normalized']).toFixed(0);
+            Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
+        }
+    }
+
+    // Ensure demographic changes are updated across all classes (no duplication)
+    for (var party of Q.parties) {
+        for (var c of Q.classes) {
+            Q[c + "_change_" + party + '_normalized'] = Q[c + '_' + party + '_normalized'] - Q['old_' + c + '_' + party + '_normalized'];
+            var sign3 = Q[c + "_change_" + party + '_normalized'] > 0 ? '+' : '';
+            Q['demo_change_' + c + '_' + party + '_normalized'] = sign3 + parseFloat(Q[c + "_change_" + party + '_normalized']).toFixed(0);
+            Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
+        }
     }
 }
+
+
 Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
 
