@@ -408,7 +408,14 @@ go-to: coalitions_menu
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_votes_prussia +]% {!</td><td>!} [+ str_votes_change_nsdap_prussia +] {!</td><td>!} [+ nsdap_r_prussia +]% {!</td><td>!} [+ str_change_nsdap_prussia +] {!</td></tr>!}
 {!</table>!}
 
-@coalitions_menu
-on-arrival: 
+@coalition_menu
 
-Menu
+- @spd_majority
+- @weimar_coalition
+- @weimar_coalition_liberal_parliament
+- @grand_coalition
+- @no_majority
+- @popular_front_coalition
+- @right_coalition
+- @center_right_coalition
+
