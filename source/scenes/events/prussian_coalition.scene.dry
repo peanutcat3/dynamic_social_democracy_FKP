@@ -415,10 +415,8 @@ go-to: coalition_menu
 - @weimar_coalition_liberal_parliament
 - @grand_coalition
 - @new_grand_coalition
-- @unity_government
 - @far_right_coalition
 - @no_majority
-- @brauns_dilemma
 - @left_coalition
 - @popular_front_coalition
 - @right_coalition
@@ -439,17 +437,11 @@ title: grand_coalition
 @new_grand_coalition
 title: new_grand_coalition
 
-@unity_government
-title: unity_government
-
 @far_right_coalition
 title: far_right_coalition
 
 @no_majority
 title: no_majority
-
-@brauns_dilemma
-title: brauns_dilemma
 
 @left_coalition
 title: left_coalition

@@ -35,106 +35,39 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!
-// set old results
-// election threshold constitutional reform
-// banning parties
-var new_party_sum = 0;
-for (var party of Q.parties) {
-    Q['old_' + party + '_r'] = Q[party + '_r'];
-    if (Q.constitutional_reform > 0) {
-        if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
-            Q[party + '_r'] = 0;
-        } else {
-            Q[party + '_r'] = Q[party + '_votes'];
-        }
-        new_party_sum += Q[party + '_r'];
-    } else {
-        Q[party + '_r'] = Q[party + '_votes'];
-    }
-    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-    Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
-    if (Q['previous_' + party + '_last_election_votes'] === undefined) {
-        Q['change_' + party + '_votes'] = Q[party + '_votes'];
-    }
-    var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
-    var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
-    Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
-    Q['change_' + party + '_votes'] = Math.abs(Q['change_' + party + '_votes']);
-    Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-    Q['str_votes_change_' + party] = sign2 + parseFloat(Q['change_' + party + '_votes']).toFixed(1);
-}
-// calculate new party sum if electoral reform
-if (Q.electoral_threshold && Q.electoral_threshold > 0) {
+    // Define adjustment factors for all parties
+    var adjustmentFactors = {
+        "spd": 1.5, // No adjustment
+        "z": 0.5, // Reduce by 10%
+        "dnvp": 5.0, // Increase by 10%
+        "other": 0.75 // Apply special adjustment for "other"
+    };
+    
+    // Initialize old results and new_party_sum
+    var new_party_sum = 0;
     for (var party of Q.parties) {
-        if (Q[party + '_r'] > 0) {
+        Q['old_' + party + '_r'] = Q[party + '_r'];
+    
+        // Apply adjustments if defined, or default to 1.0 (no change)
+        let factor = adjustmentFactors[party] || 1.0;
+        Q[party + '_r'] = (Q.constitutional_reform > 0 && 
+                          (Q[party + '_votes'] < Q.electoral_threshold || 
+                          (Q.electoral_threshold > 1 && party === 'other') || 
+                          Q[party + '_banned'])) ? 0 : Q[party + '_votes'] * factor;
+    
+        new_party_sum += Q[party + '_r'];
+    }
+    
+    // Normalize results based on new_party_sum
+    for (var party of Q.parties) {
+        if (Q.electoral_threshold > 0 && Q[party + '_r'] > 0) {
             Q[party + '_r'] = Math.round((Q[party + '_r'] * 100 / new_party_sum) * 10) / 10;
         }
-        Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-        Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
-        if (Q['previous_' + party + '_last_election_votes'] === undefined) {
-            Q['change_' + party + '_votes'] = Q[party + '_votes'];
-        }
+    
+        Q['change_' + party + '_r'] = Math.abs(Q[party + '_r'] - Q['old_' + party + '_r']);
         var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
-        var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
-        Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
-        Q['change_' + party + '_votes'] = Math.abs(Q['change_' + party + '_votes']);
-        Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-        Q['str_votes_change_' + party] = sign2 + parseFloat(Q['change_' + party + '_votes']).toFixed(1);
+        Q['str_change_' + party] = sign + Q['change_' + party + '_r'].toFixed(1);
     }
-}
-
-for (var party of Q.parties) {
-    Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
-    Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
-}
-
-for (var party of Q.parties) {
-    var original_value = Q.other_r
-
-if (Q.other_r > 0 && Q.other_votes === Q.other_r) {
-    if (Q.year === 1928 && Q.dnvp_leader === "Hugenberg" || Q.dnvp_leader === "Westarp") {
-        Q.other_r = Math.round(Q.other_r * 0.75 * 10) / 10;
-    } else if (Q.year === 1929 && Q.dnvp_leader === "Hugenberg") {
-        Q.other_r = Math.round(Q.other_r * 0.8 * 10) / 10;
-    } else if (Q.year === 1930 && Q.dnvp_leader === "Hugenberg") {
-        Q.other_r = Math.round(Q.other_r * 0.9 * 10) / 10;
-    } else if (Q.year === 1931 && Q.dnvp_leader === "Hugenberg") {
-        Q.other_r = Math.round(Q.other_r * 0.8 * 10) / 10;
-    } else if (Q.year >= 1932 && Q.dnvp_leader === "Hugenberg") {
-        Q.other_r = Math.round(Q.other_r * 0.6 * 10) / 10;
-    } else if (Q.year >= 1928 && Q.dnvp_leader === "Triumvirate") {
-        Q.other_r = Math.round(Q.other_r * 0.75 * 10) / 10;
-    } else if (Q.year === 1928 && Q.dnvp_ideology === "Moderate") {
-        Q.other_r = Math.round(Q.other_r * 0.65 * 10) / 10;
-    } else if (Q.year === 1929 && Q.dnvp_ideology === "Moderate") {
-        Q.other_r = Math.round(Q.other_r * 0.7 * 10) / 10;
-    } else if (Q.year === 1930 && Q.dnvp_ideology === "Moderate") {
-        Q.other_r = Math.round(Q.other_r * 0.75 * 10) / 10;
-    } else if (Q.year === 1931 && Q.dnvp_ideology === "Moderate") {
-        Q.other_r = Math.round(Q.other_r * 0.7 * 10) / 10;
-    } else if (Q.year >= 1932 && Q.dnvp_ideology === "Moderate") {
-        Q.other_r = Math.round(Q.other_r * 0.6 * 10) / 10;
-    }
-
-     Q.other_r = Math.max(0, Q.other_r);
-     Q.other_r_before = Q.other_r
-        var reichstag_without_other = 100 - Q.other_r;
-        var other_party_sum = ((reichstag_without_other) - (Q.other_votes - Q.other_r));
-    }
-}
-for (var party of Q.parties) {
-    if (other_party_sum > 0) {
-        Q[party + '_r'] = Math.round((Q[party + '_r'] * reichstag_without_other / other_party_sum) * 10) / 10;
-        console.log(Q.other_r)
-    }
-    if (Q.electoral_threshold == 0) {
-        Q.other_r = Q.other_r_before
-    }
-    Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-    var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
-    Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
-    Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-}
 for (var party of Q.parties) {
     for (var c of Q.classes) {
         Q[c + "_change_" + party + '_normalized'] = Q[c + '_' + party + '_normalized'] - Q['old_' + c + '_' + party + '_normalized'];
@@ -1035,7 +968,7 @@ There is no path to a majority government for now. The scheming around President
 title: <span style="color: #c00000;">**SPD**</span> majority alone
 subtitle: <span style="color: #c00000;">**SPD**</span>: [+ spd_r +]%
 view-if: spd_r >= 50
-on-arrival: chancellor = "Empty"; chancellor_party = "SPD"; spd_in_government = 1; in_spd_majority = 1; pro_republic += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05; 
+on-arrival: chancellor = "Empty"; chancellor_party = "SPD"; spd_in_government = 1; in_spd_majority = 1; pro_republic += 5; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05; ddp_right += 3; dvp_right += 5
 achievement: majority_party
 
 Finally, the <span style="color: #c00000;">**SPD**</span> can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. 
