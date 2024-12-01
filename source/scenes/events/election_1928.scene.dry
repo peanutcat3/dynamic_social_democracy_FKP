@@ -37,9 +37,6 @@ Let us hope this does not backfire.
 on-arrival: {!
     // Define adjustment factors for all parties
     var adjustmentFactors = {
-        "spd": 1.5,   // Example factor for SPD
-        "z": 0.5,     // Example factor for Zentrum
-        "dnvp": 5.0,  // Example factor for DNVP
         "other": 0.75 // Example adjustment for "other"
     };
 
