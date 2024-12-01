@@ -377,7 +377,7 @@ if (window && d3) {
     }
 }
 !}
-go-to: coalitions_menu
+go-to: coalition_menu
 
 **Election results:**
 
