@@ -425,40 +425,40 @@ go-to: coalition_menu
 - @center_right_coalition
 
 @spd_majority
-
+title: spd_majority
 
 @weimar_coalition
-
+title: weimar_coalition
 
 @weimar_coalition_liberal_parliament
-
+title: weimar_coalition_liberal_parliament
 
 @grand_coalition
-
+title: grand_coalition
 
 @new_grand_coalition
-
+title: new_grand_coalition
 
 @unity_government
-
+title: unity_government
 
 @far_right_coalition
-
+title: far_right_coalition
 
 @no_majority
-
+title: no_majority
 
 @brauns_dilemma
-
+title: brauns_dilemma
 
 @left_coalition
-
+title: left_coalition
 
 @popular_front_coalition
-
+title: popular_front
 
 @right_coalition
-
+title: right_coalition
 
 @center_right_coalition
-
+title: center_right_coalition
