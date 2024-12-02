@@ -47,7 +47,7 @@ on-arrival: {!
 
         // Apply dynamic adjustment factor (default to 1.0 if not defined)
         let factor = Q['adjustmentFactors_' + party] || 1.0;
-        
+
         // Apply adjustment only if not banned or exceeding the threshold
         Q[party + '_r'] = (Q.constitutional_reform > 0 &&
                           (Q[party + '_votes'] < Q.electoral_threshold || 
@@ -144,7 +144,7 @@ on-arrival: {!
             Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
         }
     }
-
+    
     for (var party of Q.parties) {
         Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
         Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
