@@ -35,50 +35,55 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!  
-    var new_party_sum = 0;
+var new_party_sum = 0;
+// Step 1: Calculate adjusted values and the sum for redistribution
+for (var party of Q.parties) {
+    let factor = Q['adjustmentFactors_' + party] || 1.0; // Default to 1.0 if not set
 
-    // Step 1: Calculate adjusted values and the sum for redistribution
-    for (var party of Q.parties) {
-        let factor = Q['adjustmentFactors_' + party] || 1.0; // Default to 1.0 if not set
-    
-        Q['old_' + party + '_r'] = Q[party + '_r']; // Store the original r value for comparison
-    
-        // Handle constitutional reform logic: set the party's share to 0 based on conditions
-        if (Q.constitutional_reform > 0 &&
-            (Q[party + '_votes'] < Q.electoral_threshold || 
-            (Q.electoral_threshold > 1 && party === 'other') || 
-            Q[party + '_banned'])) {
-            Q[party + '_r'] = 0;
-        } else {
-            // Adjust `r` based on the adjustment factor if not affected by constitutional reform
-            Q[party + '_r'] = Q[party + '_votes'] * factor;
-        }
-    
-        if (factor !== 1.0) { // Only apply to parties with adjustment factors
-            // Calculate the Reichstag without the current party's share
-            Q['reichstag_without_' + party] = 100 - Q[party + '_r'];
-    
-            // Calculate the sum of the remaining parties
-            Q[party + '_other_party_sum'] = Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']);
-        } else {
-            // For non-adjusted parties, accumulate their r value for the redistribution
-            new_party_sum += Q[party + '_r'];
-        }
+    Q['old_' + party + '_r'] = Q[party + '_r']; // Store the original r value for comparison
+
+    // Handle constitutional reform logic: set the party's share to 0 based on conditions
+    if (Q.constitutional_reform > 0 &&
+        (Q[party + '_votes'] < Q.electoral_threshold || 
+        (Q.electoral_threshold > 1 && party === 'other') || 
+        Q[party + '_banned'])) {
+        Q[party + '_r'] = 0;
+    } else {
+        // Adjust `r` based on the adjustment factor if not affected by constitutional reform
+        Q[party + '_r'] = Q[party + '_votes'] * factor;
     }
-    
-    // Step 2: Redistribute results among non-adjusted parties to ensure the total is 100%
-    if (new_party_sum > 0) {
-        for (var party of Q.parties) {
-            let factor = Q['adjustmentFactors_' + party] || 1.0;
-    
-            if (factor === 1.0) { // Only adjust non-adjusted parties
+
+    if (factor !== 1.0) { // Only apply to parties with adjustment factors
+        // Calculate the Reichstag without the current party's share
+        Q['reichstag_without_' + party] = 100 - Q[party + '_r'];
+
+        // Calculate the sum of the remaining parties
+        Q[party + '_other_party_sum'] = Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']);
+    } else {
+        // For non-adjusted parties, accumulate their r value for the redistribution
+        new_party_sum += Q[party + '_r'];
+    }
+}
+
+// Step 2: Redistribute results among non-adjusted parties to ensure the total is 100%
+if (new_party_sum > 0) {
+    for (var party of Q.parties) {
+        let factor = Q['adjustmentFactors_' + party] || 1.0;
+
+        if (factor === 1.0) { // Only adjust non-adjusted parties
+            // Check if 'other_party_sum' is non-zero to avoid division by zero
+            if (Q[party + '_other_party_sum'] !== 0) {
                 // Calculate the new r value for non-adjusted parties based on the redistribution logic
                 Q[party + '_r'] = Math.round(
                     (Q[party + '_r'] * Q['reichstag_without_' + party]) / Q[party + '_other_party_sum']
                 ) * 10 / 10;
+            } else {
+                // If the sum is zero, set the r value to 0 to avoid division by zero
+                Q[party + '_r'] = 0;
             }
         }
     }
+}
     
     // Step 3: Calculate changes in results
     for (var party of Q.parties) {
