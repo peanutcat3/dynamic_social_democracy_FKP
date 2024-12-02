@@ -88,7 +88,7 @@ on-arrival: {!
                 var total_other_party_sum_party = total_other_party_sum - (Q[party + '_votes'] - Q[party + '_r'])
                 console.log('total_reichstag_without_party' + total_reichstag_without_party)
                 console.log('total_other_party_sum_party' + total_other_party_sum_party)
-                Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
+                Q[party + '_r'] = Math.round((Q['original_' + party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
             }
         }
     }
