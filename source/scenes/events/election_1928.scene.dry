@@ -36,41 +36,60 @@ Let us hope this does not backfire.
 @post_election_1928
 on-arrival: {!  
     var new_party_sum = 0;
+
+    // Step 1: Calculate the adjusted `r` values and find the sum excluding the adjusted party
     for (var party of Q.parties) {
         Q['old_' + party + '_r'] = Q[party + '_r'];
         let factor = Q['adjustmentFactors_' + party] || 1.0;
+    
         Q[party + '_r'] = (Q.constitutional_reform > 0 &&
                           (Q[party + '_votes'] < Q.electoral_threshold || 
                           (Q.electoral_threshold > 1 && party === 'other') || 
-                          Q[party + '_banned'])) ? 0 : Q[party + '_votes'] * factor;
-
-        new_party_sum += Q[party + '_r'];
-    }
-
-    // Redistribute results to ensure the total is 100%
-    if (new_party_sum > 0) {
-        for (var party of Q.parties) {
-            Q[party + '_r'] = Math.round((Q[party + '_r'] * 100 / new_party_sum) * 10) / 10;
+                          Q[party + '_banned'])) 
+                          ? 0 
+                          : Q[party + '_votes'] * factor;
+    
+        if (factor === 1.0) { // Only include non-adjusted parties in the redistribution sum
+            new_party_sum += Q[party + '_r'];
         }
     }
-
-    // Calculate changes in results
+    
+    // Step 2: Redistribute results among non-adjusted parties to ensure the total is 100%
+    if (new_party_sum > 0) {
+        for (var party of Q.parties) {
+            let factor = Q['adjustmentFactors_' + party] || 1.0;
+    
+            if (factor === 1.0) { // Only adjust non-adjusted parties
+                Q[party + '_r'] = Math.round((Q[party + '_r'] * (100 - (100 - new_party_sum))) / new_party_sum * 10) / 10;
+            }
+        }
+    }
+    
+    // Step 3: Calculate changes in results
     for (var party of Q.parties) {
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
-        var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
+        var sign = Q['change_' + party + '_r'] > 0 
+                   ? '<img src="img/arrowup.jpg"> ' 
+                   : Q['change_' + party + '_r'] < 0 
+                     ? '<img src="img/arrowdown.jpg"> ' 
+                     : '<img src="img/steady.jpg"> ';
         Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
         Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
-
+    
         // Calculate changes in votes
         Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
         if (Q['previous_' + party + '_last_election_votes'] === undefined) {
             Q['change_' + party + '_votes'] = Q[party + '_votes'];
         }
-
-        var sign2 = Q['change_' + party + '_votes'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_votes'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
+    
+        var sign2 = Q['change_' + party + '_votes'] > 0 
+                    ? '<img src="img/arrowup.jpg"> ' 
+                    : Q['change_' + party + '_votes'] < 0 
+                      ? '<img src="img/arrowdown.jpg"> ' 
+                      : '<img src="img/steady.jpg"> ';
         Q['str_votes_change_' + party] = sign2 + Math.abs(Q['change_' + party + '_votes']).toFixed(1);
     }
-
+    
     // Handle demographic changes for all parties
     for (var party of Q.parties) {
         for (var c of Q.classes) {
@@ -80,11 +99,12 @@ on-arrival: {!
             Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
         }
     }
-
+    
+    // Store current votes as previous for the next iteration
     for (var party of Q.parties) {
         Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
         Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
-    }
+    }    
 
 Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
