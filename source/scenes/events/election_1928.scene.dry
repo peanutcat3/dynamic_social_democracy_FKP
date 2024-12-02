@@ -105,10 +105,6 @@ on-arrival: {!
         Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
 
         // Calculate changes in votes
-        for (var party of Q.parties) {
-            Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
-            Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
-        }
         Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
         if (Q['previous_' + party + '_last_election_votes'] === undefined) {
             Q['change_' + party + '_votes'] = Q[party + '_votes'];
