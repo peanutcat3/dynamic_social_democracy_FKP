@@ -35,9 +35,10 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!  
-    // Initialize the new total sum of all votes
+    // Initialize the new total sum of all votes (excluding the party being adjusted)
     var new_party_sum = 0;
     var adjusted_votes = {};  // Store the adjusted votes for redistribution
+    var total_adjusted = 0;   // Track the total adjusted votes to redistribute
     
     // First, apply the adjustments and calculate the adjusted votes for each party
     for (var party of Q.parties) {
@@ -55,24 +56,43 @@ on-arrival: {!
 
         // Store adjusted votes for later redistribution
         adjusted_votes[party] = Q[party + '_r'];
-        new_party_sum += Q[party + '_r'];  // Sum the adjusted votes
+        total_adjusted += adjusted_votes[party];  // Track the total votes to be redistributed
     }
 
-    // Redistribute votes proportionally across all parties to ensure the total is 100% (or new_party_sum)
-    if (new_party_sum > 0) {
-        for (var party of Q.parties) {
-            if (adjusted_votes[party] > 0) { // Ensure we don't redistribute for parties with 0 votes
-                // Calculate the proportional value of votes to redistribute to other parties
-                let proportional_value = (adjusted_votes[party] / new_party_sum) * 100;
+    // Calculate the new total sum of votes (excluding the party votes to be redistributed)
+    for (var party of Q.parties) {
+        if (adjusted_votes[party] > 0) {
+            new_party_sum += (Q[party + '_votes'] - adjusted_votes[party]);
+        } else {
+            new_party_sum += Q[party + '_votes']; // If no adjustment, keep original votes
+        }
+    }
 
-                // Assign the proportional value to the party's result (round to one decimal place)
-                // BUT, ensure that the adjusted party's own votes are not redistributed to itself
-                if (adjusted_votes[party] > 0) {
-                    Q[party + '_r'] = Math.round(proportional_value * 10) / 10;
+    // Redistribute the votes proportionally across all other parties
+    if (new_party_sum > 0 && total_adjusted > 0) {
+        for (var party of Q.parties) {
+            // Skip the party that had its votes adjusted
+            if (adjusted_votes[party] > 0) {
+                let remaining_sum = new_party_sum;  // Remaining sum after excluding the adjusted party's votes
+                let total_non_adjusted_votes = 0;
+                
+                // Calculate total votes of parties excluding the one that had its votes adjusted
+                for (var otherParty of Q.parties) {
+                    if (otherParty !== party) {
+                        total_non_adjusted_votes += Q[otherParty + '_votes'];
+                    }
                 }
-            } else {
-                // If the party has 0 votes after adjustment, ensure it stays at 0
-                Q[party + '_r'] = 0;
+
+                // Distribute adjusted votes proportionally among all other parties
+                for (var otherParty of Q.parties) {
+                    if (otherParty !== party) {
+                        // Calculate the proportional value of votes to redistribute to other parties
+                        let proportional_value = (Q[otherParty + '_votes'] / total_non_adjusted_votes) * total_adjusted;
+
+                        // Assign the proportional value to the party's result (round to one decimal place)
+                        Q[otherParty + '_r'] += proportional_value; // Redistribute to other parties only
+                    }
+                }
             }
         }
     }
