@@ -44,8 +44,6 @@ on-arrival: {!
     for (var party of Q.parties) {
         // Store old results for reference
         Q['old_' + party + '_r'] = Q[party + '_r'];
-        Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
-        Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
         
         // Apply dynamic adjustment based on Q['adjustmentFactors_' + party] or default to 1.0 if not defined
         let factor = Q['adjustmentFactors_' + party] || 1.0;  // Get the adjustment factor for the current party
@@ -135,6 +133,10 @@ on-arrival: {!
             Q['demo_change_' + c + '_' + party + '_normalized'] = sign3 + parseFloat(Q[c + "_change_" + party + '_normalized']).toFixed(0);
             Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
         }
+    }
+    for (var party of Q.parties) {
+        Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
+        Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
     }
 
 Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
