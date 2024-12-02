@@ -110,7 +110,6 @@ on-arrival: {!
         total_r_values += Q[party + '_r'];
     }
     console.log('Total r values after redistribution:', total_r_values);
-}
     
     // Step 3: Calculate changes in results
     for (var party of Q.parties) {
