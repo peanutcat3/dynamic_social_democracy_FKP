@@ -53,7 +53,7 @@ on-arrival: {!
             Q[party + '_r'] = 0;
         } else {
             // Adjust `r` based on the adjustment factor if not affected by constitutional reform
-            Q[party + '_r'] = Q[party + '_votes'] * factor;
+            Q[party + '_r'] = Math.round(Q[party + '_votes'] * factor * 10) / 10;
         }
         
         if (factor !== 1.0) { // Only apply to parties with adjustment factors
