@@ -91,21 +91,23 @@ on-arrival: {!
                 var total_reichstag_without_party = total_reichstag_without - (100 - Q['original_' + party + '_r']);
                 var total_other_party_sum_party = total_other_party_sum - (Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']));
                 
-                // Log the updated totals for debugging purposes
+                // Log the values used in the calculation for debugging
+                console.log(`party: ${party}`);
                 console.log('total_reichstag_without_party:', total_reichstag_without_party);
                 console.log('total_other_party_sum_party:', total_other_party_sum_party);
                 
-                if (factor === 1.0) { // Only adjust non-adjusted parties
-                    // Calculate the new r value for non-adjusted parties based on the redistribution logic
-                    if (total_reichstag_without_party !== 0 && total_other_party_sum_party !== 0) {
+                // Ensure both total_reichstag_without_party and total_other_party_sum_party are valid numbers
+                if (!isNaN(total_reichstag_without_party) && !isNaN(total_other_party_sum_party)) {
+                    if (factor === 1.0) { // Only adjust non-adjusted parties
+                        // Calculate the new r value for non-adjusted parties based on the redistribution logic
                         Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
                     }
-                }
-                
-                if (factor !== 1.0) {
-                    if (total_reichstag_without_party !== 0 && total_other_party_sum_party !== 0) {
+                    
+                    if (factor !== 1.0) {
                         Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
                     }
+                } else {
+                    console.log(`Warning: Invalid total for ${party} during redistribution. Skipping adjustment.`);
                 }
             } else {
                 console.log(`Warning: Division by zero detected during redistribution for ${party}.`);
