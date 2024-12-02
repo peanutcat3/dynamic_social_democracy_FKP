@@ -35,90 +35,87 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!  
-    // Step 1: Initialize data structures
-    var adjusted_votes = {};  // Store adjusted votes for redistribution
-    var total_adjusted = 0;   // Track the total adjusted votes to redistribute
-    var remaining_votes = 0;  // Track the remaining votes that will be redistributed
-    
+    // Step 1: Initialize variables
+    var adjusted_votes = {};  // Store the adjusted votes for redistribution
+    var total_adjusted = 0;   // Track the total adjusted votes (total votes subtracted from adjusted parties)
+    var total_remaining_votes = 0;  // Total votes remaining after adjustment
+
     // Step 2: Apply adjustments for each party
     for (var party of Q.parties) {
-        // Store the original vote result for comparison
+        // Store the original results for comparison later
         Q['old_' + party + '_r'] = Q[party + '_r'];
 
-        // Apply dynamic adjustment factor for each party
+        // Apply dynamic adjustment factor for each party (if not set, defaults to 1.0)
         let factor = Q['adjustmentFactors_' + party] || 1.0;  // Get the adjustment factor or default to 1.0
 
-        // Special logic for constitutional reform or other conditions (e.g., banned parties or vote threshold)
+        // Apply adjustment only if not banned or exceeding threshold
         Q[party + '_r'] = (Q.constitutional_reform > 0 &&
                           (Q[party + '_votes'] < Q.electoral_threshold || 
                           (Q.electoral_threshold > 1 && party === 'other') || 
                           Q[party + '_banned'])) ? 0 : Q[party + '_votes'] * factor;
 
-        // Store adjusted votes for redistribution
+        // Track the adjusted votes for later redistribution
         adjusted_votes[party] = Q[party + '_r'];
-        total_adjusted += adjusted_votes[party];  // Track total adjusted votes
+        total_adjusted += adjusted_votes[party];  // Sum the total adjusted votes
     }
 
-    // Step 3: Calculate the total votes available for redistribution
-    var total_votes = 0;
+    // Step 3: Calculate the total remaining votes (after adjustment)
     for (var party of Q.parties) {
-        total_votes += Q[party + '_votes']; // Total votes including original values
+        if (adjusted_votes[party] === 0) {
+            total_remaining_votes += Q[party + '_votes'];  // Add the remaining votes that are not adjusted
+        }
     }
 
-    // Calculate remaining votes (excluding the adjusted votes)
-    remaining_votes = total_votes - total_adjusted;
-
-    // Step 4: Redistribute the adjusted votes proportionally to all other parties
-    if (remaining_votes > 0 && total_adjusted > 0) {
+    // Step 4: Redistribute the adjusted votes proportionally to the other parties
+    if (total_remaining_votes > 0 && total_adjusted > 0) {
         for (var party of Q.parties) {
-            // Skip the party being adjusted (no votes redistributed to itself)
+            // Skip the party that had its votes adjusted (no redistribution to itself)
             if (adjusted_votes[party] > 0) {
-                var remaining_vote_sum = remaining_votes;
-                var total_non_adjusted_votes = 0;
+                continue;
+            }
 
-                // Calculate the total votes of other non-adjusted parties
-                for (var otherParty of Q.parties) {
-                    if (otherParty !== party) {
-                        total_non_adjusted_votes += Q[otherParty + '_votes'];
-                    }
+            // Calculate the total votes for all remaining parties (those that didn't have adjustments)
+            var total_non_adjusted_votes = 0;
+            for (var otherParty of Q.parties) {
+                if (adjusted_votes[otherParty] === 0) {
+                    total_non_adjusted_votes += Q[otherParty + '_votes'];
                 }
+            }
 
-                // Proportionally distribute the adjusted votes among all other parties
-                for (var otherParty of Q.parties) {
-                    if (otherParty !== party) {
-                        // Calculate the proportional value for redistribution
-                        let proportional_value = (Q[otherParty + '_votes'] / total_non_adjusted_votes) * total_adjusted;
-
-                        // Add the proportional value to the other party's result (excluding the adjusted party)
-                        Q[otherParty + '_r'] += proportional_value; // Redistribution to other parties only
-                    }
+            // Distribute the adjusted votes proportionally to all non-adjusted parties
+            for (var otherParty of Q.parties) {
+                if (adjusted_votes[otherParty] === 0) {  // Only redistribute to non-adjusted parties
+                    // Calculate the proportional value for the redistribution
+                    let proportional_value = (Q[otherParty + '_votes'] / total_non_adjusted_votes) * total_adjusted;
+                    Q[otherParty + '_r'] += proportional_value; // Add the redistributed votes
                 }
             }
         }
     }
 
-    // Step 5: Normalize results to make sure they sum to 100%
+    // Step 5: Normalize the results to ensure they sum to 100%
     var total_r = 0;
     for (var party of Q.parties) {
-        total_r += Q[party + '_r'];
+        total_r += Q[party + '_r'];  // Calculate the sum of all the adjusted votes
     }
 
-    // Normalize if necessary (round to 1 decimal place for consistency)
+    // Normalize the results to make sure they add up to 100%
     if (total_r > 0) {
         for (var party of Q.parties) {
-            Q[party + '_r'] = (Q[party + '_r'] / total_r) * 100;  // Normalize to 100%
+            // Normalize the votes so that the total is 100%
+            Q[party + '_r'] = (Q[party + '_r'] / total_r) * 100;  
             Q[party + '_r'] = Math.round(Q[party + '_r'] * 10) / 10;  // Round to 1 decimal place
         }
     }
 
-    // Step 6: Calculate changes in results (relative to the old results)
+    // Step 6: Calculate the change in results (relative to old results)
     for (var party of Q.parties) {
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
         Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
         Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
 
-        // Calculate changes in votes
+        // Calculate the change in votes compared to the previous election
         Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
         if (Q['previous_' + party + '_last_election_votes'] === undefined) {
             Q['change_' + party + '_votes'] = Q[party + '_votes'];
@@ -137,6 +134,7 @@ on-arrival: {!
             Q['old_' + c + '_' + party + '_normalized'] = Q[c + '_' + party + '_normalized'];
         }
     }
+
     for (var party of Q.parties) {
         Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
         Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
