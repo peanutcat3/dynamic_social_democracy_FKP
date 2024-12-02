@@ -68,6 +68,8 @@ on-arrival: {!
             // For non-adjusted parties, accumulate their r value for the redistribution
             new_party_sum += Q[party + '_r'];
         }
+        console.log(total_reichstag_without)
+        console.log(total_other_party_sum)
     }
     
     // Step 2: Redistribute results among non-adjusted parties to ensure the total is 100%
