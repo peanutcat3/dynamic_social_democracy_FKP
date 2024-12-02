@@ -51,11 +51,13 @@ on-arrival: {!
             (Q.electoral_threshold > 1 && party === 'other') || 
             Q[party + '_banned'])) {
             Q[party + '_r'] = 0;
-        } else {
+        } else if (factor !== 1.0) {
             // Adjust `r` based on the adjustment factor if not affected by constitutional reform
             var total_reichstag_without_party = total_reichstag_without - Q[party + '_r']
             var total_other_party_sum_party = total_other_party_sum - (Q[party + '_votes'] - Q[party + '_r'])
             Q[party + '_r'] = Math.round(Q[party + '_votes'] * factor * 10) / 10;
+        } else {
+            Q[party + '_r'] = Math.round(Q[party + '_votes'] * 10) / 10;
         }
         
         if (factor !== 1.0) { // Only apply to parties with adjustment factors
