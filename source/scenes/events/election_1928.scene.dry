@@ -60,7 +60,8 @@ on-arrival: {!
             let factor = Q['adjustmentFactors_' + party] || 1.0;
     
             if (factor === 1.0) { // Only adjust non-adjusted parties
-                Q[party + '_r'] = Math.round((Q[party + '_r'] * (100 - (100 - new_party_sum))) / new_party_sum * 10) / 10;
+                Q[party + '_r'] = Math.round((Q[party + '_r'] * (100 - new_party_sum)) / (100 - new_party_sum - (Q[party + '_votes'] - Q[party + '_r'])) * 10) / 10;
+                console.log(Q[party + '_r'])
             }
         }
     }
