@@ -56,21 +56,32 @@ on-arrival: {!
 
     // Redistribute results to ensure the total is 100%, but avoid redistributing back to the same party
     if (new_party_sum > 0) {
+        var total_adjusted_votes_without_current = {};  // Calculate total adjusted votes for redistribution (excluding current party)
+        
         for (var party of Q.parties) {
-            // Calculate the redistributed share for each party (excluding itself)
-            let redistributed_sum = new_party_sum - adjusted_votes[party];  // Exclude the current party's adjustment
-            let remaining_sum = 0;
+            total_adjusted_votes_without_current[party] = 0;
+            // Sum the adjusted votes for all parties except the current one
+            for (var otherParty of Q.parties) {
+                if (party !== otherParty) {
+                    total_adjusted_votes_without_current[party] += adjusted_votes[otherParty];
+                }
+            }
+        }
 
-            // Sum the remaining votes for the other parties
+        // Now redistribute based on the new calculated values
+        for (var party of Q.parties) {
+            // Redistribute votes only from other parties, excluding the current party
+            var total_for_redistribution = 0;
             for (var otherParty of Q.parties) {
                 if (otherParty !== party) {
-                    remaining_sum += adjusted_votes[otherParty];
+                    total_for_redistribution += adjusted_votes[otherParty];
                 }
             }
 
-            // Redistribute votes excluding the current party
-            if (remaining_sum > 0) {
-                let redistribution_factor = redistributed_sum / remaining_sum;
+            if (total_for_redistribution > 0) {
+                // Calculate the redistribution proportion for each party excluding itself
+                let redistribution_factor = total_for_redistribution / (new_party_sum - adjusted_votes[party]);
+
                 Q[party + '_r'] = Math.round((adjusted_votes[party] * redistribution_factor) * 10) / 10;
             }
         }
