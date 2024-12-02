@@ -46,13 +46,14 @@ on-arrival: {!
         Q[party + '_r'] = Q[party + '_votes'] * factor;  // Adjust party_r based on adjustment factor
         Q['original_' + party + '_r'] = Q[party + '_r'];  // Store original party_r in Q[]
         new_party_sum += Q[party + '_r'];
-        var other_party_sum = (Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']));
+        if (factor !== 1.0) {
+            Q[party + '_sum'] = (Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']));
+        }
     }
-    
     // Redistribute results to ensure the total is 100%
-    if (new_party_sum > 0) {
+    if (Q[party + '_sum'] > 0) {
         for (var party of Q.parties) {
-            Q[party + '_r'] = Math.round((Q[party + '_r'] * Q['reichstag_without_' + party] / other_party_sum) * 10) / 10;
+            Q[party + '_r'] = Math.round((Q[party + '_r'] * Q['reichstag_without_' + party] / Q[party + '_sum']) * 10) / 10;
             console.log('Party:' + Q[party + '_r'])
         }
     }
