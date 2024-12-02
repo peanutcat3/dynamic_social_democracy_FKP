@@ -46,6 +46,7 @@ on-arrival: {!
 
         // Apply dynamic adjustment based on Q['adjustmentFactors_' + party] or default to 1.0 if not defined
         let factor = Q['adjustmentFactors_' + party] || 1.0;  // Get the adjustment factor for the current party
+        // Apply adjustment only if not banned or exceeding threshold
         Q[party + '_r'] = (Q.constitutional_reform > 0 &&
                           (Q[party + '_votes'] < Q.electoral_threshold || 
                           (Q.electoral_threshold > 1 && party === 'other') || 
@@ -69,13 +70,16 @@ on-arrival: {!
         }
 
         // Now redistribute votes based on the remaining parties' votes (excluding the current party)
-        for (var party of Q.parties) {
-            if (adjusted_votes[party] > 0) {  // Only redistribute from parties with positive votes
-                // Calculate the proportion of the total for this party based on remaining votes
-                let redistribution_factor = adjusted_votes[party] / remaining_parties_sum;
+        if (remaining_parties_sum > 0) {  // Only proceed if there's something to redistribute
+            for (var party of Q.parties) {
+                if (adjusted_votes[party] > 0) {  // Only redistribute from parties with positive votes
+                    // Calculate the proportion of the total for this party based on remaining votes
+                    let redistribution_factor = adjusted_votes[party] / remaining_parties_sum;
 
-                // Redistribute the votes proportionally to this party
-                Q[party + '_r'] = Math.round((adjusted_votes[party] * (new_party_sum - remaining_parties_sum) / remaining_parties_sum) * 10) / 10;
+                    // Redistribute the votes proportionally to this party
+                    let redistributed_value = Math.round((adjusted_votes[party] * (new_party_sum - remaining_parties_sum) / remaining_parties_sum) * 10) / 10;
+                    Q[party + '_r'] = redistributed_value;  // Set the redistributed value
+                }
             }
         }
     }
