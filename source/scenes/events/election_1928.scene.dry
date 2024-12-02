@@ -36,23 +36,32 @@ Let us hope this does not backfire.
 @post_election_1928
 on-arrival: {!  
     var new_party_sum = 0;
+
+    // Backup the original values before any adjustments, using Q[] variables
     for (var party of Q.parties) {
         Q['old_' + party + '_r'] = Q[party + '_r'];
+    
         let factor = Q['adjustmentFactors_' + party] || 1.0;
-        Q[party + '_r'] = (Q.constitutional_reform > 0 &&
-                          (Q[party + '_votes'] < Q.electoral_threshold || 
-                          (Q.electoral_threshold > 1 && party === 'other') || 
-                          Q[party + '_banned'])) ? 0 : Q[party + '_votes'] * factor;
-
+        Q[party + '_r'] = Q[party + '_votes'] * factor;  // Adjust party_r based on adjustment factor
+        Q['original_' + party + '_r'] = Q[party + '_r'];  // Store original party_r in Q[]
         new_party_sum += Q[party + '_r'];
     }
-
+    
     // Redistribute results to ensure the total is 100%
     if (new_party_sum > 0) {
         for (var party of Q.parties) {
             Q[party + '_r'] = Math.round((Q[party + '_r'] * 100 / new_party_sum) * 10) / 10;
         }
     }
+    
+    // Now restore the original values only if the party had an adjustment factor applied
+    for (var party of Q.parties) {
+        let factor = Q['adjustmentFactors_' + party] || 1.0;
+        // Only revert to original if adjustment factor is not 1 (i.e., adjustment factor was applied)
+        if (factor !== 1.0) {
+            Q[party + '_r'] = Q['original_' + party + '_r'];  // Revert to original value stored in Q[]
+        }
+    }    
 
     // Calculate changes in results
     for (var party of Q.parties) {
@@ -81,6 +90,7 @@ on-arrival: {!
         }
     }
 
+    // Save the latest election votes
     for (var party of Q.parties) {
         Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
         Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
