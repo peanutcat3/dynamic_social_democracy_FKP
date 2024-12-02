@@ -88,11 +88,12 @@ on-arrival: {!
                 var total_other_party_sum_party = total_other_party_sum - (Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']))
                 console.log('total_reichstag_without_party' + total_reichstag_without_party)
                 console.log('total_other_party_sum_party' + total_other_party_sum_party)
-                Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
+                if (total_reichstag_without_party !== 0 && total_other_party_sum_party !== 0) {
+                    Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
             }
         }
     }
-    
+    }
     
     // Step 3: Calculate changes in results
     for (var party of Q.parties) {
