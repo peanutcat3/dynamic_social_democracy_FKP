@@ -58,35 +58,23 @@ on-arrival: {!
         new_party_sum += Q[party + '_r'];  // Sum the adjusted votes
     }
 
-    // Now redistribute votes to ensure the total is 100%, excluding the current party's own votes
+    // Redistribute votes proportionally across all parties to ensure the total is 100% (or new_party_sum)
     if (new_party_sum > 0) {
-        var remaining_parties_sum = 0;
-        var remaining_parties_votes = {};  // Store votes of the remaining parties for redistribution
-        
-        // Calculate the sum of votes of all parties excluding the current party's adjusted votes
         for (var party of Q.parties) {
-            if (adjusted_votes[party] > 0) { // Only include parties with positive adjusted votes
-                remaining_parties_sum += adjusted_votes[party];  // Total votes to redistribute
-                remaining_parties_votes[party] = adjusted_votes[party];  // Store individual votes
-            }
-        }
+            if (adjusted_votes[party] > 0) { // Ensure we don't redistribute for parties with 0 votes
+                // Calculate the proportion of the total adjusted votes for this party
+                let proportional_value = (adjusted_votes[party] / new_party_sum) * 100;
 
-        // Now redistribute the votes proportionally to the remaining parties
-        if (remaining_parties_sum > 0) {
-            for (var party of Q.parties) {
-                if (adjusted_votes[party] > 0) {  // Only redistribute from parties with positive votes
-                    // Calculate the proportion of votes for this party based on the remaining votes
-                    let redistribution_factor = adjusted_votes[party] / remaining_parties_sum;
-
-                    // Redistribute the votes proportionally
-                    let redistributed_value = Math.round((adjusted_votes[party] * new_party_sum / remaining_parties_sum) * 10) / 10;
-                    Q[party + '_r'] = redistributed_value;  // Set the redistributed value
-                }
+                // Assign the proportional value to the party's result (round to one decimal place)
+                Q[party + '_r'] = Math.round(proportional_value * 10) / 10;
+            } else {
+                // If the party has 0 votes after adjustment, ensure it stays at 0
+                Q[party + '_r'] = 0;
             }
         }
     }
 
-    // Calculate changes in results
+    // Calculate changes in results (relative to the old results)
     for (var party of Q.parties) {
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         var sign = Q['change_' + party + '_r'] > 0 ? '<img src="img/arrowup.jpg"> ' : Q['change_' + party + '_r'] < 0 ? '<img src="img/arrowdown.jpg"> ' : '<img src="img/steady.jpg"> ';
