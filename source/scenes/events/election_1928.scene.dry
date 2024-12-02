@@ -62,11 +62,14 @@ on-arrival: {!
     if (new_party_sum > 0) {
         for (var party of Q.parties) {
             if (adjusted_votes[party] > 0) { // Ensure we don't redistribute for parties with 0 votes
-                // Calculate the proportion of the total adjusted votes for this party
+                // Calculate the proportional value of votes to redistribute to other parties
                 let proportional_value = (adjusted_votes[party] / new_party_sum) * 100;
 
                 // Assign the proportional value to the party's result (round to one decimal place)
-                Q[party + '_r'] = Math.round(proportional_value * 10) / 10;
+                // BUT, ensure that the adjusted party's own votes are not redistributed to itself
+                if (adjusted_votes[party] > 0) {
+                    Q[party + '_r'] = Math.round(proportional_value * 10) / 10;
+                }
             } else {
                 // If the party has 0 votes after adjustment, ensure it stays at 0
                 Q[party + '_r'] = 0;
