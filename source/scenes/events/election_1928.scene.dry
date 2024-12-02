@@ -84,11 +84,11 @@ on-arrival: {!
                 Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without) / total_other_party_sum * 10) / 10;
             }
             if (factor !== 1.0) {
-                var total_reichstag_without_party = total_reichstag_without - Q['original_' + party + '_r']
-                var total_other_party_sum_party = total_other_party_sum - (Q[party + '_votes'] - Q[party + '_r'])
+                var total_reichstag_without_party = total_reichstag_without - (100 - Q['original_' + party + '_r'])
+                var total_other_party_sum_party = total_other_party_sum - (Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']))
                 console.log('total_reichstag_without_party' + total_reichstag_without_party)
                 console.log('total_other_party_sum_party' + total_other_party_sum_party)
-                Q[party + '_r'] = Math.round((Q['original_' + party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
+                Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
             }
         }
     }
