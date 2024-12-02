@@ -90,18 +90,28 @@ on-arrival: {!
         }
     }
 
-    // Step 6: Normalize the results to ensure they sum to 100%
+    // Step 6: Normalize the results to ensure they sum to 100% and redistribute remaining votes if necessary
     var total_r = 0;
     for (var party of Q.parties) {
         total_r += Q[party + '_r'];  // Sum the total of all the adjusted results
     }
 
-    // Normalize the results so that the total equals 100%
-    if (total_r > 0) {
-        for (var party of Q.parties) {
-            // Normalize the result to ensure the total is 100%
-            Q[party + '_r'] = (Q[party + '_r'] / total_r) * 100;  
-            Q[party + '_r'] = Math.round(Q[party + '_r'] * 10) / 10;  // Round to one decimal place
+    // If the total is not 100%, redistribute the difference proportionally
+    if (total_r !== 100) {
+        var remaining_percentage = 100 - total_r;  // Find the difference between total and 100%
+        var non_adjusted_parties = Q.parties.filter(party => adjusted_votes[party] === undefined);
+
+        // Calculate the sum of non-adjusted parties
+        var non_adjusted_sum = 0;
+        for (var party of non_adjusted_parties) {
+            non_adjusted_sum += Q[party + '_votes'];
+        }
+
+        // Redistribute the remaining percentage to non-adjusted parties
+        for (var party of non_adjusted_parties) {
+            // Calculate the proportion of the remaining percentage for each party
+            let proportional_remaining = (Q[party + '_votes'] / non_adjusted_sum) * remaining_percentage;
+            Q[party + '_r'] += proportional_remaining;
         }
     }
 
@@ -139,9 +149,6 @@ on-arrival: {!
 
 Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
-
-// get change arrows and signs
-
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
