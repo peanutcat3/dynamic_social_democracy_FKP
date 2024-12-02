@@ -44,7 +44,9 @@ on-arrival: {!
     for (var party of Q.parties) {
         // Store old results for reference
         Q['old_' + party + '_r'] = Q[party + '_r'];
-
+        Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
+        Q['previous_' + party + '_last_election_votes'] = parseFloat(Q[party + '_last_election_votes']).toFixed(1);
+        
         // Apply dynamic adjustment based on Q['adjustmentFactors_' + party] or default to 1.0 if not defined
         let factor = Q['adjustmentFactors_' + party] || 1.0;  // Get the adjustment factor for the current party
         
