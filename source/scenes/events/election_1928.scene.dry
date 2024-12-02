@@ -35,9 +35,9 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!  
-    // Initialize old results and calculate adjusted votes
+    // Initialize the new total sum of all votes
     var new_party_sum = 0;
-    var adjusted_votes = {};  // Store adjusted votes for each party
+    var adjusted_votes = {};  // Store the adjusted votes for redistribution
     
     // First, apply the adjustments and calculate the adjusted votes for each party
     for (var party of Q.parties) {
@@ -46,38 +46,40 @@ on-arrival: {!
 
         // Apply dynamic adjustment based on Q['adjustmentFactors_' + party] or default to 1.0 if not defined
         let factor = Q['adjustmentFactors_' + party] || 1.0;  // Get the adjustment factor for the current party
+        
         // Apply adjustment only if not banned or exceeding threshold
         Q[party + '_r'] = (Q.constitutional_reform > 0 &&
                           (Q[party + '_votes'] < Q.electoral_threshold || 
                           (Q.electoral_threshold > 1 && party === 'other') || 
                           Q[party + '_banned'])) ? 0 : Q[party + '_votes'] * factor;
 
-        adjusted_votes[party] = Q[party + '_r'];  // Store the adjusted votes for redistribution
-        new_party_sum += Q[party + '_r'];  // Add to the total adjusted sum
+        // Store adjusted votes for later redistribution
+        adjusted_votes[party] = Q[party + '_r'];
+        new_party_sum += Q[party + '_r'];  // Sum the adjusted votes
     }
 
-    // Redistribute votes to ensure the total is 100%, excluding the current party's own votes
+    // Now redistribute votes to ensure the total is 100%, excluding the current party's own votes
     if (new_party_sum > 0) {
         var remaining_parties_sum = 0;
         var remaining_parties_votes = {};  // Store votes of the remaining parties for redistribution
         
         // Calculate the sum of votes of all parties excluding the current party's adjusted votes
         for (var party of Q.parties) {
-            if (adjusted_votes[party] > 0) { // Only include parties with positive votes
+            if (adjusted_votes[party] > 0) { // Only include parties with positive adjusted votes
                 remaining_parties_sum += adjusted_votes[party];  // Total votes to redistribute
                 remaining_parties_votes[party] = adjusted_votes[party];  // Store individual votes
             }
         }
 
-        // Now redistribute votes based on the remaining parties' votes (excluding the current party)
-        if (remaining_parties_sum > 0) {  // Only proceed if there's something to redistribute
+        // Now redistribute the votes proportionally to the remaining parties
+        if (remaining_parties_sum > 0) {
             for (var party of Q.parties) {
                 if (adjusted_votes[party] > 0) {  // Only redistribute from parties with positive votes
-                    // Calculate the proportion of the total for this party based on remaining votes
+                    // Calculate the proportion of votes for this party based on the remaining votes
                     let redistribution_factor = adjusted_votes[party] / remaining_parties_sum;
 
-                    // Redistribute the votes proportionally to this party
-                    let redistributed_value = Math.round((adjusted_votes[party] * (new_party_sum - remaining_parties_sum) / remaining_parties_sum) * 10) / 10;
+                    // Redistribute the votes proportionally
+                    let redistributed_value = Math.round((adjusted_votes[party] * new_party_sum / remaining_parties_sum) * 10) / 10;
                     Q[party + '_r'] = redistributed_value;  // Set the redistributed value
                 }
             }
