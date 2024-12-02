@@ -86,7 +86,7 @@ on-arrival: {!
                 Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without) / total_other_party_sum * 10) / 10;
             }
             if (factor != 1.0) {
-                Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
+                Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without_party) / total_other_party_sum * 10) / 10;
             }
         }
     }
