@@ -84,15 +84,17 @@ on-arrival: {!
                 Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without) / total_other_party_sum * 10) / 10;
             }
             if (factor !== 1.0) {
-                var total_reichstag_without_party = total_reichstag_without - (100 - Q['original_' + party + '_r'])
-                var total_other_party_sum_party = total_other_party_sum - (Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']))
-                console.log('total_reichstag_without_party' + total_reichstag_without_party)
-                console.log('total_other_party_sum_party' + total_other_party_sum_party)
-                if (total_reichstag_without_party !== 0 && total_other_party_sum_party !== 0) {
-                    Q[party + '_r'] = Math.round((Q[party + '_r'] * total_reichstag_without_party) / total_other_party_sum_party * 10) / 10;
+                // Calculate "total without this party"
+                var total_reichstag_without_party = total_reichstag_without - (100 - Q['original_' + party + '_r']);
+                var total_other_party_sum_party = total_other_party_sum - (Q['reichstag_without_' + party] - (Q[party + '_votes'] - Q[party + '_r']));
+
+                // Prevent division by zero and ensure the math scales properly
+                if (total_reichstag_without_party > 0 && total_other_party_sum_party > 0) {
+                    let scaling_factor = total_reichstag_without_party / total_other_party_sum_party;
+                    Q[party + '_r'] = Math.round(Q[party + '_r'] * scaling_factor * 10) / 10;
+                }
             }
         }
-    }
     }
     
     // Step 3: Calculate changes in results
