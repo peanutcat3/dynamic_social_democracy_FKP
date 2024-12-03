@@ -568,7 +568,7 @@ Grand Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="col
 
 [? if dnvp_ideology == "Moderate": Center-Right Coalition (<span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span>): [+ center_right_coalition +]% ?]
 
-Right-wing Coalition (<span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span>): [+ right_coalition +]%
+[? if dnvp_ideology == "Radical": Right-wing Coalition (<span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span>): [+ right_coalition +]% ?]
 
 [? if dnvp_ideology == "Radical" and far_right_coalition >= 35: Far-right Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
