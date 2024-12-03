@@ -1,6 +1,6 @@
 title: Prussian Government Collapses
 subtitle: Our coalition partners are dissolving the Prussian government.
-view-if: ((z_relation < 35 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 30 and z_leader == "Joos") or (ddp_relation < 35 and ddp_ideology == "Right") or (ddp_relation < 30 and ddp_ideology == "Moderate") or (ddp_relation < 25 and ddp_ideology == "Left" and ddp_cohesion < 8)) and dvp_in_prussia == 0 and not (year == 1928 and month < 6) and not (year >= 1932 and month >= 4) and not kvp_formed
+view-if: ((z_relation < 30 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 25 and z_leader == "Joos") or (ddp_relation < 30 and ddp_ideology == "Right") or (ddp_relation < 25 and ddp_ideology == "Moderate") or (ddp_relation < 20 and ddp_ideology == "Left" and ddp_cohesion < 8)) and dvp_in_prussia == 0 and not (year == 1928 and month < 6) and not (year >= 1932 and month >= 4) and not kvp_formed
 on-arrival: z_relation -= 4; ddp_relation -= 4; coalition_dissent += 2 if not in_left_front
 new-page: true
 tags: event
@@ -9,9 +9,9 @@ face-image: img/weimar_coalition.jpg
 
 = Democratic Bulwark Dismantled
 
-We have somehow antagonized the parties involved in the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ruling over Prussia, and our coalition partners have called a vote of no confidence against us. 
+We have somehow antagonized the parties involved in the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ruling over Prussia, and our coalition partners have called a vote of no confidence against us.
 
-The only alternative coalition that can be formed with the current composition of the state parliament is a broad right-wing coalition, ranging from the <span style="color: #000000;">Center</span> to the <span style="color: #3E88B3;">**DNVP**</span>. [? if dnvp_ideology == "Radical" and dnvp_leader != "Westarp": However, this is heavily unlikely with the <span style="color: #3E88B3;">**DNVP**</span>'s all-or-nothing stance on governance. ?] If a coalition is unable to be formed, new elections will be called.
+The only alternative coalition that can be formed with the current composition of the state parliament is a broad right-wing coalition, ranging from the <span style="color: #000000;">Center</span> to the <span style="color: #3E88B3;">**DNVP**</span>. [? if dnvp_ideology == "Radical" and dnvp_leader != "Westarp": However, this is heavily unlikely with the <span style="color: #3E88B3;">**DNVP**</span>'s all-or-nothing stance on governance. ?] Prussia employs a constructive vote of no confidence, meaning that a government can only be removed if a successor can be put forth. This mechanism is how we were able to govern in a minority government in the past.
 
 - @right_coalition_formed
 - @center_right_coalition_formed
@@ -50,6 +50,38 @@ Data miners are heartless creatures
 
 @new_elections
 on-arrival: {!  
+    for (var c of Q.classes) {
+        var class_votes = 0;
+        for (var party of Q.parties) {
+            if (Q[c + '_' + party] < 0) {
+                Q[c + '_' + party] = 0;
+            }
+            class_votes += Q[c + '_' + party];
+        }
+        for (var party of Q.parties) {
+            Q[c + '_' + party + '_normalized_prussia'] = Math.round(100 * Q[c + '_' + party] / class_votes);
+        }
+    }
+    // calculate support for each of the parties
+    var total_support = 0;
+    for (var party of Q.parties) {
+        var party_support = 0;
+        for (var c of Q.classes) {
+            if (Q.old_demographics) {
+                party_support += Q[c] * Q[c + '_' + party];
+            } else {
+                party_support += Q[c] * Q[c + '_' + party + '_normalized_prussia'];
+            }
+        }
+        Q[party + '_support'] = party_support;
+        total_support += party_support;
+    }
+    // 2. normalize support (fraction)
+    for (var party of Q.parties) {
+        Q[party + '_normalized_prussia'] = Q[party + '_support'] / total_support;
+        Q[party + '_votes_prussia'] = Math.round(Q[party + '_normalized_prussia'] * 1000) / 10;
+    }
+
     var new_party_sum_prussia = 0;
     var total_reichstag_without_prussia = 0; // Initialize a variable to accumulate 'reichstag_without_' values
     var total_other_party_sum_prussia = 0; // Initialize a variable to accumulate '_other_party_sum' values
