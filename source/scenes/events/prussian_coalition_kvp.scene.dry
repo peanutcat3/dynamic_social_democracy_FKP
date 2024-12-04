@@ -20,7 +20,7 @@ The only alternative coalition that can be formed with the current composition o
 @center_right_coalition_formed
 title: A Bürgerblock is formed.
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #0087DC;">**KVP**</span> (47.8%)
-unavailable-subtitle: They lack a majority.
+unavailable-subtitle: <span style="color: #000000;">Z</span> + <span style="color: #A2D8E0;">BVP</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others + <span style="color: #0087DC;">KVP</span> (47.8%)
 choose-if: ohio_skibidi_rizz_sigma == 1
 on-arrival: right_in_prussia = 1; spd_in_prussia = 0; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; ddp_right += 3; ddp_cohesion -= 3
 
@@ -31,7 +31,7 @@ It won't take long for the government to collapse and for us to take power throu
 @progressive_coalition
 title: A progressive coalition is formed.
 view-if: ddp_relation >= 60 and ddp_ideology == "Left" and (kpd_relation >= 60 and kpd_leader == "Thälmann") or (kpd_relation >= 40 and kpd_leader == "Conciliators")
-unavailable-subtitle: What...?
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">SAPD</span>?] (47.6%)
 choose-if: ohio_skibidi_rizz_sigma == 69
 on-arrival: workers_spd = 100; secret_mode = 1
 
