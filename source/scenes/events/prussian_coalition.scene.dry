@@ -255,7 +255,7 @@ if (Q.kvp_formed) {
 
 Q.progressive_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.ddp_r_prussia + Q.sapd_r_prussia).toFixed(1));
 
-if (Q.kpd_relation >= 30) {
+if (Q.kpd_relation >= 30 && Q.sapd_formed == 1) {
     Q.weimar_coalition_prussia += Q.sapd_r_prussia;
 }
 
@@ -483,7 +483,7 @@ on-arrival: crazy_stuff_happens = 1
 something something prussia is joever. UNFINISHED TEXT
 
 @no_majority
-title: no_majority
+title: There is no clear governing majority.
 view-if: (weimar_coalition_prussia < 50) or (weimar_coalition_prussia >= 50 and liberal_parliament == 1) and far_right_coalition_prussia < 50
 
 No majority lol. UNFINISHED TEXT
