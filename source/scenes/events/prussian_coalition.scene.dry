@@ -1,7 +1,7 @@
 title: Prussian Government Collapses
 subtitle: Our coalition partners are dissolving the Prussian government.
 view-if: ((z_relation < 30 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 25 and z_leader == "Joos") or (ddp_relation < 30 and ddp_ideology == "Right") or (ddp_relation < 25 and ddp_ideology == "Moderate") or (ddp_relation < 20 and ddp_ideology == "Left" and ddp_cohesion < 8)) and dvp_in_prussia == 0 and not (year == 1928 and month < 6) and not (year >= 1932 and month >= 4) and not kvp_formed
-on-arrival: z_relation -= 4; ddp_relation -= 4; coalition_dissent += 2 if not in_left_front
+on-arrival: z_relation -= 3; ddp_relation -= 3; coalition_dissent += 2 if not in_left_front; spd_in_prussia = 0
 new-page: true
 tags: event
 max-visits: 1
@@ -21,7 +21,7 @@ The only alternative coalition that can be formed with the current composition o
 
 @right_coalition_formed
 title: A Bürgerblock is formed.
-subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** (50%)
+subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** (50%)
 view-if: dnvp_ideology == "Moderate" or dnvp_leader == "Westarp"
 on-arrival: right_in_prussia = 1; spd_in_prussia = 0; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; ddp_r_prussiaight += 3; ddp_cohesion -= 3
 
@@ -31,7 +31,7 @@ It won't take long for the government to collapse and for us to take power throu
 
 @center_right_coalition_formed
 title: A Bürgerblock is formed.
-subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> (54.9%)
+subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> (54.9%)
 view-if: dnvp_ideology == "Moderate" and dnvp_leader != "Westarp"
 on-arrival: right_in_prussia = 1; spd_in_prussia = 0; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; ddp_r_prussiaight += 3; ddp_cohesion -= 3
 
@@ -392,7 +392,7 @@ go-to: coalition_menu
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Reichstag Seats</td><td>% Change</td></tr>!}
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Landtag Seats</td><td>% Change</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_votes_prussia +]%** {!</td><td>!} **[+ str_votes_change_spd_prussia +]** {!</td><td>!} **[+ spd_r_prussia +]%** {!</td><td>!} **[+ str_change_spd_prussia +]** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_votes_prussia +]% {!</td><td>!} [+ str_votes_change_sapd_prussia +] {!</td><td>!} [+ sapd_r_prussia +]% {!</td><td>!} [+ str_change_sapd_prussia +] {!</td></tr>!} ?]
@@ -431,34 +431,95 @@ go-to: coalition_menu
 - @center_right_coalition_prussia
 
 @spd_majority
-title: spd_majority
+title: <span style="color: #c00000;">**SPD**</span> majority alone
+subtitle: <span style="color: #c00000;">**SPD**</span>: [+ spd_r_prussia +]%
+view-if: spd_r_prussia >= 50
+on-arrival: pro_republic += 5; reichswehr_loyalty -= 0.1 if chancellor == "Braun"; ddp_right += 2; dvp_right += 4; liberal_cooperation += 5; bourgeois_cooperation += 5; spd_in_prussia = 1; spd_majority_prussia = 1; prussian_police_loyalty += 0.1; prussian_police_strength += 50; democratization += 3; coup_progress += 1; capital_strike_progress += 2; ddp_relation -= 3; z_relation -= 3
+
+Damn that's kinda crazy. UNFINISHED TEXT
 
 @weimar_coalition_prussia
-title: weimar_coalition_prussia
+title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
+view-if: liberal_parliament == 0
+choose-if: weimar_coalition_prussia >= 50
 
-@weimar_coalition_liberal_parliament_prussia
-title: weimar_coalition_liberal_parliament_prussia
+I love weimar. UNFINISHED TEXT
+
+@weimar_coalition_prussia
+title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
+view-if: liberal_parliament == 1
+choose-if: weimar_coalition_prussia >= 50
+
+I love weimar. UNFINISHED TEXT
 
 @grand_coalition_prussia
-title: grand_coalition_prussia
+title: We can form a Grand Coalition.
+view-if: weimar_coalition_prussia < 50 or (weimar_coalition_prussia >= 50 and liberal_parliament == 1)
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> ([+ grand_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> ([+ grand_coalition_prussia +]%)
+choose-if: grand_coalition_prussia >= 50
+
+I hate DVP. UNFINISHED TEXT
 
 @new_grand_coalition_prussia
-title: new_grand_coalition_prussia
+title: A "New Grand Coalition" of all the constitutional parties?
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** ([+ neo_weimar_coalition_prussia +]%)
+view-if: grand_coalition_prussia < 50
+choose-if: neo_weimar_coalition_prussia >= 50 and z_relation >= 50 and dvp_relation >= 30 and ddp_relation >= 35
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others ([+ neo_weimar_coalition_prussia +]%) - [? if z_relation < 50 : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if dvp_relation < 30 : We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if ddp_relation < 35 : We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?]
+
+I hate realism. UNFINISHED TEXT
 
 @far_right_coalition_prussia
-title: far_right_coalition_prussia
+title: <a href="#" data-choice="0" style="color: #7A3C00;">Far-right</a> <a href="#" data-choice="0" style="color: #3E88B3;">coalition</a>
+subtitle: <a href="#" data-choice="0" style="color: #7A3C00;">**NSDAP**</a> + [? if dnvp_ideology == "Radical": <a href="#" data-choice="0" style="color: #3E88B3;">**DNVP**</a> ?][? if dnvp_ideology == "Moderate": <a href="#" data-choice="0" style="color: #003755;">**DNF**</a> ?] ([+ far_right_coalition_prussia +]%)
+view-if: far_right_coalition >= 50
+on-arrival: crazy_stuff_happens = 1
+
+something something prussia is joever. UNFINISHED TEXT
 
 @no_majority
 title: no_majority
+view-if: (weimar_coalition_prussia < 50) or (weimar_coalition_prussia >= 50 and liberal_parliament == 1) and far_right_coalition_prussia < 50
+
+No majority lol. UNFINISHED TEXT
 
 @left_coalition_prussia
-title: left_coalition_prussia
+title: Is a United Left coalition possible?
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition_prussia +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?]
+view-if: left_coalition >= 50
+choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3
+
+Ok. UNFINISHED TEXT
 
 @popular_front_coalition_prussia
-title: popular_front
+title: A new "Popular Front" coalition?
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> + <span style="color: #000000;">**Z**</span>[? if liberal_parliament = 0:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?] ([+ popular_front_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #000000;">Z</span>[? if liberal_parliament = 0:&nbsp;+ <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">SAPD</span>?] ([+ popular_front_coalition_prussia +]%) - [? if ((kpd_relation < 65 and kpd_leader == "Thälmann") or (kpd_relation < 45 and kpd_leader == "Conciliators")): We do not have good enough relations with the <span style="color: #700000;">KPD</span>. ?][? if (z_relation < 45 and z_leader == "Joos") or (z_relation < 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation < 55 and z_leader != "Joos" and kpd_leader == "Conciliators"): We do not have good enough relations with the <span style="color: #000000;">Center Party</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are unwilling to compromise at all. ?]
+view-if: popular_front_coalition_prussia >= 50 and weimar_coalition_prussia < 50
+choose-if: (((kpd_relation >= 65 and kpd_leader == "Thälmann") or (kpd_relation >= 45 and kpd_leader == "Conciliators")) and ((z_relation >= 45 and z_leader == "Joos") or (z_relation >= 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation >= 50 and z_leader != "Joos" and kpd_leader == "Conciliators")) and (liberal_parliament != 0 or ddp_relation >= 50) and communist_coalition >= 3) or (z_leader == "Joos" and kpd_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)
+
+Cool. UNFINISHED TEXT
 
 @right_coalition_prussia
-title: right_coalition_prussia
+title: Refuse to form a government, so that a right-wing coalition may be formed.
+subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #000000;">Z</span> + <span style="color: #C0A054;">DVP</span> + <span style="color: #3E88B3;">DNVP</span> + Others ([+ right_coalition_prussia +]%) [? if dnvp_ideology == "Radical" and dnvp_leader != "Westarp":- The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.?]
+view-if: right_coalition >= 50
+choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp"
+
+Why did we go through with this election? UNFINISHED TEXT
 
 @center_right_coalition_prussia
-title: center_right_coalition_prussia
+title: Refuse to form a government, so that a center-right coalition may be formed.
+unavailable-subtitle: <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others + <span style="color: #3E88B3;">DNVP</span> ([+ center_right_coalition_prussia +]%) [? if (year = 1929 and month >= 8): The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">**Center**</span>.?]
+subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> ([+ center_right_coalition_prussia +]%)
+view-if: dnvp_ideology == "Moderate" and center_right_coalition_prussia >= 50 and dnf_formed and right_coalition_prussia < 50
+choose-if: not (year = 1929 and month >= 8)
+
+Damn. UNFINISHED TEXT
