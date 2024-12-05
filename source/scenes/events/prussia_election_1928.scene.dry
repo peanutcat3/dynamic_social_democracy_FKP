@@ -3,7 +3,7 @@ view-if: year == 1928 and month == 5
 new-page: true
 tags: event
 max-visits: 1
-priority: -2
+priority: 1
 face-image: img/prussia.png
 
 = Elections, [+ month : month +] [+ year +]
