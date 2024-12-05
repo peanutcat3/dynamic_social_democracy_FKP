@@ -491,7 +491,7 @@ title: Refuse to form a government, so that a right-wing coalition may be formed
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #000000;">Z</span> + <span style="color: #C0A054;">DVP</span> + <span style="color: #3E88B3;">DNVP</span> + Others ([+ right_coalition_prussia +]%) [? if dnvp_ideology == "Radical" and dnvp_leader != "Westarp":- The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.?]
 view-if: right_coalition >= 50
-choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp"
+choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp" and right_coalition >= 50
 
 Why did we go through with this election? UNFINISHED TEXT
 
