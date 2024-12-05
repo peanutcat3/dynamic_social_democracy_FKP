@@ -119,7 +119,7 @@ Q.hindenburg_relation = 25;
 // Does the SPD lead in Prussia?
 Q.spd_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
-Q.prussian_government = "SPD";
+Q.prussian_government_lead = "SPD";
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
@@ -314,34 +314,34 @@ Q.previous_nsdap_last_election_votes = 3;
 Q.previous_other_last_election_votes = 7.8;
 
 // prussian gov right now
-Q.spd_r_prussia = 30.5;
-Q.kpd_r_prussia = 12.5;
-Q.z_r_prussia = 15.1;
-Q.ddp_r_prussia = 4.7;
-Q.dvp_r_prussia = 8.9;
-Q.dnvp_r_prussia = 18.2;
-Q.nsdap_r_prussia = 1.3;
-Q.other_r_prussia = 8.8;
+Q.spd_r_prussia = 25.3;
+Q.kpd_r_prussia = 9.8;
+Q.z_r_prussia = 18.0;
+Q.ddp_r_prussia = 6.0;
+Q.dvp_r_prussia = 10.0;
+Q.dnvp_r_prussia = 24.2;
+Q.nsdap_r_prussia = 2.5;
+Q.other_r_prussia = 4.2;
 
 // diff from prev PRUSSIA
-Q.old_spd_r_prussia = 30.5;
-Q.old_kpd_r_prussia = 12.5;
-Q.old_z_r_prussia = 15.1;
-Q.old_ddp_r_prussia = 4.7;
-Q.old_dvp_r_prussia = 8.9;
-Q.old_dnvp_r_prussia = 18.2;
-Q.old_nsdap_r_prussia = 1.3;
-Q.old_other_r_prussia = 8.8;
+Q.old_spd_r_prussia = 25.3;
+Q.old_kpd_r_prussia = 9.8;
+Q.old_z_r_prussia = 18.0;
+Q.old_ddp_r_prussia = 6.0;
+Q.old_dvp_r_prussia = 10.0;
+Q.old_dnvp_r_prussia = 24.2;
+Q.old_nsdap_r_prussia = 2.5;
+Q.old_other_r_prussia = 4.2;
 
 // old election votes PRUSSIA
-Q.previous_spd_last_election_votes_prussia = 29;
-Q.previous_kpd_last_election_votes_prussia = 11.9;
-Q.previous_z_last_election_votes_prussia = 14.5;
-Q.previous_ddp_last_election_votes_prussia = 4.5;
-Q.previous_dvp_last_election_votes_prussia = 8.5;
-Q.previous_dnvp_last_election_votes_prussia = 17.4;
-Q.previous_nsdap_last_election_votes_prussia = 1.8;
-Q.previous_other_last_election_votes_prussia = 12.4;
+Q.previous_spd_last_election_votes_prussia = 24.9;
+Q.previous_kpd_last_election_votes_prussia = 9.6;
+Q.previous_z_last_election_votes_prussia = 17.6;
+Q.previous_ddp_last_election_votes_prussia = 5.9;
+Q.previous_dvp_last_election_votes_prussia = 9.8;
+Q.previous_dnvp_last_election_votes_prussia = 23.7;
+Q.previous_nsdap_last_election_votes_prussia = 2.5;
+Q.previous_other_last_election_votes_prussia = 6.0;
 
 Q.spd_votes = 28.5;
 Q.kpd_votes = 10.6;
@@ -425,6 +425,15 @@ Q.grand_coalition_failed = 0;
 Q.in_minority_government = 0;
 // national unity governmet
 Q.in_center_right_coalition = 0;
+
+Q.in_right_coalition_prussia = 0;
+Q.in_weimar_coalition_prussia = 1;
+Q.in_grand_coalition_prussia = 0;
+Q.in_popular_front_prussia = 0;
+Q.in_left_front_prussia = 0;
+Q.in_spd_majority_prussia = 0;
+Q.grand_coalition_failed_prussia = 0;
+Q.in_center_right_coalition_prussia = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
