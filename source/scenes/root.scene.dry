@@ -635,6 +635,9 @@ Q.ui1_compromise = 0;
 Q.panzerkreuser_right_seen = 0;
 Q.black_thursday_seen = 0;
 
+Q.next_prussian_election_year = 1928
+Q.next_prussian_election_month = 5
+
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller
