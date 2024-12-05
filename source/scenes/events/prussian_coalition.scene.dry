@@ -427,10 +427,10 @@ go-to: coalition_menu
 - @spd_majority
 - @weimar_coalition_prussia
 - @weimar_coalition_liberal_parliament_prussia
+- @minority_weimar_coalition
 - @grand_coalition_prussia
 - @new_grand_coalition_prussia
 - @far_right_coalition_prussia
-- @no_majority
 - @left_coalition_prussia
 - @popular_front_coalition_prussia
 - @right_coalition_prussia
@@ -444,11 +444,20 @@ on-arrival: pro_republic += 5; reichswehr_loyalty -= 0.1 if chancellor == "Braun
 
 Damn that's kinda crazy. UNFINISHED TEXT
 
+@minority_weimar_coalition
+title: We can form a minority <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
+view-if: weimar_coalition_prussia < 50
+choose-if: far_right_coalition_prussia < 50
+
+I love weimar. UNFINISHED TEXT
+
 @weimar_coalition_prussia
 title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
-view-if: liberal_parliament == 0
+view-if: liberal_parliament == 0 and weimar_coalition_prussia >= 50
 choose-if: weimar_coalition_prussia >= 50
 
 I love weimar. UNFINISHED TEXT
@@ -457,7 +466,7 @@ I love weimar. UNFINISHED TEXT
 title: We can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%)
-view-if: liberal_parliament == 1
+view-if: liberal_parliament == 1 and weimar_coalition_prussia >= 50
 choose-if: weimar_coalition_prussia >= 50
 
 I love weimar. UNFINISHED TEXT
@@ -488,12 +497,6 @@ on-arrival: crazy_stuff_happens = 1
 
 something something prussia is joever. UNFINISHED TEXT
 
-@no_majority
-title: There is no clear governing majority.
-view-if: (weimar_coalition_prussia < 50) or (weimar_coalition_prussia >= 50 and liberal_parliament == 1) and far_right_coalition_prussia < 50
-
-No majority lol. UNFINISHED TEXT
-
 @left_coalition_prussia
 title: Is a United Left coalition possible?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition_prussia +]%)
@@ -517,7 +520,7 @@ title: Refuse to form a government, so that a right-wing coalition may be formed
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #000000;">Z</span> + <span style="color: #C0A054;">DVP</span> + <span style="color: #3E88B3;">DNVP</span> + Others ([+ right_coalition_prussia +]%) [? if dnvp_ideology == "Radical" and dnvp_leader != "Westarp":- The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.?]
 view-if: right_coalition >= 50
-choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp"
+choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp" and right_coalition >= 50
 
 Why did we go through with this election? UNFINISHED TEXT
 

@@ -395,7 +395,6 @@ go-to: coalition_menu
 - @grand_coalition_prussia
 - @new_grand_coalition_prussia
 - @far_right_coalition_prussia
-- @no_majority
 - @left_coalition_prussia
 - @popular_front_coalition_prussia
 - @right_coalition_prussia
@@ -461,12 +460,6 @@ view-if: far_right_coalition >= 50
 on-arrival: crazy_stuff_happens = 1
 
 something something prussia is joever. UNFINISHED TEXT
-
-@no_majority
-title: There is no clear governing majority.
-view-if: (weimar_coalition_prussia < 50) or (weimar_coalition_prussia >= 50 and liberal_parliament == 1) and far_right_coalition_prussia < 50
-
-No majority lol. UNFINISHED TEXT
 
 @left_coalition_prussia
 title: Is a United Left coalition possible?
