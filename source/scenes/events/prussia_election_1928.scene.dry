@@ -29,14 +29,14 @@ for (var c of Q.classes) {
 
 // Define adjustment factors
 var adjustment_factors = {
-    spd: 1.0,
-    kpd: 1.2,
-    ddp: 1.0,
-    z: 1.0,
+    spd: 0.98,
+    kpd: 1.1,
+    ddp: 0.95,
+    z: 0.97,
     dvp: 1.0,
     dnvp: 1.2,
-    nsdap: 0.8,
-    other: 0.7
+    nsdap: 0.66,
+    other: 0.88
 };
 
 // Calculate support for each of the parties
