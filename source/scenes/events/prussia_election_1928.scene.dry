@@ -1,6 +1,5 @@
 title: Prussian Landtag Election
-view-if: year == 1928 && month == 5
-on-arrival: coalition_dissent += 2 if not in_left_front
+view-if: year == 1928 and && month == 5
 new-page: true
 tags: event
 max-visits: 1
