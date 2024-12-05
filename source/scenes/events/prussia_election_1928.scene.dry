@@ -471,7 +471,7 @@ I hate realism. UNFINISHED TEXT
 @far_right_coalition_prussia
 title: <a href="#" data-choice="0" style="color: #7A3C00;">Far-right</a> <a href="#" data-choice="0" style="color: #3E88B3;">coalition</a>
 subtitle: <a href="#" data-choice="0" style="color: #7A3C00;">**NSDAP**</a> + [? if dnvp_ideology == "Radical": <a href="#" data-choice="0" style="color: #3E88B3;">**DNVP**</a> ?][? if dnvp_ideology == "Moderate": <a href="#" data-choice="0" style="color: #003755;">**DNF**</a> ?] ([+ far_right_coalition_prussia +]%)
-view-if: far_right_coalition >= 50
+view-if: far_right_coalition_prussia >= 50
 on-arrival: crazy_stuff_happens = 1
 
 something something prussia is joever. UNFINISHED TEXT
@@ -480,7 +480,7 @@ something something prussia is joever. UNFINISHED TEXT
 title: Is a United Left coalition possible?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition_prussia +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?]
-view-if: left_coalition >= 50
+view-if: left_coalition_prussia >= 50
 choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3
 
 Ok. UNFINISHED TEXT
@@ -498,8 +498,8 @@ Cool. UNFINISHED TEXT
 title: Refuse to form a government, so that a right-wing coalition may be formed.
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #000000;">Z</span> + <span style="color: #C0A054;">DVP</span> + <span style="color: #3E88B3;">DNVP</span> + Others ([+ right_coalition_prussia +]%) [? if dnvp_ideology == "Radical" and dnvp_leader != "Westarp":- The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.?]
-view-if: right_coalition >= 50
-choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp" and right_coalition >= 50
+view-if: right_coalition_prussia >= 50
+choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp"
 
 Why did we go through with this election? UNFINISHED TEXT
 
