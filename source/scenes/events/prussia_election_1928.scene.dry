@@ -391,6 +391,7 @@ go-to: coalition_menu
 - @spd_majority
 - @weimar_coalition_prussia
 - @weimar_coalition_liberal_parliament_prussia
+- @minority_weimar_coalition
 - @grand_coalition_prussia
 - @new_grand_coalition_prussia
 - @far_right_coalition_prussia
