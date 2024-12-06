@@ -90,7 +90,7 @@ On the other hand, agricultural producers and some small businesses benefit from
 title: Lower tariffs on imports.
 choose-if: budget >= 2
 subtitle: -2 budget.
-on-arrival: tariffs -= 1; budget -= 2; inflation -= 0.5; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); rural_spd -= 5; old_middle_spd -= 3; rural_dnvp += 4 if not kvp_formed; old_middle_dnvp += 2 if not kvp_formed; rural_kvp += 4 if kvp_formed; old_middle_kvp if kvp_formed; west_relation += 1; east_relation += 1; eu_progress += 1 if eu_progress > 0
+on-arrival: tariffs -= 1; budget -= 2; inflation -= 0.5; workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); rural_spd -= 5; old_middle_spd -= 3; rural_dnvp += 4 if not kvp_formed; old_middle_dnvp += 2 if not kvp_formed; rural_kvp += 4 if kvp_formed; old_middle_kvp += 2 if kvp_formed; west_relation += 1; east_relation += 1; eu_progress += 1 if eu_progress > 0
 
 Lowering tariffs helps workers and the urban poor by reducing prices for basic necessities. In addition, other countries are pleased by lower tariffs, and are more willing to negotiate on many issues.
 
