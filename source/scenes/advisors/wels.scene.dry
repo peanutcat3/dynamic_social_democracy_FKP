@@ -50,6 +50,16 @@ on-arrival: advisor_action_timer = 6; resources += dues
 
 We have gained +[+ dues +] resources.
 
+@money
+title: For playtesters
+view-if: difficulty < 1
+subtitle: Print a SPDillion resources.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: resources += 100
+
+We have gained +100 resources.
+
 @snap_election
 title: Snap Election
 subtitle: Call a snap election.
