@@ -576,6 +576,8 @@ Q.no_majority_elections = 0;
 Q.in_election = 1;
 Q.in_election_prussia = 1;
 Q.next_election_time_prussia = 5;
+Q.next_election_year_prussia = 1928;
+Q.next_election_month_prussia = 5;
 Q.next_election_year = 1928;
 Q.next_election_month = 12;
 Q.next_election_time = 12;
@@ -637,9 +639,6 @@ Q.bourgeois_cooperation = 0;
 Q.ui1_compromise = 0;
 Q.panzerkreuser_right_seen = 0;
 Q.black_thursday_seen = 0;
-
-Q.next_prussian_election_year = 1928
-Q.next_prussian_election_month = 5
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
