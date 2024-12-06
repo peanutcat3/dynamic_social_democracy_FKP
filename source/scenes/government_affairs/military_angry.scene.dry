@@ -1,0 +1,32 @@
+title: Military Angry
+new-page: true
+tags: event
+on-arrival: skibidi = 1
+view-if: reichswehr_loyalty <= 0
+face-image: img/portraits/SchleicherKurt.jpg
+subtitle: Grrrr....
+
+= Military Angry
+
+Military is mad at us because we were being bad and stuff or that you probably have braun as chancellor
+
+UNFINISHED
+
+- @concessions: damn
+- @idc: that's
+- @reform: crazy
+
+@concessions
+subtitle: ok
+
+words here
+
+@idc
+subtitle: ok
+
+words here
+
+@reform
+subtitle: ok
+
+words here

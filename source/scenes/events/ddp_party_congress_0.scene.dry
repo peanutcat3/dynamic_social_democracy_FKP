@@ -18,13 +18,13 @@ go-to: left if skibidi == 1; statusquo if sigma == 1; formdstp if toliet == 1
 
 @left
 on-arrival: pro_republic += 3
-face-image: img/Stresemann.jpg
+face-image: img/portraits/Stresemann.jpg
 
 placeholder
 
 @statusquo
 on-arrival: pro_republic += 3
-face-image: img/erichkochweser.jpg
+face-image: img/portraits/erichkochweser.jpg
 
 placeholder
 
