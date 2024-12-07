@@ -5,6 +5,7 @@ on-arrival: skibidi = 1
 view-if: reichswehr_loyalty <= 0
 face-image: img/portraits/SchleicherKurt.jpg
 subtitle: Grrrr....
+max-visits: 1
 
 = Military Angry
 
