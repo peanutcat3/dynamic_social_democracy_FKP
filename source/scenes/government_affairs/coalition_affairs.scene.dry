@@ -22,10 +22,10 @@ How do we reduce tensions with the coalition?
 
 
 @dvp_prussia_2
-view-if: year <= 1929 and dvp_in_prussia = 0 and in_grand_coalition = 1 and dvp_was_in_prussia == 0
+view-if: year <= 1929 and in_grand_coalition_prussia = 0 and (in_weimar_coalition_prussia or in_minority_weimar_coalition_prussia) and in_grand_coalition = 1 and dvp_was_in_prussia == 0
 choose-if: z_leader != "Kaas"
 unavailable-subtitle: [? if z_leader = "Kaas": The Center strongly dissents against.?]
-on-arrival: dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; dvp_in_prussia = 1; dvp_left += 3; new_middle_dvp += 3
+on-arrival: dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; in_grand_coalition_prussia = 1; in_weimar_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; dvp_left += 3; new_middle_dvp += 3
 
 Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. 
 

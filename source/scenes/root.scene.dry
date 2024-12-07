@@ -116,10 +116,12 @@ Q.nsdap_leader = "Hitler";
 Q.hindenburg_relation = 25;
 
 
-// Does the SPD lead in Prussia?
-Q.spd_prussia = 1;
+// Does Braun lead in Prussia?
+Q.braun_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
-Q.prussian_government_lead = "SPD";
+Q.spd_prussia = 1;
+Q.right_prussia = 0;
+Q.papen_prussia = 0;
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
@@ -374,7 +376,7 @@ Q.adjustmentFactors_dnf = 1.0
 Q.adjustmentFactors_kvp = 1.0
 Q.adjustmentFactors_other = 0.75
 
-Q.adjustmentFactors_spd_prussia = 1.0
+Q.adjustmentFactors_braun_prussia = 1.0
 Q.adjustmentFactors_sapd_prussia = 1.0
 Q.adjustmentFactors_kpd_prussia = 1.0
 Q.adjustmentFactors_z_prussia = 1.0
@@ -434,6 +436,8 @@ Q.in_left_front_prussia = 0;
 Q.in_spd_majority_prussia = 0;
 Q.grand_coalition_failed_prussia = 0;
 Q.in_center_right_coalition_prussia = 0;
+Q.in_minority_weimar_coalition_prussia = 0;
+Q.dvp_prussia_asked = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
@@ -626,7 +630,6 @@ Q.was_in_center_right_coalition = 0;
 Q.was_in_right_coalition = 0;
 Q.dvp_left = 0;
 Q.dvp_right = 0;
-Q.dvp_in_prussia = 0;
 Q.dvp_was_in_prussia = 0;
 Q.dvp_leader = "Stresemann";
 Q.dvp_ideology = "Moderate"

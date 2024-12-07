@@ -1,7 +1,7 @@
 title: Prussian Government Collapses
 subtitle: Our coalition partners are dissolving the Prussian government.
-view-if: ((z_relation < 30 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 25 and z_leader == "Joos") or (ddp_relation < 30 and ddp_ideology == "Right") or (ddp_relation < 25 and ddp_ideology == "Moderate") or (ddp_relation < 20 and ddp_ideology == "Left" and ddp_cohesion < 8)) and dvp_in_prussia == 0 and not (year == 1928 and month < 6) and not (year >= 1932 and month >= 4) and not kvp_formed
-on-arrival: coalition_dissent += 2 if not in_left_front
+view-if: ((z_relation < 30 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 25 and z_leader == "Joos") or (ddp_relation < 30 and ddp_ideology == "Right") or (ddp_relation < 25 and ddp_ideology == "Moderate") or (ddp_relation < 20 and ddp_ideology == "Left" and ddp_cohesion < 8)) and in_grand_coalition_prussia == 0 and not (year == 1928 and month < 6) and not (year >= 1932 and month >= 4) and not kvp_formed
+on-arrival: coalition_dissent += 2 if not in_left_front; in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; braun_prussia = 0; spd_prussia = 0; right_prussia = 0
 new-page: true
 tags: event
 max-visits: 1
@@ -23,7 +23,7 @@ The only alternative coalition that can be formed with the current composition o
 title: A Bürgerblock is formed.
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** (50%)
 view-if: dnvp_ideology == "Moderate" or dnvp_leader == "Westarp"
-on-arrival: right_in_prussia = 1; spd_in_prussia = 0; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; dvp_right += 2; ddp_right += 2; ddp_cohesion -= 2; ddp_relation -= 3
+on-arrival: in_right_coalition_prussia = 1; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; dvp_right += 2; ddp_right += 2; ddp_cohesion -= 2; ddp_relation -= 3
 
 A right coalition is formed, albeit with an extremely narrow majority. They will begin undoing years of reform and democratization that we fought hard to achieve and will let <span style="color: #3E88B3;">right</span>-<span style="color: #7A3C00;">wing</span> paramilitaries like the <span style="color: #3E88B3;">Stahlhelm</span> and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> run free.
 
@@ -33,7 +33,7 @@ It won't take long for the government to collapse and for us to take power throu
 title: A Bürgerblock is formed.
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> (54.9%)
 view-if: dnvp_ideology == "Moderate" and dnvp_leader != "Westarp"
-on-arrival: right_in_prussia = 1; spd_in_prussia = 0; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; ddp_right += 3; ddp_cohesion -= 3; dvp_right += 2; ddp_relation -= 5
+on-arrival: in_center_right_coalition_prussia = 1; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; ddp_right += 3; ddp_cohesion -= 3; dvp_right += 2; ddp_relation -= 5
 
 A center right coalition is formed featuring the parties to the right of us. They will begin undoing years of reform and democratization that we fought hard to achieve and will let <span style="color: #3E88B3;">right</span>-<span style="color: #7A3C00;">wing</span> paramilitaries like the <span style="color: #3E88B3;">Stahlhelm</span> and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> run free.
 
