@@ -3,7 +3,7 @@ view-if: (year = next_election_year_prussia and month >= next_election_month_pru
 new-page: true
 tags: event
 priority: 1
-on-arrival: was_in_weimar_coalition_prussia = 1 if (in_weimar_coalition_prussia == 1 or in_minority_weimar_coalition_prussia == 1); in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; braun_prussia = 0; spd_prussia = 0; right_prussia = 0
+on-arrival: was_in_weimar_coalition_prussia = 1 if (in_weimar_coalition_prussia == 1 or in_minority_weimar_coalition_prussia == 1); was_in_grand_coalition_prussia = 1 if (in_grand_coalition_prussia == 1 or in_minority_grand_coalition_prussia == 1); in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; braun_prussia = 0; spd_prussia = 0; right_prussia = 0
 on-departure: in_election_prussia = 0; next_election_year_prussia = next_election_year_prussia + 4; n_elections_prussia += 1; next_election_time_prussia = time + 48
 set-jump: new_elections
 face-image: img/prussia.png
