@@ -560,7 +560,7 @@ unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="co
 How do we convince vehemently anti-<span style="color: #c00000;">socialist</span> parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">**Center**</span> and <span style="color: #C0A054;">**DVP**</span> may allow us some leverage.
 
 - @use_resources
-- @new_elections: No. We will have new elections.
+- @call_new_elections: No. We will have new elections.
 
 @use_resources
 title: Use our resources to smooth over the creation of a coalition.
@@ -709,7 +709,7 @@ choose-if: not (year = 1929 and month >= 8)
 
 Damn. UNFINISHED TEXT
 
-@new_elections
+@call_new_elections
 call: set_next_election_time_prussia
 
 New Prussian elections have been set for [+ next_prussian_election_month : month +] [+ next_prussian_election_year +].
