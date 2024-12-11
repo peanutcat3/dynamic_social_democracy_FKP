@@ -3,7 +3,7 @@ view-if: (year = next_election_year_prussia and month >= next_election_month_pru
 new-page: true
 tags: event
 priority: 1
-on-arrival: was_in_weimar_coalition_prussia = 1 if (in_weimar_coalition_prussia == 1 or in_minority_weimar_coalition_prussia == 1); was_in_grand_coalition_prussia = 1 if (in_grand_coalition_prussia == 1 or in_minority_grand_coalition_prussia == 1); in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; braun_prussia = 0; spd_prussia = 0; right_prussia = 0
+on-arrival: was_in_weimar_coalition_prussia = 1 if (in_weimar_coalition_prussia == 1 or in_minority_weimar_coalition_prussia == 1); was_in_grand_coalition_prussia = 1 if (in_grand_coalition_prussia == 1 or in_minority_grand_coalition_prussia == 1); in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; braun_prussia = 0; rosenfeld_prussia = 0; spd_prussia = 0; right_prussia = 0; stegerwald_prussia = 0; luther_prussia = 0; nazi_prussia = 0; papen_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0
 on-departure: in_election_prussia = 0; next_election_year_prussia = next_election_year_prussia + 4; n_elections_prussia += 1; next_election_time_prussia = time + 48
 set-jump: new_elections
 face-image: img/prussia.png
@@ -490,11 +490,13 @@ go-to: coalition_menu
 - @right_coalition_prussia
 - @center_right_coalition_prussia
 
+
+
 @spd_majority
 title: <span style="color: #c00000;">**SPD**</span> majority alone
 subtitle: <span style="color: #c00000;">**SPD**</span>: [+ spd_r_prussia +]%
 view-if: spd_r_prussia >= 50
-on-arrival: pro_republic += 5; reichswehr_loyalty -= 0.1 if chancellor == "Braun"; ddp_right += 2; dvp_right += 4; liberal_cooperation += 5; bourgeois_cooperation += 5; braun_prussia = 1; spd_majority_prussia = 1; prussian_police_loyalty += 0.1; prussian_police_strength += 50; democratization += 3; coup_progress += 1; capital_strike_progress += 2; ddp_relation -= 3; z_relation -= 3
+on-arrival: pro_republic += 5; reichswehr_loyalty -= 0.05 if chancellor == "Braun"; ddp_right += 2; dvp_right += 4; liberal_cooperation += 5; bourgeois_cooperation += 5; braun_prussia = 1; spd_majority_prussia = 1; prussian_police_loyalty += 0.1; prussian_police_strength += 50; democratization += 3; coup_progress += 1; capital_strike_progress += 2; ddp_relation -= 3; z_relation -= 3
 
 Finally, the <span style="color: #c00000;">**SPD**</span> can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. However, our former coalition partners are going to start drifting to the right.
 
@@ -506,7 +508,7 @@ subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #00
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed and kpd_relation >= 30 :&nbsp;+ <span style="color: #9B0000;">**SAPD**</span> toleration?] ([+ weimar_coalition_prussia +]%) [? if far_right_coalition_prussia >= 50: The far-right are able to form a government. ?]
 view-if: weimar_coalition_prussia < 50 and was_in_weimar_coalition_prussia == 1
 choose-if: far_right_coalition_prussia < 50
-on-arrival: in_weimar_coalition_prussia = 1; in_minority_weimar_coalition_prussia = 1; was_in_weimar_coalition_prussia = 1; braun_prussia = 1; coup_progress += 1 if weimar_coalition_prussia < 45; rural_nsdap += 3 if weimar_coalition_prussia < 45; new_middle_nsdap += 3 if weimar_coalition_prussia < 45; old_middle_nsdap += 3 if weimar_coalition_prussia < 45; workers_nsdap += 3 if weimar_coalition_prussia < 45; pro_republic -= 5 if weimar_coalition_prussia < 45; workers_spd -= 5 if weimar_coalition_prussia < 45; rural_spd -= 5 if weimar_coalition_prussia < 45; old_middle_spd -= 5 if weimar_coalition_prussia < 45; workers_spd -= 5 if weimar_coalition_prussia < 45; new_middle_ddp -= 3 if weimar_coalition_prussia < 45; old_middle_ddp -= 3 if weimar_coalition_prussia < 45; ddp_right += 1; ddp_cohesion -= 1; z_relation -= 3; ddp_relation -= 3
+on-arrival: in_weimar_coalition_prussia = 1; in_minority_weimar_coalition_prussia = 1; was_in_weimar_coalition_prussia = 1; braun_prussia = 1; coup_progress += 1 if weimar_coalition_prussia < 45; rural_nsdap += 3 if weimar_coalition_prussia < 45; new_middle_nsdap += 3 if weimar_coalition_prussia < 45; old_middle_nsdap += 3 if weimar_coalition_prussia < 45; workers_nsdap += 3 if weimar_coalition_prussia < 45; pro_republic -= 5 if weimar_coalition_prussia < 45; workers_spd -= 5 if weimar_coalition_prussia < 45; rural_spd -= 5 if weimar_coalition_prussia < 45; old_middle_spd -= 5 if weimar_coalition_prussia < 45; workers_spd -= 5 if weimar_coalition_prussia < 45; new_middle_ddp -= 3 if weimar_coalition_prussia < 45; old_middle_ddp -= 3 if weimar_coalition_prussia < 45; ddp_right += 1; ddp_cohesion -= 1; z_relation -= 3; ddp_relation -= 3; bourgeois_cooperation += 1
 
 [? if weimar_coalition_prussia >= 45: We have enough votes to continue the "<span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition" government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span> and [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>) parties! This has been the ruling coalition since 1919. ?][? if weimar_coalition_prussia < 45: We are able to stay in control of Prussia maintaining the "<span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition" government for the time being despite the lack of a majority. This has been the ruling coalition since 1919. ?]
 
@@ -530,11 +532,23 @@ view-if: grand_coalition_prussia >= 45
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> ([+ grand_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> ([+ grand_coalition_prussia +]%)
 choose-if: grand_coalition_prussia >= 50
-on-arrival: in_grand_coalition_prussia = 1; braun_prussia = 1; dvp_relation += 5; dvp_relation += 10 if (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia); z_relation -= 5 if (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia); ddp_relation += 5 if (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia); coalition_dissent -= 1 if (in_grand_coalition and (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia)); left_dissent += 5; dvp_left += 2; dvp_left += 2 if (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia); new_middle_dvp += 3
+on-arrival: in_grand_coalition_prussia = 1; braun_prussia = 1; dvp_relation += 5; dvp_relation += 10 if (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia); z_relation -= 5 if (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia); ddp_relation += 5 if (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia); coalition_dissent -= 1 if (in_grand_coalition and (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia)); left_dissent += 5; dvp_left += 2; dvp_left += 2 if (weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia); new_middle_dvp += 3; liberal_cooperation += 0.5
 
-We have formed a majority coalition with the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span>, [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>), and <span style="color: #C0A054;">**People's**</span> (<span style="color: #C0A054;">**DVP**</span>) parties.
+We have formed a majority coalition with the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span>, [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>), and <span style="color: #C0A054;">**People's**</span> (<span style="color: #C0A054;">**DVP**</span>) parties. [? if weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia: Our choice to include the <span style="color: #C0A054;">**DVP**</span> in government despite us having the option to maintain the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition is a conciliatory move towards the bourgeois parties. ?]
 
-[? if weimar_coalition_prussia >= 50 or was_in_weimar_coalition_prussia: Our choice to include the <span style="color: #C0A054;">**DVP**</span> in government despite us having the option to maintain the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition is a conciliatory move towards the bourgeois parties. ?][? if next_election_time - time < 6: This is expected to garner some good will from the <span style="color: #C0A054;">**DVP**</span> in upcoming federal coalition talks. ?] Braun is selected to be the Minister-President of Prussia.
+[? if next_election_time - time < 6: This is expected to garner some good will from the <span style="color: #C0A054;">**DVP**</span> in upcoming federal coalition talks. ?] Braun is selected to be the Minister-President of Prussia.
+
+@minority_grand_coalition_prussia
+title: We can form a minority Grand Coalition.
+view-if: grand_coalition_prussia < 50 and was_in_grand_coalition_prussia == 1
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> ([+ grand_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> ([+ grand_coalition_prussia +]%)
+choose-if: far_right_coalition_prussia < 50
+on-arrival: in_grand_coalition_prussia = 1; in_minority_grand_coalition_prussia = 1; braun_prussia = 1; dvp_relation += 3; left_dissent += 5; dvp_left += 1; liberal_cooperation += 0.5
+
+We have formed a minority coalition with the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span>, [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>), and <span style="color: #C0A054;">**People's**</span> (<span style="color: #C0A054;">**DVP**</span>) parties.
+
+[? if grand_coalition_prussia >= 40: Although we lack a simple majority in the Landtag, we remain in power thanks to the constructive vote of no confidence. ?][? if grand_coalition_prussia < 40: We remain in power for now, albeit unpopular. However, there is a risk that the conservative establishment may call for a *Reichsexekution* against our government. ?] Braun is selected to be the Minister-President of Prussia.
 
 @new_grand_coalition_prussia
 title: A "New Grand Coalition" of all the constitutional parties?
@@ -542,50 +556,140 @@ subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #00
 view-if: grand_coalition_prussia < 50
 choose-if: neo_weimar_coalition_prussia >= 50 and z_relation >= 50 and dvp_relation >= 30 and ddp_relation >= 35
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others ([+ neo_weimar_coalition_prussia +]%) - [? if z_relation < 50 : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if dvp_relation < 30 : We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if ddp_relation < 35 : We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?]
-on-arrival: braun_prussia = 1; in_grand_coalition_prussia = 1
 
-I hate realism. UNFINISHED TEXT
+How do we convince vehemently anti-<span style="color: #c00000;">socialist</span> parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">**Center**</span> and <span style="color: #C0A054;">**DVP**</span> may allow us some leverage.
 
-Who should be the Minister-President?
+- @use_resources
+- @new_elections: No. We will have new elections.
+
+@use_resources
+title: Use our resources to smooth over the creation of a coalition.
+subtitle: -1 resources
+unavailable-subtitle: Not enough resources (need 1).
+choose-if: resources >= 1
+on-arrival: resources -= 1; in_new_grand_coalition_prussia = 1; dvp_left += 1; liberal_cooperation += 1; bourgeois_cooperation += 1
+
+We transfer some of our campaign funds to our putative coalition partners. Some would call this corruption, but perhaps it is necessary to save our democracy.
+
+Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-<span style="color: #7A3C00;">fascist</span> and non-<span style="color: #700000;">communist</span> parties. Leftists in our party are somewhat skeptical of this arrangement. 
+
+
+Who should be Minister-President?
 
 - @braun
-- @bourgeois_chancellor
+- @center
 
 @braun
 title: Otto Braun for Minister-President.
+on-arrival: braun_prussia = 1
 
-braun moment
+As always, Braun remains in control of Prussia.
 
-@bourgeois_chancellor
+@center
 title: Let the <span style="color: #000000;">Center Party</span> have their Minister-President.
+subtitle: This will grant us goodwill with the bourgeois parties.
+on-arrival: braun_prussia = 0; luther_prussia = 1 if dvp_leader == "Luther"; stegerwald_prussia = 1 if dvp_leader != "Luther"; ddp_relation += 5; dvp_relation += 5; z_relation += 10
 
-grrr
+In a surprising move, Braun steps aside from from his long held position in favor of a candidate put forward by the bourgeois parties. [? if dvp_leader == "Luther": The <span style="color: #C0A054;">**DVP**</span>'s Hans Luther is selected to become the Minister-President of Prussia. ?][? if dvp_leader != "Luther": The <span style="color: #000000;">Center</span>'s Adam Stegerwald is selected to become the Minister-President of Prussia. ?]
 
 @far_right_coalition_prussia
 title: <a href="#" data-choice="0" style="color: #7A3C00;">Far-right</a> <a href="#" data-choice="0" style="color: #3E88B3;">coalition</a>
 subtitle: <a href="#" data-choice="0" style="color: #7A3C00;">**NSDAP**</a> + [? if dnvp_ideology == "Radical": <a href="#" data-choice="0" style="color: #3E88B3;">**DNVP**</a> ?][? if dnvp_ideology == "Moderate": <a href="#" data-choice="0" style="color: #003755;">**DNF**</a> ?] ([+ far_right_coalition_prussia +]%)
 view-if: far_right_coalition_prussia >= 50
-on-arrival: crazy_stuff_happens = 1
+on-arrival: coup_progress += 5; rural_nsdap += 10; workers_nsdap += 10; new_middle_nsdap += 10; old_middle_nsdap += 10; unemployed_nsdap += 10; workers_spd -= 5; workers_kpd -= 5; nazi_prussia = 1; sh_strength += 100; sh_militancy += 0.1; sa_strength += 200; sa_militancy += 0.1; rfb_banned = 1; rfb_strength -= 50; rb_strength -= 200; prussian_police_loyalty -= 0.5
 
-something something prussia is joever. UNFINISHED TEXT
+There are enough votes for the <span style="color: #7A3C00;">Nazis</span> and the [? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNF**</span> ?] to form a coalition. Hermann Göring is elevated to the position of Minister-President and immediately starts dismantling its democratic institutions.
+
+A wave of terror and repression unfolds, targeting the <span style="color: #c00000;">socialists</span> and <span style="color: #700000;">communists</span>. Violence erupts in the streets, with bullets flying and leftists being killed or imprisoned.
 
 @left_coalition_prussia
 title: Is a United Left coalition possible?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition_prussia +]%)
-unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition_prussia +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?]
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition_prussia +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?] [? if president != "Braun": Hindenburg will perform a *Reichsexekution* upon our government. ?]
 view-if: left_coalition_prussia >= 50
-choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3
+choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3 and president == "Braun"
+on-arrival: in_left_front_prussia = 1; rosenfeld_prussia = 1; reichswehr_loyalty -= 0.05; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 2; liberal_cooperation += 5; bourgeois_cooperation += 10; kpd_relation += 10; z_relation -= 4; ddp_relation -= 4; dvp_relation -= 8; coup_progress += 2; coup_progress += 1 if in_left_front; capital_strike_progress += 2; capital_strike_progress += 1 if in_left_front; reformist_dissent += 25; reformist_strength -= 15; left_dissent -= 15; left_strength += 15; prussian_police_loyalty -= 0.1
+go-to: kpd_goals_prussia
 
-Ok. UNFINISHED TEXT
+Somehow, surprisingly, the left coalition is successfully formed, without appointing a <span style="color: #700000;">communist</span> as chancellor. The consensus choice for chancellor, accepted by the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, is[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work..
+
+In response to the <span style="color: #700000;">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, eventually enabling the destruction of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. [? if in_left_front: The right will be more active in resisting our rule considering we are also ruling with the <span style="color: #700000;">**KPD**</span> on the federal level too. ?]
 
 @popular_front_coalition_prussia
 title: A new "Popular Front" coalition?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> + <span style="color: #000000;">**Z**</span>[? if liberal_parliament = 0:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?] ([+ popular_front_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #000000;">Z</span>[? if liberal_parliament = 0:&nbsp;+ <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">SAPD</span>?] ([+ popular_front_coalition_prussia +]%) - [? if ((kpd_relation < 65 and kpd_leader == "Thälmann") or (kpd_relation < 45 and kpd_leader == "Conciliators")): We do not have good enough relations with the <span style="color: #700000;">KPD</span>. ?][? if (z_relation < 45 and z_leader == "Joos") or (z_relation < 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation < 55 and z_leader != "Joos" and kpd_leader == "Conciliators"): We do not have good enough relations with the <span style="color: #000000;">Center Party</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are unwilling to compromise at all. ?]
-view-if: popular_front_coalition_prussia >= 50 and weimar_coalition_prussia < 50
+view-if: popular_front_coalition_prussia >= 50
 choose-if: (((kpd_relation >= 65 and kpd_leader == "Thälmann") or (kpd_relation >= 45 and kpd_leader == "Conciliators")) and ((z_relation >= 45 and z_leader == "Joos") or (z_relation >= 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation >= 50 and z_leader != "Joos" and kpd_leader == "Conciliators")) and (liberal_parliament != 0 or ddp_relation >= 50) and communist_coalition >= 3) or (z_leader == "Joos" and kpd_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)
 
-Cool. UNFINISHED TEXT
+Could we really form a coalition that included both the <span style="color: #000000;">**Center**</span> and the <span style="color: #700000;">**Communists**</span>? It seems like an absurd concept, but given our good relationships with both sides, it is not an impossibility.
+
+Hindenburg might object to this, and may perform a *Reichsexekution* on our government, if such a coalition is formed.
+
+- @popular_front_2: Form the Popular Front!
+- @great_popular_front: Form the Popular Front!
+
+@popular_front_2
+view-if: z_leader != "Joos" or kpd_leader != "Conciliators"
+
+Somehow, both the <span style="color: #700000;">**Communists**</span> and <span style="color: #000000;">**Center**</span> are at the very least willing to entertain negotiations. Of course, <span style="color: #700000;">**KPD**</span> radicals and <span style="color: #000000;">**Center**</span> conservatives derail the negotiations almost immediately. The <span style="color: #700000;">**KPD**</span> demands leadership of the coalition for themselves, [? if spd_r_prussia > kpd_r_prussia : despite our higher vote share, ?]while the <span style="color: #000000;">**Center**</span> is offended by the prospect of helping <span style="color: #700000;">**Bolsheviks**</span> enter government. Memories of the *Reichsexekution* against similar governments in Thuringia and Saxony remain vivid, standing as a cautionary tale.
+
+*Something* must be done to restore balance.
+
+- @popular_front_resources
+- @popular_front_democracy
+- @popular_front_braun
+- @coalition_menu: This is impossible. Try another governing arrangement.
+
+@popular_front_resources
+title: Use our resources to smooth things over.
+unavailable-subtitle: Required: 3 resources
+subtitle: -3 resources
+choose-if: resources >= 3
+on-arrival: resources -= 3
+go-to: popular_front_success
+
+@popular_front_democracy
+title: Convince the <span style="color: #700000;">**KPD**</span> to accept democracy.
+subtitle: [? if kpd_leader == "Conciliators" : The Conciliator leadership of the <span style="color: #700000;">**KPD**</span> at least claim to support the Popular Front. ?]
+unavailable-subtitle: Our relationship with the <span style="color: #700000;">**KPD**</span> is not high enough.
+choose-if: (kpd_relation >= 60 and communist_coalition >= 3) or kpd_leader == "Conciliators"
+go-to: popular_front_success
+
+@popular_front_braun
+title: Use pressure from President Braun to force the parties to cooperate.
+view-if: president == "Braun"
+go-to: popular_front_success
+
+@popular_front_success
+on-arrival: in_popular_front_prussia = 1; rosenfeld_prussia = 1; dvp_right += 4; ddp_right += 2; ddp_cohesion -= 1.5 if liberal_parliament = 0; liberal_cooperation += 3 if liberal_parliament = 1; liberal_cooperation += 2 if (liberal_parliament = 1 and in_popular_front or in_left_front); bourgeois_cooperation += 3; bourgeois_cooperation += 2 if in_popular_front or in_left_front; dvp_relation -= 5; kpd_relation += 8; ddp_relation -= 5 if liberal_parliament = 1; coup_progress += 1; coup_progress += 1 if in_popular_front; reformist_dissent += 20; reformist_strength -= 10; left_dissent -= 10; left_strength += 10; ddp_in_popular_front_prussia = 1 if liberal_parliament = 0; rfb_strength += 50; rfb_militancy += 0.05; prussian_police_loyalty -= 0.1
+go-to: kpd_goals_prussia
+
+Somehow, surprisingly, the coalition is successfully formed! We still need a Minister-President; the only acceptable choice among the parties was [? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?][? if left_split == 0:&nbsp;<span style="color: #c00000;">**SPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work. He is accepted with great reluctance to the <span style="color: #000000;">**Center**</span> and welcomed by the <span style="color: #700000;">**KPD**</span>.
+
+In response to the <span style="color: #700000;">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Our task is to prove them wrong. [? if in_left_front: The right will be more active in resisting our rule considering we are also ruling with the <span style="color: #700000;">**KPD**</span> on the federal level too. ?]
+
+@great_popular_front
+view-if: z_leader == "Joos" and kpd_leader == "Conciliators"
+on-arrival: kpd_relation += 5; z_relation += 5; ddp_relation += 5 if liberal_parliament == 0
+go-to: popular_front_success
+
+Somehow, the coalition is successfully formed! The conciliatory leadership of the <span style="color: #000000;">**Center Party**</span> and <span style="color: #700000;">**KPD**</span> helped make the negotiations possible. We still need a Minister-President; the only acceptable choice among the parties was [? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?][? if left_split == 0:&nbsp;<span style="color: #c00000;">**SPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work. He is accepted with great reluctance to the <span style="color: #000000;">**Center**</span> and welcomed by the <span style="color: #700000;">**KPD**</span>.
+
+@kpd_goals_prussia
+on-arrival: kpd_goals_seen_prussia = 1; interior_goal_prussia = 0; bureaucracy_goal_prussia = 1; bureaucracy_goal_seen_prussia = 1; free_kpd_goal_prussia = 1; free_kpd_goal_seen_prussia = 1; rfb_goal_prussia = 0; interior_goal_prussia = 1 if (sa_banned == 0 or sh_banned == 0); interior_goal_prussia = 2 if (sa_banned == 0 and sh_banned == 0); interior_goal_seen_prussia = 1 if (sa_banned == 0 or sh_banned == 0); rfb_goal_prussia = 1 if rfb_banned == 1; rfb_goal_seen_prussia = 1 if rfb_banned == 1; kpd_ultimatum_prussia_timer = 12
+
+The <span style="color: #700000;">**KPD**</span> presents us with a list of demands for the Prussian coalition:
+
+[? if interior_goal_prussia >= 1 : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>. ?]
+
+[? if rfb_goal_prussia = 1 : - Unban the <span style="color: #700000;">**RFB**</span>. ?]
+
+[? if bureaucracy_goal_prussia = 1 : - Purge the bureaucracy. ?]
+
+[? if free_kpd_goal_prussia = 1 : - Lift restrictions on <span style="color: #700000;">communist</span> organizations and the press. ?]
+
+They say that they expect to see these goals fulfilled in [+ kpd_ultimatum_prussia_timer +] months. Otherwise, they will vote to dissolve the coalition.
 
 @right_coalition_prussia
 title: Refuse to form a government, so that a right-wing coalition may be formed.
@@ -604,3 +708,8 @@ view-if: dnvp_ideology == "Moderate" and center_right_coalition_prussia >= 50 an
 choose-if: not (year = 1929 and month >= 8)
 
 Damn. UNFINISHED TEXT
+
+@new_elections
+call: set_next_election_time_prussia
+
+New Prussian elections have been set for [+ next_prussian_election_month : month +] [+ next_prussian_election_year +].

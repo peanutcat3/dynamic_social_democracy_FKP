@@ -1,7 +1,7 @@
 title: The Prussian Bulwark
 new-page: true
 is-card: true
-view-if: braun_prussia = 1 and in_grand_coalition_prussia = 0 and prussian_affairs_timer <= 0
+view-if: braun_prussia = 1 and in_weimar_coalition_prussia = 1 and prussian_affairs_timer <= 0
 on-arrival: prussian_affairs_timer += 6; month_actions += 1
 tags: govt_affairs
 card-image: img/braun.jpg
@@ -42,7 +42,7 @@ on-arrival: prussian_police_strength += 20
 We have increased the size of the Prussian police.
 
 @bureaucracy
-on-arrival: prussian_police_loyalty += 0.05; nationalism -= 3; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5; dvp_left += 1; ddp_left += 1
+on-arrival: prussian_police_loyalty += 0.05; nationalism -= 3; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5; dvp_left += 1; ddp_left += 0.5
 
 The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 

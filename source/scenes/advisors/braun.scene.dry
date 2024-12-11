@@ -29,7 +29,7 @@ subtitle: As the Minister-President of Prussia, Braun has power over the Prussia
 choose-if: advisor_action_timer <= 0 and braun_prussia = 1
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if braun_prussia == 0 : Braun no longer does not control Prussia. ?]
 on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
-go-to: prussian_affairs if in_grand_coalition_prussia == 0; prussian_affairs_dvp if in_grand_coalition_prussia == 1
+go-to: prussian_affairs if in_grand_coalition_prussia == 0; prussian_affairs_dvp if in_grand_coalition_prussia == 1; prussian_affairs_newgroko if (in_new_grand_coalition_prussia == 1 and braun_prussia == 1)
 
 @snap_election
 title: Snap Election

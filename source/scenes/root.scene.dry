@@ -121,7 +121,11 @@ Q.braun_prussia = 1;
 // Options: spd, z, dnvp, papen, nsdap
 Q.spd_prussia = 1;
 Q.right_prussia = 0;
+Q.stegerwald_prussia = 0;
+Q.luther_prussia = 0;
 Q.papen_prussia = 0;
+Q.nazi_prussia = 0;
+Q.rosenfeld_prussia = 0;
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
@@ -376,7 +380,7 @@ Q.adjustmentFactors_dnf = 1.0
 Q.adjustmentFactors_kvp = 1.0
 Q.adjustmentFactors_other = 0.75
 
-Q.adjustmentFactors_braun_prussia = 1.0
+Q.adjustmentFactors_spd_prussia = 1.0
 Q.adjustmentFactors_sapd_prussia = 1.0
 Q.adjustmentFactors_kpd_prussia = 1.0
 Q.adjustmentFactors_z_prussia = 1.0
@@ -431,13 +435,18 @@ Q.in_center_right_coalition = 0;
 Q.in_right_coalition_prussia = 0;
 Q.in_weimar_coalition_prussia = 1;
 Q.in_grand_coalition_prussia = 0;
+Q.in_new_grand_coalition_prussia = 0;
 Q.in_popular_front_prussia = 0;
 Q.in_left_front_prussia = 0;
 Q.in_spd_majority_prussia = 0;
 Q.grand_coalition_failed_prussia = 0;
 Q.in_center_right_coalition_prussia = 0;
 Q.in_minority_weimar_coalition_prussia = 0;
+Q.in_minority_grand_coalition_prussia = 0;
 Q.dvp_prussia_asked = 0;
+Q.ddp_in_popular_front_prussia = 0;
+Q.kpd_goals_seen_prussia = 0;
+Q.reichsexekution = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
@@ -535,25 +544,26 @@ Q.n_advisors = 3;
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
 Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
-            'fundraising', 'ideology',
-            'inter_party_relationships', 'international_relations',
-            'iron_front', 'media', 'enemies',
-            'party_organizations', 'rally', 'reichsbanner',
-            'shuffle_leadership', 'streetfighting', 'peoples_party',
-            'party_disunity',
-            // govt
-            'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
-            'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
-            'police', 'prussian_affairs', 'shuffle_cabinet', 'social_welfare',
-            'homosexual_rights', 'economic_policy', 'coalition_affairs',
-            'war_guilt', 'womens_rights', 'economic_democracy',
-            'dealing_with_toleration',
-            'constitutional_reform', 'labor_rights',
-            // events
-            'emergency_cuts', 'unemployment_insurance',
-            'sa_ban', 'sh_ban', 'papen_chancellor',
-            'kpd_policy', 'kpd_ultimatum', 'popular_front_dispute',
-            'high_inflation', 'banking_crisis', 'dnf_decay'];
+    'fundraising', 'ideology',
+    'inter_party_relationships', 'international_relations',
+    'iron_front', 'media', 'enemies',
+    'party_organizations', 'rally', 'reichsbanner',
+    'shuffle_leadership', 'streetfighting', 'peoples_party',
+    'party_disunity',
+    // govt
+    'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
+    'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
+    'police', 'prussian_affairs', 'shuffle_cabinet', 'social_welfare',
+    'homosexual_rights', 'economic_policy', 'coalition_affairs',
+    'war_guilt', 'womens_rights', 'economic_democracy',
+    'dealing_with_toleration',
+    'constitutional_reform', 'labor_rights',
+    // events
+    'emergency_cuts', 'unemployment_insurance',
+    'sa_ban', 'sh_ban', 'papen_chancellor',
+    'kpd_policy', 'kpd_ultimatum', 'kpd_ultimatum_prussia', 'popular_front_dispute',
+    'high_inflation', 'banking_crisis', 'dnf_decay'
+];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -609,6 +619,7 @@ Q.unemployment_insurance_timer = 0;
 Q.sa_ban_timer = 0;
 Q.sh_ban_timer = 0;
 Q.kpd_ultimatum_timer = 0;
+Q.kpd_ultimatum_prussia_timer = 0;
 Q.dnf_decay_timer = 0;
 Q.z_party_name = "Z";
 Q.dnvp_leader = "Westarp";

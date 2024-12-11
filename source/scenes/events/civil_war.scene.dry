@@ -27,9 +27,9 @@ if (Q.dissent > 0.15) {
 }
 Q.total_power += Q.rb_power;
 Q.prussian_police_power = Q.prussian_police_strength*Q.prussian_police_militancy*Q.prussian_police_loyalty;
-if (Q.spd_prussia && Q.braun_prussia) {
+if (Q.spd_prussia && Q.braun_prussia or Q.rosenfeld_prussia) {
     Q.total_power += Q.prussian_police_power;
-} else if (Q.spd_prussia && !Q.braun_prussia) {
+} else if (Q.spd_prussia && !Q.braun_prussia and !Q.rosenfeld_prussia) {
     Q.total_power += (Q.prussian_police_power / 2);
 }
 if (Q.reichswehr_loyalty < 0) {

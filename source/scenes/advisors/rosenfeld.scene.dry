@@ -11,6 +11,7 @@ Rosenfeld works as a lawyer in Berlin who defends left-wing individuals and caus
 
 - @building_the_left
 - @kpd_cooperation
+- @prussian_bulwark
 - @against_toleration
 - @root: Return to main
 
@@ -31,6 +32,14 @@ choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_strength += 5; kpd_relation += 4*(1-dissent); reformist_dissent += 2; communist_coalition += 1 if kpd_cooperation_seen <= 1; kpd_cooperation_seen += 1
 
 Through his work, Rosenfeld has defended individual <span style="color: #700000;">**KPD**</span> members; this should make some connections possible.
+
+@prussian_bulwark
+title: The Prussian Bulwark
+subtitle: As the Minister-President of Prussia, Rosenfeld has power over the Prussian bureaucracy and security services.
+choose-if: advisor_action_timer <= 0 and rosenfeld_prussia = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rosenfeld_prussia == 0 : Rosenfeld doesn't control Prussia. ?]
+on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
+go-to: prussian_affairs_left
 
 @against_toleration
 title: Against toleration
