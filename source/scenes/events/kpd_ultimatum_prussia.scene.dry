@@ -2,16 +2,16 @@ title: The <span style="color: #700000;">**KPD**</span> checks upon our progress
 view-if: (in_popular_front_prussia or in_left_front_prussia) and kpd_ultimatum_prussia_timer = 0 and kpd_goals_seen_prussia = 1
 on-arrival: {!
 if (Q.interior_goal_prussia <= 0) {
-    kpd_goals_completed += 1
+    Q.kpd_goals_completed += 1
 }
 if (Q.bureaucracy_goal_prussia <= 0) {
-    kpd_goals_completed += 1
+    Q.kpd_goals_completed += 1
 }
 if (Q.rfb_goal_prussia <= 0) {
-    kpd_goals_completed += 1
+    Q.kpd_goals_completed += 1
 }
 if (Q.free_kpd_goal_prussia <= 0) {
-    kpd_goals_completed += 1
+    Q.kpd_goals_completed += 1
 }
 !}
 new-page: true
