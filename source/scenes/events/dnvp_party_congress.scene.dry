@@ -27,7 +27,7 @@ Oskar Hergt has been elected as the new leader of the <span style="color: #3E88B
 
 @triumvirate
 on-arrival: dnvp_leader = "Triumvirate"; dnvp_ideology = "Radical"; catholics_dnvp -= 1; workers_dnvp -= 2; rural_dnvp -= 2; catholics_other += 1; workers_other += 1; rural_other += 2; new_middle_dvp += 2; new_middle_dnvp -= 2; pro_republic -= 3; dvp_right += 1; ddp_right += 1
-face-image: img/Kuno_von_Westarp.jpg
+face-image: img/portraits/Kuno_von_Westarp.jpg
 
 Both Hugenberg and Hergt lack the majority of votes needed within the party, and now are seeking a compromise solution between the two factions. A group of party members on the fence between the two, have suggested a triumvirate between Westarp, Hugenberg, and a representative from Prussia as a compromise, a proposal Hugenberg himself is supportive of, where he can control the party from the sidelines.
 
