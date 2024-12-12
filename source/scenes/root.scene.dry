@@ -361,12 +361,18 @@ Q.other_votes = 14.6;
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
+Q.sapd_r_prussia = 0;
+Q.old_sapd_r_prussia = 0;
 
 Q.dnf_r = 0;
 Q.old_dnf_r = 0;
+Q.dnf_r_prussia = 0;
+Q.old_dnf_r_prussia = 0;
 
 Q.kvp_r = 0;
 Q.old_kvp_r = 0;
+Q.kvp_r_prussia = 0;
+Q.old_kvp_r_prussia = 0;
 
 Q.adjustmentFactors_spd = 1.0
 Q.adjustmentFactors_sapd = 1.0
