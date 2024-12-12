@@ -70,7 +70,7 @@ call: set_next_election_time_prussia
 
 [? if president == "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with President Hindenburg, as well as the political <span style="color: #3E88B3;">right</span> and the police. ?][? if president != "Hindenburg": Banning the <span style="color: #3E88B3;">**Stahlhelm**</span> weakens our relationship with the political <span style="color: #3E88B3;">right</span> and the police. ?] [? if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg" : It also weakens our coalition due to the influence of Hindenburg on the <span style="color: #C0A054;">right</span> wing of our coalition. ?] In addition, the <span style="color: #3E88B3;">**Stahlhelm**</span> still operates out of public sight. 
 
-Our coalition partners have called a vote of no confidence and new Prussian landtag elections have been set for [+ next_prussian_election_month : month +] [+ next_prussian_election_year +].
+Our coalition partners have called a vote of no confidence and new Prussian landtag elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
 
 @unban_sh
 view-if: sh_banned = 1

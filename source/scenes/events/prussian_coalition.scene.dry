@@ -51,4 +51,4 @@ Data miners are heartless creatures
 @new_elections
 call: set_next_election_time_prussia
 
-New Prussian elections have been set for [+ next_prussian_election_month : month +] [+ next_prussian_election_year +].
+New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].

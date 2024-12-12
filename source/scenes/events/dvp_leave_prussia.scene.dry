@@ -25,4 +25,4 @@ call: set_next_election_time_prussia
 
 It's also our loss, our remaining coalition partners have demanded new elections [? if weimar_coalition_prussia < 45: due to the lack of a stable majority?][? if ((z_relation < 30 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 25 and z_leader == "Joos") or (ddp_relation < 30 and ddp_ideology == "Right") or (ddp_relation < 25 and ddp_ideology == "Moderate") or (ddp_relation < 20 and ddp_ideology == "Left" and ddp_cohesion < 8)): due to our bad relations?].
 
-New Prussian elections have been set for [+ next_prussian_election_month : month +] [+ next_prussian_election_year +].
+New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
