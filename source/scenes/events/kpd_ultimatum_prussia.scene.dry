@@ -1,5 +1,5 @@
 title: The <span style="color: #700000;">**KPD**</span> checks upon our progress in accomplishing the coalition's goals in Prussia...
-view-if: (in_popular_front_prussia or in_left_front_prussia) and kpd_ultimatum_timer_prussia = 0 and kpd_goals_seen_prussia = 1
+view-if: (in_popular_front_prussia or in_left_front_prussia) and kpd_ultimatum_prussia_timer = 0 and kpd_goals_seen_prussia = 1
 new-page: true
 tags: event
 go-to: goals_success if kpd_goals_completed; goals_failed if not kpd_goals_completed
