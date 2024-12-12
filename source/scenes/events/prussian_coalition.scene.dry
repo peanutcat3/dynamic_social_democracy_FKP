@@ -35,7 +35,7 @@ subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C2
 view-if: dnvp_ideology == "Moderate" and dnvp_leader != "Westarp"
 on-arrival: in_center_right_coalition_prussia = 1; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; ddp_right += 3; ddp_cohesion -= 3; dvp_right += 2; ddp_relation -= 5
 
-A center right coalition is formed featuring the parties to the right of us. They will begin undoing years of reform and democratization that we fought hard to achieve and will let <span style="color: #3E88B3;">right</span>-<span style="color: #7A3C00;">wing</span> paramilitaries like the <span style="color: #3E88B3;">Stahlhelm</span> and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> run free.
+A center-right coalition is formed featuring the parties to the right of us. They will begin undoing years of reform and democratization that we fought hard to achieve and will let <span style="color: #3E88B3;">right</span>-<span style="color: #7A3C00;">wing</span> paramilitaries like the <span style="color: #3E88B3;">Stahlhelm</span> and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> run free.
 
 It won't take long for the government to collapse and for us to take power through new elections. But when it eventually does, we won't have much allies as our former coalition partners are beginning to shift to the right. When the time comes, who will stand with us?
 
