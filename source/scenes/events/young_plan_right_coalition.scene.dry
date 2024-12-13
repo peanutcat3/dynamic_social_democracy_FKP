@@ -25,6 +25,7 @@ subtitle: The government will collapse, and there will be new elections.
 view-if: neo_weimar_coalition >= 50
 on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_center_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 3; dvp_relation -= 5; z_relation -= 5; ddp_relation -= 4; dvp_right += 1; ddp_right += 0.5
 call: set_next_election_time
+go-to: new_prussia_election
 
 The [? if in_right_coalition: right-wing ?][? if in_center_right_coalition: center-right ?] coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
@@ -34,6 +35,7 @@ title: Support the rump <span style="color: #000000;">Center</span>-led governme
 subtitle: We would essentially provide "toleration" to a bourgeois government.
 view-if: neo_weimar_coalition >= 50
 on-arrival: spd_toleration = 1; in_right_coalition = 0; in_center_right_coalition = 0; left_dissent += 8; ddp_left += 0.5
+go-to: new_prussia_election
 
 By supporting the government, we have essentially entered into a "toleration" arrangement with the [+ chancellor +] government. We do not have a voice in the government, but we are responsible for its continued stability. The left of our party opposes this plan, and would rather that we hold new elections.
 
@@ -43,5 +45,13 @@ subtitle: The anti-government parties have over 50% of the vote, no matter our c
 view-if: neo_weimar_coalition < 50
 call: set_next_election_time
 on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; in_center_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 5
+go-to: new_prussia_election
 
 The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+
+@new_prussia_election
+call: set_next_election_time_prussia
+
+The Prussian coalition isn't able to survive either, with the <span style="color: #3E88B3;">**DNVP**</span> exiting from the bourgeois-right coalition there as well.
+
+New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
