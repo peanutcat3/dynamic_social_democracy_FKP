@@ -4,7 +4,6 @@ view-if: ((z_relation < 30 and z_leader == "Kaas" or z_leader == "Marx") or (z_r
 on-arrival: coalition_dissent += 2 if not in_left_front; was_in_weimar_coalition_prussia = 1 if (in_weimar_coalition_prussia == 1 or in_minority_weimar_coalition_prussia == 1); was_in_grand_coalition_prussia = 1 if (in_grand_coalition_prussia == 1 or in_minority_grand_coalition_prussia == 1); in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; braun_prussia = 0; rosenfeld_prussia = 0; spd_prussia = 0; right_prussia = 0; stegerwald_prussia = 0; luther_prussia = 0; nazi_prussia = 0; papen_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0
 new-page: true
 tags: event
-max-visits: 1
 face-image: img/weimar_coalition.jpg
 
 = Democratic Bulwark Dismantled
@@ -13,42 +12,85 @@ We have somehow antagonized the parties involved in the <span style="color: #000
 
 The only alternative coalition that can be formed with the current composition of the state parliament is a broad right-wing coalition, ranging from the <span style="color: #000000;">Center</span> to the <span style="color: #3E88B3;">**DNVP**</span>. [? if dnvp_ideology == "Radical" and dnvp_leader != "Westarp": However, this is heavily unlikely with the <span style="color: #3E88B3;">**DNVP**</span>'s all-or-nothing stance on governance. ?] Prussia employs a constructive vote of no confidence, meaning that a government can only be removed if a successor can be put forth. This mechanism is how we were able to govern in a minority government in the past.
 
-- @right_coalition_formed
-- @center_right_coalition_formed
+- @spd_majority
+- @far_right_coalition_prussia
+- @right_coalition
+- @center_right_coalition
+- @left_coalition
 - @progressive_coalition
 - @new_elections: New elections will be called.
 
 
-@right_coalition_formed
+@spd_majority
+title: <span style="color: #c00000;">**SPD**</span> majority alone
+subtitle: <span style="color: #c00000;">**SPD**</span>: [+ spd_r_prussia +]%
+view-if: spd_r_prussia >= 50
+on-arrival: pro_republic += 5; reichswehr_loyalty -= 0.05 if chancellor == "Braun"; ddp_right += 2; dvp_right += 4; liberal_cooperation += 5; bourgeois_cooperation += 5; braun_prussia = 1; spd_majority_prussia = 1; prussian_police_loyalty += 0.1; prussian_police_strength += 50; democratization += 3; coup_progress += 1; capital_strike_progress += 2; ddp_relation -= 3; z_relation -= 3
+
+Finally, the <span style="color: #c00000;">**SPD**</span> can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. However, our former coalition partners are going to start drifting to the right.
+
+Braun is selected to be the Minister-President of Prussia.
+
+@far_right_coalition_prussia
+title: <a href="#" data-choice="0" style="color: #7A3C00;">Far-right</a> <a href="#" data-choice="0" style="color: #3E88B3;">coalition</a>
+subtitle: <a href="#" data-choice="0" style="color: #7A3C00;">**NSDAP**</a> + [? if dnvp_ideology == "Radical": <a href="#" data-choice="0" style="color: #3E88B3;">**DNVP**</a> ?][? if dnvp_ideology == "Moderate": <a href="#" data-choice="0" style="color: #003755;">**DNF**</a> ?] ([+ far_right_coalition_prussia +]%)
+view-if: far_right_coalition_prussia >= 50
+on-arrival: coup_progress += 5; rural_nsdap += 10; workers_nsdap += 10; new_middle_nsdap += 10; old_middle_nsdap += 10; unemployed_nsdap += 10; workers_spd -= 5; workers_kpd -= 5; nazi_prussia = 1; sh_strength += 100; sh_militancy += 0.1; sa_strength += 200; sa_militancy += 0.1; rfb_banned = 1; rfb_strength -= 50; rb_strength -= 200; prussian_police_loyalty -= 0.5
+
+There are enough votes for the <span style="color: #7A3C00;">Nazis</span> and the [? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNF**</span> ?] to form a coalition. Hermann Göring is elevated to the position of Minister-President and immediately starts dismantling its democratic institutions.
+
+A wave of terror and repression unfolds, targeting the <span style="color: #c00000;">socialists</span> and <span style="color: #700000;">communists</span>. Violence erupts in the streets, with bullets flying and leftists being killed or imprisoned.
+
+@right_coalition
 title: A Bürgerblock is formed.
-subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** (50%)
-view-if: dnvp_ideology == "Moderate" or dnvp_leader == "Westarp"
-on-arrival: in_right_coalition_prussia = 1; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; dvp_right += 2; ddp_right += 2; ddp_cohesion -= 2; ddp_relation -= 3; reformist_dissent += 10
+subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition_prussia +]%)
+view-if: dnvp_ideology == "Moderate" or dnvp_leader == "Westarp" and right_coalition_prussia >= 50
+on-arrival: in_right_coalition_prussia = 1; stegerwald_prussia = 1; new_middle_spd -= 4; rural_spd -= 2; dvp_right += 2; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; ddp_right += 2; ddp_cohesion -= 2; reformist_dissent += 10; prussian_police_loyalty -= 0.1; prussian_police_strength -= 10; pro_republic -= 3; ddp_relation -= 4; z_relation -= 4; dvp_relation -= 4
 
 A right coalition is formed, albeit with an extremely narrow majority. They will begin undoing years of reform and democratization that we fought hard to achieve and will let <span style="color: #3E88B3;">right</span>-<span style="color: #7A3C00;">wing</span> paramilitaries like the <span style="color: #3E88B3;">Stahlhelm</span> and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> run free.
 
 It won't take long for the government to collapse and for us to take power through new elections. But when it eventually does, we won't have much allies as our former coalition partners are beginning to shift to the right. When the time comes, who will stand with us?
 
-@center_right_coalition_formed
+Adam Stegerwald of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
+
+@center_right_coalition
 title: A Bürgerblock is formed.
-subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> (54.9%)
-view-if: dnvp_ideology == "Moderate" and dnvp_leader != "Westarp"
-on-arrival: in_center_right_coalition_prussia = 1; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 2; catholics_spd -= 2; rural_spd -= 2; ddp_right += 3; ddp_cohesion -= 3; dvp_right += 2; ddp_relation -= 5; reformist_dissent += 10
+subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> ([+ center_right_coalition_prussia +]%)
+view-if: dnvp_ideology == "Moderate" and dnvp_leader != "Westarp" and center_right_coalition_prussia >= 50
+on-arrival: in_center_right_coalition_prussia = 1; stegerwald_prussia = 1; new_middle_spd -= 4; ddp_right += 2; ddp_cohesion -= 2; dvp_right += 2; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; prussian_police_loyalty -= 0.06; prussian_police_strength -= 8; pro_republic -= 3; ddp_relation -= 4; z_relation -= 4; dvp_relation -= 4
 
 A center-right coalition is formed featuring the parties to the right of us. They will begin undoing years of reform and democratization that we fought hard to achieve and will let <span style="color: #3E88B3;">right</span>-<span style="color: #7A3C00;">wing</span> paramilitaries like the <span style="color: #3E88B3;">Stahlhelm</span> and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> run free.
 
 It won't take long for the government to collapse and for us to take power through new elections. But when it eventually does, we won't have much allies as our former coalition partners are beginning to shift to the right. When the time comes, who will stand with us?
 
+Adam Stegerwald of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
+
+@left_coalition
+title: Is a United Left coalition possible?
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition_prussia +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?] [? if president != "Braun": Hindenburg will perform a *Reichsexekution* upon our government. ?]
+view-if: left_coalition_prussia >= 50
+choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3 and president == "Braun"
+on-arrival: in_left_front_prussia = 1; rosenfeld_prussia = 1; reichswehr_loyalty -= 0.05; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 2; liberal_cooperation += 5; bourgeois_cooperation += 10; kpd_relation += 10; z_relation -= 4; ddp_relation -= 4; dvp_relation -= 8; coup_progress += 2; coup_progress += 1 if in_left_front; capital_strike_progress += 2; capital_strike_progress += 1 if in_left_front; reformist_dissent += 25; reformist_strength -= 15; left_dissent -= 15; left_strength += 15; prussian_police_loyalty -= 0.1
+go-to: prussian_election_1928.kpd_goals_prussia
+
+Somehow, surprisingly, the left coalition is successfully formed, without appointing a <span style="color: #700000;">communist</span> as chancellor. The consensus choice for chancellor, accepted by the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, is[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work..
+
+In response to the <span style="color: #700000;">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, eventually enabling the destruction of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. [? if in_left_front: The right will be more active in resisting our rule considering we are also ruling with the <span style="color: #700000;">**KPD**</span> on the federal level too. ?]
+
 @progressive_coalition
-title: A progressive coalition is formed.
+title: Is a progressive coalition possible?
 view-if: ddp_relation >= 60 and ddp_ideology == "Left" and (kpd_relation >= 60 and kpd_leader == "Thälmann") or (kpd_relation >= 40 and kpd_leader == "Conciliators")
-unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">SAPD</span>?] (47.6%)
-choose-if: ohio_skibidi_rizz_sigma == 69
-on-arrival: workers_spd = 100; secret_mode = 1
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">SAPD</span>?] ([+ progressive_coalition_prussia +]%) - Secret mode needs to be enabled.
+choose-if: secret_mode = 1
+on-arrival: workers_spd = 100; super_secret_mode = 1
 
 Data miners are heartless creatures
 
 @new_elections
+on-arrival: pro_republic -= 5; rural_spd -= 4; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 3; rural_nsdap += 4; new_middle_nsdap += 4; old_middle_nsdap += 4; workers_nsdap += 3
 call: set_next_election_time_prussia
 
-New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
+No coalition is able to be formed, forcing Braun to call new elections, with the extremist parties likely to benefit from.
+
+New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]. 
