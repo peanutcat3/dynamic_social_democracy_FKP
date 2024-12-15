@@ -343,8 +343,8 @@ data = data.concat([{
 if (Q.ddp_r_prussia) {
     data.push({
         "id": "ddp",
-        "legend": "DDP",
-        "name": "DDP",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
         "seats": Math.round(Q.ddp_r_prussia * 4.5),
     });
 }
