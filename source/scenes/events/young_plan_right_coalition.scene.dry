@@ -50,8 +50,6 @@ go-to: new_prussia_election
 The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @new_prussia_election
-call: set_next_election_time_prussia
+go-to: prussian_coalition_formation
 
-The Prussian coalition isn't able to survive either, with the <span style="color: #3E88B3;">**DNVP**</span> exiting from the bourgeois-right coalition there as well.
-
-New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
+The Prussian coalition isn't able to survive either, pressure from the national conservatives within the <span style="color: #3E88B3;">**DNVP**</span> forces them to exit from the bourgeois-right coalition there as well.
