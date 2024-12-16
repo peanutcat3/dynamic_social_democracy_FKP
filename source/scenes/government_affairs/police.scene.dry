@@ -14,7 +14,7 @@ As with the state police units and the Reichswehr, the internal police tends to 
 
 - @loyalty: Improve the loyalty of the Interior Ministry forces.
 - @investigate_corruption: Investigate corruption by big businesses.
-- @investigate_far_right: Investigate illegal activity among the far right.
+- @investigate_far_right: Investigate illegal activity among the <span style="color: #7A3C00;">far</span> <span style="color: #3E88B3;">right</span>.
 - @domestic_enemies: Investigate or ban our domestic enemies.
 - @deport_hitler
 - @root: Take no action for now.
@@ -53,7 +53,7 @@ on-arrival: investigate_far_right += 1; sa_strength -= 20; workers_nsdap -= 3; n
 [? if investigate_far_right == 3 : We have discovered a secret cache of documents from the <span style="color: #7A3C00;">**NSDAP**</span> detailing their plan to violently take over the country if they enter into power. This is an anti-constitutional plot, and will be publicized and persecuted. ?]
 [? if investigate_far_right > 3 : Of course the <span style="color: #7A3C00;">Nazis</span> are doing crimes; everyone knows that. Now, we finally have proof. ?]
 
-[? if coup_progress >= 6: There are reports of an imminent coup by the far-right. We have attempted to disrupt some of these plans, but the threat is still present. ?]
+[? if coup_progress >= 6: There are reports of an imminent coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have attempted to disrupt some of these plans, but the threat is still present. ?]
 
 @investigate_far_right_failure
 

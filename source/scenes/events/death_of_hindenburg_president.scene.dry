@@ -11,7 +11,7 @@ tags: event
 
 President Paul von Hindenburg has passed away at age 86. An era of history is closing, and the future remains to be seen.
 
-The nation engages in an outpouring of grief for its war hero and president, with even some sympathy among committed republicans and socialists. After all, Hindenburg steered the republic through some of its most challenging times, without giving in to extremists on the far right. Perhaps he is one reason democracy remains alive.
+The nation engages in an outpouring of grief for its war hero and president, with even some sympathy among committed <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">icans</span> and <span style="color: #c00000;">socialists</span>. After all, Hindenburg steered the republic through some of its most challenging times, without giving in to extremists on the <span style="color: #7A3C00;">far</span> <span style="color: #3E88B3;">right</span>. Perhaps he is one reason democracy remains alive.
 
 New presidential elections are to be held as soon as possible. The German political landscape is wide open, with contenders from all over the political space. In the meantime, Supreme Court chief justice [? if judicial_reform < 4 : Erwin Bumke ?][? if judicial_reform >= 4 : Hermann Großmann ?] serves as the acting president.
 
@@ -26,12 +26,12 @@ go-to: candidate_menu
 [? if hitler_deported : With Hitler deported, the Nazis will be running Hermann Göring as their candidate. ?]
 This might be the Nazis' last hurrah; the party's internal contradictions are heightening, and it is in desperate shortage of funds.
 
-The DNVP will nominate Franz Seldte, leader of the Stahlhelm paramilitary group. He will be endorsed by many of Hindenburg's most right-wing supporters. They are working more closely with the Nazis than before, and in the second round, the far-right parties are expected to consolidate into a single anti-republican front.
+The DNVP will nominate Franz Seldte, leader of the Stahlhelm paramilitary group. He will be endorsed by many of Hindenburg's most right-wing supporters. They are working more closely with the Nazis than before, and in the second round, the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> parties are expected to consolidate into a single anti-<span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> front.
 
 [? if kpd_party_leader = "Conciliators" : Given the failure of Thälmann's previous runs for president, and his declining stature in the party, the KPD will be running Willi Münzenberg, a controversial figure sometimes called the "Red millionaire". He is a media magnate who leads a number of Communist front organizations. ?]
 [? if kpd_party_leader != "Conciliators" : This will be Ernst Thälmann's third run for president as leader of the KPD. Despite his previous electoral defeats, he retains the loyalty of the party as well as Stalin's Soviet Union. ?]
 
-Many republicans of the Center, [+ ddp_name +], and SPD float the idea of running Hugo Eckener, a nationally renowed Zeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to Nazism.
+Many <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">icans</span> of the Center, [+ ddp_name +], and SPD float the idea of running Hugo Eckener, a nationally renowed Zeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to Nazism.
 
 Barring that, the Center and [+ ddp_name +] are planning to run separate candidates in the first round if the SPD runs its own candidate. The Center is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The [+ ddp_name +] might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the DVP and other parties who dislike the DNVP-NSDAP front.
 
@@ -328,7 +328,7 @@ var candidate_descs = {
 Hitler: "Adolf Hitler of the NSDAP",
 Goring: "Hermann Göring of the NSDAP",
 Seldte: "Franz Seldte of the Stahlhelm/DNVP",
-Eckener: "the independent republican candidate Hugo Eckener",
+Eckener: "the independent <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">icans</span> candidate Hugo Eckener",
 Adenauer: "Konrad Adenauer of the Center Party",
 Gessler: "Otto Gessler, independent formerly of the DDP",
 Thalmann: "Ernst Thälmann of the KPD",
@@ -559,7 +559,7 @@ With Seldte's victory, the balance of power passes to the Nazis. [? if hitler_de
 @hitler_constitutional
 view-if: presidential_powers
 
-We have passed a constitutional amendment preventing the president from having the power to arbitrarily dismiss a government. To undo this, the far right has called a plebiscite on a new constitutional amendment. Stormtroopers are in the streets, "convincing" voters to support their proposal. Germany is nearing civil war.
+We have passed a constitutional amendment preventing the president from having the power to arbitrarily dismiss a government. To undo this, the <span style="color: #7A3C00;">far</span> <span style="color: #3E88B3;">right</span> has called a plebiscite on a new constitutional amendment. Stormtroopers are in the streets, "convincing" voters to support their proposal. Germany is nearing civil war.
 
 - @fight: We will fight the fascists in the streets!
 - @defeat_democratic: We can only defeat the fascists through democratic means!
@@ -621,4 +621,4 @@ go-to: nazis_lose
 
 @nazis_lose
 
-After its electoral defeat, the NSDAP-DNVP coalition is collapsing into infighting and financial insolvency. The far-right's moment has seemingly ended, at least for now.
+After its electoral defeat, the <span style="color: #7A3C00;">**NSDAP**</span>-<span style="color: #3E88B3;">**DNVP**</span> coalition is collapsing into infighting and financial insolvency. The <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>'s moment has seemingly ended, at least for now.

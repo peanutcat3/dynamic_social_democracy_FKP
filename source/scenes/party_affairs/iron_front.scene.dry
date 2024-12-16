@@ -27,7 +27,7 @@ on-arrival: resources -= rb_militarization_cost; rb_strength += 50; rb_militancy
 
 The Iron Front rallies for the militant defense of the republic against the <span style="color: #7A3C00;">fascists</span> paramilitaries, strengthening the Reichsbanner.
 
-[? if strife < 5: The <span style="color: #000000;">**Center Party**</span> decries the militarization of the Reichsbanner, and its members are leaving the republican organization. ?][? if strife >= 5: Seeing the strife that has filled Germany's streets, the <span style="color: #000000;">**Center Party**</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> seem to be convinced that it is necessary for the Reichsbanner to be militarized, and mute their criticisms. ?]
+[? if strife < 5: The <span style="color: #000000;">**Center Party**</span> decries the militarization of the Reichsbanner, and its members are leaving the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> organization. ?][? if strife >= 5: Seeing the strife that has filled Germany's streets, the <span style="color: #000000;">**Center Party**</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> seem to be convinced that it is necessary for the Reichsbanner to be militarized, and mute their criticisms. ?]
 
 
 @pacifism
@@ -53,4 +53,4 @@ title: Rally against antisemitism and in defense of Jewish Germans.
 view-if: confronting_antisemitism > 1
 on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_nsdap -= 4*(1-dissent); unemployed_nsdap -= 4*(1-dissent); ddp_left += 1
 
-The <span style="color: #7A3C00;">Nazis</span> and other far-right political movements are increasingly turning their hatred against the <span style="color: #005EB8;">Jewish</span> community of Germany. The Iron Front rallies in defense of individual <span style="color: #005EB8;">Jews</span> and the broader community against violence.
+The <span style="color: #7A3C00;">Nazis</span> and other <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> political movements are increasingly turning their hatred against the <span style="color: #005EB8;">Jewish</span> community of Germany. The Iron Front rallies in defense of individual <span style="color: #005EB8;">Jews</span> and the broader community against violence.

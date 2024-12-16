@@ -64,4 +64,4 @@ The <span style="color: #700000;">Communist</span> <span style="color: #700000;"
 view-if: rfb_banned = 0
 on-arrival: rfb_banned = 0; rfb_strength += 100; rfb_militancy += 0.03; prussian_police_loyalty -= 0.05; workers_kpd += 4; unemployed_kpd += 4; free_kpd_goal_prussia -= 1; reichsexekution += 1; dvp_relation -= 5; ddp_relation -= 4; z_relation -= 4; dvp_right += 2; ddp_right += 1; ddp_cohesion -= 0.5; left_dissent -= 5; reformist_dissent += 5
 
-Restrictions are lifted and police are deployed to protect <span style="color: #700000;">Communist</span> demonstrations and organizations from the far-right.
+Restrictions are lifted and police are deployed to protect <span style="color: #700000;">Communist</span> demonstrations and organizations from the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>.

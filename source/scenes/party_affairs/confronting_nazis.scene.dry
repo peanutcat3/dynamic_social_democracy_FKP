@@ -22,7 +22,7 @@ Many in our party are calling for urgent action. The "neorevisionist" faction, l
 on-arrival: nazi_urgency -= 1; left_dissent += 5; neorevisionist_dissent += 15
 view-if: mierendorff_advisor = 0 and leber_advisor = 0 and schumacher_advisor = 0
 
-The <span style="color: #7A3C00;">Nazis</span> are just another far-right movement that will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
+The <span style="color: #7A3C00;">Nazis</span> are just another <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> movement that will die of its own contradictions sooner or later; we do not need to build a specific policy to combat them.
 
 @economic_crisis
 title: We must address the economic crisis first.

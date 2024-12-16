@@ -49,4 +49,4 @@ New elections have been set for [+ next_election_month : month +] [+ next_electi
 @end_toleration_fail
 on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2
 
-Unfortunately, the far-right parties united with the government to outvote us. The customs union will be formed.
+Unfortunately, the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> parties united with the government to outvote us. The customs union will be formed.
