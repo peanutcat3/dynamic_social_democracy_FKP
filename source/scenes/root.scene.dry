@@ -115,17 +115,10 @@ Q.nsdap_leader = "Hitler";
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
 
-
-// Does Braun lead in Prussia?
-Q.braun_prussia = 1;
-// Options: spd, z, dnvp, papen, nsdap
+// prussian activities lol
 Q.spd_prussia = 1;
 Q.right_prussia = 0;
-Q.stegerwald_prussia = 0;
-Q.luther_prussia = 0;
-Q.papen_prussia = 0;
-Q.nazi_prussia = 0;
-Q.rosenfeld_prussia = 0;
+Q.prussia_leader = "Braun"
 
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)

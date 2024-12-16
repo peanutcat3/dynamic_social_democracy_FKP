@@ -36,8 +36,8 @@ Through his work, Rosenfeld has defended individual <span style="color: #700000;
 @prussian_bulwark
 title: The Prussian Bulwark
 subtitle: As the Minister-President of Prussia, Rosenfeld has power over the Prussian bureaucracy and security services.
-choose-if: advisor_action_timer <= 0 and rosenfeld_prussia = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rosenfeld_prussia == 0 : Rosenfeld doesn't control Prussia. ?]
+choose-if: advisor_action_timer <= 0 and prussia_leader = "Rosenfeld"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if prussia_leader != "Rosenfeld" : Rosenfeld doesn't control Prussia. ?]
 on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
 go-to: prussian_affairs_left
 

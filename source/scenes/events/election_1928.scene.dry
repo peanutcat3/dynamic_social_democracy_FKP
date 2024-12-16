@@ -977,7 +977,7 @@ Who should be chancellor?
 
 @braun_chancellor_new
 subtitle: This will reduce our leverage in the ministries.
-view-if: not historical_mode or not braun_prussia
+view-if: not historical_mode or not prussia_leader = "Braun"
 on-arrival: leverage -= 10; chancellor = "Braun"; chancellor_party = "SPD"
 go-to: ministries
 
@@ -1075,7 +1075,7 @@ Who should be chancellor?
 - @wels_majority_chancellor: Otto Wels for Chancellor.
 
 @braun_majority_chancellor
-view-if: not historical_mode or not braun_prussia
+view-if: not historical_mode or not prussia_leader = "Braun"
 on-arrival: chancellor = "Braun"
 
 [? if president == "Braun": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor must be a member of the Reichstag). Thus, we have Chancellor-President Otto Braun. ?]
@@ -1129,7 +1129,7 @@ Yes, an emergency minority government, with the support of the <span style="colo
 
 @braun_emergency_chancellor
 subtitle: This is unprecedented.
-view-if: not historical_mode or not braun_prussia
+view-if: not historical_mode or not prussia_leader = "Braun"
 on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; spd_in_government = 1; pro_republic -= 5; ddp_relation -= 4; dvp_relation -= 4; z_relation -= 4; dvp_right += 2; ddp_right += 1.5; ddp_cohesion -= 1; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; bourgeois_cooperation += 3; liberal_cooperation += 3
 
 Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor *must* be a member of the Reichstag).
@@ -1492,7 +1492,7 @@ As expected, the <span style="color: #C0A054;">**DVP**</span> is too set in thei
 @dvp_prussia
 subtitle: This will restrict our actions in Prussia.
 view-if: year <= 1929 and in_grand_coalition_prussia = 0 and (in_weimar_coalition_prussia or in_minority_weimar_coalition_prussia) and dvp_was_in_prussia == 0
-on-arrival: in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 1; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; braun_prussia = 1; rosenfeld_prussia = 0; spd_prussia = 1; right_prussia = 0; stegerwald_prussia = 0; luther_prussia = 0; nazi_prussia = 0; papen_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent = -1; left_dissent += 5; dvp_left += 3; new_middle_dvp += 3; dvp_prussia_asked = 1
+on-arrival: in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 1; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Braun"; spd_prussia = 1; right_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent = -1; left_dissent += 5; dvp_left += 3; new_middle_dvp += 3; dvp_prussia_asked = 1
 go-to: join_bruning
 
 Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. However, this will negatively impact our actions involving the Prussian police force due to the <span style="color: #C0A054;">**DVP**</span> has ties to right-wing organizations such as the <span style="color: #3E88B3;">Stahlhelm</span>.
@@ -1536,7 +1536,7 @@ Otto Wels's appointment as chancellor is approved by our potential allies.
 
 @braun
 title: Otto Braun for Chancellor
-view-if: not historical_mode or not braun_prussia
+view-if: not historical_mode or not prussia_leader = "Braun"
 subtitle: Braun is currently the Minister-President of Prussia, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
 
 The <span style="color: #000000;">**Center Party**</span> has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role. The latter is completely unacceptable.
@@ -1792,7 +1792,7 @@ go-to: ministries
 @dvp_prussia_1
 subtitle: This will restrict our actions in Prussia.
 view-if: year <= 1929 and in_grand_coalition_prussia = 0 and (in_weimar_coalition_prussia or in_minority_weimar_coalition_prussia) and not in_left_front and not in_popular_front and not in_weimar_coalition and not in_emergency_government and dvp_was_in_prussia == 0
-on-arrival: in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 1; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; braun_prussia = 1; rosenfeld_prussia = 0; spd_prussia = 1; right_prussia = 0; stegerwald_prussia = 0; luther_prussia = 0; nazi_prussia = 0; papen_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; dvp_relation += 7; z_relation -= 5; coalition_dissent = -1; left_dissent += 5; dvp_left += 3; new_middle_dvp += 3
+on-arrival: in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 1; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Braun"; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; dvp_relation += 7; z_relation -= 5; coalition_dissent = -1; left_dissent += 5; dvp_left += 3; new_middle_dvp += 3
 go-to: ministries
 
 Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. However, this will negatively impact our actions involving the Prussian police force due to the <span style="color: #C0A054;">**DVP**</span> has ties to right-wing organizations such as the <span style="color: #3E88B3;">Stahlhelm</span>.

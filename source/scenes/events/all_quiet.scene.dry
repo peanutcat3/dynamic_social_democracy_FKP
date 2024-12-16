@@ -30,15 +30,15 @@ While we allow the film, showings are marred by violence. Showings of the film e
 
 
 @allow_protect
-choose-if: prussian_police_loyalty >= 0.65 and braun_prussia or rosenfeld_prussia
-unavailable-subtitle: [? if prussian_police_loyalty < 0.65:The police are not willing to protect the film. ?] [? if not braun_prussia and not rosenfeld_prussia: Our coalition partners restrain us from policing actions. ?]
+choose-if: prussian_police_loyalty >= 0.65 and prussia_leader = "Braun" or prussia_leader = "Rosenfeld"
+unavailable-subtitle: [? if prussian_police_loyalty < 0.65:The police are not willing to protect the film. ?] [? if not prussia_leader = "Braun" and not prussia_leader = "Rosenfeld": Our coalition partners restrain us from policing actions. ?]
 on-arrival: nationalism -= 4; pro_republic += 3; strife += 1
 
 Under the protection of the police, the people are allowed to watch the film in peace. Nazi disturbances are kept to a minimum.
 
 @everyone
-choose-if: prussian_police_loyalty >= 0.75 and braun_prussia or rosenfeld_prussia
-unavailable-subtitle: [? if prussian_police_loyalty < 0.75: The police are unable to guarantee the safety of all the attendees. ?] [? if not braun_prussia and not rosenfeld_prussia: Our coalition partners restrain us from this action. ?]
+choose-if: prussian_police_loyalty >= 0.75 and prussia_leader = "Braun" or prussia_leader = "Rosenfeld"
+unavailable-subtitle: [? if prussian_police_loyalty < 0.75: The police are unable to guarantee the safety of all the attendees. ?] [? if not prussia_leader = "Braun" and not prussia_leader = "Rosenfeld": Our coalition partners restrain us from this action. ?]
 on-arrival: nationalism -= 3; pro_republic += 3; workers_nsdap -= 3; unemployed_nsdap -= 3; new_middle_nsdap -= 3
 
 Under police protection, crowds throng the film's showings, as Nazis protest outside. The reception is mixed, but a new national conversation develops, reexamining the right-wing histories of the war. Quietly, many minds are changed, or at least affected in subtle ways.
