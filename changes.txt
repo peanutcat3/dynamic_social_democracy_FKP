@@ -382,7 +382,9 @@ Backend changes:
 
 
 v0.18.1 - Cabinets, protecting rallies, mod loading, difficulties
+
 Changes:
+
 - Changing some of the default names and party assignments for the Weimar Coalition, so that you don't get DVP ministers.
 - There is an option to use both the police and Reichsbanner to protect rallies, after using the Prussian police to train the Reichsbanner.
 - When loading a mod, the game title and author are set to the title and author of the mod.
@@ -400,3 +402,52 @@ Major changes:
 
 Minor changes:
 - Some bug fixes and many minor tweaks.
+
+v0.19.1 - Bug fixes
+
+Changes:
+- Fixed return to hand for Labor Affairs
+- Fixed an issue with unemployment insurance and President Hindenburg/Braun
+- Removed ending slides about unemployment when the game ends before 1930
+
+
+v1.0.1 - Tooltips, bug fixes, advisor actions
+
+Changes:
+- Add tooltips to the party abbreviations, factions, and paramilitary names in the sidebar. Hovering over these should show some more information.
+- In Shuffle Leadership, potential advisors now show their action set.
+- Fixed bug with some graphs not showing before the first election.
+- If an advisor action goes to a government/party affairs card, then there is a new option to cancel the action without taking up an advisor action.
+
+v1.1 - The Death of Hindenburg
+
+Major changes:
+- The end of the game has been extended to August 1934, ending with the death of Paul von Hindenburg (and the new presidential elections, if that were to happen). The 1934 presidential election is now one of the largest events in the game.
+- New events: Weltbühne Trial, DDP Reformation, London Economic Conference
+- Several late-game events have been altered or replaced; "Nazis in Crisis" has been replaced by "Return to Normalcy", and "Global Economic Recovery" has been replaced by "London Economic Conference".
+- New achievements: Große Volkspartei, Zeppelinkapitän, Bundesrepublik
+- Some new event images (turn on event images in the options!)
+- New music added for homosexual rights (Das Lila Lied)
+
+Minor changes:
+- The "second round" trick for winning the 1932 presidential election should no longer be possible.
+- High inflation threshold is lower.
+- March on Berlin can happen multiple times.
+- Finally, the DDP becoming the DStP is visible.
+- Decimals for presidential elections.
+- Bourgeois party support begins to rise after Return to Normalcy is seen.
+- Various other tweaks...
+
+v1.1.1 - Death of Hindenburg bugfixes, more achievements
+
+As usual, there are some bugs and stuff...
+
+- Fixed bug where Göring's results were not shown
+- Zentrum no longer supports Adenauer when the DNVP supports Hitler in the second round
+- Slightly harder to get Marie Juchacz as a candidate
+- Added content for a KPD presidential victory (different endings for Thälmann and Münzenberg)
+
+New achievements:
+
+- Der rote Millionär - Münzenberg wins the presidency
+- Wahlrechts für Frauen - Juchacz wins the presidency
