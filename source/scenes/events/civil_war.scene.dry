@@ -27,9 +27,9 @@ if (Q.dissent > 0.15) {
 }
 Q.total_power += Q.rb_power;
 Q.prussian_police_power = Q.prussian_police_strength*Q.prussian_police_militancy*Q.prussian_police_loyalty;
-if (Q.spd_prussia && Q.prussia_leader == "Braun" || Q.prussia_leader = "Rosenfeld") {
+if (Q.spd_prussia && Q.prussia_leader == "Braun" || Q.prussia_leader == "Rosenfeld") {
     Q.total_power += Q.prussian_police_power;
-} else if (Q.spd_prussia && Q.prussia_leader !== "Braun" && !Q.prussia_leader = "Rosenfeld") {
+} else if (Q.spd_prussia && Q.prussia_leader !== "Braun" && Q.prussia_leader !== "Rosenfeld") {
     Q.total_power += (Q.prussian_police_power / 2);
 }
 if (Q.reichswehr_loyalty < 0) {
