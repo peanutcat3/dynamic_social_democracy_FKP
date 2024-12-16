@@ -705,10 +705,10 @@ Adam Stegerwald of the <span style="color: #000000;">Center Party</span> is sele
 
 @center_right_coalition_prussia
 title: Refuse to form a government, so that a center-right coalition may be formed.
-unavailable-subtitle: <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others + <span style="color: #3E88B3;">DNVP</span> ([+ center_right_coalition_prussia +]%) [? if (year = 1929 and month >= 8): The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">**Center**</span>.?]
+unavailable-subtitle: <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others + <span style="color: #3E88B3;">DNVP</span> ([+ center_right_coalition_prussia +]%) [? if (year = 1929 and month >= 7): The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">**Center**</span>.?]
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> ([+ center_right_coalition_prussia +]%)
 view-if: dnvp_ideology == "Moderate" and center_right_coalition_prussia >= 50 and dnf_formed and right_coalition_prussia < 50
-choose-if: not (year = 1929 and month >= 8)
+choose-if: not (year = 1929 and month >= 7)
 on-arrival: in_center_right_coalition_prussia = 1; stegerwald_prussia = 1; new_middle_spd -= 4; ddp_right += 2; ddp_cohesion -= 2; dvp_right += 2; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; prussian_police_loyalty -= 0.06; prussian_police_strength -= 8; pro_republic -= 3; ddp_relation -= 4; z_relation -= 4; dvp_relation -= 4
 
 Letting go the democratic bulwark to the right-wing parties is deeply unpopular among all party members, and provides no discernible benefit. 

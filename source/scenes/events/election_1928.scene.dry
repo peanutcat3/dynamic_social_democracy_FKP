@@ -855,7 +855,7 @@ go-to: right_coalition_2
 @right_coalition_2
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">**Center**</span>.
 view-if: right_coalition >= 50 
-choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp" and not (year = 1929 and month >= 8)
+choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp" and not (year = 1929 and month >= 7)
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_right_coalition = 1; dvp_right += 3; liberal_cooperation -= 1; liberal_cooperation -= 3 if liberal_parliament > 0; liberal_parliament = 0 if liberal_parliament > 0; bourgeois_cooperation += 1
 
 [? if dnvp_ideology == "Radical": Even though the <span style="color: #3E88B3;">**DNVP**</span> is very reluctant to participate in such a coalition, they still accede to President Hindenburg's wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor. [? if grand_coalition >= 50: This move also has the side effect of pressuring the <span style="color: #3E88B3;">**DNVP**</span> to maintain this arrangement against the impulses of their radical right faction, lest a socialist government would replace them. ?]?][? if dnvp_ideology == "Moderate": The <span style="color: #3E88B3;">**DNVP**</span> is happy to participate in such a coalition, to keep out the socialists from government. Thus, a majority center-right coalition is formed, with Brüning as chancellor. ?]
@@ -867,7 +867,7 @@ title: Refuse to form a government, so that a center-right coalition may be form
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">**Center**</span>.
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> ([+ center_right_coalition +]%)
 view-if: dnvp_ideology == "Moderate" and center_right_coalition >= 50 and dnf_formed and right_coalition < 50
-choose-if: not (year = 1929 and month >= 8)
+choose-if: not (year = 1929 and month >= 7)
 
 There are enough votes for a broad center-right coalition of the <span style="color: #000000;">**Center**</span> (+ <span style="color: #A2D8E0;">**BVP**</span>), <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, <span style="color: #C0A054;">**DVP**</span>, <span style="color: #3E88B3;">**DNVP**</span>, and minor conservative parties. [? if largest_party == "SPD": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 
@@ -887,7 +887,7 @@ go-to: center_right_coalition_2
 @center_right_coalition_2
 view-if: center_right_coalition >= 50 and right_coalition < 50 and dnvp_ideology == "Moderate"
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">**Center**</span>.
-choose-if: center_right_coalition >= 50 and not (year = 1929 and month >= 8)
+choose-if: center_right_coalition >= 50 and not (year = 1929 and month >= 7)
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_center_right_coalition = 1; dvp_right += 2; liberal_cooperation += 1; ddp_cohesion -= 1; ddp_right += 1; bourgeois_cooperation += 2
 
 Even though the opposing ends of the coalition parties are reluctant to participate in a coalition with each other, they still accede to President [+ president +]'s wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor.
