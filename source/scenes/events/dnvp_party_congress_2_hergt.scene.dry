@@ -16,7 +16,7 @@ The "unity of the no" against Marxism has been losing its force over the years, 
 - @resultsdnvp: The congress unfolds...
 
 @resultsdnvp
-go-to: statusquo if (young_plan_signatures >= 10 and pro_republic_8 < 70) or (weimar_ref_signatures >= 30 and pro_republic_8 >= 70) or (was_in_center_right_coalition == 1 and pro_republic_8 >= 70 and pro_republic < 70) and not (peoples_party == 1 or workers_spd_normalized < 45 or unions_independent == 1 or workers_dnvp_normalized >= 10); christiansocial if (peoples_party == 1 or workers_spd_normalized < 45 or unions_independent == 1 or workers_dnvp_normalized >= 10) and not in_popular_front and not in_left_front; youngconservative if (young_plan_signatures < 10 and pro_republic_8 < 70) or (weimar_ref_signatures < 30 and pro_republic_8 >= 70) or (was_in_center_right_coalition == 1 and pro_republic_8 >= 70 and pro_republic >= 70) and pro_republic >= 70 or (nationalism < 50 and pacifism >= 3)
+go-to: statusquo if (young_plan_signatures >= 10 and pro_republic_8 < 70) or (weimar_ref_signatures >= 30 and pro_republic_8 >= 70) or (was_in_center_right_coalition == 1 and pro_republic_8 >= 70 and pro_republic < 70) and not (peoples_party == 1 or workers_spd_normalized < 45 or unions_independent == 1 or workers_dnvp_normalized >= 10); christiansocial if (peoples_party == 1 or workers_spd_normalized < 45 or unions_independent == 1 or workers_dnvp_normalized >= 10) and not in_popular_front and not in_left_front; youngconservative if (young_plan_signatures < 10 and pro_republic_8 < 70) or (weimar_ref_signatures < 30 and pro_republic_8 >= 70) or (was_in_center_right_coalition == 1 and pro_republic_8 >= 70 and pro_republic >= 70)
 
 @statusquo
 on-arrival: hergt_stays = 1; old_middle_dnf -= 2; old_middle_dnvp += 2; new_middle_dnvp += 1; new_middle_dnf -= 1; nationalism += 3
@@ -33,7 +33,7 @@ The exodus of workers from our support base has greatly strengthened the Christi
 Walther Lambach has been elected leader of the <span style="color: #3E88B3;">**DNVP**</span>, a trade union leader and the center of discourse within their party in the last congress. He claims a middle ground between socialism and capitalism, and to reconcile capital and labor, it remains to be seen how his leadership would impact the political landscape.
 
 @youngconservative
-on-arrival: dnvp_leader = "Treviranus"; rural_dnf += 3; old_middle_dnf += 3; rural_other -= 3; old_middle_other -= 3; new_middle_other -= 3; new_middle_dnvp += 3; workers_dnvp += 1; catholics_dnvp += 3; catholics_other -= 3; pro_republic += 3; dvp_left += 2; ddp_left += 2
+on-arrival: dnvp_leader = "Treviranus"; true_christian_democracy = 1; rural_dnf += 3; old_middle_dnf += 3; rural_other -= 3; old_middle_other -= 3; new_middle_other -= 3; new_middle_dnvp += 3; workers_dnvp += 1; catholics_dnvp += 3; catholics_other -= 3; pro_republic += 3; dvp_left += 2; ddp_left += 2
 face-image: img/portraits/Treviranus.jpg
 
 The reluctance for the party around Hergt and Westarp to fully commit to a democratic party has been increasingly under fire from the Christian Socialists and "Young Conservatives", and the failure for the referendum against the Young Plan to reach the signature threshold has tipped the balance in their favor. 
