@@ -931,7 +931,7 @@ on-arrival: no_majority_bruning_elections += 1
 
 There is no path to a majority government. One option would be to have a continuation of the current Brüning government; if we tolerate it, then it would retain a majority vote against no-confidence.
 
-Alternatively, we could try to form a "new grand coalition" of all constitutional parties except the <span style="color: #7A3C00;">**NSDAP**</span>, <span style="color: #700000;">**KPD**</span>,[? if dnf_formed: <span style="color: #003755;"> **DNF**,</span> ?] and <span style="color: #3E88B3;">**DNVP**</span>. The stumbling block are the minor conservative parties such as the "Economic Party of the Middle Class", who detest any hint of <span style="color: #c00000;">socialism</span> and would ruin the country before working with <span style="color: #9b0000;">Marxists</span>.
+Alternatively, we could try to form a "new grand coalition" of all constitutional parties except the <span style="color: #7A3C00;">**NSDAP**</span>, <span style="color: #700000;">**KPD**</span>,[? if dnf_formed: <span style="color: #003755;"> **DNF**,</span> ?] and <span style="color: #3E88B3;">**DNVP**</span>. The stumbling block are the minor conservative parties such as the "<span style="color: #b8996f;">Economic Party</span>" (<span style="color: #b8996f;">**WP**</span>), who detest any hint of <span style="color: #c00000;">socialism</span> and would ruin the country before working with <span style="color: #9b0000;">Marxists</span>.
 
 The third option is to have new elections.
 
