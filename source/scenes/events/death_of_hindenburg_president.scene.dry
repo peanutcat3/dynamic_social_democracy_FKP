@@ -174,7 +174,7 @@ max-visits: 1
 go-to: z_failed if z_support_braun = 0 or (z_support_braun == 2 and historical_mode); z_success if z_support_braun = 1; z_partial if z_support_braun = 2 and not historical_mode
 
 # use the same supports as the Center Party in 1932
-We implore the <span style="color: #000000;">Center Party</span> to support [+ spd_candidate +] as a unity candidate against <span style="color: #7A3C00;">fascism</span>, that together, the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition can defeat the <span style="color: #7A3C00;">Nazis</span>. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
+We implore the <span style="color: #000000;">Center Party</span> to support [+ spd_candidate +] as a unity candidate against <span style="color: #7A3C00;">fascism</span>, arguing that together, the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition can defeat the <span style="color: #7A3C00;">Nazis</span>. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
 
 
 # convincing Z to support an SPD candidate
@@ -206,7 +206,7 @@ if (Q.spd_candidate == "Juchacz") {
 max-visits: 1
 go-to: z_failed if z_support_braun = 0 or (z_support_braun == 2 and historical_mode); z_success if z_support_braun = 1; z_partial if z_support_braun = 2 and not historical_mode
 
-We implore the <span style="color: #000000;">Center Party</span> to support [+ spd_candidate +]. We attempt to convince them of the necessity for unity in the face of <span style="color: #7A3C00;">fascism</span>, that divided, we will fall to the <span style="color: #7A3C00;">Nazis</span>. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
+We implore the <span style="color: #000000;">Center Party</span> to support [+ spd_candidate +]. We attempt to convince them of the necessity for unity in the face of <span style="color: #7A3C00;">fascism</span>: that if we were divided, we would fall to the <span style="color: #7A3C00;">Nazis</span>. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
 
 @z_failed
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
@@ -424,6 +424,24 @@ if (Q.Hitler_votes && Q.Seldte_votes) {
         Q.nsdap_candidate = "Seldte";
     }
 }
+// 2. If Adenauer & Gessler are both running and neither are part of the SPD coalition, the smaller of these drops out.
+Q.adenauer_drops_out = 0;
+Q.gessler_drops_out = 0;
+if (Q.z_candidate == "Adenauer" && Q.ddp_candidate == "Gessler" && Q.z_candidate != Q.spd_candidate && Q.ddp_candidate != Q.spd_candidate) {
+    if (Q.Adenauer_votes > Q.Gessler_votes) {
+        Q.gessler_drops_out = 1;
+        Q.ddp_candidate = "Adenauer";
+        if (Q.dvp_candidate != Q.spd_candidate) {
+            Q.dvp_candidate = "Adenauer";
+        }
+    } else {
+        Q.adenauer_drops_out = 1;
+        Q.z_candidate = "Gessler";
+    }
+}
+// DVP drops out to favor the center candidate
+if (Q.dvp_candidate != Q.spd_candidate && Q.dvp_candidate != Q.ddp_candidate && Q.dvp_candidate != Q.z_candidate) {
+}
 !}
 go-to: r2_menu
 
@@ -595,8 +613,8 @@ Despite the Nazi threats, supporters of the <span style="color: #c00000;">**SPD*
 
 
 @election_end
-go-to: eckener_win if winner = "Eckener"; juchacz_win if winner = "Juchacz"; bundesrepublik_win if winner = "Schumacher" or winner = "Adenauer"; hitler_victory if winner = "Hitler" or winner = "Göring"; seldte_victory if winner = "Seldte"; munzenberg_victory if winner = "Munzenberg" or winner = "Münzenberg"; thalmann_victory if winner = "Thalmann" or winner = "Thälmann"; nazis_lose if winner = "Braun" or winner = "Gessler"
-on-arrival: president = winner; president = "Thälmann" if president == "Thalmann"; president = "Münzenberg" if president = "Munzenberg"
+go-to: eckener_win if winner = "Eckener"; juchacz_win if winner = "Juchacz"; bundesrepublik_win if winner = "Schumacher" or winner = "Adenauer"; hitler_victory if winner = "Hitler" or winner = "Göring" or winner = "Goring"; seldte_victory if winner = "Seldte"; munzenberg_victory if winner = "Munzenberg" or winner = "Münzenberg"; thalmann_victory if winner = "Thalmann" or winner = "Thälmann"; nazis_lose if winner = "Braun" or winner = "Gessler"
+on-arrival: president = winner; president = "Thälmann" if president == "Thalmann"; president = "Münzenberg" if president = "Munzenberg"; president = "Göring" if president = "Goring"
 
 The election has been won by [+ winner_desc +].
 
