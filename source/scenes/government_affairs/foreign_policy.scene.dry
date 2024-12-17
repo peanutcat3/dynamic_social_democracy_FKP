@@ -172,7 +172,7 @@ We have successfully signed a Concordat between Germany and the Roman Catholic C
 
 
 @european_union
-title: Take steps to form a "European Union".
+title: Take steps to form a "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>".
 subtitle: Is a "United States of Europe" possible?
 unavailable-subtitle: [? if west_relation < 5 : Our relations with the West are not good enough. ?] [? if east_relation < 4 : Our relations with the East are not good enough. ?]
 view-if: reparations <= -2 and eu_progress < 2

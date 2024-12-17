@@ -298,12 +298,12 @@ go-to: eg_menu
 Works councils now have substantially greater influence, giving workers democratic control over their economic lives.
 
 @european_union
-title: There is now a European Union!
+title: There is now a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>!
 view-if: eu = 1
 tags: endings
 go-to: eg_menu
 
-We have helped to form a European Union to bring peace and prosperity to the continent. Time will tell how effective it will be.
+We have helped to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span> to bring peace and prosperity to the continent. Time will tell how effective it will be.
 
 @achievements
 title: Achievements
@@ -398,9 +398,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_ausnahmezustand: **Ausnahmezustand** - use emergency powers to cancel elections. ?]
 
-[? if game_achievement_eu: **Vereinigte Staaten von Europa** - form a "European Union". ?]
+[? if game_achievement_eu: **Vereinigte Staaten von Europa** - form a "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>". ?]
 
-[? if game_achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the <span style="color: #c00000;">**SPD**</span>'s Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a European Union. ?]
+[? if game_achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the <span style="color: #c00000;">**SPD**</span>'s Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>. ?]
 
 [? if game_achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
@@ -501,9 +501,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_ausnahmezustand: **Ausnahmezustand** - use emergency powers to cancel elections. ?]
 
-[? if achievement_eu: **Vereinigte Staaten von Europa** - form a "European Union". ?]
+[? if achievement_eu: **Vereinigte Staaten von Europa** - form a "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>". ?]
 
-[? if achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the <span style="color: #c00000;">**SPD**</span>'s Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a European Union. ?]
+[? if achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the <span style="color: #c00000;">**SPD**</span>'s Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>. ?]
 
 [? if achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
@@ -602,9 +602,9 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_ausnahmezustand: **Ausnahmezustand** - use emergency powers to cancel elections. ?]
 
-[? if not achievement_eu: **Vereinigte Staaten von Europa** - form a "European Union". ?]
+[? if not achievement_eu: **Vereinigte Staaten von Europa** - form a "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>". ?]
 
-[? if not achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the <span style="color: #c00000;">**SPD**</span>'s Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a European Union. ?]
+[? if not achievement_heidelberger_programm: **Heidelberger Programm** - achieve the goals of the <span style="color: #c00000;">**SPD**</span>'s Heidelberg Program: social welfare, judicial reform, women's rights in the workplace and family, progressive taxation, works councils, and the formation of a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>. ?]
 
 [? if not achievement_verfassungsreform: **Verfassungsreform** - pass a constitutional amendment. ?]
 
