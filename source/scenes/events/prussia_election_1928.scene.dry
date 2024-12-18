@@ -489,7 +489,7 @@ go-to: coalition_menu
 - @popular_front_coalition_prussia
 - @right_coalition_prussia
 - @center_right_coalition_prussia
-
+- @call_new_elections: No majority is able to be found.
 
 
 @spd_majority
@@ -716,6 +716,11 @@ Letting go the democratic bulwark to the right-wing parties is deeply unpopular 
 Adam Stegerwald of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
 
 @call_new_elections
+subtitle: New elections will be called.
+view-if: weimar_coalition_prussia < 50 and (grand_coalition_prussia < 50 or grand_coalition_failed_prussia == 1) or (grand_coalition_prussia >= 50 and (dvp_ideology == "Right" and black_thursday_seen == 1)) and far_right_coalition_prussia < 50 and right_coalition_prussia < 50 and center_right_coalition_prussia < 50 or (center_right_coalition_prussia >= 50 and dnvp_ideology == "Radical")
+on-arrival: pro_republic -= 5 if anti_democratic_votes >= 35; workers_nsdap += 3 if anti_democratic_votes >= 35; workers_kpd += 3 if anti_democratic_votes >= 35; workers_spd -= 3 if anti_democratic_votes >= 35; new_middle_nsdap += 3 if anti_democratic_votes >= 35; old_middle_nsdap += 3 if anti_democratic_votes >= 35; rural_nsdap += 3 if anti_democratic_votes >= 35; new_middle_ddp -= 3 if anti_democratic_votes >= 35; old_middle_ddp -= 3 if anti_democratic_votes >= 35; rural_ddp -= 3 if anti_democratic_votes >= 35; new_middle_dvp -= 3 if anti_democratic_votes >= 35; old_middle_dvp -= 3 if anti_democratic_votes >= 35; rural_dvp -= 3 if anti_democratic_votes >= 35
 call: set_next_election_time_prussia
 
 New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
+
+[? if anti_democratic_votes >= 35: The people's faith in democracy is shaken by this ordeal. Of course, the <span style="color: #7A3C00;">Nazis</span> are exploiting the instability to claim that democracy is unworkable, and that Germany needs a strong leader. ?]

@@ -532,9 +532,9 @@ Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
 Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
 Q.kvp_r = Math.round(Q.kvp_r * 10) / 10
 
-if (Q.dvp_right > (Q.dvp_left + 5)) {
+if (Q.dvp_right > (Q.dvp_left*1.5) or (Q.dvp_right > (Q.dvp_left + 5))) {
     Q.dvp_ideology = "Right"
-} else if (Q.dvp_left > (Q.dvp_right + 5)) {
+} else if (Q.dvp_left > (Q.dvp_right*1.5) or (Q.dvp_left > (Q.dvp_right + 5))) {
     Q.dvp_ideology = "Left"
 } else {
     Q.dvp_ideology = "Moderate"
@@ -637,6 +637,12 @@ if (Q.dnvp_ideology === "Moderate") {
     Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.nsdap_r + Q.dnf_r).toFixed(1));
 } else {
     Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.nsdap_r + Q.dnvp_r).toFixed(1));
+}
+
+if (Q.dnvp_ideology === "Moderate") {
+    Q.anti_democratic_votes = parseFloat((Q.kpd_r + Q.nsdap_r + Q.dnf_r).toFixed(1));
+} else {
+    Q.anti_democratic_votes = parseFloat((Q.kpd_r + Q.nsdap_r + Q.dnvp_r).toFixed(1));
 }
 
 Q.neo_weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r).toFixed(1));
