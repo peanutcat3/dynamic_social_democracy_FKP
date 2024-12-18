@@ -1,18 +1,17 @@
 title: Prussian Government Collapses
 subtitle: Our coalition partners are dissolving the Prussian government.
-view-if: ((z_relation < 30 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 25 and z_leader == "Joos") or (ddp_relation < 30 and ddp_ideology == "Right") or (ddp_relation < 25 and ddp_ideology == "Moderate") or (ddp_relation < 20 and ddp_ideology == "Left" and ddp_cohesion < 8)) and in_weimar_coalition_prussia == 1 and not (year == 1928 and month < 6)
-on-arrival: coalition_dissent += 2 if not in_left_front; was_in_weimar_coalition_prussia = 1 if (in_weimar_coalition_prussia == 1 or in_minority_weimar_coalition_prussia == 1); was_in_grand_coalition_prussia = 1 if (in_grand_coalition_prussia == 1 or in_minority_grand_coalition_prussia == 1); in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_far_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0
+view-if: ((z_relation < 30 and z_leader == "Kaas" or z_leader == "Marx") or (z_relation < 25 and z_leader == "Joos") or (ddp_relation < 30 and ddp_ideology == "Right") or (ddp_relation < 25 and ddp_ideology == "Moderate") or (ddp_relation < 20 and ddp_ideology == "Left" and ddp_cohesion < 8)) or ((dvp_relation < 25 and dvp_ideology == "Left") or (dvp_relation < 30 and dvp_ideology == "Moderate") or (dvp_relation < 40 and dvp_ideology == "Right")) and in_new_grand_coalition_prussia == 1 and not (year == 1928 and month < 6)
+on-arrival: coalition_dissent += 2 if in_grand_coalition; was_in_weimar_coalition_prussia = 1 if (in_weimar_coalition_prussia == 1 or in_minority_weimar_coalition_prussia == 1); was_in_grand_coalition_prussia = 1 if (in_grand_coalition_prussia == 1 or in_minority_grand_coalition_prussia == 1); in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_far_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0; left_dissent += 2
 new-page: true
 tags: event
-face-image: img/weimar_coalition.jpg
+face-image: img/prussia_flag_old.png
 
 = Democratic Bulwark Dismantled
 
-We have somehow antagonized the parties involved in the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition ruling over Prussia, and our coalition partners have called a vote of no confidence against us.
+We have somehow antagonized the bourgeois parties involved in the New Grand Coalition ruling over Prussia, and our coalition partners have called a vote of no confidence against us. Prussia employs a constructive vote of no confidence, meaning that a government can only be removed if a successor can be put forth. This mechanism is how we were able to govern in a minority government in the past. [? if in_grand_coalition: This development also impacts our federal coalition as well. ?]
 
-The only alternative coalition that can be formed with the current composition of the state parliament is a broad right-wing coalition, ranging from the <span style="color: #000000;">Center</span> to the <span style="color: #3E88B3;">**DNVP**</span>. [? if dnvp_ideology == "Radical" and dnvp_leader != "Westarp": However, this is heavily unlikely with the <span style="color: #3E88B3;">**DNVP**</span>'s all-or-nothing stance on governance. ?] Prussia employs a constructive vote of no confidence, meaning that a government can only be removed if a successor can be put forth. This mechanism is how we were able to govern in a minority government in the past.
+We can either look for other potential parliamentary majorities, or call snap elections.
 
-- @spd_majority
 - @far_right_coalition_prussia
 - @right_coalition
 - @center_right_coalition
@@ -20,16 +19,6 @@ The only alternative coalition that can be formed with the current composition o
 - @progressive_coalition
 - @new_elections: New elections will be called.
 
-
-@spd_majority
-title: <span style="color: #c00000;">**SPD**</span> majority alone
-subtitle: <span style="color: #c00000;">**SPD**</span>: [+ spd_r_prussia +]%
-view-if: spd_r_prussia >= 50
-on-arrival: pro_republic += 5; reichswehr_loyalty -= 0.05 if chancellor == "Braun"; ddp_right += 2; dvp_right += 4; liberal_cooperation += 5; bourgeois_cooperation += 5; prussia_leader = "Braun"; spd_majority_prussia = 1; prussian_police_loyalty += 0.1; prussian_police_strength += 50; democratization += 3; coup_progress += 1; capital_strike_progress += 2; ddp_relation -= 3; z_relation -= 3
-
-Finally, the <span style="color: #c00000;">**SPD**</span> can govern alone! Our long campaign of electioneering has paid off. We do not need to worry about coalition government; anything is possible. However, our former coalition partners are going to start drifting to the right.
-
-Braun is selected to be the Minister-President of Prussia.
 
 @far_right_coalition_prussia
 title: <span style="color: #7A3C00;">Far</span>-[? if not dnf_formed:<span style="color: #3E88B3;">right</span>?][? if dnf_formed:<span style="color: #003755;">right</span>?] Coalition
@@ -45,7 +34,7 @@ A wave of terror and repression unfolds, targeting the <span style="color: #c000
 title: A Bürgerblock is formed.
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition_prussia +]%)
 view-if: dnvp_ideology == "Moderate" or dnvp_leader == "Westarp" and right_coalition_prussia >= 50
-on-arrival: in_right_coalition_prussia = 1; prussia_leader = "Zentrum"; new_middle_spd -= 4; rural_spd -= 2; dvp_right += 2; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; ddp_right += 2; ddp_cohesion -= 2; reformist_dissent += 10; prussian_police_loyalty -= 0.1; prussian_police_strength -= 10; pro_republic -= 3; ddp_relation -= 4; z_relation -= 4; dvp_relation -= 4
+on-arrival: in_right_coalition_prussia = 1; prussia_leader = "Zentrum"; new_middle_spd -= 4; rural_spd -= 2; dvp_right += 2; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; ddp_right += 2; ddp_cohesion -= 2; reformist_dissent += 10; prussian_police_loyalty -= 0.1; prussian_police_strength -= 10; pro_republic -= 3
 
 A right coalition is formed, albeit with an extremely narrow majority. They will begin undoing years of reform and democratization that we fought hard to achieve and will let <span style="color: #3E88B3;">right</span>-<span style="color: #7A3C00;">wing</span> paramilitaries like the <span style="color: #3E88B3;">Stahlhelm</span> and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> run free.
 
@@ -57,7 +46,7 @@ Adam Stegerwald of the <span style="color: #000000;">Center Party</span> is sele
 title: A Bürgerblock is formed.
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> ([+ center_right_coalition_prussia +]%)
 view-if: dnvp_ideology == "Moderate" and dnvp_leader != "Westarp" and center_right_coalition_prussia >= 50
-on-arrival: in_center_right_coalition_prussia = 1; prussia_leader = "Zentrum"; new_middle_spd -= 4; ddp_right += 2; ddp_cohesion -= 2; dvp_right += 2; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; prussian_police_loyalty -= 0.06; prussian_police_strength -= 8; pro_republic -= 3; ddp_relation -= 4; z_relation -= 4; dvp_relation -= 4
+on-arrival: in_center_right_coalition_prussia = 1; prussia_leader = "Zentrum"; new_middle_spd -= 4; ddp_right += 2; ddp_cohesion -= 2; dvp_right += 2; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; prussian_police_loyalty -= 0.06; prussian_police_strength -= 8; pro_republic -= 3
 
 A center-right coalition is formed featuring an broad array of parties to the right of us. They will begin undoing years of reform and democratization that we fought hard to achieve and will let <span style="color: #3E88B3;">right</span>-<span style="color: #7A3C00;">wing</span> paramilitaries like the <span style="color: #3E88B3;">Stahlhelm</span> and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> run free.
 
