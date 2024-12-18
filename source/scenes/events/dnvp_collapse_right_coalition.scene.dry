@@ -21,8 +21,9 @@ We can either vote to bring down the government and hold new elections, or "tole
 title: We will join the Brüning coalition.
 subtitle: The chancellorship will remain with Brüning.
 view-if: grand_coalition >= 50 or neo_weimar_coalition >= 50
-on-arrival: spd_in_government = 1; spd_toleration = 0; in_grand_coalition = 1; in_right_coalition = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = ddp_name; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "Z"; leverage = 25 if leverage >= 25; new_middle_dnvp -= 2; old_middle_dnvp -= 2; rural_dnvp -= 2; left_dissent += 8; ddp_left += 1
-go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_coalition_prussia)
+on-arrival: spd_in_government = 1; spd_toleration = 0; in_grand_coalition = 1; in_right_coalition = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; interior_minister_party = ddp_name; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "Z"; leverage = 25 if leverage >= 25; new_middle_dnvp -= 2; old_middle_dnvp -= 2; rural_dnvp -= 2; left_dissent += 8; ddp_left += 1; prussia_negotiations_trigger = 1
+
+The Prussian coalition isn't able to survive either, pressure from Hugenberg and his supporters forces the <span style="color: #3E88B3;">**DNVP**</span> to exit from the bourgeois-right coalition there as well.
 
 Heinrich Brüning welcomes us into his new cabinet. Now, we have our pick of ministries.
 
@@ -59,7 +60,7 @@ The right-wing coalition has fallen. New elections have been set for [+ next_ele
 
 @new_prussia_election
 
-The Prussian coalition isn't able to survive either, pressure from the national conservatives within the <span style="color: #3E88B3;">**DNVP**</span> forces them to exit from the bourgeois-right coalition there as well.
+The Prussian coalition isn't able to survive either, pressure from Hugenberg and his supporters forces the <span style="color: #3E88B3;">**DNVP**</span> to exit from the bourgeois-right coalition there as well.
 
 - @prussian_coalition_form: Negotiate a new Prussian coalition.
 
