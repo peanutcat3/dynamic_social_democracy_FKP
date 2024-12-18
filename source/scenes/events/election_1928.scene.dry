@@ -1737,6 +1737,7 @@ This coalition arrangement is tolerable to all.
 
 @prussian_coalition_form
 view-if: prussia_negotiations_trigger == 1
+on-arrival: prussia_negotiations_trigger = 0
 go-to: prussian_coalition_formation
 
 @drop_labor
