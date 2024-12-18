@@ -651,9 +651,9 @@ if (Q.kvp_formed) {
 
 Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(1));
 
-if (Q.in_weimar_coalition_prussia == 1 || Q.in_grand_coalition_prussia == 1 || Q.in_popular_front_prussia == 1 || Q.in_left_front_prussia == 1 || Q.in_spd_majority_prussia == 1 || Q.in_center_right_coalition_prussia == 1 || Q.in_minority_weimar_coalition_prussia == 1 || Q.in_minority_grand_coalition_prussia == 1 || Q.in_new_grand_coalition_prussia == 1) {
+if (Q.in_weimar_coalition_prussia == 1 || Q.in_grand_coalition_prussia == 1 || Q.in_popular_front_prussia == 1 || Q.in_left_front_prussia == 1 || Q.in_spd_majority_prussia == 1 || Q.in_minority_weimar_coalition_prussia == 1 || Q.in_minority_grand_coalition_prussia == 1 || Q.in_new_grand_coalition_prussia == 1) {
     Q.spd_prussia = 1
-} else if (Q.in_right_coalition_prussia == 1 || Q.in_center_right_coalition_prussia == 1 || Q.prussia_leader == "Papen" || Q.prussia_leader == "Goring") {
+} else if (Q.in_right_coalition_prussia == 1 || Q.in_center_right_coalition_prussia == 1 || Q.prussia_leader == "Papen" || Q.prussia_leader == "Goring" || Q.in_far_right_coalition_prussia == 1) {
     Q.right_prussia = 1
 }
 }
