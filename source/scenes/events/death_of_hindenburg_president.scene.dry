@@ -325,7 +325,7 @@ set-jump: post_election
 @post_election
 on-arrival: {!
 var candidate_descs = {
-Hitler: "Adolf Hitler of the NSDAP,
+Hitler: "Adolf Hitler of the NSDAP",
 Goring: "Hermann Göring of the NSDAP",
 Seldte: "Franz Seldte of the Stahlhelm/DNVP",
 Eckener: "the independent republican candidate Hugo Eckener",
