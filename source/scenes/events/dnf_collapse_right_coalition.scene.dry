@@ -22,7 +22,7 @@ The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has indicated their 
 title: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> shall enter government.
 subtitle: The coalition will live for another day.
 view-if: center_right_coalition >= 50
-on-arrival: spd_in_government = 0; in_center_right_coalition = 1; in_right_coalition = 0; old_middle_dnf -= 2; rural_dnf -= 2; ddp_right += 2; ddp_cohesion -= 1.5
+on-arrival: spd_in_government = 0; in_center_right_coalition = 1; in_right_coalition = 0; old_middle_dnf -= 2; rural_dnf -= 2; ddp_right += 2; ddp_cohesion -= 1.5; liberal_cooperation += 1; bourgeois_cooperation += 1
 go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_coalition_prussia)
 
 The bourgeois has survived without our toleration, but it's unlikely that this governing arrangement will last much longer.
@@ -84,7 +84,7 @@ We have successfully bribed the <span style="color: #D3C24D;">**[+ ddp_name +]**
 
 @new_prussia_election_oppo
 view-if: center_right_coalition_prussia >= 50
-on-arrival: in_right_coalition_prussia = 0; in_center_right_coalition_prussia = 1; right_prussia = 1
+on-arrival: in_right_coalition_prussia = 0; in_center_right_coalition_prussia = 1; right_prussia = 1; bourgeois_cooperation += 1; liberal_cooperation += 1
 
 And so we remain.
 
