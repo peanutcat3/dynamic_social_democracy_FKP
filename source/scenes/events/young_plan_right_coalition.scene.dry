@@ -52,4 +52,7 @@ The bourgeois-right coalition has fallen. New elections have been set for [+ nex
 
 The Prussian coalition isn't able to survive either, pressure from the national conservatives within the <span style="color: #3E88B3;">**DNVP**</span> forces them to exit from the bourgeois-right coalition there as well.
 
-- @prussian_coalition_formation: Negotiate a new Prussian coalition.
+- @prussian_coalition_form: Negotiate a new Prussian coalition.
+
+@prussian_coalition_form
+go-to: prussian_coalition_formation
