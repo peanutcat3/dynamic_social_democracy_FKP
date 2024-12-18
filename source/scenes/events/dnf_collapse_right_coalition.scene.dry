@@ -80,7 +80,7 @@ on-arrival: resources -= 1; ddp_left += 2; ddp_cohesion -= 1; liberal_cooperatio
 
 We have successfully bribed the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. 
 
-- @prussian_coalition_form
+- @prussian_coalition_form: Negotiate a new Prussian coalition.
 
 @new_prussia_election_oppo
 view-if: center_right_coalition_prussia >= 50
@@ -97,7 +97,7 @@ New Prussian elections have been set for [+ next_election_month_prussia : month 
 
 @prussia_negotiations
 view-if: center_right_coalition_prussia < 50
-go-to: prussian_coalition_form
+go-to: prussian_coalition_formation
 
 
 @prussian_coalition_form
