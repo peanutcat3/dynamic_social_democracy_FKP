@@ -677,7 +677,7 @@ The coalition negotiations were going relatively smoothly until the <span style=
 
 - @popular_front_resources_2
 - @popular_front_relations
-- @popular_front_prussia
+- @popular_front_prussia_weimar
 - @popular_front_prussia_groko
 - @coalition_menu: Oh, you think the SPD betrayed the working class? That’s rich coming from the KPD, the self-proclaimed “vanguard of the proletariat” that spent more time attacking socialists than fighting fascists. Let’s talk about the real betrayal, comrade. While the SPD was trying to stabilize the republic and fend off fascist coups like the Kapp Putsch, where was the KPD? Oh, right—screaming about how social democrats were “social fascists” because they wouldn’t dismantle democracy overnight. You act like the SPD didn’t have its flaws. Sure, Ebert called in the Freikorps to crush the Spartacist uprising. Not a good look, but let’s not pretend the KPD’s adventurism and refusal to cooperate didn’t weaken the left. While the SPD was defending trade unions and passing labor reforms, the KPD was cozying up to Moscow and declaring the Weimar Republic dead on arrival. And don’t get me started on the KPD splitting the left vote in 1933. Was “class purity” worth letting Hitler come to power? But sure, keep calling the SPD sellouts while you play revolutionaries and fail to realize that burning the whole system down doesn’t magically lead to socialism. If anything, it just opens the door for reactionaries to walk right in. The SPD wasn’t perfect, but at least they tried to hold the line. The KPD? A textbook case of “owning the libs” gone horribly wrong. Congratulations, comrade, your ideological purity cost us the Republic. Hope you’re proud.
 
@@ -695,7 +695,7 @@ unavailable-subtitle: Our relationship with the <span style="color: #700000;">**
 choose-if: (kpd_relation >= 70 and communist_coalition >= 3) or (kpd_leader == "Conciliators" and kpd_relation >= 60)
 go-to: popular_front_success
 
-@popular_front_prussia
+@popular_front_prussia_weimar
 view-if: in_weimar_coalition_prussia
 title: Accept the <span style="color: #700000;">**KPD**</span>'s demands.
 unavailable-subtitle: [? if ddp_relation < 60 and liberal_parliament == 0: Our relationship with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is not high enough. ?] [? if (z_relation < 60 and z_leader == "Joos") or (z_relation < 70 and z_leader != "Joos"): Our relationship with the <span style="color: #000000;">Center</span> is not high enough. ?]
