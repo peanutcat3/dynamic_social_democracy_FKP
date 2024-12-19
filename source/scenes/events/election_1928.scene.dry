@@ -1017,7 +1017,7 @@ How do we convince vehemently anti-<span style="color: #c00000;">socialist</span
 
 @newgroko_prussia
 title: Offer participation in the Prussian government.
-view-if: in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and new_grand_coalition_prussia >= 50
+view-if: in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and neo_weimar_coalition_prussia >= 50
 on-arrival: spd_in_government = 1; in_grand_coalition = 1; left_dissent += 4; dvp_left += 2; liberal_cooperation += 1; dvp_relation += 5; in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 1; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Braun"; spd_prussia = 1; right_prussia = 0
 achievement: constitutional_coalition
 
@@ -1033,7 +1033,7 @@ Who should be chancellor?
 
 @newgroko_prussia_2
 title: Use our connections inside of the Prussian coalition. 
-view-if: in_new_grand_coalition_prussia == 1 and new_grand_coalition_prussia >= 50
+view-if: in_new_grand_coalition_prussia == 1 and neo_weimar_coalition_prussia >= 50
 on-arrival: spd_in_government = 1; in_grand_coalition = 1; left_dissent += 4; dvp_left += 2; liberal_cooperation += 1; dvp_relation += 5
 achievement: constitutional_coalition
 
