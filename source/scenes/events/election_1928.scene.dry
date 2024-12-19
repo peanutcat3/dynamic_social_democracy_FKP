@@ -628,9 +628,9 @@ There are some potential coalition arrangements.
 @popular_front_coalition
 title: A new "Popular Front" coalition?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> + <span style="color: #000000;">**Z**</span>[? if liberal_parliament = 0:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?] ([+ popular_front_coalition +]%)
-unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #000000;">Z</span>[? if liberal_parliament = 0:&nbsp;+ <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">SAPD</span>?] ([+ popular_front_coalition +]%) - [? if ((kpd_relation < 65 and kpd_leader == "Thälmann") or (kpd_relation < 45 and kpd_leader == "Conciliators")): We do not have good enough relations with the <span style="color: #700000;">KPD</span>. ?][? if (z_relation < 45 and z_leader == "Joos") or (z_relation < 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation < 55 and z_leader != "Joos" and kpd_leader == "Conciliators"): We do not have good enough relations with the <span style="color: #000000;">Center Party</span>. ?][? if ddp_relation < 50 and liberal_parliament == 0: We do not have good enough relations with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are unwilling to compromise at all. ?]
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #000000;">Z</span>[? if liberal_parliament = 0:&nbsp;+ <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">SAPD</span>?] ([+ popular_front_coalition +]%) - [? if ((kpd_relation < 65 and kpd_leader == "Thälmann") or (kpd_relation < 45 and kpd_leader == "Conciliators")): We do not have good enough relations with the <span style="color: #700000;">KPD</span>. ?][? if (z_relation < 45 and z_leader == "Joos") or (z_relation < 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation < 55 and z_leader != "Joos" and kpd_leader == "Conciliators"): We do not have good enough relations with the <span style="color: #000000;">Center Party</span>. ?][? if (ddp_relation < 50 and ddp_ideology != "Left") or (ddp_relation < 40 and ddp_ideology == "Left") and liberal_parliament == 0: We do not have good enough relations with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are unwilling to compromise at all. ?]
 view-if: popular_front_coalition >= 50
-choose-if: (((kpd_relation >= 65 and kpd_leader == "Thälmann") or (kpd_relation >= 45 and kpd_leader == "Conciliators")) and ((z_relation >= 45 and z_leader == "Joos") or (z_relation >= 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation >= 50 and z_leader != "Joos" and kpd_leader == "Conciliators")) and (liberal_parliament != 0 or ddp_relation >= 50) and communist_coalition >= 3) or (z_leader == "Joos" and kpd_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)
+choose-if: (((kpd_relation >= 65 and kpd_leader == "Thälmann") or (kpd_relation >= 45 and kpd_leader == "Conciliators")) and ((z_relation >= 45 and z_leader == "Joos") or (z_relation >= 65 and z_leader != "Joos" and kpd_leader != "Conciliators") or (z_relation >= 50 and z_leader != "Joos" and kpd_leader == "Conciliators")) and (liberal_parliament != 0 or (ddp_relation >= 50 and ddp_ideology != "Left") or (ddp_relation >= 40 and ddp_ideology == "Left")) and communist_coalition >= 3) or (z_leader == "Joos" and kpd_leader == "Conciliators" and z_relation >= 30 and kpd_relation >= 30)
 
 Could we really form a coalition that included both the <span style="color: #000000;">**Center**</span> and the <span style="color: #700000;">**Communists**</span>? It seems like an absurd concept, but given our good relationships with both sides, it is not an impossibility.
 
@@ -651,23 +651,79 @@ Somehow, both the <span style="color: #700000;">**Communists**</span> and <span 
 
 @popular_front_resources
 title: Use our resources to smooth things over.
-unavailable-subtitle: Required: 4 resources
-subtitle: -4 resources
-choose-if: resources >= 4
-on-arrival: resources -= 4
-go-to: popular_front_success
+unavailable-subtitle: Required: 3 resources
+subtitle: -3 resources
+choose-if: resources >= 3
+on-arrival: resources -= 3
+go-to: popular_front_success if in_popular_front_prussia or in_left_front_prussia; popular_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and popular_front_prussia >= 50
 
 @popular_front_democracy
 title: Convince the <span style="color: #700000;">**KPD**</span> to accept democracy.
 subtitle: [? if kpd_leader == "Conciliators" : The Conciliator leadership of the <span style="color: #700000;">**KPD**</span> at least claim to support the Popular Front. ?]
 unavailable-subtitle: Our relationship with the <span style="color: #700000;">**KPD**</span> is not high enough.
 choose-if: (kpd_relation >= 60 and communist_coalition >= 3) or kpd_leader == "Conciliators"
-go-to: popular_front_success
+go-to: popular_front_success if in_popular_front_prussia or in_left_front_prussia; popular_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and popular_front_prussia >= 50
 
 @popular_front_braun
 title: Use pressure from President Braun to force the parties to cooperate.
 view-if: president == "Braun"
+go-to: popular_front_success if in_popular_front_prussia or in_left_front_prussia; popular_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and popular_front_prussia >= 50
+
+@popular_front_prussia
+
+The coalition negotiations were going relatively smoothly until the <span style="color: #700000;">**KPD**</span> bought up the topic of a reorganization of the Prussian government to include themselves. [? if in_new_grand_coalition_prussia or in_grand_coalition_prussia: This means that we are forced to kick the <span style="color: #C0A054;">**DVP**</span> [? if in_new_grand_coalition_prussia:and the minor bourgeois parties ?]from the ruling coalition to accommodate. ?][? if in_weimar_coalition_prussia and not in_minority_weimar_coalition_prussia: This means that we are to add the <span style="color: #700000;">**KPD**</span> to the ruling <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition, to form an Übergroß coalition. ?][? if in_weimar_coalition_prussia and in_minority_weimar_coalition_prussia: This means that we are to add the <span style="color: #700000;">**KPD**</span> to the ruling <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition, to form a majority Popular Front coalition. ?]
+
+*Something* must be done to restore balance, again.
+
+- @popular_front_resources_2
+- @popular_front_relations
+- @popular_front_prussia
+- @popular_front_prussia_groko
+- @coalition_menu: Oh, you think the SPD betrayed the working class? That’s rich coming from the KPD, the self-proclaimed “vanguard of the proletariat” that spent more time attacking socialists than fighting fascists. Let’s talk about the real betrayal, comrade. While the SPD was trying to stabilize the republic and fend off fascist coups like the Kapp Putsch, where was the KPD? Oh, right—screaming about how social democrats were “social fascists” because they wouldn’t dismantle democracy overnight. You act like the SPD didn’t have its flaws. Sure, Ebert called in the Freikorps to crush the Spartacist uprising. Not a good look, but let’s not pretend the KPD’s adventurism and refusal to cooperate didn’t weaken the left. While the SPD was defending trade unions and passing labor reforms, the KPD was cozying up to Moscow and declaring the Weimar Republic dead on arrival. And don’t get me started on the KPD splitting the left vote in 1933. Was “class purity” worth letting Hitler come to power? But sure, keep calling the SPD sellouts while you play revolutionaries and fail to realize that burning the whole system down doesn’t magically lead to socialism. If anything, it just opens the door for reactionaries to walk right in. The SPD wasn’t perfect, but at least they tried to hold the line. The KPD? A textbook case of “owning the libs” gone horribly wrong. Congratulations, comrade, your ideological purity cost us the Republic. Hope you’re proud.
+
+@popular_front_resources_2
+title: Use our resources to smooth things over.
+unavailable-subtitle: Required: 2 resources
+subtitle: -2 resources
+choose-if: resources >= 2
+on-arrival: resources -= 2
 go-to: popular_front_success
+
+@popular_front_relations
+title: Use our good relations to smooth things over.
+unavailable-subtitle: Our relationship with the <span style="color: #700000;">**KPD**</span> is not high enough.
+choose-if: (kpd_relation >= 70 and communist_coalition >= 3) or (kpd_leader == "Conciliators" and kpd_relation >= 60)
+go-to: popular_front_success
+
+@popular_front_prussia
+view-if: in_weimar_coalition_prussia
+title: Accept the <span style="color: #700000;">**KPD**</span>'s demands.
+unavailable-subtitle: [? if ddp_relation < 60 and liberal_parliament == 0: Our relationship with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is not high enough. ?] [? if (z_relation < 60 and z_leader == "Joos") or (z_relation < 70 and z_leader != "Joos"): Our relationship with the <span style="color: #000000;">Center</span> is not high enough. ?]
+choose-if: (ddp_relation >= 60 and liberal_parliament == 0) or liberal_parliament == 1 and (z_relation >= 60 and z_leader == "Joos") or (z_relation >= 70 and z_leader != "Joos")
+on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 1; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Rosenfeld"; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 5; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; reformist_dissent += 5; dvp_right += 2; prussian_police_loyalty -= 0.1; rfb_militancy += 0.05; rfb_strength += 50; ddp_in_popular_front_prussia = 1 if liberal_parliament = 0; ddp_relation -= 3 if ddp_in_popular_front_prussia; coup_progress += 1; capital_strike_progress += 1; prussia_negotiations_kpd_trigger = 1
+
+Surprisingly, the <span style="color: #000000;">Center</span> agrees to a reform of the ruling <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. The Minister-President position is transferred from Braun to[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work. He is accepted with great reluctance to the <span style="color: #000000;">**Center**</span> and welcomed by the <span style="color: #700000;">**KPD**</span>.
+
+The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
+
+Hindenburg might object to this coalition, and may perform a *Reichsexekution* on our Prussian government, if we were to become too radical in our actions.
+
+- @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
+
+@popular_front_prussia_groko
+view-if: in_grand_coalition_prussia or in_new_grand_coalition_prussia
+title: Accept the <span style="color: #700000;">**KPD**</span>'s demands.
+unavailable-subtitle: [? if ddp_relation < 60 and liberal_parliament == 0: Our relationship with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is not high enough. ?] [? if (z_relation < 60 and z_leader == "Joos") or (z_relation < 70 and z_leader != "Joos"): Our relationship with the <span style="color: #000000;">Center</span> is not high enough. ?]
+choose-if: (ddp_relation >= 60 and liberal_parliament == 0) or liberal_parliament == 1 and (z_relation >= 60 and z_leader == "Joos") or (z_relation >= 70 and z_leader != "Joos")
+on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 1; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Rosenfeld"; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 5; z_relation -= 7; ddp_relation -= 7; dvp_relation -= 15; reformist_dissent += 5; dvp_right += 5; prussian_police_loyalty -= 0.1; rfb_militancy += 0.05; rfb_strength += 50; ddp_in_popular_front_prussia = 1 if liberal_parliament = 0; ddp_relation -= 3 if ddp_in_popular_front_prussia; coup_progress += 1; capital_strike_progress += 1; prussia_negotiations_kpd_trigger = 1
+
+We have kicked out the <span style="color: #C0A054;">**DVP**</span> from the government, and formed a Popular Front. The <span style="color: #C0A054;">**DVP**</span> is infuriated by our betrayal and any future coalitions with them may be impossible. The Minister-President position is transferred from Braun to[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work. He is accepted with great reluctance to the <span style="color: #000000;">**Center**</span> and welcomed by the <span style="color: #700000;">**KPD**</span>.
+
+The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
+
+Hindenburg might object to this coalition, and may perform a *Reichsexekution* on our Prussian government, if we were to become too radical in our actions.
+
+- @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
 @great_popular_front
 view-if: z_leader == "Joos" and kpd_leader == "Conciliators"
@@ -946,16 +1002,50 @@ The third option is to have new elections.
 title: A "New Grand Coalition" of all the constitutional parties?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** ([+ neo_weimar_coalition +]%)
 view-if: neo_weimar_coalition >= 50 and grand_coalition < 50
-choose-if: z_relation >= 50 and dvp_relation >= 30 and ddp_relation >= 35
-unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #A2D8E0;">BVP</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others ([+ neo_weimar_coalition +]%) - [? if z_relation < 50 : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if dvp_relation < 30 : We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if ddp_relation < 35 : We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?]
+choose-if: ((z_relation >= 50 and z_leader == "Kaas") or (z_relation >= 40 and z_leader == "Joos")) and ((dvp_relation >= 35 and dvp_ideology == "Left") or (dvp_relation >= 40 and dvp_ideology == "Moderate") or (dvp_relation >= 50 and dvp_ideology == "Right")) and ((ddp_relation >= 25 and ddp_ideology == "Left") or (ddp_relation >= 30 and ddp_ideology == "Moderate") or (ddp_relation >= 35 and ddp_ideology == "Right"))
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #A2D8E0;">BVP</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> + Others ([+ neo_weimar_coalition +]%) - [? if not ((z_relation >= 50 and z_leader == "Kaas") or (z_relation >= 40 and z_leader == "Joos")) : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if not ((dvp_relation >= 35 and dvp_ideology == "Left") or (dvp_relation >= 40 and dvp_ideology == "Moderate") or (dvp_relation >= 50 and dvp_ideology == "Right")): We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if not ((ddp_relation >= 25 and ddp_ideology == "Left") or (ddp_relation >= 30 and ddp_ideology == "Moderate") or (ddp_relation >= 35 and ddp_ideology == "Right")) : We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?]
 
-How do we convince vehemently anti-<span style="color: #c00000;">socialist</span> parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">**Center**</span> and <span style="color: #C0A054;">**DVP**</span> may allow us some leverage.
+How do we convince vehemently anti-<span style="color: #c00000;">socialist</span> parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">**Center**</span> and <span style="color: #C0A054;">**DVP**</span> may allow us some leverage. [? if in_new_grand_coalition_prussia: A similar coalition in the state of Prussia will also help with negotiations. ?]
 
 - @use_resources
+- @newgroko_prussia
+- @newgroko_prussia_2
 - @toleration_bruning: No. We will tolerate a minority government.
 - @toleration_bruning_right: No. We will tolerate a minority right coalition government.
 - @new_elections: No. We will have new elections.
 - @unity_government
+
+@newgroko_prussia
+title: Offer participation in the Prussian government.
+view-if: in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and new_grand_coalition_prussia >= 50
+on-arrival: spd_in_government = 1; in_grand_coalition = 1; left_dissent += 4; dvp_left += 2; liberal_cooperation += 1; dvp_relation += 5; in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 1; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Braun"; spd_prussia = 1; right_prussia = 0
+achievement: constitutional_coalition
+
+We are able to offer the array of bourgeois parties into the ruling Prussian government. They will stand in the way of Braun's reform efforts, but perhaps it is necessary to save our democracy.
+
+Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-<span style="color: #7A3C00;">fascist</span> and non-<span style="color: #700000;">communist</span> parties. Leftists in our party are somewhat skeptical of this arrangement. 
+
+
+Who should be chancellor?
+
+- @join_bruning: For better or for worse, it must be Heinrich Brüning of the <span style="color: #000000;">**Center**</span>.
+- @braun_chancellor_new: Otto Braun for Chancellor?
+
+@newgroko_prussia_2
+title: Use our connections inside of the Prussian coalition. 
+view-if: in_new_grand_coalition_prussia == 1 and new_grand_coalition_prussia >= 50
+on-arrival: spd_in_government = 1; in_grand_coalition = 1; left_dissent += 4; dvp_left += 2; liberal_cooperation += 1; dvp_relation += 5
+achievement: constitutional_coalition
+
+The existing "New Grand Coalition" in Prussia has helped us generate good will with the bourgeois parties, who are now willing to work with us to save democracy.
+
+Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-<span style="color: #7A3C00;">fascist</span> and non-<span style="color: #700000;">communist</span> parties. Leftists in our party are somewhat skeptical of this arrangement. 
+
+
+Who should be chancellor?
+
+- @join_bruning: For better or for worse, it must be Heinrich Brüning of the <span style="color: #000000;">**Center**</span>.
+- @braun_chancellor_new: Otto Braun for Chancellor?
 
 @use_resources
 title: Use our resources to smooth over the creation of a coalition.
@@ -977,12 +1067,22 @@ Who should be chancellor?
 
 @braun_chancellor_new
 subtitle: This will reduce our leverage in the ministries.
-view-if: not historical_mode or not prussia_leader = "Braun"
+choose-if: (not historical_mode or not prussia_leader = "Braun") and not (in_new_grand_coalition_prussia and prussia_leader == "Braun")
+unavailable-subtitle: Our coalition partners have serious qualms about concentrating power into one man, given that Braun is already Minister-President of Prussia.
 on-arrival: leverage -= 10; chancellor = "Braun"; chancellor_party = "SPD"
 go-to: ministries
 
 We have assembled a new coalition under Otto Braun.
 
+@braun_resign_prussia
+subtitle: Braun must resign from his position to accept the chancellorship.
+view-if: in_new_grand_coalition_prussia and prussia_leader == "Braun"
+on-arrival: leverage -= 10; chancellor = "Braun"; chancellor_party = "SPD"; prussia_leader = "Zentrum"
+go-to: ministries
+
+We have assembled a new coalition under Otto Braun.
+
+Adam Stegerwald of the <span style="color: #000000;">Center Party</span> has now replaced Braun in his former position.
 
 @unity_government
 title: The <span style="color: #000000;">**Center Party**</span> offers a "Government of National Unity" under Chancellor Joseph Wirth.
