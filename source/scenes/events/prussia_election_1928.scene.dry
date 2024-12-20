@@ -608,13 +608,13 @@ A wave of terror and repression unfolds, targeting the <span style="color: #c000
 @left_coalition_prussia
 title: Is a United Left coalition possible?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition_prussia +]%)
-unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition_prussia +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?] [? if president != "Braun": Hindenburg will perform a *Reichsexekution* upon our government. ?]
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition_prussia +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?] [? if president != "Braun": Hindenburg will perform a *Reichsexekution* upon our government. ?] [? if reformist_strength >= left_strength: Our own Prussian party has ruled out this possibility. ?]
 view-if: left_coalition_prussia >= 50
-choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3 and president == "Braun"
-on-arrival: in_left_front_prussia = 1; prussia_leader = "Rosenfeld"; reichswehr_loyalty -= 0.05; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 2; liberal_cooperation += 5; bourgeois_cooperation += 10; kpd_relation += 10; z_relation -= 4; ddp_relation -= 4; dvp_relation -= 8; coup_progress += 2; coup_progress += 1 if in_left_front; capital_strike_progress += 2; capital_strike_progress += 1 if in_left_front; reformist_dissent += 25; reformist_strength -= 15; left_dissent -= 15; left_strength += 15; prussian_police_loyalty -= 0.1
+choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3 and president == "Braun" and left_strength >= reformist_strength
+on-arrival: in_left_front_prussia = 1; prussia_leader = "Rosenfeld"; reichswehr_loyalty -= 0.05; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 2; liberal_cooperation += 5; bourgeois_cooperation += 10; kpd_relation += 10; z_relation -= 4; ddp_relation -= 4; dvp_relation -= 8; coup_progress += 2; coup_progress += 1 if in_left_front; capital_strike_progress += 2; capital_strike_progress += 1 if in_left_front; reformist_dissent += 25; reformist_strength -= 15; left_dissent -= 15; left_strength += 15; prussian_police_loyalty -= 0.1; rfb_strength += 50; rfb_militancy += 0.05
 go-to: kpd_goals_prussia
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing a <span style="color: #700000;">communist</span> as chancellor. The consensus choice for chancellor, accepted by the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, is[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work..
+Somehow, surprisingly, the left coalition is successfully formed, without appointing a <span style="color: #700000;">communist</span> as Minister-President. The consensus choice for Minister-President, accepted by the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, is[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work..
 
 In response to the <span style="color: #700000;">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, eventually enabling the destruction of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. [? if in_left_front: The right will be more active in resisting our rule considering we are also ruling with the <span style="color: #700000;">**KPD**</span> on the federal level too. ?]
 
@@ -681,7 +681,7 @@ Somehow, the coalition is successfully formed! The conciliatory leadership of th
 
 @kpd_goals_prussia
 on-arrival: kpd_goals_seen_prussia = 1; interior_goal_prussia = 0; bureaucracy_goal_prussia = 1; bureaucracy_goal_seen_prussia = 1; free_kpd_goal_prussia = 1; free_kpd_goal_seen_prussia = 1; rfb_goal_prussia = 0; interior_goal_prussia = 1 if (sa_banned == 0 or sh_banned == 0); interior_goal_prussia = 2 if (sa_banned == 0 and sh_banned == 0); interior_goal_seen_prussia = 1 if (sa_banned == 0 or sh_banned == 0); rfb_goal_prussia = 1 if rfb_banned == 1; rfb_goal_seen_prussia = 1 if rfb_banned == 1; kpd_ultimatum_prussia_timer = 16
-go-to: popular_front_success_federal if prussia_negotiations_kpd_trigger == 1
+go-to: popular_front_success_federal if prussia_negotiations_kpd_trigger == 1; left_front_success_federal if prussia_negotiations_kpd_left_trigger == 1
 
 The <span style="color: #700000;">**KPD**</span> presents us with a list of demands for the Prussian coalition:
 
@@ -699,6 +699,11 @@ They say that they expect to see these goals fulfilled in [+ kpd_ultimatum_pruss
 on-arrival: prussia_negotiations_kpd_trigger = 0
 
 - @election_1928.popular_front_success: Continue negotiations.
+
+@left_front_success_federal
+on-arrival: prussia_negotiations_kpd_left_trigger = 0
+
+- @election_1928.left_coalition_success: Continue negotiations.
 
 @right_coalition_prussia
 title: Refuse to form a government, so that a right-wing coalition may be formed.

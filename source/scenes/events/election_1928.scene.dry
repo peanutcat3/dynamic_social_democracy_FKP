@@ -700,7 +700,7 @@ view-if: in_weimar_coalition_prussia
 title: Accept the <span style="color: #700000;">**KPD**</span>'s demands.
 unavailable-subtitle: [? if ddp_relation < 60 and liberal_parliament == 0: Our relationship with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is not high enough. ?] [? if (z_relation < 60 and z_leader == "Joos") or (z_relation < 70 and z_leader != "Joos"): Our relationship with the <span style="color: #000000;">Center</span> is not high enough. ?]
 choose-if: (ddp_relation >= 60 and liberal_parliament == 0) or liberal_parliament == 1 and (z_relation >= 60 and z_leader == "Joos") or (z_relation >= 70 and z_leader != "Joos")
-on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 1; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Rosenfeld"; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 5; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; reformist_dissent += 5; dvp_right += 2; prussian_police_loyalty -= 0.1; rfb_militancy += 0.05; rfb_strength += 50; ddp_in_popular_front_prussia = 1 if liberal_parliament = 0; ddp_relation -= 3 if ddp_in_popular_front_prussia; coup_progress += 1; capital_strike_progress += 1; prussia_negotiations_kpd_trigger = 1
+on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 1; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Rosenfeld"; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 5; z_relation -= 3; ddp_relation -= 3; dvp_relation -= 5; reformist_dissent += 10; dvp_right += 2; prussian_police_loyalty -= 0.1; rfb_militancy += 0.05; rfb_strength += 50; ddp_in_popular_front_prussia = 1 if liberal_parliament = 0; ddp_relation -= 3 if ddp_in_popular_front_prussia; coup_progress += 1; capital_strike_progress += 1; prussia_negotiations_kpd_trigger = 1
 
 Surprisingly, the <span style="color: #000000;">Center</span> agrees to a reform of the ruling <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. The Minister-President position is transferred from Braun to[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work. He is accepted with great reluctance to the <span style="color: #000000;">**Center**</span> and welcomed by the <span style="color: #700000;">**KPD**</span>.
 
@@ -715,7 +715,7 @@ view-if: in_grand_coalition_prussia or in_new_grand_coalition_prussia
 title: Accept the <span style="color: #700000;">**KPD**</span>'s demands.
 unavailable-subtitle: [? if ddp_relation < 60 and liberal_parliament == 0: Our relationship with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is not high enough. ?] [? if (z_relation < 60 and z_leader == "Joos") or (z_relation < 70 and z_leader != "Joos"): Our relationship with the <span style="color: #000000;">Center</span> is not high enough. ?]
 choose-if: (ddp_relation >= 60 and liberal_parliament == 0) or liberal_parliament == 1 and (z_relation >= 60 and z_leader == "Joos") or (z_relation >= 70 and z_leader != "Joos")
-on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 1; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Rosenfeld"; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 5; z_relation -= 7; ddp_relation -= 7; dvp_relation -= 15; reformist_dissent += 5; dvp_right += 5; prussian_police_loyalty -= 0.1; rfb_militancy += 0.05; rfb_strength += 50; ddp_in_popular_front_prussia = 1 if liberal_parliament = 0; ddp_relation -= 3 if ddp_in_popular_front_prussia; coup_progress += 1; capital_strike_progress += 1; prussia_negotiations_kpd_trigger = 1
+on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 1; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Rosenfeld"; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 5; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 15; reformist_dissent += 10; dvp_right += 5; prussian_police_loyalty -= 0.1; rfb_militancy += 0.05; rfb_strength += 50; ddp_in_popular_front_prussia = 1 if liberal_parliament = 0; ddp_relation -= 3 if ddp_in_popular_front_prussia; coup_progress += 1; capital_strike_progress += 1; prussia_negotiations_kpd_trigger = 1
 
 We have kicked out the <span style="color: #C0A054;">**DVP**</span> from the government, and formed a Popular Front. The <span style="color: #C0A054;">**DVP**</span> is infuriated by our betrayal and any future coalitions with them may be impossible. The Minister-President position is transferred from Braun to[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work. He is accepted with great reluctance to the <span style="color: #000000;">**Center**</span> and welcomed by the <span style="color: #700000;">**KPD**</span>.
 
@@ -846,18 +846,71 @@ In response to [+ chancellor +] being appointed Chancellor, the right-wing force
 
 @left_coalition_resources
 title: Use our resources to smooth things over.
-unavailable-subtitle: Required: 3 resources
-subtitle: -3 resources
-choose-if: resources >= 3
-on-arrival: resources -= 3
-go-to: left_coalition_success
+unavailable-subtitle: Required: 2 resources
+subtitle: -2 resources
+choose-if: resources >= 2
+on-arrival: resources -= 2
+go-to: left_coalition_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or left_front_prussia < 50; left_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and left_front_prussia >= 50
 
 @left_coalition_relations
 title: Convince the <span style="color: #700000;">**KPD**</span> to accept democracy.
 unavailable-subtitle: Our relationships with the <span style="color: #700000;">KPD</span> are not good enough.
 choose-if: kpd_relation >= 60 or kpd_leader == "Conciliators"
+go-to: left_coalition_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or left_front_prussia < 50; left_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and left_front_prussia >= 50
+
+@left_front_prussia
+
+The coalition negotiations were going relatively smoothly until the <span style="color: #700000;">**KPD**</span> bought up the topic of a reorganization of the Prussian government to include themselves. Previous United Left governments at the state level have faced *Reichsexekution* before, [? if president == "Hindenburg": and President Hindenburg will almost certainly do so again if we were to form one.?][? if president == "Braun": but it's unlikely Braun will repeat Ebert's mistakes.?] Despite this, the <span style="color: #700000;">**KPD**</span> are firm about their demands to be included.
+
+*Something* must be done to restore balance, again.
+
+- @left_coalition_resources_2
+- @left_coalition_relations_2
+- @left_front_prussia_weimar
+- @left_front_prussia_groko
+- @coalition_menu: oh, so now the kpd wants to lecture the spd on ‘betrayal’? that’s hilarious. let’s not forget who really sold out the working class. while the spd was out here trying to protect the weimar republic from fascist takeovers, what was the kpd doing? attacking social democrats, calling them 'class traitors' because we didn’t want to throw democracy in the trash and start a pointless revolution. yeah, ebert made some bad calls with the freikorps, but at least we were trying to keep things from falling apart. what was the kpd doing? cozying up to stalin, pretending like the weimar republic was already dead and going nowhere. you really wanna talk about betrayal? the kpd was too busy playing the martyr, splitting the left vote and giving fascists a clear path to power. congratulations, geniuses. splitting the vote in 1933 while you chant about 'class purity'—real smart move. the spd might’ve had its flaws, but we actually tried to make things better, to hold off the fascists and give the workers a fighting chance. you? you just played into their hands. revolution doesn’t happen by sitting on your high horse, refusing to cooperate and throwing temper tantrums. if anything, the kpd handed us over to hitler on a silver platter. so keep whining about 'betrayal' while you do nothing but tear down the very thing that could’ve stopped the fascists. nice job.
+
+@left_coalition_resources_2
+title: Use our resources to smooth things over.
+unavailable-subtitle: Required: 2 resources
+subtitle: -2 resources
+choose-if: resources >= 2
+on-arrival: resources -= 2
 go-to: left_coalition_success
 
+@left_coalition_relations_2
+title: Use our good relations to smooth things over.
+unavailable-subtitle: Our relationship with the <span style="color: #700000;">**KPD**</span> is not high enough.
+choose-if: (kpd_relation >= 70 and communist_coalition >= 3) or (kpd_leader == "Conciliators" and kpd_relation >= 50)
+go-to: left_coalition_success
+
+@left_front_prussia_weimar
+view-if: in_weimar_coalition_prussia
+title: Accept the <span style="color: #700000;">**KPD**</span>'s demands.
+unavailable-subtitle: [? if reformist_strength >= left_strength: Our party reformists rule out this option. ?] [? if president != "Braun": Hindenburg will perform a *Reichsexekution* upon our government. ?]
+choose-if: left_strength >= reformist_strength and president == "Braun"
+on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Rosenfeld"; reichswehr_loyalty -= 0.05; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 8; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 3; prussian_police_loyalty -= 0.1; rfb_militancy += 0.1; rfb_strength += 50; coup_progress += 1; capital_strike_progress += 1; reformist_dissent += 25; reformist_strength -= 10; left_dissent -= 10; left_strength += 10
+prussia_negotiations_kpd_left_trigger = 1;
+
+We have exited our long standing <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition to form a United Left Coalition with the <span style="color: #700000;">**KPD**</span>. The Minister-President position is transferred from Braun to[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work.
+
+The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
+
+- @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
+
+@left_front_prussia_groko
+view-if: in_grand_coalition_prussia or in_new_grand_coalition_prussia
+title: Accept the <span style="color: #700000;">**KPD**</span>'s demands.
+unavailable-subtitle: [? if reformist_strength >= left_strength: Our party reformists rule out this option. ?] [? if president != "Braun": Hindenburg will perform a *Reichsexekution* upon our government. ?]
+choose-if: left_strength >= reformist_strength and president == "Braun"
+on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Rosenfeld"; reichswehr_loyalty -= 0.05; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 10; z_relation -= 15; ddp_relation -= 15; dvp_relation -= 20; reformist_dissent += 25; dvp_right += 8; ddp_right += 5; ddp_cohesion -= 5; prussian_police_loyalty -= 0.1; rfb_militancy += 0.1; rfb_strength += 50; coup_progress += 1; capital_strike_progress += 1; reformist_strength -= 10; left_dissent -= 10; left_strength += 10
+prussia_negotiations_kpd_left_trigger = 1;
+
+We have kicked out the <span style="color: #C0A054;">**DVP**</span> and the other bourgeois parties from the existing Grand Coalition to form a United Left Coalition with the <span style="color: #700000;">**KPD**</span>. The bourgeois parties are infuriated by our betrayal, and any future coalitions with them may be impossible. The Minister-President position is transferred from Braun to[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work.
+
+The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
+
+- @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
 @left_coalition_success
 on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; coup_progress += 3; capital_strike_progress += 2; coup_progress += 1 if in_left_front_prussia; capital_strike_progress += 1 if in_left_front_prussia; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 10
@@ -869,7 +922,7 @@ Somehow, surprisingly, the left coalition is successfully formed, without appoin
 # just raise the coup limit, don't immediately go to civil war
 
 @left_coalition_no_civil_war
-on-arrival: kpd_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05; dvp_right += 10; ddp_right += 5; ddp_cohesion -= 3; liberal_cooperation += 6; bourgeois_cooperation += 10; reformist_dissent += 20; reformist_strength -= 10; left_dissent -= 30; left_strength += 20
+on-arrival: kpd_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05; dvp_right += 10; ddp_right += 5; ddp_cohesion -= 3; liberal_cooperation += 5; bourgeois_cooperation += 10; liberal_cooperation += 3 if in_left_front_prussia or in_popular_front_prussia; bourgeois_cooperation += 5 if in_left_front_prussia or in_popular_front_prussia; reformist_dissent += 20; reformist_strength -= 10; left_dissent -= 30; left_strength += 20
 
 In response to the <span style="color: #700000;">**KPD**</span>'s entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Our task is to prove them wrong. [? if in_left_front_prussia: The right will be more active in resisting our rule considering we are also ruling with the <span style="color: #700000;">**KPD**</span> in Prussia too. ?]
 

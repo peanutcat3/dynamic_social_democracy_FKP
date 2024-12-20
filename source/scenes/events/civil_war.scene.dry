@@ -123,7 +123,7 @@ on-arrival: war_choices += 1
 
 There are [+ rfb_strength +] thousand fighters with the <span style="color: #700000;">Communist</span> <span style="color: #8B0000;">**RFB**</span>, in addition to the workers who support the <span style="color: #700000;">**KPD**</span>.
 
-[? if kpd_relation >= 60 : The <span style="color: #700000;">**KPD**</span> is entirely on our side, owing to our good relations.. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Most of the <span style="color: #700000;">**KPD**</span> is on our side, due to their good relations with us. ?][? if kpd_relation < 45 : The <span style="color: #700000;">**KPD**</span> does not support us. ?]
+[? if kpd_relation >= 60 : The <span style="color: #700000;">**KPD**</span> is entirely on our side, owing to our good relations. ?][? if kpd_relation < 60 and kpd_relation >= 45 : Most of the <span style="color: #700000;">**KPD**</span> is on our side, due to their good relations with us. ?][? if kpd_relation < 45 : The <span style="color: #700000;">**KPD**</span> does not support us. ?]
 
 @general_strike
 max-visits: 1
