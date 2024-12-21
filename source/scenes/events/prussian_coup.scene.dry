@@ -1,6 +1,6 @@
 title: Coup in Prussia
 subtitle: The Chancellor attempts to overthrow the Prussian government.
-view-if: (chancellor = "Papen" or chancellor = "Schleicher") and president = "Hindenburg" and year >= 1932 and month >= 8 and spd_in_government == 0 and spd_prussia = 1 and not presidential_powers
+view-if: (chancellor = "Papen" or chancellor = "Schleicher") and president = "Hindenburg" and year >= 1932 and month >= 8 and spd_in_government == 0 and spd_prussia = 1 and not presidential_powers and prussian_reichsexekution = 0
 on-arrival: prussian_coup_seen = 1; strife += 2
 new-page: true
 tags: event
@@ -59,3 +59,5 @@ title: Give up on the Prussian government.
 on-arrival: in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; grand_coalition_failed_prussia = 0; in_center_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; spd_prussia = 0; prussia_leader = "Papen"; workers_spd -= 5; left_dissent += 10; labor_dissent += 10; rb_militancy = rb_militancy/2; rb_strength -= 1000;
 
 A pall of hopelessness and despair descends over <span style="color: #c00000;">Social Democracy</span>. We have failed. Many in the Reichsbanner simply quit, demoralized by their leaders' lack of a call to action.
+
+Hindenburg appoints the reactionary Franz von Papen to govern over Prussia as a *Reichskommissar*, who will focus on dismantling the democratic systems we worked hard to build.
