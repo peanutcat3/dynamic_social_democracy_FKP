@@ -850,13 +850,13 @@ unavailable-subtitle: Required: 2 resources
 subtitle: -2 resources
 choose-if: resources >= 2
 on-arrival: resources -= 2
-go-to: left_coalition_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or left_front_prussia < 50; left_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and left_front_prussia >= 50
+go-to: left_coalition_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or left_coalition_prussia < 50; left_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and left_coalition_prussia >= 50
 
 @left_coalition_relations
 title: Convince the <span style="color: #700000;">**KPD**</span> to accept democracy.
 unavailable-subtitle: Our relationships with the <span style="color: #700000;">KPD</span> are not good enough.
 choose-if: kpd_relation >= 60 or kpd_leader == "Conciliators"
-go-to: left_coalition_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or left_front_prussia < 50; left_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and left_front_prussia >= 50
+go-to: left_coalition_success if in_popular_front_prussia or in_left_front_prussia or not spd_prussia or left_coalition_prussia < 50; left_front_prussia if not in_popular_front_prussia and not in_left_front_prussia and spd_prussia and left_coalition_prussia >= 50
 
 @left_front_prussia
 
