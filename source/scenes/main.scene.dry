@@ -64,7 +64,7 @@ max-cards: 3
 
 {!<p class="both">!}[? if year = 1928 and month = 9 and spd_in_government = 0 : The bourgeois government has approved construction of a new battlecruiser, as part of Germany's rearmament. We have gained some support as an opposition party advocating food for children instead of battleships. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1928 and month = 9 : Adam Stegerwald, chairman of the Catholic trade unions, is the frontrunner to succeed Wilhelm Marx. He advocates for a broad interconfessional “people’s bloc” over special interest groups. He is skeptical of cooperation with us.?]{!</p>!}
+{!<p class="other">!}[? if year = 1928 and month = 9 : Adam Stegerwald, chairman of the Catholic trade unions,[? if prussia_leader == "Zentrum: and Minister-President of Prussia,?] is the frontrunner to succeed Wilhelm Marx. He advocates for a broad interconfessional “people’s bloc” over special interest groups. He is skeptical of cooperation with us.?]{!</p>!}
 
 {!<p class="dnvp">!}[? if year = 1928 and month = 9 : Westarp's refusal to run for re-election has left the moderate anti-Hugenberg forces within the <span style="color: #3E88B3;">**DNVP**</span> without a candidate. Hugenberg has shown ambivalence in the party chairmanship himself, and has shown interest in a triumvirate of sorts. ?]{!</p>!}
 
@@ -72,7 +72,9 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1928 and month = 10 and not in_grand_coalition or not foreign_minister_party = "DVP": Stresemann is planning a large internal reform of the <span style="color: #C0A054;">**DVP**</span> spearheaded by Otto Thiel, a trade unionist. He strikes a strong parallel with Lambach in working to expand the party to attract all sectors of society. Although Stresemann's health has been declining, he has finally shown focus to his party's internal affairs. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1928 and month = 11 : Despite Stegerwald's strong position in the <span style="color: #000000;">Center Party</span>'s leadership race, he faces significant resistance from the party's middle class because of his ties to labor and his opposition to a proposed raise for civil servants. New candidates have emerged for the party congress in December. ?]{!</p>!}
+{!<p class="other">!}[? if year = 1928 and month = 11 and not prussia_leader == "Zentrum": Despite Stegerwald's strong position in the <span style="color: #000000;">Center Party</span>'s leadership race, he faces significant resistance from the party's middle class because of his ties to labor and his opposition to a proposed raise for civil servants. New candidates have emerged for the party congress in December. ?]{!</p>!}
+
+{!<p class="other">!}[? if year = 1928 and month = 11 and prussia_leader == "Zentrum": Stegerwald's position in the <span style="color: #000000;">Center Party</span>'s leadership race has been declining, due to significant resistance from the party's middle class because of his ties to labor and his opposition to a proposed raise for civil servants. New candidates have emerged for the party congress in December, creating a three-way contest. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1928 and month = 11 and in_grand_coalition and (in_grand_coalition_prussia == 0 and coalition_dissent > 0 and foreign_minister_party = "DVP") or (foreign_minister_party != "DVP" and in_grand_coalition_prussia == 0 and coalition_dissent > 1): Stresemann has put off his plan to confront the right-wing of the <span style="color: #C0A054;">**DVP**</span> in order to not risk collapsing our government, following disputes involving the Prussian government and the <span style="color: #000000;">Center</span> Party. While this is good news for stability, the right-wing of the <span style="color: #C0A054;">**DVP**</span> are going to give us more problems down the line.?]{!</p>!}
 
