@@ -2,7 +2,7 @@ title: <span style="color: #000000;">Center Party</span> Reformation
 subtitle: Christian labor is capturing the working-class.
 view-if: year == 1929 and month >= 3 and z_leader == "Stegerwald"
 new-page: true
-on-arrival: workers_z += 10; new_middle_z += 8; old_middle_z += 4; unemployed_z += 5; workers_spd -= 5; workers_kpd -= 3; catholics_z -= 8; catholics_dnvp += 3 if dnvp_ideology == "Moderate"; workers_dnvp += 3 if dnvp_ideology == "Moderate"; new_middle_dnvp += 3 if dnvp_ideology == "Moderate"; catholics_other += 3; catholics_spd += 5; workers_ddp += 1; labor_dissent += 15; zentrum_disintegration += 1; dvp_right += 1; ddp_left += 1
+on-arrival: workers_z += 10; new_middle_z += 15; old_middle_z += 8; unemployed_z += 5; workers_spd -= 7; workers_kpd -= 3; catholics_z -= 8; catholics_dnvp += 3 if dnvp_ideology == "Moderate"; workers_dnvp += 3 if dnvp_ideology == "Moderate"; new_middle_dnvp += 3 if dnvp_ideology == "Moderate"; catholics_other += 2; catholics_spd += 4; workers_ddp += 1; labor_dissent += 15; zentrum_disintegration += 1; dvp_right += 1; ddp_left += 1; new_middle_other -= 5; old_middle_other -= 5; workers_other -= 2; rural_other -= 3; unemployed_other -= 3
 max-visits: 1
 tags: event
 face-image: img/campaign.jpg
@@ -29,7 +29,7 @@ We increase our messaging among the workers, fighting back against the shift to 
 choose-if: resources >= 1
 subtitle: -1 resource.
 unavailable-subtitle:[? if resources < 1 : We do not have enough resources. ?]
-on-arrival: resources -= 1; workers_kpd += 5; new_middle_spd += 6; old_middle_spd += 4; rural_spd += 4; labor_dissent += 15; zentrum_disintegration += 1; peoples_party_support += 1
+on-arrival: resources -= 1; workers_kpd += 5; new_middle_spd += 6; old_middle_spd += 4; rural_spd += 4; catholics_spd += 4; labor_dissent += 15; zentrum_disintegration += 1; peoples_party_support += 1
 
 If the bourgeois wants to appeal to the workers, then we will simply find support elsewhere. The <span style="color: #700000;">**KPD**</span> makes inroads on our inaction.
 
