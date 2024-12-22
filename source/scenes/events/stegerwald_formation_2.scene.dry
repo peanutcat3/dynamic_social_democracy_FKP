@@ -1,39 +1,45 @@
-title: <span style="color: #000000;">Center Party</span> Conference 
+title: 1929 <span style="color: #000000;">Center Party</span> Conference 
 subtitle: Stegerwald faces internal opposition.
 view-if: year == 1929 and month >= 12 and z_leader == "Stegerwald" and not dnvp_leader == "Lambach"
 new-page: true
-on-arrival: workers_z += 10; new_middle_z += 15; old_middle_z += 8; unemployed_z += 5; workers_spd -= 7; workers_kpd -= 3; catholics_z -= 8; catholics_dnvp += 3 if dnvp_ideology == "Moderate"; workers_dnvp += 3 if dnvp_ideology == "Moderate"; new_middle_dnvp += 3 if dnvp_ideology == "Moderate"; catholics_other += 2; catholics_spd += 4; workers_ddp += 1; labor_dissent += 15; zentrum_disintegration += 1; dvp_right += 1; ddp_left += 1; new_middle_other -= 5; old_middle_other -= 5; workers_other -= 2; rural_other -= 3; unemployed_other -= 3
+on-arrival: 
 max-visits: 1
 tags: event
-face-image: img/campaign.jpg
+face-image: img/center_poster.jpg
 
-= <span style="color: #000000;">Center Party</span> Reformation
+= 1929 <span style="color: #000000;">Center Party</span> Conference
 
-As the newly elected chairman of the <span style="color: #000000;">Center</span>, Adam Stegerwald has been working to expand the party's reach in protestant areas and quell opposition against his agenda. As a trade union leader himself, he has sizable influence over the Christian labor movement, which is already well-connected through entrenched network of alliances with various right-wing organizations. [? if dnvp_ideology == "Moderate": Cooperation between the various Christian labor unions have been heightened, and together, they are taking down our long-held dominance over the interests of the working-class. ?][? if dnvp_ideology == "Radical": However, Hugenberg of the <span style="color: #3E88B3;">**DNVP**</span> has oversight over it's Christian Socialist wing, and will not tolerate cooperation. This has made the process considerably more difficult without the <span style="color: #3E88B3;">**DNVP**</span> affiliated unions. ?]
+The transformation of the <span style="color: #000000;">Center Party</span> into an interconfessional party is now set in stone, but Stegerwald has made himself some enemies in doing so. Conservative Catholics have jumped ship [? if dnvp_ideology == "Moderate": to the <span style="color: #3E88B3;">**DNVP**</span>.?][? if dnvp_ideology == "Radical": to the various right-wing parties that claim to have Catholic interests at heart.?] The left of the <span style="color: #000000;">Center</span> under Joseph Wirth has become a thorn in Stegerwald's side due to his antipathy towards the <span style="color: #c00000;">**SPD**</span>.
 
-This has led to concerns from the labor wing of our party, as we can't afford to lose support of the largest demographic to the bourgeois.
+The reformation of the <span style="color: #000000;">Center Party</span> away from its confessional roots has injected a dose of dynamism into the party, making it more willing to change and evolve with current conditions. Jakob Kaiser is a rising star on the left, Christian Socialist wing of the party, supporting Stegerwald's vision for a united Christian union but disagreeing with his right-wing policies. 
 
-- @fightback_working: We will increase our campaigning towards the working class.
-- @fightback_other: We will increase our campaigning towards other demographics to compensate.
-- @nothing: Unfortunate.
+- @stegerwald: The <span style="color: #000000;">Center Party</span> elects Adam Stegerwald as the party chair.
+- @kaiser: Influence the <span style="color: #000000;">Center Party</span> to select Jakob Kaiser as the party chair.
+- @kaiser_campaign: We will hold a campaign in support of Jakob Kaiser as party chair.
 
-@fightback_working
+@stegerwald
+on-arrival: z_relation -= 5
+face-image: img/portraits/stegerwald.jpg
+
+Stegerwald will continue to evolve the <span style="color: #000000;">Center Party</span> into a Christian, democratic, German, and social party. Hopefully, Joseph Wirth and the left wing of the party will be able to keep him in check.
+
+@kaiser
+choose-if: z_relation >= 70
+unavailable-subtitle: [? if z_relation < 70 : Our relations are not high enough. ?]
+on-arrival: z_relation += 10
+face-image: img/portraits/kaiser.jpg
+
+With our grassroots connections, we are able to secure the election of Jakob Kaiser to the chairmanship of the <span style="color: #000000;">Center Party</span>. This has come as a complete shock to the political landscape, which has been shifting to the right recently. His progressive, left-wing views on contentious subjects like nationalizations and his vehement anti-<span style="color: #7A3C00;">Nazism</span> are ahead of his time. 
+
+Despite this victory, he finds himself at odds with the rest of his party, as his views are out of place. Due to the party's dynamism, he may be deposed if he proves to be too divisive.
+
+@kaiser_campaign
+choose-if: z_relation >= 65 and resources >= 2
 subtitle: -2 resources.
-choose-if: resources >= 2
-unavailable-subtitle:[? if resources < 2 : We do not have enough resources. ?]
-on-arrival: resources -= 2; workers_spd += 8; unemployed_spd += 5; workers_kpd += 1; new_middle_spd += 4; labor_dissent -= 10
+unavailable-subtitle: [? if z_relation < 65 : Our relations are not high enough. ?] [? if resources < 2 : We do not have enough resources. ?]
+on-arrival: resources -= 2; z_relation += 10
+face-image: img/portraits/kaiser.jpg
 
-We increase our messaging among the workers, fighting back against the shift to the right. It isn't enough, but it is something. 
+With our grassroots connections, as well as a professional campaign, we are able to secure the election of Jakob Kaiser to the chairmanship of the <span style="color: #000000;">Center Party</span>. This has come as a complete shock to the political landscape, which has been shifting to the right recently. His progressive, left-wing views on contentious subjects like nationalizations and his vehement anti-<span style="color: #7A3C00;">Nazism</span> are ahead of his time. 
 
-@fightback_other
-choose-if: resources >= 1
-subtitle: -1 resource.
-unavailable-subtitle:[? if resources < 1 : We do not have enough resources. ?]
-on-arrival: resources -= 1; workers_kpd += 5; new_middle_spd += 6; old_middle_spd += 4; rural_spd += 4; catholics_spd += 4; labor_dissent += 15; left_dissent += 10; zentrum_disintegration += 1; peoples_party_support += 1
-
-If the bourgeois wants to appeal to the workers, then we will simply find support elsewhere. The <span style="color: #700000;">**KPD**</span> makes inroads on our inaction. The left of the <span style="color: #c00000;">**SPD**</span> is opposed to this path, seeing it as diluting the class character of the party. On the other hand, reformists support branching out to different classes.
-
-@nothing
-on-arrival: zentrum_disintegration += 1; 
-
-The <span style="color: #000000;">Center</span> continues to eat into our party's primary voter base.
+Despite this victory, he finds himself at odds with the rest of his party, as his views are out of place. Due to the party's dynamism, he may be deposed if he proves to be too divisive.
