@@ -5,10 +5,11 @@ new-page: true
 on-arrival: workers_z += 10; new_middle_z += 8; old_middle_z += 4; unemployed_z += 5; workers_spd -= 5; workers_kpd -= 3; catholics_z -= 8; catholics_dnvp += 3 if dnvp_ideology == "Moderate"; workers_dnvp += 3 if dnvp_ideology == "Moderate"; new_middle_dnvp += 3 if dnvp_ideology == "Moderate"; catholics_other += 3; catholics_spd += 5; workers_ddp += 1; labor_dissent += 15; zentrum_disintegration += 1; dvp_right += 1; ddp_left += 1
 max-visits: 1
 tags: event
+face-image: img/campaign.jpg
 
 = <span style="color: #000000;">Center Party</span> Reformation
 
-As the newly elected chairman of the <span style="color: #000000;">Center</span>, Adam Stegerwald has been working to expand the party's reach in protestant areas and quell opposition against his agenda. As a trade union leader himself, he has sizable influence over the Christian labor movement, which he will use to leverage against us. [? if dnvp_ideology == "Moderate": Cooperation between the various Christian labor unions have been heightened, and together, they are taking down our long-held dominance over the interests of the working-class. ?][? if dnvp_ideology == "Radical": However, Hugenberg of the <span style="color: #3E88B3;">**DNVP**</span> has oversight over it's Christian Socialist wing, and will not tolerate cooperation. This has made the process considerably more difficult without the <span style="color: #3E88B3;">**DNVP**</span> affiliated unions. ?]
+As the newly elected chairman of the <span style="color: #000000;">Center</span>, Adam Stegerwald has been working to expand the party's reach in protestant areas and quell opposition against his agenda. As a trade union leader himself, he has sizable influence over the Christian labor movement, which is already well-connected through entrenched network of alliances with various right-wing organizations. [? if dnvp_ideology == "Moderate": Cooperation between the various Christian labor unions have been heightened, and together, they are taking down our long-held dominance over the interests of the working-class. ?][? if dnvp_ideology == "Radical": However, Hugenberg of the <span style="color: #3E88B3;">**DNVP**</span> has oversight over it's Christian Socialist wing, and will not tolerate cooperation. This has made the process considerably more difficult without the <span style="color: #3E88B3;">**DNVP**</span> affiliated unions. ?]
 
 This has led to concerns from the labor wing of our party, as we can't afford to lose support of the largest demographic to the bourgeois.
 
