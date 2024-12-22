@@ -34,6 +34,7 @@ With our grassroots connections, we are able to secure the election of Jakob Kai
 Despite this victory, he finds himself at odds with the rest of his party, as his views are out of place. Due to the party's dynamism, he may be deposed if he proves to be too divisive.
 
 @kaiser_campaign
+view-if: z_relation < 70
 choose-if: z_relation >= 65 and resources >= 2
 subtitle: -2 resources.
 unavailable-subtitle: [? if z_relation < 65 : Our relations are not high enough. ?] [? if resources < 2 : We do not have enough resources. ?]
