@@ -234,6 +234,34 @@ if (Q.month_actions >= 1) {
         Q.new_middle_dnvp -= 3/12;
         Q.old_middle_dnvp -= 3/12;
         Q.workers_ddp -= 1/12;
+    if (Q.z_leader == "Stegerwald") {
+        Q.workers_spd -= 7/12;
+        Q.workers_z += 9/12;
+        Q.new_middle_z += 8/12;
+        Q.old_middle_z += 5/12;
+        Q.rural_z += 5/12;
+        Q.catholics_z -= 4/12;
+        Q.catholics_spd += 4/12;
+        Q.unemployed_z += 5/12;
+        Q.workers_other -= 2/12;
+        Q.new_middle_other -= 5/12;
+        Q.old_middle_other -= 5/12;
+        Q.rural_other -= 3/12;
+        Q.unemployed_other -= 3/12;
+        Q.new_middle_dvp -= 3/12;
+        Q.new_middle_ddp -= 3/12;
+        Q.old_middle_dvp -= 3/12;
+        Q.old_middle_ddp -= 3/12;
+        Q.rural_dvp -= 4/12;
+        Q.rural_dnvp -= 6/12;
+        Q.rural_dnf -= 2/12;
+    }
+    if (Q.dnvp_ideology == "Moderate") {
+        Q.catholics_dnvp += 3/12;
+        Q.workers_dnvp += 1.5/12;
+        Q.new_middle_dnvp += 4/12;
+    }
+}
         }
     }
     if (Q.year == 1930) {
@@ -599,27 +627,6 @@ if (Q.year == 1928 && Q.month == 9 && Q.spd_in_government == 0) {
     Q.pacifism += 1
     Q.workers_spd += 3
     Q.panzerkreuser_right_seen = 1
-}
-
-if (Q.year == 1929 && Q.z_leader == "Stegerwald") {
-    Q.workers_spd -= 5/12;
-    Q.workers_z += 12/12;
-    Q.new_middle_z += 8/12;
-    Q.old_middle_z += 5/12;
-    Q.rural_z += 5/12;
-    Q.catholics_z -= 4/12;
-    Q.catholics_spd += 4/12;
-    Q.unemployed_z += 5/12;
-    Q.workers_other -= 2/12;
-    Q.new_middle_other -= 5/12;
-    Q.old_middle_other -= 5/12;
-    Q.rural_other -= 3/12;
-    Q.unemployed_other -= 3/12;
-    if (Q.dnvp_ideology == "Moderate") {
-        Q.catholics_dnvp += 4/12;
-        Q.workers_dnvp += 2/12;
-        Q.new_middle_dnvp += 4/12;
-    }
 }
 
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
