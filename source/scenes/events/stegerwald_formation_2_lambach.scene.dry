@@ -1,8 +1,8 @@
-title: <span style="color: #000000;">Center Party</span> Reformation
-subtitle: Christian labor is capturing the working-class.
-view-if: year == 1929 and month >= 3 and z_leader == "Stegerwald"
+title: <span style="color: #000000;">Center Party</span> Conference 
+subtitle: Stegerwald faces internal opposition.
+view-if: year == 1929 and month >= 12 and z_leader == "Stegerwald" and dnvp_leader == "Lambach"
 new-page: true
-on-arrival: workers_z += 5; new_middle_z += 10; old_middle_z += 10; unemployed_z += 4; workers_spd -= 4; workers_kpd -= 2; catholics_z -= 5; catholics_dnvp += 2 if dnvp_ideology == "Moderate"; workers_dnvp += 2 if dnvp_ideology == "Moderate"; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; catholics_other += 1; catholics_spd += 4; workers_ddp += 1; labor_dissent += 15; zentrum_disintegration += 1; dvp_right += 1; ddp_left += 1; new_middle_other -= 3; old_middle_other -= 3; workers_other -= 1; rural_other -= 1; unemployed_other -= 1
+on-arrival: workers_z += 10; new_middle_z += 15; old_middle_z += 8; unemployed_z += 5; workers_spd -= 7; workers_kpd -= 3; catholics_z -= 8; catholics_dnvp += 3 if dnvp_ideology == "Moderate"; workers_dnvp += 3 if dnvp_ideology == "Moderate"; new_middle_dnvp += 3 if dnvp_ideology == "Moderate"; catholics_other += 2; catholics_spd += 4; workers_ddp += 1; labor_dissent += 15; zentrum_disintegration += 1; dvp_right += 1; ddp_left += 1; new_middle_other -= 5; old_middle_other -= 5; workers_other -= 2; rural_other -= 3; unemployed_other -= 3
 max-visits: 1
 tags: event
 face-image: img/campaign.jpg

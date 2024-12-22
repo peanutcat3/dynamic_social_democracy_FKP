@@ -601,6 +601,26 @@ if (Q.year == 1928 && Q.month == 9 && Q.spd_in_government == 0) {
     Q.panzerkreuser_right_seen = 1
 }
 
+if (Q.year == 1929 && Q.z_leader == "Stegerwald") {
+    Q.workers_spd -= 5/12
+    Q.workers_z += 10/12
+    Q.new_middle_z += 8/12
+    Q.catholics_z -= 6/12
+    Q.catholics_spd += 6/12
+    Q.catholics_other += 2/12
+    Q.unemployed_z += 5/12
+    Q.workers_other -= 2/12
+    Q.new_middle_other -= 5/12
+    Q.old_middle_other -= 5/12
+    Q.rural_other -= 3/12
+    Q.unemployed_other -= 3/12
+    if (Q.dnvp_ideology == "Moderate") {
+        Q.catholics_dnvp += 4/12
+        Q.workers_dnvp += 2/12
+        Q.new_middle_dnvp += 4/12
+    }
+}
+
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
 
 Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));
