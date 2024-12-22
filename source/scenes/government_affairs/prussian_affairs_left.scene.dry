@@ -19,7 +19,7 @@ We can enact policies in Prussia. [? if president == "Hindenburg": However, Pres
 - @ban_sa: Ban the <span style="color: #7A3C00;">**SA**</span>, the Nazi paramilitary group.
 - @ban_sh: Ban the <span style="color: #3E88B3;">**Stahlhelm**</span>, the Nationalist paramilitary.
 - @unban_rfb: Reverse the <span style="color: #8B0000;">**RFB**</span> ban.
-- @free_kpd: free my kpd homies
+- @free_kpd: Protect <span style="color: #8B0000;">**KPD**</span> demonstrations from the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>.
 - @root: No new policies are needed.
 - @easy_discard
 - @cancel_advisor_action
