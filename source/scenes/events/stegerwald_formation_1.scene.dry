@@ -18,6 +18,7 @@ This has led to concerns from the labor wing of our party, as we can't afford to
 - @nothing: Unfortunate.
 
 @fightback_working
+subtitle: -2 resources.
 choose-if: resources >= 2
 unavailable-subtitle:[? if resources < 2 : We do not have enough resources. ?]
 on-arrival: resources -= 2; workers_spd += 8; unemployed_spd += 5; workers_kpd += 1; new_middle_spd += 4; labor_dissent -= 10
@@ -26,6 +27,7 @@ We increase our messaging among the workers, fighting back against the shift to 
 
 @fightback_other
 choose-if: resources >= 1
+subtitle: -1 resource.
 unavailable-subtitle:[? if resources < 1 : We do not have enough resources. ?]
 on-arrival: resources -= 1; workers_kpd += 5; new_middle_spd += 6; old_middle_spd += 4; rural_spd += 4; labor_dissent += 15; zentrum_disintegration += 1; peoples_party_support += 1
 
