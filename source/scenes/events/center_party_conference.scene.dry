@@ -20,7 +20,7 @@ The consensus candidate on the right is Ludwig Kaas, a Catholic priest who repre
 
 @kaas
 view-if: not prussia_leader == "Zentrum"
-on-arrival: z_leader = "Kaas"; z_relation -= 3; prussian_concordat_progress += 1
+on-arrival: z_leader = "Kaas"; z_relation -= 3; prussian_concordat_progress += 1; z_ideology = "Right"
 face-image: img/portraits/Ludwig_Kaas.jpg
 
 Ludwig Kaas has been selected as the chairman of the <span style="color: #000000;">Center Party</span>. He seems to represent a rightward turn from Marx, and will preside over a <span style="color: #000000;">Center Party</span> less inclined to compromise with the left. 
@@ -32,7 +32,7 @@ unavailable-subtitle: Our relations are not good enough.
 subtitle: Joos is likely to be friendlier to us than Kaas.
 view-if: not prussia_leader == "Zentrum"
 choose-if: z_relation >= 70
-on-arrival: z_leader = "Joos"; catholics_z -= 3; catholics_dnvp += 2; catholics_other += 2; catholics_spd += 5; workers_z += 5; z_relation += 4; zentrum_disintegration += 1; dvp_left += 1; ddp_left += 1; ddp_cohesion += 1
+on-arrival: z_leader = "Joos"; z_ideology = "Left"; catholics_z -= 3; catholics_dnvp += 2; catholics_other += 2; catholics_spd += 5; workers_z += 5; z_relation += 4; zentrum_disintegration += 1; dvp_left += 1; ddp_left += 1; ddp_cohesion += 1
 face-image: img/portraits/Joseph_Joos.jpg
 
 With our grassroots connections, we have been able to influence the <span style="color: #000000;">Center</span> delegates to support Joseph Joos as the new <span style="color: #000000;">Center</span> chairman. He has long been a friend of the <span style="color: #c00000;">**SPD**</span>, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the <span style="color: #000000;">Center Party</span> to the working class, though it comes at the cost of deepening the social and economic divisions once held together by religion.
@@ -42,14 +42,14 @@ choose-if: z_relation >= 60 and resources >= 1
 view-if: z_relation < 70 and not prussia_leader == "Zentrum"
 unavailable-subtitle: [? if z_relation <= 62 : Our relations are not good enough. ?] [? if resources < 1 : We do not have enough resources. ?]
 subtitle: -1 resource. Joos is likely to be friendlier to us than Kaas.
-on-arrival: resources -= 1; z_leader = "Joos"; catholics_dnvp += 2; catholics_other += 2; catholics_spd += 5; workers_z += 5; z_relation += 4; zentrum_disintegration += 1; dvp_left += 1; ddp_left += 1; ddp_cohesion += 1
+on-arrival: resources -= 1; z_leader = "Joos"; z_ideology = "Left"; catholics_dnvp += 2; catholics_other += 2; catholics_spd += 5; workers_z += 5; z_relation += 4; zentrum_disintegration += 1; dvp_left += 1; ddp_left += 1; ddp_cohesion += 1
 face-image: img/portraits/Joseph_Joos.jpg
 
 With our grassroots connections as well as a professional campaign, we have been able to influence the <span style="color: #000000;">Center</span> delegates to support Joseph Joos as the new <span style="color: #000000;">Center</span> chairman. He has long been a friend of the <span style="color: #c00000;">**SPD**</span>, and will be more inclined to collaborate with us compared to Kaas. He also increases the appeal of the <span style="color: #000000;">Center Party</span> to the working class, though it comes at the cost of deepening the social and economic divisions once held together by religion.
 
 @stegerwald
 view-if: prussia_leader == "Zentrum"
-on-arrival: z_leader = "Stegerwald"; z_relation -= 5; zentrum_disintegration += 2; new_middle_z -= 5; old_middle_z -= 3; rural_z -= 1; catholics_z -= 5; workers_z += 5; workers_spd -= 3; unemployed_z += 5; catholics_spd += 8; catholics_other += 4; catholics_dnvp += 2; catholics_dvp += 2; dvp_right += 1; ddp_left += 1; ddp_cohesion += 1; peoples_party_support += 1
+on-arrival: z_leader = "Stegerwald"; z_ideology = "Right"; z_relation -= 5; zentrum_disintegration += 2; new_middle_z -= 5; old_middle_z -= 3; rural_z -= 1; catholics_z -= 5; workers_z += 5; workers_spd -= 3; unemployed_z += 5; catholics_spd += 8; catholics_other += 4; catholics_dnvp += 2; catholics_dvp += 2; dvp_right += 1; ddp_left += 1; ddp_cohesion += 1; peoples_party_support += 1
 face-image: img/portraits/stegerwald.jpg
 
 Adam Stegerwald has been elected as the chairman of the <span style="color: #000000;">Center Party</span>. He seems to represent a rightward turn from Marx, despite his trade union background, and will preside over a <span style="color: #000000;">Center Party</span> less inclined to compromise with the left. He views the <span style="color: #000000;">Center Party</span> as a prototype for a Christian, democratic, German, and social party, and aims to transform it according to the principles laid out in his proposed "Essen program" eight years prior. 

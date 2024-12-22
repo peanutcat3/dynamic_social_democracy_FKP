@@ -110,6 +110,7 @@ Q.NSDAP_relation = 0;
 
 Q.kpd_leader = "Thälmann";
 Q.z_leader = "Marx";
+Q.z_ideology = "Right";
 Q.nsdap_leader = "Hitler";
 
 // hmm... maybe we can play nice with Hindenburg???

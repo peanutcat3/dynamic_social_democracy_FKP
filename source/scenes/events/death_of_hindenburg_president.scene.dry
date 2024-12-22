@@ -579,7 +579,7 @@ We have endorsed Otto Gessler, independent formerly of the <span style="color: #
 title: Convince the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties to unite behind Hugo Eckener.
 subtitle: -2 resources
 unavailable-subtitle: [? if resources < 2 : -2 resources - Not enough resources. ?]
-choose-if: resources >= 2 and ((z_relation >= 50 and z_leader = "Kaas" or z_leader = "Stegerwald") or (z_relation >= 30 and z_leader = "Joos")) and ddp_relation >= 40
+choose-if: resources >= 2 and ((z_relation >= 50 and z_ideology == "Right") or (z_relation >= 30 and z_ideology = "Left")) and ddp_relation >= 40
 view-if: z_candidate = "Adenauer" and ddp_candidate = "Gessler" and spd_candidate != "Eckener"
 on-arrival: kpd_candidate = "Thälmann" if kpd_candidate == spd_candidate and kpd_party_leader != "Conciliators"; kpd_candidate = "Münzenberg" if kpd_candidate == spd_candidate and kpd_party_leader == "Conciliators"; sapd_candidate = kpd_candidate; spd_candidate = "Eckener"; z_candidate = "Eckener"; ddp_candidate = "Eckener"; resources -= 2; is_unity_candidate = 1
 go-to: r2_campaigning

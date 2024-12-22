@@ -155,11 +155,11 @@ max-visits: 1
 @concordat_negotiate
 title: Negotiate a Concordat between the Germany and the Vatican.
 view-if: prussian_concordat = 1 and reichskonkordat = 0 and reichskonkordat_progress < 4
-on-arrival: reichskonkordat_progress += 2; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; z_relation += 3*(1-dissent); dvp_relation -= 3; ddp_relation -= 1; ddp_cohesion -= 0.25
+on-arrival: reichskonkordat_progress += 1; reichskonkordat_progress += 1 if z_leader == "Kaas"; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; z_relation += 3*(1-dissent); dvp_relation -= 2; ddp_relation -= 1; ddp_cohesion -= 0.25
 
 The Roman Catholic Church is interested in furthering relations with the German Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The <span style="color: #000000;">**Center Party**</span> is especially interested in making this agreement. The liberal parties are against this idea.
 
-[? if family_law : Our liberalized divorce policies make it difficult to build relations with the Vatican. ?] [? if abortion : Our legalization of abortion make it difficult to connect with the Church. ?]
+[? if family_law : Our liberalized divorce policies make it difficult to build relations with the Vatican. ?] [? if abortion : Our legalization of abortion make it difficult to connect with the Church. ?] [? if z_leader == "Kaas" : Kaas from the <span style="color: #000000;">Center Party</span> is able to use his connections to speed up negotiations. ?]
 
 @concordat
 title: We can sign a Concordat with the Vatican!

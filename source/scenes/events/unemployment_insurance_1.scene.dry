@@ -67,8 +67,8 @@ on-arrival: workers_spd -= 0.1*workers_spd; unemployed_spd -= 0.15*unemployed_sp
 A compromise put forward by Heinrich Brüning is put into place and the issue is delayed until the autumn. A fixed amount is loaned to the program in the meantime, although not nearly enough for the millions of unemployed. The Left and Labor factions view this as a betrayal of our duty to support unemployment insurance during a crisis.
 
 @compromise
-unavailable-subtitle: [? if dvp_relation < 35 or ddp_relation < 35 or (z_relation < 40 or (z_relation < 35 and z_leader == "Joos")): We do not have good enough relations with the right-wing parties.?]
-choose-if: dvp_relation >= 35 and ddp_relation >= 35 and (z_relation >= 40 or (z_relation >= 35 and z_leader == "Joos"))
+unavailable-subtitle: [? if dvp_relation < 35 or ddp_relation < 35 or (z_relation < 40 or (z_relation < 35 and z_leader == "Joos") or (z_relation < 30 and z_leader == "Kaiser")): We do not have good enough relations with the right-wing parties.?]
+choose-if: dvp_relation >= 35 and ddp_relation >= 35 and (z_relation >= 40 or (z_relation >= 35 and z_leader == "Joos") or (z_relation >= 30 and z_leader == "Kaiser"))
 
 The <span style="color: #C0A054;">**DVP**</span> ministers in the cabinet have offered a compromise that raises some taxes on the wealthy, along with lesser welfare cuts. Our members have mixed opinions on accepting this compromise. Reformists and Centrists support maintaining our government to keep the <span style="color: #7A3C00;">fascists</span> and <span style="color: #700000;">communists</span> out, while Labor generally opposes any cuts, and the Left is opposed to compromises with the bourgeoisie.
 

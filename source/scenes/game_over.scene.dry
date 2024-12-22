@@ -287,7 +287,7 @@ view-if: nationalization_progress >= 2
 tags: endings
 go-to: eg_menu
 
-As part of our <span style="color: #c00000;">socialism</span> economic plan, we have nationalized a substantial portion of the economy, beginning the transition to actual <span style="color: #9b0000;">socialism</span>.
+As part of our <span style="color: #c00000;">socialist</span> economic plan, we have nationalized a substantial portion of the economy, beginning the transition to actual <span style="color: #9b0000;">socialism</span>.
 
 @works_councils
 title: Works councils have more power.
@@ -338,7 +338,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #700000;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos or Kaiser leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #700000;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
 [? if game_achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #700000;">**KPD**</span> demands. ?]
 
@@ -441,7 +441,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #700000;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos or Kaiser leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #700000;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
 [? if achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #700000;">**KPD**</span> demands. ?]
 
@@ -542,7 +542,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_volksfront: **Volksfront** - Form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
-[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #700000;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
+[? if game_achievement_grosse_volksfront: **Große Volksfront** - With Joos or Kaiser leading the <span style="color: #000000;">**Center Party**</span> and the Conciliators leading the <span style="color: #700000;">**KPD**</span>, form a government consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**DDP**</span>. ?]
 
 [? if not achievement_volksfront_2: **Sieg für die Volksfront** - Form a Popular Front that survives the <span style="color: #700000;">**KPD**</span> demands. ?]
 

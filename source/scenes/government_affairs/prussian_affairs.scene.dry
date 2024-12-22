@@ -89,7 +89,7 @@ The <span style="color: #700000;">Communist</span> <span style="color: #700000;"
 view-if: (prussian_concordat_progress < 2 and z_leader != "Kaas") or (prussian_concordat_progress < 1 and z_leader = "Kaas")
 on-arrival: prussian_concordat_progress += 1; z_relation += 2*(1-dissent);
 
-We are making progress towards negotiating a concordat between Prussia and the Catholic church. [? if z_leader = "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center</span> Party uses his connections. ?]
+We are making progress towards negotiating a concordat between Prussia and the Catholic church. [? if z_leader = "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center</span> Party uses his connections to speed up negotiations. ?]
 
 @sign_concordat
 view-if: (prussian_concordat_progress >= 2 and not z_leader = "Kaas") or (prussian_concordat_progress >= 1 and z_leader = "Kaas") and prussian_concordat = 0

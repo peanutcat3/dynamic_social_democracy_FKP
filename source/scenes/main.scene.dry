@@ -124,7 +124,7 @@ max-cards: 3
 
 {!<p class="both">!}[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1930 and month = 1 and pro_republic < 65 and ddp_ideology != "Left" and z_leader != "Joos": The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> along with other bourgeois parties have increasingly been abandoning coalitions with us on the local level in favor of forming *Bürgerblocks* instead. We have lost control of prominent state governments. ?]{!</p>!}
+{!<p class="other">!}[? if year = 1930 and month = 1 and pro_republic < 65 and ddp_ideology != "Left" and z_ideology == "Right": The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> along with other bourgeois parties have increasingly been abandoning coalitions with us on the local level in favor of forming *Bürgerblocks* instead. We have lost control of prominent state governments. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1930 and month = 3 and dvp_leader != "Luther": Reichsbank president Hjalmar Schacht has resigned from his position. Former Chancellor and <span style="color: #C0A054;">**DVP**</span> member Hans Luther has been given the position. ?]{!</p>!}
 
@@ -293,7 +293,7 @@ max-cards: 4
 
 {!<p class="both">!}[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1930 and month = 1 and pro_republic < 65 and ddp_ideology != "Left" and z_leader != "Joos": The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> along with other bourgeois parties have increasingly been abandoning coalitions with us on the local level in favor of forming *Bürgerblocks* instead. We have lost control of prominent state governments. ?]{!</p>!}
+{!<p class="other">!}[? if year = 1930 and month = 1 and pro_republic < 65 and ddp_ideology != "Left" and z_ideology == "Right": The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> along with other bourgeois parties have increasingly been abandoning coalitions with us on the local level in favor of forming *Bürgerblocks* instead. We have lost control of prominent state governments. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1930 and month = 3 and dvp_leader != "Luther": Reichsbank president Hjalmar Schacht has resigned from his position. Former Chancellor and <span style="color: #C0A054;">**DVP**</span> member Hans Luther has been given the position. ?]{!</p>!}
 
