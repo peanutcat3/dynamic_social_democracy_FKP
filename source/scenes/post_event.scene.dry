@@ -226,15 +226,22 @@ if (Q.month_actions >= 1) {
         Q.rural_other -= 1/12;
         Q.new_middle_dnvp += 3/12;
         Q.old_middle_dnvp += 3/12;
-        if (Q.dnvp_ideology == "Radical") {
+        Q.workers_ddp -= 1/12;
+    if (Q.dnvp_ideology == "Radical" && Q.z_leader !== "Stegerwald") {
         Q.new_middle_other += 3/12;
         Q.old_middle_other += 3/12;
         Q.rural_other += 3/12;
         Q.rural_dnvp -= 3/12;
         Q.new_middle_dnvp -= 3/12;
         Q.old_middle_dnvp -= 3/12;
-        Q.workers_ddp -= 1/12;
-    if (Q.z_leader == "Stegerwald") {
+    } else if (Q.dnvp_ideology == "Radical" && Q.z_leader == "Stegerwald") {
+        Q.new_middle_z += 3/12;
+        Q.old_middle_z += 3/12;
+        Q.rural_z += 3/12;
+        Q.rural_dnvp -= 3/12;
+        Q.new_middle_dnvp -= 3/12;
+        Q.old_middle_dnvp -= 3/12;
+    } if (Q.z_leader == "Stegerwald") {
         Q.workers_spd -= 7/12;
         Q.workers_z += 9/12;
         Q.new_middle_z += 8/12;

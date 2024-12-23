@@ -1,0 +1,100 @@
+on-arrival: {!
+
+Q.kvp_formed = 1;
+Q.parties.push('kvp');
+
+Q.workers_kvp = 3;
+Q.workers_dnvp -= 3;
+Q.workers_other -= 2;
+Q.workers_z += 2;
+
+Q.new_middle_kvp = 8;
+Q.new_middle_dnvp -= 7;
+Q.new_middle_other -= 5;
+Q.new_middle_z += 4;
+
+Q.old_middle_kvp = 12;
+Q.old_middle_dnvp -= 8;
+Q.old_middle_other -= 8;
+Q.old_middle_z += 4;
+
+Q.rural_kvp = 14;
+Q.rural_dnvp -= 10;
+Q.rural_other -= 8;
+Q.rural_z += 4;
+
+Q.unemployed_kvp = 0;
+
+Q.catholics_kvp = 3;
+Q.catholics_dnvp -= 5;
+Q.catholics_other -= 3;
+Q.catholics_z += 5;
+
+Q.kvp_r = Math.round((Q.dnvp_r / 2) * 10) / 10 + 2;
+Q.dnvp_r = Math.round((Q.dnvp_r - Q.kvp_r) * 10) / 10 - 2;
+Q.kvp_relation = 15;
+
+Q.old_workers_kvp_normalized = 0;
+Q.old_new_middle_kvp_normalized = 0;
+Q.old_old_middle_kvp_normalized = 0;
+Q.old_rural_kvp_normalized = 0;
+Q.old_unemployed_kvp_normalized = 0;
+Q.old_catholics_kvp_normalized = 0;
+
+Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
+
+Q.grand_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r).toFixed(1));
+
+if (Q.kvp_formed) {
+    Q.bourgeois_coalition = parseFloat((Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r + Q.kvp_r).toFixed(1));
+} else {
+    Q.bourgeois_coalition = parseFloat((Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r).toFixed(1));
+}
+
+if (Q.kvp_formed) {
+    Q.center_right_coalition = parseFloat((Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r + Q.kvp_r).toFixed(1));
+} else {
+    Q.center_right_coalition = parseFloat((Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
+}
+
+Q.right_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
+
+if (Q.dnvp_ideology === "Moderate") {
+    Q.far_right_coalition = parseFloat((Q.dnf_r + Q.nsdap_r).toFixed(1));
+} else {
+    Q.far_right_coalition = parseFloat((Q.dnvp_r + Q.nsdap_r).toFixed(1));
+}
+
+Q.left_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.sapd_r).toFixed(1));
+
+if (Q.liberal_parliament == 0) {
+    Q.popular_front_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r).toFixed(1));
+} else {
+    Q.popular_front_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.z_r - 3 + Q.sapd_r).toFixed(1));
+}
+
+if (Q.dnvp_ideology === "Moderate") {
+    Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.nsdap_r + Q.dnf_r).toFixed(1));
+} else {
+    Q.anti_democratic_coalition = parseFloat((Q.kpd_r + Q.nsdap_r + Q.dnvp_r).toFixed(1));
+}
+
+Q.neo_weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r).toFixed(1));
+
+if (Q.kvp_formed) {
+    Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r + Q.kvp_r).toFixed(1));
+} else {
+    Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
+}
+
+// Q.hitler_right_coalition = parseFloat((Q.z_r + Q.dnvp_r + Q.nsdap_r).toFixed(1));
+
+Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(1));
+
+for (var record of Q.election_records) {
+    record['kvp'] = 0;
+}
+for (var record of Q.party_support_records) {
+    record['kvp'] = 0;
+}
+!}
