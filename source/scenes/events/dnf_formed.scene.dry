@@ -28,12 +28,12 @@ Q.dnf_r = Math.round((Q.dnvp_r / 2) * 10) / 10 - 1;
 Q.dnvp_r = Math.round((Q.dnvp_r - Q.dnf_r) * 10) / 10 + 1;
 Q.dnf_relation = 5
 
-Q.old_workers_dnf_normalized = 0
-Q.old_new_middle_dnf_normalized = 0
-Q.old_old_middle_dnf_normalized = 0
-Q.old_rural_dnf_normalized = 0
-Q.old_unemployed_dnf_normalized = 0
-Q.old_catholics_dnf_normalized = 0
+Q.old_workers_dnf_display = 0
+Q.old_new_middle_dnf_display = 0
+Q.old_old_middle_dnf_display = 0
+Q.old_rural_dnf_display = 0
+Q.old_unemployed_dnf_display = 0
+Q.old_catholics_dnf_display = 0
 
 Q.weimar_coalition = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r - 3).toFixed(1));
 

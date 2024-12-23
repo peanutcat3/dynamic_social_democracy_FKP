@@ -249,16 +249,6 @@ for (var party of Q.parties) {
     Q['str_votes_change_' + party + '_prussia'] = sign2_prussia + Math.abs(Q['change_' + party + '_votes_prussia']).toFixed(1);
 }
 
-// Handle demographic changes for all parties
-for (var party of Q.parties) {
-    for (var c of Q.classes) {
-        Q[c + "_change_" + party + '_normalized_prussia'] = Q[c + '_' + party + '_normalized_prussia'] - Q['old_' + c + '_' + party + '_normalized_prussia'];
-        var sign3_prussia = Q[c + "_change_" + party + '_normalized_prussia'] > 0 ? '+' : '';
-        Q['demo_change_' + c + '_' + party + '_normalized_prussia'] = sign3_prussia + parseFloat(Q[c + "_change_" + party + '_normalized_prussia']).toFixed(0);
-        Q['old_' + c + '_' + party + '_normalized_prussia'] = Q[c + '_' + party + '_normalized_prussia'];
-    }
-}
-
 // Store current votes as previous for the next iteration
 for (var party of Q.parties) {
     Q[party + '_last_election_votes_prussia'] = parseFloat(Q[party + '_votes_prussia']).toFixed(1);
