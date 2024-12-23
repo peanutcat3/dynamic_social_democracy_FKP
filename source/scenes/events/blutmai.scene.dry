@@ -25,14 +25,14 @@ We issued the order to ban the demonstrations, and sent police to enforce the ba
 
 This may end any attempt at reconciliation with the <span style="color: #700000;">**KPD**</span>, but the <span style="color: #000000;">**Center**</span> and <span style="color: #C0A054;">**People's**</span> parties approve of our action.
 
-- @corrupt_police: It is the fault of corrupt and reactionary elements within the police. Purge those responsible.
+- @corrupt_police: It is the fault of corrupt and <span style="color: #808080;">reactionary</span> elements within the police. Purge those responsible.
 - @communist_fault: It is the fault of the <span style="color: #700000;">**Communists**</span> for refusing to follow the rule of law.
 - @no_fault: It is an unfortunate incident that should not have happened, but is no one's fault at all.
 
 @corrupt_police
 on-arrival: kpd_relation += 10; z_relation -= 2; dvp_relation -= 2; prussian_police_loyalty += 0.05
 
-We arrested the police responsible for the killings, and put them on trial. [? if judicial_reform = 0 : Unfortunately, the reactionary judiciary let them go free with barely any punishment at all. ?]
+We arrested the police responsible for the killings, and put them on trial. [? if judicial_reform = 0 : Unfortunately, the <span style="color: #808080;">reactionary</span> judiciary let them go free with barely any punishment at all. ?]
 
 This assuages some of the <span style="color: #700000;">**Communists**</span>' outrage, but certainly not all.
 

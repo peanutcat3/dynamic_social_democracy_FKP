@@ -167,7 +167,7 @@ view-if: republic_victory == 1
 tags: endings
 go-to: eg_menu
 
-We have won the civil war against the reactionary forces. Germany will be changed forever, but it is too early to know how.
+We have won the civil war against the <span style="color: #808080;">reactionary</span> forces. Germany will be changed forever, but it is too early to know how.
 
 @civil_war_lost
 title: We lost the civil war.

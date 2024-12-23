@@ -10,7 +10,7 @@ card-image: img/portraits/SeveringCarl.jpg
 
 The Interior Ministry controls internal security throughout the German Republic. While most police work is delegated to the states, the national security agency can perform special investigations.
 
-As with the state police units and the Reichswehr, the internal police tends to be reactionary, and has serious issues with loyalty to the elected government of the Republic.
+As with the state police units and the Reichswehr, the internal police tends to be <span style="color: #808080;">reactionary</span>, and has serious issues with loyalty to the elected government of the Republic.
 
 - @loyalty: Improve the loyalty of the Interior Ministry forces.
 - @investigate_corruption: Investigate corruption by big businesses.
@@ -24,7 +24,7 @@ As with the state police units and the Reichswehr, the internal police tends to 
 @loyalty
 on-arrival: interior_police_loyalty += 0.1
 
-As with the Prussian state police, there are measures we can take to root out reactionary and anti-democratic sentiment in the police. We can improve training and recruiting procedures, and identify and remove known <span style="color: #7A3C00;">fascists</span> and the like.
+As with the Prussian state police, there are measures we can take to root out <span style="color: #808080;">reactionary</span> and anti-democratic sentiment in the police. We can improve training and recruiting procedures, and identify and remove known <span style="color: #7A3C00;">fascists</span> and the like.
 
 Current interior police loyalty: [+ interior_police_loyalty : loyalty +]
 

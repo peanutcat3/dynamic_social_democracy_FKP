@@ -37,7 +37,7 @@ on-arrival: sa_strength *= 0.8; sh_strength *= 0.8; pro_republic += 10; workers_
 achievement: bollwerk_der_demokratie
 go-to: defend_2_victory_2
 
-Our forces confront the government troops and their reactionary auxiliaries, and somehow, our enemies retreat without a fight! They were overwhelmed by our display of strength, and have chosen to slink away. Chancellor [+ chancellor +] withdraws the dismissal of the Prussian government, at least for now.
+Our forces confront the government troops and their <span style="color: #808080;">reactionary</span> auxiliaries, and somehow, our enemies retreat without a fight! They were overwhelmed by our display of strength, and have chosen to slink away. Chancellor [+ chancellor +] withdraws the dismissal of the Prussian government, at least for now.
 
 The show of force has reinvigorated support for the republic and for the <span style="color: #c00000;">**SPD**</span>, and has weakened the <span style="color: #7A3C00;">fascists</span>.
 
@@ -47,7 +47,7 @@ achievement: drei_pfeile
 
 @defend_2_civil_war
 
-Our forces confront the government troops and their supporters on the streets of Berlin, and armed fighting erupts. The reactionaries do not budge from their positions. We are caught at a disadvantage.
+Our forces confront the government troops and their supporters on the streets of Berlin, and armed fighting erupts. The span style="color: #808080;">reactionaries</span> do not budge from their positions. We are caught at a disadvantage.
 
 - @civil_war: It is a civil war.
 
@@ -60,4 +60,4 @@ on-arrival: in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_
 
 A pall of hopelessness and despair descends over <span style="color: #c00000;">Social Democracy</span>. We have failed. Many in the Reichsbanner simply quit, demoralized by their leaders' lack of a call to action.
 
-Hindenburg appoints the reactionary Franz von Papen to govern over Prussia as a *Reichskommissar*, who will focus on dismantling the democratic systems we worked hard to build.
+Hindenburg appoints the <span style="color: #808080;">reactionary</span> Franz von Papen to govern over Prussia as a *Reichskommissar*, who will focus on dismantling the democratic systems we worked hard to build.
