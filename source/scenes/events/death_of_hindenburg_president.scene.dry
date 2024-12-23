@@ -160,7 +160,7 @@ go-to: r1_menu
 
 Albert Einstein is a Nobel Prize-winning scientist, director of the Kaiser Wilhelm Institute for Physics, and international advocate for peace. He was a founding member of the German Democratic Party (whose successor would support him in the election), but has also expressed sympathy towards socialism.
 
-He did not wish to run for president, disliking the public nature of campaigning, but we have somehow convinced him that his candidacy will be crucial to the future of Germany and the world. As a Jewish German pacifist, his becoming president would be a repudiation of everything the Nazis stand for.
+He did not wish to run for president, disliking the public nature of campaigning, but we have somehow convinced him that his candidacy will be crucial to the future of Germany and the world. As a Jewish German pacifist, his becoming president would be a repudiation of everything the <span style="color: #7A3C00;">Nazis</span> stand for.
 
 The [+ ddp_name +] will endorse Einstein's candidacy.
 
@@ -658,7 +658,7 @@ go-to: ref_win if pro_democracy_votes >= 50; ref_lose if pro_democracy_votes < 5
 @ref_win
 on-arrival: constitutional_crisis = 1
 
-Despite the Nazi threats, supporters of the <span style="color: #c00000;">**SPD**</span> and the democratic parties refuse to turn out for the referendum, depriving it of the necessary threshold to pass. This is a small victory, as stormtroopers still run rampant in the streets. There is no constitutional path to absolute power, but will that stop the Nazis? 
+Despite the <span style="color: #7A3C00;">Nazi</span> threats, supporters of the <span style="color: #c00000;">**SPD**</span> and the democratic parties refuse to turn out for the referendum, depriving it of the necessary threshold to pass. This is a small victory, as stormtroopers still run rampant in the streets. There is no constitutional path to absolute power, but will that stop the <span style="color: #7A3C00;">Nazis</span>? 
 
 - @game_over: The ending is yet to be seen...
 

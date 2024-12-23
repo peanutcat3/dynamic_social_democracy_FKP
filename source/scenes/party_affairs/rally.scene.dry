@@ -60,7 +60,7 @@ The police and Reichsbanner have successfully protected our rally against the SA
 @both_protect_lose
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
-Unfortunately, the police and Reichsbanner were not able to hold back the SA mob. The Nazis have won this show of strength.
+Unfortunately, the police and Reichsbanner were not able to hold back the SA mob. The <span style="color: #7A3C00;">Nazi</span> have won this show of strength.
 
 @cancel
 on-arrival: workers_nsdap += 3;

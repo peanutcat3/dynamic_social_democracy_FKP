@@ -321,7 +321,7 @@ on-departure: hitler_support_hindenburg = 1 if braun_votes + z_votes > hitler_vo
 
 [? if hitler_support_hindenburg : The <span style="color: #000000;">**Center**</span>'s opinion is affected by the <span style="color: #7A3C00;">**Nazis**</span>' support of Hindenburg, and is willing to turn away from him. ?] The <span style="color: #000000;">**Center**</span> are convinced! They will be part of the Braun coalition. [? if hitler_support_hindenburg : In addition, they will also bring in some minor parties who will support us. ?]
 
-[? if not hitler_support_hindenburg and braun_votes + z_votes > hitler_votes: With the Center Party supporting Braun, [+ nsdap_candidate +] has dropped out of the race, and the Nazis have endorsed Hindenburg to prevent a socialist from becoming president. ?]
+[? if not hitler_support_hindenburg and braun_votes + z_votes > hitler_votes: With the Center Party supporting Braun, [+ nsdap_candidate +] has dropped out of the race, and the <span style="color: #7A3C00;">Nazis</span> have endorsed Hindenburg to prevent a socialist from becoming president. ?]
 
 @r2_z_partial
 
@@ -340,7 +340,7 @@ go-to: round2_menu
 
 With our resources, the <span style="color: #000000;">**Center**</span> are convinced to support Braun over Hindenburg.
 
-[? if not hitler_support_hindenburg and braun_votes + z_votes > hitler_votes: With the Center Party supporting Braun, [+ nsdap_candidate +] has dropped out of the race, and the Nazis have endorsed Hindenburg to prevent a socialist from becoming president. ?]
+[? if not hitler_support_hindenburg and braun_votes + z_votes > hitler_votes: With the Center Party supporting Braun, [+ nsdap_candidate +] has dropped out of the race, and the <span style="color: #7A3C00;">Nazis</span> have endorsed Hindenburg to prevent a socialist from becoming president. ?]
 
 @r2_z_failed
 go-to: round2_menu

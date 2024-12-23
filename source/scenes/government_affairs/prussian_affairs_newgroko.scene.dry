@@ -16,7 +16,7 @@ We can enact policies in Prussia. The inclusion of the <span style="color: #C0A0
 - @police_loyalty: Bolster the loyalty of the police.
 - @police_strength: Recruit additional police.
 - @bureaucracy: Purge the bureaucracy of reactionary elements.
-- @ban_sa: Ban the <span style="color: #7A3C00;">**SA**</span>, the Nazi paramilitary group.
+- @ban_sa: Ban the <span style="color: #7A3C00;">**SA**</span>, the <span style="color: #7A3C00;">Nazi</span> paramilitary group.
 - @unban_sa: Reverse the <span style="color: #7A3C00;">**SA**</span> ban.
 - @ban_rfb: Ban the <span style="color: #8B0000;">**RFB**</span>, the <span style="color: #700000;">Communist</span> paramilitary.
 - @unban_rfb: Reverse the <span style="color: #8B0000;">**RFB**</span> ban.

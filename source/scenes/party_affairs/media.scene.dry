@@ -30,7 +30,7 @@ on-arrival: resources += 1; commercialized_media += 1; new_middle_spd += 4*(1 - 
 Our commercialized newspapers are able to bring in more funds. However, the left and labor factions express their displeasure.
 
 @campaign
-title: The purpose of our media is to elect more Social Democrats.
+title: The purpose of our media is to elect more <span style="color: #c00000;">Social Democrats</span>.
 subtitle: Our newspapers will focus on the electoral campaign.
 on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
 

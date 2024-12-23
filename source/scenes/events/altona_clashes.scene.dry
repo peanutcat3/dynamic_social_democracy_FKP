@@ -1,11 +1,11 @@
-title: Nazi March in Altona
+title: <span style="color: #7A3C00;">Nazi</span> March in Altona
 new-page: true
 subtitle: An <span style="color: #7A3C00;">**SA**</span> demonstration, with the potential for violence
 tags: event
 view-if: year == 1932 and month == 6 and sa_banned == 0 and spd_prussia == 1
 max-visits: 1
 
-= Nazi March in Altona
+= <span style="color: #7A3C00;">Nazi</span> March in Altona
 
 The <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> is planning a march through Altona, a working-class neighborhood of Hamburg known for its high working-class population. Altona is a <span style="color: #700000;">Communist</span> stronghold, and the planned march will almost certainly lead to violent conflict.
 

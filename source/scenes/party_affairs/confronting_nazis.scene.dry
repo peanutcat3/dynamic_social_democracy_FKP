@@ -1,4 +1,4 @@
-title: Confronting the Nazis
+title: Confronting the <span style="color: #7A3C00;">Nazis</span>
 new-page: true
 is-card: true
 view-if: (nsdap_r >= 10 and nazi_urgency > 1) and confronting_nazis_timer == 0 and iron_front_formed == 0
@@ -42,7 +42,7 @@ view-if: nazi_urgency >= 3 and iron_front_formed == 0
 on-arrival: iron_front_formed = 1; radicalization += 1; nazi_urgency += 1; workers_spd += 5*(1-dissent); pro_republic += 5*(1-dissent); left_dissent -= 8; neorevisionist_dissent -= 10; neorevisionist_strength += 5
 achievement: eiserne_front
 
-The Nazi threat can no longer be ignored. We must build a new organization to confront them - the Iron Front - consisting of the <span style="color: #c00000;">**SPD**</span>, the ADGB trade union federation, and the *Reichsbanner* <span style="color: #000000;"><b><i>Schwarz</i></b></span>-<span style="color: #DD0000;"><b><i>Rot</i></b></span>-<span style="color: #FFCC00;"><b><i>Gold</i></b></span>. We have a new symbol - the Three Arrows, pointing down towards the left.
+The <span style="color: #7A3C00;">Nazi</span> threat can no longer be ignored. We must build a new organization to confront them - the Iron Front - consisting of the <span style="color: #c00000;">**SPD**</span>, the ADGB trade union federation, and the *Reichsbanner* <span style="color: #000000;"><b><i>Schwarz</i></b></span>-<span style="color: #DD0000;"><b><i>Rot</i></b></span>-<span style="color: #FFCC00;"><b><i>Gold</i></b></span>. We have a new symbol - the Three Arrows, pointing down towards the left.
 
 What do the three arrows stand for?
 
