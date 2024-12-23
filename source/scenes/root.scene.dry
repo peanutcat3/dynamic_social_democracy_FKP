@@ -564,7 +564,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'emergency_cuts', 'unemployment_insurance',
     'sa_ban', 'sh_ban', 'papen_chancellor',
     'kpd_policy', 'kpd_ultimatum', 'kpd_ultimatum_prussia', 'popular_front_dispute',
-    'high_inflation', 'banking_crisis', 'dnf_decay', 'march_on_berlin'];
+    'high_inflation', 'banking_crisis', 'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -588,6 +588,7 @@ Q.n_elections_prussia = 0;
 // number of elections without a clear majority.
 Q.no_majority_elections = 0;
 Q.no_majority_elections_prussia = 0;
+Q.prussian_reichsexekution_timer = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
 Q.in_election_prussia = 1;
