@@ -18,7 +18,7 @@ As we have control over the Interior Ministry, we can direct police and intellig
 - @ban_sh: Ban the <span style="color: #3E88B3;">**Stahlhelm**</span>.
 - @unban_sh: Unban the <span style="color: #3E88B3;">**Stahlhelm**</span>.
 - @persecute_sh
-- @ban_rfb: Ban the Communist <span style="color: #8B0000;">**RFB**</span>.
+- @ban_rfb: Ban the <span style="color: #700000;">Communist</span> <span style="color: #8B0000;">**RFB**</span>.
 - @unban_rfb: Unban the <span style="color: #8B0000;">**RFB**</span>.
 - @persecute_rfb
 - @root: Take no action for now.

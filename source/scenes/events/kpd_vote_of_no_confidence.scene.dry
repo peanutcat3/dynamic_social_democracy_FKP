@@ -32,7 +32,7 @@ on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
 
-Immediately, [+ chancellor +] goes to work building a "Soviet Germany": consolidating as much power as possible in the <span style="color: #700000;">**KPD**</span>, purging state institutions of anti-communists, and sending street fighters against the "enemies of the people".
+Immediately, [+ chancellor +] goes to work building a "<span style="color: #750e0e;">Soviet Germany</span>": consolidating as much power as possible in the <span style="color: #700000;">**KPD**</span>, purging state institutions of anti-<span style="color: #700000;">communists</span>, and sending street fighters against the "enemies of the people".
 
 In response to [+ chancellor +] being appointed Chancellor, the right-wing forces launches almost immediately launch an attempted coup. Troops of the <span style="color: #3E88B3;">**Stahlhelm**</span> and <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> enter Berlin and immediately begin clashing with our supporters! Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the <span style="color: #3E88B3;">**Stahlhelm**</span> to stop the <span style="color: #700000;">**KPD**</span> from taking power. We are forced to be on the same side as the <span style="color: #700000;">**KPD**</span>, whether we want to or not.
 
@@ -50,7 +50,7 @@ By transferring resources to our coalition partners, we can reduce their dissent
 
 @support_center
 choose-if: (weimar_coalition >= 50 and z_relation >= 40 and ddp_relation >= 35) or (grand_coalition >= 50 and z_relation >= 45 and dvp_relation >= 30 and ddp_relation >= 40)
-unavailable-subtitle: [? if grand_coalition < 50 : This would not give us a majority. ?] [? if z_relation < 45 : After working with the Communists, the <span style="color: #000000;">**Center Party**</span> does not wish to form a coalition with us. ?] [? if dvp_relation < 30 : The <span style="color: #C0A054;">**DVP**</span> would rather see the government fall than rescue us from the Communists. ?] [? if ddp_relation < 35 : The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is no longer our ally. ?]
+unavailable-subtitle: [? if grand_coalition < 50 : This would not give us a majority. ?] [? if z_relation < 45 : After working with the <span style="color: #700000;">Communists</span>, the <span style="color: #000000;">**Center Party**</span> does not wish to form a coalition with us. ?] [? if dvp_relation < 30 : The <span style="color: #C0A054;">**DVP**</span> would rather see the government fall than rescue us from the <span style="color: #700000;">Communists</span>. ?] [? if ddp_relation < 35 : The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is no longer our ally. ?]
 
 We could try to boot the <span style="color: #700000;">**KPD**</span> from our governing coalition, and form a new government with the bourgeois parties.
 

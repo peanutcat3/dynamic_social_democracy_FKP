@@ -223,12 +223,12 @@ go-to: eg_menu
 The <span style="color: #c00000;">**SPD**</span> is still in government, under Chancellor [+ chancellor +]. Given the circumstances, this is a substantial accomplishment.
 
 @communist_victory
-title: Communist victory
+title: <span style="color: #700000;">**Communist**</span> victory
 view-if: chancellor_party == "KPD" or president == "Thälmann" and total_defeat == 0 and long_war == 0
 tags: endings
 go-to: eg_menu
 
-The <span style="color: #700000;">**KPD**</span> has won power in Germany, with our assistance. They will try to remake Germany in the Soviet image. How much they succeed is yet to be determined.
+The <span style="color: #700000;">**KPD**</span> has won power in Germany, with our assistance. They will try to remake Germany in the <span style="color: #750e0e;">Soviet</span> image. How much they succeed is yet to be determined.
 
 @works_program
 title: Works program enacted!
