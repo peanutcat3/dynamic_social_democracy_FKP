@@ -55,12 +55,12 @@ go-to: both_protect_win if rb_success >= 0; both_protect_lose if rb_success < 0
 @both_protect_win
 go-to: main_rally
 
-The police and Reichsbanner have successfully protected our rally against the SA! Our meeting can go ahead as usual.
+The police and Reichsbanner have successfully protected our rally against the <span style="color: #7A3C00;">**SA**</span>! Our meeting can go ahead as usual.
 
 @both_protect_lose
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
-Unfortunately, the police and Reichsbanner were not able to hold back the SA mob. The <span style="color: #7A3C00;">Nazi</span> have won this show of strength.
+Unfortunately, the police and Reichsbanner were not able to hold back the <span style="color: #7A3C00;">**SA**</span> mob. The <span style="color: #7A3C00;">Nazi</span> have won this show of strength.
 
 @cancel
 on-arrival: workers_nsdap += 3;
