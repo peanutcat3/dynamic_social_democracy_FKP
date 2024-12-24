@@ -662,6 +662,11 @@ Q.grand_coalition_collapsed = 0;
 Q.true_christian_democracy = 0;
 Q.zentrum_disintegration = 0;
 
+// flavour text stuff
+Q.flavour_1_trigger = 0;
+Q.flavour_2_trigger = 0;
+Q.flavour_3_trigger = 0;
+
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller

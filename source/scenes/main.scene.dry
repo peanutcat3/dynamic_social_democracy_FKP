@@ -168,7 +168,7 @@ max-cards: 3
 
 {!<p class="both">!}[? if year = 1930 and month = 8: The last <span style="color: #002654;">French</span> and <span style="color: #FFD500;">Belgian</span> troops in the Rhineland have been evacuated in accordance with the Young Plan. While this is a positive development for the Republic, conservative elites within the Reichswehr and <span style="color: #3E88B3;">**DNVP**</span> are now free from external restraints to replace our system of government with an authoritarian and militarist one.?]
     
-{!<p class="dnvp">!}[? if flavour_2_trigger == 1: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBL**</span>[? if stegerwald_path == 0:&nbsp;and <span style="color: #8ED8E4;">**CSVD**</span>?],who are to contest the next election. ?]{!</p>!}
+{!<p class="dnvp">!}[? if flavour_2_trigger == 1: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBL**</span>[? if stegerwald_path == 0:&nbsp;and <span style="color: #8ED8E4;">**CSVD**</span>?], who are to contest the next election. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_3_trigger == 1 : Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of its own, unlike the[? if stegerwald_path = 0:&nbsp;<span style="color: #8ED8E4;">Christian Socialists</span> and?] <span style="color: #7FCEB1;">agrarians</span>. ?]{!</p>!}
 
@@ -190,15 +190,12 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5) {
-    Q.flavour_1_trigger = 0;
     Q.flavour_1_trigger += 1;
 }
 if (Q.next_election_time - Q.time < 5 && Q.dnvp_split_2 == 1 && Q.year >= 1930) {
-    Q.flavour_2_trigger = 0;
     Q.flavour_2_trigger += 1;
 }
 if (Q.next_election_time - Q.time < 5 && Q.dnvp_split_2 == 1 && Q.year >= 1930 && Q.flavour_2_trigger > 1) {
-    Q.flavour_3_trigger = 0;
     Q.flavour_3_trigger += 1;
 }
 !}
@@ -351,7 +348,7 @@ max-cards: 4
 
 {!<p class="both">!}[? if year = 1930 and month = 8: The last <span style="color: #002654;">French</span> and <span style="color: #FFD500;">Belgian</span> troops in the Rhineland have been evacuated in accordance with the Young Plan. While this is a positive development for the Republic, conservative elites within the Reichswehr and <span style="color: #3E88B3;">**DNVP**</span> are now free from external restraints to replace our system of government with an authoritarian and militarist one.?]
     
-{!<p class="dnvp">!}[? if flavour_2_trigger == 1: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBL**</span>[? if stegerwald_path == 0:&nbsp;and <span style="color: #8ED8E4;">**CSVD**</span>?],who are to contest the next election. ?]{!</p>!}
+{!<p class="dnvp">!}[? if flavour_2_trigger == 1: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBL**</span>[? if stegerwald_path == 0:&nbsp;and <span style="color: #8ED8E4;">**CSVD**</span>?], who are to contest the next election. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_3_trigger == 1 : Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of its own, unlike the[? if stegerwald_path = 0:&nbsp;<span style="color: #8ED8E4;">Christian Socialists</span> and?] <span style="color: #7FCEB1;">agrarians</span>. ?]{!</p>!}
 
