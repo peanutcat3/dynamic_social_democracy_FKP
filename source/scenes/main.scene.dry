@@ -9,7 +9,7 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
-if (Q.year >= 1930 && year < 1933 && Q.next_election_time - Q.time < 5) {
+if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5) {
     Q.flavour_1_trigger += 1;
 }
 !}
@@ -179,6 +179,9 @@ if (Q.advisor_action_timer <= 0) {
     Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+}
+if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5) {
+    Q.flavour_1_trigger += 1;
 }
 !}
 on-display: {!
