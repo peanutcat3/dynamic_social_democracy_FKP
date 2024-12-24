@@ -6,14 +6,12 @@ view-if: year = 1931 and month >= 7 and in_center_right_coalition
 on-arrival: pro_republic -= 3
 max-visits: 1
 
-= The Young Plan and the fall of the coalition
+= The <span style="color: #C0A054;">**DVP**</span> breaks with Brüning
 
-The Foreign Ministry under Gustav Stresemann has agreed to the Young Plan, an agreement with the Western powers to reduce Germany's reparation payments and give us more fiscal autonomy. Simultaneously, <span style="color: #002654;">France</span> will agree to withdraw its military occupation from the Rhineland.
+WIP
 
-While this seems to be a positive development for the country, the <span style="color: #3E88B3;">**DNVP**</span>, despite their moderation, opposes the plan, claiming that any reparations are a form of national slavery. They have called for a vote of no confidence against the government, supported by the <span style="color: #7A3C00;">**NSDAP**</span>, 
-<span style="color: #003755;">**DNF**</span> and the <span style="color: #700000;">**KPD**</span>, and for a referendum on the Young Plan.
-
-We can either vote to bring down the government and hold new elections, or "tolerate" a government led by the remaining bourgeois parties.
+# TODO
+# make another historical version of this
 
 - @vonc_yes
 - @vonc_no
