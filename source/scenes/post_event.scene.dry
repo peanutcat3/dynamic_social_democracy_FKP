@@ -290,10 +290,6 @@ if (Q.month_actions >= 1) {
         Q.rural_other -= 1/12;
         Q.new_middle_other -= 5/12;
         Q.old_middle_other -= 5/12;
-        if (Q.dnvp_ideology == "Radical") {
-            Q.rural_other += 4/12;
-            Q.rural_dnvp -= 4/12;
-        }
         Q.workers_z += 2/12;
         Q.old_middle_z += 3/12;
         Q.new_middle_z += 3/12;
