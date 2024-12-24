@@ -9,6 +9,9 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
+if (Q.year >= 1930 && year < 1933 && Q.next_election_time - Q.time < 5) {
+    Q.flavour_1_trigger += 1;
+}
 !}
 on-display: {!
 var button = document.createElement('button');
@@ -152,7 +155,7 @@ max-cards: 3
 
 {!<p class="both">!}[? if bruning_event_timer = 4: Brüning has been exerting pressure on the Prussian <span style="color: #000000;">Center Party</span> to dissolve the governing coalition there as well. Fortunately, our Otto Braun and the Prussian <span style="color: #000000;">Center</span>'s leader, Joseph Hess, possess the influence to resist Brüning's demands. ?]{!</p>!}
 
-{!<p class="both">!}[? if year = 1930 and month = 7 and next_election_time - time < 5: The <span style="color: #7A3C00;">**NSDAP**</span> under Adolf Hitler have been gaining serious momentum in the run-up to the election, there is something about his charisma that attracts people of all classes, regardless of their previous political sympathies. It has become a debate within our party if they should be considered a serious threat rather than the bourgeois right. ?]{!</p>!}
+{!<p class="both">!}[? if flavour_1_trigger == 1: The <span style="color: #7A3C00;">**NSDAP**</span> under Adolf Hitler have been gaining serious momentum in the run-up to the election, there is something about his charisma that attracts people of all classes, regardless of their previous political sympathies. It has become a debate within our party if they should be considered a serious threat rather than the bourgeois right. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1930 and month = 8: The last <span style="color: #002654;">French</span> and <span style="color: #FFD500;">Belgian</span> troops in the Rhineland have been evacuated in accordance with the Young Plan. While this is a positive development for the Republic, conservative elites within the Reichswehr and <span style="color: #3E88B3;">**DNVP**</span> are now free from external restraints to replace our system of government with an authoritarian and militarist one.?]
     
@@ -323,7 +326,7 @@ max-cards: 4
 
 {!<p class="both">!}[? if bruning_event_timer = 4: Brüning has been exerting pressure on the Prussian <span style="color: #000000;">Center Party</span> to dissolve the governing coalition there as well. Fortunately, our Otto Braun and the Prussian <span style="color: #000000;">Center</span>'s leader, Joseph Hess, possess the influence to resist Brüning's demands. ?]{!</p>!}
 
-{!<p class="both">!}[? if year = 1930 and month = 7 and next_election_time - time < 5: The <span style="color: #7A3C00;">**NSDAP**</span> under Adolf Hitler have been gaining serious momentum in the run-up to the election, there is something about his charisma that attracts people of all classes, regardless of their previous political sympathies. It has become a debate within our party if they should be considered a serious threat rather than the bourgeois right. ?]{!</p>!}
+{!<p class="both">!}[? if flavour_1_trigger == 1: The <span style="color: #7A3C00;">**NSDAP**</span> under Adolf Hitler have been gaining serious momentum in the run-up to the election, there is something about his charisma that attracts people of all classes, regardless of their previous political sympathies. It has become a debate within our party if they should be considered a serious threat rather than the bourgeois right. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1930 and month = 8: The last <span style="color: #002654;">French</span> and <span style="color: #FFD500;">Belgian</span> troops in the Rhineland have been evacuated in accordance with the Young Plan. While this is a positive development for the Republic, conservative elites within the Reichswehr and <span style="color: #3E88B3;">**DNVP**</span> are now free from external restraints to replace our system of government with an authoritarian and militarist one.?]
     
