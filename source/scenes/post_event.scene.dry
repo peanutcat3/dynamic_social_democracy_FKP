@@ -415,8 +415,6 @@ if (Q.month_actions >= 1) {
         Q.rural_nsdap += 9/12;
         Q.unemployed_nsdap += 4/12;
         if (!Q.works_program) {
-            Q.unemployed += 6/12;
-            Q.inflation -= 2/12;
             Q.catholics_z += 2/12;
             if (Q.z_leader == "Kaas") {
                 Q.catholics_z += 5/12;
@@ -600,7 +598,7 @@ if (
 Q.liberal_vote = (Q.ddp_votes + Q.dvp_votes)
 
 if (
-    Q.year === 1928 && Q.month >= 6 && ((Q.in_grand_coalition && (Q.liberal_vote < 13 || Q.peoples_party_support >= 2) && !(Q.in_right_coalition || Q.in_weimar_coalition) && Q.next_election_time - Q.time >= 3)) || ((Q.next_election_time - Q.time == 2) && Q.n_elections == 1)
+    Q.year === 1928 && Q.month >= 6 && ((Q.in_grand_coalition && (Q.liberal_vote < 13 || Q.peoples_party_support >= 2) && !(Q.in_right_coalition || Q.in_weimar_coalition) && Q.next_election_time - Q.time >= 3)) || Q.year === 1928 && Q.month >= 6 && ((Q.next_election_time - Q.time == 2) && Q.n_elections == 1)
 ) {
     Q.liberal_cooperation += 3;
     Q.liberal_parliament = 1;
