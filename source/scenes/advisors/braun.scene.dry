@@ -10,6 +10,7 @@ new-page: true
 Braun [? if prussia_leader = "Braun": is ?][? if prussia_leader != "Braun" : was ?] the Minister-President of Prussia, the largest state in Germany. He is a reformist leader who seeks to work with the bourgeois parties.
 
 - @coalition
+- @coalition_president
 - @prussian_bulwark
 - @snap_election
 - @root: Return to main
@@ -20,6 +21,16 @@ subtitle: Braun can improve our relationships with our centrist and center-right
 choose-if: advisor_action_timer <= 0 and (spd_prussia or in_weimar_coalition or in_grand_coalition or in_popular_front)
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not spd_prussia : The <span style="color: #c00000;">SPD</span> does not control the Prussian government. ?]
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 4; ddp_relation += 4; dvp_relation += 2; dvp_relation += 3 if in_grand_coalition; dvp_relation += 3 if in_grand_coalition_prussia; dvp_left += 1 if in_grand_coalition_prussia; z_relation += 2 if prussia_leader = "Braun"; ddp_relation += 2 if prussia_leader = "Braun"
+
+We have improved our relations with the [? if in_grand_coalition : <span style="color: #000000;">**Center**</span> (<span style="color: #000000;">**Zentrum**</span>) Party, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>, ?][? if not in_grand_coalition and not in_grand_coalition_prussia: <span style="color: #000000;">**Center**</span> (<span style="color: #000000;">**Zentrum**</span>) Party and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, ?][? if not in_grand_coalition and in_grand_coalition_prussia: <span style="color: #000000;">**Center**</span> (<span style="color: #000000;">**Zentrum**</span>) Party, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>, ?] and reduced tensions with the coalition. [? if spd_prussia and not prussia_leader = "Braun": Braun's resignation from the head of the Prussian government has hindered this ability. ?]
+
+@coalition_president
+title: Negotiating with the Coalition
+subtitle: Braun can improve our relationships with our centrist and center-right coalition partners in the Reichstag as President.
+view-if: president == "Braun"
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
+on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 6; ddp_relation += 6; dvp_relation += 4; dvp_relation += 2 if in_grand_coalition; dvp_relation += 2 if in_grand_coalition_prussia; dvp_left += 1 if in_grand_coalition_prussia; z_relation += 2 if prussia_leader = "Braun"; ddp_relation += 2 if prussia_leader = "Braun"
 
 We have improved our relations with the [? if in_grand_coalition : <span style="color: #000000;">**Center**</span> (<span style="color: #000000;">**Zentrum**</span>) Party, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>, ?][? if not in_grand_coalition and not in_grand_coalition_prussia: <span style="color: #000000;">**Center**</span> (<span style="color: #000000;">**Zentrum**</span>) Party and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, ?][? if not in_grand_coalition and in_grand_coalition_prussia: <span style="color: #000000;">**Center**</span> (<span style="color: #000000;">**Zentrum**</span>) Party, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>, ?] and reduced tensions with the coalition. [? if spd_prussia and not prussia_leader = "Braun": Braun's resignation from the head of the Prussian government has hindered this ability. ?]
 
