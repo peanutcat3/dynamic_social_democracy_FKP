@@ -1269,7 +1269,7 @@ President Braun faces a dilemma. He desperately desires a <span style="color: #c
 
 @emergency_braun
 title: We will form an emergency government with Braun's support.
-subtitle: This may have the effect of inflamming public sentiment against us, and the span style="color: #808080;">reactionaries</span> will be against us each step of the way.
+subtitle: This may have the effect of inflamming public sentiment against us, and the <span style="color: #808080;">reactionaries</span> will be against us each step of the way.
 on-arrival: sa_strength += 100; sh_strength += 100; in_emergency_government = 1; ddp_relation -= 5; dvp_relation -= 5; z_relation -= 5; ddp_right += 1; ddp_cohesion -= 0.5; dvp_right += 3; bourgeois_cooperation += 5; liberal_cooperation += 3
 
 Yes, an emergency minority government, with the support of the <span style="color: #c00000;">**SPD**</span>. Who should lead this emergency minority government?
