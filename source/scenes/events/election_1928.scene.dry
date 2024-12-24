@@ -1127,7 +1127,7 @@ go-to: ministries
 We have assembled a new coalition under Otto Braun.
 
 @braun_resign_prussia
-subtitle: Braun must resign from his position to accept the chancellorship.
+title: Braun must resign from his position to accept the chancellorship.
 view-if: in_new_grand_coalition_prussia and prussia_leader == "Braun"
 on-arrival: leverage -= 10; chancellor = "Braun"; chancellor_party = "SPD"; prussia_leader = "Zentrum"
 go-to: ministries
