@@ -15,7 +15,7 @@ The agrarian, industrialist, Christian-Socialist, and the new 'Young Conservativ
 - @goodnews: We'll watch as the enemies of the republic tear themselves apart.
 
 @goodnews
-on-arrival: dnf_formed = 1; dnf_decay_timer += 12; pro_republic -= 3
+on-arrival: dnf_formed = 1; dnf_decay_timer += 12
 go-to: dnf_formed
 
 The right has been considerably weakened, now is our chance to enact meaningful change without their disruption.

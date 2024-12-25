@@ -27,7 +27,7 @@ Julius Curtius has surprisingly won the vote to succeed Stresemann for the chair
 Nonetheless, this is still excellent news for us and our relations with the <span style="color: #C0A054;">**DVP**</span>. [? if in_grand_coalition: We have noticed a decrease in coalition tensions. ?]
 
 @scholz
-on-arrival: dvp_leader = "Scholz"; dvp_right += 5; old_middle_dvp -= 2; new_middle_dvp -= 2; pro_republic -= 5; ddp_right += 1; ddp_cohesion -= 0.5
+on-arrival: dvp_leader = "Scholz"; dvp_right += 5; old_middle_dvp -= 2; new_middle_dvp -= 2; pro_republic -= 3; ddp_right += 1; ddp_cohesion -= 0.5
 face-image: img/portraits/ernst_scholz.jpg
 
 Ernst Scholz has won the vote to succeed Stresemann for the chairmanship. The left-wing of the <span style="color: #C0A054;">**DVP**</span> is left increasingly isolated and powerless in party affairs. The industrialists now possesses full control of the former liberal party, and will now oversee its decline in the face of the depression.

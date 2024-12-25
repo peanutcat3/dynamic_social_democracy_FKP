@@ -27,7 +27,7 @@ Julius Curtius has won the vote to succeed Stresemann for the chairmanship. It s
 This is still excellent news for us and our relations with the <span style="color: #C0A054;">**DVP**</span>. [? if in_grand_coalition: We have noticed a decrease in coalition tensions. ?]
 
 @scholz
-on-arrival: dvp_leader = "Scholz"; dvp_right += 2; dvp_relation -= 8; old_middle_dvp -= 4; new_middle_dvp -= 4; rural_dvp -= 2; old_middle_dnvp += 4 if dnvp_ideology == "Moderate"; new_middle_dnvp += 4 if dnvp_ideology == "Moderate"; rural_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_kvp += 4 if kvp_formed; new_middle_kvp += 4 if kvp_formed; rural_kvp += 4 if kvp_formed; workers_ddp += 1; workers_dvp -= 1; pro_republic -= 5; ddp_right += 1; ddp_cohesion -= 1
+on-arrival: dvp_leader = "Scholz"; dvp_right += 2; dvp_relation -= 8; old_middle_dvp -= 4; new_middle_dvp -= 4; rural_dvp -= 2; old_middle_dnvp += 4 if dnvp_ideology == "Moderate"; new_middle_dnvp += 4 if dnvp_ideology == "Moderate"; rural_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_kvp += 4 if kvp_formed; new_middle_kvp += 4 if kvp_formed; rural_kvp += 4 if kvp_formed; workers_ddp += 1; workers_dvp -= 1; pro_republic -= 3; ddp_right += 1; ddp_cohesion -= 1
 face-image: img/portraits/ernst_scholz.jpg
 
 Ernst Scholz has surprisingly won the vote to succeed Stresemann for the chairmanship. The right wing of the <span style="color: #C0A054;">**DVP**</span> was crippled in the events of their last congress, but managed to claw back into power. The left of the party still have some control over internal affairs and can dissuade them from their worse excesses.
