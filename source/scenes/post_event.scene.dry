@@ -640,6 +640,8 @@ if (Q.spd_in_government) {
 } else if (!Q.spd_in_government) {
     Q.spd_in_government_time = 0;
     Q.spd_government_burden_seen = 0;
+    Q.spd_government_burden_timer = 0;
+    Q.spd_government_burden_trigger = 0;
 }
 
 if (Q.spd_in_government_time == 1) {
@@ -647,6 +649,7 @@ if (Q.spd_in_government_time == 1) {
 }
 
 if (Q.spd_government_burden_seen == 1 && Q.spd_in_government) {
+    Q.goal_spd_total = 0;
     if (Q.welfare_goal_spd >= 1) {
         Q.goal_spd_total += 1
     }

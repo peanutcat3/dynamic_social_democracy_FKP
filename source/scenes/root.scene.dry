@@ -451,6 +451,8 @@ Q.ddp_in_popular_front_prussia = 0;
 Q.kpd_goals_seen_prussia = 0;
 Q.reichsexekution = 0;
 
+Q.spd_government_burden_seen = 0;
+Q.spd_government_burden_trigger = 0;
 Q.welfare_goal_spd = 0;
 Q.economy_goal_spd = 0;
 Q.finance_goal_spd = 0;
