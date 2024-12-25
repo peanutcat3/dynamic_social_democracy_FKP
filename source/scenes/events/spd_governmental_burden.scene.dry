@@ -1,5 +1,6 @@
 title: Burden of Government
-view-if: spd_in_government_time == 1
+view-if: spd_in_government_time == 1 and spd_government_burden_trigger == 1
+on-arrival: spd_government_burden_trigger = 0
 new-page: true
 tags: event
 on-arrival: workers_spd -= 3 if labor_minister_party != "SPD"
