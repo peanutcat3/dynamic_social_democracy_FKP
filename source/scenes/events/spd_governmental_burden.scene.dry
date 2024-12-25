@@ -2,7 +2,7 @@ title: Burden of Government
 view-if: spd_in_government_time == 1 and spd_government_burden_trigger == 1
 new-page: true
 tags: event
-on-arrival: spd_government_burden_trigger = 0; workers_spd -= 3 if labor_minister_party != "SPD"
+on-arrival: spd_government_burden_trigger = 0; spd_government_burden_seen = 1; spd_government_burden_timer = 6; workers_spd -= 3 if labor_minister_party != "SPD"
 
 = Burden of Government
 
@@ -12,7 +12,7 @@ The weight of governance now falls upon our shoulders. It is our responsibility 
 
 [? if spd_in_government : - Promote worker ownership of industries. ?]
 
-[? if spd_in_government : - Shift the tax burden to the wealthy. ?]
+[? if spd_in_government : - Lower taxes or shift the tax burden to the wealthy. ?]
 
 [? if spd_in_government : - Support workers in labor disputes. ?]
 
@@ -24,4 +24,4 @@ The weight of governance now falls upon our shoulders. It is our responsibility 
 
 [? if spd_in_government : - Reduce funding for the Reichswehr. ?]
 
-They say that they expect to see at least two goals fulfilled every six months, or we will lose some of their support. Committing to austerity or conservative policies will automatically fail the goals.
+They say that they expect to see at least two goals fulfilled every six months, or we will lose some of their support. Committing to austerity or conservative policies will automatically fail the goals. This will all happen in the background.
