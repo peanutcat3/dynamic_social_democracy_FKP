@@ -10,10 +10,10 @@ new-page: true
 
 # TODO
 
-- @dnvp_split_2: The congress unfolds...
+- @dnvp_split: The congress unfolds...
 
 
-@dnvp_split_2
+@dnvp_split
 on-arrival: TODO = 1
 face-image: img/portraits/Kuno_von_Westarp.jpg
 
