@@ -1,0 +1,27 @@
+title: Burden of Government
+view-if: spd_in_government_time == 1
+new-page: true
+tags: event
+on-arrival: workers_spd -= 3 if labor_minister_party != "SPD"
+
+= Burden of Government
+
+The weight of governance now falls upon our shoulders. It is our responsibility to maintain the delicate balance of appeasing our coalition partners while advancing our party's agenda. Our voter base mainly consists of the working-class and the unemployed, they expect us to enact the following policies during our tenure, or we will suffer consequences. [? if labor_minister_party != "SPD": So far, ceding control of the Labor Ministry to the bourgeois parties has left a poor impression with the workers. ?]
+
+- Expand social welfare programs.
+
+- Promote worker ownership of industries.
+
+- Shift the tax burden to the wealthy.
+
+- Support workers in labor disputes.
+
+- Fund unemployment insurance through employers.
+
+- Advance women's rights.
+
+- Secure low food prices for workers.
+
+- Reduce funding for the Reichswehr.
+
+They say that they expect to see at least two goals fulfilled every six months, or we will lose some of their support. Committing to austerity or conservative policies will automatically fail the goals.
