@@ -8,20 +8,20 @@ on-arrival: workers_spd -= 3 if labor_minister_party != "SPD"
 
 The weight of governance now falls upon our shoulders. It is our responsibility to maintain the delicate balance of appeasing our coalition partners while advancing our party's agenda. Our voter base mainly consists of the working-class and the unemployed, they expect us to enact the following policies during our tenure, or we will suffer consequences. [? if labor_minister_party != "SPD": So far, ceding control of the Labor Ministry to the bourgeois parties has left a poor impression with the workers. ?]
 
-- Expand social welfare programs.
+[? if spd_in_government : - Expand social welfare programs. ?]
 
-- Promote worker ownership of industries.
+[? if spd_in_government : - Promote worker ownership of industries. ?]
 
-- Shift the tax burden to the wealthy.
+[? if spd_in_government : - Shift the tax burden to the wealthy. ?]
 
-- Support workers in labor disputes.
+[? if spd_in_government : - Support workers in labor disputes. ?]
 
-- Fund unemployment insurance through employers.
+[? if spd_in_government : - Fund unemployment insurance through employers. ?]
 
-- Advance women's rights.
+[? if spd_in_government: - Advance women's rights. ?]
 
-- Secure low food prices for workers.
+[? if spd_in_government : - Secure low food prices for workers. ?]
 
-- Reduce funding for the Reichswehr.
+[? if spd_in_government : - Reduce funding for the Reichswehr. ?]
 
 They say that they expect to see at least two goals fulfilled every six months, or we will lose some of their support. Committing to austerity or conservative policies will automatically fail the goals.
