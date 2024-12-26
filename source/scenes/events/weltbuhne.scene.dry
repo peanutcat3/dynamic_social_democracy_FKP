@@ -27,7 +27,7 @@ The <span style="color: #c00000;">left-wing</span> news and literary magazine We
 view-if: spd_in_government
 choose-if: spd_in_government and justice_minister_party = "SPD"
 unavailable-subtitle: [? if not spd_in_government : <span style="color: #c00000;">SPD</span> not in government. ?] [? if spd_in_government and justice_minister_party != "SPD": The <span style="color: #c00000;">SPD</span> does not control the Justice Ministry. ?]
-on-arrival: weltbuhne_dropped = 1; dvp_relation -= 4; nationalism -= 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; reichswehr_loyalty -= 0.1; west_relation += 1; east_relation += 1; coup_progress += 1; reparations_negotiation += 1; pacifism += 1; ddp_relation += 3; ddp_left += 2
+on-arrival: weltbuhne_dropped = 1; dvp_relation -= 4; nationalism -= 3*(1-dissent); coalition_dissent += 1 if in_grand_coalition; reichswehr_loyalty -= 0.1; west_relation += 1; east_relation += 1; coup_progress += 1; reparations_negotiation += 1; pacifism += 1; ddp_relation += 3; ddp_left += 1
 
 The Justice Ministry has dropped all persecution of Carl von Ossietzky and Walter Kreiser, the journalist responsible for the offending publication. In fact, some say that the Weltbühne journalists should be feted as heroes.
 
