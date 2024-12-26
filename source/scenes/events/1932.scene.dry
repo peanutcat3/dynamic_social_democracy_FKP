@@ -7,7 +7,6 @@ if (Q.works_program && Q.works_program >= 2) {
     Q.inflation += 1
 }
 if (!Q.works_program) {
-    Q.unemployed += 6; 
     Q.inflation -= 2;
 }
 // moved demographic changes to post_event
