@@ -635,6 +635,12 @@ if (Q.year == 1928 && Q.month == 9 && Q.spd_in_government == 0) {
     Q.panzerkreuser_right_seen = 1
 }
 
+if (Q.year >= 1930 && Q.chancellor == "Brüning" && !Q.spd_in_government) {
+    Q.dvp_right += 1;
+    Q.dvp_relation -= 3;
+    // # TODO explain this later in flavour text
+}
+
 if (Q.spd_in_government) {
     Q.spd_in_government_time += 1;
 } else if (!Q.spd_in_government) {
