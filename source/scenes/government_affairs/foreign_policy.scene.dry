@@ -155,7 +155,7 @@ max-visits: 1
 @concordat_negotiate
 title: Negotiate a Concordat between the Germany and the Vatican.
 view-if: prussian_concordat = 1 and reichskonkordat = 0 and reichskonkordat_progress < 4
-on-arrival: reichskonkordat_progress += 1; reichskonkordat_progress += 1 if z_leader == "Kaas"; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; z_relation += 3*(1-dissent); dvp_relation -= 2; ddp_relation -= 1; ddp_cohesion -= 0.25
+on-arrival: reichskonkordat_progress += 1; reichskonkordat_progress += 1 if z_leader == "Kaas"; reichskonkordat_progress -= 1 if abortion_rights; reichskonkordat_progress -= 1 if family_law; z_relation += 3*(1-dissent); dvp_relation -= 2; ddp_relation -= 1; ddp_cohesion -= 0.25; foreign_goal_spd_peoples += 1
 
 The Roman Catholic Church is interested in furthering relations with the German Republic, seeing us as preferable to the old anti-Catholic policies of the Empire. We are working towards the signing of a Concordat, an agreement between the Vatican and the Republic that formally recognizes the Church's rights and interests in the country. The <span style="color: #000000;">**Center Party**</span> is especially interested in making this agreement. The liberal parties are against this idea.
 
@@ -164,7 +164,7 @@ The Roman Catholic Church is interested in furthering relations with the German 
 @concordat
 title: We can sign a Concordat with the Vatican!
 view-if: reichskonkordat_progress >= 4 and reichskonkordat = 0
-on-arrival: reichskonkordat = 1; z_relation += 15*(1-dissent); catholics_spd += 8*(1-dissent); catholics_z += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front;
+on-arrival: reichskonkordat = 1; z_relation += 15*(1-dissent); catholics_spd += 8*(1-dissent); catholics_z += 5 if in_weimar_coalition or in_grand_coalition or in_popular_front; foreign_goal_spd_peoples += 1
 achievement: reichskonkordat
 
 We have successfully signed a Concordat between Germany and the Roman Catholic Church! This treaty defines a formal relationship between the Church and the German state, guaranteeing freedom of worship for Catholics, and the right of the church to appoint their own clergy. Catholics in Germany are pleased, as are their representatives in the <span style="color: #000000;">**Center Party**</span>.
@@ -177,7 +177,7 @@ subtitle: Is a "United States of Europe" possible?
 unavailable-subtitle: [? if west_relation < 5 : Our relations with the West are not good enough. ?] [? if east_relation < 4 : Our relations with the East are not good enough. ?]
 view-if: reparations <= -2 and eu_progress < 2
 choose-if: west_relation >= 5 and east_relation >= 4
-on-arrival: eu_progress += 1; west_relation += 1
+on-arrival: eu_progress += 1; west_relation += 1; foreign_goal_spd_peoples += 1
 
 Forming a "<span style="color: #FFDD00;">United States</span> of <span style="color: #001489;">Europe</span>" has long been part of the <span style="color: #c00000;">**Social Democratic**</span> foreign program. Finally, we are taking steps towards it. Given our positive relations with the other countries of <span style="color: #001489;">Europe</span>, we can begin to hold multilateral negotiations for more <span style="color: #001489;">European</span> <span style="color: #FFDD00;">federalism</span>. It will take time to hammer out the exact shape of this future "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>", however.
 
@@ -185,7 +185,7 @@ Forming a "<span style="color: #FFDD00;">United States</span> of <span style="co
 @european_union_2
 title: We can sign a treaty to form a <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>!
 view-if: west_relation >= 5 and east_relation >= 4 and eu_progress >= 2
-on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 5*(1-dissent); rural_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1; ddp_left += 3; ddp_cohesion += 3; ddp_relation += 10
+on-arrival: eu = 1; unemployed -= 2 if unemployed >= 10; inflation += 2 if inflation <= -2; inflation -= 1 if inflation >= 4.5; workers_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 5*(1-dissent); rural_spd += 4*(1-dissent); catholics_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); pro_republic += 5; nationalism -= 5; budget += 1; ddp_left += 3; ddp_cohesion += 3; ddp_relation += 10; foreign_goal_spd_peoples += 1
 max-visits: 1
 achievement: eu
 

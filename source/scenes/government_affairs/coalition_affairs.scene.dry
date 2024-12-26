@@ -32,7 +32,7 @@ Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian gover
 However, this has negatively impacted our freedom of action we previously had in the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition.
 
 @promise_cuts
-on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 5; welfare -= 1; budget += 1; coalition_dissent = 0; dvp_left += 1; ddp_cohesion -= 1; ddp_right += 1
+on-arrival: workers_spd -= 5; unemployed_spd -= 6; workers_kpd += 5; unemployed_kpd += 3; unemployed_nsdap += 3; left_dissent += 10; labor_dissent += 5; welfare -= 1; budget += 1; coalition_dissent = 0; dvp_left += 1; ddp_cohesion -= 1; ddp_right += 1; goal_spd_cancel += 1
 
 Fine. By cutting welfare, we have reduced dissent within the coalition.
 

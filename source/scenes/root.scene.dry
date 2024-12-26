@@ -464,6 +464,15 @@ Q.reichswehr_goal_spd = 0;
 Q.goal_spd_cancel = 0;
 Q.goal_spd_total = 0;
 
+Q.economy_goal_spd_peoples = 0;
+Q.finance_goal_spd_peoples = 0;
+Q.tariff_goal_spd_peoples = 0;
+Q.labor_goal_spd_peoples = 0;
+Q.agriculture_goal_spd_peoples = 0;
+Q.foreign_goal_spd_peoples = 0;
+Q.goal_spd_cancel_peoples = 0;
+Q.goal_spd_total_peoples = 0;
+
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
 Q.coalition_dissent = 0;
 // dissent from the KPD, in a popular front or left front government

@@ -22,13 +22,13 @@ go-to: goals_success if kpd_goals_completed >= 4; goals_failed if kpd_goals_comp
 
 At the start of this government, the <span style="color: #700000;">**KPD**</span> presented a list of goals for the Prussian coalition:
 
-[? if interior_goal_seen_prussia = 1 : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>. - [? if not interior_goal_prussia : success ?][? if interior_goal_prussia: failed ?] ?]
+[? if interior_goal_seen_prussia = 1 : - Ban the <span style="color: #7A3C00;">**SA**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>. - [? if interior_goal_prussia <= 0 : success ?][? if interior_goal_prussia >= 1: failed ?] ?]
 
-[? if rfb_goal_seen_prussia = 1 : - Unban the <span style="color: #700000;">**RFB**</span>. - [? if not rfb_goal_prussia : success ?][? if rfb_goal_prussia: failed ?] ?]
+[? if rfb_goal_seen_prussia = 1 : - Unban the <span style="color: #700000;">**RFB**</span>. - [? if rfb_goal_prussia <= 0: success ?][? if rfb_goal_prussia >= 1: failed ?] ?]
 
-[? if bureaucracy_goal_seen_prussia = 1 : - Purge the bureaucracy. - [? if not bureaucracy_goal_prussia : success ?][? if bureaucracy_goal_prussia: failed ?] ?]
+[? if bureaucracy_goal_seen_prussia = 1 : - Purge the bureaucracy. - [? if bureaucracy_goal_prussia <= 0: success ?][? if bureaucracy_goal_prussia >= 1: failed ?] ?]
 
-[? if free_kpd_goal_seen_prussia = 1 : - Protect <span style="color: #700000;">communist</span> demonstrations. - [? if not free_kpd_goal_prussia : success ?][? if free_kpd_goal_prussia: failed ?] ?]
+[? if free_kpd_goal_seen_prussia = 1 : - Protect <span style="color: #700000;">communist</span> demonstrations. - [? if free_kpd_goal_prussia <= 0: success ?][? if free_kpd_goal_prussia >= 1: failed ?] ?]
 
 @goals_failed
 on-arrival: kpd_relation -= 8; workers_spd -= 4; unemployed_spd -= 4; workers_kpd += 4; rfb_strength += 100; rfb_militancy += 0.05; in_popular_front_prussia = 0; in_left_front_prussia = 0; prussia_leader = "Braun"; kpd_coalition_dissent += 2
