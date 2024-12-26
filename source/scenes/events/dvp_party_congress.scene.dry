@@ -1,7 +1,7 @@
 title: <span style="color: #C0A054;">**DVP**</span> Party Vote
 subtitle: The <span style="color: #C0A054;">**DVP**</span> chooses their new leader...
 view-if: year = 1929 and month = 12 and dvp_leader = "Scholz" and dvp_reform = 0
-on-arrival: dvp_left += 1 if pro_republic >= 75; dvp_right += 2 if pro_republic < 55; dvp_right += 3 if dvp_relation < 30; dvp_left += 1 if dvp_relation >= 50; dvp_right += 3 if not in_grand_coalition
+on-arrival: dvp_left += 2 if pro_republic >= 75; dvp_right += 2 if pro_republic < 55; dvp_right += 3 if dvp_relation < 30; dvp_left += 2 if dvp_relation >= 50; dvp_right += 2 if not in_grand_coalition
 max-visits: 1
 tags: event
 face-image: img/dvp.jpg
@@ -16,6 +16,15 @@ The candidate on the right is current party leader Ernst Scholz. Scholz has heav
 - @resultsdvp: The party votes...
 
 @resultsdvp
+on-arrival: {!
+if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 5))) {
+    Q.dvp_ideology = "Right"
+} else if (Q.dvp_left > (Q.dvp_right*1.5) || (Q.dvp_left > (Q.dvp_right + 5))) {
+    Q.dvp_ideology = "Left"
+} else {
+    Q.dvp_ideology = "Moderate"
+}
+!}
 go-to: curtius if economic_minister_party != "DVP" and foreign_minister_party != "DVP" and dvp_ideology = "Left" or (dvp_ideology == "Moderate" and (coalition_dissent < 2 and in_grand_coalition)) or (dvp_relation >= 50 and not in_grand_coalition); scholz if (economic_minister_party = "DVP" or foreign_minister_party = "DVP" and (dvp_ideology = "Right" or (coalition_dissent > 1 and in_grand_coalition))) or (economic_minister_party != "DVP" and foreign_minister_party != "DVP" and dvp_ideology = "Right" or (dvp_ideology = "Moderate" and (coalition_dissent >= 2 and in_grand_coalition) or (dvp_relation < 40 and not in_grand_coalition))); luther if (economic_minister_party = "DVP" or foreign_minister_party = "DVP") and dvp_ideology = "Left" or ((dvp_ideology = "Moderate" and coalition_dissent < 2 and in_grand_coalition) or (dvp_relation >= 40 and not in_grand_coalition))
 
 @curtius

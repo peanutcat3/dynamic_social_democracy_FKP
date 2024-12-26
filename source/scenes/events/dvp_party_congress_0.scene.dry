@@ -1,7 +1,7 @@
 title: <span style="color: #C0A054;">**DVP**</span> Congress
 subtitle: The <span style="color: #C0A054;">**DVP**</span> decides their future...
 view-if: year = 1928 and month = 12 and dvp_congress_trigger = 1 and dnvp_ideology != "Radical"
-on-arrival: dvp_left += 3 if pro_republic >= 75; dvp_right += 3 if pro_republic < 60; dvp_left += 2 if dvp_relation >= 55; dvp_right += 2 if dvp_relation < 30; dvp_right += 3 if not in_grand_coalition
+on-arrival: dvp_left += 2 if pro_republic >= 70; dvp_right += 2 if pro_republic < 60; dvp_left += 1 if dvp_relation >= 50; dvp_right += 1 if dvp_relation < 35; dvp_right += 1 if not in_grand_coalition
 max-visits: 1
 tags: event
 face-image: img/dvp.jpg
@@ -16,6 +16,15 @@ German industry isn't going to abandon their voice within the <span style="color
 - @resultsdvp: The party votes...
 
 @resultsdvp
+on-arrival: {!
+if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 5))) {
+    Q.dvp_ideology = "Right"
+} else if (Q.dvp_left > (Q.dvp_right*1.5) || (Q.dvp_left > (Q.dvp_right + 5))) {
+    Q.dvp_ideology = "Left"
+} else {
+    Q.dvp_ideology = "Moderate"
+}
+!}
 go-to: left if dvp_ideology == "Left" or (dvp_left - dvp_right >= 3); right if dvp_ideology == "Right" or (dvp_right - dvp_left >= 3); left_conflict if not (dvp_ideology == "Left" or (dvp_left - dvp_right >= 3) and not (dvp_ideology == "Right" or (dvp_right - dvp_left >= 3)))
 
 @left
