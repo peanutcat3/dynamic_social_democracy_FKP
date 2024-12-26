@@ -733,9 +733,9 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
         Q.goal_spd_total += 1
     }
     if (Q.goal_spd_cancel >= 1 || Q.goal_spd_total < 2) {
-        Q.workers_spd -= 3;
-        Q.unemployed_spd -= 3;
-        Q.new_middle_spd -= 1;
+        Q.workers_spd *= 0.9;
+        Q.unemployed_spd *= 0.9;
+        Q.new_middle_spd *= 0.95;
     }
     Q.welfare_goal_spd = 0;
     Q.economy_goal_spd = 0;
@@ -773,10 +773,10 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
         Q.goal_spd_total_peoples += 1
     }
     if (Q.goal_spd_cancel_peoples >= 1 || Q.goal_spd_total_peoples < 1) {
-        Q.old_middle_spd -= 3;
-        Q.new_middle_spd -= 3;
-        Q.rural_spd -= 3;
-        Q.catholics_spd -= 1;
+        Q.old_middle_spd *= 0.8;
+        Q.new_middle_spd *= 0.8;
+        Q.rural_spd *= 0.8;
+        Q.catholics_spd *= 0.9;
     }
     Q.economy_goal_spd_peoples = 0;
     Q.labor_goal_spd_peoples = 0;
