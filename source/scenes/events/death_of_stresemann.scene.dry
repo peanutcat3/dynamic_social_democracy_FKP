@@ -6,9 +6,24 @@ tags: event
 on-arrival: stresemann_dead = 1; dvp_relation -= 3; dvp_right += 3; dvp_leader = "Scholz"; foreign_minister = "Curtius" if foreign_minister = "Stresemann"
 priority: -1
 face-image: img/portraits/Stresemann.jpg
+go-to: recalculate
 
 At the age of fifty-one, Germany’s leading <span style="color: #C0A054;">liberal</span> statesman had died. He was the primary force driving the party to support democracy; without him, the democratic forces in the Republic will be so much weaker. 
 
 A hole has been left within the liberal movement at the worse possible time, and it is likely that the industrial wing of the party will complete their takeover and subsequently end cooperation with us. 
 
 Ernst Scholz, his arch enemy on the right-wing has succeeded him as leader of the <span style="color: #C0A054;">**DVP**</span>, and leadership election will be conducted in two months.
+
+@recalculate
+on-arrival: {!
+if (Q.dnf_formed == 0) {
+    Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
+} else if (Q.dnf_formed == 1 && Q.pro_republic_8 < 70) {
+    Q.young_plan_signatures = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
+} else if (Q.dnf_formed == 1 && Q.pro_republic_8 >= 70) {
+    Q.young_plan_signatures = (Q.dnf_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
+}
+!}
