@@ -2,6 +2,18 @@ title: Black Thursday
 subtitle: The great stock market crash...
 new-page: true
 on-arrival: black_thursday_seen = 1; workers_kpd += 5; workers_nsdap += 3; new_middle_nsdap += 4; old_middle_nsdap += 5; rural_nsdap += 5; unemployed_nsdap += 5; unemployed += 2; budget -= 1 if budget > 0; dues -= 1 if dues > 2; inflation -= 1; 
+on-departure: {!
+if (Q.dnf_formed == 0) {
+    Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
+} else if (Q.dnf_formed == 1 && Q.pro_republic_8 < 70) {
+    Q.young_plan_signatures = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
+} else if (Q.dnf_formed == 1 && Q.pro_republic_8 >= 70) {
+    Q.young_plan_signatures = (Q.dnf_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
+}
+!}
 tags: event
 view-if: year = 1929 and month >= 10
 max-visits: 1
