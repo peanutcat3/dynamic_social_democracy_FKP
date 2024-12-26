@@ -537,13 +537,13 @@ if (Q.year == 1929 && Q.month == 10 && Q.dnf_formed == 0) {
 }
 
 if (Q.year == 1929 && Q.month == 12 && Q.dnf_formed == 0) {
-    Q.young_plan_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100) + 3;
     Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 } else if (Q.year == 1929 && Q.month == 12 && Q.dnf_formed == 1 && Q.pro_republic_8 < 70) {
-    Q.young_plan_votes = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_votes = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100) + 3;
     Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 } else if (Q.year == 1929 && Q.month == 12 && Q.dnf_formed == 1 && Q.pro_republic_8 >= 70) {
-    Q.young_plan_votes = (Q.dnf_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_votes = (Q.dnf_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100) + 3;
     Q.young_plan_votes = Math.round(Q.young_plan_votes * 10) / 10;
 }
 
