@@ -293,6 +293,7 @@ if (Q.month_actions >= 1) {
         Q.workers_z += 2/12;
         Q.old_middle_z += 3/12;
         Q.new_middle_z += 3/12;
+        Q.rural_z += 2/12
         Q.catholics_nsdap += 2/12;
         if (!Q.works_program) {
             Q.rural_nsdap += 3/12;
