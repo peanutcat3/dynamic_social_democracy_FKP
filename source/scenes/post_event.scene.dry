@@ -746,7 +746,9 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
     Q.agriculture_goal_spd = 0;
     Q.reichswehr_goal_spd = 0;
     Q.goal_spd_cancel = 0;
-    Q.spd_government_burden_timer = 6;
+    if (Q.spd_government_burden_peoples == 0) {
+        Q.spd_government_burden_timer = 6;
+    } 
     Q.goal_spd_total = 0;
 }
 
