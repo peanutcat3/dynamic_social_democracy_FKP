@@ -17,13 +17,13 @@ Ernst Scholz, his arch enemy on the right-wing has succeeded him as leader of th
 @recalculate
 on-arrival: {!
 if (Q.dnf_formed == 0) {
-    Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100) - 1;
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 } else if (Q.dnf_formed == 1 && Q.pro_republic_8 < 70) {
-    Q.young_plan_signatures = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100) - 1;
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 } else if (Q.dnf_formed == 1 && Q.pro_republic_8 >= 70) {
-    Q.young_plan_signatures = (Q.dnf_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.young_plan_signatures = (Q.dnf_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100) - 1;
     Q.young_plan_signatures = Math.round(Q.young_plan_signatures * 10) / 10;
 }
 !}
