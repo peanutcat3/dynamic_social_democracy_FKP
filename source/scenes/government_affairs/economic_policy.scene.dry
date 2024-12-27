@@ -80,6 +80,8 @@ achievement: wirtschaftspolitik
 
 We have entered the realm of deficit spending. Our coalition partners are disgusted, but the works plan is enacted anyway. Money is beginning to flow through the economy via investments in large-scale public works.
 
+[? if in_grand_coalition: ?]
+
 [? if in_popular_front or in_left_front: The <span style="color: #700000;">**KPD**</span> opposes the WTB plan, seeing it as a rescue of capitalism rather than a step towards real <span style="color: #9b0000;">socialism</span>. ?]
 
 
