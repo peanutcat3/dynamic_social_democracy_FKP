@@ -71,7 +71,7 @@ Inflation: [+ inflation_2 +]%
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-Next Prussian election: [? if not no_majority_reichsexekution: [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if no_majority_reichsexekution: postponed indefinitely ?]
+Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen": postponed indefinitely ?]
 
 # = Public Opinion
 
