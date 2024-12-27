@@ -39,8 +39,8 @@ Fine. By cutting welfare, we have reduced dissent within the coalition.
 @resources
 subtitle: -2 resources
 view-if: historical_mode = 0
-unavailable-subtitle: Not enough resources (need 2).
-choose-if: resources >= 2
+choose-if: (resources >= 2 and in_weimar_coalition or in_popular_front or in_minority_government) or (resources >= 2 and in_grand_coalition and not (dvp_ideology == "Right" and year >= 1930))
+unavailable-subtitle: [? if resources < 2: We do not have enough resources. ?] [? if in_grand_coalition and (dvp_ideology == "Right" and year >= 1930): The <span style="color: #C0A054;">**DVP**</span> doesn't want our resources anymore. ?]
 on-arrival: resources -= 2; coalition_dissent -= 1
 
 By transferring campaign funds to our coalition partners, we can make our policies more acceptable to them. Some would call this corruption, but perhaps it is necessary to save democracy.
