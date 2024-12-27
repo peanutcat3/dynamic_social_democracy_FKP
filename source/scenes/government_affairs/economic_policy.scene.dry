@@ -72,15 +72,13 @@ We have started to enact the WTB plan. Money is beginning to flow through the ec
 @implement_wtb_deficit
 title: Implement the WTB plan.
 subtitle: -[+ wtb_budget +] budget - we will enter deficit spending. [? if wtb_budget == 3 : Our pro-labor policies have reduced the cost of the plan. ?]
-unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
+unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed. [? if dvp_ideology == "Right" and in_grand_coalition and finance_minister_party == "DVP" or economic_minister_party == "DVP": The <span style="color: #C0A054;">**DVP**</span> will obstruct us using their position in the [? if finance_minister_party == "DVP": Finance Ministry?][? if economic_minister_party == "DVP" and finance_minister_party == "DVP":&nbsp;and?][? if economic_minister_party == "DVP": Economic Ministry?]. ?]
 view-if: budget < wtb_budget and wtb_implemented == 0 and wtb_adopted == 1
 choose-if: unemployed > 8
-on-arrival: coalition_dissent += 2; coalition_dissent += 1 if chancellor == "Brüning"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 3; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; dvp_right += 2; ddp_right += 1; ddp_cohesion -= 1
+on-arrival: coalition_dissent += 2; coalition_dissent += 10 if in_grand_coalition; coalition_dissent += 1 if chancellor == "Brüning"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 3; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; dvp_right += 2; ddp_right += 1; ddp_cohesion -= 1; dvp_relation -= 10; ddp_relation -= 5; z_relation -= 5
 achievement: wirtschaftspolitik
 
 We have entered the realm of deficit spending. Our coalition partners are disgusted, but the works plan is enacted anyway. Money is beginning to flow through the economy via investments in large-scale public works.
-
-[? if in_grand_coalition: ?]
 
 [? if in_popular_front or in_left_front: The <span style="color: #700000;">**KPD**</span> opposes the WTB plan, seeing it as a rescue of capitalism rather than a step towards real <span style="color: #9b0000;">socialism</span>. ?]
 
