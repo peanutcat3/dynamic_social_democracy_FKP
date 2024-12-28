@@ -612,6 +612,11 @@ if (Q.bruning_event_timer == 3 && Q.dvp_ideology = "Right") {
     Q.new_middle_dvp -= 4;
 }
 
+if (Q.year == 1929 && Q.month == 10) {
+    Q.new_middle_other += 2;
+    Q.old_middle_other += 2;
+}
+
 if (Q.spd_in_government) {
     Q.spd_in_government_time += 1;
 } else if (!Q.spd_in_government) {
