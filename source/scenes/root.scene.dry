@@ -685,6 +685,7 @@ Q.black_thursday_seen = 0;
 Q.grand_coalition_collapsed = 0;
 Q.true_christian_democracy = 0;
 Q.zentrum_disintegration = 0;
+Q.wtb_rally = 0;
 
 // flavour text stuff
 Q.flavour_1_trigger = 0;
