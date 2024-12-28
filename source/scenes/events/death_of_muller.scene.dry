@@ -18,7 +18,7 @@ Chancellor Hermann Müller has died while in office. He will be greatly missed. 
 - @wirth_chancellor: Joseph Wirth of the <span style="color: #000000;">Center Party</span> should be Chancellor.
 
 @braun_chancellor
-on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; z_relation -= 5; dvp_relation -= 5; ddp_relation -= 5
+on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; z_relation -= 3; dvp_relation -= 3; ddp_relation -= 3; z_relation -= 3 if prussia_leader == "Braun"; dvp_relation -= 3 if prussia_leader == "Braun"; ddp_relation -= 3 if prussia_leader == "Braun"
 subtitle: The <span style="color: #000000;">Center Party</span> is worried about having so much power in one man.
 
 Our coalition partners are reluctant to accept the new Chancellor, but they do not make loud objections.
