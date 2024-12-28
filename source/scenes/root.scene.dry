@@ -793,7 +793,7 @@ Q.dues = 2;
 Q.rb_strength = 2000;
 Q.z_relation = 46;
 Q.kpd_relation = 21;
-Q.dvp_relation = 36;
+Q.dvp_relation = 31;
 Q.ddp_relation = 55;
 Q.budget = 2;
 !}
