@@ -527,7 +527,7 @@ Wladimir Woytinsky is now an advisor.
 
 @add_mierendorff
 title: Carlo Mierendorff
-subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and the originator of the "Neo-Revisionist" movement. He is an anti-Nazi strategist. {!<br><br>!}[? if difficulty < 0 : Actions - Build the Iron Front, Warning About the <span style="color: #7A3C00;">Nazis</span> ?]
+subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and the originator of the "Neo-Revisionist" movement. He is an anti-Nazi strategist. {!<br><br>!}[? if difficulty < 0 : Actions - Build the <span style="color: #c00000;">Iron</span> <span style="color: #1A1A1A;">Front</span>, Warning About the <span style="color: #7A3C00;">Nazis</span> ?]
 is-card: true
 card-image: img/portraits/MierendorffCarlo.jpg
 view-if: mierendorff_advisor = 0 and n_advisors < 3
