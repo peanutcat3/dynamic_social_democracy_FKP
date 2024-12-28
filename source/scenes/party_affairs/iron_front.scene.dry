@@ -49,7 +49,7 @@ on-arrival: workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); new_m
 The WTB-Plan is the rallying point for the entire <span style="color: #c00000;">**SPD**</span> and its affiliated organizations, including the <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span>.
 
 @antisemitism
-title: Rally against antisemitism and in defense of Jewish Germans.
+title: Rally against antisemitism and in defense of <span style="color: #005EB8;">Jewish</span> Germans.
 view-if: confronting_antisemitism > 1
 on-arrival: nationalism -= 4*(1-dissent); pro_republic += 3*(1-dissent); confronting_antisemitism += 1; workers_nsdap -= 4*(1-dissent); unemployed_nsdap -= 4*(1-dissent); ddp_left += 0.5
 
