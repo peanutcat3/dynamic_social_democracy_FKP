@@ -306,16 +306,6 @@ if (Q.month_actions >= 1) {
         } else {
             Q.sh_strength += 50/12;
         }
-        if (Q.dvp_ideology == "Left") {
-            Q.dvp_relation += 5/12;
-        } else if (Q.dvp_ideology == "Moderate") {
-            Q.dvp_relation += 3/12;
-        }
-        if (Q.ddp_ideology == "Left") {
-            Q.ddp_relation += 5/12;
-        } else if (Q.ddp_ideology == "Moderate") {
-            Q.ddp_relation += 3/12;
-        }
     }
     if (Q.year == 1931) {
         if (Q.z_leader == "Kaas") {
@@ -379,16 +369,6 @@ if (Q.month_actions >= 1) {
                 Q.old_middle_dnf += 4/12;
                 Q.new_middle_dnf += 2/12;
                 }
-        }
-        if (Q.dvp_ideology == "Left") {
-            Q.dvp_relation += 5/12;
-        } else if (Q.dvp_ideology == "Moderate") {
-            Q.dvp_relation += 3/12;
-        }
-        if (Q.ddp_ideology == "Left") {
-            Q.ddp_relation += 5/12;
-        } else if (Q.ddp_ideology == "Moderate") {
-            Q.ddp_relation += 3/12;
         }
     }
     if (Q.year == 1932) {
@@ -462,16 +442,6 @@ if (Q.month_actions >= 1) {
                 Q.new_middle_dnf += 1/12;
             }
         }
-        if (Q.dvp_ideology == "Left") {
-            Q.dvp_relation += 5/12;
-        } else if (Q.dvp_ideology == "Moderate") {
-            Q.dvp_relation += 3/12;
-        }
-        if (Q.ddp_ideology == "Left") {
-            Q.ddp_relation += 5/12;
-        } else if (Q.ddp_ideology == "Moderate") {
-            Q.ddp_relation += 3/12;
-        }
     }
     if (Q.year >= 1933) {
         if (Q.return_to_normalcy) {
@@ -499,16 +469,6 @@ if (Q.month_actions >= 1) {
             Q.new_middle_nsdap += 2/12;
             if (Q.spd_in_government) {
                 Q.workers_spd -= 4/12;
-            }
-            if (Q.dvp_ideology == "Left") {
-                Q.dvp_relation += 5/12;
-            } else if (Q.dvp_ideology == "Moderate") {
-                Q.dvp_relation += 3/12;
-            }
-            if (Q.ddp_ideology == "Left") {
-                Q.ddp_relation += 5/12;
-            } else if (Q.ddp_ideology == "Moderate") {
-                Q.ddp_relation += 3/12;
             }
         }
     }
