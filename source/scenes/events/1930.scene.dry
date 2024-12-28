@@ -5,9 +5,7 @@ on-arrival: {!
 // increase NSDAP vote share 
 Q.unemployed += 6; 
 Q.inflation -= 4;
-if (Q.budget > 0) {
-    Q.budget -= 1;
-}
+Q.budget -= 2;
 // moved demographic changes to post_event
 !}
 tags: event
