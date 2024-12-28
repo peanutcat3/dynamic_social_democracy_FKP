@@ -269,7 +269,7 @@ if (Q.month_actions >= 1) {
             Q.old_middle_dvp -= 2/12;
         } else {
             Q.new_middle_dvp -= 5/12;
-            Q.old_middle_dvp -= 5 /12;
+            Q.old_middle_dvp -= 5/12;
         }
         Q.new_middle_ddp -= 3/12;
         Q.old_middle_ddp -= 3/12;
@@ -321,7 +321,7 @@ if (Q.month_actions >= 1) {
         Q.workers_other -= 2/12;
         Q.workers_nsdap += 2/12;
         Q.old_middle_dvp -= 6/12;
-        Q.new_middle_dvp -= 6/12;
+        Q.new_middle_dvp -= 4/12;
         Q.old_middle_ddp -= 3/12;
         Q.new_middle_ddp -= 3/12;
         Q.sa_strength += 50/12;
@@ -335,7 +335,7 @@ if (Q.month_actions >= 1) {
         Q.catholics_other -= 2/12;
         if (!Q.works_program) { 
             Q.old_middle_dvp -= 6/12;
-            Q.new_middle_dvp -= 6/12;
+            Q.new_middle_dvp -= 4/12;
             Q.rural_dvp -= 4/12;
             Q.workers -= 4/12;
             Q.unemployed_nsdap += 8/12;
@@ -605,6 +605,11 @@ if (Q.year >= 1930 && Q.chancellor == "Brüning" && !Q.spd_in_government) {
 
 if (Q.year >= 1930 && Q.dvp_relation < 30) {
     Q.dvp_right += 1;
+}
+
+if (Q.bruning_event_timer == 3 && Q.dvp_ideology = "Right") {
+    Q.dvp_right += 1;
+    Q.new_middle_dvp -= 4;
 }
 
 if (Q.spd_in_government) {
