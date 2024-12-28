@@ -21,6 +21,6 @@ The stock market in America has had its biggest crash in history. It is too earl
 Perhaps this is simply one of the periodic crises of capitalism. Perhaps this moment will simply pass.
 
 @do_something
-crisis_urgency += 1
+on-arrival: crisis_urgency += 1
 
 What can we do to staunch the workers' suffering? It is becoming a hotly debated question.
