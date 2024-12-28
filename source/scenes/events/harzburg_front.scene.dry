@@ -13,8 +13,8 @@ The <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right
 [? if dvp_leader == "Dingeldey": The <span style="color: #C0A054;">**DVP**</span> has worryingly some sympathies towards the national opposition, with some members even attending or sending congratulatory telegrams. ?] 
 
 - @strategy: We must develop a coherent strategy to combat the Right.
-- @confronting_nazis.iron_front: We must form the Iron Front!
-- @iron_front: The Iron Front will be our answer!
+- @confronting_nazis.iron_front: We must form the <span style="color: #c00000;">Iron</span> <span style="color: #1A1A1A;">Front</span>!
+- @iron_front: The <span style="color: #c00000;">Iron</span> <span style="color: #1A1A1A;">Front</span> will be our answer!
 
 @strategy
 view-if: nazi_urgency < 3

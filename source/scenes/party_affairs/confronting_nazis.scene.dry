@@ -36,8 +36,8 @@ on-arrival: nazi_urgency += 1; neorevisionist_dissent -= 5; neorevisionist_stren
 The <span style="color: #7A3C00;">Nazis</span> are one of the foremost threats to the German republic. However, we are still formulating a strategy to confront them, and still trying to build up consensus within our party for action. Check back on this later.
 
 @iron_front
-title: Form the Iron Front!
-subtitle: The Iron Front consists of the <span style="color: #c00000;">**SPD**</span>, the trade unions, and the Reichsbanner.
+title: Form the <span style="color: #c00000;">Iron</span> <span style="color: #1A1A1A;">Front</span>!
+subtitle: The <span style="color: #c00000;">Iron</span> <span style="color: #1A1A1A;">Front</span> consists of the <span style="color: #c00000;">**SPD**</span>, the trade unions, and the Reichsbanner.
 view-if: nazi_urgency >= 3 and iron_front_formed == 0
 on-arrival: iron_front_formed = 1; radicalization += 1; nazi_urgency += 1; workers_spd += 5*(1-dissent); pro_republic += 5*(1-dissent); left_dissent -= 8; neorevisionist_dissent -= 10; neorevisionist_strength += 5
 achievement: eiserne_front
