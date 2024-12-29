@@ -607,7 +607,7 @@ if (Q.year >= 1930 && Q.dvp_relation < 30) {
     Q.dvp_right += 1;
 }
 
-if (Q.bruning_event_timer == 3 && Q.dvp_ideology = "Right") {
+if (Q.bruning_event_timer == 3 && Q.dvp_ideology == "Right") {
     Q.dvp_right += 1;
     Q.new_middle_dvp -= 4;
 }
