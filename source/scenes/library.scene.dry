@@ -421,7 +421,7 @@ Current relations: [+ ddp_relation : relationships +]
 
 Current relations: [+ dvp_relation : relationships +]
 
-[? if kvp_formed: <span style="color: #0087DC;">**KVP**</span> - *Konservative Volkspartei* (Conservative People's Party) - a moderate right-wing conservative nationalist party, supported by rural workers, former aristocracy, landowners and conservative Lutherans. The party seeks to emulate the Tory conservatives in Great Britain. ?]
+[? if kvp_formed: <span style="color: #0087DC;">**KVP**</span> - *Konservative Volkspartei* (Conservative People's Party) - a moderate right-wing conservative nationalist party, supported by rural workers, former aristocracy, landowners and conservative Lutherans. The party seeks to emulate the Tory conservatives in <span style="color: #C8102E;">Great Britain</span>. ?]
 
 [? if kvp_formed: Current relations: [+ kvp_relation : relationships +] ?]
 
