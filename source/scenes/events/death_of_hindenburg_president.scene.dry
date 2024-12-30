@@ -435,7 +435,7 @@ Election results:
 [? if Seldte_running : <span style="color: #3E88B3;">**Seldte**</span> - [+ Seldte_votes_disp +]% ?]
 
 [? if Thalmann_running : <span style="color: #700000;">**Thälmann**</span> - [+ Thalmann_votes_disp +]% ?]
-[? if Munzenberg_running : <span style="color: #700000;">**Münzenberg**</span> - [+ Munzenberg_votes_disp +]% ?]
+[? if Munzenberg_running : <span style="color: #9B0000;">**Münzenberg**</span> - [+ Munzenberg_votes_disp +]% ?]
 
 [? if Adenauer_running : <span style="color: #000000;">**Adenauer**</span> - [+ Adenauer_votes_disp +]% ?]
 
