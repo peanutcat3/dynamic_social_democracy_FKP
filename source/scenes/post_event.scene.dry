@@ -610,6 +610,9 @@ if (Q.year >= 1930 && Q.dvp_relation < 30) {
 if (Q.bruning_event_timer == 3 && Q.dvp_ideology == "Right") {
     Q.dvp_right += 1;
     Q.new_middle_dvp -= 4;
+} else if (Q.bruning_event_timer == 3 && Q.dvp_ideology != "Right") {
+    Q.dvp_right += 2;
+    Q.new_middle_dvp -= 6
 }
 
 if (Q.year == 1929 && Q.month == 10) {
