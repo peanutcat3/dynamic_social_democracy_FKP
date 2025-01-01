@@ -544,6 +544,10 @@ if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 4))) {
     Q.dvp_ideology = "Moderate"
 }
 
+if (Q.in_grand_coalition == 1 && Q.dvp_relation >= 50) {
+    Q.capital_strike_progress -= 0.25
+}
+
 if (
     Q.year == 1928 && 
     Q.month == 11 && 
