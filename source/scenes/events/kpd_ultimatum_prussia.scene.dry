@@ -13,6 +13,7 @@ if (Q.rfb_goal_prussia <= 0) {
 if (Q.free_kpd_goal_prussia <= 0) {
     Q.kpd_goals_completed += 1
 }
+Q.kpd_goals_seen_prussia = 0
 !}
 new-page: true
 tags: event
