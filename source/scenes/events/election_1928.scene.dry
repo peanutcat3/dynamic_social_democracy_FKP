@@ -1069,7 +1069,7 @@ How do we convince vehemently anti-<span style="color: #c00000;">socialist</span
 @newgroko_prussia
 title: Offer participation in the Prussian government.
 view-if: in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and neo_weimar_coalition_prussia >= 50
-on-arrival: spd_in_government = 1; in_grand_coalition = 1; left_dissent += 4; dvp_left += 2; liberal_cooperation += 1; dvp_relation += 5; in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 1; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Luther" if dvp_leader == "Luther"; prussia_leader = "Zentrum" if dvp_leader != "Luther"; spd_prussia = 1; right_prussia = 0
+on-arrival: spd_in_government = 1; in_grand_coalition = 1; left_dissent += 4; dvp_left += 2; liberal_cooperation += 1; dvp_relation += 5; in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 1; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Luther" if dvp_leader == "Luther"; prussia_leader = "Stegerwald" if dvp_leader != "Luther" and z_leader != "Stegerwald"; prussia_leader = "Brüning" if dvp_leader != "Luther" and z_leader == "Stegerwald"; spd_prussia = 1; right_prussia = 0
 achievement: constitutional_coalition
 
 We are able to offer the array of bourgeois parties into the ruling Prussian government. They have forced Braun to concede his position as Minister-President as a prerequisite, but perhaps it is necessary to save our democracy.
@@ -1129,7 +1129,7 @@ We have assembled a new coalition under Otto Braun.
 @braun_resign_prussia
 title: Braun must resign from his position to accept the chancellorship.
 view-if: in_new_grand_coalition_prussia and prussia_leader == "Braun"
-on-arrival: leverage -= 10; chancellor = "Braun"; chancellor_party = "SPD"; prussia_leader = "Zentrum"
+on-arrival: leverage -= 10; chancellor = "Braun"; chancellor_party = "SPD"; prussia_leader = "Stegerwald" if (braun_resign and z_leader != "Stegerwald"); prussia_leader = "Brüning" if (braun_resign and z_leader == "Stegerwald");
 go-to: ministries
 
 We have assembled a new coalition under Otto Braun.
