@@ -10,7 +10,7 @@ max-visits: 12
 
 = Inter-Party Relationships
 
-The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Center**</span>, and [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">Center</span>, and [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
 - @liberals: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": <span style="color: #D3C24D;">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">German State Party</span>?] and conservative-liberal <span style="color: #C0A054;">German People's Party</span>.
 - @center: Strengthen our bonds with the Catholic <span style="color: #000000;">Center Party</span>.
@@ -73,7 +73,7 @@ go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
 
-We are currently in opposition to the <span style="color: #000000;">**Center**</span>-led government, but that does not preclude the general building of feelings of good will.
+We are currently in opposition to the <span style="color: #000000;">Center</span>-led government, but that does not preclude the general building of feelings of good will.
 
 @center_coalition
 on-arrival: z_relation += 8*(1 - dissent)

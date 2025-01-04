@@ -9,7 +9,7 @@ card-image: img/braun.jpg
 
 = Prussian Affairs
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the <span style="color: #000000;">**Center**</span>, [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] and <span style="color: #C0A054;">**People's**</span> parties. It is a stable and democratic state government in Germany, led by the able Otto Braun.
+Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the <span style="color: #000000;">Center</span>, [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] and <span style="color: #C0A054;">**People's**</span> parties. It is a stable and democratic state government in Germany, led by the able Otto Braun.
 
 We can enact policies in Prussia. The inclusion of the <span style="color: #C0A054;">**DVP**</span> will mitigate our effect.
 
