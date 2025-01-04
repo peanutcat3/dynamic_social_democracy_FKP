@@ -10,7 +10,7 @@ tags: event
 
 = Vote of No Confidence
 
-[? if in_grand_coalition : The <span style="color: #C0A054;">**DVP**</span> ?][? if in_weimar_coalition or in_popular_front or in_minority_government: The <span style="color: #000000;">**Center Party**</span> ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
+[? if in_grand_coalition : The <span style="color: #C0A054;">**DVP**</span> ?][? if in_weimar_coalition or in_popular_front or in_minority_government: The <span style="color: #000000;">Center Party</span> ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will be an election in a few months.
 
 - @try_assuage: Try to assuage our partners.
 - @support_kpd: Could we get the <span style="color: #700000;">**KPD**</span> to abstain?

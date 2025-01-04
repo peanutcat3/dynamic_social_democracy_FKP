@@ -47,7 +47,7 @@ go-to: elections if bruning_event_seen or year < 1930
 
 Fine. If the bourgeoisie wish to blow up the government, let them do so. <span style="color: #c00000;">Socialists</span> will not be complicit in the destruction of the working class.
 
-[? if chancellor_party = "SPD" : Heinrich Brüning of the <span style="color: #000000;">**Center Party**</span> has been appointed Chancellor. ?] Brüning now leads an all-bourgeois cabinet. Using the emergency powers of Article 48, Brüning and President Hindenburg have passed the welfare cuts over the objections of the Reichstag.
+[? if chancellor_party = "SPD" : Heinrich Brüning of the <span style="color: #000000;">Center Party</span> has been appointed Chancellor. ?] Brüning now leads an all-bourgeois cabinet. Using the emergency powers of Article 48, Brüning and President Hindenburg have passed the welfare cuts over the objections of the Reichstag.
 
 [? if not bruning_event_seen and year >= 1930: New elections haven't been called yet but it's likely that they will be soon, considering Brüning most likely doesn't have the majority of the Reichstag behind him. ?]
 

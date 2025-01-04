@@ -65,7 +65,7 @@ Fine. We have thrown our support to Chairman Thälmann of the <span style="color
 
 @braun_campaign
 
-- @convince_z: Convince the <span style="color: #000000;">**Center Party**</span>.
+- @convince_z: Convince the <span style="color: #000000;">Center Party</span>.
 - @convince_kpd: Convince the <span style="color: #700000;">**Communists**</span>.
 - @convince_liberals: Convince the remaining <span style="color: #D3C24D;">liberals</span>, wherever they are.
 - @final_election: The final vote...
@@ -397,7 +397,7 @@ on-departure: z_support_braun = 0; kpd_support_braun = 0;
 
 Fine. We have thrown our support to Chairman Thälmann of the <span style="color: #700000;">**KPD**</span> to the dismay of our bourgeois allies.
 
-[? if z_support_braun : The <span style="color: #000000;">**Center Party**</span> is confused at our capricious behavior, and have switched their support to Hindenburg. ?]
+[? if z_support_braun : The <span style="color: #000000;">Center Party</span> is confused at our capricious behavior, and have switched their support to Hindenburg. ?]
 
 - @round2_vote: Let the second round voting begin.
 
