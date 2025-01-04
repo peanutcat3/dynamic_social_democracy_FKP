@@ -565,9 +565,9 @@ unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="co
 How do we convince vehemently anti-<span style="color: #c00000;">socialist</span> parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">**Center**</span> and <span style="color: #C0A054;">**DVP**</span> may allow us some leverage.
 
 - @use_resources
-- @call_new_elections_2: No. We will have new elections.
+- @call_new_elections_go: No. We will have new elections.
 
-@call_new_elections_2
+@call_new_elections_go
 go-to: call_new_elections
 
 @use_resources
