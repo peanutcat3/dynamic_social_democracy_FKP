@@ -441,7 +441,6 @@ Q.in_new_grand_coalition_prussia = 0;
 Q.in_popular_front_prussia = 0;
 Q.in_left_front_prussia = 0;
 Q.in_spd_majority_prussia = 0;
-Q.grand_coalition_failed_prussia = 0;
 Q.in_center_right_coalition_prussia = 0;
 Q.in_minority_weimar_coalition_prussia = 0;
 Q.in_minority_grand_coalition_prussia = 0;
