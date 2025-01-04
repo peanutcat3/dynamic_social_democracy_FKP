@@ -25,8 +25,10 @@ Q.catholics_kvp = 5;
 Q.catholics_dnvp -= 3;
 Q.catholics_other -= 2;
 
-Q.kvp_r = Math.round((Q.dnvp_r / 2) * 10) / 10 + 2;
-Q.dnvp_r = Math.round((Q.dnvp_r - Q.kvp_r) * 10) / 10 - 2;
+Q.kvp_r = Math.round((Q.dnvp_r / 2) * 10) / 10 + 1.5;
+Q.dnvp_r = Math.round((Q.dnvp_r - Q.kvp_r) * 10) / 10 - 1.5;
+Q.kvp_r = Math.round((Q.kvp_r) * 10 / 10)
+Q.dnvp_r = Math.round((Q.dnvp_r) * 10 / 10)
 Q.kvp_relation = 15;
 
 Q.old_workers_kvp_display = 0;
