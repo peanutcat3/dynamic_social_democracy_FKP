@@ -136,7 +136,7 @@ title: Let the <span style="color: #000000;">Center Party</span> have their Mini
 subtitle: This will grant us goodwill with the bourgeois parties.
 on-arrival: prussia_leader = "Luther" if dvp_leader == "Luther"; prussia_leader = "Stegerwald" if (dvp_leader != "Luther" and z_leader != "Stegerwald"); prussia_leader = "Brüning" if (dvp_leader != "Luther" and z_leader == "Stegerwald"); ddp_relation += 5; dvp_relation += 5; z_relation += 10
 
-In a surprising move, Braun steps aside from from his long held position in favor of a candidate put forward by the bourgeois parties. [? if dvp_leader == "Luther": The <span style="color: #C0A054;">**DVP**</span>'s Hans Luther is selected to become the Minister-President of Prussia. ?][? if dvp_leader != "Luther": The <span style="color: #000000;">Center</span>'s Adam Stegerwald is selected to become the Minister-President of Prussia. ?]
+In a surprising move, Braun steps aside from from his long held position in favor of a candidate put forward by the bourgeois parties. [? if dvp_leader == "Luther": The <span style="color: #C0A054;">**DVP**</span>'s Hans Luther is selected to become the Minister-President of Prussia. ?][? if dvp_leader != "Luther": The <span style="color: #000000;">Center</span>'s [? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] is selected to become the Minister-President of Prussia. ?]
 
 @far_right_coalition_prussia
 title: <span style="color: #7A3C00;">Far</span>-[? if not dnf_formed:<span style="color: #3E88B3;">right</span>?][? if dnf_formed:<span style="color: #003755;">right</span>?] Coalition
@@ -247,7 +247,7 @@ on-arrival: in_right_coalition_prussia = 1; prussia_leader = "Stegerwald"; pruss
 
 Letting go the democratic bulwark to the right-wing parties is deeply unpopular among all party members, and provides no discernible benefit. 
 
-Adam Stegerwald of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
+[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
 
 @center_right_coalition_prussia
 title: Refuse to form a government, so that a center-right coalition may be formed.
@@ -259,7 +259,7 @@ on-arrival: in_center_right_coalition_prussia = 1; prussia_leader = "Stegerwald"
 
 Letting go the democratic bulwark to the right-wing parties is deeply unpopular among all party members, and provides no discernible benefit. 
 
-Adam Stegerwald of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
+[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
 
 @call_new_elections
 on-arrival: pro_republic -= 5 if anti_democratic_votes >= 35; workers_nsdap += 3 if anti_democratic_votes >= 35; workers_kpd += 3 if anti_democratic_votes >= 35; workers_spd -= 3 if anti_democratic_votes >= 35; new_middle_nsdap += 3 if anti_democratic_votes >= 35; old_middle_nsdap += 3 if anti_democratic_votes >= 35; rural_nsdap += 3 if anti_democratic_votes >= 35; new_middle_ddp -= 3 if anti_democratic_votes >= 35; old_middle_ddp -= 3 if anti_democratic_votes >= 35; rural_ddp -= 3 if anti_democratic_votes >= 35; new_middle_dvp -= 3 if anti_democratic_votes >= 35; old_middle_dvp -= 3 if anti_democratic_votes >= 35; rural_dvp -= 3 if anti_democratic_votes >= 35

@@ -1134,7 +1134,7 @@ go-to: ministries
 
 We have assembled a new coalition under Otto Braun.
 
-Adam Stegerwald of the <span style="color: #000000;">Center Party</span> has now replaced Braun in his former position.
+[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the <span style="color: #000000;">Center Party</span> has now replaced Braun in his former position.
 
 @unity_government
 title: The <span style="color: #000000;">Center Party</span> offers a "Government of National Unity" under Chancellor Joseph Wirth.

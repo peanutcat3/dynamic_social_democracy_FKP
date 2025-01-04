@@ -721,7 +721,7 @@ on-arrival: in_right_coalition_prussia = 1; prussia_leader = "Stegerwald"; pruss
 
 Letting go the democratic bulwark to the right-wing parties is deeply unpopular among all party members, and provides no discernible benefit. 
 
-Adam Stegerwald of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
+[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
 
 @center_right_coalition_prussia
 title: Refuse to form a government, so that a center-right coalition may be formed.
@@ -733,7 +733,7 @@ on-arrival: in_center_right_coalition_prussia = 1; prussia_leader = "Stegerwald"
 
 Letting go the democratic bulwark to the right-wing parties is deeply unpopular among all party members, and provides no discernible benefit. 
 
-Adam Stegerwald of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
+[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.
 
 @call_new_elections
 subtitle: New elections will be called.
