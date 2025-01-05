@@ -1,9 +1,10 @@
 title: Brüning's government lives on?
 subtitle: Chancellor [+ chancellor +] has assembled a majority government.
 new-page: true
-view-if: bruning_event_timer = 5 and bourgeois_coalition >= 50
+view-if: spd_in_government == 0 and spd_toleration == 0 and chancellor = "Brüning" and bourgeois_coalition >= 50
 on-arrival: bruning_event_seen = 1
 tags: event
+priority: -1
 max-visits: 1
 
 = actually what the hell

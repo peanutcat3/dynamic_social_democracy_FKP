@@ -622,7 +622,7 @@ There are some potential coalition arrangements.
 - @popular_front_coalition
 - @right_coalition
 - @center_right_coalition
-
+- @bourgeois_coalition
 
 
 @popular_front_coalition
@@ -1004,7 +1004,7 @@ subtitle: Congrats.
 view-if: bourgeois_coalition >= 50
 on-arrival: secret_mode = 1
 
-Secret mode has been enabled.
+Secret mode has been enabled. If someone gets this in an actual game without cheats and shares it to me I will make content for it.
 
 @no_majority
 title: There is no clear governing majority.
@@ -1018,7 +1018,7 @@ go-to: no_majority_bruning if chancellor = "Brüning" or chancellor = "Wirth"; n
 @no_majority_spd
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
 
-There is no path to an obviously workable majority. Since President Hindenburg is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the <span style="color: #000000;">Center Party</span>, who could lead a [? if dnvp_ideology == "Radical": "presidential" government ?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
+There is no path to an obviously workable majority. Since President Hindenburg is unwilling to work with a minority or caretaker <span style="color: #c00000;">**SPD**</span> government, his preferred chancellor is Heinrich Brüning of the <span style="color: #000000;">Center Party</span>, who could lead a [? if dnvp_ideology == "Radical": "presidential" government?][? if dnvp_ideology == "Moderate": [? if center_right_coalition >= 50 and right_coalition < 50: center-right ?][? if center_right_coalition >= 50 and right_coalition >= 50: right ?] coalition ?].
 
 - @toleration_bruning: We will tolerate Brüning.
 - @toleration_bruning_right: We will tolerate Brüning's right coalition.
