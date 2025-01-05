@@ -43,7 +43,7 @@ on-arrival: prussian_police_loyalty += 0.08; nationalism -= 5; pacifism += 1; de
 The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. The <span style="color: #700000;">**KPD**</span> have also began to infiltrate some of their own into the state bureaucracy...
 
 @ban_sa
-view-if: nazi_urgency >= 3 and sa_banned == 0
+view-if: sa_banned == 0
 on-arrival: sa_strength *= 0.9; sa_strength *= 0.75 if prussian_police_loyalty >= 0.75; sa_banned = 1; dvp_relation -= 3; prussian_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6; interior_goal_prussia -= 1; coup_progress -= 2 if coup_progress >= 6
 
 As it turns out, the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has many allies in the police and bureaucracy. Our relationship with the police weakens, and the <span style="color: #7A3C00;">**SA**</span> can still organize illegally, right under the police's noses. [? if prussian_police_loyalty >= 0.7 : Nevertheless, the <span style="color: #7A3C00;">**SA**</span> is substantially weakened by our ban. ?] 
