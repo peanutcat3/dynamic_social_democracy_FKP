@@ -999,6 +999,12 @@ on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; 
 
 Even though the opposing ends of the coalition parties are reluctant to participate in a coalition with each other, they still accede to President [+ president +]'s wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor.
 
+@bourgeois_coalition
+subtitle: Congrats.
+view-if: bourgeois_coalition >= 50
+on-arrival: secret_mode = 1
+
+Secret mode has been enabled.
 
 @no_majority
 title: There is no clear governing majority.
