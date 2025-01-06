@@ -1,35 +1,19 @@
-title: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Congress
-subtitle: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> decides their future...
-view-if: year = 1929 and month = 10 and skibidi_toliet = 1
-on-arrival: ddp_left += 1 if pro_republic >= 75; ddp_right += 1 if pro_republic < 60
+title: <span style="color: #D3C24D;">**DDP**</span> Reformation
+subtitle: The <span style="color: #D3C24D;">German Democratic Party</span> is becoming the <span style="color: #D3C24D;">German State Party</span>.
+view-if: year == 1930 and month >= 7
 max-visits: 1
 tags: event
 face-image: img/ddp.jpg
 new-page: true
 
-= <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Congress
+= <span style="color: #D3C24D;">**DDP**</span> Reformation
 
-data miners are heartless creatures
+negotations blah blah blah
 
-- @resultsddp: The party votes...
+- @ok: Ok
 
-@resultsddp
-go-to: left if skibidi == 1; statusquo if sigma == 1; formdstp if toliet == 1
-
-@left
-on-arrival: pro_republic += 3
-face-image: img/portraits/Stresemann.jpg
-
-placeholder
-
-@statusquo
-on-arrival: pro_republic += 3
-face-image: img/portraits/erichkochweser.jpg
-
-placeholder
-
-@formdstp
-on-arrival: pro_republic += 3
+@ok
+on-arrival: dstp_formed = 1; ddp_name = "DStP"
 face-image: img/dstp.jpg
 
 placeholder

@@ -278,18 +278,18 @@ if (Q.month_actions >= 1) {
         Q.rural_nsdap += 8/12;
         Q.rural_dnvp -= 5/12;
         if (Q.dvp_leader == "Curtius") {
-            Q.new_middle_dvp -= 3/12;
-            Q.old_middle_dvp -= 3/12;
-        } else if (Q.dvp_leader == "Luther") {
             Q.new_middle_dvp -= 2/12;
             Q.old_middle_dvp -= 2/12;
+        } else if (Q.dvp_leader == "Luther") {
+            Q.new_middle_dvp -= 1/12;
+            Q.old_middle_dvp -= 1/12;
         } else {
-            Q.new_middle_dvp -= 5/12;
-            Q.old_middle_dvp -= 5/12;
+            Q.new_middle_dvp -= 4/12;
+            Q.old_middle_dvp -= 4/12;
         }
         Q.workers_ddp -= 1/12;
-        Q.new_middle_ddp -= 3/12;
-        Q.old_middle_ddp -= 3/12;
+        Q.new_middle_ddp -= 2/12;
+        Q.old_middle_ddp -= 2/12;
         Q.new_middle_nsdap += 8/12;
         Q.old_middle_nsdap += 8/12;
         Q.unemployed_nsdap += 6/12;
@@ -337,10 +337,10 @@ if (Q.month_actions >= 1) {
         }
         Q.workers_other -= 2/12;
         Q.workers_nsdap += 2/12;
-        Q.old_middle_dvp -= 6/12;
+        Q.old_middle_dvp -= 4/12;
         Q.new_middle_dvp -= 4/12;
-        Q.old_middle_ddp -= 3/12;
-        Q.new_middle_ddp -= 3/12;
+        Q.old_middle_ddp -= 4/12;
+        Q.new_middle_ddp -= 4/12;
         Q.sa_strength += 50/12;
         Q.sh_strength += 50/12;
         Q.sa_militancy += 0.1/12;
@@ -634,9 +634,11 @@ if (Q.year >= 1930 && Q.dvp_relation < 30) {
 if (Q.bruning_event_timer == 3 && Q.dvp_ideology == "Right") {
     Q.dvp_right += 1;
     Q.new_middle_dvp -= 4;
+    Q.new_middle_ddp -= 2;
 } else if (Q.bruning_event_timer == 3 && Q.dvp_ideology != "Right") {
     Q.dvp_right += 2;
-    Q.new_middle_dvp -= 6
+    Q.new_middle_ddp -= 3;
+    Q.new_middle_dvp -= 6;
 }
 
 if (Q.year == 1929 && Q.month == 10) {
