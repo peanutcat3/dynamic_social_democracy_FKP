@@ -82,7 +82,7 @@ title: Is a progressive coalition possible?
 view-if: ddp_relation >= 60 and ddp_ideology == "Left" and (kpd_relation >= 60 and kpd_leader == "Thälmann") or (kpd_relation >= 40 and kpd_leader == "Conciliators")
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">SAPD</span>?] ([+ progressive_coalition_prussia +]%) - Secret mode needs to be enabled.
 choose-if: secret_mode = 1
-on-arrival: workers_spd = 100; super_secret_mode = 1
+on-arrival: workers_spd *= 100; workers += 1000; super_secret_mode = 1
 
 Data miners are heartless creatures
 

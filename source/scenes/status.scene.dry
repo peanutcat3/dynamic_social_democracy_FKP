@@ -104,7 +104,7 @@ Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_
 
 [? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>: Liberal Corporatism ([+ ddp_leader +])?]
 
-[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [? if dvp_ideology = "Left": Classical-liberal?][? if dvp_ideology = "Moderate": Conservative-liberal?][? if dvp_ideology = "Right": National-liberal?] ([+ dvp_leader +])?]
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [? if dvp_ideology = "Left": Classical-liberal?][? if dvp_ideology = "Moderate": Conservative-liberal?][? if dvp_ideology = "Right": National-liberal?][? if dvp_ideology = "Right" and dvp_right - dvp_left >= 10:??] ([+ dvp_leader +])?]
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": Luxemburgism?][? if kpd_leader = "Thälmann": Stalinist?] ([+ kpd_leader +])?]
 
