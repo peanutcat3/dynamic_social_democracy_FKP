@@ -656,6 +656,8 @@ if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion >= 12) {
     Q.old_middle_other -= 4;
     Q.catholics_ddp = 1;
     Q.workers_ddp = 0;
+    Q.ddp_right += 2;
+    Q.ddp_cohesion += 2;
 }
 
 if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion < 12) {
@@ -664,6 +666,7 @@ if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion < 12) {
     Q.old_middle_ddp -= 2;
     Q.new_middle_other += 2;
     Q.old_middle_other += 2;
+    Q.ddp_cohesion -= 1;
 }
 
 if (Q.year == 1930 && Q.month == 3) {
