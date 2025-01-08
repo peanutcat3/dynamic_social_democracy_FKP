@@ -1,8 +1,8 @@
 title: for mod dev
+subtitle: please trigger
 new-page: true
-view-if: secret_mode = 1
+view-if: secret_trigger == 1
 tags: event
-max-visits: 1
 
 = test
 
@@ -13,6 +13,8 @@ tests
 
 @ok
 go-to: lvp_formed
+
+ok
 
 @no
 
