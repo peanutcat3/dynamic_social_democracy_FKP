@@ -1,0 +1,19 @@
+title: for mod dev
+new-page: true
+view-if: secret_mode = 1
+tags: event
+max-visits: 1
+
+= test
+
+tests
+
+- @ok: ok
+- @no: no
+
+@ok
+go-to: lvp_formed
+
+@no
+
+ok
