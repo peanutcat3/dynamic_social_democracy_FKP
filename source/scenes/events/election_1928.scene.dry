@@ -364,7 +364,7 @@ if (Q.lvp_r && Q.lvp_formed) {
     data.push({
         "id": "lvp",
         "legend": "LVP",
-        "name": LVP",
+        "name": "LVP",
         "seats": Math.round(Q.lvp_r * 5),
     });
 }
@@ -572,7 +572,7 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(255, 204, 0, 0.2); font-size: 0.85em;">!}[+ catholics_lvp_display +]%[? if n_elections != 1 and demo_change_catholics_lvp_display != 0 : ([+ demo_change_catholics_lvp_display +])?]{!</td>!}
         {!</tr>!} ?]
         [? if not lvp_formed: {!<tr>!}
-            {!<td><span style="color: #C0A054;"><b>DVP</b></span></td>!}
+            {!<td><span style="color: #C0A054;">**DVP**</span></td>!}
             {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_dvp_display +]%[? if n_elections != 1 and demo_change_workers_dvp_display != 0 : ([+ demo_change_workers_dvp_display +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ new_middle_dvp_display +]%[? if n_elections != 1 and demo_change_new_middle_dvp_display != 0 : ([+ demo_change_new_middle_dvp_display +])?]{!</td>!}
             {!<td style="background-color: rgba(192, 160, 84, 0.2); font-size: 0.85em;">!}[+ old_middle_dvp_display +]%[? if n_elections != 1 and demo_change_old_middle_dvp_display != 0 : ([+ demo_change_old_middle_dvp_display +])?]{!</td>!}
