@@ -221,6 +221,7 @@ Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 Q.sapd_formed = 0;
 Q.dnf_formed = 0;
 Q.kvp_formed = 0;
+Q.lvp_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -369,12 +370,18 @@ Q.old_kvp_r = 0;
 Q.kvp_r_prussia = 0;
 Q.old_kvp_r_prussia = 0;
 
+Q.lvp_r = 0;
+Q.old_lvp_r = 0;
+Q.lvp_r_prussia = 0;
+Q.old_lvp_r_prussia = 0;
+
 Q.adjustmentFactors_spd = 1.0
 Q.adjustmentFactors_sapd = 1.0
 Q.adjustmentFactors_kpd = 1.0
 Q.adjustmentFactors_z = 1.0
 Q.adjustmentFactors_ddp = 1.0
 Q.adjustmentFactors_dvp = 1.0
+Q.adjustmentFactors_lvp = 1.0
 Q.adjustmentFactors_dnvp = 1.0
 Q.adjustmentFactors_nsdap = 1.0
 Q.adjustmentFactors_dnf = 1.0
@@ -387,6 +394,7 @@ Q.adjustmentFactors_kpd_prussia = 1.0
 Q.adjustmentFactors_z_prussia = 1.0
 Q.adjustmentFactors_ddp_prussia = 1.0
 Q.adjustmentFactors_dvp_prussia = 1.0
+Q.adjustmentFactors_lvp_prussia = 1.0
 Q.adjustmentFactors_dnvp_prussia = 1.0
 Q.adjustmentFactors_nsdap_prussia = 1.0
 Q.adjustmentFactors_dnf_prussia = 1.0
