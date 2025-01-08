@@ -50,7 +50,7 @@ max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-{!<p class="both">!}[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]{!</p>!}
+{!<p class="both">!}[? if year = 1928 and month = 2 : The current <span style="color: #000000;">bourgeois</span>-<span style="color: #3E88B3;">right</span> government has fallen. The next elections are slated for May of this year. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if year = 1928 and month = 3 : Special interest parties such as the <span style="color: #b8996f;">Reich Party of the Middle Class</span>—commonly referred to as the <span style="color: #b8996f;">Economic Party</span>(<span style="color: #b8996f;">**WP**</span>)—and the <span style="color: #7FCEB1;">Christian-National Peasants' and Farmers' Party</span>(<span style="color: #7FCEB1;">**CNBL**</span>) are expected to gain a decent foothold in the Reichstag, due to the belief that the established political parties are neglecting their interests. This negatively impacts the <span style="color: #3E88B3;">**DNVP**</span>, having been part of the last government. ?]{!</p>!}
 
@@ -326,7 +326,7 @@ max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
-{!<p class="both">!}[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]{!</p>!}
+{!<p class="both">!}[? if year = 1928 and month = 2 : The current <span style="color: #000000;">bourgeois</span>-<span style="color: #3E88B3;">right</span> government has fallen. The next elections are slated for May of this year. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if year = 1928 and month = 3 : Special interest parties such as the <span style="color: #b8996f;">Reich Party of the Middle Class</span>—commonly referred to as the <span style="color: #b8996f;">Economic Party</span>(<span style="color: #b8996f;">**WP**</span>)—and the <span style="color: #7FCEB1;">Christian-National Peasants' and Farmers' Party</span>(<span style="color: #7FCEB1;">**CNBL**</span>) are expected to gain a decent foothold in the Reichstag, due to the belief that the established political parties are neglecting their interests. This negatively impacts the <span style="color: #3E88B3;">**DNVP**</span>, having been part of the last government. ?]{!</p>!}
 
