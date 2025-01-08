@@ -507,8 +507,8 @@ In the lead is [+ winner_desc +]. There is no majority in the first round. In th
 [? if dnvp_candidate = "Göring" : The <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #7A3C00;">**NSDAP**</span> have consolidated their electoral efforts, with the <span style="color: #3E88B3;">**DNVP**</span> now endorsing Göring for the second round. ?]
 [? if nsdap_candidate = "Seldte" : The <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #7A3C00;">**NSDAP**</span> have consolidated their electoral efforts, with the <span style="color: #7A3C00;">**NSDAP**</span> now endorsing Seldte for the second round. ?]
 
-[? if gessler_drops_out : The liberal candidate Otto Gessler has dropped out in favor of the Center Party's Konrad Adenauer. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
-[? if adenauer_drops_out : The Center Party candidate Konrad Adenauer has dropped out in favor of the DStP-DVP candidate Otto Gessler. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
+[? if gessler_drops_out : The liberal candidate Otto Gessler has dropped out in favor of the <span style="color: #000000;">Center Party</span>'s Konrad Adenauer. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
+[? if adenauer_drops_out : The <span style="color: #000000;">Center Party</span> candidate Konrad Adenauer has dropped out in favor of the DStP-DVP candidate Otto Gessler. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
 
 What should we do?
 
