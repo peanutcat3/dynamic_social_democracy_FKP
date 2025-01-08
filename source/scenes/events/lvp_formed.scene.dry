@@ -25,7 +25,7 @@ Q.rural_lvp += 4
 Q.lvp_r = Math.round((Q.ddp_r + Q.dvp_r) * 10) / 10;
 Q.lvp_relation = (Q.ddp_relation + Q.dvp_relation) / 2
 
-parties = parties.filter(party => party !== 'ddp' && party !== 'dvp');
+Q.parties = Q.parties.filter(party => party !== 'ddp' && party !== 'dvp');
 
 Q.old_workers_lvp_display = 0
 Q.old_new_middle_lvp_display = 0
