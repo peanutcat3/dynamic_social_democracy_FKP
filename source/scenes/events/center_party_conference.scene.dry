@@ -20,7 +20,7 @@ The consensus candidate on the right is Ludwig Kaas, a Catholic priest who repre
 
 @kaas
 view-if: not prussia_leader == "Stegerwald"
-on-arrival: z_leader = "Kaas"; z_relation -= 3; prussian_concordat_progress += 1; z_ideology = "Right"
+on-arrival: z_leader = "Kaas"; z_relation -= 5; prussian_concordat_progress += 1; z_ideology = "Right"
 face-image: img/portraits/Ludwig_Kaas.jpg
 
 Ludwig Kaas has been selected as the chairman of the <span style="color: #000000;">Center Party</span>. He seems to represent a rightward turn from Marx, and will preside over a <span style="color: #000000;">Center Party</span> less inclined to compromise with the left. 
