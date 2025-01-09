@@ -1956,6 +1956,46 @@ Julius Leber of the <span style="color: #c00000;">**SPD**</span> has been appoin
 
 @no_more
 title: No more ministries.
+on-arrival: {!
+if (Q.labor_minister_party !== "SPD") Q.labor_minister_party = "Z";
+if (Q.labor_minister !== "Wissell") Q.labor_minister = "Stegerwald";
+
+if (Q.interior_minister_party !== "SPD") Q.interior_minister_party = "Z";
+if (Q.interior_minister !== "Severing") Q.interior_minister = "Wirth";
+
+if (Q.finance_minister_party !== "SPD" && (Q.in_weimar_coalition || Q.in_popular_front)) Q.finance_minister_party = "Z";
+if (Q.finance_minister !== "Hilferding" && (Q.in_weimar_coalition || Q.in_popular_front)) Q.finance_minister = "Köhler";
+
+if (Q.finance_minister_party !== "SPD" && Q.in_grand_coalition) Q.finance_minister_party = "DVP";
+if (Q.finance_minister !== "Hilferding" && Q.in_grand_coalition) Q.finance_minister = "Moldenhauer";
+
+if (Q.economic_minister_party !== "SPD" && Q.in_grand_coalition) Q.economic_minister_party = "DVP";
+if (Q.economic_minister !== "Schmidt" && Q.in_grand_coalition) Q.economic_minister = "Curtius";
+
+if (Q.economic_minister_party !== "SPD" && (Q.in_weimar_coalition || (Q.in_popular_front && Q.liberal_parliament === 0))) Q.economic_minister_party = "DDP";
+if (Q.economic_minister !== "Schmidt" && (Q.in_weimar_coalition || (Q.in_popular_front && Q.liberal_parliament === 0))) Q.economic_minister = "Dietrich";
+
+if (Q.justice_minister_party !== "SPD") Q.justice_minister_party = "DDP";
+if (Q.justice_minister !== "Radbruch") Q.justice_minister = "Koch-Weser";
+
+if (Q.justice_minister_party !== "SPD" && (Q.in_popular_front && Q.liberal_parliament === 1)) Q.justice_minister_party = "Z";
+if (Q.justice_minister !== "Radbruch" && (Q.in_popular_front && Q.liberal_parliament === 1)) Q.justice_minister = "Guérard";
+
+if (Q.foreign_minister_party !== "SPD") Q.foreign_minister_party = "DVP";
+if (Q.foreign_minister !== "Breitscheid") Q.foreign_minister = "Stresemann";
+if (Q.foreign_minister !== "Breitscheid" && Q.stresemann_dead === 1) Q.foreign_minister = "Curtius";
+if (Q.foreign_minister_party !== "SPD" && (Q.in_weimar_coalition || Q.in_popular_front)) Q.foreign_minister_party = "Z";
+if (Q.foreign_minister !== "Breitscheid" && (Q.in_weimar_coalition || Q.in_popular_front)) Q.foreign_minister = "Wirth";
+
+if (Q.agriculture_minister_party !== "SPD") Q.agriculture_minister_party = "DDP";
+if (Q.agriculture_minister !== "Baade") Q.agriculture_minister = "Dietrich";
+
+if (Q.agriculture_minister_party !== "SPD" && Q.in_weimar_coalition) Q.agriculture_minister_party = "Z";
+if (Q.agriculture_minister !== "Baade" && Q.in_weimar_coalition) Q.agriculture_minister = "Hermes";
+
+if (Q.reichswehr_minister_party !== "SPD") Q.reichswehr_minister_party = "I";
+if (Q.reichswehr_minister !== "Leber") Q.reichswehr_minister = "Groener";
+!}
 subtitle: [? if leverage >= 10 : We still have some more leverage to gain ministries. ?][? if leverage < 10 : We do not have much leverage left. ?]
 tags: mins_1928
 
