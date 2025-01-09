@@ -312,7 +312,7 @@ if (Q.lvp_formed) {
 }
 
 if (Q.dnvp_ideology === "Moderate") {
-    Q.far_right_coalition_prussia = parseFloat((Q.dnf_r_prussia + Q.nsdap_r).toFixed(1));
+    Q.far_right_coalition_prussia = parseFloat((Q.dnf_r_prussia + Q.nsdap_r_prussia).toFixed(1));
 } else {
     Q.far_right_coalition_prussia = parseFloat((Q.dnvp_r_prussia + Q.nsdap_r_prussia).toFixed(1));
 }
