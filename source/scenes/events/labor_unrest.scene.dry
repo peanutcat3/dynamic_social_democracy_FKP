@@ -18,7 +18,9 @@ The mining and metals industry of the Ruhr region is beset by a wave of strikes 
 subtitle: This will alienate the bourgeoisie.
 on-arrival: labor_strength += 5; labor_dissent -= 5; left_dissent -= 5; workers_spd += 6*(1-dissent); coalition_dissent += 1; dvp_relation -= 4; ddp_relation -= 2; capital_strike_progress += 1 if dvp_relation <= 30; capital_strike_progress += 1 if unemployed > 15; capital_strike_progress += 1 if unemployed > 24; labor_goal_completed += 1; inflation += 0.1; dvp_right += 1; ddp_left += 0.5; ddp_cohesion -= 1; labor_goal_spd += 1; goal_spd_cancel_peoples += 1
 
-Supporting labor is always popular in the <span style="color: #c00000;">**SPD**</span>, although many of our coalition partners represent employers, and they are less enthused.
+Unfortunately, Labor Minister [+ labor_minister +] (**<span style="color: #000000;">**Z**</span>**) overrules our decision and sided with the employers instead.
+
+Many workers are unhappy at the government's decision, and our concession of the Labor Ministry to the bourgeois parties. There is deep bitterness developing against the <span style="color: #c00000;">**SPD**</span>, especially among the more radical workers. The <span style="color: #700000;">**Communists**</span> stand to gain.
 
 @support_employers
 subtitle: This will alienate the workers.
@@ -29,5 +31,7 @@ Even though most workers grudgingly accept the our intervention, there is deep b
 @balance
 subtitle: Both sides need to share the pain in the current crisis.
 on-arrival: labor_dissent += 4; workers_spd -= 2; kpd_coalition_dissent += 1; kpd_relation -= 5; workers_kpd += 2; ddp_cohesion += 1; ddp_relation += 4; labor_goal_spd_peoples += 1
+
+We manage to convince Labor Minister [+ labor_minister +] (**<span style="color: #000000;">**Z**</span>**) to strike a compromise between both sides.
 
 Many workers are unhappy at our compromises, but they will learn to accept that we are all in a shared struggle against economic forces. This is perhaps the best we could do given the present circumstances.
