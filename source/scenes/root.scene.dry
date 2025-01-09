@@ -375,6 +375,11 @@ Q.old_lvp_r = 0;
 Q.lvp_r_prussia = 0;
 Q.old_lvp_r_prussia = 0;
 
+Q.lvp_left = 0;
+Q.lvp_right = 0;
+Q.lvp_leader = "Luther";
+Q.lvp_ideology = "Moderate";
+
 Q.adjustmentFactors_spd = 1.0
 Q.adjustmentFactors_sapd = 1.0
 Q.adjustmentFactors_kpd = 1.0
