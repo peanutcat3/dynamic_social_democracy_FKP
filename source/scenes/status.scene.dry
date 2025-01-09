@@ -192,7 +192,7 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 <span style="color: #700000;">**KPD**</span>: [+ kpd_votes +]%
 
-[? if not ddp_name and not lvp_formed: <span style="color: #D3C24D;">**DDP**</span>?][? if ddp_name != 0 and not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]%
+[? if not lvp_formed: [? if not ddp_name: <span style="color: #D3C24D;">**DDP**</span>?][? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]% ?]
 
 [? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>: [+ lvp_votes +]% ?]
 
