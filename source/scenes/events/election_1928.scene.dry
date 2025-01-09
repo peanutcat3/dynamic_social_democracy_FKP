@@ -647,7 +647,7 @@ Grand Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="col
 
 [? if dnvp_ideology == "Moderate" and not lvp_formed: Center-Right Coalition (<span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span>): [+ center_right_coalition +]% ?]
 
-[? if dnvp_ideology == "Radical" or lvp_formed: Right-wing Coalition (<span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span>): [+ right_coalition +]% ?]
+[? if dnvp_ideology == "Radical" or lvp_formed: Right-wing Coalition (<span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others** + <span style="color: #3E88B3;">**DNVP**</span>): [+ right_coalition +]% ?]
 
 [? if dnvp_ideology == "Radical" and far_right_coalition >= 35: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
