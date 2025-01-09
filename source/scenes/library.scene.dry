@@ -449,6 +449,8 @@ Current relations: [+ z_relation : relationships +]
 
 [? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span> - *Liberale Volkspartei* (Liberal People's Party) - a liberal party, popular among the bourgeois and the middle class. Formed from a merger of the two former liberal parties, the left-liberal <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and conservative-liberal <span style="color: #C0A054;">**DVP**</span>. Its predecessors have often been in coalitions with us. ?]
 
+[? if lvp_formed: Current relations: [+ lvp_relation : relationships +] ?]
+
 [? if kvp_formed: <span style="color: #0087DC;">**KVP**</span> - *Konservative Volkspartei* (Conservative People's Party) - a moderate right-wing conservative nationalist party, supported by rural workers, former aristocracy, landowners and conservative Lutherans. The party seeks to emulate the Tory conservatives in <span style="color: #C8102E;">Great Britain</span>. ?]
 
 [? if kvp_formed: Current relations: [+ kvp_relation : relationships +] ?]
