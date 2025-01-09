@@ -320,11 +320,11 @@ if (Q.dnvp_ideology === "Moderate") {
 Q.left_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.sapd_r_prussia).toFixed(1));
 
 if (Q.lvp_formed) {
-    Q.popular_front_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.z_r_prussia - 3 + Q.sapd_r_prussia).toFixed(1));
+    Q.popular_front_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.z_r_prussia + Q.sapd_r_prussia).toFixed(1));
 } else if (Q.liberal_parliament == 0) {
-    Q.popular_front_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.z_r_prussia + Q.ddp_r_prussia - 3 + Q.sapd_r_prussia).toFixed(1));
+    Q.popular_front_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.z_r_prussia + Q.ddp_r_prussia + Q.sapd_r_prussia).toFixed(1));
 } else if (Q.liberal_parliament == 1) {
-    Q.popular_front_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.z_r_prussia - 3 + Q.sapd_r_prussia).toFixed(1));
+    Q.popular_front_coalition_prussia = parseFloat((Q.spd_r_prussia + Q.kpd_r_prussia + Q.z_r_prussia + Q.sapd_r_prussia).toFixed(1));
 }
 
 if (Q.dnvp_ideology === "Moderate") {
@@ -340,13 +340,13 @@ if (Q.lvp_formed) {
 }
 
 if (Q.kvp_formed && Q.lvp_formed) {
-    Q.cordon_sanitaire = parseFloat((Q.spd_r_prussia + Q.lvp_r_prussia + Q.z_r_prussia + Q.other_r_prussia + Q.kvp_r_prussia).toFixed(1));
+    Q.cordon_sanitaire_prussia = parseFloat((Q.spd_r_prussia + Q.lvp_r_prussia + Q.z_r_prussia + Q.other_r_prussia + Q.kvp_r_prussia).toFixed(1));
 } else if (Q.kvp_formed && !Q.lvp_formed) {
-    Q.cordon_sanitaire = parseFloat((Q.spd_r_prussia + Q.ddp_r_prussia + Q.z_r_prussia + Q.dvp_r_prussia + Q.other_r_prussia + Q.dnvp_r_prussia + Q.kvp_r_prussia).toFixed(1));
+    Q.cordon_sanitaire_prussia = parseFloat((Q.spd_r_prussia + Q.ddp_r_prussia + Q.z_r_prussia + Q.dvp_r_prussia + Q.other_r_prussia + Q.dnvp_r_prussia + Q.kvp_r_prussia).toFixed(1));
 } else if (Q.lvp_formed && !Q.kvp_formed) {
-    Q.cordon_sanitaire = parseFloat((Q.spd_r_prussia + Q.z_r_prussia + Q.lvp_r_prussia + Q.other_r_prussia + Q.dnvp_r_prussia).toFixed(1));
+    Q.cordon_sanitaire_prussia = parseFloat((Q.spd_r_prussia + Q.z_r_prussia + Q.lvp_r_prussia + Q.other_r_prussia + Q.dnvp_r_prussia).toFixed(1));
 } else {
-    Q.cordon_sanitaire = parseFloat((Q.spd_r_prussia + Q.z_r_prussia + Q.ddp_r_prussia + Q.dvp_r_prussia + Q.other_r_prussia + Q.dnvp_r).toFixed(1));
+    Q.cordon_sanitaire_prussia = parseFloat((Q.spd_r_prussia + Q.z_r_prussia + Q.ddp_r_prussia + Q.dvp_r_prussia + Q.other_r_prussia + Q.dnvp_r).toFixed(1));
 }
 
 // Q.hitler_right_coalition_prussia = parseFloat((Q.z_r_prussia + Q.dnvp_r_prussia + Q.nsdap_r_prussia).toFixed(1));
