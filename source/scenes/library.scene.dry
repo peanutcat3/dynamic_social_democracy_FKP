@@ -439,13 +439,15 @@ go-to: menu
 
 Current relations: [+ z_relation : relationships +]
 
-<span style="color: #D3C24D;">**[+ ddp_name +]**</span> - [? if ddp_name == "DDP": *Deutsche Demokratische Partei* (German Democratic Party)?][? if ddp_name == "DStP": *Deutsche Staatspartei* (German State Party)?] - [? if ddp_name == "DDP": a left-liberal party, popular among the intelligentsia and educated middle class. Although, they have been shifting towards the right over the years. They have often been in coalitions with us. ?][? if ddp_name == "DStP": a liberal party, waning in popularity among the intelligentsia and middle class. [? if vnr_split == 0: They have shifted considerably to the right in recent years and have merged with the political wing of the mildly antisemitic Young German Order in an effort to revive their party.?][? if vnr_split == 1: They have shifted considerably to the right in recent years and have merged with the political wing of the mildly antisemitic Young German Order in an effort to revive their party. Furthermore, the Young German Order has broken off, essentially just leaving the <span style="color: #D3C24D;">DDP</span> with a different name.?] They have often been in coalitions with us. ?]
+[? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> - [? if ddp_name == "DDP": *Deutsche Demokratische Partei* (German Democratic Party)?][? if ddp_name == "DStP": *Deutsche Staatspartei* (German State Party)?] - [? if ddp_name == "DDP": a left-liberal party, popular among the intelligentsia and educated middle class. Although, they have been shifting towards the right over the years. They have often been in coalitions with us. ?][? if ddp_name == "DStP": a liberal party, waning in popularity among the intelligentsia and middle class. [? if vnr_split == 0: They have shifted considerably to the right in recent years and have merged with the political wing of the mildly antisemitic Young German Order in an effort to revive their party.?][? if vnr_split == 1: They have shifted considerably to the right in recent years and have merged with the political wing of the mildly antisemitic Young German Order in an effort to revive their party. Furthermore, the Young German Order has broken off, essentially just leaving the <span style="color: #D3C24D;">DDP</span> with a different name.?] They have often been in coalitions with us. ?]
 
 Current relations: [+ ddp_relation : relationships +]
 
 <span style="color: #C0A054;">**DVP**</span> - *Deutsche Volkspartei* (German People's Party) - a conservative-liberal party founded by Gustav Stresemann, supported by the middle classes, bourgeoisie and industrialists. The industrial and right wing of the party has been gaining noticeable influence in recent years with Stresemann's neglect of party affairs. [? if dvp_leader == "Scholz": The industrial wing of the party has succeeded in it's takeover of the party and are much less inclined to work with us.?] We have occasionally been in coalitions.
 
-Current relations: [+ dvp_relation : relationships +]
+Current relations: [+ dvp_relation : relationships +] ?]
+
+[? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span> - *Liberale Volkspartei* (Liberal People's Party) - a liberal party, popular among the bourgeois and the middle class. Formed from a merger of the two former liberal parties, the left-liberal <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and conservative-liberal <span style="color: #C0A054;">**DVP**</span>. Its predecessors have often been in coalitions with us. ?]
 
 [? if kvp_formed: <span style="color: #0087DC;">**KVP**</span> - *Konservative Volkspartei* (Conservative People's Party) - a moderate right-wing conservative nationalist party, supported by rural workers, former aristocracy, landowners and conservative Lutherans. The party seeks to emulate the Tory conservatives in <span style="color: #C8102E;">Great Britain</span>. ?]
 
@@ -481,7 +483,7 @@ go-to: menu
 
 **Paramilitary groups:**
 
-**Reichsbanner** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: The Reichsbanner is an organization affiliated with all of the democratic parties - the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Z**</span>, and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, but primarily with the <span style="color: #c00000;">**SPD**</span>. Historically, this has been an unarmed organization.
+**Reichsbanner** <span style="color: #000000;"><b>Schwarz</b></span>-<span style="color: #DD0000;"><b>Rot</b></span>-<span style="color: #FFCC00;"><b>Gold</b></span>: The Reichsbanner is an organization affiliated with all of the democratic parties - the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">**Z**</span>, and [? if lvp_formed: the former ?]<span style="color: #D3C24D;">**[+ ddp_name +]**</span>, but primarily with the <span style="color: #c00000;">**SPD**</span>. Historically, this has been an unarmed organization.
 
 Strength: [+ rb_strength +] thousand
 
@@ -582,7 +584,7 @@ on-display: {!
         "name": "KPD",
         "seats": Math.round(Q.kpd_r * 5),
     }];
-    
+
     if (Q.sapd_formed && Q.sapd_r) {
         data.push({
             "id": "sapd",
@@ -591,15 +593,15 @@ on-display: {!
             "seats": Math.round(Q.sapd_r * 5),
         });
     }
-    
+
     data = data.concat([{
         "id": "spd",
         "legend": "SPD",
         "name": "SPD",
         "seats": Math.round(Q.spd_r * 5),
     }]);
-    
-    if (Q.ddp_r) {
+
+    if (Q.ddp_r && !Q.lvp_formed) {
         data.push({
             "id": "ddp",
             "legend": Q.ddp_name,
@@ -607,7 +609,16 @@ on-display: {!
             "seats": Math.round(Q.ddp_r * 5),
         });
     }
-    
+
+    if (Q.lvp_r && Q.lvp_formed) {
+        data.push({
+            "id": "lvp",
+            "legend": "LVP",
+            "name": "LVP",
+            "seats": Math.round(Q.lvp_r * 5),
+        });
+    }
+
     data = data.concat([{
             "id": "z",
             "legend": "Center",
@@ -621,8 +632,8 @@ on-display: {!
             "seats": Math.round(3 * 5),
         }
     ]);
-    
-    if (Q.dvp_r) {
+
+    if (Q.dvp_r && !Q.lvp_formed) {
         data.push({
             "id": "dvp",
             "legend": "DVP",
@@ -630,7 +641,7 @@ on-display: {!
             "seats": Math.round(Q.dvp_r * 5),
         });
     }
-    
+
     if (Q.other_r) {
         data.push({
             "id": "other",
@@ -639,7 +650,7 @@ on-display: {!
             "seats": Math.round(Q.other_r * 5),
         });
     }
-    
+
     if (Q.kvp_formed && Q.kvp_r) {
         data.push({
             "id": "kvp",
@@ -648,7 +659,7 @@ on-display: {!
             "seats": Math.round(Q.kvp_r * 5),
         });
     }
-    
+
     data = data.concat([{
         "id": "dnvp",
         "legend": "DNVP",
@@ -662,7 +673,7 @@ on-display: {!
             "name": "DNF",
             "seats": Math.round(Q.dnf_r * 5),
         });
-    }
+}
     data = data.concat([{
         "id": "nsdap",
         "legend": "NSDAP",
@@ -729,13 +740,15 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div></td> <td>!}KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D3C24D'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!}
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!} ?]
+
+[? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div></td><td>!} LVP: {!</td><td>!} [+ lvp_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#000'> </div></td><td>!} Z: {!</td><td>!} [+ z_minus_bvp_r +]% {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#A2D8E0'> </div></td><td>!} BVP: {!</td><td>!} 3% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!}
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +]% {!</td></tr>!}
 
