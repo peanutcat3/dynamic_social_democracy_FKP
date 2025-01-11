@@ -134,7 +134,7 @@ As always, Braun remains in control of Prussia.
 @center
 title: Let the <span style="color: #000000;">Center Party</span> have their Minister-President.
 subtitle: This will grant us goodwill with the bourgeois parties.
-on-arrival: prussia_leader = "Luther" if dvp_leader == "Luther"; prussia_leader = "Stegerwald" if (dvp_leader != "Luther" and z_leader != "Stegerwald"); prussia_leader = "Brüning" if (dvp_leader != "Luther" and z_leader == "Stegerwald"); ddp_relation += 5; dvp_relation += 5; z_relation += 10
+on-arrival: prussia_leader = "Luther" if (dvp_leader == "Luther" or lvp_leader == "Luther"); prussia_leader = "Stegerwald" if (dvp_leader != "Luther" and z_leader != "Stegerwald"); prussia_leader = "Brüning" if (dvp_leader != "Luther" and z_leader == "Stegerwald"); ddp_relation += 5; dvp_relation += 5; z_relation += 10
 
 In a surprising move, Braun steps aside from from his long held position in favor of a candidate put forward by the bourgeois parties. [? if dvp_leader == "Luther": The <span style="color: #C0A054;">**DVP**</span>'s Hans Luther is selected to become the Minister-President of Prussia. ?][? if dvp_leader != "Luther": The <span style="color: #000000;">Center</span>'s [? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] is selected to become the Minister-President of Prussia. ?]
 
