@@ -12,10 +12,12 @@ tests
 - @no: no
 
 @ok
+on-arrival: secret_trigger = 0
 go-to: lvp_formed
 
 ok
 
 @no
+on-arrival: secret_trigger = 0
 
 ok
