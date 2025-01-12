@@ -32,6 +32,8 @@ Q.lvp_ideology = "Moderate";
 Q.ddp_r = 0;
 Q.dvp_r = 0;
 Q.liberal_parliament = 0;
+Q.dvp_votes = 0;
+Q.ddp_votes = 0;
 
 if (Q.in_grand_coalition_prussia) {
     Q.in_grand_coalition_prussia = 0;
