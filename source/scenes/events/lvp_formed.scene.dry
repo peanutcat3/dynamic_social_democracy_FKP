@@ -144,7 +144,7 @@ if (Q.kvp_formed && Q.lvp_formed) {
 }
 
 if (Q.kvp_formed && Q.lvp_formed) {
-    Q.center_right_coalition = parseFloat((Q.z_r + lvp_r + Q.other_r + Q.dnvp_r + Q.kvp_r).toFixed(1));
+    Q.center_right_coalition = parseFloat((Q.z_r + Q.lvp_r + Q.other_r + Q.dnvp_r + Q.kvp_r).toFixed(1));
 } else if (Q.kvp_formed && !Q.lvp_formed) {
     Q.center_right_coalition = parseFloat((Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r + Q.kvp_r).toFixed(1));
 } else if (!Q.kvp_formed && Q.lvp_formed) {
