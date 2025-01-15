@@ -1,6 +1,6 @@
 title: <span style="color: #D3C24D;">**DDP**</span> Reformation
 subtitle: The <span style="color: #D3C24D;">German Democratic Party</span> is becoming the <span style="color: #D3C24D;">German State Party</span>.
-view-if: year == 1930 and month >= 7
+view-if: year == 1930 and month >= 7 and not lvp_formed
 on-arrival: {!
 Q.dstp_formation_points = 0;
 if (Q.ddp_votes < 3.5) {
@@ -11,6 +11,13 @@ if (Q.next_election_time - Q.time < 6) {
 }
 if (Q.dvp_ideology == "Right") {
     Q.dstp_formation_points += 1
+}
+if (Q.ddp_relation < 50) {
+    Q.dstp_formation_points += 1
+    Q.ddp_right += 2;
+}
+if (Q.ddp_relation >= 50) {
+    Q.ddp_left += 1;
 }
 !}
 max-visits: 1
@@ -28,7 +35,7 @@ Pessimism is a widespread feeling within the party, leading to mounting pressure
 - @status_quo: The negotiations fail.
 
 @dstp_formed
-view-if: dstp_formation_points >= 2
+view-if: dstp_formation_points >= 3
 on-arrival: dstp_formed = 1; ddp_name = "DStP"; liberal_cooperation -= 5; bourgeois_cooperation -= 5; new_middle_ddp -= 3; old_middle_ddp += 3; ddp_right += 2; ddp_relation -= 5
 face-image: img/dstp.jpg
 
@@ -37,7 +44,7 @@ This has come as a complete shock to those inside and outside the party, for the
 In this agreement, the <span style="color: #D3C24D;">**DDP**</span> has promised a "extension of the party to the right", which can only spell trouble for our closest bourgeois ally. Cracks are already beginning to show within this arrangement, it is only a matter of time before this experiment falls apart.
 
 @status_quo
-view-if: dstp_formation_points < 2
+view-if: dstp_formation_points < 3
 on-arrival: dstp_formed = 0; liberal_cooperation += 3 if stolper_program_adopted; bourgeois_cooperation += 2 if stolper_program_adopted
 face-image: img/ddp_2.jpg
 

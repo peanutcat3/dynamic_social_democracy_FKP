@@ -25,7 +25,7 @@ face-image: img/portraits/OskarHergt.jpg
 Despite some dissent from the more <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> forces within the <span style="color: #3E88B3;">**DNVP**</span>, the congress goes through without incident. The willingness of their leadership to negotiate with the <span style="color: #7A3C00;">**NSDAP**</span> is certainly concerning.
 
 @christiansocial
-on-arrival: dnvp_leader = "Lambach"; workers_dnvp += 20; workers_dnvp += 5 if unions_independent; workers_spd -= 5; workers_kpd -= 5; z_workers -= 5 if stegerwald_path; labor_dissent += 10; old_middle_dnvp -= 5; old_middle_dnf += 3; new_middle_dnvp += 2; new_middle_other -= 2; workers_other -= 4; rural_dnvp -= 6; rural_dnf += 3; rural_dvp += 3; old_middle_dvp += 4; new_middle_dvp += 2; ddp_right += 1; dvp_right += 2
+on-arrival: dnvp_leader = "Lambach"; workers_dnvp += 20; workers_dnvp += 5 if unions_independent; workers_spd -= 5; workers_kpd -= 5; z_workers -= 5 if stegerwald_path; labor_dissent += 10; old_middle_dnvp -= 5; old_middle_dnf += 3; new_middle_dnvp += 2; new_middle_other -= 2; workers_other -= 4; rural_dnvp -= 6; rural_dnf += 3; rural_dvp += 3; old_middle_dvp += 4; new_middle_dvp += 2; rural_lvp += 3; old_middle_lvp += 4; new_middle_lvp += 2; ddp_right += 1; dvp_right += 2; lvp_right += 2
 face-image: img/dnvpposter.jpg
 
 The exodus of workers from our support base has greatly strengthened the Christian Socialists within the <span style="color: #3E88B3;">**DNVP**</span>, who seek to take advantage of our alienation of the trade unions. 
@@ -33,7 +33,7 @@ The exodus of workers from our support base has greatly strengthened the Christi
 Walther Lambach has been elected leader of the <span style="color: #3E88B3;">**DNVP**</span>, a trade union leader and the center of discourse within their party in the last congress. He claims a middle ground between socialism and capitalism, and to reconcile capital and labor, it remains to be seen how his leadership would impact the political landscape.
 
 @youngconservative
-on-arrival: dnvp_leader = "Treviranus"; true_christian_democracy = 1; rural_dnf += 3; old_middle_dnf += 3; rural_other -= 3; old_middle_other -= 3; new_middle_other -= 3; new_middle_dnvp += 3; workers_dnvp += 1; catholics_dnvp += 3; catholics_other -= 3; pro_republic += 3; dvp_left += 2; ddp_left += 1
+on-arrival: dnvp_leader = "Treviranus"; true_christian_democracy = 1; rural_dnf += 3; old_middle_dnf += 3; rural_other -= 3; old_middle_other -= 3; new_middle_other -= 3; new_middle_dnvp += 3; workers_dnvp += 1; catholics_dnvp += 3; catholics_other -= 3; pro_republic += 3; dvp_left += 2; ddp_left += 1; lvp_left += 2
 face-image: img/portraits/Treviranus.jpg
 
 The reluctance for the party around Hergt and Westarp to fully commit to a democratic party has been increasingly under fire from the Christian Socialists and "Young Conservatives", and the failure for the referendum against the Young Plan to reach the signature threshold has tipped the balance in their favor. 

@@ -10,7 +10,7 @@ max-visits: 1
 
 Following the collapse of the Grand coalition, President Hindenburg has appointed Heinrich Brüning of the <span style="color: #000000;">Center Party</span> in a government supported by bourgeois forces. However, they cannot survive without the support from us, considering that the <span style="color: #7A3C00;">**NSDAP**</span> won't participate.
 
-Brüning, has reorganized his cabinet to include the parties to the left of the <span style="color: #C0A054;">**DVP**</span>, such as the <span style="color: #b8996f;">**WP**</span> and <span style="color: #3E88B3;">**DNVP**</span>, to create [? if was_in_center_right_coalition == 0:a?][? if was_in_center_right_coalition == 1:another?] center-right coalition. We are left with the choice to "tolerate" the government to prevent the gains of extremists within the Reichstag or vote to oust Brüning for new elections.
+Brüning, has reorganized his cabinet to include the parties to the right of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], such as the <span style="color: #b8996f;">**WP**</span> and <span style="color: #3E88B3;">**DNVP**</span>, to create [? if was_in_center_right_coalition == 0:a?][? if was_in_center_right_coalition == 1:another?] center-right coalition. We are left with the choice to "tolerate" the government to prevent the gains of extremists within the Reichstag or vote to oust Brüning for new elections.
 
 - @vote_no
 - @vote_yes
@@ -49,6 +49,6 @@ The right-wing coalition has fallen. New elections have been set for [+ next_ele
 title: It does not matter what we do.
 subtitle: Brüning will form a center-right coalition.
 view-if: center_right_coalition >= 50
-on-arrival: spd_in_government = 0; spd_toleration = 0; in_grand_coalition = 0; in_center_right_coalition = 1; in_right_coalition = 0; ddp_relation -= 3; dvp_relation -= 3; z_relation -= 3; old_middle_dnf -= 2; ddp_right += 1
+on-arrival: spd_in_government = 0; spd_toleration = 0; in_grand_coalition = 0; in_center_right_coalition = 1; in_right_coalition = 0; ddp_relation -= 3; dvp_relation -= 3; z_relation -= 3; lvp_relation -= 3; old_middle_dnf -= 2; ddp_right += 1
 
 The bourgeois has survived without our toleration, leaving us as an opposition party. 

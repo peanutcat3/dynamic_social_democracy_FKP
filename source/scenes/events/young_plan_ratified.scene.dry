@@ -3,15 +3,15 @@ new-page: true
 subtitle: They don't need us anymore.
 tags: event
 view-if: year = 1930 and month >= 3 and in_grand_coalition == 1
-on-arrival: dvp_right += 3; ddp_right += 1; dvp_relation -= 5
+on-arrival: dvp_right += 3; ddp_right += 1; dvp_relation -= 5; lvp_right += 3; lvp_relation -= 5
 max-visits: 1
 
 = Young Plan Ratified
 
-The Young Plan is finally ratified, and with that, the main reason President Hindenburg and the <span style="color: #C0A054;">**DVP**</span> has been keeping us around is gone. Hindenburg has notified Chancellor [+ chancellor +] that he expects a sweeping reform of German finances soon, a challenging task in a government like this.
+The Young Plan is finally ratified, and with that, the main reason President Hindenburg and the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: bourgeois right?] has been keeping us around is gone. Hindenburg has notified Chancellor [+ chancellor +] that he expects a sweeping reform of German finances soon, a challenging task in a government like this.
 
 - @joever: It's joever...
 
 @joever
 
-The <span style="color: #C0A054;">**DVP**</span> may bring up the unemployment insurance issue again.
+The [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] may bring up the unemployment insurance issue again.

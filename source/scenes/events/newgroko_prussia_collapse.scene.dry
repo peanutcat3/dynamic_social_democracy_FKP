@@ -59,7 +59,7 @@ unavailable-subtitle: <span style="color: #000000;">Z</span> + [? if not lvp_for
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> ([+ center_right_coalition_prussia +]%)
 view-if: dnvp_ideology == "Moderate" and center_right_coalition_prussia >= 50 and dnf_formed and right_coalition_prussia < 50 and not lvp_formed
 choose-if: not (year = 1929 and month >= 7)
-on-arrival: in_center_right_coalition_prussia = 1; prussia_leader = "Stegerwald"; prussia_leader = "Brüning" if z_leader == "Stegerwald"; new_middle_spd -= 4; ddp_right += 1; ddp_cohesion -= 1; dvp_right += 1; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; prussian_police_loyalty -= 0.06; prussian_police_strength -= 8; pro_republic -= 3; ddp_relation -= 4; z_relation -= 4; dvp_relation -= 4
+on-arrival: in_center_right_coalition_prussia = 1; prussia_leader = "Stegerwald"; prussia_leader = "Brüning" if z_leader == "Stegerwald"; new_middle_spd -= 4; ddp_right += 1; ddp_cohesion -= 1; dvp_right += 1; lvp_right += 1; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; prussian_police_loyalty -= 0.06; prussian_police_strength -= 8; pro_republic -= 3; ddp_relation -= 4; z_relation -= 4; dvp_relation -= 4; lvp_relation -= 4
 
 A center-right coalition is formed featuring an broad array of parties to the right of us. They will begin undoing years of reform and democratization that we fought hard to achieve and will let <span style="color: #3E88B3;">right</span>-<span style="color: #7A3C00;">wing</span> paramilitaries like the <span style="color: #3E88B3;">Stahlhelm</span> and the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> run free.
 
@@ -73,7 +73,7 @@ subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #70
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition_prussia +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?] [? if president != "Braun": Hindenburg will perform a *Reichsexekution* upon our government. ?] [? if reformist_strength >= left_strength: Our own Prussian party has ruled out this possibility. ?]
 view-if: left_coalition_prussia >= 50
 choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3 and president == "Braun" and left_strength >= reformist_strength
-on-arrival: in_left_front_prussia = 1; prussia_leader = "Rosenfeld"; reichswehr_loyalty -= 0.05; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 2; liberal_cooperation += 5; bourgeois_cooperation += 10; kpd_relation += 10; z_relation -= 4; ddp_relation -= 4; dvp_relation -= 8; coup_progress += 2; coup_progress += 1 if in_left_front; capital_strike_progress += 2; capital_strike_progress += 1 if in_left_front; reformist_dissent += 25; reformist_strength -= 15; left_dissent -= 15; left_strength += 15; prussian_police_loyalty -= 0.1; spd_prussia = 1
+on-arrival: in_left_front_prussia = 1; prussia_leader = "Rosenfeld"; reichswehr_loyalty -= 0.05; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 2; lvp_right += 3; liberal_cooperation += 5; bourgeois_cooperation += 10; kpd_relation += 10; z_relation -= 4; ddp_relation -= 4; dvp_relation -= 8; lvp_relation -= 8; coup_progress += 2; coup_progress += 1 if in_left_front; capital_strike_progress += 2; capital_strike_progress += 1 if in_left_front; reformist_dissent += 25; reformist_strength -= 15; left_dissent -= 15; left_strength += 15; prussian_police_loyalty -= 0.1; spd_prussia = 1
 
 Somehow, surprisingly, the left coalition is successfully formed, without appointing a <span style="color: #700000;">communist</span> as Minister-President. The consensus choice for Minister-President, accepted by the <span style="color: #c00000;">**SPD**</span>, <span style="color: #700000;">**KPD**</span>, is[? if left_split == 1:&nbsp;<span style="color: #9B0000;">**SAPD**</span> member?] Kurt Rosenfeld, who [? if left_split == 0: belongs?][? if left_split == 1: belonged?] to the left faction of the <span style="color: #c00000;">**SPD**</span>, and had a history of defending <span style="color: #700000;">**KPD**</span> members through his work..
 
@@ -83,12 +83,12 @@ In response to the <span style="color: #700000;">**KPD**</span>'s entrance into 
 
 @progressive_coalition
 title: Is a progressive coalition possible?
-view-if: ddp_relation >= 60 and ddp_ideology == "Left" and (kpd_relation >= 60 and kpd_leader == "Thälmann") or (kpd_relation >= 40 and kpd_leader == "Conciliators")
+view-if: ddp_relation >= 60 and ddp_ideology == "Left" and ((kpd_relation >= 60 and kpd_leader == "Thälmann") or (kpd_relation >= 40 and kpd_leader == "Conciliators")) and not lvp_formed
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">SAPD</span>?] ([+ progressive_coalition_prussia +]%) - Secret mode needs to be enabled.
 choose-if: secret_mode = 1
 on-arrival: workers_spd *= 100; workers += 1000; super_secret_mode = 1
 
-Data miners are heartless creatures
+Super secret mode has been enabled.
 
 @new_elections
 on-arrival: pro_republic -= 5; rural_spd -= 4; new_middle_spd -= 4; old_middle_spd -= 4; workers_spd -= 3; rural_nsdap += 4; new_middle_nsdap += 4; old_middle_nsdap += 4; workers_nsdap += 3

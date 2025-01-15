@@ -26,6 +26,8 @@ Q.unemployed_nsdap += 1;
 
 Q.dnf_r = Math.round((Q.dnvp_r / 2) * 10) / 10 - 1;
 Q.dnvp_r = Math.round((Q.dnvp_r - Q.dnf_r) * 10) / 10 + 1;
+Q.dnf_r_prussia = Math.round((Q.dnvp_r_prussia / 2) * 10) / 10 - 3;
+Q.dnvp_r_prussia = Math.round((Q.dnvp_r_prussia - Q.dnf_r_prussia) * 10) / 10 + 3;
 Q.dnf_relation = 5
 
 Q.old_workers_dnf_display = 0

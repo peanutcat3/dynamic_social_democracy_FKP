@@ -18,7 +18,7 @@ The "unity of the no" against Marxism has been losing its force over the years, 
 go-to: hugenbergremoval if (young_plan_signatures < 10 and was_in_right_coalition == 0) or (young_plan_signatures >= 10 and was_in_right_coalition == 1); completednvpsplit if young_plan_signatures >= 10 and was_in_center_right_coalition == 0 and not stegerwald_path; completednvpsplit_stegerwald if young_plan_signatures >= 10 and was_in_center_right_coalition == 0 and stegerwald_path
 
 @hugenbergremoval
-on-arrival: dnvp_leader = "Treviranus"; dnvp_ideology = "Moderate"; hugenberg_removed = 1; dnf_decay_timer += 12; rural_other -= 5; rural_dnvp += 5; old_middle_other -= 5; old_middle_dnvp += 5; new_middle_other -= 3; new_middle_dnvp += 3; workers_other -= 1; workers_dnvp += 1; pro_republic += 5; dvp_left += 1; ddp_left += 1
+on-arrival: dnvp_leader = "Treviranus"; dnvp_ideology = "Moderate"; hugenberg_removed = 1; dnf_decay_timer += 12; rural_other -= 5; rural_dnvp += 5; old_middle_other -= 5; old_middle_dnvp += 5; new_middle_other -= 3; new_middle_dnvp += 3; workers_other -= 1; workers_dnvp += 1; pro_republic += 5; dvp_left += 1; ddp_left += 1; lvp_left += 1
 go-to: dnf_formed_1929_2
 face-image: img/portraits/Treviranus.jpg
 

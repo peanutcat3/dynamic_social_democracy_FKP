@@ -105,8 +105,9 @@ Q.kpd_relation = 25;
 Q.ddp_relation = 60;
 Q.dvp_relation = 35;
 // DNVP and NSDAP are invariably hostile
-Q.DNVP_relation = 10;
-Q.NSDAP_relation = 0;
+Q.dnvp_relation = 10;
+Q.nsdap_relation = 0;
+Q.lvp_relation = 0;
 
 Q.kpd_leader = "Thälmann";
 Q.z_leader = "Marx";

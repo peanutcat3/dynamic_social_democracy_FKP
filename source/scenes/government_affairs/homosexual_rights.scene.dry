@@ -24,7 +24,7 @@ subtitle: Paragraph 175 currently criminalizes <span style="color: red;">ho</spa
 unavailable-subtitle: We do not have majority support for this policy.
 view-if: repealed_175 == 0
 choose-if: progressive_coalition >= 50 
-on-arrival: repealed_175 = 1; homosexual_rights += 1; z_relation -= 5; kpd_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_spd -= 4; ddp_left += 1; ddp_cohesion -= 1
+on-arrival: repealed_175 = 1; homosexual_rights += 1; z_relation -= 5; kpd_relation += 4*(1-dissent); ddp_relation += 4*(1-dissent); coalition_dissent += 1 if (in_grand_coalition or in_weimar_coalition); catholics_spd -= 4; ddp_left += 1; ddp_cohesion -= 1
 
 Together with the progressives in the <span style="color: #700000;">**KPD**</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, we have effectively decriminalized <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">xu</span><span style="color: purple;">al</span> sex in Germany. Persecution of <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">xu</span><span style="color: purple;">al</span> for their private acts will stop, as long as the police are loyal to the republic.
 

@@ -9,9 +9,9 @@ card-image: img/braun.jpg
 
 = Prussian Affairs
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the <span style="color: #000000;">Center</span>, [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?], <span style="color: #C0A054;">**People's**</span> parties, along with a plethora of minor parties. It is a democratic state government in Germany, led by the able Otto Braun.
+Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the <span style="color: #000000;">Center</span>, [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?], [? if not lvp_formed:<span style="color: #C0A054;">**People's**</span> parties, along with?][? if lvp_formed:and?] a plethora of minor parties. It is a democratic state government in Germany, led by [? if prussia_leader == "Braun": the able Otto Braun?][? if prussia_leader == "Stegerwald": Adam Stegerwald?][? if prussia_leader == "Brüning": Heinrich Brüning?][? if prussia_leader == "Luther": Hans Luther?].
 
-We can enact policies in Prussia. The inclusion of the <span style="color: #C0A054;">**DVP**</span> and the obstructionists in the bourgeois parties will mitigate our effect.
+We can enact policies in Prussia. The inclusion of [? if not lvp_formed: the <span style="color: #C0A054;">**DVP**</span> and?] the obstructionists in the bourgeois parties will mitigate our effect.
 
 - @police_loyalty: Bolster the loyalty of the police.
 - @police_strength: Recruit additional police.
@@ -44,17 +44,17 @@ on-arrival: prussian_police_strength += 10
 We have increased the size of the Prussian police.
 
 @bureaucracy
-on-arrival: prussian_police_loyalty += 0.02; nationalism -= 1; democratization += 0.5; pro_republic += 2*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 4; new_middle_spd += 2*(1-dissent) if democratization >= 5; coup_progress += 0.5; ddp_left += 0.5; dvp_left += 0.5
+on-arrival: prussian_police_loyalty += 0.02; nationalism -= 1; democratization += 0.5; pro_republic += 2*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 4; new_middle_spd += 2*(1-dissent) if democratization >= 5; coup_progress += 0.5; ddp_left += 0.5; dvp_left += 0.5; lvp_left += 0.5
 
 The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 
-The <span style="color: #C0A054;">**DVP**</span> and other right-wing parties are filling the bureaucracy with their own authoritarian and industrialist sympathizers.
+The [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: right <span style="color: #FFCC00;">**LVP**</span>?] and other right-wing parties are filling the bureaucracy with their own authoritarian and industrialist sympathizers.
 
 @ban_sa
 view-if: nazi_urgency >= 4 and sa_banned == 0
 on-arrival: sa_strength *= 0.94; sa_strength *= 0.82 if prussian_police_loyalty >= 0.75; sa_banned = 1; prussian_police_loyalty -= 0.1; sa_militancy -= 0.02; sa_ban_timer = 6; coup_progress -= 2 if coup_progress >= 6
 
-As it turns out, the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has many allies in the police and bureaucracy, such as in the <span style="color: #C0A054;">**DVP**</span>. Our relationship with the police weakens, and the <span style="color: #7A3C00;">**SA**</span> can still organize illegally, right under the police's noses. [? if prussian_police_loyalty >= 0.75 : Nevertheless, the <span style="color: #7A3C00;">**SA**</span> is substantially weakened by our ban. ?] 
+As it turns out, the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has many allies in the police and bureaucracy, such as in the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: right <span style="color: #FFCC00;">**LVP**</span>?]. Our relationship with the police weakens, and the <span style="color: #7A3C00;">**SA**</span> can still organize illegally, right under the police's noses. [? if prussian_police_loyalty >= 0.75 : Nevertheless, the <span style="color: #7A3C00;">**SA**</span> is substantially weakened by our ban. ?] 
 
 [? if coup_progress >= 6: There are reports of an imminent coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have disrupted some of these plans, but the threat is still present. ?]
 
@@ -66,7 +66,7 @@ The <span style="color: #7A3C00;">**SA**</span> is no longer banned. They immedi
 
 @ban_sh
 subtitle: This will certainly destroy our government.
-on-arrival: sh_strength *= 0.9; sh_strength *= 0.75 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 10; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; sh_ban_timer = 6; coalition_dissent += 2 if in_grand_coalition; sh_coup_progress = coup_progress; coup_progress -= 1 if coup_progress >= 6
+on-arrival: sh_strength *= 0.9; sh_strength *= 0.75 if prussian_police_loyalty >= 0.75; sh_banned = 1; dvp_relation -= 10; lvp_relation -= 4; prussian_police_loyalty -= 0.1; coalition_dissent += 1 if spd_in_government = 1 and in_grand_coalition = 1 and president = "Hindenburg"; sh_ban_timer = 6; coalition_dissent += 2 if in_grand_coalition; sh_coup_progress = coup_progress; coup_progress -= 1 if coup_progress >= 6
 view-if: sh_banned == 0
 call: set_next_election_time_prussia
 
@@ -83,7 +83,7 @@ The <span style="color: #3E88B3;">**Stahlhelm**</span> is no longer banned.
 
 @ban_rfb
 view-if: communist_coalition < 3 and rfb_banned = 0
-on-arrival: kpd_relation -= 15; rfb_strength -= 75; rfb_banned = 1; communist_coalition -= 1; z_relation += 5; dvp_relation += 5; prussian_police_loyalty += 0.1; dvp_left += 1; ddp_left += 0.5
+on-arrival: kpd_relation -= 15; rfb_strength -= 75; rfb_banned = 1; communist_coalition -= 1; z_relation += 5; dvp_relation += 5; lvp_relation += 5; prussian_police_loyalty += 0.1; dvp_left += 1; ddp_left += 0.5; lvp_left += 1
 
 The ban is enthusiastically carried out by the police, perhaps too enthusiastically. The <span style="color: #700000;">Communists</span> take this as one more reason why the <span style="color: #c00000;">Socialists</span> are traitors to the <span style="color: #9B0000;">left</span>. However, the <span style="color: #000000;">moderate</span> and <span style="color: #C0A054;">center-right</span> parties approve, as do the police.
 
@@ -94,17 +94,17 @@ on-arrival: rfb_banned = 0; rfb_strength += 50; prussian_police_loyalty -= 0.1
 The <span style="color: #700000;">Communist</span> <span style="color: #700000;">**RFB**</span> is no longer banned.
 
 @negotiate_concordat
-subtitle: The <span style="color: #C0A054;">**DVP**</span> won't like this.
+subtitle: The [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] won't like this.
 view-if: (prussian_concordat_progress < 2 and z_leader != "Kaas") or (prussian_concordat_progress < 1 and z_leader = "Kaas")
-on-arrival: prussian_concordat_progress += 1; z_relation += 2*(1-dissent); dvp_relation -= 1
+on-arrival: prussian_concordat_progress += 1; z_relation += 2*(1-dissent); dvp_relation -= 1; lvp_relation -= 1
 
 We are making progress towards negotiating a concordat between Prussia and the Catholic church. [? if z_leader = "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center</span> Party uses his connections to speed up negotiations. ?]
 
 @sign_concordat
-subtitle: The <span style="color: #C0A054;">**DVP**</span> won't like this.
+subtitle: The [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] won't like this.
 view-if: (prussian_concordat_progress >= 2 and not z_leader = "Kaas") or (prussian_concordat_progress >= 1 and z_leader = "Kaas") and prussian_concordat = 0
-on-arrival: prussian_concordat = 1; z_relation += 5; catholics_spd += 3*(1-dissent); catholics_dnvp -= 2 if dnvp_ideology == "Radical"; dvp_relation -= 3; ddp_cohesion -= 0.5
+on-arrival: prussian_concordat = 1; z_relation += 5; catholics_spd += 3*(1-dissent); catholics_dnvp -= 2 if dnvp_ideology == "Radical"; dvp_relation -= 3; lvp_relation -= 3; ddp_cohesion -= 0.5
 
 We have signed a Concordat between the Free State of Prussia and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Prussia. This sets the stage for the negotiation of a national Concordat covering all of Germany.
 
-[? if dnvp_ideology == "Radical": The catholic members of the <span style="color: #3E88B3;">**DNVP**</span> in Prussia are in open conflict with their leadership over the vote, with many leaving the party. ?] The <span style="color: #C0A054;">**DVP**</span> and Protestant parties has gotten into disagreements with the <span style="color: #000000;">Center</span>.
+[? if dnvp_ideology == "Radical": The catholic members of the <span style="color: #3E88B3;">**DNVP**</span> in Prussia are in open conflict with their leadership over the vote, with many leaving the party. ?] The [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] and Protestant parties has gotten into disagreements with the <span style="color: #000000;">Center</span>.
