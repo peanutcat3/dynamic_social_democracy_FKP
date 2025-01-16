@@ -763,7 +763,7 @@ Surprisingly, the <span style="color: #000000;">Center</span> agrees to a reform
 
 The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
 
-Hindenburg might object to this coalition, and may perform a *Reichsexekution* on our Prussian government, if we were to become too radical in our actions.
+[? if president == "Hindenburg": Hindenburg might object to this coalition, and may perform a *Reichsexekution* on our Prussian government, if we were to become too radical in our actions.?]
 
 - @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
@@ -778,7 +778,7 @@ We have kicked out the <span style="color: #C0A054;">**DVP**</span> from the gov
 
 The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
 
-Hindenburg might object to this coalition, and may perform a *Reichsexekution* on our Prussian government, if we were to become too radical in our actions.
+[? if president == "Hindenburg": Hindenburg might object to this coalition, and may perform a *Reichsexekution* on our Prussian government, if we were to become too radical in our actions.?]
 
 - @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 

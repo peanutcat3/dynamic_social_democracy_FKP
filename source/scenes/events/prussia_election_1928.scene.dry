@@ -684,7 +684,7 @@ choose-if: (((kpd_relation >= 65 and kpd_leader == "Thälmann") or (kpd_relation
 
 Could we really form a coalition that included both the <span style="color: #000000;">Center</span> and the <span style="color: #700000;">**Communists**</span>? It seems like an absurd concept, but given our good relationships with both sides, it is not an impossibility.
 
-Hindenburg might object to this, and may perform a *Reichsexekution* on our government, if such a coalition is formed.
+[? if president == "Hindenburg": Hindenburg might object to this, and may perform a *Reichsexekution* on our government, if such a coalition is formed.?]
 
 - @popular_front_2: Form the Popular Front!
 - @great_popular_front: Form the Popular Front!
