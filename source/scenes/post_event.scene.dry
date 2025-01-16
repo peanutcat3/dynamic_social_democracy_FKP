@@ -595,7 +595,7 @@ if (Q.in_grand_coalition == 1 && Q.dvp_relation >= 50 && !Q.lvp_formed) {
 if (
     Q.year == 1928 && 
     Q.month == 11 && 
-    !Q.lvp_formed
+    !Q.lvp_formed &&
     (
         Q.in_grand_coalition == 0 || 
         (
