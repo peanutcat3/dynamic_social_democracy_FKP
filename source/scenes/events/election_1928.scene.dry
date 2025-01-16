@@ -1934,7 +1934,7 @@ Gustav Radbruch of the <span style="color: #c00000;">**SPD**</span> has been app
 
 @foreign
 title: Foreign Ministry
-subtitle: [? if stresemann_dead = 0: This is usually the domain of Gustav Stresemann of the <span style="color: #C0A054;">**DVP**</span>?][? if stresemann_dead = 1: This is usually the domain of the <span style="color: #C0A054;">**DVP**</span> ?].
+subtitle: [? if stresemann_dead = 0: This is usually the domain of Gustav Stresemann of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?][? if stresemann_dead = 1: This is usually the domain of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] ?].
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
