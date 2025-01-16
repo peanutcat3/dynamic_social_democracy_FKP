@@ -1,0 +1,19 @@
+title: First <span style="color: #FFCC00;">**LVP**</span> Party Congress
+subtitle: The future of this new party will be decided here.
+view-if: year == 1928 and month >= 11 and liberal_cooperation >= 5 and liberal_parliament == 1
+max-visits: 1
+tags: event
+face-image: img/weimar_coalition.jpg
+new-page: true
+
+= First <span style="color: #FFCC00;">**LVP**</span> Party Congress
+
+placeholder
+
+- @luther: Hans Luther is elected.
+
+@luther
+on-arrival: lvp_relation += 5; lvp_left += 3
+face-image: img/portraits/luther.jpg
+
+yep
