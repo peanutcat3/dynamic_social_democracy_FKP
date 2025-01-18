@@ -209,6 +209,14 @@ if (Q.month_actions >= 1) {
         Q.new_middle_other += 1;
         Q.rural_other += 1;
     }
+    if (Q.ddp_votes < 1) {
+        Q.old_middle_ddp += 1;
+        Q.new_middle_ddp += 1;
+        Q.rural_ddp += 0.5;
+    }
+    if (Q.spd_votes < 20) {
+        Q.workers_spd += 1
+    }
     ////////////////////////// annual support changes
     if (Q.year == 1929) {
         Q.unemployed += 3/12;
