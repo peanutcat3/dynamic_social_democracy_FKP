@@ -202,7 +202,6 @@ if (Q.month_actions >= 1) {
         }
         if (Q.workers_spd_normalized > 40) {
             Q.workers_spd -= 1;
-            Q.workers_nsdap += 1;
         }
     }
     ////////////////////////// annual support changes
