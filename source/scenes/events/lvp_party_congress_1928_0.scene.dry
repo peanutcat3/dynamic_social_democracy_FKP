@@ -5,7 +5,6 @@ max-visits: 1
 tags: event
 face-image: img/weimar_coalition.jpg
 new-page: true
-go-to: lvp_formed
 
 = First <span style="color: #FFCC00;">**LVP**</span> Party Congress
 
@@ -16,6 +15,7 @@ The <span style="color: #FFCC00;">**LVP**</span>'s inaugural congress will play 
 - @luther: The party votes...
 
 @luther
+call: lvp_formed
 on-arrival: lvp_relation += 5; lvp_left += 3; new_middle_dnvp += 2; old_middle_dnvp += 2
 face-image: img/portraits/luther.jpg
 
