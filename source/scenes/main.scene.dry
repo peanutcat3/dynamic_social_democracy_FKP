@@ -9,7 +9,7 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
-if (Q.year == 1928 && liberal_parliament == 1) {
+if (Q.year == 1928 && Q.liberal_parliament == 1) {
     Q.flavour_0_trigger += 1;
     if (flavour_0_trigger == 1) {
         Q.flavour_0_trigger_time = Q.time;
@@ -302,7 +302,7 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
-if (Q.year == 1928 && liberal_parliament == 1) {
+if (Q.year == 1928 && Q.liberal_parliament == 1) {
     Q.flavour_0_trigger += 1;
     if (flavour_0_trigger == 1) {
         Q.flavour_0_trigger_time = Q.time;
