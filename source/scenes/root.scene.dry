@@ -704,6 +704,7 @@ Q.wtb_rally = 0;
 Q.braun_resign = 0;
 Q.secret_mode = 0;
 Q.secret_trigger = 0;
+Q.strife = 0;
 
 // flavour text stuff
 Q.flavour_1_trigger = 0;
