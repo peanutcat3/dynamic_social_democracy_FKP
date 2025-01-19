@@ -9,12 +9,6 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
-if (Q.year == 1928 && Q.liberal_parliament == 1) {
-    Q.flavour_0_trigger += 1;
-    if (Q.flavour_0_trigger == 1) {
-        Q.flavour_0_trigger_time = Q.time + 2;
-    }
-}
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5) {
     Q.flavour_1_trigger += 1;
     if (Q.flavour_1_trigger == 1) {
@@ -84,11 +78,15 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1928 and n_elections == 1 and next_election_time - time = 2: Our calls for new elections just after the last one have pushed the liberal parties closer together, in order to not face any further decline. A new Liberal Association has emerged coordinating the efforts of the two parties and seems to be the prelude to the founding of a new liberal party, but it's not certain if both parties would fully agree. <br><br> The idea of a liberal parliamentary faction has gained considerable traction with both parties and they are likely to negotiate as a single bloc after the election. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1928 and flavour_0_trigger >= 1 and flavour_0_trigger_time == time: The quest towards liberal unity has advanced, with the Liberal Association's influence growing within local chapters of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> chapters on the local level. In the liberal stronghold of Baden-Württemberg, a merger between the two parties is already underway, even without formal approval from their national leadership. ?]{!</p>!}
+{!<p class="other">!}[? if lvp_merger_timer == 5: The quest towards liberal unity has advanced, with the Liberal Association's influence growing within local chapters of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> chapters on the local level. In the liberal stronghold of Baden-Württemberg, a merger between the two parties is already underway, even without formal approval from their national leadership. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1928 and month = 8 : The Kellogg–Briand Pact has been signed by [+ foreign_minister +], promising not to use war to resolve disputes or conflicts in the future. During [+ foreign_minister +]'s trip to Paris, there has been success in bringing the <span style="color: #002654;">French</span> to consider withdrawing from the Rhineland early and to agree to another review of our reparations by foreign experts. <br><br> Wilhelm Marx, leader of the <span style="color: #000000;">Center Party</span>, former chancellor, and presidential candidate, has resigned following his party's poor performance in the last election. A new leader is scheduled to be elected this December. <br><br> The <span style="color: #750e0e;">Soviet Union</span> has unveiled their first "Five-Year Plan" to rapidly industrialize their country. <br><br> We have won second place in the Summer Olympics in Amsterdam! ?] {!</p>!}
 
 {!<p class="dnvp">!}[? if year = 1928 and month = 8 and pro_republic_7 < 65 and not (pro_republic_7 >= 57 and in_right_coalition and in_right_coalition_prussia) and not ((pro_republic_7 >= 59 and in_right_coalition) and not (pro_republic_7 >= 62 and in_right_coalition_prussia)): Lambach has been reinstated to the <span style="color: #3E88B3;">**DNVP**</span> and their Reichstag delegation following pressure from the Christian labor movement and white-collar organizations. [? if in_right_coalition or in_right_coalition_prussia = 1: <br><br> Hugenberg's attempts to increase his influence within the party are complicated by the reality that if he were to bring down the current [? if in_right_coalition_prussia and in_right_coalition: Prussian and federal ?][? if in_right_coalition_prussia and not in_right_coalition: Prussian ?][? if in_right_coalition and not in_right_coalition_prussia: federal ?]coalition when elected, the only viable alternative for a parliamentary majority would be a government led by us. ?] ?]{!</p>!}
+
+{!<p class="other">!}[? if lvp_merger_timer == 4: Stresemann and other high-ranking party officials, including the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s Koch-Weser, have been holding discreet meetings over the past few weeks to discuss a potential merger between their two parties. Meanwhile, numerous liberal youth organizations have been created with the goal of fostering cooperation between <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> for a united middle party. ?]{!</p>!}
+
+{!<p class="other">!}[? if lvp_merger_timer == 3: Those on the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s left wing, who remain firmly opposed to a merger of the two parties, are being forced out of the party or sidelined to clear the path for unification. However, the right wing of the <span style="color: #C0A054;">**DVP**</span> holds significant sway over the party and the negotiations, prompting Stresemann to call for an emergency party congress to resolve the issue. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1928 and month = 9 : After the poor performance of the <span style="color: #7A3C00;">**NSDAP**</span> in the recent election, Adolf Hitler's ban on public speaking has been lifted. ?] {!</p>!}
 
@@ -302,12 +300,6 @@ if (Q.advisor_action_timer <= 0) {
 } else {
     Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
 }
-if (Q.year == 1928 && Q.liberal_parliament == 1) {
-    Q.flavour_0_trigger += 1;
-    if (Q.flavour_0_trigger == 1) {
-        Q.flavour_0_trigger_time = Q.time + 2;
-    }
-}
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5) {
     Q.flavour_1_trigger += 1;
     if (Q.flavour_1_trigger == 1) {
@@ -380,11 +372,15 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1928 and n_elections == 1 and next_election_time - time = 2: Our calls for new elections just after the last one have pushed the liberal parties closer together, in order to not face any further decline. A new Liberal Association has emerged coordinating the efforts of the two parties and seems to be the prelude to the founding of a new liberal party, but it's not certain if both parties would fully agree. <br><br> The idea of a liberal parliamentary faction has gained considerable traction with both parties and they are likely to negotiate as a single bloc after the election. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1928 and flavour_0_trigger >= 1 and flavour_0_trigger_time == time: The quest towards liberal unity has advanced, with the Liberal Association's influence growing within local chapters of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> chapters on the local level. In the liberal stronghold of Baden-Württemberg, a merger between the two parties is already underway, even without formal approval from their national leadership. ?]{!</p>!}
+{!<p class="other">!}[? if lvp_merger_timer == 5: The quest towards liberal unity has advanced, with the Liberal Association's influence growing within local chapters of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> chapters on the local level. In the liberal stronghold of Baden-Württemberg, a merger between the two parties is already underway, even without formal approval from their national leadership. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1928 and month = 8 : The Kellogg–Briand Pact has been signed by [+ foreign_minister +], promising not to use war to resolve disputes or conflicts in the future. During [+ foreign_minister +]'s trip to Paris, there has been success in bringing the <span style="color: #002654;">French</span> to consider withdrawing from the Rhineland early and to agree to another review of our reparations by foreign experts. <br><br> Wilhelm Marx, leader of the <span style="color: #000000;">Center Party</span>, former chancellor, and presidential candidate, has resigned following his party's poor performance in the last election. A new leader is scheduled to be elected this December. <br><br> The <span style="color: #750e0e;">Soviet Union</span> has unveiled their first "Five-Year Plan" to rapidly industrialize their country. <br><br> We have won second place in the Summer Olympics in Amsterdam! ?] {!</p>!}
 
 {!<p class="dnvp">!}[? if year = 1928 and month = 8 and pro_republic_7 < 65 and not (pro_republic_7 >= 57 and in_right_coalition and in_right_coalition_prussia) and not ((pro_republic_7 >= 59 and in_right_coalition) and not (pro_republic_7 >= 62 and in_right_coalition_prussia)): Lambach has been reinstated to the <span style="color: #3E88B3;">**DNVP**</span> and their Reichstag delegation following pressure from the Christian labor movement and white-collar organizations. [? if in_right_coalition or in_right_coalition_prussia = 1: <br><br> Hugenberg's attempts to increase his influence within the party are complicated by the reality that if he were to bring down the current [? if in_right_coalition_prussia and in_right_coalition: Prussian and federal ?][? if in_right_coalition_prussia and not in_right_coalition: Prussian ?][? if in_right_coalition and not in_right_coalition_prussia: federal ?]coalition when elected, the only viable alternative for a parliamentary majority would be a government led by us. ?] ?]{!</p>!}
+
+{!<p class="other">!}[? if lvp_merger_timer == 4: Stresemann and other high-ranking party officials, including the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s Koch-Weser, have been holding discreet meetings over the past few weeks to discuss a potential merger between their two parties. Meanwhile, numerous liberal youth organizations have been created with the goal of fostering cooperation between <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> for a united middle party. ?]{!</p>!}
+
+{!<p class="other">!}[? if lvp_merger_timer == 3: Those on the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s left wing, who remain firmly opposed to a merger of the two parties, are being forced out of the party or sidelined to clear the path for unification. However, the right wing of the <span style="color: #C0A054;">**DVP**</span> holds significant sway over the party and the negotiations, prompting Stresemann to call for an emergency party congress to resolve the issue. ?]{!</p>!}
 
 {!<p class="both">!}[? if year = 1928 and month = 9 : After the poor performance of the <span style="color: #7A3C00;">**NSDAP**</span> in the recent election, Adolf Hitler's ban on public speaking has been lifted. ?] {!</p>!}
 

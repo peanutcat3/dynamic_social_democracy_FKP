@@ -1,19 +1,24 @@
-title: First <span style="color: #FFCC00;">**LVP**</span> Party Congress
+title: First <span style="color: #FFCC00;">**LVP**</span> Congress
 subtitle: The future of this new party will be decided here.
-view-if: year == 1928 and month >= 11 and liberal_cooperation >= 5 and liberal_parliament == 1
+view-if: lvp_merger_timer == 1
 max-visits: 1
 tags: event
 face-image: img/weimar_coalition.jpg
 new-page: true
+go-to: lvp_formed
 
 = First <span style="color: #FFCC00;">**LVP**</span> Party Congress
 
-placeholder
+The <span style="color: #FFCC00;">Liberal People's Party</span> (<span style="color: #FFCC00;">**LVP**</span>) has officially been founded! Hans Luther, former chancellor and <span style="color: #C0A054;">**DVP**</span> member, has been chosen as the interim leader of the new party.
 
-- @luther: Hans Luther is elected.
+The <span style="color: #FFCC00;">**LVP**</span>'s inaugural congress will play a major role in shaping the direction of the newly founded party, and most importantly, decide who will lead the liberal movement forward.
+
+- @luther: The party votes...
 
 @luther
-on-arrival: lvp_relation += 5; lvp_left += 3
+on-arrival: lvp_relation += 5; lvp_left += 3; new_middle_dnvp += 2; old_middle_dnvp += 2
 face-image: img/portraits/luther.jpg
 
-yep
+Hans Luther is once again chosen to lead the <span style="color: #FFCC00;">**LVP**</span>, a long-time advocate for liberal and bourgeois unity, and a figure acceptable to both wings of the newly unified party. 
+
+Meanwhile, the right wing of the <span style="color: #C0A054;">**DVP**</span>, despite their initial resistance to the merger, is now focusing on shifting the <span style="color: #FFCC00;">**LVP**</span> further right, leveraging the support of the party's industrial backers.
