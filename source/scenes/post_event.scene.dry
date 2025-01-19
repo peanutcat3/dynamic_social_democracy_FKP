@@ -115,6 +115,12 @@ var total_force = (Q.sa_force+Q.sh_force+Q.rb_force+Q.rfb_force+Q.army_force+Q.p
 Q.loyal_army = Q.army_force*Q.reichswehr_loyalty;
 Q.loyal_prussia = Q.prussian_police_loyalty*Q.prussia_force;
 
+Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
+Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
+Q.kvp_r = Math.round(Q.kvp_r * 10) / 10
+
+Q.combined_cooperation = Q.liberal_cooperation + Q.bourgeois_cooperation
+
 // 1. update dates
 if (Q.month_actions >= 1) {
     Q.time += 1;
@@ -689,10 +695,6 @@ if (Q.year == 1929 && Q.month == 12 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 
     Q.weimar_ref_votes = Math.round(Q.weimar_ref_signatures * 10) / 10;
 }
 
-Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
-Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
-Q.kvp_r = Math.round(Q.kvp_r * 10) / 10
-
 if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 5))) {
     Q.dvp_ideology = "Right"
 } else if (Q.dvp_left > (Q.dvp_right*1.5) || (Q.dvp_left > (Q.dvp_right + 5))) {
@@ -753,8 +755,6 @@ if (Q.year == 1929 && Q.month == 5 && Q.dvp_ideology !== "Left") {
     Q.liberal_cooperation += 3
 }
 
-Q.combined_cooperation = Q.liberal_cooperation + Q.bourgeois_cooperation
-
 if (Q.ddp_right > (Q.ddp_left + 4)) {
     Q.ddp_ideology = "Right"
 } else if (Q.ddp_left > (Q.ddp_right + 4)) {
@@ -812,14 +812,14 @@ if (Q.bruning_event_timer == 3 && Q.dvp_ideology == "Right" && !Q.lvp_formed) {
     Q.new_middle_lvp -= 6;
 }
 
-if (Q.year == 1929 && Q.month == 10) {
-    Q.new_middle_other += 2;
-    Q.old_middle_other += 2;
-}
-
 if (Q.year == 1929 && Q.month == 3) {
     Q.ddp_right += 3; 
     Q.ddp_relation -= 3;
+}
+
+if (Q.year == 1929 && Q.month == 10) {
+    Q.new_middle_other += 2;
+    Q.old_middle_other += 2;
 }
 
 if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion >= 12 && !Q.lvp_formed) {
@@ -849,6 +849,10 @@ if (Q.year == 1930 && Q.month == 3 && Q.ddp_relation < 60 && !Q.lvp_formed) {
     Q.ddp_right += 3; 
 } else if (Q.year == 1930 && Q.month == 3 && Q.ddp_relation >= 60 && !Q.lvp_formed) {
     Q.ddp_left += 1;
+}
+
+if (Q.year == 1928 && Q.liberal_parliament == 1 && Q.lvp_merger_timer == 0) {
+    Q.lvp_merger_timer = 6;
 }
 
 if (Q.spd_in_government) {
