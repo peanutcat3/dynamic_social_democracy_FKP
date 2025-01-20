@@ -22,3 +22,24 @@ face-image: img/portraits/luther.jpg
 Hans Luther is once again chosen to lead the <span style="color: #FFCC00;">**LVP**</span>, a long-time advocate for liberal and bourgeois unity, and a figure acceptable to both wings of the newly unified party. 
 
 Meanwhile, the right wing of the <span style="color: #C0A054;">**DVP**</span>, despite their initial resistance to the merger, is now focusing on shifting the <span style="color: #FFCC00;">**LVP**</span> further right, leveraging the support of the party's industrial backers.
+
+- @lvp_weimar
+
+@lvp_weimar
+title: Renegotiate the ruling coalition.
+view-if: in_grand_coalition
+
+As a result of the left-liberal <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and conservative-liberal <span style="color: #C0A054;">**DVP**</span> having merged, we could go ahead with kicking the small <span style="color: #A2D8E0;">**BVP**</span> out of government. This will leave us with a majority <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
+
+- @weimar: Form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
+- @groko: Maintain the Grand Coalition.
+
+@weimar
+on-arrival: lvp_relation -= 3; z_relation -= 3; lvp_right += 1; in_weimar_coalition = 1; in_grand_coalition = 0
+
+Expected, but the bourgeois parties are displeased by the exclusion of the <span style="color: #A2D8E0;">**BVP**</span> from the ruling coalition.
+
+@groko
+on-arrival: lvp_relation += 3; z_relation += 3; lvp_left += 1
+
+The bourgeois parties are pleased and somewhat surprised by this move.
