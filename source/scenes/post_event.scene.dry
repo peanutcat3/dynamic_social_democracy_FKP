@@ -851,7 +851,7 @@ if (Q.year == 1930 && Q.month == 3 && Q.ddp_relation < 60 && !Q.lvp_formed) {
     Q.ddp_left += 1;
 }
 
-if (Q.year == 1928 && Q.liberal_parliament == 1 && Q.lvp_merger_timer == 0) {
+if (Q.year == 1928 && Q.liberal_parliament == 1 && Q.lvp_merger_timer == 0 && !Q.lvp_formed) {
     Q.lvp_merger_timer = 6;
 }
 
