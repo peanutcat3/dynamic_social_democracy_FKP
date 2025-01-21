@@ -325,7 +325,7 @@ if (Q.month_actions >= 1) {
         if (Q.dnvp_ideology == "Moderate") {
             Q.catholics_dnvp += 3/12;
             Q.workers_dnvp += 1.5/12;
-            Q.new_middle_dnvp += 4/12;
+            Q.new_middle_dnvp += 3/12;
     }
     if (Q.sa_force >= Q.rb_force) {
         Q.unemployed_kpd -= 2/12;
@@ -360,7 +360,7 @@ if (Q.month_actions >= 1) {
                 Q.unemployed_kpd -= (Q.strife/12);
                 Q.unemployed_nsdap += (Q.strife/12);
             }
-            Q.unemployed_nsdap += 6 / 12;
+            Q.unemployed_nsdap += 6/12;
         }
         Q.workers_z += 2/12;
         Q.old_middle_z += 2/12;
@@ -374,9 +374,15 @@ if (Q.month_actions >= 1) {
             Q.old_middle_nsdap += 5/12;
             Q.workers_kpd += 2/12;
             if (Q.dnf_formed) {
-            Q.rural_dnf += 3/12;
-            Q.old_middle_dnf += 4/12;
-            Q.new_middle_dnf += 2/12;
+                Q.rural_dnf += 3/12;
+                Q.old_middle_dnf += 4/12;
+                Q.new_middle_dnf += 2/12;
+            if (Q.kvp_formed) {
+                Q.rural_kvp -= 3/12;
+                Q.rural_dnvp += 3/12;
+                Q.old_middle_kvp -= 3/12;
+                Q.old_middle_dnvp += 3/12;
+            }
             }
         }
         Q.sa_strength += 100/12;
@@ -420,6 +426,7 @@ if (Q.month_actions >= 1) {
         Q.old_middle_z += 2/12;
         Q.new_middle_z += 2/12;
         Q.rural_z += 1/12
+        Q.catholics_kvp -= 2/12;
         if (!Q.works_program) { 
             Q.old_middle_dvp -= 6/12;
             Q.new_middle_dvp -= 4/12;
@@ -439,6 +446,14 @@ if (Q.month_actions >= 1) {
             Q.sh_strength += 50/12;
             Q.catholics_nsdap += 2/12;
             Q.catholics_other -= 2/12;
+            if (Q.kvp_formed) {
+                Q.rural_kvp -= 3/12;
+                Q.rural_dnvp += 3/12;
+                Q.old_middle_kvp -= 3/12;
+                Q.old_middle_dnvp += 3/12;
+                Q.new_middle_kvp -= 3/12;
+                Q.new_middle_dnvp += 3/12;
+            }
             if (Q.dnf_formed) {
                 Q.rural_dnf += 3/12;
                 Q.old_middle_dnf += 4/12;
@@ -507,6 +522,14 @@ if (Q.month_actions >= 1) {
             Q.workers_kpd += 2/12;
             Q.sa_strength += 200/12;
             Q.new_middle_dnvp += 4/12;
+            if (Q.kvp_formed) {
+                Q.rural_kvp -= 3/12;
+                Q.rural_dnvp += 3/12;
+                Q.old_middle_kvp -= 3/12;
+                Q.old_middle_dnvp += 3/12;
+                Q.new_middle_kvp -= 3/12;
+                Q.new_middle_dnvp += 3/12;
+            }
             Q.new_middle_dvp -= 2/12;
             Q.old_middle_dvp -= 2/12;
             Q.rural_dvp -= 2/12;
@@ -540,6 +563,12 @@ if (Q.month_actions >= 1) {
                 Q.old_middle_dnf += 4/12;
                 Q.new_middle_dnf += 2/12;
             }
+            if (Q.kvp_formed) {
+                Q.rural_kvp -= 2/12;
+                Q.rural_dnvp += 2/12;
+                Q.new_middle_kvp -= 2/12;
+                Q.new_middle_dnvp += 2/12;
+            }
         } else if (Q.unemployed > 20) {
             Q.rural_nsdap += 2/12;
             Q.unemployed_nsdap += 3/12;
@@ -550,6 +579,12 @@ if (Q.month_actions >= 1) {
                 Q.rural_dnf += 2/12;
                 Q.old_middle_dnf += 2/12;
                 Q.new_middle_dnf += 1/12;
+            }
+            if (Q.kvp_formed) {
+                Q.rural_kvp -= 1/12;
+                Q.rural_dnvp += 1/12;
+                Q.new_middle_kvp -= 1/12;
+                Q.new_middle_dnvp += 1/12;
             }
         }
     }
@@ -632,6 +667,14 @@ if (Q.month_actions >= 1) {
             }
             if (Q.catholics_z_normalized < 40) {
                 Q.catholics_z += 6/12;
+            }
+            if (Q.pro_republic >= 75 && Q.kvp_formed) {
+                Q.rural_kvp += 6/12;
+                Q.new_middle_kvp += 6/12;
+                Q.old_middle_kvp += 6/12;
+                Q.rural_dnvp -= 6/12;
+                Q.new_middle_dnvp -= 3/12;
+                Q.old_middle_dnvp -= 3/12;
             }
         }
         if (Q.unemployed > 20) {

@@ -338,7 +338,7 @@ go-to: menu
             <td style="background-color: rgba(155, 0, 0, 0.2);">[+ catholics_sapd_display +]%</td>
         {!</tr>!}?]
         <tr>
-            <td><span style="color: #000000;">**Z**</span> + <span style="color: #4B758B;">**BVP**</span></td>
+            <td><span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span></td>
             <td style="background-color: rgba(0, 0, 0, 0.2); padding: 10px;">[+ workers_z_display +]%</td>
             <td style="background-color: rgba(0, 0, 0, 0.2);">[+ new_middle_z_display +]%</td>
             <td style="background-color: rgba(0, 0, 0, 0.2);">[+ old_middle_z_display +]%</td>
