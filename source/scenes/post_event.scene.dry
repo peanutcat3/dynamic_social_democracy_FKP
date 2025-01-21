@@ -280,8 +280,8 @@ if (Q.month_actions >= 1) {
         Q.workers_dvp -= 1/12;
         Q.workers_lvp -= 1/12;
         Q.workers_z += 1/12;
-        Q.old_middle_z += 2/12;
-        Q.new_middle_z += 2/12;
+        Q.old_middle_z += 1/12;
+        Q.new_middle_z += 1/12;
         Q.rural_z += 2/12
         if (Q.dnvp_ideology == "Radical" && Q.z_leader !== "Stegerwald") {
             Q.new_middle_other += 3/12;
@@ -334,7 +334,7 @@ if (Q.month_actions >= 1) {
 }
     if (Q.year == 1930) {
         Q.rural_nsdap += 8/12;
-        Q.rural_dnvp -= 5/12;
+        Q.rural_dnvp -= 3/12;
         if (Q.dvp_leader == "Curtius") {
             Q.new_middle_dvp -= 2/12;
             Q.old_middle_dvp -= 2/12;
@@ -363,8 +363,8 @@ if (Q.month_actions >= 1) {
             Q.unemployed_nsdap += 6 / 12;
         }
         Q.workers_z += 2/12;
-        Q.old_middle_z += 3/12;
-        Q.new_middle_z += 3/12;
+        Q.old_middle_z += 2/12;
+        Q.new_middle_z += 2/12;
         Q.rural_z += 2/12
         Q.catholics_nsdap += 2/12;
         Q.catholics_other -= 2/12;
@@ -372,15 +372,11 @@ if (Q.month_actions >= 1) {
             Q.rural_nsdap += 3/12;
             Q.new_middle_nsdap += 2/12;
             Q.old_middle_nsdap += 5/12;
-            Q.workers_nsdap += 4/12;
             Q.workers_kpd += 2/12;
             if (Q.dnf_formed) {
-            Q.workers_dnf += 1/12;
             Q.rural_dnf += 3/12;
             Q.old_middle_dnf += 4/12;
             Q.new_middle_dnf += 2/12;
-            Q.catholics_nsdap += 2/12;
-            Q.catholics_other -= 2/12;
             }
         }
         Q.sa_strength += 100/12;
@@ -392,7 +388,7 @@ if (Q.month_actions >= 1) {
     }
     if (Q.year == 1931) {
         if (Q.z_leader == "Kaas") {
-            Q.catholics_z += 2/12;
+            Q.catholics_z += 3/12;
         }
         if (Q.dvp_leader == "Curtius") {
             Q.rural_dvp -= 6/12;
@@ -444,7 +440,6 @@ if (Q.month_actions >= 1) {
             Q.catholics_nsdap += 2/12;
             Q.catholics_other -= 2/12;
             if (Q.dnf_formed) {
-                Q.workers_dnf += 1/12;
                 Q.rural_dnf += 3/12;
                 Q.old_middle_dnf += 4/12;
                 Q.new_middle_dnf += 2/12;
@@ -468,7 +463,6 @@ if (Q.month_actions >= 1) {
             Q.new_middle_nsdap += 4/12;
             Q.rural_nsdap += 4/12;
             if (Q.dnf_formed) {
-                Q.workers_dnf += 1/12;
                 Q.rural_dnf += 3/12;
                 Q.old_middle_dnf += 4/12;
                 Q.new_middle_dnf += 2/12;
@@ -478,6 +472,7 @@ if (Q.month_actions >= 1) {
     if (Q.year == 1932) {
         Q.workers_other -= 2/12;
         if (Q.dnf_formed) {
+            Q.workers_dnf += 1;
             Q.rural_dnf += 4/12;
             Q.old_middle_dnf += 4/12;
             Q.new_middle_dnf += 2/12;
@@ -493,6 +488,12 @@ if (Q.month_actions >= 1) {
             Q.catholics_z += 2/12;
             if (Q.z_leader == "Kaas") {
                 Q.catholics_z += 5/12;
+            }
+            if (Q.dnf_formed) {
+            Q.workers_dnf += 1;
+            Q.rural_dnf += 4/12;
+            Q.old_middle_dnf += 4/12;
+            Q.new_middle_dnf += 2/12;
             }
             Q.catholics_nsdap += 2/12;
             Q.workers -= 4/12;
@@ -856,6 +857,12 @@ if (Q.year == 1928 && Q.liberal_parliament == 1 && Q.lvp_merger_timer == 0 && !Q
     Q.lvp_merger_timer = 6;
 }
 
+if (Q.year == 1929 && Q.month == 5 && Q.lvp_formed) {
+    Q.new_middle_lvp += 3;
+    Q.old_middle_lvp += 3;
+    Q.lvp_left += 1;
+}
+
 if (Q.spd_in_government) {
     Q.spd_in_government_time += 1;
 } else if (!Q.spd_in_government) {
@@ -1086,7 +1093,7 @@ if (Q.kvp_formed && Q.lvp_formed) {
 // Q.hitler_right_coalition = parseFloat((Q.z_r + Q.dnvp_r + Q.nsdap_r).toFixed(1));
 
 if (Q.lvp_formed) {
-    Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + (Q.lvp_r / 2) + Q.sapd_r).toFixed(1));
+    Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + (Q.lvp_r / 3) + Q.sapd_r).toFixed(1));
 } else {
     Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(1));
 }
