@@ -85,7 +85,7 @@ The <span style="color: #FFCC00;">**LVP**</span> are themselves are split about 
 - @prolong: Decide this at a later date.
 
 @accept_compromise
-go-to: compromised_failed if (lvp_ideology == "Moderate" and lvp_relation < 50) or (lvp_ideology == "Right" and lvp_relation < 60); compromise_success if lvp_ideology == "Left" or (lvp_ideology == "Moderate" and lvp_relation >= 50)
+go-to: compromised_failed if (lvp_ideology == "Moderate" and lvp_relation < 45) or (lvp_ideology == "Right" and lvp_relation < 60); compromise_success if lvp_ideology == "Left" or (lvp_ideology == "Moderate" and lvp_relation >= 45)
 
 
 @compromised_failed
