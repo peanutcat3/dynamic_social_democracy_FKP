@@ -3,19 +3,19 @@ subtitle: The future of the liberal movement will be decided here.
 view-if: lvp_merger_1_timer == 1
 on-arrival: {!
 Q.lvp_formation_points = 0;
-if (Q.dvp_relation >= 45) {
+if (Q.dvp_relation >= 40) {
     Q.lvp_formation_points += 1;
 }
-if (Q.liberal_vote < 13) {
+if (Q.liberal_vote < 14) {
     Q.lvp_formation_points += 1;
 }
 if (Q.dvp_ideology == "Left") {
-    Q.lvp_formation_points += 1;
+    Q.lvp_formation_points += 2;
 }
 if (Q.ddp_ideology == "Right") {
     Q.lvp_formation_points += 1;
 }
-if (Q.pro_republic >= 70) {
+if (Q.pro_republic >= 65) {
     Q.lvp_formation_points += 1;
 }
 !}

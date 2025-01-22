@@ -2,17 +2,17 @@ title:  <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Congress
 subtitle: The future of the liberal movement will be decided here.
 on-arrival: {!
 Q.lvp_formation_points = 0;
-if (Q.ddp_relation < 50) {
+if (Q.ddp_relation < 55) {
     Q.lvp_formation_points += 1;
 }
-if (Q.liberal_vote < 13) {
+if (Q.liberal_vote < 14) {
     Q.lvp_formation_points += 1;
 }
 if (Q.dvp_ideology == "Left") {
     Q.lvp_formation_points += 1;
 }
 if (Q.ddp_ideology == "Right") {
-    Q.lvp_formation_points += 1;
+    Q.lvp_formation_points += 2;
 }
 if (Q.ddp_cohesion >= 12) {
     Q.lvp_formation_points += 1;
