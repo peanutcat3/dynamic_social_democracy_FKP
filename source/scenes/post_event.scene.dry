@@ -909,7 +909,7 @@ if (Q.year == 1928 && Q.liberal_parliament == 1 && Q.lvp_merger_timer == 0 && !Q
     Q.lvp_merger_timer = 6;
 }
 
-if (Q.year == 1929 && Q.stolper_program_adopted && Q.dvp_reform && Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" && Q.in_grand_coalition && Q.lvp_merger_1_timer == 0 && !Q.lvp_timer_1_trigger) {
+if (Q.year == 1929 && Q.stolper_program_adopted && Q.dvp_reform && Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" && Q.in_grand_coalition == 1 && Q.lvp_merger_1_timer == 0 && !Q.lvp_timer_1_trigger) {
     Q.lvp_timer_1_trigger = 1;
     Q.lvp_merger_1_timer = 4;
 }
