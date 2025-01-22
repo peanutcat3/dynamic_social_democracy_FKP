@@ -876,6 +876,7 @@ if (Q.year == 1929 && Q.month == 10 && !Q.lvp_formed) {
 
 if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion >= 12 && !Q.lvp_formed) {
     Q.stolper_program_adopted = 1;
+    Q.liberal_cooperation += 3;
     Q.new_middle_ddp += 4;
     Q.old_middle_ddp += 4;
     Q.new_middle_other -= 4;
@@ -906,6 +907,11 @@ if (Q.year == 1930 && Q.month == 3 && Q.ddp_relation < 60 && !Q.lvp_formed) {
 if (Q.year == 1928 && Q.liberal_parliament == 1 && Q.lvp_merger_timer == 0 && !Q.lvp_timer_trigger) {
     Q.lvp_timer_trigger = 1;
     Q.lvp_merger_timer = 6;
+}
+
+if (Q.year == 1929 && Q.stolper_program_adopted && Q.dvp_reform && Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" && Q.in_grand_coalition && Q.lvp_merger_1_timer == 0 && !Q.lvp_timer_1_trigger) {
+    Q.lvp_timer_1_trigger = 1;
+    Q.lvp_merger_1_timer = 4;
 }
 
 if (Q.year == 1929 && Q.month == 5 && Q.lvp_formed) {

@@ -602,7 +602,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'emergency_cuts', 'unemployment_insurance',
     'sa_ban', 'sh_ban', 'papen_chancellor',
     'kpd_policy', 'kpd_ultimatum', 'kpd_ultimatum_prussia', 'popular_front_dispute',
-    'high_inflation', 'banking_crisis', 'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution', 'bruning_event', 'lvp_merger'];
+    'high_inflation', 'banking_crisis', 'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution', 'bruning_event', 'lvp_merger', 'lvp_merger_1'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -666,6 +666,7 @@ Q.kpd_ultimatum_prussia_timer = 0;
 Q.dnf_decay_timer = 0;
 Q.march_on_berlin_timer = 0;
 Q.lvp_merger_timer = 0;
+Q.lvp_merger_1_timer = 0;
 Q.z_party_name = "Z";
 Q.dnvp_leader = "Westarp";
 Q.dnvp_ideology = "Radical";
@@ -707,6 +708,7 @@ Q.secret_mode = 0;
 Q.secret_trigger = 0;
 Q.strife = 0;
 Q.lvp_timer_trigger = 0;
+Q.lvp_timer_1_trigger = 0;
 
 // flavour text stuff
 Q.flavour_1_trigger = 0;
