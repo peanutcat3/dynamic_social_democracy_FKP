@@ -12,6 +12,9 @@ if (Q.next_election_time - Q.time < 6) {
 if (Q.dvp_ideology == "Right") {
     Q.dstp_formation_points += 1
 }
+if ((100 - Q.pro_republic) + Q.nationalism >= 100) {
+    Q.dstp_formation_points += 1
+}
 if (Q.ddp_relation < 50) {
     Q.dstp_formation_points += 1
     Q.ddp_right += 2;
