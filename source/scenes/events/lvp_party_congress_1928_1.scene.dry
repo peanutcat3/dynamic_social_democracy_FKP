@@ -166,13 +166,13 @@ if (Q.lvp_relation >= 65) {
 }
 
 if (Q.luther_endorsed_candidate == "Eduard Dingeldey") {
-    Q.dingeldey_points += 3;
+    Q.dingeldey_points += 2;
 } else if (Q.luther_endorsed_candidate == "Julius Curtius") {
-    Q.curtius_points += 3;
+    Q.curtius_points += 2;
 } else if (Q.luther_endorsed_candidate == "Hermann Dietrich") {
-    Q.dietrich_points += 3;
+    Q.dietrich_points += 2;
 } else if (Q.luther_endorsed_candidate == "Theodor Heuss") {
-    Q.heuss_points += 3;
+    Q.heuss_points += 2;
 }
 
 if (Q.heuss_points >= Q.dietrich_points && Q.heuss_points >= Q.curtius_points && Q.heuss_points >= Q.dingeldey_points) {
