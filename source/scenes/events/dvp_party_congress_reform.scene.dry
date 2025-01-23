@@ -28,7 +28,7 @@ if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 4))) {
 go-to: curtius if dvp_ideology == "Left" or (dvp_ideology == "Moderate" and (coalition_dissent < 2 and in_grand_coalition)) and in_grand_coalition; scholz if dvp_ideology == "Right" or (dvp_ideology == "Moderate" and not in_grand_coalition); luther if (dvp_ideology == "Moderate" and (coalition_dissent >= 2 and in_grand_coalition)) or (dvp_ideology == "Left" and not in_grand_coalition)
 
 @curtius
-on-arrival: dvp_leader = "Curtius"; liberal_cooperation += 3; bourgeois_cooperation += 3; dvp_left += 5; coalition_dissent -= 1 if in_grand_coalition; dvp_relation += 10; new_middle_dvp += 2; workers_dvp += 1; pro_republic += 5; ddp_left += 1; ddp_cohesion += 1
+on-arrival: dvp_leader = "Curtius"; liberal_cooperation += 3; bourgeois_cooperation += 3; dvp_left += 5; coalition_dissent -= 1 if in_grand_coalition; dvp_relation += 10; new_middle_dvp += 4; rural_dvp += 1; pro_republic += 5; ddp_left += 1; ddp_cohesion += 1
 face-image: img/portraits/curtius.jpg
 
 Julius Curtius has won the vote to succeed Stresemann for the chairmanship. It seems like the industrialists have finally lost their fight to control the <span style="color: #C0A054;">**DVP**</span>, which has now become a genuine People's Party that Stresemann envisioned.
