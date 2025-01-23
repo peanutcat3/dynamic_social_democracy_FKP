@@ -49,7 +49,7 @@ if (Q.lvp_relation >= 50) {
     Q.dingeldey_points += 1;
 }
 
-if (Q.nationalism >= 60) {
+if (Q.nationalism >= 50) {
     Q.dingeldey_points += 1;
     Q.lvp_right += 1;
 }
@@ -62,7 +62,7 @@ if (Q.pro_republic >= 70) {
     Q.lvp_right += 2;
 }
 
-if (Q.lvp_votes >= 13) {
+if (Q.lvp_votes >= 11.5) {
     if (Q.lvp_ideology == "Right") {
         Q.lvp_left += 3;
     } else if (Q.lvp_ideology == "Left") {
