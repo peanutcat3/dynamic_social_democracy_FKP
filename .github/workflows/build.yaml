@@ -38,13 +38,17 @@ jobs:
         run: npm install
       - name: Build game
         run: npm run dendrynexus make-html -- --pretty
+      - name: Verify output directory
+        run: ls -la out/html
       - name: Copy game.json to output
         run: cp out/game.json out/html/
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: pages-artifact
-          path: 'out/html'
+          path: out/html
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+        with:
+          artifact-name: pages-artifact
