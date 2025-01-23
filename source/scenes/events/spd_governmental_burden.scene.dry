@@ -2,7 +2,7 @@ title: Burden of Government
 view-if: spd_government_burden_trigger == 1 and not (peoples_party or (new_middle_spd_normalized >= 30 or (new_middle_spd_normalized + old_middle_spd_normalized >= 40) or rural_spd_normalized >= 20 or catholics_spd_normalized >= 40 or spd_votes >= 40))
 new-page: true
 tags: event
-on-arrival: spd_government_burden_trigger = 0; spd_government_burden_seen = 1; spd_government_burden_timer = 6; workers_spd -= 3 if labor_minister_party != "SPD"
+on-arrival: spd_government_burden_trigger = 0; spd_government_burden_seen = 1; spd_government_burden_timer = 6; workers_spd -= 3 if labor_minister_party != "SPD"; labor_dissent += 15 if labor_minister_party != "SPD"
 
 = Burden of Government
 
