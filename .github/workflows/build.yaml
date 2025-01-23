@@ -47,6 +47,8 @@ jobs:
         with:
           name: pages-artifact
           path: out/html
+          pattern: my-artifact-*
+          merge-multiple: true
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
