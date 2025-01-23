@@ -122,6 +122,8 @@ if (Q.dingeldey_points >= Q.heuss_points && Q.dingeldey_points >= Q.dietrich_poi
 
 if (!Q.dietrich_lead && !Q.heuss_lead && !Q.dingeldey_lead && !Q.curtius_lead) {
     Q.lvp_deadlock = 1;
+} else {
+    Q.lvp_deadlock = 0;
 }
 
 !}
@@ -199,6 +201,8 @@ if (Q.dingeldey_points >= Q.heuss_points && Q.dingeldey_points >= Q.dietrich_poi
 
 if (!Q.dietrich_lead && !Q.heuss_lead && !Q.dingeldey_lead && !Q.curtius_lead) {
     Q.lvp_deadlock = 1;
+} else {
+    Q.lvp_deadlock = 0;
 }
 
 !}
