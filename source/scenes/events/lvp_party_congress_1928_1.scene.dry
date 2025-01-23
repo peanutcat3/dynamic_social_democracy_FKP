@@ -1,6 +1,6 @@
 title: Second <span style="color: #FFCC00;">**LVP**</span> Congress
 subtitle: The <span style="color: #FFCC00;">**LVP**</span> decides their fate...
-view-if: year == 1930 && month == 4 && lvp_timer_trigger && lvp_formed
+view-if: year == 1930 and month == 4 and lvp_timer_trigger and lvp_formed
 on-arrival: {!
 Q.heuss_points = 0;
 Q.dietrich_points = 0;
