@@ -30,20 +30,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: setup node
-        uses: actions/setup-node@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install
+      - name: Install dependencies
         run: npm install
       - name: Build game
         run: npm run dendrynexus make-html -- --pretty
       - name: Copy game.json to output
         run: cp out/game.json out/html/
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
+          name: pages-artifact
           path: 'out/html'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
