@@ -257,7 +257,7 @@ view-if: lvp_deadlock
 The vote has been deadlocked, with no candidate ahead by enough to constitute a majority. You, the player, now has free will to choose a compromise candidate. Spend it wisely.
 
 - @dietrich_compromise: Hermann Dietrich.
-- @curtius_compromise Julius Curtius.
+- @curtius_compromise: Julius Curtius.
 
 @dietrich_compromise
 go-to: dietrich
