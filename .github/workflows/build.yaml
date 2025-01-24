@@ -28,34 +28,22 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
+      - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
-
-      - name: Install Dependencies
+          node-version: 16
+      - name: Install
         run: npm install
-
-      - name: Build Game
+      - name: Build game
         run: npm run dendrynexus make-html -- --pretty
-
-      - name: Verify Output Directory
-        run: ls -la out/html
-
-      - name: Copy game.json to Output Directory
+      - name: Copy game.json to output
         run: cp out/game.json out/html/
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: pages-artifact
-          path: out/html
-
+          path: 'out/html'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact-name: pages-artifact
