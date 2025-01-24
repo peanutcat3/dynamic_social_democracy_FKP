@@ -1206,7 +1206,7 @@ We have assembled a new coalition under Otto Braun.
 @unity_government
 title: The <span style="color: #000000;">Center Party</span> offers a "Government of National Unity" under Chancellor Joseph Wirth.
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + **Others** ([+ neo_weimar_coalition +]%)
-view-if: z_ideology == "Left" and neo_weimar_coalition >= 50 and weimar_coalition < 50 and z_relation >= 10
+view-if: z_ideology == "Left" and neo_weimar_coalition >= 50 and weimar_coalition < 50 and z_relation >= 20 and dvp_relation >= 30 and ddp_relation >= 30
 
 The <span style="color: #000000;">Center Party</span> leader, [? if z_leader == "Joos": Joseph Joos?][? if z_leader == "Kaiser": Jakob Kaiser?], clearly sees the threat from the ascension of the anti-democratic extremist parties, and thus tries to negotiate a "Government of National Unity" to save the republic. This coalition would be led by Joseph Wirth, a left-leaning member of the <span style="color: #000000;">Center Party</span> and former chancellor, and would encompass all of the constitutional parties. Our role in this government might be limited, however.
 
