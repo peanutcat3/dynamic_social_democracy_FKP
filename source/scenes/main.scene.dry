@@ -27,6 +27,15 @@ if (Q.next_election_time - Q.time < 5 && Q.dnvp_split_2 == 1 && Q.year >= 1930 &
         Q.flavour_3_trigger_time = Q.time;
     }
 }
+if (Q.spd_in_government and Q.hindenburg_angry >= 100) {
+    Q.flavour_4_trigger += 1;
+    if (Q.flavour_4_trigger == 1) {
+        Q.flavour_4_trigger_time = Q.time;
+    }
+    if (Q.flavour_4_trigger >= 3) {
+        Q.flavour_4_trigger = 0;
+    }
+}
 !}
 on-display: {!
 var button = document.createElement('button');
@@ -208,7 +217,7 @@ max-cards: 3
 
 {!<p class="dnvp">!}[? if year = 1929 and month = 12 and csvd_formed = 1 and stegerwald_path = 0: The Christian Social faction of the <span style="color: #3E88B3;">**DNVP**</span> have formed their own political party by merging with the CVD, to form the <span style="color: #8ED8E4;">Christian Social People's Service</span> (<span style="color: #8ED8E4;">**CSVD**</span>). The party mainly has support among Protestant workers, and refuses to cooperate with other bourgeois parties. They are surprisingly taking a hard stance towards the <span style="color: #7A3C00;">Nazis</span>, decrying their "un-Christian excessive hatred of <span style="color: #005EB8;">Jews</span>". ?]{!</p>!}
 
-{!<p class="both">!}[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
+{!<p class="both">!}[? if flavour_4_trigger == 1 and flavour_4_trigger_time == time: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1930 and month = 1 and pro_republic < 65 and ddp_ideology != "Left" and z_ideology == "Right" and not lvp_formed: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> along with other bourgeois parties have increasingly been abandoning coalitions with us on the local level in favor of forming *Bürgerblocks* instead. We have lost control of prominent state governments. ?]{!</p>!}
 
@@ -329,6 +338,15 @@ if (Q.next_election_time - Q.time < 5 && Q.dnvp_split_2 == 1 && Q.year >= 1930 &
     if (Q.flavour_3_trigger == 1) {
         Q.flavour_3_trigger_time = Q.time;
     }
+if (Q.spd_in_government and Q.hindenburg_angry >= 100) {
+    Q.flavour_4_trigger += 1;
+    if (Q.flavour_4_trigger == 1) {
+        Q.flavour_4_trigger_time = Q.time;
+    }
+    if (Q.flavour_4_trigger >= 3) {
+        Q.flavour_4_trigger = 0;
+    }
+}
 }
 !}
 on-display: {!
@@ -514,7 +532,7 @@ max-cards: 4
 
 {!<p class="dnvp">!}[? if year = 1929 and month = 12 and csvd_formed = 1 and stegerwald_path = 0: The Christian Social faction of the <span style="color: #3E88B3;">**DNVP**</span> have formed their own political party by merging with the CVD, to form the <span style="color: #8ED8E4;">Christian Social People's Service</span> (<span style="color: #8ED8E4;">**CSVD**</span>). The party mainly has support among Protestant workers, and refuses to cooperate with other bourgeois parties. They are surprisingly taking a hard stance towards the <span style="color: #7A3C00;">Nazis</span>, decrying their "un-Christian excessive hatred of <span style="color: #005EB8;">Jews</span>". ?]{!</p>!}
 
-{!<p class="both">!}[? if year = 1930 and month = 1 and spd_in_government = 1: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
+{!<p class="both">!}[? if flavour_4_trigger == 1 and flavour_4_trigger_time == time: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1930 and month = 1 and pro_republic < 65 and ddp_ideology != "Left" and z_ideology == "Right" and not lvp_formed: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> along with other bourgeois parties have increasingly been abandoning coalitions with us on the local level in favor of forming *Bürgerblocks* instead. We have lost control of prominent state governments. ?]{!</p>!}
 

@@ -1,7 +1,7 @@
 title: Coup in Prussia
 subtitle: The President attempts to overthrow the Prussian government.
 view-if: president = "Hindenburg" and in_popular_front_prussia and reichsexekution >= 3 and not presidential_powers and prussian_coup_seen = 0 and prussian_reichsexekution = 0
-on-arrival: prussian_reichsexekution = 1; strife += 2
+on-arrival: prussian_reichsexekution = 1; strife += 2; hindenburg_angry += 15
 new-page: true
 tags: event
 max-visits: 1

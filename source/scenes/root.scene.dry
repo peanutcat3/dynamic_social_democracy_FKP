@@ -117,6 +117,7 @@ Q.nsdap_leader = "Hitler";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
+Q.hindenburg_angry = 0;
 
 // prussian activities lol
 Q.spd_prussia = 1;
@@ -709,15 +710,19 @@ Q.secret_trigger = 0;
 Q.strife = 0;
 Q.lvp_timer_trigger = 0;
 Q.lvp_timer_1_trigger = 0;
+Q.ui0_seen = 0;
+Q.young_plan_ratified = 0
 
 // flavour text stuff
 Q.flavour_1_trigger = 0;
 Q.flavour_2_trigger = 0;
 Q.flavour_3_trigger = 0;
+Q.flavour_4_trigger = 0;
 
 Q.flavour_1_trigger_time = 0;
 Q.flavour_2_trigger_time = 0;
 Q.flavour_3_trigger_time = 0;
+Q.flavour_4_trigger_time = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels

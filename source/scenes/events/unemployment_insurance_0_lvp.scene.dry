@@ -1,8 +1,8 @@
 title: Unemployment Insurance Crisis
 subtitle: The <span style="color: #FFCC00;">**LVP**</span> presents an ultimatum.
 new-page: true
-view-if: spd_in_government = 1 and (year = 1929 and month >= 10) and in_grand_coalition = 1 and lvp_formed
-on-arrival: budget -= 1 if budget >= 1; lvp_relation -= 3
+view-if: spd_in_government = 1 and (year = 1929 and month >= 10) and (in_grand_coalition or in_weimar_coalition) and lvp_formed and not ui0_seen
+on-arrival: budget -= 1 if budget >= 1; lvp_relation -= 3; ui1_seen = 1
 tags: event
 priority: 2
 max-visits: 1
