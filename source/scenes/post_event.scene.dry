@@ -1175,6 +1175,9 @@ if (Q.spd_in_government_time >= 6) {
     if ((Q.year >= 1930 && Q.month >= 8) || Q.year >= 1931) {
         Q.hindenburg_angry += 3;
     }
+    if (Q.hindenburg_angry < Q.hindenburg_angry_base) {
+        Q.hindenburg_angry = Q.hindenburg_angry_base;
+    }
 }
 
 if (Q.lvp_formed) {
