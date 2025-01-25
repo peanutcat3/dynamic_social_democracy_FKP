@@ -296,7 +296,7 @@ if (Q.kvp_formed && Q.lvp_formed) {
 }
 
 if (Q.kvp_formed && Q.lvp_formed) {
-    Q.center_right_coalition_prussia = parseFloat((Q.z_r_prussia + lvp_r_prussia + Q.other_r_prussia + Q.dnvp_r_prussia + Q.kvp_r_prussia).toFixed(1));
+    Q.center_right_coalition_prussia = parseFloat((Q.z_r_prussia + Q.lvp_r_prussia + Q.other_r_prussia + Q.dnvp_r_prussia + Q.kvp_r_prussia).toFixed(1));
 } else if (Q.kvp_formed && !Q.lvp_formed) {
     Q.center_right_coalition_prussia = parseFloat((Q.z_r_prussia + Q.ddp_r_prussia + Q.dvp_r_prussia + Q.other_r_prussia + Q.dnvp_r_prussia + Q.kvp_r_prussia).toFixed(1));
 } else if (!Q.kvp_formed && Q.lvp_formed) {

@@ -1122,10 +1122,10 @@ if (Q.spd_in_government_time >= 6) {
         Q.hindenburg_angry -= 1;
     }
     if (Q.dvp_leader == "Stresemann") {
-        Q.hindenburg_angry -= 3;
+        Q.hindenburg_angry -= 2;
     }
     if (!Q.young_plan_ratified) {
-        Q.hindenburg_angry -= 3;
+        Q.hindenburg_angry -= 2;
     }
     if (Q.lvp_relation < 30) {
         Q.hindenburg_angry += 1;
@@ -1169,6 +1169,9 @@ if (Q.spd_in_government_time >= 6) {
     }
     if (Q.z_ideology == "Left") {
         Q.hindenburg_angry -= 1;
+    }
+    if (Q.soviet_relation >= 1) {
+        Q.hindenburg_angry += Q.soviet_relation;
     }
 }
 
