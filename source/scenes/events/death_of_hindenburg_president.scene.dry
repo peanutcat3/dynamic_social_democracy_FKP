@@ -454,8 +454,8 @@ if (Q.Hitler_votes && Q.Seldte_votes) {
     if (Q.Hitler_votes > Q.Seldte_votes) {
         Q.dnvp_candidate = "Hitler";
         Q.other_candidate = "Hitler";
-        Q.kvp_candidate = "Göring";
-        Q.dnf_candidate = "Göring";
+        Q.kvp_candidate = "Hitler";
+        Q.dnf_candidate = "Hitler";
         Q.Hitler_bonus = (Q.Hitler_bonus || 0) - 0.25*Q.other_votes;
         if (Q.z_candidate == "Adenauer") {
             Q.Adenauer_bonus = (Q.Adenauer_bonus || 0) + 0.25*Q.other_votes;

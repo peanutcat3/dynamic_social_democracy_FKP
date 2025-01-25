@@ -1178,6 +1178,9 @@ if (Q.spd_in_government_time >= 6) {
     if (Q.soviet_relation >= 1) {
         Q.hindenburg_angry += Q.soviet_relation;
     }
+    if ((Q.year >= 1930 && Q.month >= 8) || Q.year >= 1931) {
+        Q.hindenburg_angry += 3;
+    }
 }
 
 if (Q.lvp_formed) {
