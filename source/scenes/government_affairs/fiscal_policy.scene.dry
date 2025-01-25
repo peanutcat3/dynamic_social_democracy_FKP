@@ -31,13 +31,13 @@ Lower-income tax rates: [+ lower_tax_rates : taxation +]
 
 @raise_progressive
 subtitle: This does not change overall revenue.
-on-arrival: workers_spd += 6*(1-dissent); old_middle_spd -= 3; new_middle_spd -= 3; coalition_dissent += 1 if in_grand_coalition or (in_weimar_coalition and lvp_formed); dvp_relation -= 4; lvp_relation -= 3; ddp_relation -= 2 if ddp_ideology != "Left"; finance_goal_completed += 1; upper_tax_rates += 1; lower_tax_rates -= 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; dvp_right += 1; ddp_left += 0.5; ddp_cohesion -= 0.5; lvp_right += 1; finance_goal_spd += 1; goal_spd_cancel_peoples += 1
+on-arrival: workers_spd += 6*(1-dissent); old_middle_spd -= 3; new_middle_spd -= 3; coalition_dissent += 1 if (in_grand_coalition or (in_weimar_coalition and lvp_formed)); dvp_relation -= 4; lvp_relation -= 3; ddp_relation -= 2 if ddp_ideology != "Left"; finance_goal_completed += 1; upper_tax_rates += 1; lower_tax_rates -= 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; dvp_right += 1; ddp_left += 0.5; ddp_cohesion -= 0.5; lvp_right += 1; finance_goal_spd += 1; goal_spd_cancel_peoples += 1
 
 Making the tax system more progressive is popular among our base, but it upsets our bourgeois coalition partners, as well as our minimal number of bourgeois voters.
 
 @raise_rich
 subtitle: +2 budget
-on-arrival: upper_tax_rates += 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; workers_spd += 4*(1-dissent); old_middle_spd -= 4; new_middle_spd -= 4; coalition_dissent += 1 if in_grand_coalition or (in_weimar_coalition and lvp_formed); coalition_dissent += 1 if capital_strike_progress >= 5; budget += 2; dvp_relation -= 4; unemployed += 1; finance_goal_completed += 1; inflation -= 0.6; dvp_right += 1; lvp_right += 1; ddp_relation -= 4; ddp_right += 1; ddp_cohesion -= 0.5; lvp_relation -= 4; finance_goal_spd += 1; goal_spd_cancel_peoples += 1
+on-arrival: upper_tax_rates += 1; capital_strike_progress += 1; capital_strike_progress += 1 if upper_tax_rates > 1; capital_strike_progress += 1 if upper_tax_rates > 3; workers_spd += 4*(1-dissent); old_middle_spd -= 4; new_middle_spd -= 4; coalition_dissent += 1 if (in_grand_coalition or (in_weimar_coalition and lvp_formed)); coalition_dissent += 1 if capital_strike_progress >= 5; budget += 2; dvp_relation -= 4; unemployed += 1; finance_goal_completed += 1; inflation -= 0.6; dvp_right += 1; lvp_right += 1; ddp_relation -= 4; ddp_right += 1; ddp_cohesion -= 0.5; lvp_relation -= 4; finance_goal_spd += 1; goal_spd_cancel_peoples += 1
 
 Raising taxes on the rich is popular among our base, but it alienates the bourgeoisie. Increasing taxes also decreases economic demand, which may lead to more unemployment.
 

@@ -17,7 +17,7 @@ face-image: img/prussia_flag_old.png
 
 = Democratic Bulwark Dismantled
 
-We have antagonized the bourgeois parties involved in the New Grand Coalition ruling over Prussia, and our coalition partners have called a vote of no confidence against us. Prussia employs a constructive vote of no confidence, meaning that a government can only be removed if a successor can be put forth. This mechanism is how we were able to govern in a minority government in the past. [? if in_grand_coalition or (in_weimar_coalition and lvp_formed): This development also impacts our federal coalition as well. ?]
+We have antagonized the bourgeois parties involved in the New Grand Coalition ruling over Prussia, and our coalition partners have called a vote of no confidence against us. Prussia employs a constructive vote of no confidence, meaning that a government can only be removed if a successor can be put forth. This mechanism is how we were able to govern in a minority government in the past. [? if (in_grand_coalition or (in_weimar_coalition and lvp_formed)): This development also impacts our federal coalition as well. ?]
 
 We can either look for other potential parliamentary majorities, or call snap elections.
 
