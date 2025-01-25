@@ -1116,20 +1116,22 @@ if (Q.spd_in_government_time >= 6) {
     } else if (Q.center_right_coalition < 50) {
         Q.hindenburg_angry -= 1;
     }
-    if (Q.dvp_relation < 30) {
+    if (Q.dvp_relation < 30 && !Q.lvp_formed) {
         Q.hindenburg_angry += 1;
-    } else if (Q.dvp_relation >= 50) {
+    } else if (Q.dvp_relation >= 50 && !Q.lvp_formed) {
         Q.hindenburg_angry -= 1;
     }
-    if (Q.dvp_leader == "Stresemann") {
+    if (Q.dvp_leader == "Stresemann" && !Q.lvp_formed) {
+        Q.hindenburg_angry -= 2;
+    } else if (Q.lvp_leader == "Luther" && Q.lvp_formed) {
         Q.hindenburg_angry -= 2;
     }
     if (!Q.young_plan_ratified) {
         Q.hindenburg_angry -= 2;
     }
-    if (Q.lvp_relation < 30) {
+    if (Q.lvp_relation < 30 && Q.lvp_formed) {
         Q.hindenburg_angry += 1;
-    } else if (Q.lvp_ideology != "Right" && Q.lvp_relation >= 50) {
+    } else if (Q.lvp_ideology != "Right" && Q.lvp_relation >= 50 && Q.lvp_formed) {
         Q.hindenburg_angry -= 1;
     }
     if (Q.unemployed >= 20) {
@@ -1169,6 +1171,9 @@ if (Q.spd_in_government_time >= 6) {
     }
     if (Q.z_ideology == "Left") {
         Q.hindenburg_angry -= 1;
+    }
+    if (Q.stegerwald_path) {
+        Q.hindenburg_angry += 1;
     }
     if (Q.soviet_relation >= 1) {
         Q.hindenburg_angry += Q.soviet_relation;
