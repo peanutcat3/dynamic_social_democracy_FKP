@@ -1022,7 +1022,7 @@ go-to: right_coalition_2
 @right_coalition_2
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.
 view-if: right_coalition >= 50 
-choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp" and not (year = 1929 and month >= 7)
+choose-if: (dnvp_ideology == "Moderate" or dnvp_leader = "Westarp") and not (year = 1929 and month >= 7)
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_right_coalition = 1; dvp_right += 2; lvp_right += 2; liberal_cooperation -= 1; liberal_cooperation -= 3 if liberal_parliament > 0; liberal_parliament = 0 if liberal_parliament > 0; bourgeois_cooperation += 1
 
 [? if dnvp_ideology == "Radical": Even though the <span style="color: #3E88B3;">**DNVP**</span> is very reluctant to participate in such a coalition, they still accede to President Hindenburg's wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor. [? if grand_coalition >= 50: This move also has the side effect of pressuring the <span style="color: #3E88B3;">**DNVP**</span> to maintain this arrangement against the impulses of their radical right faction, lest a <span style="color: #c00000;">socialists</span> government would replace them. ?]?][? if dnvp_ideology == "Moderate": The <span style="color: #3E88B3;">**DNVP**</span> is happy to participate in such a coalition, to keep out the <span style="color: #c00000;">socialists</span> from government. Thus, a majority center-right coalition is formed, with Brüning as chancellor. ?]
@@ -1063,9 +1063,9 @@ Even though the opposing ends of the coalition parties are reluctant to particip
 Title: Refuse to form a government, so that a bourgeois coalition may be formed.
 subtitle: Congrats.
 view-if: bourgeois_coalition >= 50
-on-arrival: secret_mode = 1
+on-arrival: spd_in_government = 0; spd_toleration = 0; in_bourgeois_coalition = 1; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = ddp_name; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = Q.ddp_name; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; secret_mode = 1
 
-Secret mode has been enabled. If someone gets this in an actual game without cheats and shares it to me I will make content for it.
+The Bourgeois Coalition is formed, with Brüning as its chancellor. We will have to contend with opposition politics for the time being. Secret Mode has been enabled.
 
 @no_majority
 title: There is no clear governing majority.
