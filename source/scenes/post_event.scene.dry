@@ -952,7 +952,7 @@ if (Q.spd_in_government) {
 
 if (Q.spd_in_government_time == 1) {
     Q.spd_government_burden_trigger = 1;
-    Q.hindenburg_angry_base = hindenburg_angry;
+    Q.hindenburg_angry_base = Q.hindenburg_angry;
 }
 
 if (Q.spd_government_burden_seen == 1 && Q.spd_in_government) {
