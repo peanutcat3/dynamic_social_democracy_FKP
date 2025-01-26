@@ -1169,6 +1169,9 @@ if (Q.spd_in_government_time >= 6) {
     } else if (Q.unemployed < 15 && Q.black_thursday_seen) {
         Q.hindenburg_angry -= ((100 - Q.unemployed) / 50)
     }
+    if (Q.inflation >= 5) {
+        Q.hindenburg_angry += Q.inflation / 3;
+    }
     if (Q.dnvp_ideology == "Moderate") {
         Q.hindenburg_angry += 1;
     } else if (Q.dnvp_ideology == "Radical") {
