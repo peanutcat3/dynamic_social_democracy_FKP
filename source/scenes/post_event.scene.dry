@@ -973,6 +973,8 @@ if (Q.year == 1930 && Q.month == 1 && Q.dnvp_historical_1929 && (Q.peoples_party
     Q.other_r = Math.round((Q.other_r) * 10 / 10)
     Q.kvp_relation = 15;
     
+    Q.kvp_leader = "Treviranus";
+
     Q.old_workers_kvp_display = 0;
     Q.old_new_middle_kvp_display = 0;
     Q.old_old_middle_kvp_display = 0;
