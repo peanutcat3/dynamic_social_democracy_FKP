@@ -1091,9 +1091,11 @@ if (Q.spd_in_government_time >= 6) {
         Q.hindenburg_angry += 2;
     } else if (Q.spd_in_government_time >= 12) {
         Q.hindenburg_angry += 1;
+    } else if (Q.spd_in_government_time >= 6) {
+        Q.hindenburg_angry -= 2;
     }
     if (Q.land_reform >= 1) {
-        Q.hindenburg_angry += Q.land_reform
+        Q.hindenburg_angry += Q.land_reform * 2
     }
     if (Q.coalition_dissent == 0) {
         Q.hindenburg_angry -= 2;
@@ -1133,6 +1135,17 @@ if (Q.spd_in_government_time >= 6) {
     } else if (Q.lvp_leader == "Luther" && Q.lvp_formed) {
         Q.hindenburg_angry -= 2;
     }
+    if (Q.chancellor == "Müller") {
+        Q.hindenburg_angry -= 1;
+    } else if (Q.chancellor == "Brüning") {
+        Q.hindenburg_angry -= 2;
+    }
+    if (Q.prussia_leader != "Braun") {
+        Q.hindenburg_angry -= 1;
+    }
+    if (!Q.spd_prussia) {
+        Q.hindenburg_angry -= 1;
+    }
     if (!Q.young_plan_ratified) {
         Q.hindenburg_angry -= 2;
     }
@@ -1151,14 +1164,16 @@ if (Q.spd_in_government_time >= 6) {
     } else if (Q.dnvp_ideology == "Radical") {
         Q.hindenburg_angry -= 1;
     }
-    if (Q.reichswehr_loyalty <= 0.10) {
+    if (Q.reichswehr_loyalty <= 0.1) {
         Q.hindenburg_angry += 4;
-    } else if (Q.reichswehr_loyalty >= 0.5) {
-        Q.hindenburg_angry -= 4;
+    } else if (Q.reichswehr_loyalty <= 0.2) {
+        Q.hindenburg_angry += 1;
     } else if (Q.reichswehr_loyalty >= 0.3) {
-        Q.hindenburg_angry -= 3;
+        Q.hindenburg_angry -= 2;
+    } else if (Q.reichswehr_loyalty >= 0.5) {
+        Q.hindenburg_angry -= (Q.reichswehr_loyalty * 5)
     }
-    if (Q.rb_militancy >= 0.1 || Q.sa_force >= 40) {
+    if (Q.rb_militancy >= 0.1 || Q.sa_force >= 40 || Q.rfb_force >= 40) {
         Q.hindenburg_angry += 1;
     }
     if (Q.sh_banned) {
@@ -1173,20 +1188,25 @@ if (Q.spd_in_government_time >= 6) {
     if (Q.nationalization_adopted) {
         Q.hindenburg_angry += 1;
     }
+    if (Q.nationalization_progress >= 1) {
+        Q.hindenburg_angry += Q.nationalization_progress * 2;
+    }
+    if (Q.economic_democracy >= 1) {
+        Q.hindenburg_angry += Q.economic_democracy * 2
+    }
     if (Q.moderate_plan_adopted) {
         Q.hindenburg_angry -= 1;
     }
     if (Q.z_ideology == "Left") {
         Q.hindenburg_angry -= 1;
     }
-    if (Q.stegerwald_path) {
+    if (Q.stegerwald_path && Q.bourgeois_coalition >= 40) {
+        Q.hindenburg_angry += 2;
+    } else if (Q.stegerwald_path && Q.bourgeois_coalition < 40) {
         Q.hindenburg_angry += 1;
     }
     if (Q.soviet_relation >= 1) {
         Q.hindenburg_angry += Q.soviet_relation;
-    }
-    if ((Q.year >= 1930 && Q.month >= 8) || Q.year >= 1931) {
-        Q.hindenburg_angry += 3;
     }
     if (Q.hindenburg_angry < Q.hindenburg_angry_base) {
         Q.hindenburg_angry = Q.hindenburg_angry_base;
