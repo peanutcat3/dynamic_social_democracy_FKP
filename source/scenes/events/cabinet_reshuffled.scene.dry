@@ -10,7 +10,7 @@ go-to: menu if chancellor != "Wirth"; wirth_resign_hindenburg if chancellor == "
 
 @menu
 
-Chancellor [+ chancellor +] has announced his intentions to President [+ president +] to reshuffle the cabinet, sacking and replacing all current <span style="color: #c00000;">**SPD**</span> ministers and replacing them with bourgeois ones. [? if bourgeois_coalition < 50 and (right_coalition < 50 or dnvp_ideology == "Radical and dnvp_leader != "Westarp") and (center_right_coalition < 50 or dnvp_ideology == "Radical") : Luckily, they lack a majority without us, so we can bring them down with a simple motion of no confidence. ?]
+Chancellor [+ chancellor +] has announced his intentions to President [+ president +] to reshuffle the cabinet, sacking and replacing all current <span style="color: #c00000;">**SPD**</span> ministers and replacing them with bourgeois ones. [? if bourgeois_coalition < 50 and (right_coalition < 50 or dnvp_ideology == "Radical" and dnvp_leader != "Westarp") and (center_right_coalition < 50 or dnvp_ideology == "Radical") : Luckily, they lack a majority without us, so we can bring them down with a simple motion of no confidence. ?]
 
 - @try_assuage: Try to assuage our partners.
 - @right_coalition: The <span style="color: #3E88B3;">**DNVP**</span> replaces us in government.
