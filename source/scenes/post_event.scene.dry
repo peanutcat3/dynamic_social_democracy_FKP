@@ -1188,12 +1188,6 @@ if (Q.spd_in_government_time >= 6) {
     if (Q.nationalization_adopted) {
         Q.hindenburg_angry += 1;
     }
-    if (Q.nationalization_progress >= 1) {
-        Q.hindenburg_angry += Q.nationalization_progress * 2;
-    }
-    if (Q.economic_democracy >= 1) {
-        Q.hindenburg_angry += Q.economic_democracy * 2
-    }
     if (Q.moderate_plan_adopted) {
         Q.hindenburg_angry -= 1;
     }
