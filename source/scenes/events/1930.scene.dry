@@ -6,10 +6,10 @@ on-arrival: {!
 Q.unemployed += 6.8; 
 Q.inflation -= 4;
 Q.budget -= 2;
-// moved demographic changes to post_event
-!}
 // historical: -1.4
 Q.economic_growth -= 1;
+// moved demographic changes to post_event
+!}
 tags: event
 view-if: year = 1930 and month = 1 
 priority: 2
