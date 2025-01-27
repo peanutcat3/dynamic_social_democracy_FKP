@@ -8,6 +8,10 @@ if (Q.unemployed) {
 if (Q.inflation) {
     Q.inflation_2 = Q.inflation.toFixed(1);
 }
+Q.economic_growth_2 = '0';
+if (Q.economic_growth) {
+    Q.economic_growth_2 = Q.economic_growth.toFixed(1);
+}
 !}
 
 = Status
@@ -68,13 +72,17 @@ Reichstag composition:
 
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
+Next election: [+ next_election_month : month +] [+ next_election_year +]
+
+Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen": postponed indefinitely ?]
+
+= Economics
+
 Inflation: [+ inflation_2 +]%
 
 [? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
 
-Next election: [+ next_election_month : month +] [+ next_election_year +]
-
-Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen": postponed indefinitely ?]
+Economic growth: [+ economic_growth_2 +]%
 
 # = Public Opinion
 
@@ -181,6 +189,11 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 [? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
 
 @polls
+on-arrival: {!
+Q.pro_republic_disp = Math.round(Q.pro_republic);
+Q.nationalism_disp = Math.round(Q.nationalism);
+Q.socialism_disp = Math.round(Q.socialism);
+!}
 
 = Projected election results
 
@@ -212,7 +225,7 @@ Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
 
 **Detailed results for each demographic**
 
-Support for the Republic: [+ pro_republic +]%
+Support for the Republic: [+ pro_republic_disp +]%
 
 Workers: SPD: [+ workers_spd_display +]%, Z: [+ workers_z_display +]%, KPD: [+ workers_kpd_display +]%, [? if not lvp_formed: [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, DVP: [+ workers_dvp_display +]%,?][? if lvp_formed: LVP: [+ workers_lvp_display +]%,?] DNVP: [+ workers_dnvp_display +]%, [? if dnf_formed: DNF: [+ workers_dnf_display +]%  ?][? if kvp_formed: KVP: [+ workers_kvp_display +]%  ?]NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]% [? if sapd_formed: SAPD: [+ workers_sapd_display +]% ?]
 

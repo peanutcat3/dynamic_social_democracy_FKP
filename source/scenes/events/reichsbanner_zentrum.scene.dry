@@ -18,6 +18,8 @@ on-arrival: rb_strength *= 0.9; z_relation -= 5; ddp_relation -= 5; lvp_relation
 
 We have judged that the Reichsbanner's militancy is more important than maintaining a coalition with the <span style="color: #000000;">Center Party</span> and [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. The Reichsbanner members affiliated with these parties leave, while the left of the <span style="color: #c00000;">**SPD**</span> is strengthened.
 
+# TODO: this should make it harder to form Weimar coalitions
+
 
 @lower_militancy
 on-arrival: rb_militancy *= 0.5

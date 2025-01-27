@@ -176,6 +176,7 @@ Q.largest_party = 'SPD';
 if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r) {
     Q.largest_party = 'NSDAP';
 }
+
 if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
     Q.largest_party = 'KPD';
 }
@@ -323,6 +324,11 @@ Q.reichswehr_goal_completed = 0;
 
 Q.strike_term_seen = 0;
 Q.grand_coalition_collapsed = 0;
+
+// understanding the enemy
+if (Q.nsdap_r >= 15) {
+    Q.understanding_enemy_timer = 2;
+}
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
@@ -1457,10 +1463,12 @@ Q.old_middle_nsdap += 3;
 Q.new_middle_nsdap += 3;
 Q.rural_nsdap += 3;
 Q.unemployed_nsdap += 5;
-if (Q.pro_republic < 45 && Q.pro_republic >= 40) {
+// Thresholds are kind of arbitrary - adjusted because of negative economic effects on pro_republic
+if (Q.pro_republic < 45 && Q.pro_republic >= 36) {
     Q.workers_spd -= 6;
 }
-if (Q.pro_republic < 40) {
+if (Q.pro_republic < 36) {
+    // TODO: if you pursue a consistently revolutionary course, you might avoid this? But you might also cause a coalition between Hitler and the Center.
     Q.workers_spd *= 0.85;
     Q.new_middle_spd -= 5;
     Q.old_middle_spd -= 5;
@@ -1767,7 +1775,7 @@ Who should be the chancellor?
 @muller
 title: Hermann Müller for Chancellor
 view-if: muller_dead = 0
-subtitle: Muller is popular within the party, and is the preferred candidate of the <span style="color: #000000;">Center</span> and other parties.
+subtitle: Müller is popular within the party, and is the preferred candidate of the <span style="color: #000000;">Center</span> and other parties.
 on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
 go-to: ministries
 
