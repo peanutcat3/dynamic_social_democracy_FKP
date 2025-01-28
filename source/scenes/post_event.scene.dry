@@ -1231,6 +1231,9 @@ if (Q.spd_government_burden_seen == 1 && Q.spd_in_government) {
     if (Q.women_goal_spd >= 1) {
         Q.goal_spd_total += 1
     }
+    if (Q.education_goal_spd >= 1) {
+        Q.goal_spd_total += 1
+    }
     if (Q.agriculture_goal_spd >= 1) {
         Q.goal_spd_total += 1
     }
@@ -1248,6 +1251,9 @@ if (Q.spd_government_burden_seen == 1 && Q.spd_in_government && Q.spd_government
         Q.goal_spd_total_peoples += 1
     }
     if (Q.tariff_goal_spd_peoples >= 1) {
+        Q.goal_spd_total_peoples += 1
+    }
+    if (Q.education_goal_spd_peoples >= 1) {
         Q.goal_spd_total_peoples += 1
     }
     if (Q.labor_goal_spd_peoples >= 1) {
@@ -1281,6 +1287,9 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
     if (Q.women_goal_spd >= 1) {
         Q.goal_spd_total += 1
     }
+    if (Q.education_goal_spd >= 1) {
+        Q.goal_spd_total += 1
+    }
     if (Q.agriculture_goal_spd >= 1) {
         Q.goal_spd_total += 1
     }
@@ -1298,6 +1307,7 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
     Q.labor_goal_spd = 0;
     Q.unemployment_goal_spd = 0;
     Q.women_goal_spd = 0;
+    Q.education_goal_spd = 0;
     Q.agriculture_goal_spd = 0;
     Q.reichswehr_goal_spd = 0;
     Q.goal_spd_cancel = 0;
@@ -1318,6 +1328,9 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
     if (Q.tariff_goal_spd_peoples >= 1) {
         Q.goal_spd_total_peoples += 1
     }
+    if (Q.education_goal_spd_peoples >= 1) {
+        Q.goal_spd_total_peoples += 1
+    }
     if (Q.labor_goal_spd_peoples >= 1) {
         Q.goal_spd_total_peoples += 1
     }
@@ -1331,12 +1344,13 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
         Q.old_middle_spd *= 0.8;
         Q.new_middle_spd *= 0.8;
         Q.rural_spd *= 0.8;
-        Q.catholics_spd *= 0.9;
+        Q.catholics_spd *= 0.95;
     }
     Q.economy_goal_spd_peoples = 0;
     Q.labor_goal_spd_peoples = 0;
     Q.finance_goal_spd_peoples = 0;
     Q.tariff_goal_spd_peoples = 0;
+    Q.education_goal_spd_peoples = 0;
     Q.agriculture_goal_spd_peoples = 0;
     Q.foreign_goal_spd_peoples = 0;
     Q.goal_spd_cancel_peoples = 0;

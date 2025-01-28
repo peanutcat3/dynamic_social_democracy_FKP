@@ -22,6 +22,8 @@ The weight of governance now falls upon our shoulders. It is our responsibility 
 
 [? if spd_in_government: - Advance women's rights. ?]
 
+[? if spd_in_government: - Reform or expand education for workers. ?]
+
 [? if spd_in_government : - Secure low food prices for workers. ?]
 
 [? if spd_in_government : - Reduce funding for the Reichswehr. ?]
@@ -35,6 +37,8 @@ The weight of governance now falls upon our shoulders. It is our responsibility 
 [? if spd_in_government : - Be neutral in labor affairs. ?]
 
 [? if spd_in_government : - Raise tariffs. ?]
+
+[? if spd_in_government : - Increase science funding. ?]
 
 [? if spd_in_government : - Take steps towards the <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span> or national concordat. ?]
 
