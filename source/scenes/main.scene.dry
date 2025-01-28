@@ -281,7 +281,7 @@ max-cards: 3
 
 {!<p class="other">!}[? if banking_crisis_timer == 1 : The major Austrian Bank Creditanstalt has declared bankruptcy, following <span style="color: #002654;">French</span> political and economic pressures aimed at undermining the plans for the Austro-German customs union. In that respect, they have certainly succeeded. We can only hope that this crisis does not spill over into Germany or, worse, spread across Europe. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1931 and month = 6 : The first elections of the Second Spanish Republic has been held, with it a great victory for the <span style="color: #EF1C27;">Spanish Socialists</span> and the <span style="color: #E25822;">Republican Left</span>. Togehter, they've formed a government with Manuel Azaña as Prime Minister. ?]{!</p>!}
+{!<p class="other">!}[? if year = 1931 and month = 6 : The first elections of the Second Spanish Republic has been held, with it a great victory for the <span style="color: #EF1C27;">Spanish Socialists</span> and the <span style="color: #E25822;">Republican Left</span>. Together, they've formed a government with Manuel Azaña as Prime Minister. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 9: The Japanese have invaded Manchuria following the Mukden incident. ?]{!</p>!}
 
@@ -600,7 +600,7 @@ max-cards: 4
 
 {!<p class="other">!}[? if banking_crisis_timer == 1 : The major Austrian Bank Creditanstalt has declared bankruptcy, following <span style="color: #002654;">French</span> political and economic pressures aimed at undermining the plans for the Austro-German customs union. In that respect, they have certainly succeeded. We can only hope that this crisis does not spill over into Germany or, worse, spread across Europe. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1931 and month = 6 : The first elections of the Second Spanish Republic has been held, with it a great victory for the <span style="color: #EF1C27;">Spanish Socialists</span> and the <span style="color: #E25822;">Republican Left</span>. Togehter, they've formed a government with Manuel Azaña as Prime Minister. ?]{!</p>!}
+{!<p class="other">!}[? if year = 1931 and month = 6 : The first elections of the Second Spanish Republic has been held, with it a great victory for the <span style="color: #EF1C27;">Spanish Socialists</span> and the <span style="color: #E25822;">Republican Left</span>. Together, they've formed a government with Manuel Azaña as Prime Minister. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 9: The Japanese have invaded Manchuria following the Mukden incident. ?]{!</p>!}
 
