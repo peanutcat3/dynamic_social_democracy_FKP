@@ -34,9 +34,9 @@ unavailable-subtitle: Not enough resources.
 audio: shuffle music/communist/workers_of_vienna_normalized.mp3
 on-arrival: left_strength += 5; radicalization += 1; rb_militancy += 0.03; resources -= 1; austria_relation += 1; sdapo_strength += 1 if austrian_parliament_seen = 1
 
-Our Reichsbanner can learn much in paramilitary organization and training from the <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ian</span> Republikanischer Schutzbund (Republican Protection Units), the paramilitary branch of the <span style="color: #EF3340;">Au</span><span style="color: #ffffff;"><span style="color: #ffffff;">str</span></span><span style="color: #EF3340;">ian</span> <span style="color: #A50034;">social democrats</span>.
+Our Reichsbanner can learn much in paramilitary organization and training from the Austrian Republikanischer Schutzbund (Republican Protection Units), the paramilitary branch of the <span style="color: #EF3340;">Au</span><span style="color: #ffffff;"><span style="color: #ffffff;">str</span></span><span style="color: #EF3340;">ian</span> <span style="color: #A50034;">social democrats</span>.
 
-[? if austrian_parliament_seen and not austrian_civil_war_seen: We are also helping the Austrian Social Democratic Worker's Party build up their resources in preparation for a future struggle, legally and illegally. ?]
+[? if austrian_parliament_seen and not austrian_civil_war_seen: We are also helping the Austrian <span style="color: #A50034;">Social Democratic Worker's Party</span> build up their resources in preparation for a future struggle, legally and illegally. ?]
 
 
 @scandi

@@ -243,7 +243,7 @@ go-to: menu
 
 **New Mittelstand**: The new middle class consists of white-collar workers and government employees. This is the base of <span style="color: #D3C24D;">liberalism</span>. 10-15% of the population.
 
-**Rural**: Small and large farmers and independent rural workers. [? if rural_dnvp_normalized > rural_nsdap_normalized: Protestant farmers usually supports the <span style="color: #3E88B3;">**DNVP**</span>?][? if rural_nsdap_normalized >= 25: Protestant farmers usually supports the <span style="color: #3E88B3;">**DNVP**</span>, however the <span style="color: #7A3C00;">**Nazis**</span> have gained a strong appeal among them?]. 20-30% of the population.
+**Rural**: Small and large farmers and independent rural workers. [? if rural_dnvp_normalized > rural_nsdap_normalized: Protestant farmers usually supports the <span style="color: #3E88B3;">**DNVP**</span>?][? if rural_nsdap_normalized >= 25: Protestant farmers usually supports the <span style="color: #3E88B3;">**DNVP**</span>, however the <span style="color: #7A3C00;">Nazis</span> have gained a strong appeal among them?]. 20-30% of the population.
 
 **Catholics** are the largest religious minority, at about 30% of the population. They disproportionately support the <span style="color: #000000;">Center Party</span> (or the <span style="color: #A2D8E0;">**Bavarian People's Party**</span> in <span style="color: #00CCFF;">Bavaria</span>).
 
@@ -503,7 +503,7 @@ Strength: [+ sh_strength +] thousand
 
 Militarization: [+ sh_militancy : militancy +]
 
-**Sturmabteilung (SA)**: This is the <span style="color: #7A3C00;">**Nazi**</span> paramilitary group.
+**Sturmabteilung (SA)**: This is the <span style="color: #7A3C00;">Nazi</span> paramilitary group.
 
 Strength: [+ sa_strength +] thousand
 

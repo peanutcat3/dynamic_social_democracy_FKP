@@ -93,13 +93,13 @@ Of course <span style="color: #8B0000;">Stalin</span> and the various leaders of
 
 
 @customs_union
-title: Form a customs union with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span>?
+title: Form a customs union with Austria?
 subtitle: This will likely incur the wrath of <span style="color: #002654;">France</span>.
 unavailable-subtitle: This is superseded by the <span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>.
 choose-if: eu = 0
 view-if: black_thursday_seen = 1 and customs_union = 0
 
-The right has long desired closer ties with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span>, with the eventual goal of the merger of the two German-speaking countries. A customs union with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span> is the first step towards this goal. Additionally, many believe that a union with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span> would improve our current economic circumstances.
+The right has long desired closer ties with Austria, with the eventual goal of the merger of the two German-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
 
 However, the Allies, especially <span style="color: #002654;">France</span>, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
 
@@ -110,7 +110,7 @@ However, the Allies, especially <span style="color: #002654;">France</span>, are
 on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2; z_relation += 6; dvp_relation += 6; ddp_relation += 4; lvp_relation += 6; coalition_dissent -= 1 if coalition_dissent > 0; coup_progress -= 1; hindenburg_angry -= 15
 max-visits: 1
 
-We have formed a customs union with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span>! The right-wing parties are praising us for this unexpected turn of events.
+We have formed a customs union with Austria! The right-wing parties are praising us for this unexpected turn of events.
 
 Immediately, <span style="color: #002654;">France</span> and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
 
@@ -167,7 +167,7 @@ title: Diplomatically support Austrian democracy against the Dollfuß dictatorsh
 view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
 on-arrival: sdapo_strength += 1; left_dissent -= 3; center_dissent -= 3
 
-We provide verbal backing to Austrian democracy, wage a war of words against Austrofascism, and promulgate additional trade sanctions. Time will tell if it will be enough.
+We provide verbal backing to Austrian democracy, wage a war of words against <span style="color: #7A3C00;">Austrofascism</span>, and promulgate additional trade sanctions. Time will tell if it will be enough.
 
 @support_austria_2
 title: Provide material support to Austrian democracy against the Dollfuß dictatorship.
@@ -176,7 +176,7 @@ choose-if: budget >= 1
 view-if: austrian_parliament_seen = 1 and austrian_civil_war_seen = 0
 on-arrival: budget -= 1; sdapo_strength += 3; left_dissent -= 6; center_dissent -= 6
 
-In public, we provide verbal backing to Austrian democracy, wage a war of words against Austrofascism, and promulgate additional trade sanctions. Privately, we provide financial and various forms of "support" to our comrades in Austria in their struggle against dictatorship.
+In public, we provide verbal backing to Austrian democracy, wage a war of words against <span style="color: #7A3C00;">Austrofascism</span>, and promulgate additional trade sanctions. Privately, we provide financial and various forms of "support" to our comrades in Austria in their struggle against dictatorship.
 
 @european_union
 title: Take steps to form a "<span style="color: #001489;">European</span> <span style="color: #FFDD00;">Union</span>".

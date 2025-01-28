@@ -150,7 +150,7 @@ go-to: eg_menu
 
 Hitler does not yet control Germany. [? if chancellor == "Papen" : However, Chancellor Papen's <span style="color: #808080;">authoritarianism</span> and <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> politics are paving the way for Hitler, or someone like him, to take power. ?] [? if chancellor == "Schleicher" : However, Chancellor Schleicher's <span style="color: #808080;">authoritarianism</span> and scheming is paving the way for Hitler, or someone like him, to take power. ?][? if resist_coup == 1 and republic_victory == 0 and long_war == 0 and coup_victory == 0 : Given our defeat in the Prussian coup, the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> appears to be ascendant. ?][? if chancellor == "Brüning" : However, Chancellor Brüning's austerity policies and the continuation of the depression are paving the way for Hitler, or someone like him, to take power. ?]
 
-[? if hitler_deported == 1 : We have deported Hitler back to <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span>. Hopefully he will never return. ?]
+[? if hitler_deported == 1 : We have deported Hitler back to Austria. Hopefully he will never return. ?]
 
 @nsdap_win
 view-if: chancellor == "Goebbels" or president == "Göring"
@@ -218,7 +218,7 @@ view-if: president == "Einstein"
 tags: endings
 go-to: eg_menu
 
-Albert Einstein, possibly the most famous scientist in the world, has been elected as President of Germany. As a German Jew and a pacifist, he is the repudiation of everything the Nazis stood for, and a symbol of a new German Republic that has moved beyond its checkered past.
+Albert Einstein, possibly the most famous scientist in the world, has been elected as President of Germany. As a German <span style="color: #005EB8;">Jew</span> and a pacifist, he is the repudiation of everything the <span style="color: #7A3C00;">Nazis</span> stood for, and a symbol of a new German Republic that has moved beyond its checkered past.
 
 
 

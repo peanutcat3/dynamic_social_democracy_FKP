@@ -1,5 +1,5 @@
-title: <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ian</span> customs union
-subtitle: The Foreign Ministry seeks closer ties to <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span>...
+title: Austrian customs union
+subtitle: The Foreign Ministry seeks closer ties to Austria...
 new-page: true
 on-arrival: customs_union_seen = 1
 tags: event
@@ -7,13 +7,13 @@ view-if: year = 1931 and month >= 4 and foreign_minister_party != "SPD" and fore
 max-visits: 1
 
 
-= <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ian</span> Customs Union
+= Austrian Customs Union
 
-[? if spd_in_government: The [+ foreign_minister_party +] foreign minister has a proposal for a customs union with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span>. We can either accept or reject this agreement. ?]
-[? if not spd_in_government: The government of Chancellor [+ chancellor +] has a proposal for a customs union with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span>. Most likely, this will happen whatever we decide. ?]
+[? if spd_in_government: The [+ foreign_minister_party +] foreign minister has a proposal for a customs union with Austria. We can either accept or reject this agreement. ?]
+[? if not spd_in_government: The government of Chancellor [+ chancellor +] has a proposal for a customs union with Austria. Most likely, this will happen whatever we decide. ?]
 
 
-The nationalist right has long yearned for closer ties with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span>, with the eventual goal of the merger of the two German-speaking countries. A customs union with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span> is the first step towards this goal. Additionally, many believe that a union with <span style="color: #EF3340;">Au</span><span style="color: #ffffff;">str</span><span style="color: #EF3340;">ia</span> would improve our current economic circumstances.
+The nationalist right has long yearned for closer ties with Austria, with the eventual goal of the merger of the two German-speaking countries. A customs union with Austria is the first step towards this goal. Additionally, many believe that a union with Austria would improve our current economic circumstances.
 
 However, the Allies, especially <span style="color: #002654;">France</span>, are likely to object. This agreement would break the terms of the Versailles Treaty, and could lead to economic sanctions, further hurting our economy.
 
