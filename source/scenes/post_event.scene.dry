@@ -1491,7 +1491,7 @@ if (Q.spd_in_government_time >= 6) {
         Q.hindenburg_angry += Q.soviet_relation;
     }
     if (Q.hindenburg_angry < Q.hindenburg_angry_base) {
-        Q.hindenburg_angry = Q.hindenburg_angry_base;
+        Q.hindenburg_angry += 5;
     }
 }
 
