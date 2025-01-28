@@ -729,7 +729,7 @@ if (Q.month_actions >= 1) {
             }
         }
         if (Q.sa_force >= 50) {
-            Q.workers_kpd -= 4/12;
+            Q.workers_kpd -= 2/12;
             Q.workers_spd -= 2/12;
             Q.unemployed_kpd -= 7/12;
             Q.unemployed_spd -= 4/12;
@@ -746,7 +746,7 @@ if (Q.month_actions >= 1) {
             }
         }
         if (Q.sh_force >= 50) {
-            Q.workers_kpd -= 3/12;
+            Q.workers_kpd -= 1/12;
             Q.workers_spd -= 2/12;
             Q.unemployed_kpd -= 3/12;
             Q.unemployed_spd -= 2/12;
