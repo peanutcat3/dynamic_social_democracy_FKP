@@ -368,14 +368,14 @@ if (Q.month_actions >= 1) {
             Q.unemployed_spd -= 4/12;
         }
         if (Q.other_votes < 4) {
-            Q.old_middle_other += 4/12;
-            Q.new_middle_other += 4/12;
-            Q.rural_other += 3/12;
+            Q.old_middle_other += 8/12;
+            Q.new_middle_other += 8/12;
+            Q.rural_other += 6/12;
         }
         if (Q.ddp_votes < 1) {
-            Q.old_middle_ddp += 4/12;
-            Q.new_middle_ddp += 4/12;
-            Q.rural_ddp += 2/12;
+            Q.old_middle_ddp += 8/12;
+            Q.new_middle_ddp += 8/12;
+            Q.rural_ddp += 3/12;
         }
     }
 
