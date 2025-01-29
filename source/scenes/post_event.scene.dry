@@ -778,10 +778,10 @@ if (Q.month_actions >= 1) {
                 Q.old_middle_dvp += 6/12;
             }
             if (Q.new_middle_lvp_normalized < 40) {
-                Q.new_middle_dvp += 12/12;
+                Q.new_middle_lvp += 12/12;
             }
             if (Q.old_middle_lvp_normalized < 40) {
-                Q.old_middle_dvp += 12/12;
+                Q.old_middle_lvp += 12/12;
             }
             if (Q.rural_dnvp_normalized < 40) {
                 Q.rural_dnvp += 6/12;
@@ -1216,6 +1216,8 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
         Q.workers_spd *= 0.9;
         Q.unemployed_spd *= 0.9;
         Q.new_middle_spd *= 0.95;
+        Q.left_dissent += 5;
+        Q.labor_dissent += 5;
     }
     Q.welfare_goal_spd = 0;
     Q.economy_goal_spd = 0;
@@ -1261,6 +1263,7 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
         Q.new_middle_spd *= 0.8;
         Q.rural_spd *= 0.8;
         Q.catholics_spd *= 0.95;
+        Q.reformist_dissent += 5;
     }
     Q.economy_goal_spd_peoples = 0;
     Q.labor_goal_spd_peoples = 0;
@@ -1332,6 +1335,9 @@ if (Q.spd_in_government_time >= 6) {
         Q.hindenburg_angry -= 2;
     } else if (Q.lvp_leader == "Luther" && Q.lvp_formed) {
         Q.hindenburg_angry -= 2;
+    }
+    if (!Q.stresemann_dead && Q.foreign_minister_party == "SPD") {
+        Q.hindenburg_angry += 2;
     }
     if (Q.chancellor == "Müller") {
         Q.hindenburg_angry -= 1;

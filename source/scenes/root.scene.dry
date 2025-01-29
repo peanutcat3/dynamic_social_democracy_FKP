@@ -727,6 +727,7 @@ Q.lvp_timer_1_trigger = 0;
 Q.ui0_seen = 0;
 Q.young_plan_ratified = 0
 Q.kvp_leader = "Westarp"
+Q.stresemann_dead = 0;
 
 // flavour text stuff
 Q.flavour_0_trigger = 0;
