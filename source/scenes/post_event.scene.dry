@@ -37,12 +37,12 @@ for (var c of Q.classes) {
     }
     for (var party of Q.parties) {
         if (class_votes >= 100) {
-            if (class_votes >= 125) {
-                Q[c+'_'+party] *= 0.98;
-                if (class_votes >= 175) {
-                    Q[c+'_'+party] *= 0.96;
-                    if (class_votes >= 225) {
-                        Q[c+'_'+party] *= 0.94;
+            if (class_votes >= 150) {
+                Q[c+'_'+party] *= 0.99;
+                if (class_votes >= 200) {
+                    Q[c+'_'+party] *= 0.98;
+                    if (class_votes >= 250) {
+                        Q[c+'_'+party] *= 0.96;
                     }
                 }
             }
@@ -942,9 +942,9 @@ if (Q.year == 1928 && Q.month == 12 && (Q.in_center_right_coalition == 1 || Q.in
 }
 
 if (Q.year == 1929 && Q.month == 5 && Q.dvp_ideology !== "Left") {
-    Q.liberal_cooperation += 1
+    Q.liberal_cooperation += 1;
 } else if (Q.year == 1929 && Q.month == 5 && Q.dvp_ideology == "Left") {
-    Q.liberal_cooperation += 3
+    Q.liberal_cooperation += 3;
 }
 
 if (Q.ddp_right > (Q.ddp_left + 4)) {
