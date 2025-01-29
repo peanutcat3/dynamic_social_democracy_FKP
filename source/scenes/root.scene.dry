@@ -729,11 +729,13 @@ Q.young_plan_ratified = 0
 Q.kvp_leader = "Westarp"
 
 // flavour text stuff
+Q.flavour_0_trigger = 0;
 Q.flavour_1_trigger = 0;
 Q.flavour_2_trigger = 0;
 Q.flavour_3_trigger = 0;
 Q.flavour_4_trigger = 0;
 
+Q.flavour_0_trigger_time = 0;
 Q.flavour_1_trigger_time = 0;
 Q.flavour_2_trigger_time = 0;
 Q.flavour_3_trigger_time = 0;
