@@ -1433,7 +1433,7 @@ if (Q.spd_in_government_time >= 6) {
         Q.hindenburg_angry -= 2;
     }
     if (Q.reparations <= -2) {
-        Q.hindenburg_angry -= 2;
+        Q.hindenburg_angry -= 3;
     }
     if (Q.lvp_relation < 30 && Q.lvp_formed) {
         Q.hindenburg_angry += 1;
