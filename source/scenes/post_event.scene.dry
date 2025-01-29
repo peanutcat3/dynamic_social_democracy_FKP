@@ -1374,7 +1374,10 @@ if (Q.spd_in_government_time >= 6) {
         Q.hindenburg_angry -= 2;
     }
     if (Q.land_reform >= 1) {
-        Q.hindenburg_angry += Q.land_reform * 2
+        Q.hindenburg_angry += (Q.land_reform * 3)
+    }
+    if (Q.judicial_reform >= 1) {
+        Q.hindenburg_angry += (Q.judicial_reform / 2)
     }
     if (Q.coalition_dissent == 0) {
         Q.hindenburg_angry -= 2;
