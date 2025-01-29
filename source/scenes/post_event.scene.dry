@@ -409,12 +409,12 @@ if (Q.month_actions >= 1) {
         Q.new_middle_z += 1/12;
         Q.rural_z += 2/12;
         if (Q.dnvp_ideology == "Radical" && Q.z_leader !== "Stegerwald") {
-            Q.new_middle_other += 3/12;
-            Q.old_middle_other += 3/12;
-            Q.rural_other += 3/12;
-            Q.rural_dnvp -= 3/12;
-            Q.new_middle_dnvp -= 3/12;
-            Q.old_middle_dnvp -= 3/12;
+            Q.new_middle_other += 4/12;
+            Q.old_middle_other += 4/12;
+            Q.rural_other += 4/12;
+            Q.rural_dnvp -= 2/12;
+            Q.new_middle_dnvp -= 2/12;
+            Q.old_middle_dnvp -= 2/12;
         } else if (Q.dnvp_ideology == "Radical" && Q.z_leader == "Stegerwald") {
             Q.new_middle_z += 3/12;
             Q.old_middle_z += 3/12;
