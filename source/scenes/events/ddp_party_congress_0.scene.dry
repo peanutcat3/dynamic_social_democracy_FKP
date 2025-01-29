@@ -47,7 +47,7 @@ Pessimism is a widespread feeling within the party, leading to mounting pressure
 
 @dstp_formed
 view-if: dstp_formation_points >= 3
-on-arrival: dstp_formed = 1; ddp_name = "DStP"; liberal_cooperation -= 5; bourgeois_cooperation -= 5; new_middle_ddp -= 3; old_middle_ddp += 3; ddp_right += 2; ddp_relation -= 5
+on-arrival: dstp_formed = 1; ddp_name = "DStP"; liberal_cooperation -= 5; bourgeois_cooperation -= 5; new_middle_ddp -= 3; old_middle_ddp += 3; ddp_right += 2; ddp_relation -= 5; pro_republic -= 3
 face-image: img/dstp.jpg
 
 This has come as a complete shock to those inside and outside the party, for the <span style="color: #D3C24D;">**DDP**</span> to merge with the political wing of a mildly anti-semitic paramilitary group "Young German Order". Ongoing negotiations to unite the liberal and bourgeois parties has been considerably damaged, due to the <span style="color: #D3C24D;">**DDP**</span>'s attempts to promote a left-wing split from the <span style="color: #C0A054;">**DVP**</span>.
@@ -56,7 +56,7 @@ In this agreement, the <span style="color: #D3C24D;">**DDP**</span> has promised
 
 @status_quo
 view-if: dstp_formation_points < 3
-on-arrival: dstp_formed = 0; liberal_cooperation += 3 if stolper_program_adopted; bourgeois_cooperation += 2 if stolper_program_adopted
+on-arrival: dstp_formed = 0; liberal_cooperation += 3 if stolper_program_adopted; bourgeois_cooperation += 2 if stolper_program_adopted; pro_republic += 3
 face-image: img/ddp_2.jpg
 
 As expected, a merger between an moderately anti-semitic organization and a party seen as the party for the <span style="color: #005EB8;">Jews</span> has failed, with the Young German Order leader Artur Mahraun leaving negotiations citing irreconcilable differences.
