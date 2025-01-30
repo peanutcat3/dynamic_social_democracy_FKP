@@ -1080,11 +1080,11 @@ if (Q.year == 1929 && Q.month == 5 && Q.lvp_formed) {
 if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0) {
     Q.bourgeois_negotiations = 1;
     Q.bourgeois_negotiations_1 = 1;
-    Q.bourgeois_negotiations_1930_timer == 6;
+    Q.bourgeois_negotiations_1930_timer = 6;
 } else if (Q.year >= 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0) {
     Q.bourgeois_negotiations = 1;
     Q.bourgeois_negotiations_2 = 1;
-    Q.bourgeois_negotiations_1932_timer == 6;
+    Q.bourgeois_negotiations_1932_timer = 6;
 }
 
 // TODO: make the timers become 0 if negotiations fail... ^^^
