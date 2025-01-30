@@ -49,6 +49,6 @@ The right-wing coalition has fallen. New elections have been set for [+ next_ele
 title: It does not matter what we do.
 subtitle: Brüning will form a center-right coalition.
 view-if: center_right_coalition >= 50
-on-arrival: spd_in_government = 0; spd_toleration = 0; in_grand_coalition = 0; in_center_right_coalition = 1; in_right_coalition = 0; ddp_relation -= 3; dvp_relation -= 3; z_relation -= 3; lvp_relation -= 3; old_middle_dnf -= 2; ddp_right += 1
+on-arrival: spd_in_government = 0; spd_toleration = 0; in_grand_coalition = 0; in_center_right_coalition = 1; in_right_coalition = 0; ddp_relation -= 3; dvp_relation -= 3; z_relation -= 3; lvp_relation -= 3; old_middle_dnf -= 2; ddp_right += 1; bourgeois_cooperation += 3; liberal_cooperation += 1; bourgeois_cooperation += 2
 
 The bourgeois has survived without our toleration, leaving us as an opposition party. 

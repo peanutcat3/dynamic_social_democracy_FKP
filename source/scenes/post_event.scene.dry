@@ -990,6 +990,14 @@ if (Q.year >= 1930 && Q.lvp_relation < 30) {
     Q.lvp_right += 1;
 }
 
+if (Q.in_right_coalition || Q.in_center_right_coalition) {
+    Q.bourgeois_cooperation += 0.25;
+    if (Q.in_center_right_coalition) {
+        Q.liberal_cooperation += 0.25;
+        Q.bourgeois_cooperation += 0.25;
+    }
+}
+
 if (Q.bruning_event_timer == 3 && Q.dvp_ideology == "Right" && !Q.lvp_formed) {
     Q.dvp_right += 1;
     Q.new_middle_dvp -= 4;
@@ -1060,6 +1068,16 @@ if (Q.year == 1929 && Q.month == 5 && Q.lvp_formed) {
     Q.new_middle_lvp += 3;
     Q.old_middle_lvp += 3;
     Q.lvp_left += 1;
+}
+
+if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0) {
+    Q.bourgeois_negotiations = 1;
+    Q.bourgeois_negotiations_1 = 1;
+    Q.bourgeois_negotiations_1930_timer == 6;
+} else if (Q.year >= 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0) {
+    Q.bourgeois_negotiations = 1;
+    Q.bourgeois_negotiations_2 = 1;
+    Q.bourgeois_negotiations_1932_timer == 6;
 }
 
 if (Q.year == 1930 && Q.month == 1 && Q.dnvp_historical_1929 && (Q.peoples_party || Q.weimar_coalition >= 50 || Q.stegerwald_path || (Q.z_leader == "Joos" && Q.dvp_reform))) {
