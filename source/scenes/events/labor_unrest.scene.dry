@@ -30,7 +30,7 @@ Even though most workers grudgingly accept the our intervention, there is deep b
 
 @balance
 subtitle: Both sides need to share the pain in the current crisis.
-on-arrival: labor_dissent += 4; workers_spd -= 2; kpd_coalition_dissent += 1; kpd_relation -= 5; workers_kpd += 2; ddp_cohesion += 1; ddp_relation += 4; labor_goal_spd_peoples += 1
+on-arrival: labor_dissent += 4; workers_spd -= 1; kpd_coalition_dissent += 1; kpd_relation -= 5; workers_kpd += 1; ddp_cohesion += 1; ddp_relation += 4; labor_goal_spd_peoples += 1
 
 We manage to convince Labor Minister [+ labor_minister +] (**<span style="color: #000000;">**Z**</span>**) to strike a compromise between both sides.
 
