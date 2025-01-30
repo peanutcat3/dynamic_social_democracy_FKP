@@ -18,6 +18,7 @@ Chancellor [+ chancellor +] has used Article 48 of the constitution for the firs
 title: Vote for this motion, ending the coalition.
 on-arrival: time_to_election = 2; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 3; bruning_vonc_2_kvp = 1; bruning_event_timer = 0
 call: set_next_election_time_2
+go-to: recalculate
 
 We have voted against the [+ chancellor +] government in a vote of no confidence. 
 
@@ -30,3 +31,29 @@ choose-if: month == 13
 unavailable-subtitle: The plot demands we bring down [+ chancellor +].
 
 
+@recalculate
+on-arrival: {!
+if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0) {
+    Q.bourgeois_negotiations = 1;
+    Q.bourgeois_negotiations_1 = 1;
+    Q.bourgeois_negotiations_1930_timer = 6;
+} else if (Q.year >= 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0) {
+    Q.bourgeois_negotiations = 1;
+    Q.bourgeois_negotiations_2 = 1;
+    Q.bourgeois_negotiations_1932_timer = 6;
+}
+
+if (Q.bourgeois_negotiations_1930_timer > 0 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4) {
+    Q.bourgeois_negotiations = 1;
+    Q.bourgeois_negotiations_1_election = 1;
+    Q.bourgeois_negotiations_elections_1930_timer = 2;
+} else if (Q.bourgeois_negotiations_1932_timer > 0 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4) {
+    Q.bourgeois_negotiations = 1;
+    Q.bourgeois_negotiations_2_election = 1;
+    Q.bourgeois_negotiations_elections_1932_timer = 2;  
+}
+
+if ((Q.bourgeois_negotiations_elections_1930_timer > 0 || Q.bourgeois_negotiations_elections_1932_timer > 0) && (Q.bourgeois_negotiations_1930_timer > 0 || Q.bourgeois_negotiations_1932_timer > 0)) {
+    Q.bourgeois_negotiations_election_soon = 1;
+}
+!}
