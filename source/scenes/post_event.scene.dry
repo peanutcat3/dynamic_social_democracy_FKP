@@ -1077,6 +1077,10 @@ if (Q.year == 1929 && Q.month == 5 && Q.lvp_formed) {
     Q.lvp_left += 1;
 }
 
+if (Q.year == 1930 && Q.month == 3 && Q.dvp_leader != "Luther" && Q.lvp_leader != "Luther") {
+    Q.luther_reichsbank = 1;
+}
+
 if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0) {
     Q.bourgeois_negotiations = 1;
     Q.bourgeois_negotiations_1 = 1;
