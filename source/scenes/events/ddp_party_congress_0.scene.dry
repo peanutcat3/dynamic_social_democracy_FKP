@@ -47,7 +47,7 @@ Pessimism is a widespread feeling within the party, leading to mounting pressure
 
 @dstp_formed
 view-if: dstp_formation_points >= 3
-on-arrival: dstp_formed = 1; ddp_name = "DStP"; liberal_cooperation -= 5; bourgeois_cooperation -= 5; new_middle_ddp -= 3; old_middle_ddp += 3; ddp_right += 2; ddp_relation -= 5; pro_republic -= 3
+on-arrival: dstp_formed = 1; ddp_name = "DStP"; liberal_cooperation -= 5; bourgeois_cooperation -= 5; new_middle_ddp -= 3; old_middle_ddp += 3; ddp_right += 2; ddp_relation -= 5; pro_republic -= 3; justice_minister_party = ddp_name if justice_minister_party == "DDP"; agriculture_minister_party = ddp_name if agriculture_minister_party == "DDP"; economic_minister_party = ddp_name if economic_minister_party == "DDP"; finance_minister_party = ddp_name if finance_minister_party == "DDP"
 face-image: img/dstp.jpg
 
 This has come as a complete shock to those inside and outside the party, for the <span style="color: #D3C24D;">**DDP**</span> to merge with the political wing of a mildly anti-semitic paramilitary group "Young German Order". Ongoing negotiations to unite the liberal and bourgeois parties has been considerably damaged, due to the <span style="color: #D3C24D;">**DDP**</span>'s attempts to promote a left-wing split from the <span style="color: #C0A054;">**DVP**</span>.
