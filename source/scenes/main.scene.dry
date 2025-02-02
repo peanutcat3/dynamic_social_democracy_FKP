@@ -73,8 +73,8 @@ if (hasTextContent) {
     button.style.backgroundColor = '#dddddd'; // Original color
 }
 document.querySelectorAll('p').forEach(p => {
-  if (!p.textContent.trim()) {
-    p.style.marginBottom = "0"; // Remove margin from empty paragraphs
+  if (!p.textContent.trim() && getComputedStyle(p).display !== "none") {
+    p.remove(); // Remove only empty <p> elements that are not hidden
   }
 });
 !}
@@ -140,7 +140,7 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1928 and month = 11 and prussia_leader == "Stegerwald": Stegerwald's position in the <span style="color: #000000;">Center Party</span>'s leadership race has been declining, due to significant resistance from the party's middle class because of his ties to labor and his opposition to a proposed raise for civil servants. New candidates have emerged for the party congress in December, creating a three-way contest. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1928 and month = 11 and not (in_grand_coalition == 0 or ((in_grand_coalition == 1 and in_grand_coalition_prussia == 1 and coalition_dissent < 1 and (foreign_minister_party = "DVP" or foreign_minister_party = "LVP")) or (in_grand_coalition == 1 and in_grand_coalition_prussia == 1 or coalition_dissent < 2 and (foreign_minister_party != "DVP" and foreign_minister_party != "LVP")))) and not lvp_formed and lvp_timer_trigger == 0: Stresemann has put off his plan to confront the right-wing of the <span style="color: #C0A054;">**DVP**</span> in order to not risk collapsing our government, following disputes involving the Prussian government and the <span style="color: #000000;">Center</span> Party. While this is good news for stability, the right-wing of the <span style="color: #C0A054;">**DVP**</span> are going to give us more problems down the line.?]{!</p>!}
+{!<p class="other">!}[? if year = 1928 and month = 11 and not (in_grand_coalition == 0 or ((in_grand_coalition == 1 and in_grand_coalition_prussia == 1 and coalition_dissent < 1 and (foreign_minister_party = "DVP" or foreign_minister_party = "LVP")) or (in_grand_coalition == 1 and in_grand_coalition_prussia == 1 or coalition_dissent < 2 and (foreign_minister_party != "DVP" and foreign_minister_party != "LVP")))) and not lvp_formed and lvp_timer_trigger == 0: Stresemann has put off his plan to confront the right wing of the <span style="color: #C0A054;">**DVP**</span> in order to not risk collapsing our government, following disputes involving the Prussian government and the <span style="color: #000000;">Center</span> Party. While this is good news for stability, the right wing of the <span style="color: #C0A054;">**DVP**</span> are going to give us more problems down the line.?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1928 and month = 11 and (in_grand_coalition == 0 or ((in_grand_coalition == 1 and in_grand_coalition_prussia == 1 and coalition_dissent < 1 and (foreign_minister_party = "DVP" or foreign_minister_party = "LVP")) or (in_grand_coalition == 1 and in_grand_coalition_prussia == 1 or coalition_dissent < 2 and (foreign_minister_party != "DVP" and foreign_minister_party != "LVP")))) and not lvp_formed and lvp_timer_trigger == 0: Stresemann and his allies in the left <span style="color: #C0A054;">**DVP**</span> have called a party congress to discuss internal reforms that would grant the party's middle class and worker elements a greater voice. Needless to say, the industrialists on the right vehemently oppose this plan, and will raise hell next party congress. ?]{!</p>!}
 
@@ -416,37 +416,34 @@ if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 
     }
 }
 !}
-on-display: {!
-    var button = document.createElement('button');
-    button.style.backgroundColor = '#dddddd';
-    button.className = 'tab_button';
-    button.id = 'news_tab';
-    button.textContent = 'View Right-Wing News';
-    button.onclick = function () {
-        toggleNews();
-    };
-
-    var contentDiv = document.getElementById('content');
-
-    contentDiv.appendChild(button);
-
-    const elements = document.querySelectorAll('.dnvp');
-    let hasTextContent = false;
-    elements.forEach(function (element) {
-        if (element.textContent.trim() !== '') {
-            hasTextContent = true;
-        }
-    });
-    if (hasTextContent) {
-        button.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // New color
-    } else {
-        button.style.backgroundColor = '#dddddd'; // Original color
+oon-display: {!
+var button = document.createElement('button');
+button.style.backgroundColor = '#dddddd';
+button.className = 'tab_button';
+button.id = 'news_tab';
+button.textContent = 'View Right-Wing News';
+button.onclick = function () {
+    toggleNews();
+};
+var contentDiv = document.getElementById('content');
+contentDiv.appendChild(button);
+const elements = document.querySelectorAll('.dnvp');
+let hasTextContent = false;
+elements.forEach(function (element) {
+    if (element.textContent.trim() !== '') {
+        hasTextContent = true;
     }
-    document.querySelectorAll('p').forEach(p => {
-        if (!p.textContent.trim()) {
-          p.style.marginBottom = "0"; // Remove margin from empty paragraphs
-        }
-      });
+});
+if (hasTextContent) {
+    button.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // New color
+} else {
+    button.style.backgroundColor = '#dddddd'; // Original color
+}
+document.querySelectorAll('p').forEach(p => {
+  if (!p.textContent.trim() && getComputedStyle(p).display !== "none") {
+    p.remove(); // Remove only empty <p> elements that are not hidden
+  }
+});
 !}
 max-cards: 4
 
@@ -510,7 +507,7 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1928 and month = 11 and prussia_leader == "Stegerwald": Stegerwald's position in the <span style="color: #000000;">Center Party</span>'s leadership race has been declining, due to significant resistance from the party's middle class because of his ties to labor and his opposition to a proposed raise for civil servants. New candidates have emerged for the party congress in December, creating a three-way contest. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1928 and month = 11 and not (in_grand_coalition == 0 or ((in_grand_coalition == 1 and in_grand_coalition_prussia == 1 and coalition_dissent < 1 and (foreign_minister_party = "DVP" or foreign_minister_party = "LVP")) or (in_grand_coalition == 1 and in_grand_coalition_prussia == 1 or coalition_dissent < 2 and (foreign_minister_party != "DVP" and foreign_minister_party != "LVP")))) and not lvp_formed and lvp_timer_trigger == 0: Stresemann has put off his plan to confront the right-wing of the <span style="color: #C0A054;">**DVP**</span> in order to not risk collapsing our government, following disputes involving the Prussian government and the <span style="color: #000000;">Center</span> Party. While this is good news for stability, the right-wing of the <span style="color: #C0A054;">**DVP**</span> are going to give us more problems down the line.?]{!</p>!}
+{!<p class="other">!}[? if year = 1928 and month = 11 and not (in_grand_coalition == 0 or ((in_grand_coalition == 1 and in_grand_coalition_prussia == 1 and coalition_dissent < 1 and (foreign_minister_party = "DVP" or foreign_minister_party = "LVP")) or (in_grand_coalition == 1 and in_grand_coalition_prussia == 1 or coalition_dissent < 2 and (foreign_minister_party != "DVP" and foreign_minister_party != "LVP")))) and not lvp_formed and lvp_timer_trigger == 0: Stresemann has put off his plan to confront the right-wing of the <span style="color: #C0A054;">**DVP**</span> in order to not risk collapsing our government, following disputes involving the Prussian government and the <span style="color: #000000;">Center</span> Party. While this is good news for stability, the right wing of the <span style="color: #C0A054;">**DVP**</span> are going to give us more problems down the line.?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1928 and month = 11 and (in_grand_coalition == 0 or ((in_grand_coalition == 1 and in_grand_coalition_prussia == 1 and coalition_dissent < 1 and (foreign_minister_party = "DVP" or foreign_minister_party = "LVP")) or (in_grand_coalition == 1 and in_grand_coalition_prussia == 1 or coalition_dissent < 2 and (foreign_minister_party != "DVP" and foreign_minister_party != "LVP")))) and not lvp_formed and lvp_timer_trigger == 0: Stresemann and his allies in the left <span style="color: #C0A054;">**DVP**</span> have called a party congress to discuss internal reforms that would grant the party's middle class and worker elements a greater voice. Needless to say, the industrialists on the right vehemently oppose this plan, and will raise hell next party congress. ?]{!</p>!}
 
@@ -584,7 +581,7 @@ max-cards: 4
 
 {!<p class="dnvp">!}[? if year = 1929 and month = 9 and dnvp_leader = "Triumvirate": Within the last paragraph of the "Freedom Act", the subject of the referendum, lies a highly controversial "imprisonment" paragraph demanding that those responsible for signing the Young Plan should be charged for high treason and imprisoned, even President Hindenburg. Hugenberg, inflexible as always, remains adamant about keeping the paragraph, as the <span style="color: #7A3C00;">**NSDAP**</span> made their support conditional on its retention. The paragraph has obviously sparked great criticism against Hugenberg and Westarp has resigned from the ruling triumvirate in protest. ?]{!</p>!}
 
-{!<p class="both">!}[? if year = 1929 and month = 9 and not lvp_formed: The right-wing of the <span style="color: #C0A054;">**DVP**</span> have voiced disappointment with our government and urge us to enact a large fiscal reform to comply with the terms of the Young Plan. This includes cutting the unemployment insurance program, which is on the verge of bankruptcy as unemployment continues to rise. The <span style="color: #C0A054;">**DVP**</span> insists on cutting benefits rather than increasing employer contributions, Stresemann is increasingly finding it harder to create compromise within his party. ?]{!</p>!}
+{!<p class="both">!}[? if year = 1929 and month = 9 and spd_in_government and not lvp_formed: The right wing of the <span style="color: #C0A054;">**DVP**</span> have voiced disappointment with our government and urge us to enact a large fiscal reform to comply with the terms of the Young Plan. This includes cutting the unemployment insurance program, which is on the verge of bankruptcy as unemployment continues to rise. The <span style="color: #C0A054;">**DVP**</span> insists on cutting benefits rather than increasing employer contributions, Stresemann is increasingly finding it harder to create compromise within his party. ?]{!</p>!}
 
 {!<p class="other">!}[? if lvp_merger_1_timer == 3: Despite this setback, the reform of the <span style="color: #C0A054;">**DVP**</span>'s party structure has made the demands of their industrialists far less threatening. [? if not stresemann_dead: Stresemann?][? if stresemann_dead: Curtius?] and other high-ranking party officials, including the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s Koch-Weser, have agreed to remove the most radical members of their respective parties to facilitate unification. Meanwhile, the previously moribund Liberal Association, in collaboration with various youth groups, has begun drafting a policy platform and forming local chapters. ?]{!</p>!}
 
