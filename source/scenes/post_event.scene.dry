@@ -1127,14 +1127,19 @@ if (Q.year == 1930 && Q.month == 2) {
     Q.dvp_congress_trigger_1930 = 1;
 }
 
+// historical route, ddp is right-wing and doesn't care about socialist cooperation as much, bourgeois parliament with ddp
 if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader == "Scholz" && Q.ddp_ideology == "Right" && !Q.lvp_formed) {
     Q.bourgeois_parliament_trigger = 1;
 }
 
+// historical route, trigger_1 = bourgeois parliament without ddp || otherwise historical failure due to skeptics in the cnblp and wp
 if ((Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader == "Scholz" && Q.ddp_ideology != "Right" && Q.bourgeois_cooperation >= 5 && !Q.lvp_formed)) {
     Q.bourgeois_parliament_trigger_1 = 1;
+} else if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader == "Scholz" && Q.ddp_ideology != "Right" && Q.bourgeois_cooperation < 5 && !Q.lvp_formed) {
+    Q.bourgeois_negotiations_fail = 1;
 }
 
+// a-historical route, dvp isn't scholz and somewhat cares about socialist cooperation, higher lib cooperation leads to liberal parliamentary group, potentially forming lvp || otherwise bourgeois parliament with ddp
 if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader != "Scholz" && Q.liberal_cooperation >= Q.bourgeois_cooperation && !Q.lvp_formed) {
     Q.bourgeois_parliament_trigger_2 = 1;
 } else if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader != "Scholz" && Q.bourgeois_cooperation >= Q.liberal_cooperation && !Q.lvp_formed) {
@@ -1160,6 +1165,8 @@ if (Q.bourgeois_negotiations_1930_timer == 3 && Q.bourgeois_parliament_trigger &
     Q.bourgeois_cooperation += 3;
 }
 
+
+// a-historical route, lvp is formed and agreement is between minor bourgeois parties only || otherwise it fails
 if (Q.bourgeois_negotiations_1930_timer == 4 && Q.lvp_formed && Q.bourgeois_cooperation >= 5) {
     Q.bourgeois_parliament = 1;
     Q.bourgeois_cooperation += 5;
@@ -1167,14 +1174,12 @@ if (Q.bourgeois_negotiations_1930_timer == 4 && Q.lvp_formed && Q.bourgeois_coop
     Q.bourgeois_negotiations_fail = 1;
 }
 
-if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader == "Scholz" && Q.ddp_ideology != "Right" && Q.bourgeois_cooperation < 5 && !Q.lvp_formed) {
-    Q.bourgeois_negotiations_fail = 1;
-}
-
+// a-historical route, liberal parliament is formed instead of a bourgeois parliament, for flavour text only
 if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader != "Scholz" && Q.liberal_cooperation >= Q.bourgeois_cooperation && !Q.lvp_formed) {
     Q.bourgeois_negotiations_fail_liberal = 1;
 }
 
+// spd outta gov, bruning in his spot, and first time doing negotiations
 if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0 && !Q.bourgeois_parliament && !Q.liberal_parliament) {
     Q.bourgeois_negotiations = 1;
     Q.bourgeois_negotiations_1 = 1;
@@ -1187,6 +1192,7 @@ if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "
 
 // TODO: make the timers become 0 if negotiations fail... ^^^
 
+// elections close...
 if (Q.year >= 1930 && Q.year < 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament && !Q.liberal_parliament) {
     Q.bourgeois_negotiations = 2;
     Q.bourgeois_negotiations_1_election = 1;
@@ -1197,6 +1203,7 @@ if (Q.year >= 1930 && Q.year < 1932 && Q.bourgeois_negotiations <= 1 && Q.next_e
     Q.bourgeois_negotiations_elections_1932_timer = 2;  
 }
 
+// when both timers are active, this triggers so things don't repeat hopefully...
 if ((Q.bourgeois_negotiations_elections_1930_timer > 0 || Q.bourgeois_negotiations_elections_1932_timer > 0) && (Q.bourgeois_negotiations_1930_timer > 0 || Q.bourgeois_negotiations_1932_timer > 0) && !Q.bourgeois_parliament) {
     Q.bourgeois_negotiations_election_soon = 1;
 }
