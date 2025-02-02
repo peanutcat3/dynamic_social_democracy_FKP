@@ -1123,11 +1123,8 @@ if (Q.year == 1930 && Q.month == 3 && Q.dvp_leader != "Luther" && Q.lvp_leader !
     Q.luther_reichsbank = 1;
 }
 
-if (Q.bourgeois_negotiations_1930_timer == 4 && Q.lvp_formed && Q.bourgeois_cooperation >= 5) {
-    Q.bourgeois_parliament = 1;
-    Q.bourgeois_cooperation += 5;
-} else if (Q.bourgeois_negotiations_1930_timer == 4 && Q.lvp_formed && Q.bourgeois_cooperation < 5) {
-    Q.bourgeois_negotiations_fail = 1;
+if (Q.year == 1930 && Q.month == 2) {
+    Q.dvp_congress_trigger_1930 = 1;
 }
 
 if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader == "Scholz" && Q.ddp_ideology == "Right" && !Q.lvp_formed) {
@@ -1163,19 +1160,26 @@ if (Q.bourgeois_negotiations_1930_timer == 3 && Q.bourgeois_parliament_trigger &
     Q.bourgeois_cooperation += 3;
 }
 
-if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dnvp_ideology == "Radical" && Q.dvp_leader == "Scholz" && Q.ddp_ideology != "Right" && Q.bourgeois_cooperation < 5 && !Q.lvp_formed) {
+if (Q.bourgeois_negotiations_1930_timer == 4 && Q.lvp_formed && Q.bourgeois_cooperation >= 5) {
+    Q.bourgeois_parliament = 1;
+    Q.bourgeois_cooperation += 5;
+} else if (Q.bourgeois_negotiations_1930_timer == 4 && Q.lvp_formed && Q.bourgeois_cooperation < 5) {
     Q.bourgeois_negotiations_fail = 1;
 }
 
-if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dnvp_ideology == "Radical" && Q.dvp_leader != "Scholz" && !Q.lvp_formed) {
+if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader == "Scholz" && Q.ddp_ideology != "Right" && Q.bourgeois_cooperation < 5 && !Q.lvp_formed) {
     Q.bourgeois_negotiations_fail = 1;
 }
 
-if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0 && !Q.bourgeois_parliament) {
+if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader != "Scholz" && Q.liberal_cooperation >= Q.bourgeois_cooperation && !Q.lvp_formed) {
+    Q.bourgeois_negotiations_fail_liberal = 1;
+}
+
+if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0 && !Q.bourgeois_parliament && !Q.liberal_parliament) {
     Q.bourgeois_negotiations = 1;
     Q.bourgeois_negotiations_1 = 1;
     Q.bourgeois_negotiations_1930_timer = 6;
-} else if (Q.year >= 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0 && !Q.bourgeois_parliament) {
+} else if (Q.year >= 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0 && !Q.bourgeois_parliament && !Q.liberal_parliament) {
     Q.bourgeois_negotiations = 1;
     Q.bourgeois_negotiations_2 = 1;
     Q.bourgeois_negotiations_1932_timer = 6;
@@ -1183,11 +1187,11 @@ if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "
 
 // TODO: make the timers become 0 if negotiations fail... ^^^
 
-if (Q.year >= 1930 && Q.year < 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament) {
+if (Q.year >= 1930 && Q.year < 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament && !Q.liberal_parliament) {
     Q.bourgeois_negotiations = 2;
     Q.bourgeois_negotiations_1_election = 1;
     Q.bourgeois_negotiations_elections_1930_timer = 2;
-} else if (Q.year >= 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament) {
+} else if (Q.year >= 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament && !Q.liberal_parliament) {
     Q.bourgeois_negotiations = 2;
     Q.bourgeois_negotiations_2_election = 1;
     Q.bourgeois_negotiations_elections_1932_timer = 2;  

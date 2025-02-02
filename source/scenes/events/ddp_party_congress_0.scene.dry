@@ -30,8 +30,11 @@ if (Q.ddp_relation < 50) {
 if (Q.ddp_relation >= 50) {
     Q.ddp_left += 1;
 }
-if (Q.liberal_parliament) {
+if (Q.liberal_parliament || Q.bourgeois_parliament_ddp) {
     Q.dstp_formation_points -= 5;
+}
+if (Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp) {
+    Q.dstp_formation_points += 1;
 }
 !}
 max-visits: 1
