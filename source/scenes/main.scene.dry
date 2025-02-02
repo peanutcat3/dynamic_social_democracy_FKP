@@ -72,6 +72,11 @@ if (hasTextContent) {
 } else {
     button.style.backgroundColor = '#dddddd'; // Original color
 }
+document.querySelectorAll('p').forEach(p => {
+  if (!p.textContent.trim()) {
+    p.style.marginBottom = "0"; // Remove margin from empty paragraphs
+  }
+});
 !}
 max-cards: 3
 
@@ -437,6 +442,11 @@ on-display: {!
     } else {
         button.style.backgroundColor = '#dddddd'; // Original color
     }
+    document.querySelectorAll('p').forEach(p => {
+        if (!p.textContent.trim()) {
+          p.style.marginBottom = "0"; // Remove margin from empty paragraphs
+        }
+      });
 !}
 max-cards: 4
 
