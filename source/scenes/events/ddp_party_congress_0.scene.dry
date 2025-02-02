@@ -30,6 +30,9 @@ if (Q.ddp_relation < 50) {
 if (Q.ddp_relation >= 50) {
     Q.ddp_left += 1;
 }
+if (Q.liberal_parliament) {
+    Q.dstp_formation_points -= 5;
+}
 !}
 max-visits: 1
 tags: event
