@@ -93,7 +93,7 @@ p.other {
   display: block;
 }
 .scrollable-box {
-  width: 550px;  /* Set a fixed width */
+  width: 540px;  /* Set a fixed width */
   height: 220px; /* Set a fixed height */
   overflow-y: auto; /* Enable vertical scrolling */
 }
