@@ -237,6 +237,12 @@ if (Q.month_actions >= 1) {
     if (Q.economic_growth >= 12) {
         Q.economic_growth -= 0.3;
     }
+    if (Q.economic_growth >= 3 && Q.unemployed < 20 && Q.black_thursday_seen) {
+        Q.capital_strike_progress -= 0.25;
+    }
+    if (!Q.economic_democracy && !Q.nationalization_progress) {
+        Q.capital_strike_progress -= 0.25;
+    }
 
     //////////////////////////////// Education & Science support/economic changes
     // science bonus to economic growth
