@@ -73,8 +73,8 @@ if (hasTextContent) {
     button.style.backgroundColor = '#dddddd'; // Original color
 }
 document.querySelectorAll('p').forEach(p => {
-  if (!p.textContent.trim() && getComputedStyle(p).display !== "none") {
-    p.remove(); // Remove only empty <p> elements that are not hidden
+  if (!p.textContent.trim()) {
+    p.remove(); // Remove the element
   }
 });
 !}
@@ -466,8 +466,8 @@ if (hasTextContent) {
     button.style.backgroundColor = '#dddddd'; // Original color
 }
 document.querySelectorAll('p').forEach(p => {
-  if (!p.textContent.trim() && getComputedStyle(p).display !== "none") {
-    p.remove(); // Remove only empty <p> elements that are not hidden
+  if (!p.textContent.trim()) {
+    p.remove(); // Remove the element
   }
 });
 !}
