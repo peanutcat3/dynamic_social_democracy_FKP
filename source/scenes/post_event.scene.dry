@@ -238,10 +238,10 @@ if (Q.month_actions >= 1) {
         Q.economic_growth -= 0.3;
     }
     if (Q.economic_growth >= 3 && Q.unemployed < 20 && Q.black_thursday_seen) {
-        Q.capital_strike_progress -= 0.25;
+        Q.capital_strike_progress -= 0.1;
     }
-    if (!Q.economic_democracy && !Q.nationalization_progress) {
-        Q.capital_strike_progress -= 0.25;
+    if (!Q.economic_democracy && !Q.nationalization_progress && Q.spd_in_government) {
+        Q.capital_strike_progress -= 0.1;
     }
 
     //////////////////////////////// Education & Science support/economic changes
