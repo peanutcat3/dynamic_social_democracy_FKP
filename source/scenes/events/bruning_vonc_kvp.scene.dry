@@ -1,7 +1,7 @@
 title: No confidence vote against the new government
 subtitle: Chancellor [+ chancellor +] faces a vote of no confidence.
 new-page: true
-view-if: bruning_event_timer = 5 and dnvp_ideology == "Radical" and kvp_formed and not bourgeois_coalition >= 50
+view-if: bruning_event_timer = 5 and dnvp_ideology == "Radical" and (kvp_formed or dnvp_split_2) and not bourgeois_coalition >= 50
 on-arrival: bruning_event_seen = 1
 tags: event
 max-visits: 1
