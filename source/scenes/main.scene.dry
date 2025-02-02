@@ -416,7 +416,7 @@ if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 
     }
 }
 !}
-oon-display: {!
+on-display: {!
 var button = document.createElement('button');
 button.style.backgroundColor = '#dddddd';
 button.className = 'tab_button';
