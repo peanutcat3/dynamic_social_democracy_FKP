@@ -9,7 +9,7 @@ card-image: img/portraits/SchmidtRobert.jpg
 
 = Economic Policy
 
-We have already formulated an economic plan. Now we have to implement it.
+We have already formulated an economic plan. Now we have to implement it. [? if budget < 0: If our budget falls too far into the red, a capital strike will almost certainly be triggered. ?]
 
 - @wtb_2
 - @wtb_2_deficit
