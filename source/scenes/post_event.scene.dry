@@ -409,6 +409,9 @@ if (Q.month_actions >= 1) {
         Q.catholics_lvp += 1/12;
         Q.catholics_nsdap -= 2/12;
     }
+
+    // make bourgeois_parliament do stuff in new grokos
+
     if (Q.liberal_parliament && Q.year >= 1930) {
         Q.new_middle_dvp += 2/12;
         Q.old_middle_dvp += 2/12;

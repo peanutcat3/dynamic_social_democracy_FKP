@@ -77,6 +77,8 @@ max-cards: 3
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
+{!<div class="scrollable-box">!}
+
 {!<p class="both">!}[? if year = 1928 and month = 2 : The current <span style="color: #000000;">bourgeois</span>-<span style="color: #3E88B3;">right</span> government has fallen. The next elections are slated for May of this year. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if year = 1928 and month = 3 : Special interest parties such as the <span style="color: #b8996f;">Reich Party of the Middle Class</span>—commonly referred to as the <span style="color: #b8996f;">Economic Party</span>(<span style="color: #b8996f;">**WP**</span>)—and the <span style="color: #7FCEB1;">Christian-National Peasants' and Farmers' Party</span>(<span style="color: #7FCEB1;">**CNBLP**</span>) are expected to gain a decent foothold in the Reichstag, due to the belief that the established political parties are neglecting their interests. This negatively impacts the <span style="color: #3E88B3;">**DNVP**</span>, having been part of the last government. ?]{!</p>!}
@@ -349,6 +351,8 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1934 and month = 2 and not austrian_parliament_seen: The Austrian Civil War has begun and ended in a matter of three days, fought between the <span style="color: #C8102E;">Republican Protection League</span> and Austria's <span style="color: #7A3C00;">Austrofascist</span> regime, resulting in a defeat for the <span style="color: #C8102E;">socialists</span> across the border. The uprising was sparked by efforts to suppress the remnants of the <span style="color: #C8102E;">Austrian Social Democrats</span> and their paramilitary wing. However, the poorly coordinated and weakened movement was swiftly crushed by the army. Perhaps things would have gone more differently if they have taken up arms earlier. ?]{!</p>!}
 
+{!</div>!}
+
 - @party
 - @govt
 - #advisor
@@ -435,6 +439,8 @@ on-display: {!
 max-cards: 4
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
+
+{!<div class="scrollable-box">!}
 
 {!<p class="both">!}[? if year = 1928 and month = 2 : The current <span style="color: #000000;">bourgeois</span>-<span style="color: #3E88B3;">right</span> government has fallen. The next elections are slated for May of this year. ?]{!</p>!}
 
@@ -731,6 +737,8 @@ max-cards: 4
 {!<p class="other">!}[? if year = 1933 and month = 11 : The <span style="color: #EF1C27;">Spanish Socialists</span> and the <span style="color: #E25822;">Republican Left</span> have suffered an overwhelming defeat at the hands of the right wing <span style="color: #303180;">**CEDA**</span> and increasingly right-wing <span style="color: #A871A8;">Radicals</span>. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1934 and month = 2 and not austrian_parliament_seen: The Austrian Civil War has begun and ended in a matter of three days, fought between the <span style="color: #C8102E;">Republican Protection League</span> and Austria's <span style="color: #7A3C00;">Austrofascist</span> regime, resulting in a defeat for the <span style="color: #C8102E;">socialists</span> across the border. The uprising was sparked by efforts to suppress the remnants of the <span style="color: #C8102E;">Austrian Social Democrats</span> and their paramilitary wing. However, the poorly coordinated and weakened movement was swiftly crushed by the army. Perhaps things would have gone more differently if they have taken up arms earlier. ?]{!</p>!}
+
+{!</div>!}
 
 - @party
 - @govt
