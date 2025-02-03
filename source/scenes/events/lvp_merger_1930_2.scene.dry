@@ -10,6 +10,8 @@ if (Q.liberal_vote < 7) {
 }
 if (Q.dvp_ideology == "Left") {
     Q.lvp_formation_points += 2;
+} else if (Q.dvp_ideology == "Moderate") {
+    Q.lvp_formation_points += 1;
 }
 if (Q.ddp_ideology == "Right") {
     Q.lvp_formation_points += 2;
@@ -44,7 +46,7 @@ On the other hand, leftists within the <span style="color: #D3C24D;">**[+ ddp_na
 - @ddp_fail: The party votes...
 
 @ddp_success
-view-if: lvp_formation_points >= 4
+view-if: lvp_formation_points >= 3
 on-arrival: ddp_relation -= 5; ddp_right += 2; lvp_trigger_2_time = time + 1
 face-image: img/weimar_coalition_3.jpg
 
@@ -53,8 +55,8 @@ Perhaps surprisingly, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span
 However, the leftists within the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> will wield little influence in the wider party, which will consist of twice as many <span style="color: #C0A054;">**DVP**</span> members as <span style="color: #D3C24D;">**[+ ddp_name +]**</span> members.
 
 @ddp_fail
-view-if: lvp_formation_points < 4
+view-if: lvp_formation_points < 3
 on-arrival: dvp_right += 5; new_middle_ddp -= 4; old_middle_ddp -= 4; pro_republic -= 5; liberal_cooperation -= 10
-face-image: img/dstp.jpg
+face-image: img/hitler.jpg
 
 As always, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s left wing have rejected the plans to create a united <span style="color: #FFCC00;">Liberal People's Party</span>. It seems that the infighting that plagues the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> remains alive and well. This outcome has greatly demoralized the German middle and has forced the disbandment of the Liberal Association. 
