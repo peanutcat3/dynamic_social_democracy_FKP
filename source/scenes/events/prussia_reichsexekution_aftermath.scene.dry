@@ -4,7 +4,7 @@ view-if: no_majority_reichsexekution = 1 and prussian_reichsexekution_timer = 0
 new-page: true
 tags: event
 max-visits: 1
-face-image: img/prussia_flag_old.jpg
+face-image: img/prussia_flag_old.png
 
 = Prussian Elections Restored?
 
