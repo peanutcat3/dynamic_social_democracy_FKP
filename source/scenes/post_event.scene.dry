@@ -169,6 +169,9 @@ if (Q.month_actions >= 1) {
             Q[timer+'_timer'] -= 1;
         }
     }
+    if (Q.lvp_existence_timer >= 0 && Q.lvp_timer_2_trigger && Q.lvp_formed) {
+        Q.lvp_existence_timer += 1;
+    }
     // append to historical party support records
     var party_support_results = {'date': new Date(Q.year, Q.month - 1)};
     for (var party of Q.parties) {
@@ -1130,7 +1133,7 @@ if (Q.year == 1928 && Q.liberal_parliament == 1 && Q.lvp_merger_timer == 0 && !Q
     Q.lvp_merger_timer = 6;
 }
 
-if (Q.year == 1929 && Q.stolper_program_adopted && Q.dvp_reform && Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" && Q.in_grand_coalition == 1 && Q.lvp_merger_1_timer == 0 && !Q.lvp_timer_1_trigger) {
+if (Q.year == 1929 && Q.stolper_program_adopted && Q.dvp_reform && Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" && Q.in_grand_coalition == 1 && Q.lvp_merger_1_timer == 0 && !Q.lvp_timer_1_trigger && !Q.lvp_formed) {
     Q.lvp_timer_1_trigger = 1;
     Q.lvp_merger_1_timer = 4;
 }
@@ -1228,9 +1231,20 @@ if ((Q.bourgeois_negotiations_elections_1930_timer > 0 || Q.bourgeois_negotiatio
     Q.bourgeois_negotiations_election_soon = 1;
 }
 
-if (Q.year == 1930 && Q.bourgeois_negotiations >= 1 && Q.bourgeois_negotiations_1930_timer < 3 && Q.bourgeois_negotiations_1932_timer < 3 && Q.liberal_cooperation >= 10 && (Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Right" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Moderate" && Q.ddp_relation < 40) && !Q.dstp_formed && !Q.in_weimar_coalition && (!Q.in_popular_front || Q.in_popular_front && Q.liberal_parliament == 1) && Q.lvp_merger_2_timer == 0 && !Q.lvp_timer_2_trigger) {
+if (Q.year == 1930 && Q.bourgeois_negotiations >= 1 && Q.bourgeois_negotiations_1930_timer < 3 && Q.bourgeois_negotiations_1932_timer < 3 && Q.liberal_cooperation >= 10 && (Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Right" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Moderate" && Q.ddp_relation < 40) && !Q.dstp_formed && !Q.in_weimar_coalition && (!Q.in_popular_front || Q.in_popular_front && Q.liberal_parliament == 1) && Q.lvp_merger_2_timer == 0 && !Q.lvp_timer_2_trigger && !Q.lvp_formed) {
     Q.lvp_timer_2_trigger = 1;
     Q.lvp_merger_2_timer = 3;
+}
+
+if (Q.lvp_formed && Q.lvp_timer_2_trigger) {
+    Q.new_middle_lvp += 6/12;
+    Q.old_middle_lvp += 6/12;
+    Q.new_middle_nsdap -= 6/12;
+    Q.old_middle_nsdap -= 6/12;
+    Q.rural_lvp += 3/12;
+    Q.rural_nsdap -= 3/12;
+    Q.catholics_lvp += 3/12;
+    Q.catholics_nsdap -= 3/12;
 }
 
 if (Q.year == 1930 && Q.month == 1 && Q.dnvp_historical_1929 && (Q.peoples_party || Q.weimar_coalition >= 50 || Q.stegerwald_path || (Q.z_leader == "Joos" && Q.dvp_reform))) {
