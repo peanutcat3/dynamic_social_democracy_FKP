@@ -1037,6 +1037,10 @@ if (Q.in_right_coalition || Q.in_center_right_coalition) {
     }
 }
 
+if (Q.spd_in_government) {
+    Q.bruning_event_timer = 0;
+}
+
 if (Q.bruning_event_timer == 3 && Q.dvp_ideology == "Right" && !Q.lvp_formed) {
     Q.dvp_right += 1;
     Q.new_middle_dvp -= 4;
