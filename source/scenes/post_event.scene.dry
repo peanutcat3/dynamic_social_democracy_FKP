@@ -395,6 +395,11 @@ if (Q.month_actions >= 1) {
             Q.new_middle_ddp += 1/12;
         }
         Q.new_middle_lvp += 2/12;
+        Q.new_middle_kvp += 3/12;
+        if (Q.kvp_formed) {
+            Q.new_middle_nsdap -= 2/12;
+            Q.new_middle_dnvp -= 1/12;
+        }
         Q.new_middle_nsdap -= 4/12;
         Q.old_middle_other += 2/12;
         Q.old_middle_dvp += 1/12;
@@ -402,14 +407,28 @@ if (Q.month_actions >= 1) {
             Q.new_middle_ddp += 1/12;
         }
         Q.old_middle_lvp += 2/12;
+        Q.old_middle_kvp += 3/12;
+        if (Q.kvp_formed) {
+            Q.old_middle_nsdap -= 2/12;
+            Q.old_middle_dnvp -= 1/12;
+        }
         Q.old_middle_nsdap -= 4/12;
         Q.rural_other += 2/12;
         Q.rural_dvp += 2/12;
         Q.rural_lvp += 2/12;
+        Q.rural_kvp += 3/12;
+        if (Q.kvp_formed) {
+            Q.rural_nsdap -= 2/12;
+            Q.rural_dnvp -= 1/12;
+        }
         Q.rural_nsdap -= 4/12;
         Q.catholics_dvp += 1/12;
         Q.catholics_other += 1/12;
         Q.catholics_lvp += 1/12;
+        Q.catholics_kvp += 1/12;
+        if (Q.kvp_formed) {
+            Q.catholics_nsdap -= 1/12;
+        }
         Q.catholics_nsdap -= 2/12;
     }
 
