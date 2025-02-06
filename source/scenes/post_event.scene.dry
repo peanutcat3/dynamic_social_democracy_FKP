@@ -1140,11 +1140,11 @@ if (Q.spd_votes >= 38 && Q.black_thursday_seen) {
     Q.bourgeois_cooperation += 0.5;
 }
 
-if (Q.liberal_cooperation >= 5) {
+if (Q.liberal_cooperation >= 5 && Q.ddp_ideology != "Right" && Q.dvp_ideology != "Left") {
     Q.dvp_left += 0.5;
     Q.ddp_right += 0.5;
-    Q.ddp_relation -= 1;
-    Q.dvp_relation += 1;
+    Q.ddp_relation -= 0.5;
+    Q.dvp_relation += 0.5;
 }
 
 if (Q.year == 1928 && Q.liberal_parliament == 1 && Q.lvp_merger_timer == 0 && !Q.lvp_timer_trigger) {
