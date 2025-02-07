@@ -27,8 +27,6 @@ Fine. If the bourgeoisie wish to blow up the government, let them do so. <span s
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
-# TODO
-
 @accept
 unavailable-subtitle: [? if reformist_strength + center_strength + labor_strength / 2 < left_strength + labor_strength / 2: The party won't allow this. ?]
 choose-if: reformist_strength + center_strength + labor_strength / 2 >= left_strength + labor_strength / 2
