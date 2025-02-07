@@ -1256,7 +1256,7 @@ if (Q.year >= 1930 && Q.year < 1932 && Q.bourgeois_negotiations <= 1 && Q.next_e
 }
 
 // when both timers are active, this triggers so things don't repeat hopefully...
-if ((Q.bourgeois_negotiations_elections_1930_timer > 0 || Q.bourgeois_negotiations_elections_1932_timer > 0) && (Q.bourgeois_negotiations_1930_timer > 0 && Q.bourgeois_negotiations_1930_timer < 4 || Q.bourgeois_negotiations_1932_timer > 0 && Q.bourgeois_negotiations_1932_timer < 4) && !Q.bourgeois_parliament) {
+if ((Q.bourgeois_negotiations_elections_1930_timer > 0 || Q.bourgeois_negotiations_elections_1932_timer > 0) && (Q.bourgeois_negotiations_1930_timer > 0 || Q.bourgeois_negotiations_1932_timer > 0) && !Q.bourgeois_parliament) {
     Q.bourgeois_negotiations_election_soon = 1;
 }
 if (Q.bourgeois_parliament) {
