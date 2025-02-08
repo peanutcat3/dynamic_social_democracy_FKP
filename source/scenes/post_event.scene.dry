@@ -1188,7 +1188,7 @@ if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader != "Scholz" && Q.li
     Q.bourgeois_parliament_trigger_3 = 1;
 }
 
-if (Q.bourgeois_negotiations_1930_timer == 4 && Q.bourgeois_negotiations_election_soon && !Q.lvp_formed) {
+if (Q.bourgeois_negotiations_1930_timer == 3 && Q.bourgeois_negotiations_election_soon && !Q.lvp_formed) {
     Q.bourgeois_parliament_trigger_event = 1;
 }
 
