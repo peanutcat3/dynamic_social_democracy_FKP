@@ -1608,6 +1608,7 @@ on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0; lib
 go-to: grand_coalition_spd_lead if ((n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30 and (z_r - 3) < 15) or (largest_party == "SPD" and spd_r >= 35 and (z_r - 3) >= 15) or president = "Braun") and (not bourgeois_parliament or lvp_formed); grand_coalition_z_lead if president != "Braun" and ((n_elections > 1 and spd_r < 30 and (z_r - 3) < 15) or (n_elections > 1 and spd_r < 35 and (z_r - 3) >= 15) or (n_elections <= 1 and largest_party != "SPD")) and (not bourgeois_parliament or lvp_formed); grand_coalition_bourgeois_parliament if bourgeois_parliament and not lvp_formed
 
 @grand_coalition_bourgeois_parliament
+on-arrival: grand_coalition_failed = 1
 
 There are enough votes to form a majority coalition consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">Center</span> (<span style="color: #000000;">**Z**</span>), <span style="color: #A2D8E0;">**Bavarian People's**</span> (<span style="color: #A2D8E0;">**BVP**</span>), [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] [? if not lvp_formed: (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>)?][? if lvp_formed: (<span style="color: #FFCC00;">**LVP**</span>)?][? if not lvp_formed: , and <span style="color: #C0A054;">**People's**</span> (<span style="color: #C0A054;">**DVP**</span>)?] parties.
 
@@ -1622,7 +1623,7 @@ title: Use our resources to smooth over the creation of a coalition.
 subtitle: -5 resources
 unavailable-subtitle: Not enough resources (need 5).
 choose-if: resources >= 5
-on-arrival: resources -= 5; bourgeois_cooperation -= 5 if bourgeois_parliament > 0; bourgeois_parliament = 0 if bourgeois_parliament > 0; bourgeois_cooperation -= 3 if bourgeois_parliament_ddp; bourgeois_parliament_ddp = 0 if bourgeois_parliament_ddp > 0; dvp_relation = 30
+on-arrival: resources -= 5; bourgeois_cooperation -= 5 if bourgeois_parliament > 0; bourgeois_parliament = 0 if bourgeois_parliament > 0; bourgeois_cooperation -= 3 if bourgeois_parliament_ddp; bourgeois_parliament_ddp = 0 if bourgeois_parliament_ddp > 0; dvp_relation = 30; grand_coalition_failed = 0
 go-to: grand_coalition
 
 # In the first election, SPD always leads. In subsequent elections, if spd_r >= 29 then SPD leads, otherwise Z leads?
