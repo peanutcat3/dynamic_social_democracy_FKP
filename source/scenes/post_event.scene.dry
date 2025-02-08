@@ -698,7 +698,6 @@ if (Q.month_actions >= 1) {
             }
             Q.catholics_nsdap += 2/12;
             Q.catholics_other -= 2/12;
-            Q.unemployed += 5/12;
             Q.inflation -= 2/12;
             Q.workers -= 4/12;
             Q.rural_dnvp -= 4/12;
