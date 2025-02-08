@@ -1205,7 +1205,7 @@ choose-if: resources >= 4
 on-arrival: resources -= 4; spd_in_government = 1; in_grand_coalition = 1; left_dissent += 6; dvp_left += 2; lvp_left += 2; liberal_cooperation += 1; hindenburg_angry = 40
 achievement: constitutional_coalition
 
-We transfer some of our campaign funds to our putative coalition partners. Some would call this corruption, but perhaps it is necessary to save our democracy.
+We are able to offer the array of bourgeois parties into the ruling Prussian government. They have forced Braun to concede his position as Minister-President as a prerequisite, but perhaps it is necessary to save our democracy. We also transfer some of our campaign funds to our putative coalition partners. Some would call this corruption, but perhaps it is necessary to save our democracy.
 
 Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-<span style="color: #7A3C00;">fascist</span> and non-<span style="color: #700000;">communist</span> parties. Leftists in our party are somewhat skeptical of this arrangement. 
 
