@@ -1623,7 +1623,7 @@ title: Use our resources to smooth over the creation of a coalition.
 subtitle: -5 resources
 unavailable-subtitle: Not enough resources (need 5).
 choose-if: resources >= 5
-on-arrival: resources -= 5; bourgeois_cooperation -= 5 if bourgeois_parliament > 0; bourgeois_parliament = 0 if bourgeois_parliament > 0; bourgeois_cooperation -= 3 if bourgeois_parliament_ddp; bourgeois_parliament_ddp = 0 if bourgeois_parliament_ddp > 0; dvp_relation = 30; grand_coalition_failed = 0
+on-arrival: resources -= 5; bourgeois_cooperation -= 5 if bourgeois_parliament > 0; bourgeois_parliament = 0 if bourgeois_parliament > 0; bourgeois_cooperation -= 3 if bourgeois_parliament_ddp; bourgeois_parliament_ddp = 0 if bourgeois_parliament_ddp > 0; dvp_relation = 30 if dvp_relation < 30; grand_coalition_failed = 0
 go-to: grand_coalition
 
 # In the first election, SPD always leads. In subsequent elections, if spd_r >= 29 then SPD leads, otherwise Z leads?
