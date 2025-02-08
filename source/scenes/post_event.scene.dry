@@ -395,8 +395,8 @@ if (Q.month_actions >= 1) {
             Q.new_middle_ddp += 1/12;
         }
         Q.new_middle_lvp += 2/12;
-        Q.new_middle_kvp += 3/12;
-        if (Q.kvp_formed) {
+        if (Q.kvp_formed && Q.bourgeois_parliament_kvp) {
+            Q.new_middle_kvp += 3/12;
             Q.new_middle_nsdap -= 2/12;
             Q.new_middle_dnvp -= 1/12;
         }
@@ -407,8 +407,8 @@ if (Q.month_actions >= 1) {
             Q.new_middle_ddp += 1/12;
         }
         Q.old_middle_lvp += 2/12;
-        Q.old_middle_kvp += 3/12;
-        if (Q.kvp_formed) {
+        if (Q.kvp_formed && Q.bourgeois_parliament_kvp) {
+            Q.old_middle_kvp += 3/12;
             Q.old_middle_nsdap -= 2/12;
             Q.old_middle_dnvp -= 1/12;
         }
@@ -416,8 +416,8 @@ if (Q.month_actions >= 1) {
         Q.rural_other += 2/12;
         Q.rural_dvp += 2/12;
         Q.rural_lvp += 2/12;
-        Q.rural_kvp += 3/12;
-        if (Q.kvp_formed) {
+        if (Q.kvp_formed && Q.bourgeois_parliament_kvp) {
+            Q.rural_kvp += 3/12;
             Q.rural_nsdap -= 2/12;
             Q.rural_dnvp -= 1/12;
         }
@@ -425,14 +425,12 @@ if (Q.month_actions >= 1) {
         Q.catholics_dvp += 1/12;
         Q.catholics_other += 1/12;
         Q.catholics_lvp += 1/12;
-        Q.catholics_kvp += 1/12;
-        if (Q.kvp_formed) {
+        if (Q.kvp_formed && Q.bourgeois_parliament_kvp) {
+            Q.catholics_kvp += 1/12;
             Q.catholics_nsdap -= 1/12;
         }
         Q.catholics_nsdap -= 2/12;
     }
-
-    // make bourgeois_parliament do stuff in new grokos
 
     if (Q.liberal_parliament && Q.year >= 1930) {
         Q.new_middle_dvp += 2/12;
@@ -1219,6 +1217,19 @@ if (Q.bourgeois_negotiations_1930_timer == 3 && Q.bourgeois_parliament_trigger &
     Q.bourgeois_cooperation += 3;
 }
 
+if (Q.bourgeois_negotiations_1930_timer == 2 && Q.bourgeois_parliament && Q.kvp_formed && (Q.schleicher_kvp || Q.bourgeois_cooperation >= 8)) {
+    Q.bourgeois_parliament_kvp = 1;
+} else if (Q.bourgeois_negotiations_1930_timer == 2 && Q.bourgeois_parliament && Q.kvp_formed && !Q.schleicher_kvp && Q.bourgeois_cooperation < 8) {
+    Q.bourgeois_parliament_kvp = 0;
+    Q.new_middle_kvp -= 3; 
+    Q.old_middle_kvp -= 3;
+    Q.new_middle_other += 3;
+    Q.old_middle_other += 3;
+    if (!Q.lvp_formed) {
+        Q.new_middle_dvp += 3;
+        Q.old_middle_dvp += 3;
+    }
+}
 
 // a-historical route, lvp is formed and agreement is between minor bourgeois parties only || otherwise it fails
 if (Q.bourgeois_negotiations_1930_timer == 4 && Q.lvp_formed && Q.bourgeois_cooperation >= 5) {
