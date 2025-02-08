@@ -1234,6 +1234,7 @@ Who should be chancellor?
 
 @braun_chancellor_new
 subtitle: This will reduce our leverage in the ministries.
+view-if: not bourgeois_parliament
 choose-if: (not historical_mode or not prussia_leader = "Braun") and not (in_new_grand_coalition_prussia and prussia_leader == "Braun")
 unavailable-subtitle: Our coalition partners have serious qualms about concentrating power into one man, given that Braun is already Minister-President of Prussia.
 on-arrival: leverage -= 10; chancellor = "Braun"; chancellor_party = "SPD"
