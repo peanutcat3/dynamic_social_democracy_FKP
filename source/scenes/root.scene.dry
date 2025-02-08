@@ -743,6 +743,7 @@ Q.bourgeois_negotiations = 0;
 Q.bourgeois_negotiations_1 = 0;
 Q.bourgeois_negotiations_2 = 0;
 Q.bourgeois_negotiations_election_soon = 0;
+Q.dnvp_split_2 = 0
 
 // flavour text stuff
 Q.flavour_0_trigger = 0;
