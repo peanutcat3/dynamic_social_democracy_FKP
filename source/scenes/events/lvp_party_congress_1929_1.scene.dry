@@ -69,6 +69,9 @@ if (Q.lvp_votes >= 11.5) {
     Q.luther_points += 5;
 }
 
+if (Q.prussia_leader == "Luther") {
+    Q.luther_points += 3;
+}
 
 if (Q.lvp_right > (Q.lvp_left*1.5) || (Q.lvp_right > (Q.lvp_left + 5))) {
     Q.lvp_ideology = "Right"
