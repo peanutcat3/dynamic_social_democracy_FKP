@@ -637,6 +637,7 @@ Who should be Minister-President?
 
 - @braun
 - @center
+- @center_resigned
 
 @braun
 title: Otto Braun for Minister-President.
@@ -647,10 +648,18 @@ As always, Braun remains in control of Prussia.
 
 @center
 title: Let the <span style="color: #000000;">Center Party</span> have their Minister-President.
+view-if: braun_resign = 0
 subtitle: This will grant us goodwill with the bourgeois parties.
 on-arrival: prussia_leader = "Stegerwald" if dvp_leader != "Luther"; prussia_leader = "Brüning" if dvp_leader != "Luther" and z_leader == "Stegerwald"; prussia_leader = "Luther" if (dvp_leader == "Luther" or lvp_leader == "Luther"); ddp_relation += 5; dvp_relation += 5; lvp_relation += 5; z_relation += 10
 
 In a surprising move, Braun steps aside from from his long held position in favor of a candidate put forward by the bourgeois parties. [? if prussia_leader == "Luther": The [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]'s Hans Luther is selected to become the Minister-President of Prussia. ?][? if prussia_leader != "Luther": The <span style="color: #000000;">Center</span>'s [? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] is selected to become the Minister-President of Prussia. ?]
+
+@center_resigned
+title: Let the bourgeois have their Minister-President.
+view-if: braun_resign = 1
+on-arrival: prussia_leader = "Stegerwald" if dvp_leader != "Luther"; prussia_leader = "Brüning" if dvp_leader != "Luther" and z_leader == "Stegerwald"; prussia_leader = "Luther" if (dvp_leader == "Luther" or lvp_leader == "Luther")
+
+Braun steps aside from from his long held position in favor of a candidate put forward by the bourgeois parties. [? if prussia_leader == "Luther": The [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]'s Hans Luther is selected to become the Minister-President of Prussia. ?][? if prussia_leader != "Luther": The <span style="color: #000000;">Center</span>'s [? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] is selected to become the Minister-President of Prussia. ?]
 
 @far_right_coalition_prussia
 title: <span style="color: #7A3C00;">Far</span>-[? if not dnf_formed:<span style="color: #3E88B3;">right</span>?][? if dnf_formed:<span style="color: #003755;">right</span>?] Coalition
