@@ -1143,7 +1143,7 @@ if (Q.spd_votes >= 38 && Q.black_thursday_seen) {
     Q.bourgeois_cooperation += 0.5;
 }
 
-if (Q.liberal_cooperation >= 5 && Q.ddp_ideology != "Right" && Q.dvp_ideology != "Left") {
+if (Q.liberal_cooperation >= 5 && Q.ddp_ideology != "Right" && Q.dvp_ideology != "Left" && !Q.lvp_formed) {
     Q.dvp_left += 0.5;
     Q.ddp_right += 0.5;
     Q.ddp_relation -= 0.5;
@@ -1193,7 +1193,7 @@ if (Q.bourgeois_negotiations_1930_timer == 4 && Q.dvp_leader != "Scholz" && Q.li
     Q.bourgeois_parliament_trigger_3 = 1;
 }
 
-if (Q.bourgeois_negotiations_1930_timer == 3 && Q.bourgeois_negotiations_election_soon && !Q.lvp_formed) {
+if (Q.bourgeois_negotiations_1930_timer == 3 && Q.bourgeois_negotiations_election_soon && !Q.lvp_formed && !Q.dstp_formed) {
     Q.bourgeois_parliament_trigger_event = 1;
 }
 
