@@ -1114,7 +1114,7 @@ if (Q.spd_votes >= 38 && Q.black_thursday_seen) {
     Q.bourgeois_cooperation += 0.5;
 }
 
-if (Q.liberal_cooperation >= 5 && Q.ddp_ideology != "Right" && Q.dvp_ideology != "Left" && !Q.lvp_formed) {
+if (Q.liberal_cooperation >= 5 && Q.ddp_ideology != "Right" && Q.dvp_ideology != "Left" && Q.dvp_relation < Q.ddp_relation && !Q.lvp_formed) {
     Q.dvp_left += 0.5;
     Q.ddp_right += 0.5;
     Q.ddp_relation -= 0.5;
