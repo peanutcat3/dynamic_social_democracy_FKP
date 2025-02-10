@@ -810,12 +810,12 @@ Otherwise, new elections have to be called, where the extremist parties stand to
 - @tolerate_bourgeois_coalition: Tolerate the bourgeois parties to prevent new elections.
 
 @call_new_elections_2
-on-arrival: pro_republic -= 5 if anti_democratic_votes >= 35; workers_nsdap += 3 if anti_democratic_votes >= 35; workers_kpd += 3 if anti_democratic_votes >= 35; workers_spd -= 3 if anti_democratic_votes >= 35; new_middle_nsdap += 3 if anti_democratic_votes >= 35; old_middle_nsdap += 3 if anti_democratic_votes >= 35; rural_nsdap += 3 if anti_democratic_votes >= 35; new_middle_ddp -= 3 if anti_democratic_votes >= 35; old_middle_ddp -= 3 if anti_democratic_votes >= 35; rural_ddp -= 3 if anti_democratic_votes >= 35; new_middle_dvp -= 3 if anti_democratic_votes >= 35; old_middle_dvp -= 3 if anti_democratic_votes >= 35; rural_dvp -= 3 if anti_democratic_votes >= 35; new_middle_lvp -= 3 if anti_democratic_votes >= 35; old_middle_lvp -= 3 if anti_democratic_votes >= 35; rural_lvp -= 3 if anti_democratic_votes >= 35; no_majority_elections_prussia += 1
+on-arrival: pro_republic -= 5 if anti_democratic_votes >= 30; workers_nsdap += 3 if anti_democratic_votes >= 30; workers_kpd += 3 if anti_democratic_votes >= 30; workers_spd -= 3 if anti_democratic_votes >= 30; new_middle_nsdap += 3 if anti_democratic_votes >= 30; old_middle_nsdap += 3 if anti_democratic_votes >= 30; rural_nsdap += 3 if anti_democratic_votes >= 30; new_middle_ddp -= 3 if anti_democratic_votes >= 30; old_middle_ddp -= 3 if anti_democratic_votes >= 30; rural_ddp -= 3 if anti_democratic_votes >= 30; new_middle_dvp -= 3 if anti_democratic_votes >= 30; old_middle_dvp -= 3 if anti_democratic_votes >= 30; rural_dvp -= 3 if anti_democratic_votes >= 30; new_middle_lvp -= 3 if anti_democratic_votes >= 30; old_middle_lvp -= 3 if anti_democratic_votes >= 30; rural_lvp -= 3 if anti_democratic_votes >= 30
 call: set_next_election_time_prussia
 
 New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
 
-[? if anti_democratic_votes >= 35: The people's faith in democracy is shaken by this ordeal. Of course, the <span style="color: #7A3C00;">Nazis</span> are exploiting the instability to claim that democracy is unworkable, and that Germany needs a strong leader. ?]
+[? if anti_democratic_votes >= 30: The people's faith in democracy is shaken by this ordeal. Of course, the <span style="color: #7A3C00;">Nazis</span> are exploiting the instability to claim that democracy is unworkable, and that Germany needs a strong leader. ?]
 
 @tolerate_bourgeois_coalition
 title: We must tolerate a bourgeois coalition.
