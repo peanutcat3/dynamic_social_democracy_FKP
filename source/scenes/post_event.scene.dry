@@ -136,8 +136,6 @@ Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
 Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
 Q.kvp_r = Math.round(Q.kvp_r * 10) / 10
 
-Q.combined_cooperation = Q.liberal_cooperation + Q.bourgeois_cooperation
-
 if (Q.dvp_left + Q.dvp_right >= 35) {
     Q.dvp_left *= 0.9;
     Q.dvp_right *= 0.9;
@@ -893,11 +891,6 @@ if (Q.month_actions >= 1) {
             Q.catholics_spd -= 6/12;
         }
     }
-Q['pro_republic_' + Q.month] = Q.pro_republic
-Q['dvp_relation_' + Q.month] = Q.dvp_relation
-Q['dvp_ideology_' + Q.month] = Q.dvp_ideology
-Q['lvp_ideology_' + Q.month] = Q.lvp_ideology
-Q['lvp_relation_' + Q.month] = Q.lvp_relation
 if (Q.dnf_decay_timer > 0) {
     Q.new_middle_dnf -= 0.25;
     Q.new_middle_dnvp += 0.3;
@@ -953,14 +946,6 @@ if (Q.year == 1929 && Q.month == 12 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 
     Q.weimar_ref_votes = Math.round(Q.weimar_ref_signatures * 10) / 10;
 }
 
-if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 5))) {
-    Q.dvp_ideology = "Right"
-} else if (Q.dvp_left > (Q.dvp_right*1.5) || (Q.dvp_left > (Q.dvp_right + 5))) {
-    Q.dvp_ideology = "Left"
-} else {
-    Q.dvp_ideology = "Moderate"
-}
-
 if (Q.in_grand_coalition == 1 && Q.dvp_relation >= 50 && !Q.lvp_formed) {
     Q.capital_strike_progress -= 0.25
 } else if (Q.in_grand_coalition == 1 && Q.lvp_relation >= 50 && Q.lvp_formed) {
@@ -1013,22 +998,6 @@ if (Q.year == 1929 && Q.month == 5 && Q.dvp_ideology !== "Left") {
     Q.liberal_cooperation += 1;
 } else if (Q.year == 1929 && Q.month == 5 && Q.dvp_ideology == "Left") {
     Q.liberal_cooperation += 3;
-}
-
-if (Q.ddp_right > (Q.ddp_left + 4)) {
-    Q.ddp_ideology = "Right"
-} else if (Q.ddp_left > (Q.ddp_right + 4)) {
-    Q.ddp_ideology = "Left"
-} else {
-    Q.ddp_ideology = "Moderate"
-}
-
-if (Q.lvp_right > (Q.lvp_left*1.5) || (Q.lvp_right > (Q.lvp_left + 5))) {
-    Q.lvp_ideology = "Right"
-} else if (Q.lvp_left > (Q.lvp_right*1.5) || (Q.lvp_left > (Q.lvp_right + 5))) {
-    Q.lvp_ideology = "Left"
-} else {
-    Q.lvp_ideology = "Moderate"
 }
 
 if (Q.year == 1928 && Q.month == 9 && Q.spd_in_government == 0) {
@@ -1435,6 +1404,38 @@ for (var record of Q.party_support_records) {
     record['kvp'] = 0;
     }
 }
+
+if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 5))) {
+    Q.dvp_ideology = "Right"
+} else if (Q.dvp_left > (Q.dvp_right*1.5) || (Q.dvp_left > (Q.dvp_right + 5))) {
+    Q.dvp_ideology = "Left"
+} else {
+    Q.dvp_ideology = "Moderate"
+}
+
+if (Q.ddp_right > (Q.ddp_left + 4)) {
+    Q.ddp_ideology = "Right"
+} else if (Q.ddp_left > (Q.ddp_right + 4)) {
+    Q.ddp_ideology = "Left"
+} else {
+    Q.ddp_ideology = "Moderate"
+}
+
+if (Q.lvp_right > (Q.lvp_left*1.5) || (Q.lvp_right > (Q.lvp_left + 5))) {
+    Q.lvp_ideology = "Right"
+} else if (Q.lvp_left > (Q.lvp_right*1.5) || (Q.lvp_left > (Q.lvp_right + 5))) {
+    Q.lvp_ideology = "Left"
+} else {
+    Q.lvp_ideology = "Moderate"
+}
+
+Q['pro_republic_' + Q.month] = Q.pro_republic
+Q['dvp_relation_' + Q.month] = Q.dvp_relation
+Q['dvp_ideology_' + Q.month] = Q.dvp_ideology
+Q['lvp_ideology_' + Q.month] = Q.lvp_ideology
+Q['lvp_relation_' + Q.month] = Q.lvp_relation
+
+Q.combined_cooperation = Q.liberal_cooperation + Q.bourgeois_cooperation
 
 if (Q.spd_in_government) {
     Q.spd_in_government_time += 1;
