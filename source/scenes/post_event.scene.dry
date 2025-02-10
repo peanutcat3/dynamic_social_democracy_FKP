@@ -1705,7 +1705,7 @@ if (Q.spd_in_government_time >= 6) {
     }
     if (Q.reichswehr_loyalty <= 0.1) {
         Q.hindenburg_angry += 4;
-    } else if (Q.reichswehr_loyalty <= 0.15 {
+    } else if (Q.reichswehr_loyalty <= 0.15) {
         Q.hindenburg_angry += 2;
     } else if (Q.reichswehr_loyalty <= 0.2) {
         Q.hindenburg_angry += 1;
