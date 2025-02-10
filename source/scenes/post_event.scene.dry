@@ -992,11 +992,13 @@ if (
 ) {
     Q.liberal_cooperation += 3;
     Q.liberal_parliament = 1;
+    Q.liberal_parliament_seen = 1;
 }
 
 if (Q.year == 1928 && Q.month == 12 && (Q.in_center_right_coalition == 1 || Q.in_right_coalition == 1)) {
     if (!Q.lvp_formed) {
         Q.liberal_parliament = 1;
+        Q.liberal_parliament_seen = 1;
     }
     Q.liberal_cooperation += 3;
     Q.dvp_right += 2;
@@ -1268,6 +1270,7 @@ if (Q.bourgeois_negotiations_1930_timer == 3 && Q.bourgeois_parliament_trigger &
     Q.liberal_cooperation -= 3;
 } else if (Q.bourgeois_negotiations_1930_timer == 3 && Q.bourgeois_parliament_trigger_2 && !Q.lvp_formed) {
     Q.liberal_parliament = 1;
+    Q.liberal_parliament_seen = 1;
     Q.liberal_cooperation += 5;
 } else if (Q.bourgeois_negotiations_1930_timer == 3 && Q.bourgeois_parliament_trigger_3 && !Q.lvp_formed) {
     Q.bourgeois_parliament = 1;
