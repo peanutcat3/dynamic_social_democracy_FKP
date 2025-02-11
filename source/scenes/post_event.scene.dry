@@ -404,7 +404,7 @@ if (Q.month_actions >= 1) {
             Q.new_middle_nsdap -= 2/12;
             Q.new_middle_dnvp -= 1/12;
         }
-        Q.new_middle_nsdap -= 5/12;
+        Q.new_middle_nsdap -= 6/12;
         Q.old_middle_other += 3/12;
         Q.old_middle_dvp += 2/12;
         if (Q.bourgeois_parliament_ddp) {
@@ -416,7 +416,7 @@ if (Q.month_actions >= 1) {
             Q.old_middle_nsdap -= 2/12;
             Q.old_middle_dnvp -= 1/12;
         }
-        Q.old_middle_nsdap -= 5/12;
+        Q.old_middle_nsdap -= 6/12;
         Q.rural_other += 3/12;
         Q.rural_dvp += 3/12;
         Q.rural_lvp += 3/12;
@@ -1184,6 +1184,15 @@ if (Q.bourgeois_negotiations_elections_1930_timer == 1 && Q.bourgeois_negotiatio
     Q.bourgeois_merger_trigger_moderate = 1;
 } else if (Q.bourgeois_negotiations_elections_1930_timer == 1  && Q.bourgeois_negotiations_1930_done && !Q.dstp_formed && Q.combined_cooperation < 8 && (Q.dvp_leader != "Scholz" && Q.dvp_leader != "Dingeldey") && !Q.liberal_parliament) {
     Q.bourgeois_negotiations_fail_elections = 1;
+}
+
+if (Q.bourgeois_negotiations_elections_1930_timer == 1 && Q.bourgeois_negotiations_1930_done && Q.liberal_parliament && Q.combined_cooperation >= 15 && !Q.lvp_formed) {
+    Q.bourgeois_merger_timer = 2;
+    Q.bourgeois_merger_trigger = 1;
+    Q.bourgeois_merger_trigger_moderate = 1;
+} else if (Q.bourgeois_negotiations_elections_1930_timer == 1 && Q.bourgeois_negotiations_1930_done && Q.liberal_parliament && Q.combined_cooperation < 15 && !Q.lvp_formed) {
+    Q.bourgeois_negotiations_fail_elections = 1;
+    Q.bourgeois_cooperation -= 1;
 }
 
 if (Q.bourgeois_negotiations_elections_1930_timer == 2 && Q.bourgeois_negotiations_1930_done && (Q.dnvp_split_2 || Q.kvp_formed) && Q.bourgeois_parliament && Q.bourgeois_cooperation >= 8 && Q.lvp_formed) {
