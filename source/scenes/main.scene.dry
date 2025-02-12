@@ -21,13 +21,13 @@ if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5) {
         Q.flavour_1_trigger_time = Q.time;
     }
 }
-if (Q.next_election_time - Q.time < 5 && Q.dnvp_split_2 == 1 && Q.year >= 1930) {
+if (Q.skibidi_placeholder) {
     Q.flavour_2_trigger += 1;
     if (Q.flavour_2_trigger == 1) {
         Q.flavour_2_trigger_time = Q.time;
     }
 }
-if (Q.next_election_time - Q.time < 5 && Q.dnvp_split_2 == 1 && Q.year >= 1930 && Q.flavour_2_trigger > 1) {
+if (Q.skibidi_placeholder) {
     Q.flavour_3_trigger += 1;
     if (Q.flavour_3_trigger == 1) {
         Q.flavour_3_trigger_time = Q.time;
@@ -46,6 +46,12 @@ if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 
     Q.flavour_5_trigger += 1;
     if (Q.flavour_5_trigger == 1) {
         Q.flavour_5_trigger_time = Q.time;
+    }
+}
+if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 2) {
+    Q.flavour_6_trigger += 1;
+    if (Q.flavour_6_trigger == 1) {
+        Q.flavour_6_trigger_time = Q.time;
     }
 }
 !}
@@ -352,7 +358,7 @@ max-cards: 3
 
 {!<p class="other">!}[? if lvp_merger_2_timer == 2 and not lvp_formed: Progress has been made towards a <span style="color: #FFCC00;">united liberal party</span>, the previously moribund 'Liberal Association' has been revived and funded by prominent industrialists, who view a united liberal party as necessary to combat <span style="color: #c00000;">socialism</span> and the surging <span style="color: #7A3C00;">Nazis</span>. Furthermore, in the liberal stronghold of Baden-Württemberg, a merger between the two parties is already underway, even without formal approval from their national leadership. ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if flavour_2_trigger == 1 and flavour_2_trigger_time == time: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBLP**</span>[? if stegerwald_path == 0:&nbsp;and <span style="color: #8ED8E4;">**CSVD**</span>?], who are to contest the next election. ?]{!</p>!}
+{!<p class="dnvp">!}[? if dnvp_split_2_timer == 1: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBLP**</span>[? if stegerwald_path == 0:&nbsp;and <span style="color: #8ED8E4;">**CSVD**</span>?], who are to contest the next election. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_0_trigger == 1 and flavour_0_trigger_time == time: The fragmentation of the rural vote among several parties, a direct consequence of Hugenberg's leadership of the <span style="color: #3E88B3;">**DNVP**</span>, has created an opening for the <span style="color: #7A3C00;">**NSDAP**</span> to attract the support of this disaffected demographic. ?]{!</p>!}
 
@@ -398,7 +404,9 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1930 and month = 8: The film adaptation of the controversial anti-war novel *All Quiet on the Western Front* has released in America, but has yet to arrive on our shores. ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if flavour_3_trigger == 1 and flavour_3_trigger_time == time : Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of its own, unlike the[? if stegerwald_path = 0:&nbsp;<span style="color: #8ED8E4;">Christian Socialists</span> and?] <span style="color: #7FCEB1;">agrarians</span>. ?]{!</p>!}
+{!<p class="dnvp">!}[? if dnvp_split_2_timer == 2 : Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of its own, unlike the[? if stegerwald_path = 0:&nbsp;<span style="color: #8ED8E4;">Christian Socialists</span> and?] <span style="color: #7FCEB1;">agrarians</span>. ?]{!</p>!}
+
+{!<p class="both">!}[? if flavour_6_trigger == 1 and flavour_6_trigger_time == time: The lack of attention Hugenberg's <span style="color: #3E88B3;">**DNVP**</span> has devoted to attacking Adolf Hitler's <span style="color: #7A3C00;">**NSDAP**</span> is looking to be a blunder of enormous proportions. Despite the party's silence dealing with the <span style="color: #7A3C00;">Nazis</span>, the <span style="color: #7A3C00;">Nazis</span> aren't returning the favor, and have a lot to gain from the <span style="color: #3E88B3;">**DNVP**</span> attacking us on their behalf. The <span style="color: #3E88B3;">**DNVP**</span>'s goal of rallying the conservative and nationalist forces around themselves is ultimately benefitting the <span style="color: #7A3C00;">Nazis</span> more than it is helping themselves. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1930 and month = 10: <span style="color: #009739;">Br</span><span style="color: #FEDD00;">az</span><span style="color: #009739;">il</span> has undergone a revolution, replacing the First Republic with the Second Republic and bringing Getúlio Vargas into power following a disputed presidential election result earlier in the year. ?]{!</p>!}
 
@@ -466,13 +474,13 @@ if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5) {
         Q.flavour_1_trigger_time = Q.time;
     }
 }
-if (Q.next_election_time - Q.time < 5 && Q.dnvp_split_2 == 1 && Q.year >= 1930) {
+if (Q.skibidi_placeholder) {
     Q.flavour_2_trigger += 1;
     if (Q.flavour_2_trigger == 1) {
         Q.flavour_2_trigger_time = Q.time;
     }
 }
-if (Q.next_election_time - Q.time < 5 && Q.dnvp_split_2 == 1 && Q.year >= 1930 && Q.flavour_2_trigger > 1) {
+if (Q.skibidi_placeholder) {
     Q.flavour_3_trigger += 1;
     if (Q.flavour_3_trigger == 1) {
         Q.flavour_3_trigger_time = Q.time;
@@ -491,6 +499,12 @@ if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 
     Q.flavour_5_trigger += 1;
     if (Q.flavour_5_trigger == 1) {
         Q.flavour_5_trigger_time = Q.time;
+    }
+}
+if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 2) {
+    Q.flavour_6_trigger += 1;
+    if (Q.flavour_6_trigger == 1) {
+        Q.flavour_6_trigger_time = Q.time;
     }
 }
 !}
@@ -797,7 +811,7 @@ max-cards: 4
 
 {!<p class="other">!}[? if lvp_merger_2_timer == 2 and not lvp_formed: Progress has been made towards a <span style="color: #FFCC00;">united liberal party</span>, the previously moribund 'Liberal Association' has been revived and funded by prominent industrialists, who view a united liberal party as necessary to combat <span style="color: #c00000;">socialism</span> and the surging <span style="color: #7A3C00;">Nazis</span>. Furthermore, in the liberal stronghold of Baden-Württemberg, a merger between the two parties is already underway, even without formal approval from their national leadership. ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if flavour_2_trigger == 1 and flavour_2_trigger_time == time: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBLP**</span>[? if stegerwald_path == 0:&nbsp;and <span style="color: #8ED8E4;">**CSVD**</span>?], who are to contest the next election. ?]{!</p>!}
+{!<p class="dnvp">!}[? if dnvp_split_2_timer == 1: Westarp and his group of <span style="color: #3E88B3;">**DNVP**</span> moderates have been finding their new home in the newly founded <span style="color: #0087DC;">Conservative People's Party</span> (<span style="color: #0087DC;">**KVP**</span>), <span style="color: #7FCEB1;">**CNBLP**</span>[? if stegerwald_path == 0:&nbsp;and <span style="color: #8ED8E4;">**CSVD**</span>?], who are to contest the next election. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_0_trigger == 1 and flavour_0_trigger_time == time: The fragmentation of the rural vote among several parties, a direct consequence of Hugenberg's leadership of the <span style="color: #3E88B3;">**DNVP**</span>, has created an opening for the <span style="color: #7A3C00;">**NSDAP**</span> to attract the support of this disaffected demographic. ?]{!</p>!}
 
@@ -843,7 +857,9 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1930 and month = 8: The film adaptation of the controversial anti-war novel *All Quiet on the Western Front* has released in America, but has yet to arrive on our shores. ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if flavour_3_trigger == 1 and flavour_3_trigger_time == time : Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of its own, unlike the[? if stegerwald_path = 0:&nbsp;<span style="color: #8ED8E4;">Christian Socialists</span> and?] <span style="color: #7FCEB1;">agrarians</span>. ?]{!</p>!}
+{!<p class="dnvp">!}[? if dnvp_split_2_timer == 2 : Negotiations to unite the various splinter groups from the <span style="color: #3E88B3;">**DNVP**</span> has failed to achieve any results, the <span style="color: #0087DC;">**KVP**</span> is expected to perform poorly due to its lack of a political base of its own, unlike the[? if stegerwald_path = 0:&nbsp;<span style="color: #8ED8E4;">Christian Socialists</span> and?] <span style="color: #7FCEB1;">agrarians</span>. ?]{!</p>!}
+
+{!<p class="both">!}[? if flavour_6_trigger == 1 and flavour_6_trigger_time == time: The lack of attention Hugenberg's <span style="color: #3E88B3;">**DNVP**</span> has devoted to attacking Adolf Hitler's <span style="color: #7A3C00;">**NSDAP**</span> is looking to be a blunder of enormous proportions. Despite the party's silence dealing with the <span style="color: #7A3C00;">Nazis</span>, the <span style="color: #7A3C00;">Nazis</span> aren't returning the favor, and have a lot to gain from the <span style="color: #3E88B3;">**DNVP**</span> attacking us on their behalf. The <span style="color: #3E88B3;">**DNVP**</span>'s goal of rallying the conservative and nationalist forces around themselves is ultimately benefitting the <span style="color: #7A3C00;">Nazis</span> more than it is helping themselves. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1930 and month = 10: <span style="color: #009739;">Br</span><span style="color: #FEDD00;">az</span><span style="color: #009739;">il</span> has undergone a revolution, replacing the First Republic with the Second Republic and bringing Getúlio Vargas into power following a disputed presidential election result earlier in the year. ?]{!</p>!}
 
