@@ -48,7 +48,7 @@ if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 
         Q.flavour_5_trigger_time = Q.time;
     }
 }
-if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 2) {
+if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 3) {
     Q.flavour_6_trigger += 1;
     if (Q.flavour_6_trigger == 1) {
         Q.flavour_6_trigger_time = Q.time;
@@ -507,7 +507,7 @@ if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 
         Q.flavour_5_trigger_time = Q.time;
     }
 }
-if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 2) {
+if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 3) {
     Q.flavour_6_trigger += 1;
     if (Q.flavour_6_trigger == 1) {
         Q.flavour_6_trigger_time = Q.time;
