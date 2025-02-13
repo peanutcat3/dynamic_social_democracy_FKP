@@ -1093,16 +1093,16 @@ if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion < 12 && !Q.lvp_formed) {
 }
 
 if (Q.year == 1930 && Q.month == 1 && Q.pro_republic < 65 && Q.ddp_ideology != "Left" && Q.z_ideology == "Right" && !Q.lvp_formed) {
-    Q.ddp_right += 1.5;
+    Q.ddp_right += 1;
     Q.ddp_cohesion -= 1;
     if (Q.ddp_ideology == "Right") {
-        Q.liberal_cooperation += 3;
+        Q.liberal_cooperation += 1;
     }
 }
 
 if (Q.year == 1930 && Q.month == 3 && Q.ddp_relation < 60 && !Q.lvp_formed) {
     Q.ddp_relation -= 5;
-    Q.ddp_right += 3; 
+    Q.ddp_right += 2; 
     Q.ddp_cohesion -= 1;
 } else if (Q.year == 1930 && Q.month == 3 && Q.ddp_relation >= 60 && !Q.lvp_formed) {
     Q.ddp_left += 1;
