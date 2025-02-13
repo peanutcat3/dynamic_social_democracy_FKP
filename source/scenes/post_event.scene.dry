@@ -1069,7 +1069,7 @@ if (Q.year == 1929 && Q.month == 10 && !Q.lvp_formed) {
     Q.old_middle_other += 2;
 }
 
-if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion >= 12 && !Q.lvp_formed) {
+if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion >= 13 && !Q.lvp_formed) {
     Q.stolper_program_adopted = 1;
     Q.liberal_cooperation += 3;
     Q.new_middle_ddp += 4;
@@ -1083,7 +1083,7 @@ if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion >= 12 && !Q.lvp_formed) {
     Q.ddp_relation -= 5;
 }
 
-if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion < 12 && !Q.lvp_formed) {
+if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion < 13 && !Q.lvp_formed) {
     Q.stolper_program_adopted = 0;
     Q.new_middle_ddp -= 2;
     Q.old_middle_ddp -= 2;
