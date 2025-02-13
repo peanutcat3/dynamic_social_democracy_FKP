@@ -1353,7 +1353,7 @@ if (Q.bourgeois_parliament && !Q.lvp_formed) {
     Q.bourgeois_negotiations_elections_1932_timer = 0;  
 }
 
-if (Q.year == 1930 && Q.bourgeois_negotiations >= 1 && ((Q.bourgeois_negotiations_1930_timer < 3 && Q.bourgeois_negotiations_1932_timer < 3) || (Q.bourgeois_negotiations_elections_1930_timer < 3 && Q.bourgeois_negotiations_elections_1932_timer < 3)) && Q.liberal_cooperation >= 10 && (Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Right" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Moderate" && Q.ddp_relation < 40) && !Q.dstp_formed && !Q.in_weimar_coalition && (!Q.in_popular_front || Q.in_popular_front && Q.liberal_parliament == 1) && Q.lvp_merger_2_timer == 0 && !Q.lvp_timer_2_trigger && !Q.lvp_formed) {
+if (Q.year == 1930 && Q.bourgeois_negotiations >= 1 && ((Q.bourgeois_negotiations_1930_timer < 3 && Q.bourgeois_negotiations_1932_timer < 3) || ((Q.bourgeois_negotiations_elections_1930_timer < 3 && Q.bourgeois_negotiations_1_election) || (Q.bourgeois_negotiations_elections_1932_timer < 3 && Q.bourgeois_negotiations_2_election))) && Q.liberal_cooperation >= 10 && (Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Right" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Moderate" && Q.ddp_relation < 40) && !Q.dstp_formed && !Q.in_weimar_coalition && (!Q.in_popular_front || Q.in_popular_front && Q.liberal_parliament == 1) && Q.lvp_merger_2_timer == 0 && !Q.lvp_timer_2_trigger && !Q.lvp_formed) {
     Q.lvp_timer_2_trigger = 1;
     Q.lvp_merger_2_timer = 3;
 }
@@ -1367,6 +1367,33 @@ if (Q.lvp_formed && Q.lvp_timer_2_trigger) {
     Q.rural_nsdap -= 3/12;
     Q.catholics_lvp += 3/12;
     Q.catholics_nsdap -= 3/12;
+}
+
+if (Q.dnvp_split_2_timer == 1 && Q.bourgeois_cooperation >= 7) {
+    Q.bourgeois_cooperation += 2;
+    Q.kvp_cnblp_sister = 1;
+    Q.rural_other += 6;
+    Q.rural_dnvp -= 3;
+    Q.rural_nsdap -= 3;
+} else if (Q.dnvp_split_2_timer == 1 && Q.bourgeois_cooperation < 7) {
+    Q.bourgeois_cooperation += 1;
+    Q.rural_other += 2;
+}
+
+if (Q.dnvp_split_2_timer == 2 && !Q.kvp_cnblp_sister && Q.bourgeois_cooperation >= 5) {
+    Q.rural_other += 3;
+    Q.rural_nsdap -= 3;
+    Q.cnblp_dbp = 1;
+    Q.bourgeois_cooperation += 1;
+}
+
+if (Q.kvp_cnblp_sister) {
+    Q.new_middle_other += 5/12;
+    Q.old_middle_other += 5/12;
+    Q.new_middle_nsdap -= 5/12;
+    Q.old_middle_nsdap -= 5/12;
+    Q.rural_other += 3/12;
+    Q.rural_nsdap -= 3/12;
 }
 
 if (Q.year == 1930 && Q.month == 1 && Q.dnvp_historical_1929 && (Q.peoples_party || Q.weimar_coalition >= 50 || Q.stegerwald_path || (Q.z_leader == "Joos" && Q.dvp_reform))) {
@@ -1418,6 +1445,8 @@ for (var record of Q.party_support_records) {
     record['kvp'] = 0;
     }
 }
+
+// TODO: make it so westarp group join these guys
 
 if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 5))) {
     Q.dvp_ideology = "Right"
