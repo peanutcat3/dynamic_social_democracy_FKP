@@ -1896,6 +1896,73 @@ if (Q.spd_in_government_time >= 6) {
     }
 }
 
+if (Q.president == "Hindenburg" && Q.chancellor == "Brüning" && !Q.spd_in_government) {
+    Q.bruning_time += 1;
+} else {
+    Q.bruning_time = 0;
+}
+
+if (Q.bruning_time == 1) {
+    Q.hindenburg_angry_bruning = 0;
+}
+
+if (Q.bruning_time > 1) {
+    if (Q.bruning_time >= 36) {
+        hindenburg_angry_bruning += 3;
+    } else if (Q.bruning_time >= 24) {
+        Q.hindenburg_angry_bruning += 2;
+    } else if (Q.bruning_time >= 12) {
+        Q.hindenburg_angry_bruning += 1;
+    } else if (Q.bruning_time >= 6) {
+        Q.hindenburg_angry_bruning -= 1;
+    }
+    if (Q.economic_growth < 0) {
+        Q.hindenburg_angry_bruning += (Q.economic_growth / 2)
+    }
+    if (unemployed >= 15) {
+        Q.hindenburg_angry_bruning += (Q.unemployed / 10)
+    }
+    if (Q.inflation < -6) {
+        Q.hindenburg_angry_bruning += ((Q.inflation*-1) / 10)
+    }
+    if (Q.pro_republic >= 50) {
+        Q.hindenburg_angry_bruning -= Q.pro_republic / 20;
+    } else if (Q.pro_republic < 50) {
+        Q.hindenburg_angry_bruning += ((100 - Q.pro_republic) / 25);
+    }
+    if (Q.nsdap_votes >= 20) {
+        Q.hindenburg_angry_bruning += Q.nsdap_votes / 10;
+    } else if (Q.nsdap_votes < 20) {
+        Q.hindenburg_angry_bruning -= (20 - Q.nsdap_votes) / 5;
+    }
+    if (Q.largest_party == "NSDAP" && Q.nsdap_r >= 30) {
+        Q.hindenburg_angry_bruning += 10;
+    }
+    if (Q.in_center_right_coalition || Q.in_right_coalition) {
+        Q.hindenburg_angry_bruning -= 3;
+    } else if (Q.spd_toleration) {
+        Q.hindenburg_angry_bruning += 3;
+    }
+    if (Q.bourgeois_parliament) {
+        Q.hindenburg_angry_bruning -= 2;
+    }
+    if (Q.bourgeois_list) {
+        Q.hindenburg_angry_bruning -= 1;
+    }
+    if (Q.other_votes + Q.dvp_votes + Q.ddp_votes >= 15) {
+        Q.hindenburg_angry_bruning -= (Q.other_votes + Q.dvp_votes + Q.ddp_votes) / 5;
+    }
+    if (Q.dvp_ideology == "Right") {
+        Q.hindenburg_angry_bruning += 1;
+    }
+    if (Q.strife >= 6) {
+        Q.hindenburg_angry_bruning += Q.strife / 2;
+    }
+    if (Q.rb_militancy >= 0.1 || Q.sa_force >= 30 || Q.rfb_force >= 40) {
+        Q.hindenburg_angry_bruning += 2;
+    }
+}
+
 if (Q.lvp_formed) {
     Q.weimar_coalition = parseFloat((Q.spd_r + Q.lvp_r + Q.z_r - 3).toFixed(1));
 } else {

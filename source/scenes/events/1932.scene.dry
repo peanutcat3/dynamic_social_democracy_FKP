@@ -8,7 +8,7 @@ if (Q.works_program && Q.works_program >= 2) {
     Q.economic_growth += 1;
 }
 if (!Q.works_program) {
-    Q.unemployed += 5; 
+    Q.unemployed += 3; 
     Q.inflation -= 2;
     Q.economic_growth -= 1;
 }
