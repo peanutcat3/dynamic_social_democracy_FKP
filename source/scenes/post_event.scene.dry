@@ -243,6 +243,13 @@ if (Q.month_actions >= 1) {
     if (Q.economic_growth >= 12) {
         Q.economic_growth -= 0.3;
     }
+    if (Q.economic_growth < -10) {
+        Q.economic_growth += 0.1;
+    }
+    if (Q.unemployed >= 30) {
+        Q.unemployed -= 0.1;
+        Math.round(Q.unemployed * 10) / 10 
+    }
     if (Q.economic_growth >= 3 && Q.unemployed < 20 && Q.black_thursday_seen) {
         Q.capital_strike_progress -= 0.25;
     }
@@ -1976,11 +1983,6 @@ if (Q.bruning_time > 1) {
     if (Q.rb_militancy >= 0.1 || Q.sa_force >= 30 || Q.rfb_force >= 40) {
         Q.hindenburg_angry_bruning += 2;
     }
-}
-
-if (Q.unemployed >= 30) {
-    Q.unemployed -= Q.unemployed / 100;
-    Math.round(Q.unemployed * 10) / 10 
 }
 
 if (Q.lvp_formed) {
