@@ -616,7 +616,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'sa_ban', 'sh_ban', 'papen_chancellor',
     'kpd_policy', 'kpd_ultimatum', 'kpd_ultimatum_prussia', 'popular_front_dispute',
     'high_inflation', 'banking_crisis', 'understanding_enemy',
-    'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
+    'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution', 'papen_chancellor', 'schleicher_chancellor',
     'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger',
     'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath', 'bourgeois_negotiations_1932', 'bourgeois_negotiations_1932_aftermath',
     'bourgeois_negotiations_elections_1930', 'bourgeois_negotiations_elections_1932'];
@@ -693,6 +693,8 @@ Q.bourgeois_negotiations_elections_1930_timer = 0;
 Q.bourgeois_negotiations_elections_1932_timer = 0;
 Q.bourgeois_merger_timer = 0;
 Q.high_inflation_timer = 0;
+Q.papen_chancellor_timer = 0;
+Q.schleicher_chancellor_timer = 0;
 Q.z_party_name = "Z";
 Q.dnvp_leader = "Westarp";
 Q.dnvp_ideology = "Radical";
