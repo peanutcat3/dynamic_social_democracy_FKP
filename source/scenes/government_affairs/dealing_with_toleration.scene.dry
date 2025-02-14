@@ -40,7 +40,7 @@ unavailable-subtitle: This can only happen with a budget surplus.
 go-to: urge_success if z_relation >= 40 and ((ddp_relation >= 40 and not lvp_formed) or (lvp_relation >= 40 and lvp_formed)); urge_failure if z_relation < 40 or ((ddp_relation < 40 and not lvp_formed) or (lvp_relation < 40 and lvp_formed))
 
 @urge_success
-on-arrival: welfare += 1; budget -= 1; workers_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); z_relation -= 3; dvp_relation -= 3; ddp_relation -= 3; lvp_relation -= 3; reformist_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; dvp_right += 1; ddp_right += 0.5; lvp_right += 1
+on-arrival: welfare += 1; budget -= 1; workers_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); z_relation -= 3; dvp_relation -= 3; ddp_relation -= 3; lvp_relation -= 3; reformist_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; dvp_right += 1; ddp_right += 0.5; lvp_right += 1; hindenburg_angry_bruning += 10
 
 We have successfully urged the coalition parties to increase social spending! Unfortunately, the center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
 
