@@ -2,8 +2,6 @@ title: 1931
 subtitle: A new year 
 on-arrival: {!
 // increase NSDAP vote share 
-Q.unemployed += 5;
-Q.inflation -= 5;
 // historical: -7.7%
 // leave some economic decline for the banking crisis event
 Q.economic_growth -= 5.3;
