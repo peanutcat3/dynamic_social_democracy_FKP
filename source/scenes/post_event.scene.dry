@@ -1934,7 +1934,7 @@ if (Q.bruning_time > 1) {
     if (Q.economic_growth < 0) {
         Q.hindenburg_angry_bruning += (Q.economic_growth / 2)
     }
-    if (unemployed >= 15) {
+    if (Q.unemployed >= 15) {
         Q.hindenburg_angry_bruning += (Q.unemployed / 10)
     }
     if (Q.inflation < -6) {
