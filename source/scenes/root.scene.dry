@@ -618,7 +618,8 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'high_inflation', 'banking_crisis', 'understanding_enemy',
     'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
     'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger',
-    'bourgeois_negotiations_1930', 'bourgeois_negotiations_1932', 'bourgeois_negotiations_elections_1930', 'bourgeois_negotiations_elections_1932'];
+    'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath', 'bourgeois_negotiations_1932', bourgeois_negotiations_1932_aftermath,
+    'bourgeois_negotiations_elections_1930', 'bourgeois_negotiations_elections_1932'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -685,7 +686,9 @@ Q.lvp_merger_timer = 0;
 Q.lvp_merger_1_timer = 0;
 Q.lvp_merger_2_timer = 0;
 Q.bourgeois_negotiations_1930_timer = 0;
+Q.bourgeois_negotiations_1930_aftermath_timer = 0;
 Q.bourgeois_negotiations_1932_timer = 0;
+Q.bourgeois_negotiations_1932_aftermath_timer = 0;
 Q.bourgeois_negotiations_elections_1930_timer = 0;
 Q.bourgeois_negotiations_elections_1932_timer = 0;
 Q.bourgeois_merger_timer = 0;
@@ -746,6 +749,7 @@ Q.bourgeois_negotiations_2 = 0;
 Q.bourgeois_negotiations_election_soon = 0;
 Q.dnvp_split_2 = 0
 Q.bourgeois_merger_trigger = 0;
+Q.bourgeois_list = 0;
 
 // flavour text stuff
 Q.flavour_0_trigger = 0;

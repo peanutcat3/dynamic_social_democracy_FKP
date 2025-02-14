@@ -64,7 +64,7 @@ on-arrival: {!
     if (Q.kvp_cnblp_sister) {
         Q.adjustmentFactors_other += 0.05;
     }
-    if (Q.bourgeois_parliament) {
+    if (Q.bourgeois_parliament || Q.bourgeois_parliament_no_liberals) {
         Q.adjustmentFactors_other += 0.05;
     }
     if (Q.other_votes >= 8 && Q.year >= 1931) {
@@ -1138,10 +1138,10 @@ The third option is to have new elections.
 title: A "New Grand Coalition" of all the constitutional parties?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + **Others** ([+ neo_weimar_coalition +]%)
 view-if: neo_weimar_coalition >= 50 and grand_coalition < 50
-choose-if: (((z_relation >= 50 and z_ideology == "Right") or (z_relation >= 40 and z_leader == "Joos") or (z_relation >= 35 and z_leader == "Kaiser")) and (((dvp_relation >= 35 and dvp_ideology == "Left") or (dvp_relation >= 40 and dvp_ideology == "Moderate") or (dvp_relation >= 50 and dvp_ideology == "Right")) and ((ddp_relation >= 25 and ddp_ideology == "Left") or (ddp_relation >= 30 and ddp_ideology == "Moderate") or (ddp_relation >= 35 and ddp_ideology == "Right")) and not lvp_formed) or (((lvp_relation >= 30 and lvp_ideology == "Left") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 45 and lvp_ideology == "Right")) and lvp_formed) and not bourgeois_parliament) or ((z_relation >= 50 and ((dvp_relation >= 50 and ((ddp_relation >= 25 and not bourgeois_parliament_ddp) or (ddp_relation >= 40 and bourgeois_parliament_ddp)) and not lvp_formed) or (lvp_relation >= 45 and lvp_formed))) and bourgeois_parliament)
-unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #A2D8E0;">BVP</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?] + Others ([+ neo_weimar_coalition +]%) - [? if not ((z_relation >= 50 and z_ideology == "Right") or (z_relation >= 40 and z_leader == "Joos") or (z_relation >= 35 and z_leader == "Kaiser")) and not bourgeois_parliament : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if z_relation < 50 and bourgeois_parliament : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if not ((dvp_relation >= 35 and dvp_ideology == "Left") or (dvp_relation >= 40 and dvp_ideology == "Moderate") or (dvp_relation >= 50 and dvp_ideology == "Right")) and not bourgeois_parliament and not lvp_formed: We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if dvp_relation < 50 and bourgeois_parliament and not lvp_formed: We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if not ((ddp_relation >= 25 and ddp_ideology == "Left") or (ddp_relation >= 30 and ddp_ideology == "Moderate") or (ddp_relation >= 35 and ddp_ideology == "Right")) and not bourgeois_parliament and not lvp_formed : We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?][? if ((ddp_relation < 30 and not bourgeois_parliament_ddp) or (ddp_relation < 40 and bourgeois_parliament_ddp)) and bourgeois_parliament and not lvp_formed : We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?][? if not ((lvp_relation >= 30 and lvp_ideology == "Left") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 45 and lvp_ideology == "Right")) and not bourgeois_parliament and lvp_formed : We do not have adequate relations with the <span style="color: #FFCC00;">**LVP**</span>. ?][? if lvp_relation < 45 and bourgeois_parliament and lvp_formed : We do not have adequate relations with the <span style="color: #FFCC00;">**LVP**</span>. ?]
+choose-if: (((z_relation >= 50 and z_ideology == "Right") or (z_relation >= 40 and z_leader == "Joos") or (z_relation >= 35 and z_leader == "Kaiser")) and (((dvp_relation >= 35 and dvp_ideology == "Left") or (dvp_relation >= 40 and dvp_ideology == "Moderate") or (dvp_relation >= 50 and dvp_ideology == "Right")) and ((ddp_relation >= 25 and ddp_ideology == "Left") or (ddp_relation >= 30 and ddp_ideology == "Moderate") or (ddp_relation >= 35 and ddp_ideology == "Right")) and not lvp_formed) or (((lvp_relation >= 30 and lvp_ideology == "Left") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 45 and lvp_ideology == "Right")) and lvp_formed) and not (bourgeois_parliament or bourgeois_parliament_no_liberals)) or ((z_relation >= 50 and ((dvp_relation >= 50 and ((ddp_relation >= 25 and not bourgeois_parliament_ddp) or (ddp_relation >= 40 and bourgeois_parliament_ddp)) and not lvp_formed) or (lvp_relation >= 45 and lvp_formed))) and (bourgeois_parliament or bourgeois_parliament_no_liberals))
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #A2D8E0;">BVP</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?] + Others ([+ neo_weimar_coalition +]%) - [? if not ((z_relation >= 50 and z_ideology == "Right") or (z_relation >= 40 and z_leader == "Joos") or (z_relation >= 35 and z_leader == "Kaiser")) and not (bourgeois_parliament or bourgeois_parliament_no_liberals) : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if z_relation < 50 and (bourgeois_parliament or bourgeois_parliament_no_liberals) : We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if not ((dvp_relation >= 35 and dvp_ideology == "Left") or (dvp_relation >= 40 and dvp_ideology == "Moderate") or (dvp_relation >= 50 and dvp_ideology == "Right")) and not (bourgeois_parliament or bourgeois_parliament_no_liberals) and not lvp_formed: We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if dvp_relation < 50 and (bourgeois_parliament or bourgeois_parliament_no_liberals) and not lvp_formed: We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if not ((ddp_relation >= 25 and ddp_ideology == "Left") or (ddp_relation >= 30 and ddp_ideology == "Moderate") or (ddp_relation >= 35 and ddp_ideology == "Right")) and not (bourgeois_parliament or bourgeois_parliament_no_liberals) and not lvp_formed : We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?][? if ((ddp_relation < 30 and not bourgeois_parliament_ddp) or (ddp_relation < 40 and bourgeois_parliament_ddp)) and (bourgeois_parliament or bourgeois_parliament_no_liberals) and not lvp_formed : We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?][? if not ((lvp_relation >= 30 and lvp_ideology == "Left") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 45 and lvp_ideology == "Right")) and not (bourgeois_parliament or bourgeois_parliament_no_liberals) and lvp_formed : We do not have adequate relations with the <span style="color: #FFCC00;">**LVP**</span>. ?][? if lvp_relation < 45 and (bourgeois_parliament or bourgeois_parliament_no_liberals) and lvp_formed : We do not have adequate relations with the <span style="color: #FFCC00;">**LVP**</span>. ?]
 
-How do we convince vehemently anti-<span style="color: #c00000;">socialist</span> parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">Center</span> and [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] may allow us some leverage. [? if in_new_grand_coalition_prussia: A similar coalition in the state of Prussia will also help with negotiations. ?][? if bourgeois_parliament: The formation of the anti-<span style="color: #c00000;">socialist</span> bourgeois parliamentary group will necessitate more concessions. ?]
+How do we convince vehemently anti-<span style="color: #c00000;">socialist</span> parties to allow us to form a majority coalition? Our largely benevolent relations with the <span style="color: #000000;">Center</span> and [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] may allow us some leverage. [? if in_new_grand_coalition_prussia: A similar coalition in the state of Prussia will also help with negotiations. ?][? if (bourgeois_parliament or bourgeois_parliament_no_liberals): The formation of the anti-<span style="color: #c00000;">socialist</span> bourgeois parliamentary group will necessitate more concessions. ?]
 
 - @use_resources
 - @use_resources_bourgeois_parliament
@@ -1155,7 +1155,7 @@ How do we convince vehemently anti-<span style="color: #c00000;">socialist</span
 
 @newgroko_prussia
 title: Offer participation in the Prussian government.
-view-if: (in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and neo_weimar_coalition_prussia >= 50) and not bourgeois_parliament
+view-if: (in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and neo_weimar_coalition_prussia >= 50) and not (bourgeois_parliament or bourgeois_parliament_no_liberals)
 on-arrival: spd_in_government = 1; in_grand_coalition = 1; left_dissent += 4; dvp_left += 2; lvp_left += 2; liberal_cooperation += 1; dvp_relation += 5; lvp_relation += 5; in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 1; in_minority_weimar_coalition_prussia = 0; prussia_leader = "Luther" if (dvp_leader == "Luther" or lvp_leader == "Luther"); prussia_leader = "Stegerwald" if dvp_leader != "Luther" and z_leader != "Stegerwald"; prussia_leader = "Brüning" if dvp_leader != "Luther" and z_leader == "Stegerwald"; spd_prussia = 1; right_prussia = 0; hindenburg_angry = 25
 achievement: constitutional_coalition
 
@@ -1187,7 +1187,7 @@ Who should be chancellor?
 
 @use_resources
 title: Use our resources to smooth over the creation of a coalition.
-view-if: not bourgeois_parliament
+view-if: not (bourgeois_parliament or bourgeois_parliament_no_liberals)
 subtitle: -2 resources
 unavailable-subtitle: Not enough resources (need 2).
 choose-if: resources >= 2
@@ -1207,7 +1207,7 @@ Who should be chancellor?
 
 @use_resources_bourgeois_parliament
 title: Use our resources to smooth over the creation of a coalition.
-view-if: bourgeois_parliament and not (in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and neo_weimar_coalition_prussia >= 50)
+view-if: (bourgeois_parliament or bourgeois_parliament_no_liberals) and not (in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and neo_weimar_coalition_prussia >= 50)
 subtitle: -4 resources
 unavailable-subtitle: Not enough resources (need 4).
 choose-if: resources >= 4
@@ -1225,7 +1225,7 @@ Who should be chancellor?
 
 @use_resources_bourgeois_parliament_prussia
 title: Use our resources to smooth over the creation of a coalition, and let them into the Prussian government.
-view-if: bourgeois_parliament and (in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and neo_weimar_coalition_prussia >= 50)
+view-if: (bourgeois_parliament or bourgeois_parliament_no_liberals) and (in_weimar_coalition_prussia or in_grand_coalition_prussia and not in_new_grand_coalition_prussia and neo_weimar_coalition_prussia >= 50)
 subtitle: -4 resources
 unavailable-subtitle: Not enough resources (need 4).
 choose-if: resources >= 4
@@ -1243,7 +1243,7 @@ Who should be chancellor?
 
 @braun_chancellor_new
 subtitle: This will reduce our leverage in the ministries.
-view-if: not bourgeois_parliament
+view-if: not (bourgeois_parliament or bourgeois_parliament_no_liberals)
 choose-if: (not historical_mode or not prussia_leader = "Braun") and not (in_new_grand_coalition_prussia and prussia_leader == "Braun")
 unavailable-subtitle: Our coalition partners have serious qualms about concentrating power into one man, given that Braun is already Minister-President of Prussia.
 on-arrival: leverage -= 10; chancellor = "Braun"; chancellor_party = "SPD"
