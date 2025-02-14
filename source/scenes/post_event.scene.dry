@@ -515,7 +515,6 @@ if (Q.month_actions >= 1) {
         Q.old_middle_nsdap += 10/12;
         Q.workers_other -= 2/12;
         Q.workers_nsdap += 3/12;
-        Q.new_middle_ddp -= 3/12;
         Q.new_middle_dvp -= 3/12;
         Q.new_middle_lvp -= 3/12;
         Q.new_middle_lvp -= 3/12;
