@@ -780,59 +780,6 @@ if (Q.month_actions >= 1) {
             }
         }
     } else if (Q.year >= 1933) {
-        Q.unemployed_nsdap += ((((Q.sa_force/2)-Q.rfb_force)/10)/12);
-        Q.unemployed_kpd -= ((((Q.sa_force/2)-Q.rfb_force)/10)/12);
-        if (Q.sa_force + Q.sh_force >= 50 && Q.sa_force < 50 && Q.sh_force < 50 && Q.harzburg_front_seen) {
-            Q.workers_kpd -= 2/12;
-            Q.workers_spd -= 1/12;
-            Q.unemployed_kpd -= 3/12;
-            Q.unemployed_spd -= 2/12;
-            Q.workers_nsdap += 2/12;
-            Q.new_middle_nsdap += 3/12;
-            Q.old_middle_nsdap += 3/12;
-            Q.rural_nsdap += 3/12;
-            Q.rural_dnvp += 1/12;
-            Q.unemployed_nsdap += 3/12;
-            Q.strife += 1/12;
-            Q.rb_strength -= Q.rb_strength*0.004;
-            Q.rfb_strength -= Q.rfb_strength*0.02;
-            if (Q.month == 1) {
-                Q.pro_republic -= (Q.strife/2);
-            }
-        }
-        if (Q.sa_force >= 50) {
-            Q.workers_kpd -= 2/12;
-            Q.workers_spd -= 2/12;
-            Q.unemployed_kpd -= 7/12;
-            Q.unemployed_spd -= 4/12;
-            Q.workers_nsdap += 4/12;
-            Q.new_middle_nsdap += 6/12;
-            Q.old_middle_nsdap += 6/12;
-            Q.rural_nsdap += 5/12;
-            Q.unemployed_nsdap += 6/12;
-            Q.rb_strength -= Q.rb_strength*0.01;
-            Q.rfb_strength -= Q.rfb_strength*0.08;
-            Q.strife += 3/12;
-            if (Q.month == 1) {
-                Q.pro_republic -= Q.strife;
-            }
-        }
-        if (Q.sh_force >= 50) {
-            Q.workers_kpd -= 1/12;
-            Q.workers_spd -= 2/12;
-            Q.unemployed_kpd -= 3/12;
-            Q.unemployed_spd -= 2/12;
-            Q.workers_dnvp += 1/12;
-            Q.new_middle_dnvp += 2/12;
-            Q.old_middle_dnvp += 2/12;
-            Q.rural_dnvp += 2/12;
-            Q.rb_strength -= Q.rb_strength*0.004;
-            Q.rfb_strength -= Q.rfb_strength*0.06;
-            Q.strife += 1/12;
-            if (Q.month == 1) {
-                Q.pro_republic -= Q.strife;
-            }
-        }
         if (Q.return_to_normalcy) {
             // return to normalcy -> voters return to the base
             if (Q.new_middle_ddp_normalized < 40) {
