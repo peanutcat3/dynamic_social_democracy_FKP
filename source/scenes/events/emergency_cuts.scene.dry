@@ -2,7 +2,7 @@ title: Emergency budget cuts
 subtitle: Chancellor [+ chancellor +] proposes significant cuts to social spending.
 new-page: true
 view-if: (year == 1929 or year == 1930 or year == 1931 or year == 1932) and month >= 12 and chancellor == "Brüning" and spd_in_government == 0 and (unemployed > 15 or (year == 1929 and unemployed > 10)) and welfare >= 0 and reparations > -2 and emergency_cuts_timer = 0
-on-arrival: emergency_cuts_seen = 1; emergency_cuts_timer = 12; ddp_right += 1; dvp_right += 1; lvp_right += 1
+on-arrival: emergency_cuts_seen = 1; emergency_cuts_timer = 12; ddp_right += 1; dvp_right += 1; lvp_right += 1; hindenburg_angry_bruning += 10
 tags: event
 max-visits: 4
 

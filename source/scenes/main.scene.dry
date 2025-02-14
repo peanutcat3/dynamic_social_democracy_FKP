@@ -937,6 +937,8 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1934 and month = 2 and not austrian_parliament_seen: The Austrian Civil War has begun and ended in a matter of three days, fought between the <span style="color: #C8102E;">Republican Protection League</span> and Austria's <span style="color: #7A3C00;">Austrofascist</span> regime, resulting in a defeat for the <span style="color: #C8102E;">socialists</span> across the border. The uprising was sparked by efforts to suppress the remnants of the <span style="color: #C8102E;">Austrian Social Democrats</span> and their paramilitary wing. However, the poorly coordinated and weakened movement was swiftly crushed by the army. Perhaps things would have gone more differently if they have taken up arms earlier. ?]{!</p>!}
 
+# add hindenburg_angry_bruning text 
+
 {!</div>!}
 
 - @party

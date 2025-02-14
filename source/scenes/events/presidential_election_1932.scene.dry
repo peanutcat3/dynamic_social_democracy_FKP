@@ -28,6 +28,7 @@ Many are calling for us to support the incumbent Hindenburg, despite his well-kn
 - @support_thalmann: Support Ernst Thälmann of the <span style="color: #700000;">**KPD**</span>.
 
 @support_hindenburg
+on-arrival: hindenburg_angry_bruning += 25
 subtitle: This is the default option.
 
 Despite his known <span style="color: #808080;">reactionary</span> nature, Hindenburg has at least been keeping the <span style="color: #7A3C00;">Nazis</span> at bay. Thus, we must support him.
@@ -403,7 +404,7 @@ Fine. We have thrown our support to Chairman Thälmann of the <span style="color
 
 @round2_hindenburg
 view-if: braun_campaign > 0 or spd_support_thalmann > 0
-on-arrival: braun_campaign = 0; spd_support_thalmann = 0
+on-arrival: braun_campaign = 0; spd_support_thalmann = 0; hindenburg_angry_bruning += 25
 
 We have switched our support to Hindenburg.
 
