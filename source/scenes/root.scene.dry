@@ -618,7 +618,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'high_inflation', 'banking_crisis', 'understanding_enemy',
     'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
     'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger',
-    'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath', 'bourgeois_negotiations_1932', bourgeois_negotiations_1932_aftermath,
+    'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath', 'bourgeois_negotiations_1932', 'bourgeois_negotiations_1932_aftermath',
     'bourgeois_negotiations_elections_1930', 'bourgeois_negotiations_elections_1932'];
 Q.advisor_action_timer = 0;
 // party affairs timers
