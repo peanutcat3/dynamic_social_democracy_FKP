@@ -1819,7 +1819,7 @@ if (Q.spd_in_government_time >= 6) {
     if (Q.dvp_leader == "Stresemann" && !Q.lvp_formed) {
         Q.hindenburg_angry -= 2;
     } else if (Q.lvp_leader == "Luther" && Q.lvp_formed) {
-        Q.hindenburg_angry -= 2;
+        Q.hindenburg_angry -= 1;
     }
     if (!Q.stresemann_dead && Q.foreign_minister_party == "SPD") {
         Q.hindenburg_angry += 2;
@@ -1837,6 +1837,8 @@ if (Q.spd_in_government_time >= 6) {
     }
     if (!Q.young_plan_ratified) {
         Q.hindenburg_angry -= 2;
+    } else if (Q.young_plan_ratified && Q.reparations > -2) {
+        Q.hindenburg_angry += 2;
     }
     if (Q.reparations <= -2) {
         Q.hindenburg_angry -= 3;
