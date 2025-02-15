@@ -2080,22 +2080,22 @@ Q.catholics_spd_difference = Q.catholics_spd - Q.catholics_spd_old;
 
 if (!Q.works_program && Q.spd_toleration) {
     if (Q.workers_spd_difference > 0) {
-        Q.workers_spd -= workers_spd_difference / 2;
+        Q.workers_spd -= Q.workers_spd_difference / 2;
     }
     if (Q.new_middle_spd_difference > 0) {
-        Q.new_middle_spd -= new_middle_spd_difference / 2;
+        Q.new_middle_spd -= Q.new_middle_spd_difference / 2;
     }
     if (Q.old_middle_spd_difference > 0) {
-        Q.old_middle_spd -= old_middle_spd_difference / 2;
+        Q.old_middle_spd -= Q.old_middle_spd_difference / 2;
     }
     if (Q.rural_spd_difference > 0) {
-        Q.rural_spd -= rural_spd_difference / 2;
+        Q.rural_spd -= Q.rural_spd_difference / 2;
     }
     if (Q.unemployed_spd_difference > 0) { 
-        Q.unemployed_spd -= unemployed_spd_difference / 2;
+        Q.unemployed_spd -= Q.unemployed_spd_difference / 2;
     }
     if (Q.catholics_spd_difference > 0) {
-        Q.catholics_spd -= catholics_spd_difference / 2;
+        Q.catholics_spd -= Q.catholics_spd_difference / 2;
     }
 }
 
