@@ -405,9 +405,8 @@ if (Q.month_actions >= 1) {
     }
     // soft cap for nsdap workers
     if (Q.workers_nsdap_normalized >= Q.workers_kpd_normalized - 5 && Q.unemployed >= 20) {
-        Q.workers_nsdap -= 6/12;
-        Q.workers_kpd += 3/12;
-        Q.workers_spd += 3/12;
+        Q.workers_nsdap -= 4/12;
+        Q.workers_kpd += 4/12;
     }
 
     if (Q.bourgeois_parliament) {
