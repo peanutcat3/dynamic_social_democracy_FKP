@@ -1451,11 +1451,11 @@ if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "
 }
 
 // elections close...
-if (Q.year >= 1930 && Q.year < 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament && !Q.liberal_parliament) {
+if (Q.year >= 1930 && Q.year < 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament && !Q.liberal_parliament && !Q.bourgeois_negotiations_elections_1930_timer) {
     Q.bourgeois_negotiations = 2;
     Q.bourgeois_negotiations_1_election = 1;
     Q.bourgeois_negotiations_elections_1930_timer = 2;
-} else if (Q.year >= 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament && !Q.liberal_parliament) {
+} else if (Q.year >= 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament && !Q.liberal_parliament && !Q.bourgeois_negotiations_elections_1932_timer) {
     Q.bourgeois_negotiations = 2;
     Q.bourgeois_negotiations_2_election = 1;
     Q.bourgeois_negotiations_elections_1932_timer = 2;  
