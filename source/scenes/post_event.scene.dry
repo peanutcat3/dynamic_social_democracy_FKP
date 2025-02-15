@@ -2069,13 +2069,6 @@ if (Q.chancellor != "Schleicher") {
     Q.schleicher_chancellor_timer = 0;
 }
 
-Q.workers_spd_old = Q.workers_spd;
-Q.new_middle_spd_old = Q.new_middle_spd;
-Q.old_middle_spd_old = Q.old_middle_spd;
-Q.rural_spd_old = Q.rural_spd;
-Q.unemployed_spd_old = Q.unemployed_spd;
-Q.catholics_spd_old = Q.catholics_spd;
-
 Q.workers_spd_difference = Q.workers_spd -= Q.workers_spd_old;
 Q.new_middle_spd_difference = Q.new_middle_spd -= Q.new_middle_spd_old;
 Q.old_middle_spd_difference = Q.old_middle_spd -= Q.old_middle_spd_old;
@@ -2103,6 +2096,13 @@ if (!Q.works_program && Q.spd_toleration) {
         Q.catholics_spd -= catholics_spd_difference / 2;
     }
 }
+
+Q.workers_spd_old = Q.workers_spd;
+Q.new_middle_spd_old = Q.new_middle_spd;
+Q.old_middle_spd_old = Q.old_middle_spd;
+Q.rural_spd_old = Q.rural_spd;
+Q.unemployed_spd_old = Q.unemployed_spd;
+Q.catholics_spd_old = Q.catholics_spd;
 
 if (Q.lvp_formed) {
     Q.weimar_coalition = parseFloat((Q.spd_r + Q.lvp_r + Q.z_r - 3).toFixed(1));
