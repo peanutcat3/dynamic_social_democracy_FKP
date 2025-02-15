@@ -29,7 +29,21 @@ Meanwhile, the right wing of the <span style="color: #C0A054;">**DVP**</span>, d
 @lvp_weimar
 title: Renegotiate the ruling coalition.
 view-if: in_weimar_coalition
-on-arrival: leverage = spd_r; leverage += 5 if z_ideology == "Left"
+on-arrival: {!
+Q.leverage = Q.spd_r;
+if (Q.z_ideology == "Left") Q.leverage += 5;
+if (Q.lvp_formed) Q.foreign_minister_party = 'LVP'; 
+if (!Q.lvp_formed) Q.foreign_minister_party = 'DVP';
+Q.interior_minister_party = 'Z';
+Q.justice_minister_party = 'I';
+Q.labor_minister_party = 'Z';
+Q.reichswehr_minister_party = 'I';
+if (Q.lvp_formed) Q.economic_minister_party = 'LVP'; 
+if (!Q.lvp_formed) Q.economic_minister_party = Q.ddp_name;
+if (Q.lvp_formed) Q.finance_minister_party = 'LVP'; 
+if (!Q.lvp_formed) Q.finance_minister_party = 'DVP';
+Q.agriculture_minister_party = 'Z';
+!}
 
 As a result of the left-liberal <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and conservative-liberal <span style="color: #C0A054;">**DVP**</span> having merged, they demand that their members that were formerly apart of the <span style="color: #C0A054;">**DVP**</span> to be included in the government. We will have to reshuffle the cabinet.
 
