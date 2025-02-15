@@ -404,7 +404,7 @@ if (Q.month_actions >= 1) {
         Q.rural_ddp += 2/12;
     }
     // soft cap for nsdap workers
-    if (Q.workers_nsdap_normalized >= Q.workers_kpd_normalized - 5 && Q.unemployed >= 20) {
+    if (Q.workers_nsdap_normalized >= Q.workers_kpd_normalized && Q.unemployed >= 20) {
         Q.workers_nsdap -= 4/12;
         Q.workers_kpd += 4/12;
     }
@@ -2013,7 +2013,7 @@ if (Q.nsdap_votes >= Q.nazi_peak && !Q.nazi_peak_triggered) {
 }
 
 if (Q.nazi_decay_timer > 0) {
-    Q.workers_nsdap -= 6/12;
+    Q.workers_nsdap -= 4/12;
     Q.new_middle_nsdap -= 8/12;
     Q.old_middle_nsdap -= 8/12;
     Q.rural_nsdap -= 8/12;
@@ -2022,6 +2022,8 @@ if (Q.nazi_decay_timer > 0) {
     Q.sa_strength *= 0.97;
     Q.new_middle_ddp += 2/12;
     Q.new_middle_dvp += 2/12;
+    Q.workers_kpd += 2/12;
+    Q.workers_dnvp += 2/12;
     if (Q.dnvp_ideology == "Moderate") {
         Q.new_middle_dnvp += 6/12;
         Q.new_middle_dnf += 2/12;
