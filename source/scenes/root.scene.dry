@@ -287,6 +287,12 @@ Q.catholics_dnvp = 5;
 Q.catholics_nsdap = 0;
 Q.catholics_other = 15;
 
+Q.workers_spd_old = 60;
+Q.new_middle_spd_old = 8;
+Q.old_middle_spd_old = 4;
+Q.rural_spd_old = 8;
+Q.unemployed_spd_old = 25;
+Q.catholics_spd_old = 20;
 
 // Current Reichstag composition
 // % of Reichstag in Jan 1928
