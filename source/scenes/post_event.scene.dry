@@ -2069,12 +2069,12 @@ if (Q.chancellor != "Schleicher") {
     Q.schleicher_chancellor_timer = 0;
 }
 
-Q.workers_spd_difference = Q.workers_spd -= Q.workers_spd_old;
-Q.new_middle_spd_difference = Q.new_middle_spd -= Q.new_middle_spd_old;
-Q.old_middle_spd_difference = Q.old_middle_spd -= Q.old_middle_spd_old;
-Q.rural_spd_difference = Q.rural_spd -= Q.rural_spd_old;
-Q.unemployed_spd_difference = Q.unemployed_spd -= Q.unemployed_spd_old;
-Q.catholics_spd_difference = Q.catholics_spd -= Q.catholics_spd_old;
+Q.workers_spd_difference = Q.workers_spd - Q.workers_spd_old;
+Q.new_middle_spd_difference = Q.new_middle_spd - Q.new_middle_spd_old;
+Q.old_middle_spd_difference = Q.old_middle_spd - Q.old_middle_spd_old;
+Q.rural_spd_difference = Q.rural_spd - Q.rural_spd_old;
+Q.unemployed_spd_difference = Q.unemployed_spd - Q.unemployed_spd_old;
+Q.catholics_spd_difference = Q.catholics_spd - Q.catholics_spd_old;
 
 if (!Q.works_program && Q.spd_toleration) {
     if (Q.workers_spd_difference > 0) {
