@@ -1988,6 +1988,13 @@ if (Q.bruning_time > 1) {
     }
 }
 
+if (Q.chancellor != "Papen") {
+    Q.papen_chancellor_timer = 0;
+}
+if (Q.chancellor != "Schleicher") {
+    Q.schleicher_chancellor_timer = 0;
+}
+
 if (Q.lvp_formed) {
     Q.weimar_coalition = parseFloat((Q.spd_r + Q.lvp_r + Q.z_r - 3).toFixed(1));
 } else {
