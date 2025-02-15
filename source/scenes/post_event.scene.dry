@@ -1993,7 +1993,12 @@ if (!Q.nazi_peak_triggered) {
     Q.nazi_peak = Q.nazi_peak_base;
     Q.nazi_peak += (Q.unemployed / 3);
     Q.nazi_peak += (100 - Q.pro_republic) / 10;
-}
+    if (Q.year == 1933) {
+        Q.nazi_peak -= 10;
+    } else if (Q.year >= 1934) {
+        Q.nazi_peak -= 15;
+    }
+}   
 if (Q.nsdap_votes >= Q.nazi_peak && !Q.nazi_peak_triggered) {
     Q.nazi_peak_triggered = 1;
     Q.nazi_decay_timer = 16;
