@@ -2023,6 +2023,7 @@ if (Q.nazi_decay_timer > 0) {
     Q.new_middle_dvp += 2/12;
     if (Q.dnvp_ideology == "Moderate") {
         Q.new_middle_dnvp += 6/12;
+        Q.new_middle_dnf += 2/12;
     } else if (Q.dnvp_ideology == "Radical") {
         Q.new_middle_dnvp += 4/12;
         Q.new_middle_kvp += 2/12;
@@ -2032,14 +2033,15 @@ if (Q.nazi_decay_timer > 0) {
     Q.old_middle_dvp += 2/12;
     if (Q.dnvp_ideology == "Moderate") {
         Q.old_middle_dnvp += 8/12;
+        Q.old_middle_dnf += 4/12;
     } else if (Q.dnvp_ideology == "Radical") {
         Q.old_middle_dnvp += 6/12;
         Q.old_middle_kvp += 4/12;
         Q.old_middle_other += 2/12;
     }
-    Q.old_middle_dnf += 3/12;
     if (Q.dnvp_ideology == "Moderate") {
         Q.rural_dnvp += 8/12;
+        Q.rural_dnf += 4/12;
     } else if (Q.dnvp_ideology == "Radical") {
         Q.rural_dnvp += 6/12;
         Q.rural_kvp += 4/12;
