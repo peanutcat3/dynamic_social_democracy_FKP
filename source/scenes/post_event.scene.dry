@@ -246,6 +246,9 @@ if (Q.month_actions >= 1) {
     if (Q.economic_growth < -10) {
         Q.economic_growth += 0.1;
     }
+    if (Q.economic_growth < -15) {
+        Q.economic_growth += 0.1;
+    }
     if (Q.unemployed >= 30) {
         Q.unemployed -= 0.1;
         Math.round(Q.unemployed * 10) / 10 
@@ -1989,10 +1992,16 @@ if (Q.bruning_time > 1) {
 }
 
 if (!Q.nazi_peak_triggered) {
-    Q.nazi_peak_base = 20;
+    Q.nazi_peak_base = 25;
     Q.nazi_peak = Q.nazi_peak_base;
     Q.nazi_peak += (Q.unemployed / 3);
     Q.nazi_peak += (100 - Q.pro_republic) / 10;
+    Q.nazi_peak -= Q.other_votes + Q.dvp_votes + (Q.lvp_votes / 2)
+    if (Q.dnvp_ideology == "Moderate") {
+        Q.nazi_peak -= Q.dnvp_votes / 2
+    } else if (Q.dnvp_ideology == "Radical") {
+        Q.nazi_peak += Q.dnvp_votes / 2
+    }
     if (Q.year == 1933) {
         Q.nazi_peak -= 10;
     } else if (Q.year >= 1934) {
