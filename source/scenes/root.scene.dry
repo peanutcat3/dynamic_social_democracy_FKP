@@ -367,16 +367,19 @@ Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 Q.sapd_r_prussia = 0;
 Q.old_sapd_r_prussia = 0;
+Q.sapd_votes = 0;
 
 Q.dnf_r = 0;
 Q.old_dnf_r = 0;
 Q.dnf_r_prussia = 0;
 Q.old_dnf_r_prussia = 0;
+Q.dnf_votes = 0;
 
 Q.kvp_r = 0;
 Q.old_kvp_r = 0;
 Q.kvp_r_prussia = 0;
 Q.old_kvp_r_prussia = 0;
+Q.kvp_votes = 0;
 
 Q.lvp_r = 0;
 Q.old_lvp_r = 0;
