@@ -1971,7 +1971,7 @@ if (Q.bruning_time > 1) {
     if (Q.bourgeois_list) {
         Q.hindenburg_angry_bruning -= 1;
     }
-    if (Q.other_votes + Q.dvp_votes + Q.ddp_votes >= 15) {
+    if (Q.other_votes + Q.dvp_votes + Q.ddp_votes + Q.lvp_votes >= 15) {
         Q.hindenburg_angry_bruning -= (Q.other_votes + Q.dvp_votes + Q.ddp_votes) / 5;
     }
     if (Q.dvp_ideology == "Right") {
@@ -1982,6 +1982,9 @@ if (Q.bruning_time > 1) {
     }
     if (Q.rb_militancy >= 0.1 || Q.sa_force >= 30 || Q.rfb_force >= 40) {
         Q.hindenburg_angry_bruning += 2;
+    }
+    if (Q.dnvp_ideology == "Moderate") {
+        Q.hindenburg_angry_bruning -= 3;
     }
 }
 
