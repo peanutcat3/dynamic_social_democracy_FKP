@@ -1997,11 +1997,6 @@ if (!Q.nazi_peak_triggered) {
     Q.nazi_peak += (Q.unemployed / 3);
     Q.nazi_peak += (100 - Q.pro_republic) / 10;
     Q.nazi_peak -= Q.other_votes + Q.dvp_votes + (Q.lvp_votes / 2)
-    if (Q.dnvp_ideology == "Moderate") {
-        Q.nazi_peak -= Q.dnvp_votes / 2
-    } else if (Q.dnvp_ideology == "Radical") {
-        Q.nazi_peak += Q.dnvp_votes / 2
-    }
     if (Q.year == 1933) {
         Q.nazi_peak -= 10;
     } else if (Q.year >= 1934) {
@@ -2021,43 +2016,43 @@ if (Q.nazi_decay_timer > 0) {
     Q.rural_nsdap -= 8/12;
     Q.unemployed_nsdap -= 8/12;
     Q.catholics_nsdap -= 5/12;
-    Q.sa_strength *= 0.98;
-    Q.new_middle_ddp += 3/12;
-    Q.new_middle_dvp += 3/12;
+    Q.sa_strength *= 0.97;
+    Q.new_middle_ddp += 2/12;
+    Q.new_middle_dvp += 2/12;
     if (Q.dnvp_ideology == "Moderate") {
-        Q.new_middle_dnvp += 3/12;
+        Q.new_middle_dnvp += 6/12;
     } else if (Q.dnvp_ideology == "Radical") {
-        Q.new_middle_dnvp += 1/12;
+        Q.new_middle_dnvp += 4/12;
         Q.new_middle_kvp += 2/12;
         Q.new_middle_other += 2/12;
     }
-    Q.old_middle_ddp += 3/12;
-    Q.old_middle_dvp += 3/12;
+    Q.old_middle_ddp += 2/12;
+    Q.old_middle_dvp += 2/12;
     if (Q.dnvp_ideology == "Moderate") {
         Q.old_middle_dnvp += 8/12;
     } else if (Q.dnvp_ideology == "Radical") {
-        Q.old_middle_dnvp += 4/12;
+        Q.old_middle_dnvp += 6/12;
         Q.old_middle_kvp += 4/12;
-        Q.old_middle_other += 4/12;
+        Q.old_middle_other += 2/12;
     }
     Q.old_middle_dnf += 3/12;
     if (Q.dnvp_ideology == "Moderate") {
         Q.rural_dnvp += 8/12;
     } else if (Q.dnvp_ideology == "Radical") {
-        Q.rural_dnvp += 4/12;
+        Q.rural_dnvp += 6/12;
         Q.rural_kvp += 4/12;
-        Q.rural_other += 4/12;
+        Q.rural_other += 2/12;
     }
-    Q.rural_ddp += 2/12;
+    Q.rural_ddp += 1/12;
     Q.rural_dvp += 2/12;
-    Q.new_middle_lvp += 8/12;
-    Q.old_middle_lvp += 8/12;
-    Q.rural_lvp += 5/12;
+    Q.new_middle_lvp += 10/12;
+    Q.old_middle_lvp += 10/12;
+    Q.rural_lvp += 8/12;
     Q.unemployed_kpd += 3/12;
-    Q.unemployed_spd += 3/12;
+    Q.unemployed_spd += 5/12;
     if (Q.dnvp_ideology == "Moderate") {
         Q.catholics_dnvp += 4/12;
-        Q.catholics_dvp += 2/12;
+        Q.catholics_dvp += 1/12;
     } else if (Q.dnvp_ideology == "Radical") {
         Q.catholics_dvp += 3/12;
         Q.catholics_dnvp += 2/12;
