@@ -2129,6 +2129,8 @@ if (!Q.works_program && Q.spd_toleration) {
     }
 }
 
+Q.time_since_election = (48 - (Q.next_election_time - Q.time));
+
 Q.workers_spd_old = Q.workers_spd;
 Q.new_middle_spd_old = Q.new_middle_spd;
 Q.old_middle_spd_old = Q.old_middle_spd;
