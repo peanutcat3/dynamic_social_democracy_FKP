@@ -1215,9 +1215,9 @@ if (Q.bourgeois_negotiations_1930_timer == 4 && (Q.dvp_leader == "Scholz" || Q.d
 }
 
 // historical route, trigger_1 = bourgeois parliament without ddp || otherwise historical failure due to skeptics in the cnblp and wp
-if (Q.bourgeois_negotiations_1930_timer == 4 && (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") && (Q.ddp_ideology != "Right" || Q.ddp_ideology == "Right" && ddp_relation >= 45) && Q.bourgeois_cooperation >= 5 && !Q.bourgeois_negotiations_election_soon && !Q.lvp_formed && !Q.dstp_formed) {
+if (Q.bourgeois_negotiations_1930_timer == 4 && (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") && (Q.ddp_ideology != "Right" || Q.ddp_ideology == "Right" && Q.ddp_relation >= 45) && Q.bourgeois_cooperation >= 5 && !Q.bourgeois_negotiations_election_soon && !Q.lvp_formed && !Q.dstp_formed) {
     Q.bourgeois_parliament_trigger_1 = 1;
-} else if (Q.bourgeois_negotiations_1930_timer == 4 && (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") && (Q.ddp_ideology != "Right" || Q.ddp_ideology == "Right" && ddp_relation >= 45) && Q.bourgeois_cooperation < 5 && !Q.bourgeois_negotiations_election_soon && !Q.lvp_formed && !Q.dstp_formed) {
+} else if (Q.bourgeois_negotiations_1930_timer == 4 && (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") && (Q.ddp_ideology != "Right" || Q.ddp_ideology == "Right" && Q.ddp_relation >= 45) && Q.bourgeois_cooperation < 5 && !Q.bourgeois_negotiations_election_soon && !Q.lvp_formed && !Q.dstp_formed) {
     Q.bourgeois_negotiations_fail = 1;
 }
 
