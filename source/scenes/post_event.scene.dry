@@ -2020,6 +2020,14 @@ if (!Q.nazi_peak_triggered) {
     if (Q.year >= 1932) {
         Q.nazi_peak -= (Q.other_votes + Q.dvp_votes + Q.ddp_votes + Q.dnvp_votes + Q.dnf_votes + Q.lvp_votes) / 2
     }
+    if (Q.nsdap_r >= 25) {
+        Q.nazi_peak -= 5;
+    }
+    if (Q.chancellor == "Papen" && Q.dnvp_ideology == "Radical") {
+        Q.nazi_peak -= (Q.dnvp_votes / 2);
+    } else if (Q.chancellor == "Papen" && Q.dnvp_ideology == "Moderate") {
+        Q.nazi_peak -= Q.dnf_votes / 2;
+    }
     if (Q.year == 1933) {
         Q.nazi_peak -= 10;
     } else if (Q.year >= 1934) {
@@ -2034,8 +2042,8 @@ if (Q.nsdap_votes >= Q.nazi_peak && !Q.nazi_peak_triggered) {
 
 if (Q.nazi_decay_timer > 0) {
     Q.workers_nsdap -= 4/12;
-    Q.new_middle_nsdap -= 8/12;
-    Q.old_middle_nsdap -= 8/12;
+    Q.new_middle_nsdap -= 10/12;
+    Q.old_middle_nsdap -= 10/12;
     Q.rural_nsdap -= 8/12;
     Q.unemployed_nsdap -= 8/12;
     Q.catholics_nsdap -= 5/12;
