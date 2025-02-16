@@ -879,7 +879,7 @@ if (Q.month_actions >= 1) {
             }
         }
         if (!Q.works_program) {
-            Q.unemployed -= 4/12;
+            Q.unemployed -= 6/12;
             Q.inflation += 4/12;
         }
         if (Q.unemployed > 20) {
@@ -895,7 +895,7 @@ if (Q.month_actions >= 1) {
     // prevent forever support if the economy is bad
     if (Q.year >= 1934) {
         if (!Q.works_program) {
-            Q.unemployed -= 4/12;
+            Q.unemployed -= 6/12;
             Q.inflation += 4/12;
         }
         if ((Q.inflation >= 8 || Q.unemployed >= 20) && Q.pro_republic <= 45 && Q.spd_in_government) {
