@@ -55,6 +55,7 @@ Pessimism is a widespread feeling within the party, leading to mounting pressure
 view-if: dstp_formation_points >= 3
 on-arrival: dstp_formed = 1; ddp_name = "DStP"; liberal_cooperation -= 5; bourgeois_cooperation -= 3; new_middle_ddp -= 3; old_middle_ddp += 3; ddp_right += 2; ddp_relation -= 5; pro_republic -= 3; justice_minister_party = ddp_name if justice_minister_party == "DDP"; agriculture_minister_party = ddp_name if agriculture_minister_party == "DDP"; economic_minister_party = ddp_name if economic_minister_party == "DDP"; finance_minister_party = ddp_name if finance_minister_party == "DDP"
 face-image: img/dstp.jpg
+go-to: recalculate
 
 This has come as a complete shock to those inside and outside the party, for the <span style="color: #D3C24D;">**DDP**</span> to merge with the political wing of a mildly anti-semitic paramilitary group "Young German Order". Ongoing negotiations to unite the liberal and bourgeois parties has been considerably damaged, due to the <span style="color: #D3C24D;">**DDP**</span>'s attempts to promote a left-wing split from the <span style="color: #C0A054;">**DVP**</span>.
 
@@ -68,3 +69,18 @@ face-image: img/ddp_2.jpg
 As expected, a merger between an moderately anti-semitic organization and a party seen as the party for the <span style="color: #005EB8;">Jews</span> has failed, with the Young German Order leader Artur Mahraun leaving negotiations citing irreconcilable differences.
 
 However, internal opposition to Koch-Weser has reached a boiling point. Forces within the party are now pushing for his retirement due to his failure to revive the party and for jeopardizing the negotiations for a <span style="color: #FFCC00;">united liberal party</span>.
+
+@recalculate
+on-arrival: {!
+if (Q.bourgeois_negotiations_elections_1930_timer == 1 && Q.bourgeois_negotiations_1930_done && Q.dstp_formed && !Q.liberal_parliament) {
+    Q.bourgeois_negotiations_fail_elections_dstp = 1;
+    Q.bourgeois_negotiations_fail_elections = 0;
+    Q.bourgeois_merger_trigger_scholz = 0;
+    Q.bourgeois_parliament = 0;
+    Q.bourgeois_parliament_ddp = 0;
+    Q.bourgeois_parliament_kvp = 0;
+    Q.bourgeois_list = 0;
+    Q.bourgeois_list_ddp = 0;
+    Q.bourgeois_list_kvp = 0;
+}
+!}
