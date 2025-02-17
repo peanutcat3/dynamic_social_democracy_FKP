@@ -774,6 +774,9 @@ Q.flavour_3_trigger = 0;
 Q.flavour_4_trigger = 0;
 Q.flavour_5_trigger = 0;
 Q.flavour_6_trigger = 0;
+Q.flavour_7_trigger = 0;
+Q.flavour_8_trigger = 0;
+Q.flavour_9_trigger = 0;
 
 Q.flavour_0_trigger_time = 0;
 Q.flavour_1_trigger_time = 0;
@@ -782,6 +785,9 @@ Q.flavour_3_trigger_time = 0;
 Q.flavour_4_trigger_time = 0;
 Q.flavour_5_trigger_time = 0;
 Q.flavour_6_trigger_time = 0;
+Q.flavour_7_trigger_time = 0;
+Q.flavour_8_trigger_time = 0;
+Q.flavour_9_trigger_time = 0;
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels

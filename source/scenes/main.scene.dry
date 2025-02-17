@@ -537,6 +537,24 @@ if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 3) {
         Q.flavour_6_trigger_time = Q.time;
     }
 }
+if (Q.dstp_formed && Q.month >= 8) {
+    Q.flavour_7_trigger += 1;
+    if (Q.flavour_7_trigger == 1) {
+        Q.flavour_7_trigger_time = Q.time;
+    }
+}
+if (Q.flavour_7_trigger >= 2) {
+    Q.flavour_8_trigger += 1;
+    if (Q.flavour_8_trigger == 1) {
+        Q.flavour_8_trigger_time = Q.time;
+    }
+}
+if (Q.dstp_formed && Q.next_election_time - Q.time == 1) {
+    Q.flavour_9_trigger += 1;
+    if (Q.flavour_9_trigger == 1) {
+        Q.flavour_9_trigger_time = Q.time;
+    }
+}
 !}
 on-display: {!
 var button = document.createElement('button');
@@ -849,6 +867,8 @@ max-cards: 4
 
 {!<p class="both">!}[? if year = 1930 and month = 8: The last <span style="color: #002654;">French</span> and <span style="color: #FFD500;">Belgian</span> troops in the Rhineland have been evacuated in accordance with the Young Plan. While this is a positive development for the Republic, conservative elites within the Reichswehr and Hindenburg's inner circle are now free from external restraints to replace our system of government with an <span style="color: #808080;">authoritarian</span> and <span style="color: #7A3C00;">militarist</span> one.?]
 
+{!<p class="other">!}[? if flavour_7_trigger == 1 and flavour_7_trigger_time == time: Long-time and formerly influential <span style="color: #D3C24D;">**DDP**</span> labor leader Anton Erkelenz has defected to the <span style="color: #c00000;">**SPD**</span>! However, his limited influence within the party, along with the strong enthusiasm for the formation of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> by many on the left wing, has prevented a wider secession. Perhaps their shared hatred to plutocracy is what fuels their support for this merger? ?]{!</p>!}
+
 {!<p class="other">!}[? if bourgeois_negotiations_elections_1930_timer == 2 and bourgeois_negotiations_1930_done and (dnvp_split_2 or kvp_formed) and (dvp_leader == "Scholz" or dvp_leader == "Dingeldey") and not liberal_parliament and not lvp_formed: Following Westarp's split from Hugenberg's <span style="color: #3E88B3;">**DNVP**</span>, [+ dvp_leader +] has taken a keen interest in fostering closer ties with him and his group of moderates. The calling of new elections has given [? if dvp_leader == "Scholz": Scholz?][? if dvp_leader != "Scholz": the <span style="color: #C0A054;">**DVP**</span>?] another opportunity to negotiate bourgeois unity. However, this time, the effort is far more ambitious—an appeal for the consolidation of all state-supporting forces, rather than just the formation of a parliamentary group. While Westarp himself has little interest in merging with other parties, he is willing to participate due to conditional industrial funding, which is contingent on achieving bourgeois unity. ?]{!</p>!}
 
 {!<p class="other">!}[? if bourgeois_negotiations_1930_aftermath_timer == 2 and not liberal_parliament and not lvp_formed: [? if dnvp_split_2 or kvp_formed: With Westarp's split from Hugenberg's <span style="color: #3E88B3;">**DNVP**</span>, [+ dvp_leader +] has taken a keen interest in fostering closer ties with him and his group of moderates.?] The success of the attempt to negotiate a bourgeois parliamentary group has gave momentum towards the bourgeois unity movement, and allowed access to more funds from major industrialists on the condition that the state-supporting forces must consolidate in some form. A new round of negotiations have been started by [+ dvp_leader +], calling for a joint electoral list of all bourgeois parties in the event of new elections. ?]{!</p>!}
@@ -912,6 +932,10 @@ max-cards: 4
 # not timer but dnvp split occurs anyway on the historical date of all the bourgeois negotiations so it will still work
 
 {!<p class="other">!}[? if year = 1930 and month = 8: The film adaptation of the controversial anti-war novel *All Quiet on the Western Front* has released in America, but has yet to arrive on our shores. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_8_trigger == 1 and flavour_8_trigger_time == time: Many youth and bourgeois unity organizations that initially supported the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> have since distanced themselves from the party due to a sharp rebuff from the <span style="color: #C0A054;">**DVP**</span>'s [+ dvp_leader +]. These <span style="color: #C0A054;">**DVP**</span> affiliated organizations, initially frustrated by the lack of progress toward bourgeois concentration, have now shifted their stance. They condemn the founding of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, arguing that it is incompatible with bourgeois unity, and called on the founders of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to join the <span style="color: #C0A054;">**DVP**</span> in the creation of a truly comprehensive middle party. These events, coupled with the hostility that has arisen towards the party, have significantly dampened the initial enthusiasm surrounding its founding. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_9_trigger == 1 and flavour_9_trigger_time == time: The anti-Semitism and romanticism of the Young German Order have caused intense conflict with the <span style="color: #005EB8;">Jews</span> and old-line <span style="color: #D3C24D;">democrats</span> within the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. A notable example is Gustav Stolper, a <span style="color: #005EB8;">Jew</span> who faced strong attacks from the Young Germans and was almost denied a list seat, only avoiding this fate due to threats of resignation from the old-line <span style="color: #D3C24D;">democrats</span>. The conflict between the Young Germans and the <span style="color: #D3C24D;">democrats</span> is so intense that not one of the <span style="color: #D3D3A9;">**VNR**</span>'s candidates could be selected without resistance from local organizations. [? if dvp_ideology == "Right": At least the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has shown a strong stance against the <span style="color: #7A3C00;">**NSDAP**</span>, which cannot be said for the <span style="color: #C0A054;">**DVP**</span>, who remain bitter over the debacle caused by the formation.?] ?]{!</p>!}
 
 {!<p class="both">!}[? if flavour_6_trigger == 1 and flavour_6_trigger_time == time: The lack of attention Hugenberg's <span style="color: #3E88B3;">**DNVP**</span> has devoted to attacking Adolf Hitler's <span style="color: #7A3C00;">**NSDAP**</span> is looking to be a blunder of enormous proportions. Despite the party's silence dealing with the <span style="color: #7A3C00;">Nazis</span>, the <span style="color: #7A3C00;">Nazis</span> aren't returning the favor, and have a lot to gain from the <span style="color: #3E88B3;">**DNVP**</span> attacking us on their behalf. The <span style="color: #3E88B3;">**DNVP**</span>'s goal of rallying the conservative and nationalist forces around themselves is ultimately benefitting the <span style="color: #7A3C00;">Nazis</span> more than it is helping themselves. ?]{!</p>!}
 

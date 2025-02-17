@@ -1,74 +1,74 @@
-title: WIP
-subtitle: The <span style="color: #D3C24D;">German Democratic Party</span> is becoming the <span style="color: #D3C24D;">German State Party</span>.
-view-if: year == 1930 and month >= 8 and not lvp_formed
+title: Discontent in the <span style="color: #D3C24D;">**DStP**</span>.
+subtitle: The conflict between the Young Germans and <span style="color: #D3C24D;">**Democrats**</span> has reached a climax...
+view-if: year == 1930 and month >= 10 and not lvp_formed
 on-arrival: {!
-Q.dstp_formation_points = 0;
-if (Q.ddp_votes < 3.5) {
-    Q.dstp_formation_points += 1;
+Q.dstp_collapse_seen = 1;
+Q.dstp_collapse_points = 5;
+
+if (Q.change_ddp_votes >= 0 && Q.dstp_election) {
+    Q.dstp_collapse_points -= 3;
 }
-if (Q.next_election_time - Q.time < 6) {
-    Q.dstp_formation_points += 1;
+if (Q.next_election_time - Q.time < 6 && !Q.dstp_election) {
+    Q.dstp_collapse_points -= 2;
 }
-if (Q.dvp_ideology == "Right") {
-    Q.dstp_formation_points += 1;
+if (Q.time_since_election >= 12 && !Q.dstp_election) {
+    Q.dstp_collapse_points -= 1;
 }
 if ((100 - Q.pro_republic) + Q.nationalism >= 100) {
-    Q.dstp_formation_points += 1;
-}
-if (Q.lvp_timer_1_trigger == 1) {
-    Q.dstp_formation_points += 5;
+    Q.dstp_collapse_points -= 1;
 }
 if (Q.major_curriculum == "humanist") {
-    Q.dstp_formation_points += 3;
-} else if (Q.minor_curriculum == "humanist") {
-    Q.dstp_formation_points += 1;
+    Q.dstp_collapse_points -= 1;
+}
+if (Q.pro_republic >= 65) {
+    Q.dstp_collapse_points += 1;
+}
+if (Q.nationalism < 50) {
+    Q.dstp_collapse_points += 1;
 }
 if (Q.ddp_relation < 50) {
-    Q.dstp_formation_points += 1;
     Q.ddp_right += 1;
 }
 if (Q.ddp_relation >= 50) {
     Q.ddp_left += 1;
 }
-if (Q.liberal_parliament || Q.bourgeois_parliament_ddp) {
-    Q.dstp_formation_points -= 5;
-}
-if (Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp) {
-    Q.dstp_formation_points += 1;
-}
 !}
 max-visits: 1
 #tags: event
-face-image: img/ddp.jpg
+face-image: img/dstp.jpg
 new-page: true
 
-= <span style="color: #D3C24D;">**DDP**</span> Reformation
+= Discontent in the <span style="color: #D3C24D;">**DStP**</span>
 
-The <span style="color: #D3C24D;">**DDP**</span> is a fascinating party, plagued by infighting since the republic's foundation and struggling to define its platform in a failed attempt to appeal to voters from all demographics.[? if stolper_program_adopted:&nbsp;Recently, however, the party seems to have turned a new page, rallying around a renewed focus on middle-class interests. ?][? if not stolper_program_adopted:&nbsp;A recent attempt to shift focus toward the middle class has been quietly buried due to internal dissent, perhaps factionalism and personal rivalries may be a permanent feature of this party. ?]
+Since the formation of the <span style="color: #D3C24D;">**DStP**</span> over the last few months, tensions between the old-line <span style="color: #D3C24D;">democrats</span> and those who joined from the <span style="color: #D3D3A9;">**VNR**</span> have escalated significantly. It seems the consequences of merging a mildly anti-Semitic paramilitary group with a left-liberal party traditionally associated with the <span style="color: #005EB8;">Jews</span> have finally caught up to them. [? if change_ddp_votes < 0 and dstp_election: The electoral defeat suffered by the <span style="color: #D3C24D;">**DStP**</span> in the most recent elections has further fueled internal discontent, with both sides blaming each other for the loss.?][? if not dstp_election: Despite this glaring contradiction, the new party has yet to test its worth in a national election, and skeptics on both sides have kept their criticisms subdued for the time being. ?] [? if dstp_election or next_election_time - time < 6: Among embittered <span style="color: #D3C24D;">democrats</span>, it appears that nearly half of the voters in the Order cast their ballots for the <span style="color: #7A3C00;">**NSDAP**</span> instead of the party they helped establish, with electoral gains only being reported in districts where their own candidate is at the top of the ballot.?]
 
-Pessimism is a widespread feeling within the party, leading to mounting pressure on leader Koch-Weser to do "something". After weeks of secret negotiations, the <span style="color: #D3C24D;">**DDP**</span> is announcing the result of a proposed merger of the <span style="color: #D3C24D;">**DDP**</span> and <span style="color: #D3D3A9;">**VNR**</span>, a party admired by senior party officials for its "dynamism".
+According to the agreement on which the founding of the <span style="color: #D3C24D;">**DStP**</span> was based, Koch-Weser was to serve as the new party’s parliamentary leader, and Mahraun as the head of its national organization. However, this arrangement is blocked by a group of old-line <span style="color: #D3C24D;">democrats</span> who succeeded in preventing Koch-Weser’s election as the head of the Reichstag delegation. Relations between the two groups further soured when Mahraun, acting as the "Reichsführer" of the <span style="color: #D3C24D;">**DStP**</span>, attempted to alter the previously agreed organizational structure. This dispute over the separation of powers has led to open attacks between the opposing sides, with the old-line <span style="color: #D3C24D;">democrats</span> seeking to sideline Artur Mahraun's Young German Order, and Mahraun refusing to relinquish his position as "Reichsführer."
 
-- @dstp_formed: The <span style="color: #D3C24D;">**DStP**</span> is formed.
-- @status_quo: The negotiations fail.
+- @dstp_maintained: The <span style="color: #D3C24D;">**DStP**</span> is maintained!
+- @dstp_collapse: The <span style="color: #D3C24D;">**DStP**</span> has collapsed!
 
-@dstp_formed
-view-if: dstp_formation_points >= 3
-on-arrival: dstp_formed = 1; ddp_name = "DStP"; liberal_cooperation -= 5; bourgeois_cooperation -= 3; new_middle_ddp -= 3; old_middle_ddp += 3; ddp_right += 2; ddp_relation -= 5; pro_republic -= 3; justice_minister_party = ddp_name if justice_minister_party == "DDP"; agriculture_minister_party = ddp_name if agriculture_minister_party == "DDP"; economic_minister_party = ddp_name if economic_minister_party == "DDP"; finance_minister_party = ddp_name if finance_minister_party == "DDP"
-face-image: img/dstp.jpg
+@dstp_maintained
+view-if: dstp_collapse_points < 4
+on-arrival: dstp_maintained = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; nationalism += 3; new_middle_spd += 2; old_middle_ddp += 2; old_middle_nsdap -= 2; unemployed_ddp += 2; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes
+face-image: img/young_german_order.jpg
 go-to: recalculate
 
-This has come as a complete shock to those inside and outside the party, for the <span style="color: #D3C24D;">**DDP**</span> to merge with the political wing of a mildly anti-semitic paramilitary group "Young German Order". Ongoing negotiations to unite the liberal and bourgeois parties has been considerably damaged, due to the <span style="color: #D3C24D;">**DDP**</span>'s attempts to promote a left-wing split from the <span style="color: #C0A054;">**DVP**</span>.
+Surprisingly, the contradiction that is the <span style="color: #D3C24D;">**DStP**</span> continues to live on. After intense negotiations between the <span style="color: #D3C24D;">democrats</span> in favor of the merger, like Koch-Weser, and the dissenting old-line <span style="color: #D3C24D;">democrats</span>, they agree to elevate Koch-Weser to the chairman of the Reichstag faction. However, Mahraun's control over the party's national organization proved to be a much trickier problem, as Mahraun’s Order remained inflexible when it came to compromise. The deadlock is finally resolved when Mahraun agrees to cede some of his Reichsführer powers to the executive committee in exchange for a larger share of <span style="color: #D3D3A9;">**VNR**</span>-affiliated delegates at next month's party congress.
 
-In this agreement, the <span style="color: #D3C24D;">**DDP**</span> has promised a "extension of the party to the right", which can only spell trouble for our closest bourgeois ally. Despite this, the formation of the <span style="color: #D3C24D;">**DStP**</span> wasn't a simple left-right divide within the party, the Social Republican Circle and labor leader Ernst Lemmer helps prevent a major split among the left. However, cracks are already beginning to show within this arrangement, it is only a matter of time before this experiment falls apart.
+It seems this experiment will persist, with the <span style="color: #D3C24D;">**DStP**</span> adopting a more nationalistic and statist identity compared to the old <span style="color: #D3C24D;">**DDP**</span>. Only time will tell how the party will fare against the rise of the <span style="color: #7A3C00;">**NSDAP**</span>.
 
-@status_quo
-view-if: dstp_formation_points < 3
-on-arrival: dstp_formed = 0; pro_republic += 3
-face-image: img/ddp_2.jpg
+@dstp_collapse
+view-if: dstp_collapse_points >= 4
+on-arrival: dstp_collapsed = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; new_middle_ddp -= 2; old_middle_ddp -= 4; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes; other_r += ddp_r*0.3 if dstp_election; ddp_r = ddp_r*0.7 if dstp_election; ddp_factionless = 1 if ddp_r < 3.6; ddp_leader = "Dietrich"
+face-image: img/Dietrich.jpg
+go-to: recalculate
 
-As expected, a merger between an moderately anti-semitic organization and a party seen as the party for the <span style="color: #005EB8;">Jews</span> has failed, with the Young German Order leader Artur Mahraun leaving negotiations citing irreconcilable differences.
+Negotiations between Mahraun and the <span style="color: #D3C24D;">democrats</span> have finally collapsed; the experiment has finally fallen apart. The members from Mahraun's <span style="color: #D3D3A9;">**VNR**</span> have split[? if dstp_election:, taking their Reichstag seats with them?]. Responsibility for the break is argued on both sides, with the old-line <span style="color: #D3C24D;">democrats</span> Mahraun's refusal to compromise and the Order blaming purposeful obstruction.
 
-However, internal opposition to Koch-Weser has reached a boiling point. Forces within the party are now pushing for his retirement due to his failure to revive the party and for jeopardizing the negotiations for a <span style="color: #FFCC00;">united liberal party</span>.
+[? if dstp_election: In terms of consequences, the defection of the <span style="color: #D3D3A9;">**VNR**</span>-affiliated Reichstag delegates has severely diminished their parliamentary influence. [? if ddp_r < 3.6: So much so that the <span style="color: #D3C24D;">**DStP**</span> is now too small to form a parliamentary faction and must negotiate with another party, which is challenging given the debacle that occurred months ago.?]?] An air of pessimism and despair has settled over the <span style="color: #D3C24D;">**DStP**</span>, especially impacting Koch-Weser, who, deeply demoralized by the collapse of the <span style="color: #D3C24D;">**State Party**</span>, has ultimately decided to retire from politics altogether.
+
+Overall, this entire debacle has essentially resulted in the <span style="color: #D3C24D;">**DStP**</span> becoming the <span style="color: #D3C24D;">**DDP**</span> with a new name, albeit with a more nationalistic and statist platform.
+
 
 @recalculate
 on-arrival: {!
