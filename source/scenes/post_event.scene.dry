@@ -2038,6 +2038,9 @@ if (Q.bruning_time > 1) {
     if (Q.dnvp_ideology == "Moderate") {
         Q.hindenburg_angry_bruning -= 3;
     }
+    if (Q.hindenburg_angry_bruning < -50) {
+        Q.hindenburg_angry_bruning += 5;
+    }
 }
 
 if (!Q.nazi_peak_triggered) {
