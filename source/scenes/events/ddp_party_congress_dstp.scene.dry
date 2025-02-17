@@ -1,6 +1,6 @@
-title: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Party Congress
-subtitle: The <span style="color: #D3C24D;">[+ ddp_name +]</span> decides their fate...
-view-if: year == 1930 and month >= 11 and not lvp_formed and not dstp_formed
+title: Discontent in the <span style="color: #D3C24D;">**DStP**</span>.
+subtitle: The conflict between the Young Germans and <span style="color: #D3C24D;">**Democrats**</span> has reached a climax...
+view-if: year == 1930 and month >= 10 and not lvp_formed
 on-arrival: {!
 Q.dstp_collapse_seen = 1;
 Q.dstp_collapse_points = 5;
@@ -38,7 +38,7 @@ tags: event
 face-image: img/dstp.jpg
 new-page: true
 
-= <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Party Congress
+= Discontent in the <span style="color: #D3C24D;">**DStP**</span>
 
 Since the formation of the <span style="color: #D3C24D;">**DStP**</span> over the last few months, tensions between the old-line <span style="color: #D3C24D;">democrats</span> and those who joined from the <span style="color: #D3D3A9;">**VNR**</span> have escalated significantly. It seems the consequences of merging a mildly anti-Semitic paramilitary group with a left-liberal party traditionally associated with the <span style="color: #005EB8;">Jews</span> have finally caught up to them. [? if change_ddp_votes < 0 and dstp_election: The electoral defeat suffered by the <span style="color: #D3C24D;">**DStP**</span> in the most recent elections has further fueled internal discontent, with both sides blaming each other for the loss.?][? if not dstp_election: Despite this glaring contradiction, the new party has yet to test its worth in a national election, and skeptics on both sides have kept their criticisms subdued for the time being. ?] [? if dstp_election or next_election_time - time < 6: Among embittered <span style="color: #D3C24D;">democrats</span>, it appears that nearly half of the voters in the Order cast their ballots for the <span style="color: #7A3C00;">**NSDAP**</span> instead of the party they helped establish, with electoral gains only being reported in districts where their own candidate is at the top of the ballot.?]
 
@@ -60,7 +60,7 @@ It seems this experiment will persist, with the <span style="color: #D3C24D;">**
 @dstp_collapse
 view-if: dstp_collapse_points >= 4
 on-arrival: dstp_collapsed = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; new_middle_ddp -= 2; old_middle_ddp -= 4; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes; other_r += ddp_r*0.3 if dstp_election; ddp_r = ddp_r*0.7 if dstp_election; ddp_leader = "Dietrich"
-face-image: img/Dietrich.jpg
+face-image: img/young_german_order.jpg
 go-to: recalculate
 
 Negotiations between Mahraun and the <span style="color: #D3C24D;">democrats</span> have finally collapsed; the experiment has finally fallen apart. The members from Mahraun's <span style="color: #D3D3A9;">**VNR**</span> have split[? if dstp_election:, taking their Reichstag seats with them?]. Responsibility for the break is argued on both sides, with the old-line <span style="color: #D3C24D;">democrats</span> Mahraun's refusal to compromise and the Order blaming purposeful obstruction.
