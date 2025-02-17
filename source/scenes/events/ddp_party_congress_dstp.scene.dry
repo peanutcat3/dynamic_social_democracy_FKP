@@ -1,6 +1,6 @@
 title: Discontent in the <span style="color: #D3C24D;">**DStP**</span>.
 subtitle: The conflict between the Young Germans and <span style="color: #D3C24D;">**Democrats**</span> has reached a climax...
-view-if: year == 1930 and month >= 10 and not lvp_formed
+view-if: year == 1930 and month >= 10 and not lvp_formed and dstp_formed
 on-arrival: {!
 Q.dstp_collapse_seen = 1;
 Q.dstp_collapse_points = 5;
