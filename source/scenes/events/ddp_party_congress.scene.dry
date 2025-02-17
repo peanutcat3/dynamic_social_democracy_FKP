@@ -7,10 +7,12 @@ Q.heuss_points = 0;
 Q.dietrich_points = 0;
 
 if (Q.ddp_relation < 45) {
-    Q.ddp_right += 1;
+    Q.ddp_right += 2;
+    Q.ddp_cohesion -= 1;
 }
 if (Q.ddp_relation >= 45) {
-    Q.ddp_left += 3;
+    Q.ddp_left += 2;
+    Q.ddp_cohesion += 2;
 }
 
 if (Q.change_ddp_votes >= 0 && Q.dstp_election) {
@@ -85,8 +87,7 @@ party congress words
 @lemmer
 view-if: dstp_collapse_points < 4
 on-arrival: dstp_maintained = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; nationalism += 3; new_middle_spd += 2; old_middle_ddp += 2; old_middle_nsdap -= 2; unemployed_ddp += 2; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes
-face-image: img/young_german_order.jpg
-go-to: recalculate
+face-image: img/portraits/lemmer.jpg
 
 Surprisingly, the contradiction that is the <span style="color: #D3C24D;">**DStP**</span> continues to live on. After intense negotiations between the <span style="color: #D3C24D;">democrats</span> in favor of the merger, like Koch-Weser, and the dissenting old-line <span style="color: #D3C24D;">democrats</span>, they agree to elevate Koch-Weser to the chairman of the Reichstag faction. However, Mahraun's control over the party's national organization proved to be a much trickier problem, as Mahraun’s Order remained inflexible when it came to compromise. The deadlock is finally resolved when Mahraun agrees to cede some of his Reichsführer powers to the executive committee in exchange for a larger share of <span style="color: #D3D3A9;">**VNR**</span>-affiliated delegates at next month's party congress.
 
@@ -95,8 +96,7 @@ It seems this experiment will persist, with the <span style="color: #D3C24D;">**
 @heuss
 view-if: dstp_collapse_points >= 4
 on-arrival: dstp_collapsed = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; new_middle_ddp -= 2; old_middle_ddp -= 4; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes; other_r += ddp_r*0.3 if dstp_election; ddp_r = ddp_r*0.7 if dstp_election; ddp_leader = "Dietrich"
-face-image: img/Dietrich.jpg
-go-to: recalculate
+face-image: img/portraits/heuss.jpg
 
 Negotiations between Mahraun and the <span style="color: #D3C24D;">democrats</span> have finally collapsed; the experiment has finally fallen apart. The members from Mahraun's <span style="color: #D3D3A9;">**VNR**</span> have split[? if dstp_election:, taking their Reichstag seats with them?]. Responsibility for the break is argued on both sides, with the old-line <span style="color: #D3C24D;">democrats</span> Mahraun's refusal to compromise and the Order blaming purposeful obstruction.
 
@@ -107,8 +107,7 @@ Overall, this entire debacle has essentially resulted in the <span style="color:
 @dietrich
 view-if: dstp_collapse_points >= 4
 on-arrival: dstp_collapsed = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; new_middle_ddp -= 2; old_middle_ddp -= 4; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes; other_r += ddp_r*0.3 if dstp_election; ddp_r = ddp_r*0.7 if dstp_election; ddp_leader = "Dietrich"
-face-image: img/Dietrich.jpg
-go-to: recalculate
+face-image: img/portraits/dietrich.jpg
 
 Negotiations between Mahraun and the <span style="color: #D3C24D;">democrats</span> have finally collapsed; the experiment has finally fallen apart. The members from Mahraun's <span style="color: #D3D3A9;">**VNR**</span> have split[? if dstp_election:, taking their Reichstag seats with them?]. Responsibility for the break is argued on both sides, with the old-line <span style="color: #D3C24D;">democrats</span> Mahraun's refusal to compromise and the Order blaming purposeful obstruction.
 
@@ -119,8 +118,7 @@ Overall, this entire debacle has essentially resulted in the <span style="color:
 @deadlock
 view-if: dstp_collapse_points >= 4
 on-arrival: dstp_collapsed = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; new_middle_ddp -= 2; old_middle_ddp -= 4; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes; other_r += ddp_r*0.3 if dstp_election; ddp_r = ddp_r*0.7 if dstp_election; ddp_leader = "Dietrich"
-face-image: img/Dietrich.jpg
-go-to: recalculate
+face-image: img/portraits/dietrich.jpg
 
 Negotiations between Mahraun and the <span style="color: #D3C24D;">democrats</span> have finally collapsed; the experiment has finally fallen apart. The members from Mahraun's <span style="color: #D3D3A9;">**VNR**</span> have split[? if dstp_election:, taking their Reichstag seats with them?]. Responsibility for the break is argued on both sides, with the old-line <span style="color: #D3C24D;">democrats</span> Mahraun's refusal to compromise and the Order blaming purposeful obstruction.
 
