@@ -343,6 +343,10 @@ if (Q.dstp_formed && !Q.dstp_collapse_seen) {
     Q.dstp_election = 1;
 }
 
+if (Q.ddp_r < 3.6 && !Q.lvp_formed) {
+    Q.ddp_factionless = 1
+}
+
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
     election_result[party] = Q[party + '_r'];
