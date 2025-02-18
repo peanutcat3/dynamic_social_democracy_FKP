@@ -15,34 +15,72 @@ if (Q.ddp_relation >= 45) {
     Q.ddp_cohesion += 2;
 }
 
-if (Q.change_ddp_votes >= 0 && Q.dstp_election) {
-    Q.dstp_collapse_points -= 3;
+if (Q.unemployed >= 18) {
+    Q.lemmer_points -= 1;
+} else if (Q.works_program || Q.workers_spd_normalized < 45) {
+    Q.lemmer_points += 1;
 }
-if (Q.next_election_time - Q.time < 6 && !Q.dstp_election) {
-    Q.dstp_collapse_points -= 2;
+if (Q.nationalization_progress) {
+    Q.lemmer_points -= 1;
 }
-if (Q.time_since_election >= 12 && !Q.dstp_election) {
-    Q.dstp_collapse_points -= 1;
+if (Q.capital_strike_progress >= 6) {
+    Q.dietrich_points += 1;
+    Q.heuss_points += 1;
 }
-if ((100 - Q.pro_republic) + Q.nationalism >= 100) {
-    Q.dstp_collapse_points -= 1;
+if (Q.reformists_resign) {
+    Q.lemmer_points += 3;
+} else if (Q.reformist_dissent >= 31) {
+    Q.lemmer_points += 1;
 }
 if (Q.major_curriculum == "humanist") {
-    Q.dstp_collapse_points -= 1;
+    Q.lemmer_points += 1;
+} else if (Q.major_curriculum == "democratic") {
+    Q.heuss_points += 1;
 }
-if (Q.pro_republic >= 65) {
-    Q.dstp_collapse_points += 1;
+if (Q.pro_republic >= 70) {
+    Q.heuss_points += 3;
+    Q.lemmer_points += 1;
+} else if (Q.pro_republic >= 55) {
+    Q.heuss_points += 1;
 }
-if (Q.nationalism < 50) {
-    Q.dstp_collapse_points += 1;
+if (Q.nationalism >= 55) {
+    Q.lemmer_points += 1;
 }
-
+if (Q.bourgeois_parliament_ddp || Q.liberal_parliament || Q.liberal_cooperation >= 5) {
+    Q.dietrich_points += 2;
+}
+if (Q.bourgeois_list) {
+    Q.dietrich_points += 1;
+}
+if (Q.chancellor == "Brüning" && Q.spd_toleration) {
+    Q.dietrich_points += 1;
+    Q.ddp_right += 2;
+}
+if (Q.stolper_program_adopted) {
+    Q.heuss_points += 2;
+    Q.dietrich_points += 1;
+    Q.lemmer_points -= 1;
+}
+if (Q.ddp_cohesion >= 10) {
+    Q.heuss_points += 1;
+} else if (Q.ddp_cohesion <= 5) {
+    Q.dietrich_points += 1;
+    Q.lemmer_points += 1;
+}
 if (Q.ddp_right > (Q.ddp_left + 4)) {
     Q.ddp_ideology = "Right"
 } else if (Q.ddp_left > (Q.ddp_right + 4)) {
     Q.ddp_ideology = "Left"
 } else {
     Q.ddp_ideology = "Moderate"
+}
+
+if (Q.ddp_ideology == "Right") {
+    Q.dietrich_points += 2;
+} else if (Q.ddp_ideology == "Moderate") {
+    Q.heuss_points += 2;
+} else if (Q.ddp_ideology == "Left") {
+    Q.lemmer_points += 2;
 }
 
 if (Q.heuss_points >= Q.dietrich_points && Q.heuss_points >= Q.lemmer_points) {
@@ -77,7 +115,9 @@ new-page: true
 
 = <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Party Congress
 
-party congress words
+Koch-Weser, the long-time leader of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, has finally resigned. The internal opposition, especially following the Young German Order debacle, has reached a level that forced his retirement, though the demoralizing impact of being chairman of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> out of all parties have also contributed significantly.
+
+This year’s <span style="color: #D3C24D;">**[+ ddp_name +]**</span> party congress is officially convened to elect a new leader and to determine the party's policies amid the worsening economic depression that threatens the survival of the bourgeois middle. The candidates to succeed Koch-Weser so far include Hermann Dietrich, representing the business wing; Theodor Heuss, a committed supporter of <span style="color: #FFCC00;">liberal</span> <span style="color: #586593;">democracy</span>; and Ernst Lemmer, the leader of the liberal trade unions and the party's left wing.
 
 - @lemmer: The party votes...
 - @heuss: The party votes...
@@ -85,43 +125,38 @@ party congress words
 - @deadlock: The party votes...
 
 @lemmer
-view-if: dstp_collapse_points < 4
-on-arrival: dstp_maintained = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; nationalism += 3; new_middle_spd += 2; old_middle_ddp += 2; old_middle_nsdap -= 2; unemployed_ddp += 2; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes
+view-if: lemmer_lead
+on-arrival: ddp_leader = "Lemmer"; liberal_cooperation -= 3; ddp_relation += 10; workers_ddp += 3; catholics_ddp += 1; workers_spd -= 3; pro_republic += ddp_votes; ddp_left += 5; ddp_cohesion -= 3; new_middle_ddp -= 4 if stolper_program_adopted; old_middle_ddp -= 4 if stolper_program_adopted; new_middle_ddp -= 2; old_middle_ddp -= 4; rural_ddp -= 1;
 face-image: img/portraits/lemmer.jpg
 
-Surprisingly, the contradiction that is the <span style="color: #D3C24D;">**DStP**</span> continues to live on. After intense negotiations between the <span style="color: #D3C24D;">democrats</span> in favor of the merger, like Koch-Weser, and the dissenting old-line <span style="color: #D3C24D;">democrats</span>, they agree to elevate Koch-Weser to the chairman of the Reichstag faction. However, Mahraun's control over the party's national organization proved to be a much trickier problem, as Mahraun’s Order remained inflexible when it came to compromise. The deadlock is finally resolved when Mahraun agrees to cede some of his Reichsführer powers to the executive committee in exchange for a larger share of <span style="color: #D3D3A9;">**VNR**</span>-affiliated delegates at next month's party congress.
+Surprisingly, Ernst Lemmer has managed to rally a majority of the party to elect him as the chairman of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. He is primarily supported by the 'Social Republican Wing,' the Young Democrats, pacifists, radical democrats, and the labor wing of the party. However, his election would not have been possible without the backing of those who worked alongside him in the failed attempt to unite with the <span style="color: #D3D3A9;">**VNR**</span> months earlier. Now, a trade unionist leads a liberal middle-class party—what a time we live in.
 
-It seems this experiment will persist, with the <span style="color: #D3C24D;">**DStP**</span> adopting a more nationalistic and statist identity compared to the old <span style="color: #D3C24D;">**DDP**</span>. Only time will tell how the party will fare against the rise of the <span style="color: #7A3C00;">**NSDAP**</span>.
+Lemmer's victory significantly empowers the <span style="color: #c00000;">Social</span> <span style="color: #000000;">Rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">icans</span> and left-wing elements within the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, even drawing his former colleague Anton Erkelenz back into politics. We can expect his <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to adopt a 'social capitalist' platform,[? if stolper_program_adopted:&nbsp;to replace the Stolper program,?] aiming to include workers in the *Volksgemeinschaft*.
 
 @heuss
-view-if: dstp_collapse_points >= 4
-on-arrival: dstp_collapsed = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; new_middle_ddp -= 2; old_middle_ddp -= 4; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes; other_r += ddp_r*0.3 if dstp_election; ddp_r = ddp_r*0.7 if dstp_election; ddp_leader = "Dietrich"
+view-if: heuss_lead
+on-arrival: ddp_leader = "Heuss"; ddp_cohesion += 3; pro_republic += (ddp_votes*2); ddp_relation += 5; ddp_left += 2 if ddp_ideology == "Right"; ddp_right += 2 if ddp_ideology == "Left"; liberal_cooperation += 1; new_middle_ddp += ((pro_republic + (ddp_cohesion * 10)) / 40); old_middle_ddp += ((pro_republic + (ddp_cohesion * 10)) / 40); new_middle_nsdap -= ((pro_republic + (ddp_cohesion * 10)) / 40); old_middle_nsdap -= ((pro_republic + (ddp_cohesion * 10)) / 40); workers_ddp += 0.5;
 face-image: img/portraits/heuss.jpg
 
-Negotiations between Mahraun and the <span style="color: #D3C24D;">democrats</span> have finally collapsed; the experiment has finally fallen apart. The members from Mahraun's <span style="color: #D3D3A9;">**VNR**</span> have split[? if dstp_election:, taking their Reichstag seats with them?]. Responsibility for the break is argued on both sides, with the old-line <span style="color: #D3C24D;">democrats</span> Mahraun's refusal to compromise and the Order blaming purposeful obstruction.
+Theodor Heuss a journalist turned politician and a rising star has been elected as the chairman of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. Although affiliated with the business wing of the party, his determined and genuine support for <span style="color: #FFCC00;">liberal</span> <span style="color: #586593;">democracy</span> has earned him support from the party's left wing. 
 
-[? if dstp_election: In terms of consequences, the defection of the <span style="color: #D3D3A9;">**VNR**</span>-affiliated Reichstag delegates has severely diminished their parliamentary influence. [? if ddp_r < 3.6: So much so that the <span style="color: #D3C24D;">**DStP**</span> is now too small to form a parliamentary faction and must negotiate with another party, which is challenging given the debacle that occurred months ago.?]?] An air of pessimism and despair has settled over the <span style="color: #D3C24D;">**DStP**</span>, especially impacting Koch-Weser, who, deeply demoralized by the collapse of the <span style="color: #D3C24D;">**State Party**</span>, has ultimately decided to retire from politics altogether.
-
-Overall, this entire debacle has essentially resulted in the <span style="color: #D3C24D;">**DStP**</span> becoming the <span style="color: #D3C24D;">**DDP**</span> with a new name, albeit with a more nationalistic and statist platform.
+Heuss's victory strengthens the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s cooperation with us, as he has urged his party members that it is crucial to save German democracy. Despite his leanings toward the right, he has refrained from ousting the far-left elements of the party or shifting its platform drastically.
 
 @dietrich
-view-if: dstp_collapse_points >= 4
-on-arrival: dstp_collapsed = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; new_middle_ddp -= 2; old_middle_ddp -= 4; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes; other_r += ddp_r*0.3 if dstp_election; ddp_r = ddp_r*0.7 if dstp_election; ddp_leader = "Dietrich"
+view-if: dietrich_lead
+on-arrival: ddp_leader = "Dietrich"; ddp_right += 1; liberal_cooperation += 1; new_middle_ddp -= 2; old_middle_ddp -= 1; rural_ddp += 1;
 face-image: img/portraits/dietrich.jpg
 
-Negotiations between Mahraun and the <span style="color: #D3C24D;">democrats</span> have finally collapsed; the experiment has finally fallen apart. The members from Mahraun's <span style="color: #D3D3A9;">**VNR**</span> have split[? if dstp_election:, taking their Reichstag seats with them?]. Responsibility for the break is argued on both sides, with the old-line <span style="color: #D3C24D;">democrats</span> Mahraun's refusal to compromise and the Order blaming purposeful obstruction.
+Hermann Dietrich has, as expected, won the election to become chairman of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, receiving support from the newly dominant business wing of the party, as well as from the old-line <span style="color: #D3C24D;">democrats</span> who joined him in opposing the merger with the <span style="color: #D3D3A9;">**VNR**</span>.
 
-[? if dstp_election: In terms of consequences, the defection of the <span style="color: #D3D3A9;">**VNR**</span>-affiliated Reichstag delegates has severely diminished their parliamentary influence. [? if ddp_r < 3.6: So much so that the <span style="color: #D3C24D;">**DStP**</span> is now too small to form a parliamentary faction and must negotiate with another party, which is challenging given the debacle that occurred months ago.?]?] An air of pessimism and despair has settled over the <span style="color: #D3C24D;">**DStP**</span>, especially impacting Koch-Weser, who, deeply demoralized by the collapse of the <span style="color: #D3C24D;">**State Party**</span>, has ultimately decided to retire from politics altogether.
-
-Overall, this entire debacle has essentially resulted in the <span style="color: #D3C24D;">**DStP**</span> becoming the <span style="color: #D3C24D;">**DDP**</span> with a new name, albeit with a more nationalistic and statist platform.
+[? if chancellor == "Brüning" and not spd_in_government: Dietrich is known for formulating Brüning's emergency decrees during his tenure as Finance Minister, justifying them as the bitter medicine the country must endure on its road to recovery. ?][? if not (chancellor == "Brüning" and not spd_in_government) and agriculture_minister_party != "SPD": Dietrich is known for his fiscal conservatism and advocacy for rural Germany during his tenure as Minister of Agriculture. ?] However, his leadership has been quite uninspiring, to say the least—a sentiment shared by many within the party, though no one seems willing to challenge him. [? if agriculture_minister_party == ddp_name or economic_minister_party == ddp_name: The responsibilities of his ministry prevent him from being involved in the day-to-day running of his party, which has now been delegated to a group of his associates in the business wing, but this is unlikely to change much in terms of policy. ?]
 
 @deadlock
-view-if: dstp_collapse_points >= 4
-on-arrival: dstp_collapsed = 1; liberal_cooperation -= 1; bourgeois_cooperation -= 1; new_middle_ddp -= 2; old_middle_ddp -= 4; ddp_right += 1; ddp_relation -= 3; pro_republic -= ddp_votes; other_r += ddp_r*0.3 if dstp_election; ddp_r = ddp_r*0.7 if dstp_election; ddp_leader = "Dietrich"
-face-image: img/portraits/dietrich.jpg
+view-if: ddp_deadlock
 
-Negotiations between Mahraun and the <span style="color: #D3C24D;">democrats</span> have finally collapsed; the experiment has finally fallen apart. The members from Mahraun's <span style="color: #D3D3A9;">**VNR**</span> have split[? if dstp_election:, taking their Reichstag seats with them?]. Responsibility for the break is argued on both sides, with the old-line <span style="color: #D3C24D;">democrats</span> Mahraun's refusal to compromise and the Order blaming purposeful obstruction.
+The vote has been deadlocked, with no candidate ahead by enough to constitute a majority. You, the player, now has free will to choose a compromise candidate. Spend it wisely. Actually, you don't. Choose Heuss right now.
 
-[? if dstp_election: In terms of consequences, the defection of the <span style="color: #D3D3A9;">**VNR**</span>-affiliated Reichstag delegates has severely diminished their parliamentary influence. [? if ddp_r < 3.6: So much so that the <span style="color: #D3C24D;">**DStP**</span> is now too small to form a parliamentary faction and must negotiate with another party, which is challenging given the debacle that occurred months ago.?]?] An air of pessimism and despair has settled over the <span style="color: #D3C24D;">**DStP**</span>, especially impacting Koch-Weser, who, deeply demoralized by the collapse of the <span style="color: #D3C24D;">**State Party**</span>, has ultimately decided to retire from politics altogether.
+- @heuss_compromise: Theodor Heuss.
 
-Overall, this entire debacle has essentially resulted in the <span style="color: #D3C24D;">**DStP**</span> becoming the <span style="color: #D3C24D;">**DDP**</span> with a new name, albeit with a more nationalistic and statist platform.
+@heuss_compromise
+go-to: heuss
