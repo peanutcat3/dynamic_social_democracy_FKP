@@ -126,7 +126,7 @@ This year’s <span style="color: #D3C24D;">**[+ ddp_name +]**</span> party cong
 
 @lemmer
 view-if: lemmer_lead
-on-arrival: ddp_leader = "Lemmer"; liberal_cooperation -= 3; ddp_relation += 10; workers_ddp += 3; catholics_ddp += 1; workers_spd -= 3; pro_republic += ddp_votes; ddp_left += 5; ddp_cohesion -= 3; new_middle_ddp -= 4 if stolper_program_adopted; old_middle_ddp -= 4 if stolper_program_adopted; new_middle_ddp -= 2; old_middle_ddp -= 4; rural_ddp -= 1;
+on-arrival: ddp_leader = "Lemmer"; liberal_cooperation -= 3; ddp_relation += 10; workers_ddp += 4; catholics_ddp += 1; workers_spd -= 4; pro_republic += ddp_votes; ddp_left += 5; ddp_cohesion -= 3; new_middle_ddp -= 4 if stolper_program_adopted; old_middle_ddp -= 4 if stolper_program_adopted; new_middle_ddp -= 2; old_middle_ddp -= 2; rural_ddp -= 1;
 face-image: img/portraits/lemmer.jpg
 
 Surprisingly, Ernst Lemmer has managed to rally a majority of the party to elect him as the chairman of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. He is primarily supported by the 'Social Republican Wing,' the Young Democrats, pacifists, radical democrats, and the labor wing of the party. However, his election would not have been possible without the backing of those who worked alongside him in the failed attempt to unite with the <span style="color: #D3D3A9;">**VNR**</span> months earlier. Now, a trade unionist leads a liberal middle-class party—what a time we live in.
@@ -135,7 +135,7 @@ Lemmer's victory significantly empowers the <span style="color: #c00000;">Social
 
 @heuss
 view-if: heuss_lead
-on-arrival: ddp_leader = "Heuss"; ddp_cohesion += 3; pro_republic += (ddp_votes*2); ddp_relation += 5; ddp_left += 2 if ddp_ideology == "Right"; ddp_right += 2 if ddp_ideology == "Left"; liberal_cooperation += 1; new_middle_ddp += ((pro_republic + (ddp_cohesion * 10)) / 40); old_middle_ddp += ((pro_republic + (ddp_cohesion * 10)) / 40); new_middle_nsdap -= ((pro_republic + (ddp_cohesion * 10)) / 40); old_middle_nsdap -= ((pro_republic + (ddp_cohesion * 10)) / 40); workers_ddp += 0.5;
+on-arrival: ddp_leader = "Heuss"; ddp_cohesion += 3; pro_republic += (ddp_votes*2); ddp_relation += 5; ddp_left += 2 if ddp_ideology == "Right"; ddp_right += 2 if ddp_ideology == "Left"; liberal_cooperation += 1; new_middle_ddp += ((pro_republic + (ddp_cohesion * 10)) / 40); old_middle_ddp += ((pro_republic + (ddp_cohesion * 10)) / 40); new_middle_nsdap -= ((pro_republic + (ddp_cohesion * 10)) / 40); old_middle_nsdap -= ((pro_republic + (ddp_cohesion * 10)) / 40); rural_ddp += 1; workers_ddp += 0.5;
 face-image: img/portraits/heuss.jpg
 
 Theodor Heuss a journalist turned politician and a rising star has been elected as the chairman of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. Although affiliated with the business wing of the party, his determined and genuine support for <span style="color: #FFCC00;">liberal</span> <span style="color: #586593;">democracy</span> has earned him support from the party's left wing. 
@@ -144,7 +144,7 @@ Heuss's victory strengthens the <span style="color: #D3C24D;">**[+ ddp_name +]**
 
 @dietrich
 view-if: dietrich_lead
-on-arrival: ddp_leader = "Dietrich"; ddp_right += 1; liberal_cooperation += 1; new_middle_ddp -= 2; old_middle_ddp -= 1; rural_ddp += 1;
+on-arrival: ddp_leader = "Dietrich"; ddp_right += 1; liberal_cooperation += 1; new_middle_ddp -= 2; old_middle_ddp -= 1; rural_ddp += 2;
 face-image: img/portraits/dietrich.jpg
 
 Hermann Dietrich has, as expected, won the election to become chairman of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, receiving support from the newly dominant business wing of the party, as well as from the old-line <span style="color: #D3C24D;">democrats</span> who joined him in opposing the merger with the <span style="color: #D3D3A9;">**VNR**</span>.
