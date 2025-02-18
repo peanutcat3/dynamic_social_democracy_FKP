@@ -3,7 +3,7 @@ subtitle: The <span style="color: #D3C24D;">German Democratic Party</span> is be
 view-if: year == 1930 and month >= 8 and not lvp_formed
 on-arrival: {!
 Q.dstp_formation_points = 0;
-if (Q.ddp_votes < 3.5) {
+if (Q.ddp_votes < 3.7) {
     Q.dstp_formation_points += 1;
 }
 if (Q.next_election_time - Q.time < 6) {
@@ -12,7 +12,7 @@ if (Q.next_election_time - Q.time < 6) {
 if (Q.dvp_ideology == "Right") {
     Q.dstp_formation_points += 1;
 }
-if ((100 - Q.pro_republic) + Q.nationalism >= 100) {
+if ((100 - Q.pro_republic) + Q.nationalism >= 90) {
     Q.dstp_formation_points += 1;
 }
 if (Q.lvp_timer_1_trigger == 1) {
