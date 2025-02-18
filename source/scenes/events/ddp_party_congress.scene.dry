@@ -109,7 +109,7 @@ if (!Q.dietrich_lead && !Q.heuss_lead && !Q.lemmer_points) {
 
 !}
 max-visits: 1
-#tags: event
+tags: event
 face-image: img/ddp.jpg
 new-page: true
 
