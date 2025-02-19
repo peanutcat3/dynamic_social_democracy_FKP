@@ -10,11 +10,21 @@ go-to: start_menu_2
 
 @start_menu_2
 
-- @start: Start game
-- @election_simulation: Election simulation
-- @credits: Credits
+- @start_1: Start game
 - @modinfo: Mod Info
+- @credits: Credits
 - @game_over.achievements
+
+@start_1
+on-arrival: player_beg = 1 if not achievement_game_completed
+go-to: start if achievement_game_completed or read_info; pls_player if not achievement_game_completed and not read_info
+
+
+@pls_player
+
+Read.
+
+- @modinfo.infotext: Mod Info
 
 
 @start

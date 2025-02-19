@@ -1,4 +1,5 @@
 title: Mod Info
+on-arrival: read_info = 1
 go-to: flavors
 
 @flavors
@@ -66,7 +67,7 @@ var fontElements = document.querySelectorAll("#content font");
 
 fontElements.forEach(font => {
   if (font.textContent.trim() === "DStP Formation") {
-    font.textContent = "Skibidi test"; // Change this to your variable
+    font.textContent = "???"; // Change this to your variable
   }
 });
 
