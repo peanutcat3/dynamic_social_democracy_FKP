@@ -13,7 +13,7 @@ I know you don't want to read allat, but please do, reading will make everything
 - @paths: What are all the paths?
 - @changelog: Changelog + Future Updates!
 - @source: Credits!
-- @start: Start game
+- @root.start: Start game
 - @root: Back
 
 @infotext
