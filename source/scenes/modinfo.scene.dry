@@ -62,6 +62,14 @@ var contentDiv = document.querySelector("#page #mid_panel #content");
 container.innerHTML = svgContent;
 contentDiv.appendChild(container);
 
+var fontElements = document.querySelectorAll("#content font");
+
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "DStP Formation") {
+    font.textContent = "Skibidi test"; // Change this to your variable
+  }
+});
+
 !}
 
  
