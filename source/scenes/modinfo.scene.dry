@@ -91,6 +91,11 @@ fontElements.forEach(font => {
   }
 });
 fontElements.forEach(font => {
+  if (font.textContent.trim() === "DDP Party Congress" && !Q.achievement_ddp_congress) {
+    font.textContent = "???";
+  }
+});
+fontElements.forEach(font => {
   if (font.textContent.trim() === "Dietrich" && !Q.achievement_ddp_dietrich) {
     font.textContent = "???";
   }
