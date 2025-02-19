@@ -17,13 +17,14 @@ go-to: start_menu_2
 
 @start_1
 on-arrival: player_beg = 1 if not achievement_game_completed
-go-to: start if achievement_game_completed or read_info; pls_player if not achievement_game_completed and not read_info
+go-to: start if achievement_game_completed; pls_player if not achievement_game_completed
 
 
 @pls_player
 
 Read.
 
+- @start: I already did!
 - @modinfo.infotext: Mod Info
 
 
