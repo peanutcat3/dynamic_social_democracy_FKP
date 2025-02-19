@@ -13,6 +13,7 @@ I know you don't want to read allat, but please do, reading will make everything
 - @paths: What are all the paths?
 - @changelog: Changelog + Future Updates!
 - @source: Credits!
+- @start: Start game
 - @root: Back
 
 @infotext
@@ -65,11 +66,55 @@ contentDiv.appendChild(container);
 var fontElements = document.querySelectorAll("#content font");
 
 fontElements.forEach(font => {
-  if (font.textContent.trim() === "DStP Formation") {
-    font.textContent = "???"; // Change this to your variable
+  if (font.textContent.trim() === "DStP Formation" && !Q.achievement_dstp_dilemma) {
+    font.textContent = "???";
   }
 });
-
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "DStP Formed" && !Q.achievement_dstp_formed) {
+    font.textContent = "???";
+  }
+});
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "DStP Falls Apart" && !Q.achievement_dstp_collapsed) {
+    font.textContent = "???";
+  }
+});
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "DStP Maintained" && !Q.achievement_dstp_maintained) {
+    font.textContent = "???";
+  }
+});
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "DStP Failed" && !Q.achievement_dstp_failed) {
+    font.textContent = "???";
+  }
+});
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "Dietrich" && !Q.achievement_ddp_dietrich) {
+    font.textContent = "???";
+  }
+});
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "Heuss" && !Q.achievement_ddp_heuss) {
+    font.textContent = "???";
+  }
+});
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "Lemmer" && !Q.achievement_ddp_lemmer) {
+    font.textContent = "???";
+  }
+});
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "Stolper Program?" && !Q.achievement_stolper_program) {
+    font.textContent = "???";
+  }
+});
+fontElements.forEach(font => {
+  if (font.textContent.trim() === "DStP Party Congress" && !Q.achievement_dstp_congress) {
+    font.textContent = "???";
+  }
+});
 !}
 
  

@@ -56,6 +56,7 @@ view-if: dstp_formation_points >= 3
 on-arrival: dstp_formed = 1; ddp_name = "DStP"; liberal_cooperation -= 5; bourgeois_cooperation -= 3; new_middle_ddp -= 3; old_middle_ddp += 3; ddp_right += 2; ddp_relation -= 5; pro_republic -= 3; nationalism += 5; justice_minister_party = ddp_name if justice_minister_party == "DDP"; agriculture_minister_party = ddp_name if agriculture_minister_party == "DDP"; economic_minister_party = ddp_name if economic_minister_party == "DDP"; finance_minister_party = ddp_name if finance_minister_party == "DDP"
 face-image: img/dstp.jpg
 go-to: recalculate
+achievement: dstp_dilemma
 
 This has come as a complete shock to those inside and outside the party, for the <span style="color: #D3C24D;">**DDP**</span> to merge with the political wing of a mildly anti-Semitic paramilitary group "Young German Order". Ongoing negotiations to unite the liberal and bourgeois parties has been considerably damaged, due to the <span style="color: #D3C24D;">**DDP**</span>'s attempts to promote a left-wing split from the <span style="color: #C0A054;">**DVP**</span>.
 
@@ -65,6 +66,7 @@ In this agreement, the <span style="color: #D3C24D;">**DDP**</span> has promised
 view-if: dstp_formation_points < 3
 on-arrival: dstp_formed = 0; pro_republic += 3
 face-image: img/ddp_2.jpg
+achievement: dstp_dilemma
 
 As expected, a merger between an moderately anti-Semitic organization and a party seen as the party for the <span style="color: #005EB8;">Jews</span> has failed, with the Young German Order leader Artur Mahraun leaving negotiations citing irreconcilable differences.
 
@@ -84,3 +86,12 @@ if (Q.bourgeois_negotiations_elections_1930_timer == 1 && Q.bourgeois_negotiatio
     Q.bourgeois_list_kvp = 0;
 }
 !}
+go-to: dstp_formed_achievement if dstp_formed; dstp_fail_achievement if not dstp_formed
+
+@dstp_formed_achievement
+achievement: dstp_formed
+
+
+@dstp_fail_achievement
+achievement: dstp_failed
+

@@ -2279,6 +2279,15 @@ if (Q.in_weimar_coalition_prussia == 1 || Q.in_grand_coalition_prussia == 1 || Q
     Q.right_prussia = 1;
     Q.spd_prussia = 0;
 }
+
+if (Q.stolper_program_adopted != undefined) {
+    this.achieve('stolper_program');
+}
+
+if (Q.year == 1930 && Q.month == 11 && Q.dstp_collapsed && !Q.lvp_formed && !Q.lvp_timer_2_trigger) {
+    this.achieve('dstp_congress');
+}
+
 }
 Q.has_event = 0;
 // check if there are any cards in #event, and then go to main if not.

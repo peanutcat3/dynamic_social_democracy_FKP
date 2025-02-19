@@ -87,3 +87,12 @@ if (Q.bourgeois_negotiations_elections_1930_timer == 1 && Q.bourgeois_negotiatio
     Q.bourgeois_list_kvp = 0;
 }
 !}
+go-to: dstp_maintained_achievement if dstp_maintained; dstp_collapsed_achievement if dstp_collapsed
+
+@dstp_maintained_achievement
+achievement: dstp_maintained
+
+
+@dstp_collapsed_achievement
+achievement: dstp_collapsed
+

@@ -24,7 +24,6 @@ go-to: start if achievement_game_completed; pls_player if not achievement_game_c
 
 Read.
 
-- @start: I already did!
 - @modinfo.infotext: Mod Info
 
 
