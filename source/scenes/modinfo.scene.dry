@@ -4,43 +4,41 @@ go-to: flavors
 @flavors
 new-page: true
 
-= Dynamic Parties Mod
+= Dynamic Social Democracy
 
-This mod aims to expand the base game in the form of adding content to other parties triggered based on variables you can influence. There are plenty of different paths, try to find them all! 
+I know you don't want to read allat, but please do, reading will make everything make sense.
 
-- @lvp: Liberale Volkspartei
-- @cvp: Christliche Volkspartei
-- @prorepublic: Support for the Republic
-- @plans: Future Plans
-- @changelog: Changelog
-- @source: Credits
+Dynamic Social Democracy is an ambitious overhaul mod aimed to bring historical realism and a dynamic party system to the late Weimar Republic. This mod heavily focuses on the Nazi Party's rise to power, and puts emphasis on the disastrous mistakes made by the parties surrounding the SPD, which effectively enabled Adolf Hitler's eventual appointment by Hindenburg. This aspect is not represented in the base game, which instead focuses on the player's direct impact.
+
+The Weimar party system in this mod reacts to your every move, adjusting ideologies and strategies accordingly. Hindenburg and the bourgeois parties now serve as more realistic and impactful obstacles, as they did in real life.
+
+For instance, despite the SPD’s clear electoral mandate in 1928, the Center, DVP, and Hindenburg himself initially opposed the formation of the Grand Coalition. However, Stresemann's intervention, Hindenburg's desire to use the SPD’s anti-militarist stance to renegotiate German reparations, and his strategy to burden the SPD with governance to decrease their popularity, is what made this unlikely arrangement possible. 
+
+What was initially seen with positivity by the SPD at the time; their entrance into government may be one of the biggest reasons for the demise of German democracy.
+
+By March 1930, all of the factors above were no longer in play, the line between the DVP and the parties on the far-right were blurred, the Young Plan was ratified, and the SPD was suffering as a result of the economic depression. The appointment of Bruning under an emergency government wasn't improvised when the DVP took down the Grand Coalition, it has been an idea longed by Schleicher, Hindenburg, and many reactionary elites.
+
+Your primary goal is to save German democracy, saving Social Democracy is secondary.
+
+- @faq: Frequently Asked Questions
+- @paths: What are all the paths?
+- @changelog: Changelog + Future Updates!
+- @source: Credits!
 - @root: Back
 
-@lvp
+@faq
 
-= Liberal People's Party (LVP)
+= FAQ
 
-The Liberal People's Party includes a left and right wing, to accommodate for the left-liberal DDP members and national-liberal DVPers being in the same party. The leftmost DDP members and the rightmost DVP monarchists have been split off to surrounding parties due to their differences. 
-
-An example of this is that the right wing of the party may support President Hindenburg's electoral campaign while the left wing would be more willing to work with Braun. The left-liberals may also support you in crucial votes to the discontent of their right wing. With this change however, a Weimar coalition has been changed to work more like a Grand coalition, to represent the right wing of your coalition partners.
-  
-- @flavors: Back
-
-@cvp
-
-= Christliche Volkspartei (CVP)
-
-The Center Party (Z) has an opportunity to broaden their appeal beyond Catholics and elect Adam Stegerwald, a Catholic trade unionist as their leader, if there is sufficient support for democracy and low unemployment. The event will appear in 1932 or after, three months before the next election. The CVP will have the opportunity of influencing the SPD's worker electorate while allowing the SPD to influence Catholics more easily.
-
-A custom achievement has been made for this scenario.
+my name is reddit and i am angry... grrrr
 
 - @flavors: Back
 
-@prorepublic
+@paths
 
-= Support for the Republic
+= Party Paths
 
-The formerly useless variable in Public opinion now has a purpose! If played correctly, the player can prevent the historical collapse of the liberals and mitigate the gains of the <span style="color: #7A3C00;">Nazis</span>. It also can trigger events within other parties.
+include some cool interactive
 
 - @flavors: Back
 
@@ -48,17 +46,9 @@ The formerly useless variable in Public opinion now has a purpose! If played cor
 
 = Changelog
 
-Initial Release (0.1)
+Dynamic Social Democracy Released! (1.0)
 
-— Mod released
-
-- @flavors: Back
-
-@plans
-
-= Future Plans
-
-Not sure, your suggestions are welcome. I plan to add some more coalition options though.
+— Mod released!
 
 - @flavors: Back
 
@@ -66,8 +56,8 @@ Not sure, your suggestions are welcome. I plan to add some more coalition option
 
 = Credits
 
-Autumn Chen — Original creator of Social Democracy
+Autumn Chen — Original creator of Social Democracy!
 
-u/originalperson0 — Me! The modman.
+u/originalperson0 — Me! The modman!
 
-<a href="https://github.com/originn0/dynamic_social_democracy">Source Code<a>                                                                                                                                                                                 
+<a href="https://github.com/originn0/dynamic_social_democracy">Source Code!<a>                                                                                                                                                                                 
