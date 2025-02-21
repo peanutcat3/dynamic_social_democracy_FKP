@@ -83,25 +83,25 @@ if (Q.ddp_ideology == "Right") {
     Q.lemmer_points += 2;
 }
 
-if (Q.heuss_points >= Q.dietrich_points && Q.heuss_points >= Q.lemmer_points) {
-    Q.heuss_lead = 1;
+if (Q.heuss_points > Q.dietrich_points && Q.heuss_points > Q.lemmer_points) {
+    Q.heuss_lead_ddp = 1;
 } else {
-    Q.heuss_lead = 0;
+    Q.heuss_lead_ddp = 0;
 }
 
-if (Q.dietrich_points >= Q.heuss_points && Q.dietrich_points >= Q.lemmer_points) {
+if (Q.dietrich_points > Q.heuss_points && Q.dietrich_points > Q.lemmer_points) {
     Q.dietrich_lead = 1;
 } else {
     Q.dietrich_lead = 0;
 }
 
-if (Q.lemmer_points >= Q.heuss_points && Q.lemmer_points >= Q.dietrich_points) {
+if (Q.lemmer_points > Q.heuss_points && Q.lemmer_points > Q.dietrich_points) {
     Q.lemmer_lead = 1;
 } else {
     Q.lemmer_lead = 0;
 }
 
-if (!Q.dietrich_lead && !Q.heuss_lead && !Q.lemmer_points) {
+if (!Q.dietrich_lead && !Q.heuss_lead_ddp && !Q.lemmer_points) {
     Q.ddp_deadlock = 1;
 } else {
     Q.ddp_deadlock = 0;
@@ -135,7 +135,7 @@ Surprisingly, Ernst Lemmer has managed to rally a majority of the party to elect
 Lemmer's victory significantly empowers the <span style="color: #c00000;">Social</span> <span style="color: #000000;">Rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">icans</span> and left-wing elements within the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, even drawing his former colleague Anton Erkelenz back into politics. We can expect his <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to adopt a 'social capitalist' platform,[? if stolper_program_adopted:&nbsp;to replace the Stolper program,?] aiming to include workers in the *Volksgemeinschaft*.
 
 @heuss
-view-if: heuss_lead
+view-if: heuss_lead_ddp
 on-arrival: ddp_leader = "Heuss"; ddp_cohesion += 3; pro_republic += (ddp_votes*2); ddp_relation += 5; ddp_left += 2 if ddp_ideology == "Right"; ddp_right += 2 if ddp_ideology == "Left"; liberal_cooperation += 1; new_middle_ddp += ((pro_republic + (ddp_cohesion * 10)) / 40); old_middle_ddp += ((pro_republic + (ddp_cohesion * 10)) / 40); new_middle_nsdap -= ((pro_republic + (ddp_cohesion * 10)) / 40); old_middle_nsdap -= ((pro_republic + (ddp_cohesion * 10)) / 40); rural_ddp += 1; workers_ddp += 0.5;
 face-image: img/portraits/heuss.jpg
 go-to: achievement_calculation

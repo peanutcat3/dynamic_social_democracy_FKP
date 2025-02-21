@@ -99,25 +99,25 @@ if (Q.lvp_ideology == "Left") {
 
 Q.opposition_points = Q.heuss_points + Q.dietrich_points + Q.curtius_points + Q.dingeldey_points
 
-if (Q.heuss_points >= Q.dietrich_points && Q.heuss_points >= Q.curtius_points && Q.heuss_points >= Q.dingeldey_points) {
+if (Q.heuss_points > Q.dietrich_points && Q.heuss_points > Q.curtius_points && Q.heuss_points > Q.dingeldey_points) {
     Q.heuss_lead = 1;
 } else {
     Q.heuss_lead = 0;
 }
 
-if (Q.dietrich_points >= Q.heuss_points && Q.dietrich_points >= Q.curtius_points && Q.dietrich_points >= Q.dingeldey_points) {
+if (Q.dietrich_points > Q.heuss_points && Q.dietrich_points > Q.curtius_points && Q.dietrich_points > Q.dingeldey_points) {
     Q.dietrich_lead = 1;
 } else {
     Q.dietrich_lead = 0;
 }
 
-if (Q.curtius_points >= Q.heuss_points && Q.curtius_points >= Q.dietrich_points && Q.curtius_points >= Q.dingeldey_points) {
+if (Q.curtius_points > Q.heuss_points && Q.curtius_points > Q.dietrich_points && Q.curtius_points > Q.dingeldey_points) {
     Q.curtius_lead = 1;
 } else {
     Q.curtius_lead = 0;
 }
 
-if (Q.dingeldey_points >= Q.heuss_points && Q.dingeldey_points >= Q.dietrich_points && Q.dingeldey_points >= Q.curtius_points) {
+if (Q.dingeldey_points > Q.heuss_points && Q.dingeldey_points > Q.dietrich_points && Q.dingeldey_points > Q.curtius_points) {
     Q.dingeldey_lead = 1;
 } else {
     Q.dingeldey_lead = 0;
@@ -178,25 +178,25 @@ if (Q.luther_endorsed_candidate == "Eduard Dingeldey") {
     Q.heuss_points += 2;
 }
 
-if (Q.heuss_points >= Q.dietrich_points && Q.heuss_points >= Q.curtius_points && Q.heuss_points >= Q.dingeldey_points) {
+if (Q.heuss_points > Q.dietrich_points && Q.heuss_points > Q.curtius_points && Q.heuss_points > Q.dingeldey_points) {
     Q.heuss_lead = 1;
 } else {
     Q.heuss_lead = 0;
 }
 
-if (Q.dietrich_points >= Q.heuss_points && Q.dietrich_points >= Q.curtius_points && Q.dietrich_points >= Q.dingeldey_points) {
+if (Q.dietrich_points > Q.heuss_points && Q.dietrich_points > Q.curtius_points && Q.dietrich_points > Q.dingeldey_points) {
     Q.dietrich_lead = 1;
 } else {
     Q.dietrich_lead = 0;
 }
 
-if (Q.curtius_points >= Q.heuss_points && Q.curtius_points >= Q.dietrich_points && Q.curtius_points >= Q.dingeldey_points) {
+if (Q.curtius_points > Q.heuss_points && Q.curtius_points > Q.dietrich_points && Q.curtius_points > Q.dingeldey_points) {
     Q.curtius_lead = 1;
 } else {
     Q.curtius_lead = 0;
 }
 
-if (Q.dingeldey_points >= Q.heuss_points && Q.dingeldey_points >= Q.dietrich_points && Q.dingeldey_points >= Q.curtius_points) {
+if (Q.dingeldey_points > Q.heuss_points && Q.dingeldey_points > Q.dietrich_points && Q.dingeldey_points > Q.curtius_points) {
     Q.dingeldey_lead = 1;
 } else {
     Q.dingeldey_lead = 0;
