@@ -51,7 +51,16 @@ The question marks will be removed when you first unlock the path. Think of each
 - @lvp_paths: <span style="color: #FFCC00;">**LVP**</span> Paths!
 - @zentrum_paths: <span style="color: #000000;">**Center**</span> Paths!
 - @dnvp_paths: <span style="color: #3E88B3;">**DNVP**</span> Paths!
-- @flavors: Back
+- @back: Back
+- @back2: Back
+
+@back
+view-if: not game_over
+go-to: flavors
+
+@back2
+view-if: game_over
+go-to: game_over.eg_menu
 
 @ddp_paths
 on-display: {!

@@ -120,6 +120,7 @@ if ((Q.welfare > 0 && Q.judicial_reform >= 2 && Q.womens_work >= 1 && Q.family_l
 @eg_menu
 
 - #endings
+- @modinfo.paths: View completed paths.
 - @end_game: End game.
 
 
