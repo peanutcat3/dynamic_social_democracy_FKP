@@ -38,7 +38,7 @@ on-arrival: {!
     var new_party_sum = 0;
     var total_reichstag_without = 0;  // Initialize a variable to accumulate 'reichstag_without_' values
     var total_other_party_sum = 0;    // Initialize a variable to accumulate '_other_party_sum' values
-    if (Q.year === 1928 && Q.dnvp_leader === "Hugenberg" || Q.dnvp_leader === "Westarp") {
+    if (Q.year === 1928 && Q.dnvp_leader === "Hugenberg" || Q.dnvp_westarp) {
         Q.adjustmentFactors_other = 0.75;
     } else if (Q.year === 1929 && Q.dnvp_leader === "Hugenberg") {
         Q.adjustmentFactors_other = 0.85;
@@ -1026,7 +1026,7 @@ title: Refuse to form a government, so that a right-wing coalition may be formed
 subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition +]%)
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.
 view-if: right_coalition >= 50
-choose-if: dnvp_ideology == "Moderate" or dnvp_leader = "Westarp" and not (year = 1929 and month >= 7)
+choose-if: (dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)
 go-to: right_coalition_2 if grand_coalition < 50 or largest_party != "SPD"
 
 There are enough votes for a right-wing coalition of the <span style="color: #000000;">Center</span> (+ <span style="color: #A2D8E0;">**BVP**</span>), [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], <span style="color: #3E88B3;">**DNVP**</span>, and minor conservative parties. [? if largest_party == "SPD": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
@@ -1047,7 +1047,7 @@ go-to: right_coalition_2
 @right_coalition_2
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.
 view-if: right_coalition >= 50 
-choose-if: (dnvp_ideology == "Moderate" or dnvp_leader = "Westarp") and not (year = 1929 and month >= 7)
+choose-if: (dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_right_coalition = 1; dvp_right += 2; lvp_right += 2; liberal_cooperation -= 3 if liberal_parliament > 0; liberal_parliament = 0 if liberal_parliament > 0; bourgeois_cooperation += 1; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5
 
 [? if dnvp_ideology == "Radical": Even though the <span style="color: #3E88B3;">**DNVP**</span> is very reluctant to participate in such a coalition, they still accede to President Hindenburg's wishes. Thus, a majority center-right coalition is formed, with Brüning as chancellor. [? if grand_coalition >= 50: This move also has the side effect of pressuring the <span style="color: #3E88B3;">**DNVP**</span> to maintain this arrangement against the impulses of their radical right faction, lest a <span style="color: #c00000;">socialists</span> government would replace them. ?]?][? if dnvp_ideology == "Moderate": The <span style="color: #3E88B3;">**DNVP**</span> is happy to participate in such a coalition, to keep out the <span style="color: #c00000;">socialists</span> from government. Thus, a majority center-right coalition is formed, with Brüning as chancellor. ?]
@@ -1946,7 +1946,7 @@ go-to: no_govt_2
 
 @no_govt_2
 on-arrival: reformist_dissent += 25; center_dissent += 10; labor_dissent += 25; neorevisionist_dissent += 25; in_weimar_coalition = 0; in_grand_coalition = 0; chancellor = "Brüning" if chancellor == "Marx"; spd_in_government = 0; grand_coalition_failed = 1
-go-to: right_coalition_post_spd if right_coalition >= 50 and ((dnvp_ideology == "Moderate" or dnvp_leader == "Westarp") and not (year = 1929 and month >= 7)) and president != "Braun"; new_elections_spd if right_coalition < 50 or (right_coalition >= 50 and ((dnvp_ideology == "Radical" and dnvp_leader != "Westarp") or (year = 1929 and month >= 7))) and president != "Braun"; brauns_dilemma if president == "Braun"
+go-to: right_coalition_post_spd if right_coalition >= 50 and ((dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)) and president != "Braun"; new_elections_spd if right_coalition < 50 or (right_coalition >= 50 and ((dnvp_ideology == "Radical" and not dnvp_westarp) or (year = 1929 and month >= 7))) and president != "Braun"; brauns_dilemma if president == "Braun"
 
 
 @right_coalition_post_spd

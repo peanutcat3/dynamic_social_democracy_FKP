@@ -42,6 +42,6 @@ choose-if: budget >= 1 and reichswehr_loyalty < 1
 unavailable-subtitle: [? if budget < 1 : We do not have the budget. ?][? if reichswehr_loyalty >= 1 : The Reichswehr is already fully loyal to the democratic government. ?]
 on-arrival: coalition_dissent += 1 if (in_grand_coalition or (in_weimar_coalition and lvp_formed)); reichswehr_loyalty += 0.15; reichswehr_militancy -= 0.5 if reichswehr_loyalty < 0.5; budget -= 1; coup_progress += 1; dvp_relation -= 5; pacifism += 1; democratization += 1; dvp_right += 2; ddp_left += 1; lvp_right += 1; hindenburg_angry += 5;
 
-Our efforts are at least somewhat successful; we have changed the recruiting and training patterns so that more soldiers from non-reactionary backgrounds can join, hopefully changing the culture of the forces. We have also removed some of the officers who supported the previous Kapp putsch.
+Our efforts are at least somewhat successful; we have changed the recruiting and training patterns so that more soldiers from non-<span style="color: #808080;">reactionary</span> backgrounds can join, hopefully changing the culture of the forces. We have also removed some of the officers who supported the previous Kapp putsch.
 
 The center-right parties are committed to the military and deeply suspicious of our efforts to reform it.
