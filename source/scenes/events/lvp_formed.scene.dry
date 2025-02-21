@@ -36,6 +36,7 @@ Q.dvp_votes = 0;
 Q.ddp_votes = 0;
 Q.dvp_normalized = 0;
 Q.ddp_normalized = 0;
+Q.bourgeois_parliament_ddp = 0;
 
 if (Q.in_grand_coalition_prussia) {
     Q.in_grand_coalition_prussia = 0;
