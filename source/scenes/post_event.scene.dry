@@ -939,7 +939,7 @@ if (Q.dnf_decay_timer > 0) {
 
 if (Q.works_program >= 4 && Q.wtb_enactment_2_finish > Q.time) {
     if (Q.unemployed > 8) {
-        unemployed -= 3/10;
+        Q.unemployed -= 3/10;
     } else if (Q.unemployed < 8) {
         Q.workers += 2/10;
     }
