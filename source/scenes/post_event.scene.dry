@@ -936,7 +936,40 @@ if (Q.dnf_decay_timer > 0) {
     Q.old_middle_dnf -= 0.4;
     Q.old_middle_dnvp += 0.4;
 }
-if (Q.)
+
+if (Q.works_program >= 3 && Q.wtb_enactment_2_finish > Q.time) {
+    if (Q.unemployed > 8) {
+        unemployed -= 3/10;
+    } else if (Q.unemployed < 8) {
+        Q.workers += 2/10;
+    }
+    Q.economic_growth += 1.6/10;
+    if (Q.economic_growth > 5) Q.economic_growth -= 0.6/10;
+}
+
+if (Q.works_program <= 2 && Q.wtb_enactment_continuation_finish > Q.time) {
+    if (Q.unemployed > 15) {
+        Q.unemployed -= 5/10;
+    } else if (Q.unemployed < 15) {
+        Q.unemployed -= 3/10;
+    }
+    if (Q.unemployed < 0) {
+        Q.unemployed += 3/10;
+    }
+    if (Q.unemployed < 5) {
+        Q.unemployed += 3/10;
+    }
+    if (Q.unemployed < 0) {
+        Q.unemployed += 3/10;
+    }
+    Q.workers += 4/10;
+    Q.inflation += 1.5/10;
+    if (Q.unemployed < 10) {
+        Q.inflation += 1;
+    }
+    Q.economic_growth += 1/10; 
+    if (Q.economic_growth > 5) Q.economic_growth -= 0.5/10
+}
 
 if (Q.year == 1929 && Q.month == 7) {
     Q.young_plan_seen = 1;

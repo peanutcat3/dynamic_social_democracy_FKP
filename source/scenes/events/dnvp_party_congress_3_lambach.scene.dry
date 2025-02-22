@@ -60,6 +60,7 @@ Against all odds, Walther Lambach survives a vote of no confidence at the party 
 However, this shift has severely strained Lambach’s relationship with much of the party, particularly its industrial backers, who have begun withholding funding and redirecting it—albeit reluctantly—to more right-wing parties like the <span style="color: #003755;">**DNF**</span> and <span style="color: #7A3C00;">**NSDAP**</span>. At the same time, severe internal opposition has moved to obstruct him any way they can, prompting Westarp to intervene and suppress a revolt within the party. As a result, Lambach was forced to make concessions, ensuring that his leadership would not stray too far from the <span style="color: #3E88B3;">**DNVP**</span>'s traditional anti-<span style="color: #c00000;">Marxist</span> and monarchist stance.
 
 @lambach_ousted
+unavailable-subtitle: Lambach has successfully consolidated power.
 choose-if: not lambach_trigger
 
 Lambach has, perhaps predictably, lost a vote of no confidence, forcing him to relinquish his leadership to a candidate from the party’s traditionally conservative establishment.
