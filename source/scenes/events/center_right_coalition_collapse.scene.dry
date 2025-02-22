@@ -2,7 +2,7 @@ title: The <span style="color: #C0A054;">**DVP**</span> breaks with Brüning
 new-page: true
 subtitle: The center-right coalition has collapsed...
 tags: event
-view-if: year = 1931 and month >= 7 and in_center_right_coalition or in_right_coalition
+view-if: bruning_time == 16 and in_center_right_coalition or in_right_coalition
 on-arrival: pro_republic -= 3
 max-visits: 1
 
