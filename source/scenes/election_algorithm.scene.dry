@@ -45,7 +45,7 @@ for (var party of Q.parties) {
 for (var party of Q.parties) {
     Q[party+'_normalized'] = Q[party + '_support']/total_support;
     Q[party+'_votes'] = Math.round(Q[party+'_normalized']*1000)/ 10;
-    if (Q.party == "other") {
+    if (party == "other") {
         Q.cnblp_votes = Q.cnblp_votes/total_support;
         Q.wp_votes = Q.wp_votes/total_support;
         Q.csvd_votes = Q.csvd_votes/total_support;
