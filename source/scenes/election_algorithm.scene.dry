@@ -35,9 +35,9 @@ for (var party of Q.parties) {
     Q[party + '_support'] = party_support;
     total_support += party_support;
     if (party == "other") {
-        Q.cnblp_votes = Q.rural_other_normalized;
-        Q.wp_votes = (Q.new_middle_other_normalized - Q.old_middle_other_normalized);
-        Q.csvd_votes = Q.workers_other_normalized;
+        Q.cnblp_votes = Q.rural_other_normalized*Q.rural;
+        Q.wp_votes = (Q.new_middle_other_normalized - Q.old_middle_other_normalized)*(Q.new_middle + Q.old_middle);
+        Q.csvd_votes = Q.workers_other_normalized*Q.workers;
     }
 }
 // 2. normalize support (fraction)
@@ -45,6 +45,11 @@ for (var party of Q.parties) {
 for (var party of Q.parties) {
     Q[party+'_normalized'] = Q[party + '_support']/total_support;
     Q[party+'_votes'] = Math.round(Q[party+'_normalized']*1000)/ 10;
+    if (Q.party == "other") {
+        Q.cnblp_votes = Q.cnblp_votes/total_support;
+        Q.wp_votes = Q.wp_votes/total_support;
+        Q.csvd_votes = Q.csvd_votes/total_support;
+    }
 }
 !}
 go-to: jumpScene
