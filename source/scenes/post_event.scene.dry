@@ -1176,14 +1176,14 @@ if (Q.year == 1930 && Q.month == 3 && Q.ddp_relation < 60 && !Q.lvp_formed) {
 }
 
 if (Q.spd_votes >= 38 && Q.black_thursday_seen) {
-    Q.liberal_cooperation += 1;
-    Q.bourgeois_cooperation += 1;
-} else if (Q.spd_votes >= 34 && Q.black_thursday_seen) {
-    Q.liberal_cooperation += 0.75;
+    if (!Q.dstp_formed) Q.liberal_cooperation += 0.75;
     Q.bourgeois_cooperation += 0.75;
-} else if (Q.spd_votes >= 30 && Q.black_thursday_seen) {
-    Q.liberal_cooperation += 0.5;
-    Q.bourgeois_cooperation += 0.5;
+} else if (Q.spd_votes >= 36 && Q.black_thursday_seen) {
+    if (!Q.dstp_formed) Q.liberal_cooperation += 0.50;
+    Q.bourgeois_cooperation += 0.50;
+} else if (Q.spd_votes >= 32 && Q.black_thursday_seen) {
+    if (!Q.dstp_formed) Q.liberal_cooperation += 0.25;
+    Q.bourgeois_cooperation += 0.25;
 }
 
 if (Q.liberal_cooperation >= 5 && Q.ddp_ideology != "Right" && Q.dvp_ideology != "Left" && (Q.dvp_relation + 10) < Q.ddp_relation && !Q.lvp_formed) {
