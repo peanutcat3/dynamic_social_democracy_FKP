@@ -1348,19 +1348,19 @@ if (Q.bourgeois_negotiations_elections_1930_timer == 2 && Q.bourgeois_negotiatio
     Q.bourgeois_negotiations_fail_elections_kvp = 1;
 }
 
-if (Q.bourgeois_negotiations_1930_aftermath_timer == 2 && !Q.liberal_parliament && Q.combined_cooperation >= 12 && !Q.lvp_formed) {
+if (Q.bourgeois_negotiations_1930_aftermath_timer == 1 && !Q.liberal_parliament && Q.combined_cooperation >= 12 && !Q.lvp_formed) {
     Q.bourgeois_list = 1;
     if (Q.bourgeois_parliament_ddp) {
         Q.bourgeois_list_ddp = 1;
     }
     Q.bourgeois_list_kvp = 1;
     Q.bourgeois_cooperation += 3;
-} else if (Q.bourgeois_negotiations_1930_aftermath_timer == 2 && !Q.liberal_parliament && Q.combined_cooperation < 12 && !Q.lvp_formed) {
+} else if (Q.bourgeois_negotiations_1930_aftermath_timer == 1 && !Q.liberal_parliament && Q.combined_cooperation < 12 && !Q.lvp_formed) {
     Q.bourgeois_list = 0;
     Q.bourgeois_list_fail = 1;
-} else if (Q.bourgeois_negotiations_1930_aftermath_timer == 2 && Q.liberal_parliament && Q.bourgeois_cooperation >= 8 && !Q.lvp_formed) {
+} else if (Q.bourgeois_negotiations_1930_aftermath_timer == 1 && Q.liberal_parliament && Q.bourgeois_cooperation >= 8 && !Q.lvp_formed) {
     Q.bourgeois_parliament_no_liberals = 1;
-} else if (Q.bourgeois_negotiations_1930_aftermath_timer == 2 && Q.liberal_parliament && Q.bourgeois_cooperation < 8 && !Q.lvp_formed) {
+} else if (Q.bourgeois_negotiations_1930_aftermath_timer == 1 && Q.liberal_parliament && Q.bourgeois_cooperation < 8 && !Q.lvp_formed) {
     Q.bourgeois_parliament = 0;
     Q.bourgeois_negotiations_fail_parliament = 1;
     Q.bourgeois_cooperation -= 2;
