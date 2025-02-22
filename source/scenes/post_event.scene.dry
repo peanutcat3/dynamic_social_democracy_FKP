@@ -410,7 +410,7 @@ if (Q.month_actions >= 1) {
         Q.workers_kpd += 4/12;
     }
 
-    if (Q.bourgeois_parliament) {
+    if (Q.bourgeois_parliament && Q.nsdap_votes >= 15) {
         Q.new_middle_other += 3/12;
         Q.new_middle_dvp += 2/12;
         if (Q.bourgeois_parliament_ddp) {
@@ -451,7 +451,7 @@ if (Q.month_actions >= 1) {
         Q.catholics_nsdap -= 2/12;
     }
 
-    if (Q.bourgeois_list) {
+    if (Q.bourgeois_list && Q.nsdap_votes >= 10) {
         Q.new_middle_other += 3/12;
         Q.new_middle_dvp += 3/12;
         if (Q.bourgeois_list_ddp) {
