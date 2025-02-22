@@ -968,7 +968,9 @@ if (Q.works_program <= 3 && Q.wtb_enactment_continuation_finish > Q.time) {
         Q.inflation += 1;
     }
     Q.economic_growth += 1/10; 
-    if (Q.economic_growth > 5) Q.economic_growth -= 0.5/10
+    if (Q.economic_growth > 5) Q.economic_growth -= 0.5/10;
+    Q.workers_spd += 6/10;
+    Q.workers_nsdap -= 6/10;
 }
 
 if (Q.year == 1929 && Q.month == 7) {
