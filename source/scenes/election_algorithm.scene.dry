@@ -34,6 +34,11 @@ for (var party of Q.parties) {
     }
     Q[party + '_support'] = party_support;
     total_support += party_support;
+    if (party == "other") {
+        Q.cnblp_votes = Q.rural_other_normalized;
+        Q.wp_votes = (Q.new_middle_other_normalized - Q.old_middle_other_normalized);
+        Q.csvd_votes = Q.workers_other_normalized;
+    }
 }
 // 2. normalize support (fraction)
 // 3. Round to integers

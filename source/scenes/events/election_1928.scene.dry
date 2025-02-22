@@ -177,6 +177,10 @@ if (new_party_sum > 0) {
         Q['previous_' + party + '_last_election_votes'] = parseFloat(parseFloat(Q[party + '_last_election_votes']).toFixed(1));
     }    
 
+Q.cnblp_r = Q.cnblp_votes*Q.adjustmentFactors_other;
+Q.wp_r = Q.wp_votes*Q.adjustmentFactors_other;
+Q.csvd_r = Q.csvd_votes*Q.adjustmentFactors_other;
+
 Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1));
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
 
