@@ -1,6 +1,6 @@
 title: <span style="color: #3E88B3;">**DNVP**</span> Congress
 subtitle: The economic depression has radicalized the party...
-view-if: year = 1930 and month = 11 and dnvp_leader = "Treviranus"
+view-if: year = 1930 and month = 11 and dnvp_leader = "Lambach"
 on-arrival: {!
 if (Q.pro_republic < 50) Q.pro_republic += Q.dnvp_votes;
 Q.pro_republic += 3
@@ -10,7 +10,7 @@ if (Q.land_reform >= 1 || Q.rural_spd_normalized >= 30 || Q.rural_nsdap_normaliz
 }
 
 if (((Q.pro_republic >= ((Q.nsdap_votes + Q.dnf_votes + Q.kpd_votes)*2)) && Q.true_christian_democracy) || !Q.true_christian_democracy) {
-    Q.treviranus_trigger = 1;
+    Q.lambach_trigger = 1;
 }
 
 if (Q.pro_republic < ((Q.nsdap_votes + Q.dnf_votes + Q.kpd_votes)*2) && Q.true_christian_democracy) {
@@ -25,16 +25,14 @@ new-page: true
 
 = <span style="color: #3E88B3;">**DNVP**</span> Congress
 
-The victory of moderates within the <span style="color: #3E88B3;">**DNVP**</span> has not entirely stopped the party’s rightward shift since its electoral defeat years ago. The surprise election of Gottfried Treviranus briefly reversed this trend, but the worsening economic crisis has swung the pendulum in favor of the party’s conservatives once again. Additionally, Treviranus's ambivalence on monarchism has sparked controversy, deepening divisions within the party—this time creating a genuine split, unlike the debate over Lambach’s article years prior.
+it's lambaching time... he allies with treviranus on skibidi stuff idk
 
-While the turmoil from Hugenberg’s split and the Young Plan has subsided, a further rightward shift remains possible, especially as the <span style="color: #7A3C00;">**NSDAP**</span> threatens to eclipse them. Treviranus now faces a battle against the party’s <span style="color: #808080;">reactionary</span> elements as he works to modernize the <span style="color: #3E88B3;">**DNVP**</span> and secure its democratic future.
-
-- @treviranus: Treviranus manages to secure his and his party's future.
-- @westarp: Westarp is restored to his former position.
+- @lambach: Lambach solidifies the party’s <span style="color: #6D5298;">Christian Socialist</span> direction.
+- @westarp: The <span style="color: #808080;">monarchists</span> rally around Westarp, restoring him to his former position.
 - @schiele: The mantle is transferred to Martin Schiele and the <span style="color: #385A38;">agrarians</span>.
 
-@treviranus
-choose-if: treviranus_trigger and not westarp_trigger and not schiele_trigger
+@lambach
+choose-if: lambach_trigger and not westarp_trigger and not schiele_trigger
 unavailable-subtitle: [? if schiele_trigger: The <span style="color: #385A38;">agrarian</span> wing of the <span style="color: #3E88B3;">DNVP</span> objects, claiming that it is their turn to lead. ?][? if westarp_trigger: The national conservatives object, claiming that Treviranus's reforms have gone too far. ?]
 on-arrival: treviranus_stays = 1; true_christian_democracy = 1; rural_dnvp -= 3; rural_nsdap += 3; rural_dnf += 3; new_middle_dnvp += 4; new_middle_dvp -= 2; new_middle_ddp -= 2; new_middle_lvp -= 4; workers_dnvp += 2; workers_z -= 2; catholics_dnvp += 6; catholics_z -= 3; catholics_other -= 3; pro_republic += dnvp_votes / 2; dvp_left += 5; ddp_left += 2.5; lvp_left += 3
 face-image: img/portraits/Treviranus.jpg
@@ -45,8 +43,8 @@ While some conservative and <span style="color: #808080;">reactionary</span> sup
 
 @westarp
 view-if: true_christian_democracy
-choose-if: westarp_trigger and not treviranus_trigger and not schiele_trigger
-unavailable-subtitle: [? if treviranus_trigger: Treviranus is too popular to replace. ?][? if schiele_trigger: The party prefers to elect Schiele. ?]
+choose-if: westarp_trigger and not lambach_trigger and not schiele_trigger
+unavailable-subtitle: [? if lambach_trigger: Treviranus is too popular to replace. ?][? if schiele_trigger: The party prefers to elect Schiele. ?]
 on-arrival: dnvp_leader = "Westarp"; rural_dnvp += 2; rural_dnf -= 2; new_middle_dnvp -= 3; new_middle_dvp += 2; new_middle_ddp += 1; old_middle_dnvp += 5; old_middle_dnf -= 3; old_middle_nsdap -= 2; workers_dnvp -= 1; workers_nsdap += 1; catholics_dnvp -= 2; catholics_z += 2
 face-image: img/portraits/Kuno_von_Westarp.jpg
 
