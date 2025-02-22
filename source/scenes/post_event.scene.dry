@@ -937,7 +937,7 @@ if (Q.dnf_decay_timer > 0) {
     Q.old_middle_dnvp += 0.4;
 }
 
-if (Q.works_program >= 3 && Q.wtb_enactment_2_finish > Q.time) {
+if (Q.works_program >= 4 && Q.wtb_enactment_2_finish > Q.time) {
     if (Q.unemployed > 8) {
         unemployed -= 3/10;
     } else if (Q.unemployed < 8) {
@@ -947,7 +947,7 @@ if (Q.works_program >= 3 && Q.wtb_enactment_2_finish > Q.time) {
     if (Q.economic_growth > 5) Q.economic_growth -= 0.6/10;
 }
 
-if (Q.works_program <= 2 && Q.wtb_enactment_continuation_finish > Q.time) {
+if (Q.works_program <= 3 && Q.wtb_enactment_continuation_finish > Q.time) {
     if (Q.unemployed > 15) {
         Q.unemployed -= 5/10;
     } else if (Q.unemployed < 15) {
