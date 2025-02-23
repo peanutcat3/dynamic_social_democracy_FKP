@@ -150,7 +150,7 @@ if (Q.flavour_15_trigger == 1 && Q.flavour_15_trigger_time == Q.time) {
 
 // total rural death cuz nation shifts right, cnblp voters defect as well
 if (Q.flavour_16_trigger == 1 && Q.flavour_16_trigger_time == Q.time) {
-    Q.rural_nsdap += rural_other*0.4;
+    Q.rural_nsdap += Q.rural_other*0.4;
     Q.rural_other *= 0.6;
     Q.nsdap_r += Q.other_r*0.05;
     Q.other_r *= 0.95;
@@ -764,7 +764,7 @@ if (Q.flavour_15_trigger == 1 && Q.flavour_15_trigger_time == Q.time) {
 
 // total rural death cuz nation shifts right, cnblp voters defect as well
 if (Q.flavour_16_trigger == 1 && Q.flavour_16_trigger_time == Q.time) {
-    Q.rural_nsdap += rural_other*0.4;
+    Q.rural_nsdap += Q.rural_other*0.4;
     Q.rural_other *= 0.6;
     Q.nsdap_r += Q.other_r*0.05;
     Q.other_r *= 0.95;
