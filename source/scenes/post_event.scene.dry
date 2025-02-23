@@ -1323,8 +1323,6 @@ if (Q.year >= 1930 && Q.bruning_time >= 7 && Q.time_since_election < 8 && !Q.in_
     }
 }
 
-# continue this
-
 // historical route, ddp is right-wing and doesn't care about socialist cooperation as much, bourgeois parliament with ddp
 if (Q.bourgeois_negotiations_1930_timer == 4 && (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") && Q.ddp_ideology == "Right" && Q.ddp_relation < 45 && !Q.bourgeois_negotiations_election_soon && !Q.lvp_formed && !Q.dstp_formed) {
     Q.bourgeois_parliament_trigger = 1;
