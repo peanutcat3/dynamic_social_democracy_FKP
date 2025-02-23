@@ -36,7 +36,7 @@ for (var party of Q.parties) {
     total_support += party_support;
     if (party == "other") {
         Q.cnblp_normalized = Q.rural_other_normalized*Q.rural;
-        Q.wp_normalized = (Q.new_middle_other_normalized + Q.old_middle_other_normalized)*(Q.new_middle + Q.old_middle);
+        Q.wp_normalized = (Q.new_middle_other_normalized*Q.new_middle) + (Q.old_middle_other_normalized*Q.old_middle);
         Q.csvd_normalized = Q.workers_other_normalized*Q.workers;
     }
 }
