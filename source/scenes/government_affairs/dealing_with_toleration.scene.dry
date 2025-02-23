@@ -52,7 +52,7 @@ Unfortunately, our negotiations have met with failure. The center-right parties 
 
 @urge_against_austerity_limited
 title: Attempt to pressure Brüning to curb the worse excesses of his austerity policies. 
-go-to: urge_success if z_relation >= 35; urge_failure if z_relation < 35
+go-to: urge_success_limited if z_relation >= 35; urge_failure if z_relation < 35
 
 @urge_success_limited
 on-arrival: bruning_austerity_limited += 1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent) if bruning_austerity_limited >= 3; new_middle_ddp += 1; old_middle_ddp += 1; new_middle_dvp += 1; old_middle_dvp += 1; new_middle_other += 1; old_middle_other += 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; z_relation -= 3; reformist_dissent -= 3; center_dissent -= 3; labor_dissent -= 3; dvp_right += 1; ddp_right += 0.5; lvp_right += 1; hindenburg_angry_bruning += 5
