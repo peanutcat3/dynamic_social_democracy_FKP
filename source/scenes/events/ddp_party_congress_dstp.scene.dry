@@ -75,6 +75,20 @@ on-arrival: {!
 if (Q.ddp_r < 3.6) {
     Q.ddp_factionless = 1
 }
+if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_10_trigger += 1;
+    if (Q.flavour_10_trigger == 1) {
+        Q.flavour_10_trigger_time = Q.time;
+        Q.flavour_10_effect_trigger = 1;
+    }
+}
+if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_11_trigger += 1;
+    if (Q.flavour_11_trigger == 1) {
+        Q.flavour_11_trigger_time = Q.time;
+        Q.flavour_11_effect_trigger = 1;
+    }
+}
 if (Q.bourgeois_negotiations_elections_1930_timer == 1 && Q.bourgeois_negotiations_1930_done && Q.dstp_formed && !Q.liberal_parliament) {
     Q.bourgeois_negotiations_fail_elections_dstp = 1;
     Q.bourgeois_negotiations_fail_elections = 0;
