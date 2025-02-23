@@ -777,6 +777,8 @@ Q.hindenburg_angry_bruning = 0;
 Q.bruning_time = 0;
 Q.nazi_peak = 20;
 Q.dnvp_westarp = 1;
+Q.ddp_factionless_time = 0;
+Q.wp_conflict_time = 0;
 
 // flavour text stuff
 Q.flavour_0_trigger = 0;
