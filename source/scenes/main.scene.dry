@@ -11,32 +11,37 @@ if (Q.advisor_action_timer <= 0) {
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 4 && Q.dnvp_ideology == "Radical" && Q.time !== Q.last_time_updated) {
     Q.flavour_0_trigger += 1;
-    if (Q.flavour_0_trigger == 1) {
+    if (Q.flavour_0_trigger && !Q.flavour_0_trigger_shown) {
         Q.flavour_0_trigger_time = Q.time;
+        Q.flavour_0_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5 && Q.nsdap_leader == "Hitler" && Q.time !== Q.last_time_updated) {
     Q.flavour_1_trigger += 1;
-    if (Q.flavour_1_trigger == 1) {
+    if (Q.flavour_1_trigger && !Q.flavour_1_trigger_shown) {
         Q.flavour_1_trigger_time = Q.time;
+        Q.flavour_1_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time == 1 && !Q.lvp_formed && Q.liberal_cooperation < 5 && Q.time !== Q.last_time_updated) {
     Q.flavour_2_trigger += 1;
-    if (Q.flavour_2_trigger == 1) {
+    if (Q.flavour_2_trigger && !Q.flavour_2_trigger_shown) {
         Q.flavour_2_trigger_time = Q.time;
+        Q.flavour_2_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time == 1 && !Q.lvp_formed && Q.liberal_cooperation >= 5 && Q.time !== Q.last_time_updated) {
     Q.flavour_3_trigger += 1;
-    if (Q.flavour_3_trigger == 1) {
+    if (Q.flavour_3_trigger && !Q.flavour_3_trigger_shown) {
         Q.flavour_3_trigger_time = Q.time;
+        Q.flavour_3_trigger_shown = 1;
     }
 }
 if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenburg" && Q.time !== Q.last_time_updated) {
     Q.flavour_4_trigger += 1;
-    if (Q.flavour_4_trigger == 1) {
+    if (Q.flavour_4_trigger && !Q.flavour_4_trigger_shown) {
         Q.flavour_4_trigger_time = Q.time;
+        Q.flavour_4_trigger_shown = 1;
     }
     if (Q.flavour_4_trigger >= 3) {
         Q.flavour_4_trigger = 0;
@@ -44,82 +49,95 @@ if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenbu
 }
 if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 && (!Q.in_right_coalition && !Q.in_weimar_coalition) && Q.next_election_time - Q.time >= 3 && Q.time !== Q.last_time_updated) {
     Q.flavour_5_trigger += 1;
-    if (Q.flavour_5_trigger == 1) {
+    if (Q.flavour_5_trigger && !Q.flavour_5_trigger_shown) {
         Q.flavour_5_trigger_time = Q.time;
+        Q.flavour_5_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 3 && Q.time !== Q.last_time_updated) {
     Q.flavour_6_trigger += 1;
-    if (Q.flavour_6_trigger == 1) {
+    if (Q.flavour_6_trigger && !Q.flavour_6_trigger_shown) {
         Q.flavour_6_trigger_time = Q.time;
+        Q.flavour_6_trigger_shown = 1;
     }
 }
 if (Q.dstp_formed && Q.month >= 8 && Q.time !== Q.last_time_updated) {
     Q.flavour_7_trigger += 1;
-    if (Q.flavour_7_trigger == 1) {
+    if (Q.flavour_7_trigger && !Q.flavour_7_trigger_shown) {
         Q.flavour_7_trigger_time = Q.time;
+        Q.flavour_7_trigger_shown = 1;
     }
 }
 if (Q.flavour_7_trigger >= 2 && Q.time !== Q.last_time_updated) {
     Q.flavour_8_trigger += 1;
-    if (Q.flavour_8_trigger == 1) {
+    if (Q.flavour_8_trigger && !Q.flavour_8_trigger_shown) {
         Q.flavour_8_trigger_time = Q.time;
+        Q.flavour_8_trigger_shown = 1;
     }
 }
 if (Q.dstp_formed && Q.next_election_time - Q.time == 1 && Q.time !== Q.last_time_updated) {
     Q.flavour_9_trigger += 1;
-    if (Q.flavour_9_trigger == 1) {
+    if (Q.flavour_9_trigger && !Q.flavour_9_trigger_shown) {
         Q.flavour_9_trigger_time = Q.time;
+        Q.flavour_9_trigger_shown = 1;
     }
 }
 if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_10_trigger += 1;
-    if (Q.flavour_10_trigger == 1) {
+    if (Q.flavour_10_trigger && !Q.flavour_10_trigger_shown) {
         Q.flavour_10_trigger_time = Q.time;
+        Q.flavour_10_trigger_shown = 1;
         Q.flavour_10_effect_trigger = 1;
-    }
-    if (Q.flavour_10_trigger_time != Q.time) {
-        Q.flavour_10_effect_trigger = 0;
     }
 }
 if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_11_trigger += 1;
-    if (Q.flavour_11_trigger == 1) {
+    if (Q.flavour_11_trigger && !Q.flavour_11_trigger_shown) {
         Q.flavour_11_trigger_time = Q.time;
+        Q.flavour_11_trigger_shown = 1;
         Q.flavour_11_effect_trigger = 1;
-    }
-    if (Q.flavour_11_trigger_time != Q.time) {
-        Q.flavour_11_effect_trigger = 0;
     }
 }
 if (Q.bruning_time == 1 && Q.spd_toleration && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_12_trigger += 1;
-    if (Q.flavour_12_trigger == 1) {
+    if (Q.flavour_12_trigger && !Q.flavour_12_trigger_shown) {
         Q.flavour_12_trigger_time = Q.time;
+        Q.flavour_12_trigger_shown = 1;
     }
 }
 if (Q.bruning_time == 12 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_13_trigger += 1;
-    if (Q.flavour_13_trigger == 1) {
+    if (Q.flavour_13_trigger && !Q.flavour_13_trigger_shown) {
         Q.flavour_13_trigger_time = Q.time;
+        Q.flavour_13_trigger_shown = 1;
     }
 }
 if (Q.bruning_time == 12 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_14_trigger += 1;
-    if (Q.flavour_14_trigger == 1) {
+    if (Q.flavour_14_trigger && !Q.flavour_14_trigger_shown) {
         Q.flavour_14_trigger_time = Q.time;
+        Q.flavour_14_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.bruning_time >= 8 && Q.dnvp_split_2 && !Q.kvp_cnblp_sister && Q.time_since_election < 6 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
     Q.flavour_15_trigger += 1;
-    if (Q.flavour_15_trigger == 1) {
+    if (Q.flavour_15_trigger && !Q.flavour_15_trigger_shown) {
         Q.flavour_15_trigger_time = Q.time;
+        Q.flavour_15_trigger_shown = 1;
     }
 }
 if (Q.flavour_15_trigger && Q.time == Q.flavour_15_trigger_time + 4 && Q.time !== Q.last_time_updated) {
     Q.flavour_16_trigger += 1; 
-    if (Q.flavour_16_trigger == 1) {
+    if (Q.flavour_16_trigger == 1 && !Q.flavour_16_trigger_shown) {
         Q.flavour_16_trigger_time = Q.time;
+        Q.flavour_16_trigger_shown = 1;
+    }
+}
+if (Q.year >= 1930 && Q.ddp_factionless && Q.time !== Q.last_time_updated) {
+    Q.flavour_17_trigger += 1;
+    if (Q.flavour_17_trigger == 2 && !Q.flavour_17_trigger_shown) {
+        Q.flavour_17_trigger_time = Q.time;
+        Q.flavour_17_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -593,32 +611,37 @@ if (Q.advisor_action_timer <= 0) {
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 4 && Q.dnvp_ideology == "Radical" && Q.time !== Q.last_time_updated) {
     Q.flavour_0_trigger += 1;
-    if (Q.flavour_0_trigger == 1) {
+    if (Q.flavour_0_trigger && !Q.flavour_0_trigger_shown) {
         Q.flavour_0_trigger_time = Q.time;
+        Q.flavour_0_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5 && Q.nsdap_leader == "Hitler" && Q.time !== Q.last_time_updated) {
     Q.flavour_1_trigger += 1;
-    if (Q.flavour_1_trigger == 1) {
+    if (Q.flavour_1_trigger && !Q.flavour_1_trigger_shown) {
         Q.flavour_1_trigger_time = Q.time;
+        Q.flavour_1_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time == 1 && !Q.lvp_formed && Q.liberal_cooperation < 5 && Q.time !== Q.last_time_updated) {
     Q.flavour_2_trigger += 1;
-    if (Q.flavour_2_trigger == 1) {
+    if (Q.flavour_2_trigger && !Q.flavour_2_trigger_shown) {
         Q.flavour_2_trigger_time = Q.time;
+        Q.flavour_2_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time == 1 && !Q.lvp_formed && Q.liberal_cooperation >= 5 && Q.time !== Q.last_time_updated) {
     Q.flavour_3_trigger += 1;
-    if (Q.flavour_3_trigger == 1) {
+    if (Q.flavour_3_trigger && !Q.flavour_3_trigger_shown) {
         Q.flavour_3_trigger_time = Q.time;
+        Q.flavour_3_trigger_shown = 1;
     }
 }
 if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenburg" && Q.time !== Q.last_time_updated) {
     Q.flavour_4_trigger += 1;
-    if (Q.flavour_4_trigger == 1) {
+    if (Q.flavour_4_trigger && !Q.flavour_4_trigger_shown) {
         Q.flavour_4_trigger_time = Q.time;
+        Q.flavour_4_trigger_shown = 1;
     }
     if (Q.flavour_4_trigger >= 3) {
         Q.flavour_4_trigger = 0;
@@ -626,76 +649,95 @@ if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenbu
 }
 if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 && (!Q.in_right_coalition && !Q.in_weimar_coalition) && Q.next_election_time - Q.time >= 3 && Q.time !== Q.last_time_updated) {
     Q.flavour_5_trigger += 1;
-    if (Q.flavour_5_trigger == 1) {
+    if (Q.flavour_5_trigger && !Q.flavour_5_trigger_shown) {
         Q.flavour_5_trigger_time = Q.time;
+        Q.flavour_5_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 3 && Q.time !== Q.last_time_updated) {
     Q.flavour_6_trigger += 1;
-    if (Q.flavour_6_trigger == 1) {
+    if (Q.flavour_6_trigger && !Q.flavour_6_trigger_shown) {
         Q.flavour_6_trigger_time = Q.time;
+        Q.flavour_6_trigger_shown = 1;
     }
 }
 if (Q.dstp_formed && Q.month >= 8 && Q.time !== Q.last_time_updated) {
     Q.flavour_7_trigger += 1;
-    if (Q.flavour_7_trigger == 1) {
+    if (Q.flavour_7_trigger && !Q.flavour_7_trigger_shown) {
         Q.flavour_7_trigger_time = Q.time;
+        Q.flavour_7_trigger_shown = 1;
     }
 }
 if (Q.flavour_7_trigger >= 2 && Q.time !== Q.last_time_updated) {
     Q.flavour_8_trigger += 1;
-    if (Q.flavour_8_trigger == 1) {
+    if (Q.flavour_8_trigger && !Q.flavour_8_trigger_shown) {
         Q.flavour_8_trigger_time = Q.time;
+        Q.flavour_8_trigger_shown = 1;
     }
 }
 if (Q.dstp_formed && Q.next_election_time - Q.time == 1 && Q.time !== Q.last_time_updated) {
     Q.flavour_9_trigger += 1;
-    if (Q.flavour_9_trigger == 1) {
+    if (Q.flavour_9_trigger && !Q.flavour_9_trigger_shown) {
         Q.flavour_9_trigger_time = Q.time;
+        Q.flavour_9_trigger_shown = 1;
     }
 }
 if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_10_trigger += 1;
-    if (Q.flavour_10_trigger == 1) {
+    if (Q.flavour_10_trigger && !Q.flavour_10_trigger_shown) {
         Q.flavour_10_trigger_time = Q.time;
+        Q.flavour_10_trigger_shown = 1;
         Q.flavour_10_effect_trigger = 1;
     }
 }
 if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_11_trigger += 1;
-    if (Q.flavour_11_trigger == 1) {
+    if (Q.flavour_11_trigger && !Q.flavour_11_trigger_shown) {
         Q.flavour_11_trigger_time = Q.time;
+        Q.flavour_11_trigger_shown = 1;
         Q.flavour_11_effect_trigger = 1;
     }
 }
 if (Q.bruning_time == 1 && Q.spd_toleration && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_12_trigger += 1;
-    if (Q.flavour_12_trigger == 1) {
+    if (Q.flavour_12_trigger && !Q.flavour_12_trigger_shown) {
         Q.flavour_12_trigger_time = Q.time;
+        Q.flavour_12_trigger_shown = 1;
     }
 }
 if (Q.bruning_time == 12 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_13_trigger += 1;
-    if (Q.flavour_13_trigger == 1) {
+    if (Q.flavour_13_trigger && !Q.flavour_13_trigger_shown) {
         Q.flavour_13_trigger_time = Q.time;
+        Q.flavour_13_trigger_shown = 1;
     }
 }
 if (Q.bruning_time == 12 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_14_trigger += 1;
-    if (Q.flavour_14_trigger == 1) {
+    if (Q.flavour_14_trigger && !Q.flavour_14_trigger_shown) {
         Q.flavour_14_trigger_time = Q.time;
+        Q.flavour_14_trigger_shown = 1;
     }
 }
 if (Q.year >= 1930 && Q.bruning_time >= 8 && Q.dnvp_split_2 && !Q.kvp_cnblp_sister && Q.time_since_election < 6 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
     Q.flavour_15_trigger += 1;
-    if (Q.flavour_15_trigger == 1) {
+    if (Q.flavour_15_trigger && !Q.flavour_15_trigger_shown) {
         Q.flavour_15_trigger_time = Q.time;
+        Q.flavour_15_trigger_shown = 1;
     }
 }
 if (Q.flavour_15_trigger && Q.time == Q.flavour_15_trigger_time + 4 && Q.time !== Q.last_time_updated) {
     Q.flavour_16_trigger += 1; 
-    if (Q.flavour_16_trigger == 1) {
+    if (Q.flavour_16_trigger == 1 && !Q.flavour_16_trigger_shown) {
         Q.flavour_16_trigger_time = Q.time;
+        Q.flavour_16_trigger_shown = 1;
+    }
+}
+if (Q.year >= 1930 && Q.ddp_factionless && Q.time !== Q.last_time_updated) {
+    Q.flavour_17_trigger += 1;
+    if (Q.flavour_17_trigger == 2 && !Q.flavour_17_trigger_shown) {
+        Q.flavour_17_trigger_time = Q.time;
+        Q.flavour_17_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1107,13 +1149,15 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1930 and month = 11 : The <span style="color: #C8102E;">Austrian Social Democrats</span> have won the recent legislative election, securing a majority of seats in their *Nationalrat*. However a right-wing coalition of the <span style="color: #000000;">Christian Social Party</span> and minor bourgeois parties once again has excluded them from government. The Austrian branch of the <span style="color: #7A3C00;">**NSDAP**</span> have received 3% of the vote, and the political wing of the <span style="color: #ABDDA4;">Heimwehr</span> (comparable to our *Freikorps*) garnered 6%. This is particularly concerning, as the <span style="color: #C8102E;">Austrian Social Democrats</span> lost votes despite the economic depression occurring while they were in opposition, suggesting the electorate is looking for answers on the right. ?]{!</p>!}
 
+{!<p class="dnvp">!}[? if flavour_15_trigger and flavour_15_trigger_time == time: The combination of our influence over the Brüning government, the ineffectiveness of his agrarian relief plan, the radicalization of the rural electorate signaled by Martin Schiele's resignation from the RLB, and the <span style="color: #7FCEB1;">**CNBLP**</span>'s third-place finish in rural areas behind the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #7A3C00;">**NSDAP**</span> has led the party to reconsider its support for Brüning. An anti-Brüning right-wing faction now dominates within the <span style="color: #7FCEB1;">**CNBLP**</span>, successfully pushing through a resolution chastising the Chancellor and demanding a reorganization of the coalition to include the <span style="color: #7A3C00;">Nazis</span>. Brüning has refused to comply, prompting the <span style="color: #7FCEB1;">**CNBLP**</span> to become one of the first parties to bolt from his coalition, now voting against his decrees and supporting right-wing motions of no confidence. ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_17_trigger and flavour_17_trigger_time == time: The defection of the northern wing’s Reichstag members from the <span style="color: #007A00;">German Peasants' Party</span> to the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has effectively ended the party as a national political force. All that remains is the original <span style="color: #38C538;">Bavarian Peasants’ League</span>, which, amid a prevailing mood of resignation, is expected to secure only a fraction of its former support in the next election, as most peasants turn further to the right in search of a solution to Germany's crisis. ?]{!</p>!}
+
+{!<p class="other">!}[? if year = 1931 and month = 2 and dstp_formed and not lvp_formed and not lvp_timer_2_trigger : Most local organizations that have formerly belonged to the <span style="color: #D3C24D;">**DDP**</span> are extremely hesitant about becoming involved in the new party, and many of the <span style="color: #D3C24D;">**DDP**</span> auxiliary organizations, such as their youth and women's groups have collapsed and need to be built anew. All of this combined with the heavy psychological toll under which the leaders of the <span style="color: #D3C24D;">**State Party**</span> were already laboring as a result of the deepening economic crisis to produce a mood of growing resignation and pessimism about the future of the party.?]{!</p>!}
+
 {!<p class="other">!}[? if flavour_13_trigger and flavour_13_trigger_time == time: Brüning’s decision to sideline the Reichstag and its parties from any meaningful role in shaping his fiscal and economic policies severely undermined the legitimacy of the bourgeois parties in the eyes of their traditional electorates, due to their powerlessness to dismantle his more repugnant policies. One clear example is the plight of civil servants, who have borne the brunt of salary cuts of approximately 20 percent, pushing many toward the <span style="color: #7A3C00;">Nazis</span>. His deflationary and austerity measures deepened the economic crisis, radicalizing the very social groups upon which these moderate parties relied for electoral support. This has led to heightened tensions between Brüning and his supporting parties, some of whom are even threatening to abandon his coalition. ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_14_trigger and flavour_14_trigger_time == time: Brüning’s decision to give parliament a significant role in passing and shaping his fiscal and economic policies[? if in_right_coalition or in_center_right_coalition:, rather than ruling through emergency decree, ?] has helped maintain the legitimacy of the bourgeois parties in the eyes of their traditional electorates. The ability of <span style="color: #b8996f;">special</span> <span style="color: #7FCEB1;">interest</span> and <span style="color: #FFCC00;">liberal</span> parties to dismantle some of his most repugnant policies—such as cuts to civil servant salaries—and to pressure him into increasing agrarian relief has reinforced their credibility. However, this has also led to tensions between Brüning and his supporting parties, as he insists that certain sacrifices are necessary to properly implement his economic plan. ?]{!</p>!}
-
-{!<p class="dnvp">!}[? if flavour_15_trigger and flavour_15_trigger_time == time: The combination of our influence over the Brüning government, the ineffectiveness of his agrarian relief plan, the radicalization of the rural electorate signaled by Martin Schiele's resignation from the RLB, and the <span style="color: #7FCEB1;">**CNBLP**</span>'s third-place finish in rural areas behind the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #7A3C00;">**NSDAP**</span> has led the party to reconsider its support for Brüning. An anti-Brüning right-wing faction now dominates within the <span style="color: #7FCEB1;">**CNBLP**</span>, successfully pushing through a resolution chastising the Chancellor and demanding a reorganization of the coalition to include the <span style="color: #7A3C00;">Nazis</span>. Brüning has refused to comply, prompting the <span style="color: #7FCEB1;">**CNBLP**</span> to become one of the first parties to bolt from his coalition, now voting against his decrees and supporting right-wing motions of no confidence. ?]{!</p>!}
-
-{!<p class="other">!}[? if year = 1931 and month = 2 and dstp_formed and not lvp_formed and not lvp_timer_2_trigger : Most local organizations that have formerly belonged to the <span style="color: #D3C24D;">**DDP**</span> are extremely hesitant about becoming involved in the new party, and many of the <span style="color: #D3C24D;">**DDP**</span> auxiliary organizations, such as their youth and women's groups have collapsed and need to be built anew. All of this combined with the heavy psychological toll under which the leaders of the <span style="color: #D3C24D;">**State Party**</span> were already laboring as a result of the deepening economic crisis to produce a mood of growing resignation and pessimism about the future of the party.?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_16_trigger and flavour_16_trigger_time == time: Four members of the <span style="color: #7FCEB1;">**CNBLP**</span>’s Reichstag delegation have defected, joining the <span style="color: #7A3C00;">Nazis</span> in the national opposition. The internal split between the pro-Brüning moderates and the anti-Brüning radical right has shattered the party’s already fragile unity and damaged its standing among its own electorate. The <span style="color: #7FCEB1;">**CNBLP**</span> has all but ceased to exist as a viable political force. ?]{!</p>!}
 
