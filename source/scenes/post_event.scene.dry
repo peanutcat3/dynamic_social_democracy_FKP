@@ -1311,16 +1311,27 @@ if (Q.Q.year >= 1930 && Q.ddp_factionless) {
 }
 
 if (Q.year >= 1930 && Q.bruning_time >= 7 && Q.time_since_election < 8 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
-    Q.wp_conflict_time += 1;
-    if (Q.wp_conflict_time == 2) {
-        Q.bruning_coalition_loss += Q.wp_r;
-        Q.wp_defect = 1;
-        Q.new_middle_nsdap += Q.new_middle_other*0.5;
-        Q.new_middle_other *= 0.5;
-        Q.old_middle_nsdap += Q.old_middle_other*0.5;
-        Q.old_middle_other *= 0.5;
-        Q.pro_republic -= Q.unemployed / 10;
-    }
+    Q.wp_conflict_time_trigger = 1;
+}
+
+if (Q.wp_conflict_time_trigger) Q.wp_conflict_time += 1;
+
+if (Q.wp_conflict_time == 2) {
+    Q.bruning_coalition_loss += Q.wp_r;
+    Q.wp_defect = 1;
+    Q.new_middle_nsdap += Q.new_middle_other*0.5;
+    Q.new_middle_other *= 0.5;
+    Q.old_middle_nsdap += Q.old_middle_other*0.5;
+    Q.old_middle_other *= 0.5;
+    Q.pro_republic -= Q.unemployed / 10;
+}
+
+if (Q.wp_conflict_time == 8) {
+    Q.new_middle_nsdap += Q.new_middle_other*0.65;
+    Q.new_middle_other *= 0.35;
+    Q.old_middle_nsdap += Q.old_middle_other*0.65;
+    Q.old_middle_other *= 0.35;
+    Q.pro_republic -= Q.unemployed / 10;
 }
 
 // historical route, ddp is right-wing and doesn't care about socialist cooperation as much, bourgeois parliament with ddp
