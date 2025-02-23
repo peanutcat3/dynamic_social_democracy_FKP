@@ -122,7 +122,7 @@ if (((Q.flavour_10_trigger == 2 && Q.flavour_10_trigger_time == Q.time) || (Q.fl
     Q.dvp_left += 5;
     Q.ddp_right += 3;
     Q.ddp_factionless = 0;
-} else if ((Q.flavour_11_trigger == 2 && Q.flavour_11_trigger_time == Q.time) && (Q.dvp_leader == "Scholz" && !Q.dstp_formed) && Q.ddp_factionless) {
+} else if ((Q.flavour_11_trigger == 2 && Q.flavour_11_trigger_time == Q.time) && (Q.dvp_leader == "Scholz" && Q.dstp_formed) && Q.ddp_factionless) {
     Q.new_middle_ddp += 2;
     Q.old_middle_ddp += 2;
     Q.ddp_right += 3;
@@ -736,7 +736,7 @@ if (((Q.flavour_10_trigger == 2 && Q.flavour_10_trigger_time == Q.time) || (Q.fl
     Q.dvp_left += 5;
     Q.ddp_right += 3;
     Q.ddp_factionless = 0;
-} else if ((Q.flavour_11_trigger == 2 && Q.flavour_11_trigger_time == Q.time) && (Q.dvp_leader == "Scholz" && !Q.dstp_formed) && Q.ddp_factionless) {
+} else if ((Q.flavour_11_trigger == 2 && Q.flavour_11_trigger_time == Q.time) && (Q.dvp_leader == "Scholz" && Q.dstp_formed) && Q.ddp_factionless) {
     Q.new_middle_ddp += 2;
     Q.old_middle_ddp += 2;
     Q.ddp_right += 3;
