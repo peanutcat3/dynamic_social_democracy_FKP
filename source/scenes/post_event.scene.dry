@@ -2119,6 +2119,10 @@ if (Q.bruning_time > 1) {
     }
     if (Q.bourgeois_parliament) {
         Q.hindenburg_angry_bruning -= 2;
+    } else if (Q.cnblp_defect && Q.wp_defect) {
+        Q.hindenburg_angry_bruning += 2;
+    } else if (Q.cnblp_defect || Q.wp_defect) {
+        Q.hindenburg_angry_bruning += 1;
     }
     if (Q.bourgeois_list) {
         Q.hindenburg_angry_bruning -= 1;
