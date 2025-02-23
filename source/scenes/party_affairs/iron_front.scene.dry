@@ -42,7 +42,7 @@ The <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">
 
 @wtb
 view-if: wtb_adopted == 1
-choose-if: return_to_normalcy = 0 and wtb_implemented >= wtb_rally
+choose-if: return_to_normalcy = 0 and (wtb_implemented >= wtb_rally or (not spd_in_government and not spd_toleration))
 unavailable-subtitle: [? if return_to_normalcy == 1: The economic crisis is largely over now, and the public is no longer interested in hearing about it. ?] [? if wtb_rally > wtb_implemented: Rhetoric alone has its limits; further implementation of the WTB plan is necessary to continue an effective campaign. ?]
 on-arrival: workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); new_middle_spd += 5*(1-dissent); old_middle_spd += 3*(1-dissent); rural_spd += 3*(1-dissent); wtb_rally += 1
 
