@@ -649,12 +649,20 @@ if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament &&
     Q.flavour_10_trigger += 1;
     if (Q.flavour_10_trigger == 2) {
         Q.flavour_10_trigger_time = Q.time;
+        Q.flavour_10_effect_trigger = 1;
+    }
+    if (Q.flavour_10_trigger_time != Q.time) {
+        Q.flavour_10_effect_trigger = 0;
     }
 }
 if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed) {
     Q.flavour_11_trigger += 1;
     if (Q.flavour_11_trigger == 2) {
         Q.flavour_11_trigger_time = Q.time;
+        Q.flavour_11_effect_trigger = 1;
+    }
+    if (Q.flavour_11_trigger_time != Q.time) {
+        Q.flavour_11_effect_trigger = 0;
     }
 }
 if (Q.bruning_time == 1 && Q.spd_toleration && Q.year >= 1930) {
