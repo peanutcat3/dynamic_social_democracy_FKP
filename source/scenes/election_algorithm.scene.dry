@@ -49,9 +49,9 @@ for (var party of Q.parties) {
         Q.cnblp_votes = (Q.cnblp_votes/total_support);
         Q.wp_votes = Q.wp_votes/total_support;
         Q.csvd_votes = Q.csvd_votes/total_support;
-        Q.cnblp_votes = Math.round((Q.cnblp_votes*1000)/10);
-        Q.wp_votes = Math.round((Q.wp_votes*1000)/10);
-        Q.csvd_votes = Math.round((Q.csvd_votes*1000)/10);
+        Q.cnblp_votes = Math.round((Q.cnblp_votes*10)/10);
+        Q.wp_votes = Math.round((Q.wp_votes*10)/10);
+        Q.csvd_votes = Math.round((Q.csvd_votes*10)/10);
     }
 }
 !}
