@@ -2230,6 +2230,9 @@ if (Q.dvp_relation < 0) {
     Q.dvp_relation = 0;
 }
 
+Q.ddp_r = Math.round((Q.ddp_r) * 10 / 10)
+Q.other_r = Math.round((Q.other_r) * 10 / 10)
+
 if (Q.lvp_formed) {
     Q.weimar_coalition = parseFloat((Q.spd_r + Q.lvp_r + Q.z_r - 3).toFixed(1));
 } else {
