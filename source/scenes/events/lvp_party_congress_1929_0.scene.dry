@@ -28,7 +28,7 @@ Meanwhile, the right wing of the <span style="color: #C0A054;">**DVP**</span>, d
 
 @lvp_weimar
 title: Renegotiate the ruling coalition.
-view-if: in_weimar_coalition
+view-if: in_weimar_coalition and spd_in_government
 on-arrival: {!
 Q.leverage = Q.spd_r;
 if (Q.z_ideology == "Left") Q.leverage += 5;
@@ -51,7 +51,7 @@ As a result of the left-liberal <span style="color: #D3C24D;">**[+ ddp_name +]**
 
 @lvp_groko
 title: Renegotiate the ruling coalition.
-view-if: in_grand_coalition
+view-if: in_grand_coalition and spd_in_government
 
 As a result of the left-liberal <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and conservative-liberal <span style="color: #C0A054;">**DVP**</span> having merged, we could go ahead with kicking the small <span style="color: #A2D8E0;">**BVP**</span> out of government. This will leave us with a majority <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition.
 
