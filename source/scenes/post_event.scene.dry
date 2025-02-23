@@ -1301,7 +1301,7 @@ if (Q.cnblp_defect_pt2_time == Q.time && Q.cnblp_defect == 1) {
     Q.pro_republic -= Q.cnblp_votes;
 }
 
-if (Q.Q.year >= 1930 && Q.ddp_factionless) {
+if (Q.year >= 1930 && Q.ddp_factionless) {
     Q.ddp_factionless_time += 1;
     if (Q.ddp_factionless_time == 2) {
         Q.rural_nsdap += Q.rural_other*0.3;
