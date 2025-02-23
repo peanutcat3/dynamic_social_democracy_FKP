@@ -287,6 +287,14 @@ Q.leverage = Q.spd_r;
 Q.support_kpd_grand = 0;
 Q.support_kpd_weimar = 0;
 
+Q.bruning_coalition = Q.neo_weimar_coalition;
+if (Q.dnvp_ideology == "Moderate") Q.bruning_coalition = Q.cordon_sanitaire;
+Q.bruning_coalition = Q.bruning_coalition - Q.bruning_coalition_loss;
+
+if (Q.cnblp_defect) {
+    Q.bruning_coalition -= Q.cnblp_r;
+}
+
 Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
@@ -1764,7 +1772,7 @@ The people's faith in democracy is shaken by this ordeal. Of course, the <span s
 
 @toleration_bruning
 view-if: dnvp_ideology == "Radical"
-choose-if: neo_weimar_coalition >= 50 or (cordon_sanitaire >= 50 and kvp_formed)
+choose-if: bruning_coalition >= 50 or (cordon_sanitaire >= 50 and kvp_formed)
 unavailable-subtitle: The parties supporting Brüning do not have a majority.
 on-arrival: spd_in_government = 0; spd_toleration = 1; minority_government = 1; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; pro_republic -= 3; new_middle_dvp -= 2; new_middle_ddp -= 2; new_middle_lvp -= 4; old_middle_dvp -= 2; old_middle_ddp -= 2; old_middle_lvp -= 4; old_middle_nsdap += 2; new_middle_nsdap += 2; rural_dnvp -= 3; dvp_right += 2; ddp_right += 1; lvp_right += 2; liberal_cooperation += 0.5
 
@@ -1772,7 +1780,7 @@ We have decided to tolerate Brüning's government. This means that we will vote 
 
 @toleration_bruning_right
 view-if: dnvp_ideology == "Moderate"
-choose-if: cordon_sanitaire >= 50 and center_right_coalition < 50
+choose-if: bruning_coalition >= 50 and center_right_coalition < 50
 unavailable-subtitle: [? if cordon_sanitaire < 50: The parties supporting Brüning do not have a majority. ?][? if center_right_coalition > 50: The bourgeois parties don't need us. ?]
 on-arrival: spd_in_government = 0; spd_toleration = 1; minority_government = 1; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "DNVP"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "DNVP"; pro_republic -= 3; new_middle_dvp -= 2; new_middle_ddp -= 2; new_middle_lvp -= 4; old_middle_dvp -= 2; old_middle_ddp -= 2; old_middle_lvp -= 4; old_middle_nsdap += 2; new_middle_nsdap += 2; rural_dnvp -= 3; dvp_right += 3; ddp_right += 1.5; liberal_cooperation += 0.5; bourgeois_cooperation += 1; lvp_right += 3
 
