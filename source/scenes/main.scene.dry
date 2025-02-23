@@ -656,7 +656,7 @@ if (Q.dstp_formed && Q.next_election_time - Q.time == 1 && Q.time !== Q.last_tim
 }
 if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_10_trigger += 1;
-    if (Q.flavour_10_trigger == 2) {
+    if (Q.flavour_10_trigger == 1) {
         Q.flavour_10_trigger_time = Q.time;
         Q.flavour_10_effect_trigger = 1;
     }
@@ -666,7 +666,7 @@ if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament &&
 }
 if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_11_trigger += 1;
-    if (Q.flavour_11_trigger == 2) {
+    if (Q.flavour_11_trigger == 1) {
         Q.flavour_11_trigger_time = Q.time;
         Q.flavour_11_effect_trigger = 1;
     }
@@ -705,35 +705,6 @@ if (Q.flavour_15_trigger && Q.time == Q.flavour_15_trigger_time + 4 && Q.time !=
     }
 }
 Q.last_time_updated = Q.time;
-!}
-on-display: {!
-var button = document.createElement('button');
-button.style.backgroundColor = '#dddddd';
-button.className = 'tab_button';
-button.id = 'news_tab';
-button.textContent = 'View Right-Wing News';
-button.onclick = function () {
-    toggleNews();
-};
-var contentDiv = document.getElementById('content');
-contentDiv.appendChild(button);
-const elements = document.querySelectorAll('.dnvp');
-let hasTextContent = false;
-elements.forEach(function (element) {
-    if (element.textContent.trim() !== '') {
-        hasTextContent = true;
-    }
-});
-if (hasTextContent) {
-    button.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // New color
-} else {
-    button.style.backgroundColor = '#dddddd'; // Original color
-}
-document.querySelectorAll('p').forEach(p => {
-  if (!p.textContent.trim()) {
-    p.remove(); // Remove the element
-  }
-});
 !}
 max-cards: 4
 
