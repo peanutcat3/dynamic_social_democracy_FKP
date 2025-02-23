@@ -35,22 +35,6 @@ for (var c of Q.classes) {
         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
     }
-    for (var party of Q.parties) {
-        if (class_votes >= 100) {
-            if (class_votes >= 150) {
-                Q[c+'_'+party] *= 0.99;
-                if (class_votes >= 200) {
-                    Q[c+'_'+party] *= 0.98;
-                    if (class_votes >= 250) {
-                        Q[c+'_'+party] *= 0.96;
-                    }
-                }
-            }
-            if (Q.year >= 1934) {
-                Q[c+'_'+party] *= 0.98;
-            }
-        }
-    }
 }
 // calculate support for each of the parties
 var total_support = 0; 
@@ -135,19 +119,6 @@ Q.loyal_prussia = Q.prussian_police_loyalty*Q.prussia_force;
 Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
 Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
 Q.kvp_r = Math.round(Q.kvp_r * 10) / 10
-
-if (Q.dvp_left + Q.dvp_right >= 35) {
-    Q.dvp_left *= 0.9;
-    Q.dvp_right *= 0.9;
-}
-if (Q.ddp_left + Q.ddp_right >= 20) {
-    Q.ddp_left *= 0.9;
-    Q.ddp_right *= 0.9;
-}
-if (Q.lvp_left + Q.lvp_right >= 35) {
-    Q.lvp_left *= 0.9;
-    Q.lvp_right *= 0.9;
-}
 
 // 1. update dates
 if (Q.month_actions >= 1) {
@@ -367,6 +338,18 @@ if (Q.month_actions >= 1) {
     if (Q.sapd_formed == 1 && Q.pro_republic >= 75 && Q.kpd_party_leader != "Conciliators") {
         Q.workers_kpd -= 3/12;
         Q.workers_sapd += 3/12;
+    }
+    if (Q.dvp_left + Q.dvp_right >= 35) {
+        Q.dvp_left *= 0.9;
+        Q.dvp_right *= 0.9;
+    }
+    if (Q.ddp_left + Q.ddp_right >= 20) {
+        Q.ddp_left *= 0.9;
+        Q.ddp_right *= 0.9;
+    }
+    if (Q.lvp_left + Q.lvp_right >= 35) {
+        Q.lvp_left *= 0.9;
+        Q.lvp_right *= 0.9;
     }
 
     ///////////////////////////// change party support based on pro_republic
