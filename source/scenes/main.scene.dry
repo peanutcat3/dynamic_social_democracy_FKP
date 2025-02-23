@@ -74,7 +74,7 @@ if (Q.dstp_formed && Q.next_election_time - Q.time == 1 && Q.time !== Q.last_tim
 }
 if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_10_trigger += 1;
-    if (Q.flavour_10_trigger == 2) {
+    if (Q.flavour_10_trigger == 1) {
         Q.flavour_10_trigger_time = Q.time;
         Q.flavour_10_effect_trigger = 1;
     }
@@ -84,7 +84,7 @@ if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament &&
 }
 if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_11_trigger += 1;
-    if (Q.flavour_11_trigger == 2) {
+    if (Q.flavour_11_trigger == 1) {
         Q.flavour_11_trigger_time = Q.time;
         Q.flavour_11_effect_trigger = 1;
     }
