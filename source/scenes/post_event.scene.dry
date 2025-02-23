@@ -2100,29 +2100,32 @@ if (Q.bruning_time > 1) {
 }
 
 // total middle class death cuz bruning cut salaries n stuff
-if (Q.flavour_13_trigger == 1 && Q.flavour_13_trigger_time == Q.time) {
+if (Q.flavour_13_trigger >= 1 && Q.flavour_13_trigger_time < Q.time && !Q.bruning_austerity_seen) {
     Q.new_middle_nsdap += Q.new_middle_ddp*0.3
     Q.new_middle_nsdap += Q.new_middle_dvp*0.3
     Q.new_middle_ddp *= 0.7;
     Q.new_middle_dvp *= 0.7;
-} else if (Q.flavour_14_trigger == 1 && Q.flavour_14_trigger_time == Q.time) {
+    Q.bruning_austerity_seen = 1;
+} else if (Q.flavour_14_trigger >= 1 && Q.flavour_14_trigger_time < Q.time && !Q.bruning_austerity_seen) {
     Q.new_middle_ddp *= 1.2;
     Q.new_middle_dvp *= 1.2;
     Q.new_middle_nsdap -= Q.new_middle_ddp*0.2;
     Q.new_middle_nsdap -= Q.new_middle_dvp*0.2;
+    Q.bruning_austerity_seen = 1;
 }
 
-if (Q.flavour_15_trigger == 1 && Q.flavour_15_trigger_time == Q.time) {
+if (Q.flavour_15_trigger >= 1 && Q.flavour_15_trigger_time < Q.time && !Q.cnblp_defect) {
     Q.bruning_coalition_loss += Q.cnblp_r;
     Q.cnblp_defect = 1;
 }
 
 // total rural death cuz nation shifts right, cnblp voters defect as well
-if (Q.flavour_16_trigger == 1 && Q.flavour_16_trigger_time == Q.time) {
+if (Q.flavour_16_trigger >= 1 && Q.flavour_16_trigger_time < Q.time && Q.cnblp_defect == 1) {
     Q.rural_nsdap += rural_other*0.4;
     Q.rural_other *= 0.6;
     Q.nsdap_r += Q.other_r*0.05;
     Q.other_r *= 0.95;
+    Q.cnblp_defect = 2;
 }
 
 if (!Q.nazi_peak_triggered) {
