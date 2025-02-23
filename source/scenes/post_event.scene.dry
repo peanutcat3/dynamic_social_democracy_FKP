@@ -2030,6 +2030,8 @@ if (Q.president == "Hindenburg" && Q.chancellor == "Brüning" && !Q.spd_in_gover
 
 if (Q.bruning_time == 1) {
     Q.hindenburg_angry_bruning = 0;
+    Q.bruning_coalition = Q.neo_weimar_coalition;
+    if (Q.dnvp_ideology == "Moderate") Q.bruning_coalition = Q.cordon_sanitaire;
 }
 
 if (Q.bruning_time > 1) {
@@ -2109,10 +2111,16 @@ if (Q.flavour_13_trigger == 1 && Q.flavour_13_trigger_time == Q.time) {
     Q.new_middle_nsdap -= Q.new_middle_dvp*0.2;
 }
 
+if (Q.flavour_15_trigger == 1 && Q.flavour_15_trigger_time == Q.time) {
+    Q.bruning_coalition -= Q.cnblp_r;
+}
+
 // total rural death cuz nation shifts right, cnblp voters defect as well
-if (Q.flavour_16_trigger == 1 && Q.flavour_13_trigger_time == Q.time) {
+if (Q.flavour_16_trigger == 1 && Q.flavour_16_trigger_time == Q.time) {
     Q.rural_nsdap += rural_other*0.4;
     Q.rural_other *= 0.6;
+    Q.nsdap_r += Q.other_r*0.05;
+    Q.other_r *= 0.95;
 }
 
 if (!Q.nazi_peak_triggered) {
