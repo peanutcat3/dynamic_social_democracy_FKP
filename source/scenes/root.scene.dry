@@ -779,53 +779,13 @@ Q.nazi_peak = 20;
 Q.dnvp_westarp = 1;
 Q.ddp_factionless_time = 0;
 Q.wp_conflict_time = 0;
+Q.bruning_austerity_limited = 0;
 
 // flavour text stuff
-Q.flavour_0_trigger = 0;
-Q.flavour_1_trigger = 0;
-Q.flavour_2_trigger = 0;
-Q.flavour_3_trigger = 0;
-Q.flavour_4_trigger = 0;
-Q.flavour_5_trigger = 0;
-Q.flavour_6_trigger = 0;
-Q.flavour_7_trigger = 0;
-Q.flavour_8_trigger = 0;
-Q.flavour_9_trigger = 0;
-Q.flavour_10_trigger = 0;
-Q.flavour_11_trigger = 0;
-Q.flavour_12_trigger = 0;
-Q.flavour_13_trigger = 0;
-Q.flavour_14_trigger = 0;
-Q.flavour_15_trigger = 0;
-Q.flavour_16_trigger = 0;
-Q.flavour_17_trigger = 0;
-Q.flavour_18_trigger = 0;
-Q.flavour_19_trigger = 0;
-Q.flavour_20_trigger = 0;
-Q.flavour_21_trigger = 0;
-
-Q.flavour_0_trigger_time = 0;
-Q.flavour_1_trigger_time = 0;
-Q.flavour_2_trigger_time = 0;
-Q.flavour_3_trigger_time = 0;
-Q.flavour_4_trigger_time = 0;
-Q.flavour_5_trigger_time = 0;
-Q.flavour_6_trigger_time = 0;
-Q.flavour_7_trigger_time = 0;
-Q.flavour_8_trigger_time = 0;
-Q.flavour_9_trigger_time = 0;
-Q.flavour_10_trigger_time = 0;
-Q.flavour_11_trigger_time = 0;
-Q.flavour_12_trigger_time = 0;
-Q.flavour_13_trigger_time = 0;
-Q.flavour_14_trigger_time = 0;
-Q.flavour_15_trigger_time = 0;
-Q.flavour_16_trigger_time = 0;
-Q.flavour_17_trigger_time = 0;
-Q.flavour_18_trigger_time = 0;
-Q.flavour_19_trigger_time = 0;
-Q.flavour_20_trigger_time = 0;
-Q.flavour_21_trigger_time = 0;
+for (let i = 0; i <= 100; i++) {
+    Q[`flavour_${i}_trigger`] = 0;
+    Q[`flavour_${i}_trigger_time`] = 0;
+}
 
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels

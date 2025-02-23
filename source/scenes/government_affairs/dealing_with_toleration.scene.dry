@@ -13,6 +13,7 @@ We are currently acting as external support to the government of Chancellor [+ c
 
 - @break_toleration
 - @urge_against_austerity
+- @urge_against_austerity_limited
 - @improve_relations
 - @new_grand_coalition
 - @stay_course: Stay the course, for stability's sake.
@@ -37,10 +38,10 @@ New elections have been set for [+ next_election_month : month +] [+ next_electi
 title: Urge the coalition against austerity politics, and to increase social spending.
 choose-if: budget >= 1
 unavailable-subtitle: This can only happen with a budget surplus.
-go-to: urge_success if z_relation >= 40 and ((ddp_relation >= 40 and not lvp_formed) or (lvp_relation >= 40 and lvp_formed)); urge_failure if z_relation < 40 or ((ddp_relation < 40 and not lvp_formed) or (lvp_relation < 40 and lvp_formed))
+go-to: urge_success if z_relation >= 45 and ((ddp_relation >= 40 and not lvp_formed) or (lvp_relation >= 40 and lvp_formed)); urge_failure if z_relation < 45 or ((ddp_relation < 40 and not lvp_formed) or (lvp_relation < 40 and lvp_formed))
 
 @urge_success
-on-arrival: welfare += 1; budget -= 1; workers_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); z_relation -= 3; dvp_relation -= 3; ddp_relation -= 3; lvp_relation -= 3; reformist_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; dvp_right += 1; ddp_right += 0.5; lvp_right += 1; hindenburg_angry_bruning += 10
+on-arrival: welfare += 1; budget -= 1; workers_spd += 5*(1-dissent); unemployed_spd += 5*(1-dissent); new_middle_ddp += 1; old_middle_ddp += 1; new_middle_dvp += 1.5; old_middle_dvp += 1.5; new_middle_other += 1.5; old_middle_other += 1.5; z_relation -= 3; dvp_relation -= 3; ddp_relation -= 3; lvp_relation -= 3; reformist_dissent -= 5; center_dissent -= 5; labor_dissent -= 5; dvp_right += 1; ddp_right += 0.5; lvp_right += 1; hindenburg_angry_bruning += 10
 
 We have successfully urged the coalition parties to increase social spending! Unfortunately, the center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
 
@@ -49,6 +50,16 @@ on-arrival: z_relation -= 3; dvp_relation -= 3; ddp_relation -= 3; lvp_relation 
 
 Unfortunately, our negotiations have met with failure. The center-right parties increasingly see us as a nuisance, and might not wish to continue these negotiations.
 
+@urge_against_austerity_limited
+title: Attempt to pressure Brüning to curb the worse excesses of his austerity policies. 
+go-to: urge_success if z_relation >= 35; urge_failure if z_relation < 35
+
+@urge_success_limited
+on-arrival: bruning_austerity_limited += 1; workers_spd += 3*(1-dissent); unemployed_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent) if bruning_austerity_limited >= 3; new_middle_ddp += 1; old_middle_ddp += 1; new_middle_dvp += 1; old_middle_dvp += 1; new_middle_other += 1; old_middle_other += 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; z_relation -= 3; reformist_dissent -= 3; center_dissent -= 3; labor_dissent -= 3; dvp_right += 1; ddp_right += 0.5; lvp_right += 1; hindenburg_angry_bruning += 5
+
+We have successfully pressured Brüning to tone down the severity of his austerity policies in his emergency decrees. Unfortunately, the center-right parties increasingly see us as a nuisance, and will attempt to force Brüning to form a majority coalition with the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> instead.
+
+[? if bruning_austerity_limited == 1: We have successfully prevented Brüning from decreasing taxes on high earners, lessening the burden of compensatory tax increases on the lower strata. ?][? if bruning_austerity_limited == 2: We have successfully pressured Brüning into attempting to appease us by reinstating the 40-hour workweek, however wages themselves remains suboptimal. ?][? if bruning_austerity_limited >= 3: We have successfully pressured Brüning in reversing some salary cuts to civil servants. ?]
 
 @improve_relations
 title: Improve relations with the parties of the coalition.

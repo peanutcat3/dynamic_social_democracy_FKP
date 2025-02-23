@@ -685,10 +685,10 @@ if (Q.month_actions >= 1) {
         Q.rural_z += 1/12;
         Q.catholics_kvp -= 2/12;
         if (!Q.works_program) { 
-            Q.old_middle_dvp -= 6/12;
-            Q.new_middle_dvp -= 4/12;
-            Q.new_middle_ddp -= 2/12;
-            Q.old_middle_ddp -= 2/12;
+            Q.old_middle_dvp -= 5/12;
+            Q.new_middle_dvp -= 3/12;
+            Q.new_middle_ddp -= 1/12;
+            Q.old_middle_ddp -= 1/12;
             Q.rural_dvp -= 2/12;
             Q.old_middle_lvp -= 8/12;
             Q.new_middle_lvp -= 8/12;
@@ -1331,7 +1331,10 @@ if (Q.wp_conflict_time == 8) {
     Q.new_middle_other *= 0.35;
     Q.old_middle_nsdap += Q.old_middle_other*0.65;
     Q.old_middle_other *= 0.35;
+    Q.new_middle_ddp += 1;
+    Q.old_middle_ddp += 2;
     Q.pro_republic -= Q.unemployed / 10;
+    Q.ddp_right += 1;
 }
 
 // historical route, ddp is right-wing and doesn't care about socialist cooperation as much, bourgeois parliament with ddp

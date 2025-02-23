@@ -168,6 +168,13 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && Q.time !=
         Q.flavour_21_trigger_shown = 1;
     }
 }
+if (Q.emergency_decree_seen && Q.dvp_leader == "Dingeldey") {
+    Q.flavour_22_trigger += 1; 
+    if (Q.flavour_22_trigger == 1 && !Q.flavour_21_trigger_shown) {
+        Q.flavour_22_trigger_time = Q.time;
+        Q.flavour_22_trigger_shown = 1;
+    }
+}
 Q.last_time_updated = Q.time;
 !}
 on-display: {!
@@ -583,7 +590,7 @@ max-cards: 3
 
 {!<p class="dnvp">!}[? if flavour_17_trigger and flavour_17_trigger_time == time: The defection of the northern wing’s Reichstag members from the <span style="color: #007A00;">German Peasants' Party</span> to the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has effectively ended the party as a national political force. All that remains is the original <span style="color: #38C538;">Bavarian Peasants’ League</span>, which, amid a prevailing mood of resignation, is expected to secure only a fraction of its former support in the next election, as most peasants turn further to the right in search of a solution to Germany's crisis. ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if flavour_19_trigger and flavour_19_trigger_time == time: The <span style="color: #b8996f;">**WP**</span> has issued a vote of no confidence against Brüning, formally ending any possibility of reconciliation with his government and joining the growing ranks of once-supportive bourgeois parties now in opposition. This decision comes after the party’s sole minister resigned under pressure from its anti-Brüning right wing. He is not alone in stepping down, the party’s vice chairman has also resigned in protest against Drewitz’s "one-man dictatorship," further accusing him of financial impropriety and other shenanigans. The internal strife has escalated to such an extent that numerous local branches have defected, effectively ending the <span style="color: #b8996f;">**WP**</span> as a viable national political force. ?]{!</p>!}
+{!<p class="dnvp">!}[? if flavour_19_trigger and flavour_19_trigger_time == time: The <span style="color: #b8996f;">**WP**</span> has issued a vote of no confidence against Brüning, formally ending any possibility of reconciliation with his government and joining the growing ranks of once-supportive bourgeois parties now in opposition. This decision comes after the party’s sole minister resigned under pressure from its anti-Brüning right wing. He is not alone in stepping down, the party’s vice chairman Otto Colosser and effective propagandist has also resigned in protest against Drewitz’s "one-man dictatorship," further accusing him of financial impropriety and other shenanigans. The internal strife has escalated to such an extent that numerous local branches have defected, effectively ending the <span style="color: #b8996f;">**WP**</span> as a viable national political force. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 2 and dstp_formed and not lvp_formed and not lvp_timer_2_trigger : Most local organizations that have formerly belonged to the <span style="color: #D3C24D;">**DDP**</span> are extremely hesitant about becoming involved in the new party, and many of the <span style="color: #D3C24D;">**DDP**</span> auxiliary organizations, such as their youth and women's groups have collapsed and need to be built anew. All of this combined with the heavy psychological toll under which the leaders of the <span style="color: #D3C24D;">**State Party**</span> were already laboring as a result of the deepening economic crisis to produce a mood of growing resignation and pessimism about the future of the party.?]{!</p>!}
 
@@ -600,6 +607,12 @@ max-cards: 3
 {!<p class="other">!}[? if year = 1931 and month = 6 and dstp_formed and not lvp_formed and not lvp_timer_2_trigger : The organizational malaise of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is evident in its dwindling membership. Across the country, anywhere from 30% to 60% of those who had belonged to the <span style="color: #D3C24D;">**DDP**</span> in the summer of 1930 had failed to join its successor by the same time this year. In some urban areas, the party’s shift to the right is estimated to have cost it more than half of its former supporters. In states without a strong liberal tradition, the situation is so dire that even the local branches that had once championed the formation of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> the previous year all but recommended conceding defeat and dissolving the party entirely. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 6 : The first elections of the Second Spanish Republic has been held, with it a great victory for the <span style="color: #EF1C27;">Spanish Socialists</span> and the <span style="color: #E25822;">Republican Left</span>. Together, they've formed a government with Manuel Azaña as Prime Minister. ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_20_trigger and flavour_20_trigger_time == time: The leaders of the <span style="color: #b8996f;">**WP**</span> are struggling desperately to repair the damage caused by the conflict between Drewitz and Colosser, but their efforts are repeatedly undermined by renewed demands for Drewitz’s resignation. In response, Drewitz took his case before the national party congress this month. Backed by strong support from the party’s pro-Brüning faction, he successfully secured re-election as party chairman. Meanwhile, the leaders of several district organizations that had broken away months earlier have returned to the fold just in time for the congress. Perhaps the party can survive after all? ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_22_trigger and flavour_22_trigger_time == time: Dingeldey of the <span style="color: #C0A054;">**DVP**</span> is angry... bruning you suck dude! stop with the social and democracy. ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_21_trigger and flavour_21_trigger_time == time: The controversy surrounding <span style="color: #b8996f;">**WP**</span> leader Hermann Drewitz’s scandals has finally forced him to relinquish the party chairmanship to prevent an even more damaging secession than the one that occurred months earlier. [? if not lvp_formed: Many of their Reichstag members, including Otto Colosser, have defected to the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, which is seeking to capitalize on their internal discord. ?]With ongoing internal strife and resignations of its most effective leaders, the <span style="color: #b8996f;">**WP**</span> is barely able to function as a political force anymore. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 9: The Japanese have invaded Manchuria following the Mukden incident. ?]{!</p>!}
 
@@ -802,6 +815,13 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && Q.time !=
     if (Q.flavour_21_trigger == 1 && !Q.flavour_21_trigger_shown) {
         Q.flavour_21_trigger_time = Q.time;
         Q.flavour_21_trigger_shown = 1;
+    }
+}
+if (Q.emergency_decree_seen && Q.dvp_leader == "Dingeldey") {
+    Q.flavour_22_trigger += 1; 
+    if (Q.flavour_22_trigger == 1 && !Q.flavour_21_trigger_shown) {
+        Q.flavour_22_trigger_time = Q.time;
+        Q.flavour_22_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1239,7 +1259,9 @@ max-cards: 4
 
 {!<p class="dnvp">!}[? if flavour_20_trigger and flavour_20_trigger_time == time: The leaders of the <span style="color: #b8996f;">**WP**</span> are struggling desperately to repair the damage caused by the conflict between Drewitz and Colosser, but their efforts are repeatedly undermined by renewed demands for Drewitz’s resignation. In response, Drewitz took his case before the national party congress this month. Backed by strong support from the party’s pro-Brüning faction, he successfully secured re-election as party chairman. Meanwhile, the leaders of several district organizations that had broken away months earlier have returned to the fold just in time for the congress. Perhaps the party can survive after all? ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if flavour_21_trigger and flavour_21_trigger_time == time: The controversy surrounding <span style="color: #b8996f;">WP</span> leader Hermann Drewitz’s scandals has finally forced him to relinquish the party chairmanship to prevent an even more damaging secession than the one that occurred months earlier. With ongoing internal strife and resignations of its most effective leaders, the <span style="color: #b8996f;">**WP**</span> is barely able to function as a political force anymore. ?]{!</p>!}
+{!<p class="dnvp">!}[? if flavour_22_trigger and flavour_22_trigger_time == time: Dingeldey of the <span style="color: #C0A054;">**DVP**</span> is angry... bruning you suck dude! stop with the social and democracy. ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_21_trigger and flavour_21_trigger_time == time: The controversy surrounding <span style="color: #b8996f;">**WP**</span> leader Hermann Drewitz’s scandals has finally forced him to relinquish the party chairmanship to prevent an even more damaging secession than the one that occurred months earlier. [? if not lvp_formed: Many of their Reichstag members, including Otto Colosser, have defected to the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, which is seeking to capitalize on their internal discord. ?]With ongoing internal strife and resignations of its most effective leaders, the <span style="color: #b8996f;">**WP**</span> is barely able to function as a political force anymore. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 9: The Japanese have invaded Manchuria following the Mukden incident. ?]{!</p>!}
 
