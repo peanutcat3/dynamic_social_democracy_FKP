@@ -1291,17 +1291,17 @@ if (Q.year >= 1930 && Q.bruning_time >= 8 && Q.dnvp_split_2 && !Q.kvp_cnblp_sist
 
 // total rural death cuz nation shifts right, cnblp voters defect as well
 if (Q.cnblp_defect_pt2_time == Q.time && Q.cnblp_defect == 1) {
-    Q.rural_nsdap += Q.rural_other*0.7;
-    Q.rural_other *= 0.3;
+    Q.rural_nsdap += Q.rural_other*0.75;
+    Q.rural_other *= 0.25;
     Q.nsdap_r += Q.other_r*0.05;
     Q.other_r *= 0.95;
     Q.cnblp_defect = 2;
-    Q.pro_republic -= cnblp_votes;
+    Q.pro_republic -= Q.cnblp_votes;
 }
 
 if (Q.flavour_17_trigger_time == Q.time) {
-    Q.rural_nsdap += Q.rural_other*0.2
-    Q.rural_other *= 0.8;
+    Q.rural_nsdap += Q.rural_other*0.3;
+    Q.rural_other *= 0.3;
     Q.pro_republic -= Q.unemployed / 10;
 }
 
