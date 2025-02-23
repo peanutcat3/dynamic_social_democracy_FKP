@@ -90,19 +90,19 @@ if (Q.bruning_time == 1 && Q.spd_toleration && Q.year >= 1930) {
         Q.flavour_12_trigger_time = Q.time;
     }
 }
-if (Q.bruning_time == 8 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.year >= 1930) {
+if (Q.bruning_time == 12 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.year >= 1930) {
     Q.flavour_13_trigger += 1;
     if (Q.flavour_13_trigger == 1) {
         Q.flavour_13_trigger_time = Q.time;
     }
 }
-if (Q.bruning_time == 8 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && Q.year >= 1930) {
+if (Q.bruning_time == 12 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && Q.year >= 1930) {
     Q.flavour_14_trigger += 1;
     if (Q.flavour_14_trigger == 1) {
         Q.flavour_14_trigger_time = Q.time;
     }
 }
-if (Q.year >= 1930 && Q.bruning_time >= 5 && Q.dnvp_split_2 && !Q.kvp_cnblp_sister && Q.time_since_election < 6 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament) {
+if (Q.year >= 1930 && Q.bruning_time >= 8 && Q.dnvp_split_2 && !Q.kvp_cnblp_sister && Q.time_since_election < 6 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament) {
     Q.flavour_15_trigger += 1;
     if (Q.flavour_15_trigger == 1) {
         Q.flavour_15_trigger_time = Q.time;
@@ -663,19 +663,19 @@ if (Q.bruning_time == 1 && Q.spd_toleration && Q.year >= 1930) {
         Q.flavour_12_trigger_time = Q.time;
     }
 }
-if (Q.bruning_time == 8 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.year >= 1930) {
+if (Q.bruning_time == 12 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.year >= 1930) {
     Q.flavour_13_trigger += 1;
     if (Q.flavour_13_trigger == 1) {
         Q.flavour_13_trigger_time = Q.time;
     }
 }
-if (Q.bruning_time == 8 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && Q.year >= 1930) {
+if (Q.bruning_time == 12 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && Q.year >= 1930) {
     Q.flavour_14_trigger += 1;
     if (Q.flavour_14_trigger == 1) {
         Q.flavour_14_trigger_time = Q.time;
     }
 }
-if (Q.year >= 1930 && Q.bruning_time >= 5 && Q.dnvp_split_2 && !Q.kvp_cnblp_sister && Q.time_since_election < 6 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament) {
+if (Q.year >= 1930 && Q.bruning_time >= 8 && Q.dnvp_split_2 && !Q.kvp_cnblp_sister && Q.time_since_election < 6 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament) {
     Q.flavour_15_trigger += 1;
     if (Q.flavour_15_trigger == 1) {
         Q.flavour_15_trigger_time = Q.time;
