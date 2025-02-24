@@ -39,9 +39,8 @@ if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time == 1 && !Q.
 }
 if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenburg" && Q.time !== Q.last_time_updated) {
     Q.flavour_4_trigger += 1;
-    if (Q.flavour_4_trigger && !Q.flavour_4_trigger_shown) {
+    if (Q.flavour_4_trigger == 1) {
         Q.flavour_4_trigger_time = Q.time;
-        Q.flavour_4_trigger_shown = 1;
     }
     if (Q.flavour_4_trigger >= 3) {
         Q.flavour_4_trigger = 0;
@@ -692,9 +691,8 @@ if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time == 1 && !Q.
 }
 if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenburg" && Q.time !== Q.last_time_updated) {
     Q.flavour_4_trigger += 1;
-    if (Q.flavour_4_trigger && !Q.flavour_4_trigger_shown) {
+    if (Q.flavour_4_trigger == 1) {
         Q.flavour_4_trigger_time = Q.time;
-        Q.flavour_4_trigger_shown = 1;
     }
     if (Q.flavour_4_trigger >= 3) {
         Q.flavour_4_trigger = 0;
@@ -823,9 +821,16 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && Q.time !=
 }
 if (Q.emergency_decree_seen && Q.dvp_leader == "Dingeldey") {
     Q.flavour_22_trigger += 1; 
-    if (Q.flavour_22_trigger == 1 && !Q.flavour_21_trigger_shown) {
+    if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
         Q.flavour_22_trigger_time = Q.time;
         Q.flavour_22_trigger_shown = 1;
+    }
+}
+if (Q.bruning_time == 9 && Q.dvp_leader == "Dingeldey") {
+    Q.flavour_23_trigger += 1; 
+    if (Q.flavour_23_trigger == 1 && !Q.flavour_23_trigger_shown) {
+        Q.flavour_23_trigger_time = Q.time;
+        Q.flavour_23_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1027,7 +1032,7 @@ max-cards: 4
 
 {!<p class="dnvp">!}[? if year = 1930 and month = 1 and dnvp_historical_1929 and (peoples_party or weimar_coalition >= 50 or stegerwald_path or (z_leader == "Joos" and dvp_reform)): The "Young Conservative" faction that split from the <span style="color: #3E88B3;">**DNVP**</span> a few months ago has officially established the "<span style="color: #0087DC;">Conservative People's Party</span>" (<span style="color: #0087DC;">**KVP**</span>). One of their biggest backers is General Kurt von Schleicher, a close advisor of President Hindenburg and a militarist. They accepted the funds from Schleicher due to [? if stegerwald_path and z_leader == "Stegerwald": a drought in contributions from German industry, despite concerns over independence. ?][? if (z_leader == "Joos" and dvp_reform) or z_leader == "Kaiser": the conditional backing of German industry, who no longer have a home in the German party system, despite concerns over independence. ?][? if (weimar_coalition >= 50 or peoples_party) and not stegerwald_path and not (z_leader == "Joos" and dvp_reform): a desperation to combat our popularity, despite concerns over independence. ?] The funds were too substantial to ignore, silencing internal dissent among the other <span style="color: #3E88B3;">**DNVP**</span> splinter groups and uniting the conservative forces into a single entity. ?]{!</p>!}
 
-{!<p class="both">!}[? if flavour_4_trigger and flavour_4_trigger_time == time: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
+{!<p class="both">!}[? if flavour_4_trigger and flavour_4_trigger_time == time: President Hindenburg is rumoured to be disenchanted with the current <span style="color: #c00000;">socialist</span> government and may be working to find another government without our participation through secret negotiations with one of our coalition partners. If a crisis were to arise, it would certainly be used as a pretext to dismiss us from the government. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1930 and month = 1 and pro_republic < 65 and ddp_ideology != "Left" and z_ideology == "Right" and not lvp_formed: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> along with other bourgeois parties have increasingly been abandoning coalitions with us on the local level in favor of forming *Bürgerblocks* instead. We have lost control of prominent state governments. ?]{!</p>!}
 
