@@ -3,7 +3,7 @@ subtitle: The Foreign Ministry seeks closer ties to Austria...
 new-page: true
 on-arrival: customs_union_seen = 1
 tags: event
-view-if: year = 1931 and month >= 4 and foreign_minister_party != "SPD" and foreign_minister_party != "KPD" and customs_union == 0 and not eu
+view-if: year = 1931 and month >= 3 and foreign_minister_party != "SPD" and foreign_minister_party != "KPD" and customs_union == 0 and not eu
 max-visits: 1
 
 
@@ -22,7 +22,7 @@ However, the Allies, especially <span style="color: #002654;">France</span>, are
 - @end_toleration: Attempt to stop this arrangement!
 
 @let_it_happen
-on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2
+on-arrival: banking_crisis_timer = 4; customs_union = 1; west_relation -= 2; east_relation -= 2
 
 The customs union has been formed. Immediately, <span style="color: #002654;">France</span> and other neighboring countries lodge their protests. The longer-term response is yet to be seen.
 
@@ -47,6 +47,6 @@ With the support of the <span style="color: #700000;">**KPD**</span>, we have su
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @end_toleration_fail
-on-arrival: banking_crisis_timer = 2; customs_union = 1; west_relation -= 2; east_relation -= 2
+on-arrival: banking_crisis_timer = 4; customs_union = 1; west_relation -= 2; east_relation -= 2
 
 Unfortunately, the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> parties united with the government to outvote us. The customs union will be formed.
