@@ -2,14 +2,14 @@ title: Prussian Landtag referendum
 subtitle: A petition for the dissolution of the Landtag is launched.
 new-page: true
 tags: event
-view-if: year = 1931 and month >= 3 and dnvp_leader != "Treviranus" and dnvp_leader != "Lambach" and next_election_time_prussia - time >= 12
+view-if: year = 1931 and month >= 3 and next_election_time_prussia - time >= 12 and spd_prussia
 max-visits: 1
 
 = Prussian Landtag referendum
 
 Those who want a soviet Prussia or a fascist Prussia and thus fratricidal war in their own country should vote yes in the referendum; those who, on the other hand, are in favor of the social and democratic expansion of the German republic and the Free State of Prussia should stay away from the referendum. - Random government employee, August 6th.
 
-Something something something, i need to do more research, different stuff for different dnvp leaders
+Something something something, i need to do more research, different stuff for different dnvp leaders, something about cracking down on Stahlhelm that initiated allat
 
 - @PLR_launched: 
 
@@ -18,3 +18,15 @@ title: u/Con-All please save us...
 on-arrival: pro_republic -= 3; PLR_launched = 1;
 
 referendum time
+
+do you wanna crack down on these peeps
+
+- @freedom: nah
+- @kill: kill the sa and Stahlhelm burning i beg
+
+@freedom
+
+we would be the true social fascists if we cracked down on the communists who support this referendum with hitler
+
+@kill
+go-to: dealing_with_toleration.urge_paramilitary

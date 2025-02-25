@@ -659,6 +659,8 @@ if (Q.month_actions >= 1) {
         Q.rural_lvp -= 5/12;
         Q.workers_other -= 2/12;
         Q.workers_nsdap += 2/12;
+        Q.old_middle_ddp -= 1/12;
+        Q.new_middle_ddp -= 1/12;
         if (Q.bruning_time) {
             Q.old_middle_ddp -= 2/12;
             Q.new_middle_ddp -= 2/12;
@@ -682,8 +684,8 @@ if (Q.month_actions >= 1) {
         Q.rural_z += 1/12;
         Q.catholics_kvp -= 2/12;
         if (!Q.works_program) { 
-            Q.old_middle_dvp -= 5/12;
-            Q.new_middle_dvp -= 3/12;
+            Q.old_middle_dvp -= 6/12;
+            Q.new_middle_dvp -= 4/12;
             Q.new_middle_ddp -= 1/12;
             Q.old_middle_ddp -= 1/12;
             Q.rural_dvp -= 2/12;
@@ -1283,6 +1285,7 @@ if (Q.total_bruning_time >= 12 && !Q.in_center_right_coalition && !Q.in_right_co
 
 if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && Q.time_since_election < 6 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.cnblp_defect) {
     Q.bruning_coalition_loss += Q.cnblp_r;
+    Q.bourgeois_cooperation -= 2;
     Q.cnblp_defect = 1;
     Q.cnblp_defect_pt2_time = Q.time + 4;
     Q.pro_republic -= Q.unemployed / 10;
@@ -1295,6 +1298,7 @@ if (Q.cnblp_defect_pt2_time == Q.time && Q.cnblp_defect == 1) {
     Q.nsdap_r += Q.other_r*0.05;
     Q.other_r *= 0.95;
     Q.cnblp_defect = 2;
+    Q.bourgeois_cooperation -= 1;
     Q.pro_republic -= Q.cnblp_votes;
 }
 
@@ -1316,6 +1320,7 @@ if (Q.wp_conflict_time_trigger) Q.wp_conflict_time += 1;
 if (Q.wp_conflict_time == 2) {
     Q.bruning_coalition_loss += Q.wp_r;
     Q.wp_defect = 1;
+    Q.bourgeois_cooperation -= 3;
     Q.new_middle_nsdap += Q.new_middle_other*0.5;
     Q.new_middle_other *= 0.5;
     Q.old_middle_nsdap += Q.old_middle_other*0.5;
@@ -1332,6 +1337,19 @@ if (Q.wp_conflict_time == 8) {
     Q.old_middle_ddp += 2;
     Q.pro_republic -= Q.unemployed / 10;
     Q.ddp_right += 1;
+}
+
+if (Q.year == 1931 && Q.month == 4 && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
+    Q.dvp_right += 3;
+    Q.liberal_cooperation -= 3;
+    Q.pro_republic -= Q.dvp_votes;
+}
+
+if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
+    Q.dvp_right += 3;
+    Q.pro_republic -= 3;
+    Q.new_middle_dvp -= 4;
+    Q.old_middle_dvp -= 2;
 }
 
 // historical route, ddp is right-wing and doesn't care about socialist cooperation as much, bourgeois parliament with ddp
@@ -2167,13 +2185,10 @@ if (!Q.nazi_peak_triggered) {
     if (Q.year >= 1932) {
         Q.nazi_peak -= (Q.other_votes + Q.dvp_votes + Q.ddp_votes + Q.dnvp_votes + Q.dnf_votes + Q.lvp_votes) / 2
     }
-    if (Q.nsdap_r >= 25) {
+    if (Q.nsdap_r >= 30) {
         Q.nazi_peak -= 5;
-    } else if (Q.nsdap_r >= Q.nsdap_votes) {
-        Q.nazi_peak -= ((Q.nsdap_votes - Q.nsdap_r)*-1);
-    }
-    if (Q.nsdap_votes >= (Q.nsdap_r + 5)) {
-        Q.nazi_peak += 5;
+    } else if (Q.nsdap_votes >= Q.nsdap_r) {
+        Q.nazi_peak -= (Q.nsdap_votes - Q.nsdap_r) / 3;
     }
     if (Q.chancellor == "Papen" && Q.dnvp_ideology == "Radical") {
         Q.nazi_peak -= (Q.dnvp_votes / 2);

@@ -63,12 +63,12 @@ We have successfully pressured Brüning to tone down the severity of his austeri
 [? if bruning_austerity_limited == 1: We have successfully prevented Brüning from decreasing taxes on high earners, lessening the burden of compensatory tax increases on the lower strata. ?][? if bruning_austerity_limited == 2: We have successfully pressured Brüning into attempting to appease us by reinstating the 40-hour workweek, however wages themselves remains suboptimal. ?][? if bruning_austerity_limited >= 3: We have successfully pressured Brüning in reversing some salary cuts to civil servants. ?]
 
 @urge_paramilitary
-choose-if: spd_prussia and strife >= 3
-unavailable-subtitle: [? if not spd_prussia: We don't control the Prussian government. ?] [? if strife < 3: Paramilitary violence isn't severe enough to justify an emergency decree. ?]
+choose-if: spd_prussia and strife >= 3 and z_relation >= 35
+unavailable-subtitle: [? if not spd_prussia: We don't control the Prussian government. ?] [? if strife < 3: Paramilitary violence isn't severe enough to justify an emergency decree. ?] [? if z_relation < 35: We lack sufficient relations with Brüning. ?]
 title: Urge Brüning to grant us stronger actions against political extremists, and to restrict certain rights.
-on-arrival: left_dissent += 6; kpd_relation -= 6; rfb_militancy *= 0.9; rfb_strength *= 0.85; sa_militancy *= 0.97; sa_strength *= 0.97
+on-arrival: prussian_police_loyalty += 0.02; prussian_police_strength += 2; kpd_relation -= 6; rfb_militancy *= 0.9; rfb_strength *= 0.85; sa_militancy *= 0.96; sa_strength *= 0.96; sh_militancy *= 0.98; sh_militancy *= 0.98
 
-Carl Severing and other Prussian officials have successfully urged Brüning to issue an emergency decree granting the Prussian police greater authority to crack down on political extremists. The decree also imposes certain restrictions on fundamental rights, angering some on our left wing.
+Carl Severing and other Prussian officials have successfully urged Brüning to issue an emergency decree granting the Prussian police greater authority to crack down on political extremists. The decree also imposes certain restrictions on fundamental rights.
 
 To secure[? if president == "Hindenburg":&nbsp;President Hindenburg’s and ?] Brüning’s approval, we are forced to disproportionately target the <span style="color: #700000;">**KPD**</span>'s and its <span style="color: #8B0000;">**RFB**</span>, while being more lenient toward the <span style="color: #3E88B3;">**Stahlhelm**</span> and <span style="color: #7A3C00;">**SA**</span>.
 
