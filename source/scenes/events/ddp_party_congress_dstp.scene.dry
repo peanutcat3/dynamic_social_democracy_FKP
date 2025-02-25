@@ -16,12 +16,14 @@ if (Q.time_since_election >= 12 && !Q.dstp_election) {
 }
 if ((100 - Q.pro_republic) + Q.nationalism >= 100) {
     Q.dstp_collapse_points -= 1;
+    Q.ddp_right += 1;
 }
 if (Q.major_curriculum == "humanist") {
     Q.dstp_collapse_points -= 1;
 }
 if (Q.pro_republic >= 65) {
     Q.dstp_collapse_points += 1;
+    Q.ddp_left += 1;
 }
 if (Q.nationalism < 50) {
     Q.dstp_collapse_points += 1;

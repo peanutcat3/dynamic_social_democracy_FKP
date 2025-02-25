@@ -351,7 +351,10 @@ if (Q.month_actions >= 1) {
         Q.lvp_left *= 0.9;
         Q.lvp_right *= 0.9;
     }
-
+    if (Q.pro_republic >= (Q.nsdap_votes + Q.dnvp_votes + Q.kvp_votes + Q.dnf_votes + Q.kpd_votes + Q.other_votes + 25)) {
+        Q.ddp_left += 0.1;
+        Q.dvp_left += 0.25;
+    }
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
     if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + Q.lvp_votes + Q.z_votes - 3)) {
