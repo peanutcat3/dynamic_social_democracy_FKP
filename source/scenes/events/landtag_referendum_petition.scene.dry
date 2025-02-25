@@ -14,6 +14,7 @@ Something something something, i need to do more research, different stuff for d
 - @PLR_launched: 
 
 @PLR_launched
+title: u/Con-All please save us...
 on-arrival: pro_republic -= 3; PLR_launched = 1;
 
 referendum time
