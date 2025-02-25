@@ -775,6 +775,7 @@ Q.bourgeois_merger_trigger = 0;
 Q.bourgeois_list = 0;
 Q.hindenburg_angry_bruning = 0;
 Q.bruning_time = 0;
+Q.bruning_toleration_time = 0;
 Q.nazi_peak = 20;
 Q.dnvp_westarp = 1;
 Q.ddp_factionless_time = 0;
