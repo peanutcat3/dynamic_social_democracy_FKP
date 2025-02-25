@@ -46,7 +46,7 @@ new-page: true
 
 The <span style="color: #D3C24D;">**DDP**</span> is a fascinating party, plagued by infighting since the republic's foundation and struggling to define its platform in a failed attempt to appeal to voters from all demographics.[? if stolper_program_adopted:&nbsp;Recently, however, the party seems to have turned a new page, rallying around a renewed focus on middle-class interests. ?][? if not stolper_program_adopted:&nbsp;A recent attempt to shift focus toward the middle class has been quietly buried due to internal dissent, perhaps factionalism and personal rivalries may be a permanent feature of this party. ?]
 
-Pessimism is a widespread feeling within the party, leading to mounting pressure on leader Koch-Weser to do "something". After weeks of secret negotiations, the <span style="color: #D3C24D;">**DDP**</span> is announcing the result of a proposed merger of the <span style="color: #D3C24D;">**DDP**</span> and <span style="color: #D3D3A9;">**VNR**</span>, a party admired by senior party officials for its "dynamism".
+Pessimism is a widespread feeling within the party, leading to mounting pressure on leader Koch-Weser to do "something". After weeks of secret negotiations, the <span style="color: #D3C24D;">**DDP**</span> is announcing the result of a proposed merger of the <span style="color: #D3C24D;">**DDP**</span> and <span style="color: #D3D3A9;">**VNR**</span>, a party admired by senior party officials for its "<span class="tooltip-text" title="good mod">dynamism</span>".
 
 - @dstp_formed: The <span style="color: #D3C24D;">**DStP**</span> is formed.
 - @status_quo: The negotiations fail.
