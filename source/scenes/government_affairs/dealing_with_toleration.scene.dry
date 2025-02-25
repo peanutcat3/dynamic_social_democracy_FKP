@@ -70,7 +70,7 @@ on-arrival: left_dissent += 6; kpd_relation -= 6; rfb_militancy *= 0.9; rfb_stre
 
 Carl Severing and other Prussian officials have successfully urged Brüning to issue an emergency decree granting the Prussian police greater authority to crack down on political extremists. The decree also imposes certain restrictions on fundamental rights, angering some on our left wing.
 
-To secure [? if president == "Hindenburg":&nbsp;President Hindenburg’s and ?] Brüning’s approval, we are forced to disproportionately target the <span style="color: #700000;">**KPD**</span>'s and its <span style="color: #8B0000;">**RFB**</span>, while being more lenient toward the <span style="color: #3E88B3;">**Stahlhelm**</span> and <span style="color: #7A3C00;">**SA**</span>.
+To secure[? if president == "Hindenburg":&nbsp;President Hindenburg’s and ?] Brüning’s approval, we are forced to disproportionately target the <span style="color: #700000;">**KPD**</span>'s and its <span style="color: #8B0000;">**RFB**</span>, while being more lenient toward the <span style="color: #3E88B3;">**Stahlhelm**</span> and <span style="color: #7A3C00;">**SA**</span>.
 
 @improve_relations
 title: Improve relations with the parties of the coalition.
