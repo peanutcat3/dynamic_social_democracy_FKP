@@ -2289,6 +2289,35 @@ if (!Q.works_program && Q.spd_toleration) {
     }
 }
 
+Q.workers_nsdap_difference = Q.workers_nsdap - Q.workers_nsdap_old;
+Q.new_middle_nsdap_difference = Q.new_middle_nsdap - Q.new_middle_nsdap_old;
+Q.old_middle_nsdap_difference = Q.old_middle_nsdap - Q.old_middle_nsdap_old;
+Q.rural_nsdap_difference = Q.rural_nsdap - Q.rural_nsdap_old;
+Q.unemployed_nsdap_difference = Q.unemployed_nsdap - Q.unemployed_nsdap_old;
+Q.catholics_nsdap_difference = Q.catholics_nsdap - Q.catholics_nsdap_old;
+
+if (Q.hitler_deported) {
+    if (Q.workers_nsdap_difference > 0) {
+        Q.workers_nsdap -= Q.workers_nsdap_difference / 3;
+    }
+    if (Q.new_middle_nsdap_difference > 0) {
+        Q.new_middle_nsdap -= Q.new_middle_nsdap_difference / 3;
+    }
+    if (Q.old_middle_nsdap_difference > 0) {
+        Q.old_middle_nsdap -= Q.old_middle_nsdap_difference / 3;
+    }
+    if (Q.rural_nsdap_difference > 0) {
+        Q.rural_nsdap -= Q.rural_nsdap_difference / 3;
+    }
+    if (Q.unemployed_nsdap_difference > 0) { 
+        Q.unemployed_nsdap -= Q.unemployed_nsdap_difference / 3;
+    }
+    if (Q.catholics_nsdap_difference > 0) {
+        Q.catholics_nsdap -= Q.catholics_nsdap_difference / 3;
+    }
+}
+
+
 Q.time_since_election = (48 - (Q.next_election_time - Q.time));
 
 Q.workers_spd_old = Q.workers_spd;
@@ -2297,6 +2326,13 @@ Q.old_middle_spd_old = Q.old_middle_spd;
 Q.rural_spd_old = Q.rural_spd;
 Q.unemployed_spd_old = Q.unemployed_spd;
 Q.catholics_spd_old = Q.catholics_spd;
+
+Q.workers_nsdap_old = Q.workers_nsdap;
+Q.new_middle_nsdap_old = Q.new_middle_nsdap;
+Q.old_middle_nsdap_old = Q.old_middle_nsdap;
+Q.rural_nsdap_old = Q.rural_nsdap;
+Q.unemployed_nsdap_old = Q.unemployed_nsdap;
+Q.catholics_nsdap_old = Q.catholics_nsdap;
 
 if (Q.dvp_relation < 0) {
     Q.dvp_relation = 0;
