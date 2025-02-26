@@ -1055,7 +1055,7 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
         Q.unemployed_nsdap -= 2/12;
         Q.unemployed_spd += 2/12;
     }
-    if (Q.rfb_force >= rb_force) {
+    if (Q.rfb_force >= Q.rb_force) {
         Q.workers_kpd += 4/12;
         Q.workers_spd -= 4/12;
         Q.unemployed_kpd += 6/12;
