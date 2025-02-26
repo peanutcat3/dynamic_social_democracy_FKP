@@ -295,20 +295,28 @@ if (Q.month_actions >= 1) {
     if (Q.inflation >= 8 && Q.pro_republic > 40) {
         Q.pro_republic -= 1;
     }
-    if ((Q.kpd_votes + Q.nsdap_votes + Q.dnvp_votes + Q.other_votes) - (100 - Q.pro_republic) > 5 && Q.dnf_formed == 0 && Q.year >= 1930) {
+    if ((Q.kpd_votes + Q.nsdap_votes + Q.dnvp_votes + Q.other_votes) - (100 - Q.pro_republic) > 5 && Q.dnf_formed == 0 && Q.year >= 1930 && Q.kpd_leader != "Conciliators") {
         Q.pro_republic -= 1;
-    } else if ((Q.kpd_votes + Q.nsdap_votes + (Q.dnvp_votes / 2) + Q.other_votes) - (100 - Q.pro_republic) > 5 && Q.dnf_formed == 0 && Q.year < 1930) {
+    } else if ((Q.kpd_votes + Q.nsdap_votes + (Q.dnvp_votes / 2) + Q.other_votes) - (100 - Q.pro_republic) > 5 && Q.dnf_formed == 0 && Q.year < 1930 && Q.kpd_leader != "Conciliators") {
+        Q.pro_republic -= 1;
+    } else if ((Q.nsdap_votes + Q.dnvp_votes + Q.other_votes) - (100 - Q.pro_republic) > 5 && Q.dnf_formed == 0 && Q.kpd_leader == "Conciliators") {
         Q.pro_republic -= 1;
     }
-    if ((Q.kpd_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) - (100 - Q.pro_republic) > 5 && Q.dnf_formed == 1) {
+    if ((Q.kpd_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) - (100 - Q.pro_republic) > 5 && Q.dnf_formed == 1 && Q.kpd_leader != "Conciliators") {
+        Q.pro_republic -= 1;
+    } else if ((Q.nsdap_votes + Q.other_votes + Q.dnf_votes) - (100 - Q.pro_republic) > 5 && Q.dnf_formed == 1 && Q.kpd_leader == "Conciliators") {
         Q.pro_republic -= 1;
     }
-    if ((Q.kpd_votes + Q.nsdap_votes + Q.dnvp_votes + Q.other_votes) - (100 - Q.pro_republic) > 10 && Q.dnf_formed == 0 && Q.year >= 1930) {
+    if ((Q.kpd_votes + Q.nsdap_votes + Q.dnvp_votes + Q.other_votes) - (100 - Q.pro_republic) > 10 && Q.dnf_formed == 0 && Q.year >= 1930 && Q.kpd_leader != "Conciliators") {
         Q.pro_republic -= 2;
-    } else if ((Q.kpd_votes + Q.nsdap_votes + (Q.dnvp_votes / 2) + Q.other_votes) - (100 - Q.pro_republic) > 10 && Q.dnf_formed == 0 && Q.year < 1930) {
+    } else if ((Q.kpd_votes + Q.nsdap_votes + (Q.dnvp_votes / 2) + Q.other_votes) - (100 - Q.pro_republic) > 10 && Q.dnf_formed == 0 && Q.year < 1930 && Q.kpd_leader != "Conciliators") {
+        Q.pro_republic -= 2;
+    } else if ((Q.nsdap_votes + Q.dnvp_votes + Q.other_votes) - (100 - Q.pro_republic) > 10 && Q.dnf_formed == 0 && Q.kpd_leader == "Conciliators") {
         Q.pro_republic -= 2;
     }
-    if ((Q.kpd_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) - (100 - Q.pro_republic) > 10 && Q.dnf_formed == 1) {
+    if ((Q.kpd_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) - (100 - Q.pro_republic) > 10 && Q.dnf_formed == 1 && Q.kpd_leader != "Conciliators") {
+        Q.pro_republic -= 2;
+    } else if ((Q.nsdap_votes + Q.other_votes + Q.dnf_votes) - (100 - Q.pro_republic) > 10 && Q.dnf_formed == 1 && Q.kpd_leader == "Conciliators") {
         Q.pro_republic -= 2;
     }
     if ((Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dnvp_votes + Q.dvp_votes + (Q.lvp_votes / 2) + Q.kvp_votes) > Q.nationalism) {
@@ -2097,6 +2105,7 @@ if (Q.president == "Hindenburg" && Q.chancellor == "Brüning" && !Q.spd_in_gover
     if (Q.spd_toleration) {
         Q.bruning_toleration_time += 1; 
         Q.total_bruning_toleration_time += 1; 
+        Q.left_dissent += 1;
     }
     Q.bruning_time += 1;
     Q.total_bruning_time += 1;
