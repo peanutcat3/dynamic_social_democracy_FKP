@@ -180,13 +180,13 @@ if (Q.sa_strength) {
 
 [? if year >= 1930: <h1>Distribution of Power</h1> ?]
 
-[? if year >= 1930: <h4>Democratic strength: [+ democracy_force +]%</h4>?]
+[? if year >= 1930: <h4><span style="color: #000000;">Dem</span><span style="color: #DD0000;">ocra</span><span style="color: #FFCC00;">tic</span> strength: [+ democracy_force +]%</h4>?]
 
 [? if year >= 1930: <span style="color: #c00000;">**Reichsbanner**</span>: [+ rb_force +]%?]
 
-[? if year >= 1930: Prussian police: [+ prussia_force +]%?]
+[? if year >= 1930: <b>Prussian police: [+ prussia_force +]%</b>?]
 
-[? if year >= 1930: <h4>Far-right strength: [+ far_right_force +]%</h4>?]
+[? if year >= 1930: <h4><span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> strength: [+ far_right_force +]%</h4>?]
 
 [? if year >= 1930: <span style="color: #7A3C00;">**SA**</span>: [+ sa_force +]%?]
 
