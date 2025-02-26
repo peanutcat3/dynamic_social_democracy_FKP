@@ -743,6 +743,7 @@ if (Q.month_actions >= 1) {
             Q.workers_kpd += 3/12;
             Q.sa_strength += 100/12;
             Q.sh_strength += 50/12;
+            Q.rfb_strength += 50/12;
             Q.catholics_nsdap += 3/12;
             Q.catholics_other -= 3/12;
             if (Q.kvp_formed) {
