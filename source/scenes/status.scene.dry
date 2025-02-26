@@ -178,6 +178,22 @@ if (Q.sa_strength) {
 
 <span style="color: #7A3C00;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
+[? if year >= 1930: <h1>Distribution of Power</h1> ?]
+
+[? if year >= 1930: <h3>Democratic strength: [+ democracy_force +]%</h3>?]
+
+[? if year >= 1930: <span style="color: #c00000;">**Reichsbanner**</span>: [+ rb_force +]%?]
+
+[? if year >= 1930: Prussian police: [+ prussia_force +]%?]
+
+[? if year >= 1930: <h3>Far-right strength: [+ far_right_force +]%</h3>?]
+
+[? if year >= 1930: <span style="color: #7A3C00;">**SA**</span>: [+ sa_force +]%?]
+
+[? if year >= 1930: <span style="color: #3E88B3;">**Stahlhelm**</span>: [+ sh_force +]%?]
+
+[? if year >= 1930: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
+
 = Official military/paramilitaries
 
 Reichswehr: [+ reichswehr_strength +] thousand troops.

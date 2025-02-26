@@ -18,6 +18,9 @@ Q.socialism = Math.round(Q.socialism);
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
 }
+if (Q.reichswehr_strength < 0) {
+    Q.reichswehr_strength = 0;
+}
 if (Q.pro_republic >= 100) {
     Q.pro_republic = 99;
 }
@@ -101,20 +104,17 @@ Q.sa_force = Q.sa_strength*Q.sa_militancy;
 Q.sh_force = Q.sh_strength*Q.sh_militancy;
 Q.rb_force = Q.rb_strength*Q.rb_militancy;
 Q.rfb_force = Q.rfb_strength*Q.rfb_militancy;
-Q.army_force = Q.reichswehr_strength*Q.reichswehr_militancy;
-Q.prussia_force = Q.prussian_police_strength*Q.prussian_police_militancy;
-var total_force = (Q.sa_force+Q.sh_force+Q.rb_force+Q.rfb_force+Q.army_force+Q.prussia_force);
+Q.prussia_force = Q.prussian_police_strength*Q.prussian_police_militancy*prussian_police_loyalty;
+var total_force = (Q.sa_force+Q.sh_force+Q.rb_force+Q.rfb_force+Q.prussia_force);
 
 Q.sa_force = Math.round((Q.sa_force/total_force)*100);
 Q.sh_force = Math.round((Q.sh_force/total_force)*100);
 Q.rb_force = Math.round((Q.rb_force/total_force)*100);
 Q.rfb_force = Math.round((Q.rfb_force/total_force)*100);
-Q.army_force = Math.round((Q.army_force/total_force)*100);
 Q.prussia_force = Math.round((Q.prussia_force/total_force)*100);
 
-// further
-Q.loyal_army = Q.army_force*Q.reichswehr_loyalty;
-Q.loyal_prussia = Q.prussian_police_loyalty*Q.prussia_force;
+Q.far_right_force = Q.sh_force + Q.sa_force;
+Q.democracy_force = Q.rb_force + Q.prussia_force;
 
 Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
 Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
@@ -1027,6 +1027,19 @@ if (Q.year == 1929 && Q.month == 12 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 
     Q.weimar_ref_votes = Math.round(Q.weimar_ref_signatures * 10) / 10;
 }
 
+if (Q.year == 1931 && Q.month == 3 && Q.dnf_formed == 0) {
+    Q.landtag_ref_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_signatures = Math.round(Q.landtag_ref_signatures * 10) / 10;
+} else if (Q.year == 1931 && Q.month == 3 && Q.dnf_formed == 1 && Q.pro_republic_8 < 70) {
+    Q.landtag_ref_signatures = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_signatures = Math.round(Q.landtag_ref_signatures * 10) / 10;
+} else if (Q.year == 1931 && Q.month == 3 && Q.dnf_formed == 1 && Q.pro_republic_8 >= 70) {
+    Q.landtag_ref_signatures = (Q.dnf_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_signatures = Math.round(Q.landtag_ref_signatures * 10) / 10;
+}
+
+// 20 percent quota ^^^
+
 if (Q.in_grand_coalition == 1 && Q.dvp_relation >= 50 && !Q.lvp_formed) {
     Q.capital_strike_progress -= 0.25
 } else if (Q.in_grand_coalition == 1 && Q.lvp_relation >= 50 && Q.lvp_formed) {
@@ -1701,7 +1714,7 @@ if (Q.year == 1930 && Q.bourgeois_negotiations >= 1 && ((Q.bourgeois_negotiation
     Q.lvp_merger_2_timer = 3;
 }
 
-if (Q.lvp_formed && Q.lvp_timer_2_trigger) {
+if (Q.lvp_formed && Q.lvp_timer_2_trigger && Q.nsdap_votes >= 16) {
     Q.new_middle_lvp += 4/12;
     Q.old_middle_lvp += 4/12;
     Q.new_middle_nsdap -= 4/12;
@@ -2307,7 +2320,7 @@ if (Q.nazi_decay_timer > 0 && Q.nsdap_votes >= Q.nazi_peak_votes - 10) {
     Q.rural_dvp += 2/12;
     Q.new_middle_lvp += 10/12;
     Q.old_middle_lvp += 10/12;
-    Q.rural_lvp += 8/12;
+    Q.rural_lvp += 6/12;
     Q.unemployed_kpd += 3/12;
     Q.unemployed_spd += 5/12;
     if (Q.dnvp_ideology == "Moderate") {
