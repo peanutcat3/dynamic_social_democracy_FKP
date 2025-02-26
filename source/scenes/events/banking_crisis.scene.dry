@@ -43,18 +43,25 @@ on-arrival: welfare -= 1 if budget <= 0; workers_spd -= 3; workers_spd += 2 if b
 view-if: spd_toleration = 1
 on-arrival: time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 3; reformist_dissent += 4; left_dissent -= 4; dvp_relation -= 4; z_relation -= 4; ddp_relation -= 4; lvp_relation -= 4; ddp_right += 1; dvp_right += 2
 call: set_next_election_time
-go-to: new_prussia_election
+go-to: new_prussia_election if in_weimar_coalition_prussia or in_grand_coalition_prussia or in_new_grand_coalition_prussia or in_popular_front_prussia and ((center_right_coalition_prussia < 50 and dnvp_ideology == "Moderate") or dnvp_ideology == "Radical"); center_right_coalition_prussia if in_weimar_coalition_prussia or in_grand_coalition_prussia or in_new_grand_coalition_prussia or in_popular_front_prussia and center_right_coalition_prussia >= 50 and dnvp_ideology == "Moderate"
 
 We are tired of [+ chancellor +]'s policy of austerity. After [+ chancellor +]'s attempt to use emergency powers to pass another welfare cut, we have worked with the other parties to reverse this policy. In response, the Reichstag has been dissolved, and new elections called.
 
 New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @new_prussia_election
-on-arrival: z_relation -= 4; ddp_relation -= 4; lvp_relation -= 4; dvp_right += 3; ddp_right += 2; pro_republic -= 3; new_middle_spd -= 2; rural_spd -= 2; old_middle_spd -= 2; catholics_spd -= 2; new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 2; catholics_nsdap += 2
+on-arrival: z_relation -= 4; ddp_relation -= 4; lvp_relation -= 4; dvp_right += 3; ddp_right += 2; lvp_right += 2; pro_republic -= 3; new_middle_spd -= 2; rural_spd -= 2; old_middle_spd -= 2; catholics_spd -= 2; new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 2; catholics_nsdap += 2
 call: set_next_election_time_prussia
 
-The <span style="color: #000000;">Center</span> has called a retaliatory no confidence vote in Prussia, taking down our government and forcing new elections.
+The <span style="color: #000000;">Center</span> has called a retaliatory vote in Prussia, forcing the dissolution of the Landtag for new elections.
 
 New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
 
 A double dissolution has shaken the people's faith in democracy, with the <span style="color: #7A3C00;">Nazis</span> exploiting the instability to claim that democracy is unworkable, and that Germany needs a strong leader.
+
+@center_right_coalition_prussia
+on-arrival: in_center_right_coalition_prussia = 1; prussia_leader = "Stegerwald"; prussia_leader = "Brüning" if z_leader == "Stegerwald"; new_middle_spd -= 3; z_relation -= 4; ddp_relation -= 4; lvp_relation -= 4; dvp_right += 3; ddp_right += 2; pro_republic -= 3; prussian_police_loyalty -= 0.06; prussian_police_strength -= 8; 
+
+The <span style="color: #000000;">Center</span> has called a retaliatory no confidence vote in Prussia, replacing our government with a center-right coalition composed of all parties to our right, except for the <span style="color: #003755;">**DNF**</span> and <span style="color: #7A3C00;">**NSDAP**</span>. While this is a setback, it is not the worst possible outcome, as new elections could have led to significant gains for extremist parties.
+
+[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the <span style="color: #000000;">Center Party</span> is selected to be the Minister-President of Prussia.

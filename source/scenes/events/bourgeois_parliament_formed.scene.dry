@@ -15,6 +15,6 @@ Although these are the affairs of the bourgeois, it still impacts us. The parlia
 - @bourgeois_parliament: If this year can't get any worse.
 
 @bourgeois_parliament
-on-arrival: bourgeois_parliament = 1; bourgeois_parliament_ddp = 1; dvp_right += 3; ddp_right += 2; liberal_cooperation += 3; bourgeois_cooperation += 3
+on-arrival: bourgeois_parliament = 1; bourgeois_parliament_ddp = 1; dvp_right += 3; ddp_right += 2; lvp_right += 2; liberal_cooperation += 3; bourgeois_cooperation += 3
 
 It is SPDover for our Red Autumn, u/con-all please save us...
