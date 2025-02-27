@@ -25,18 +25,20 @@ As we are in control of the democratic bulwark for now, we can attempt to use ou
 
 @campaign
 subtitle: -2 resources
+view-if: not campaigned_democracy
 choose-if: resources >= 2
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 2; pro_republic += 5; new_middle_nsdap -= pro_republic / 25; old_middle_nsdap -= pro_republic / 25; workers_nsdap -= pro_republic / 25
+on-arrival: resources -= 2; pro_republic += 5; new_middle_nsdap -= pro_republic / 25; old_middle_nsdap -= pro_republic / 25; workers_nsdap -= pro_republic / 25; campaigned_democracy = 1
 go-to: PLR_launched
 
 We have campaigned against the referendum, but our success ultimately depends on the people's faith in democracy.
 
 @urge_paramilitary
+view-if: not political_decree_landtag 
 choose-if: spd_prussia and strife >= 3 and z_relation >= 35
 unavailable-subtitle: [? if not spd_prussia: We don't control the Prussian government. ?] [? if strife < 3: Paramilitary violence isn't severe enough to justify an emergency decree. ?] [? if z_relation < 35: We lack sufficient relations with Brüning. ?]
 title: Urge Brüning to grant us stronger actions against political extremists, and to restrict certain rights.
-on-arrival: political_decree += 1; prussian_police_loyalty += 0.04; prussian_police_strength += 5; kpd_relation -= 6; rfb_militancy *= 0.9; rfb_strength *= 0.85; sa_militancy *= 0.96; sa_strength *= 0.96; sh_militancy *= 0.98; sh_militancy *= 0.98; workers_kpd -= 1; workers_nsdap -= 1; unemployed_kpd -= 3; unemployed_nsdap -= 3; new_middle_nsdap -= 2; hindenburg_angry_bruning += 5
+on-arrival: political_decree += 1; prussian_police_loyalty += 0.04; prussian_police_strength += 5; kpd_relation -= 6; rfb_militancy *= 0.9; rfb_strength *= 0.85; sa_militancy *= 0.96; sa_strength *= 0.96; sh_militancy *= 0.98; sh_militancy *= 0.98; workers_kpd -= 1; workers_nsdap -= 1; unemployed_kpd -= 3; unemployed_nsdap -= 3; new_middle_nsdap -= 2; hindenburg_angry_bruning += 5; political_decree_landtag = 1
 go-to: PLR_launched
 
 Carl Severing and other Prussian officials have successfully urged Brüning to issue an emergency decree expanding police authority to suppress political extremism. The decree imposes restrictions on political meetings, organizations, newspapers, and posters, all of which now require police approval beforehand.
