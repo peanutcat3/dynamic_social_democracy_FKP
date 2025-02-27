@@ -2300,7 +2300,7 @@ if (Q.bruning_time == 1) {
 }
 
 if (Q.bruning_time > 1) {
-    Q.hindenburg_angry_bruning -= 3;
+    Q.hindenburg_angry_bruning -= 5;
     if (Q.bruning_time >= 36) {
         Q.hindenburg_angry_bruning += 3;
     } else if (Q.bruning_time >= 24) {
