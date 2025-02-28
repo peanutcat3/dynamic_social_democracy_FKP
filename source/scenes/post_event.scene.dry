@@ -652,6 +652,10 @@ if (Q.month_actions >= 1) {
         Q.rural_other -= 1/12;
         Q.new_middle_other -= 2/12;
         Q.old_middle_other -= 2/12;
+        if (Q.dnvp_ideology == "Radical") {
+            Q.new_middle_dnvp -= 4/12;
+            Q.rural_dnvp -= 4/12;
+        }
         if (!Q.works_program) {
             Q.rural_nsdap += 3/12;
             Q.new_middle_nsdap += 2/12;
@@ -709,6 +713,10 @@ if (Q.month_actions >= 1) {
         Q.new_middle_z += 2/12;
         Q.rural_z += 1/12;
         Q.catholics_kvp -= 2/12;
+        if (Q.dnvp_ideology == "Radical") {
+            Q.new_middle_dnvp -= 2/12;
+            Q.rural_dnvp -= 2/12;
+        }
         if (!Q.works_program) { 
             Q.workers_other -= 2/12;
             Q.old_middle_dvp -= 5/12;
