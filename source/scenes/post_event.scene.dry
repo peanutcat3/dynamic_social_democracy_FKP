@@ -710,8 +710,8 @@ if (Q.month_actions >= 1) {
         Q.rural_z += 1/12;
         Q.catholics_kvp -= 2/12;
         if (!Q.works_program) { 
-            Q.old_middle_dvp -= 6/12;
-            Q.new_middle_dvp -= 4/12;
+            Q.old_middle_dvp -= 5/12;
+            Q.new_middle_dvp -= 3/12;
             Q.new_middle_ddp -= 1/12;
             Q.old_middle_ddp -= 1/12;
             Q.rural_dvp -= 2/12;
@@ -753,9 +753,9 @@ if (Q.month_actions >= 1) {
                 Q.new_middle_dnf += 2/12;
                 }
         } else if (Q.unemployed > 15) {
-            Q.old_middle_dvp -= 3/12;
             Q.new_middle_dvp -= 3/12;
-            Q.rural_dvp -= 5/12;
+            Q.old_middle_dvp -= 2/12;
+            Q.rural_dvp -= 1/12;
             Q.old_middle_lvp -= 6/12;
             Q.new_middle_lvp -= 6/12;
             Q.rural_lvp -= 4/12;
@@ -1154,9 +1154,50 @@ if (Q.year == 1929 && Q.month == 12 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 
 if (Q.year == 1931 && Q.month == 4 && Q.PLR_launched && Q.landtag_ref_dvp) {
     Q.landtag_ref_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dvp_votes) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_signatures = Math.round(Q.landtag_ref_signatures * 10) / 10;
+    Q.landtag_ref_signatures_collected = 1;
 } else if (Q.year == 1931 && Q.month == 4 && Q.PLR_launched && !Q.landtag_ref_dvp) {
     Q.landtag_ref_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_signatures = Math.round(Q.landtag_ref_signatures * 10) / 10;
+    Q.landtag_ref_signatures_collected = 1;
+}
+
+if (Q.landtag_ref_signatures < 20 && Q.landtag_ref_signatures_collected) {
+    Q.workers_nsdap -= 3;
+    Q.old_middle_nsdap -= 4;
+    Q.new_middle_nsdap -= 4;
+    Q.rural_nsdap -= 4;
+    Q.catholics_nsdap -= 2;
+    Q.workers_spd += 3;
+    Q.new_middle_ddp += 1;
+    Q.new_middle_dvp += 3;
+    Q.old_middle_dvp += 3;
+    Q.old_middle_ddp += 1;
+    Q.rural_dvp += 3;
+    Q.rural_ddp += 1;
+    Q.rural_dnvp -= 2;
+    Q.old_middle_dnvp -= 2;
+    Q.catholics_z += 2;
+    Q.pro_republic += 5;
+    Q.dvp_left += 5;
+    Q.landtag_ref_signatures_failed = 1;
+} else if (Q.landtag_ref_signatures >= 20 && Q.landtag_ref_signatures_collected) {
+    Q.workers_nsdap += 2;
+    Q.old_middle_nsdap += 2;
+    Q.new_middle_nsdap += 2;
+    Q.rural_nsdap += 2;
+    Q.catholics_nsdap += 1;
+    Q.new_middle_ddp -= 1;
+    Q.old_middle_ddp -= 1;
+    Q.new_middle_dvp -= 2;
+    Q.old_middle_dvp -= 2;
+    Q.rural_dvp -= 2;
+    Q.rural_ddp -= 1;
+    Q.rural_dnvp -= 2;
+    Q.old_middle_dnvp -= 2;
+    Q.catholics_z -= 1;
+    if (Q.pro_republic >= 50) Q.pro_republic -= 5;
+    Q.dvp_right += 3;
+    Q.landtag_ref_signatures_passed = 1;
 }
 
 if (Q.in_grand_coalition == 1 && Q.dvp_relation >= 50 && !Q.lvp_formed) {

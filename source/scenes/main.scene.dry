@@ -167,14 +167,14 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && Q.time !=
         Q.flavour_21_trigger_shown = 1;
     }
 }
-if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
+if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
     Q.flavour_22_trigger += 1; 
     if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
         Q.flavour_22_trigger_time = Q.time;
         Q.flavour_22_trigger_shown = 1;
     }
 }
-if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
+if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
     Q.flavour_23_trigger += 1; 
     if (Q.flavour_23_trigger == 1 && !Q.flavour_23_trigger_shown) {
         Q.flavour_23_trigger_time = Q.time;
@@ -846,18 +846,25 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && Q.time !=
         Q.flavour_21_trigger_shown = 1;
     }
 }
-if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
+if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
     Q.flavour_22_trigger += 1; 
     if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
         Q.flavour_22_trigger_time = Q.time;
         Q.flavour_22_trigger_shown = 1;
     }
 }
-if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
+if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
     Q.flavour_23_trigger += 1; 
     if (Q.flavour_23_trigger == 1 && !Q.flavour_23_trigger_shown) {
         Q.flavour_23_trigger_time = Q.time;
         Q.flavour_23_trigger_shown = 1;
+    }
+}
+if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.banking_crisis_seen && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed) {
+    Q.flavour_24_trigger += 1; 
+    if (Q.flavour_24_trigger == 1 && !Q.flavour_24_trigger_shown) {
+        Q.flavour_24_trigger_time = Q.time;
+        Q.flavour_24_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1289,7 +1296,7 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1931 and month = 2 and dstp_formed and not lvp_formed and not lvp_timer_2_trigger : Most local organizations that have formerly belonged to the <span style="color: #D3C24D;">**DDP**</span> are extremely hesitant about becoming involved in the new party, and many of the <span style="color: #D3C24D;">**DDP**</span> auxiliary organizations, such as their youth and women's groups have collapsed and need to be built anew. All of this combined with the heavy psychological toll under which the leaders of the <span style="color: #D3C24D;">**State Party**</span> were already laboring as a result of the deepening economic crisis to produce a mood of growing resignation and pessimism about the future of the party.?]{!</p>!}
 
-{!<p class="dnvp">!}[? if year = 1931 and month = 3 and PLR_launched : The <span style="color: #7A3C00;">**NSDAP**</span> has finally agreed to support the referendum for the dissolution of the Landtag[? if not hitler_deported:, though Hitler remains personally skeptical about its chances of success?].[? if dnvp_ideology == "Moderate": With backing from both the <span style="color: #3E88B3;">**Stahlhelm**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, the <span style="color: #3E88B3;">**DNVP**</span> has also thrown its support behind the initiative. [? if dnvp_leader == "Treviranus": However, Treviranus remains hesitant, but still allows his party members to vote according to their conscience. ?]?] [? if landtag_ref_dvp: Additionally, the <span style="color: #C0A054;">**DVP**</span> has aligned with the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>, with Dingeldey reaffirming his party’s commitment to the struggle against <span style="color: #c00000;">socialism</span>.?] Fortunately, the <span style="color: #700000;">**KPD**</span> has refused to cooperate with figures like Hugenberg and [+ nsdap_leader +] in this initiative[? if kpd_leader != "Conciliators":, keeping the anti-democratic vote divided?]. ?]{!</p>!}
+{!<p class="both">!}[? if year = 1931 and month = 3 and PLR_launched : The <span style="color: #7A3C00;">**NSDAP**</span> has finally agreed to support the referendum for the dissolution of the Landtag[? if not hitler_deported:, though Hitler remains personally skeptical about its chances of success?].[? if dnvp_ideology == "Moderate": With backing from both the <span style="color: #3E88B3;">**Stahlhelm**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, the <span style="color: #3E88B3;">**DNVP**</span> has also thrown its support behind the initiative. [? if dnvp_leader == "Treviranus": However, Treviranus remains hesitant, but still allows his party members to vote according to their conscience. ?]?] [? if landtag_ref_dvp: Additionally, the <span style="color: #C0A054;">**DVP**</span> has aligned with the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>, with Dingeldey reaffirming his party’s commitment to the struggle against <span style="color: #c00000;">socialism</span>.?] Fortunately, the <span style="color: #700000;">**KPD**</span> has refused to cooperate with figures like Hugenberg and [+ nsdap_leader +] in this initiative[? if kpd_leader != "Conciliators":, keeping the anti-democratic vote divided?]. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 3 and kpd_leader == "Thälmann" : Richard Scheringer, a former Reichswehr officer and prominent member of the <span style='color: #7A3C00;'>**NSDAP**</span> and <span style='color: #7A3C00;'>**SA**</span>, was imprisoned for attempting to establish <span style='color: #7A3C00;'>Nazi</span> cells within the military. In a shocking turn, after extensive discussions with his <span style='color: #700000;'>**Communist**</span> cellmates, he has defected to the <span style='color: #700000;'>**KPD**</span>. Seizing this opportunity, the <span style="color: #700000;">**KPD**</span> is now embracing the so-called 'Scheringer Line,' incorporating more nationalist rhetoric into its messaging to attract <span style="color: #7A3C00;">Nazi</span> defectors. ?]{!</p>!}
 
@@ -1321,7 +1328,13 @@ max-cards: 4
 
 {!<p class="other">!}[? if flavour_22_trigger and flavour_22_trigger_time == time: Dingeldey and the right wing of the <span style="color: #C0A054;">**DVP**</span> are outraged by Brüning's emergency decree, assailing the new tax levies and cuts to civil servant salaries. Dingeldey has strongly urged Brüning to restore bourgeois confidence in his government by severing all ties with the <span style="color: #c00000;">**SPD**</span>. To pressure Brüning, Dingeldey has threatened to vote to reconvene the Reichstag, to allow the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> to introduce a vote of no confidence with their support. This move has gained significant support among the <span style="color: #C0A054;">**DVP**</span>’s right wing, which has long sought to force a cabinet reshuffle. However, with only a narrow majority of the delegation backing him, Brüning—along with Reichsbank President and <span style="color: #C0A054;">**DVP**</span> member Hans Luther—has pleaded for patience, promising a gradual shift to the right and a relaxation of labor laws. Faced with these assurances, as well as threats of resignation from Curtius and other key figures on the party’s left wing, the delegation ultimately reversed its stance. ?]{!</p>!}
 
+{!<p class="other">!}[? if flavour_24_trigger and flavour_24_trigger_time == time: The Banking Crisis[? if emergency_decree_seen:&nbsp;and the fallout from Brüning's second emergency decree?] has significantly intensified anti-Brüning sentiment among the bourgeois parties, especially the <span style="color: #C0A054;">**DVP**</span>[? if emergency_decree_seen:, which only narrowly secured a majority within its own ranks to support Brüning?]. The right wing of the <span style="color: #C0A054;">**DVP**</span> is increasingly frustrated by Brüning’s failure to follow through on his promise to shift the cabinet further to the right. However, Dingeldey remains hesitant to bring down the government, fearing it would further destabilize Germany’s financial situation. Additionally, the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> has shown no interest in joining Brüning’s cabinet. Under these circumstances, the <span style="color: #C0A054;">**DVP**</span> has little choice but to continue supporting Brüning. ?]{!</p>!}
+
+{!<p class="other">!}[? if year = 1931 and month >= 7 and landtag_ref_signatures_passed and not landtag_ref_dvp and not lvp_formed: The <span style="color: #C0A054;">**DVP**</span> has unexpectedly taken a stand against the Prussian Landtag referendum, campaigning in favor of stability and democracy. This move has disrupted the <span style="color: #3E88B3;">**Stahlhelm**</span>'s plan for a united right-wing front in support of the referendum, significantly reducing its chances of success. ?]{!</p>!}
+
 {!<p class="dnvp">!}[? if flavour_21_trigger and flavour_21_trigger_time == time: The controversy surrounding <span style="color: #b8996f;">**WP**</span> leader Hermann Drewitz’s scandals has finally forced him to relinquish the party chairmanship to prevent an even more damaging secession than the one that occurred months earlier. [? if not lvp_formed: Many of their Reichstag members, including Otto Colosser, have defected to the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, which is seeking to capitalize on their internal discord. ?]With ongoing internal strife and resignations of its most effective leaders, the <span style="color: #b8996f;">**WP**</span> is barely able to function as a political force anymore. ?]{!</p>!}
+
+{!<p class="other">!}[? if year = 1931 and month >= 8 and landtag_ref_votes and landtag_ref_dvp and not lvp_formed: The remaining influential members of the <span style="color: #C0A054;">**DVP**</span>'s left wing, has denounced the party’s strong endorsement of the Prussian Landtag referendum. Some even call refusing to support the referendum a "patriotic duty", with Curtius giving a speech over the radio announcing that he won't be following his party's position on the plebiscite. Unfortunately, the pro-democratic forces within the party are powerless and impotent, but every little bit helps. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 9: The Japanese have invaded Manchuria following the Mukden incident. ?]{!</p>!}
 

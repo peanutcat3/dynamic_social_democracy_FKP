@@ -81,6 +81,7 @@ We have successfully pressured Brüning to tone down the severity of his austeri
 [? if bruning_austerity_limited == 1: We have successfully prevented Brüning from decreasing taxes on high earners, lessening the burden of compensatory tax increases on the lower strata. ?][? if bruning_austerity_limited == 2: We have successfully pressured Brüning into attempting to appease us by reinstating the 40-hour workweek, however wages themselves remains suboptimal. ?][? if bruning_austerity_limited >= 3: We have successfully pressured Brüning in reversing some salary cuts to civil servants. ?]
 
 @urge_paramilitary
+view-if: political_decree < 2
 choose-if: spd_prussia and strife >= 3 and z_relation >= 35
 unavailable-subtitle: [? if not spd_prussia: We don't control the Prussian government. ?] [? if strife < 3: Paramilitary violence isn't severe enough to justify an emergency decree. ?] [? if z_relation < 35: We lack sufficient relations with Brüning. ?]
 title: Urge Brüning to grant us stronger actions against political extremists, and to restrict certain rights.
