@@ -62,7 +62,7 @@ view-if: not radio_campaign_landtag
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; new_middle_spd += (radio + commercialized_media); old_middle_spd += (radio + commercialized_media); workers_spd += campaign_media; unemployed_spd += campaign_media; new_middle_nsdap -= (radio + commercialized_media); old_middle_nsdap -= (radio + commercialized_media); workers_nsdap -= campaign_media; unemployed_nsdap -= campaign_media; socialism += 3; nationalism -= 1; nationalism -= 2 if pacifism > 1; pro_republic += (radio + commercialized_media); radio_campaign_landtag = 1
-face-image: img/Vorwärts.jpg
+face-image: img/vorwarts_2.jpg
 go-to: do_campaign
 
 The effect of this campaign depends on the strength of our already established media empire. [? if commercialized_media: Our commercialized newspapers and radio stations have been effective in persuading the middle classes to stay home. ?][? if radio: Our radio station has played a crucial role in reaching middle-class voters. ?][? if campaign_media: The widespread presence of <span style="color: #c00000;">socialist</span> propaganda among the working-class has helped sway some to our side. ?]
