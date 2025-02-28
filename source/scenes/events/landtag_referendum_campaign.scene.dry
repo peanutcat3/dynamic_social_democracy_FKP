@@ -82,7 +82,7 @@ Carl Severing and Otto Braun have successfully persuaded Brüning to issue anoth
 This decision has further inflamed the already volatile political climate, prompting President Hindenburg to promise a review of the decree following strong backlash from the supporters of Hugenberg and Hitler.
 
 @kpd
-title: We will attempt to cause a general strike of <span style="color: #700000;">**Communist**</span> workers.
+title: We will attempt to cause a general strike of <span style="color: #700000;">**Communist**</span> voters.
 subtitle: -1 resource
 view-if: landtag_ref_kpd and not kpd_campaign_landtag
 choose-if: resources >= 1
