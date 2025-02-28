@@ -107,7 +107,7 @@ if (Q.lemmer_points > Q.heuss_points && Q.lemmer_points > Q.dietrich_points) {
     Q.lemmer_lead = 0;
 }
 
-if (!Q.dietrich_lead && !Q.heuss_lead_ddp && !Q.lemmer_points) {
+if (!Q.dietrich_lead && !Q.heuss_lead_ddp && !Q.lemmer_lead) {
     Q.ddp_deadlock = 1;
 } else {
     Q.ddp_deadlock = 0;
