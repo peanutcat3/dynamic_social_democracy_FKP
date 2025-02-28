@@ -735,6 +735,7 @@ if (Q.month_actions >= 1) {
             Q.workers_nsdap += 4/12;
             Q.workers_kpd += 3/12;
             Q.sa_strength += 100/12;
+            Q.sh_militancy += 0.05/12;
             Q.sa_militancy += 0.1/12;
             Q.rfb_strength += 25/12;
             Q.catholics_nsdap += 3/12;
