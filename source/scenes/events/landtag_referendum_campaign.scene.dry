@@ -32,7 +32,6 @@ We have a variety of options to choose from.
 
 @bourgeois
 title: Request assistance from our coalition partners.
-subtitle: The bourgeois will be more inclined to work with us on this.
 view-if: spd_prussia and not bourgeois_campaign_landtag
 choose-if: not in_popular_front_prussia and not in_left_front_prussia and z_relation >= 45
 unavailable-subtitle: [? if in_popular_front_prussia or in_left_front_prussia: The <span style="color: #000000;">Center</span> sees no reason to intervene in saving the incumbent government. ?] [? if z_relation < 45: We lack sufficient relations with the <span style="color: #000000;">Center</span>. ?]
