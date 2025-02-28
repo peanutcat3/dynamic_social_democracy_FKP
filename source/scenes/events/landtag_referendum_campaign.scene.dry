@@ -57,7 +57,7 @@ However, this display of left-wing unity has frightened the <span style="color: 
 
 @media
 title: Use Vorwärts and our radio stations to broadcast against the plebiscite.
-subtitle: -1 resources
+subtitle: -1 resource
 view-if: not radio_campaign_landtag
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
