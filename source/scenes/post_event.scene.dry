@@ -749,7 +749,7 @@ if (Q.month_actions >= 1) {
             Q.sa_militancy += 0.1/12;
             Q.rfb_strength += 25/12;
             Q.catholics_nsdap += 3/12;
-            Q.catholics_other -= 3/12;
+            Q.catholics_other -= 2/12;
             if (Q.kvp_formed) {
                 Q.rural_kvp -= 3/12;
                 Q.rural_dnvp += 3/12;
@@ -789,8 +789,8 @@ if (Q.month_actions >= 1) {
             Q.old_middle_dnf += 3/12;
             Q.new_middle_dnf += 1/12;
         }
-        Q.new_middle_other -= 4/12;
-        Q.old_middle_other -= 4/12;
+        Q.new_middle_other -= 3/12;
+        Q.old_middle_other -= 3/12;
         Q.rural_other -= 3/12;
         Q.new_middle_nsdap += 4/12;
         Q.old_middle_nsdap += 4/12;
@@ -798,7 +798,7 @@ if (Q.month_actions >= 1) {
         Q.unemployed_nsdap += 4/12;
         Q.sa_strength += 100/12;
         if (!Q.works_program) {
-            Q.workers_other -= 2/12;
+            Q.workers_other -= 3/12;
             Q.unemployed += 3/12; 
             Q.inflation -= 2/12;
             Q.economic_growth -= 1/12;
@@ -812,12 +812,12 @@ if (Q.month_actions >= 1) {
             Q.old_middle_dnf += 4/12;
             Q.new_middle_dnf += 2/12;
             }
-            Q.catholics_nsdap += 3/12;
-            Q.catholics_other -= 3/12;
+            Q.catholics_nsdap += 2/12;
+            Q.catholics_other -= 2/12;
             Q.rural_dnvp -= 4/12;
-            Q.new_middle_other -= 4/12;
-            Q.old_middle_other -= 4/12;
-            Q.rural_other -= 3/12;
+            Q.new_middle_other -= 2/12;
+            Q.old_middle_other -= 2/12;
+            Q.rural_other -= 2/12;
             Q.rural_nsdap += 8/12;
             Q.new_middle_nsdap += 10/12;
             Q.old_middle_nsdap += 10/12;
@@ -2438,7 +2438,7 @@ if (!Q.nazi_peak_triggered) {
 if (Q.nsdap_votes >= Q.nazi_peak && !Q.nazi_peak_triggered && Q.nsdap_votes >= 24) {
     Q.nazi_peak_triggered = 1;
     Q.nazi_peak_votes = Q.nsdap_votes;
-    Q.nazi_decay_timer = 16;
+    Q.nazi_decay_timer = 24;
     Q.coup_progress += 4;
 }
 
