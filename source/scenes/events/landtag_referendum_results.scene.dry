@@ -4,16 +4,20 @@ new-page: true
 tags: event
 view-if: year = 1931 and month >= 8 and landtag_ref_signatures_passed
 on-arrival: {!
-if (Q.year == 1931 && Q.month == 8 && Q.dnf_formed == 0) {
-    Q. = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+if (Q.landtag_ref_dvp && Q.landtag_ref_kpd) {
+    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dvp_votes + Q.kpd_votes) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_votes = Math.round(Q.landtag_ref_votes * 10) / 10;
-} else if (Q.year == 1931 && Q.month == 8 && Q.dnf_formed == 1 && Q.pro_republic_8 < 70) {
-    Q.landtag_ref_votes = ((Q.dnvp_votes / 2) + Q.nsdap_votes + Q.dnf_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+} else if (!Q.landtag_ref_dvp && Q.landtag_ref_kpd) {
+    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.kpd_votes) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_votes = Math.round(Q.landtag_ref_votes * 10) / 10;
-} else if (Q.year == 1931 && Q.month == 8 && Q.dnf_formed == 1 && Q.pro_republic_8 >= 70) {
-    Q.landtag_ref_votes = (Q.dnf_votes + Q.nsdap_votes + Q.other_votes) * ((100 - Q.pro_republic) / 100);
+} else if (Q.landtag_ref_dvp && !Q.landtag_ref_kpd) {
+    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dvp_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_votes = Math.round(Q.landtag_ref_votes * 10) / 10;
+} else if (!Q.landtag_ref_dvp && !Q.landtag_ref_kpd) {
+    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_votes = Math.round(Q.landtag_ref_votes * 10) / 10;
 }
+Q.landtag_ref_votes_collected = 1;
 !}
 max-visits: 1
 
