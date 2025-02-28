@@ -1,7 +1,7 @@
 title: Prussian Landtag referendum
 subtitle: How should we campaign against the referendum?
 new-page: true
-#tags: event
+tags: event
 view-if: year = 1931 and month >= 7 and landtag_ref_signatures_passed
 on-arrival: landtag_ref_kpd = 1 if kpd_relation < 40 and not kpd_leader == "Conciliators"; landtag_ref_kpd = 0 if kpd_relation >= 40 or kpd_leader == "Conciliators"; pro_republic += 3 if not landtag_ref_kpd; pro_republic -= 3 if landtag_ref_kpd
 face-image: img/social_fascist.jpg
