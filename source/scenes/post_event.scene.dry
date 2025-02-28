@@ -661,7 +661,7 @@ if (Q.month_actions >= 1) {
             Q.new_middle_nsdap += 2/12;
             Q.old_middle_nsdap += 5/12;
             Q.workers_nsdap += 3/12;
-            Q.workers_kpd += 3/12;
+            Q.workers_kpd += 2/12;
             Q.sh_militancy += 0.05/12;
             if (Q.dnf_formed) {
                 Q.rural_dnf += 3/12;
@@ -719,7 +719,7 @@ if (Q.month_actions >= 1) {
             Q.rural_dnvp -= 2/12;
         }
         if (!Q.works_program) { 
-            Q.workers_other -= 2/12;
+            Q.workers_other -= 4/12;
             Q.old_middle_dvp -= 5/12;
             Q.new_middle_dvp -= 3/12;
             Q.new_middle_ddp -= 1/12;
@@ -743,7 +743,7 @@ if (Q.month_actions >= 1) {
             Q.new_middle_nsdap += 10/12;
             Q.old_middle_nsdap += 10/12;
             Q.workers_nsdap += 4/12;
-            Q.workers_kpd += 3/12;
+            Q.workers_kpd += 2/12;
             Q.sa_strength += 100/12;
             Q.sh_militancy += 0.05/12;
             Q.sa_militancy += 0.1/12;
@@ -824,7 +824,7 @@ if (Q.month_actions >= 1) {
             Q.unemployed_nsdap += 8/12;
             Q.unemployed_kpd += 2/12;
             Q.workers_nsdap += 3/12;
-            Q.workers_kpd += 3/12;
+            Q.workers_kpd += 2/12;
             Q.sa_strength += 100/12;
             Q.rfb_strength += 25/12;
             Q.new_middle_dnvp += 4/12;
@@ -1164,11 +1164,11 @@ if (Q.year == 1929 && Q.month == 12 && Q.dnf_formed == 1 && Q.dvp_relation_9 >= 
 }
 
 if (Q.year == 1931 && Q.month == 4 && Q.PLR_launched && Q.landtag_ref_dvp) {
-    Q.landtag_ref_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dvp_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dvp_votes - 10) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_signatures = Math.round(Q.landtag_ref_signatures * 10) / 10;
     Q.landtag_ref_signatures_collected = 1;
 } else if (Q.year == 1931 && Q.month == 4 && Q.PLR_launched && !Q.landtag_ref_dvp) {
-    Q.landtag_ref_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_signatures = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes - 10) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_signatures = Math.round(Q.landtag_ref_signatures * 10) / 10;
     Q.landtag_ref_signatures_collected = 1;
 }
