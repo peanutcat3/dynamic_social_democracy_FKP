@@ -2353,9 +2353,6 @@ if (Q.bruning_time > 1) {
     if (Q.unemployed >= 15) {
         Q.hindenburg_angry_bruning += (Q.unemployed / 10)
     }
-    if (Q.inflation < -6) {
-        Q.hindenburg_angry_bruning += ((Q.inflation*-1) / 10)
-    }
     if (Q.pro_republic >= 50) {
         Q.hindenburg_angry_bruning -= Q.pro_republic / 20;
     } else if (Q.pro_republic < 50) {
