@@ -52,6 +52,7 @@ Q.workers_spd *= 0.95;
 Q.unemployed_spd *= 0.95;
 Q.kpd_relation -= 5;
 Q.bruning_coalition = Q.neo_weimar_coalition;
+Q.bruning_coalition = Math.round((Q.bruning_coalition - Q.bruning_coalition_loss) * 10) / 10;
 if (Q.wp_defect && Q.bruning_coalition < 50) Q.wp_reversal = 1;
 if (Q.wp_defect && Q.bruning_coalition < 50) Q.bruning_coalition_loss -= Q.wp_r;
 if (Q.wp_reversal) Q.wp_defect = 0;
