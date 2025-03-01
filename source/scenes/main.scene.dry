@@ -167,14 +167,14 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && Q.time !=
         Q.flavour_21_trigger_shown = 1;
     }
 }
-if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.dvp_formed && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_22_trigger += 1; 
     if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
         Q.flavour_22_trigger_time = Q.time;
         Q.flavour_22_trigger_shown = 1;
     }
 }
-if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.dvp_defect && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_23_trigger += 1; 
     if (Q.flavour_23_trigger == 1 && !Q.flavour_23_trigger_shown) {
         Q.flavour_23_trigger_time = Q.time;
@@ -863,14 +863,14 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && Q.time !=
         Q.flavour_21_trigger_shown = 1;
     }
 }
-if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.dvp_formed && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_22_trigger += 1; 
     if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
         Q.flavour_22_trigger_time = Q.time;
         Q.flavour_22_trigger_shown = 1;
     }
 }
-if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.dvp_defect && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_23_trigger += 1; 
     if (Q.flavour_23_trigger == 1 && !Q.flavour_23_trigger_shown) {
         Q.flavour_23_trigger_time = Q.time;
