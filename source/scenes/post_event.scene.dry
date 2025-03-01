@@ -1040,7 +1040,7 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
         Q.old_middle_spd += 2/12;
         if (Q.catholics_nsdap >= 2) Q.catholics_nsdap -= 2/12;
         if (Q.catholics_nsdap >= 2) Q.catholics_spd += 2/12;
-        if (Q.pro_republic < 50) Q.pro_republic += strife / 2;
+        if (Q.pro_republic < 50) Q.pro_republic += Q.strife / 2;
     } else if (Q.democracy_paramilitary_high) {
         Q.workers_spd += 3/12;
         Q.workers_nsdap -= 3/12;
@@ -1054,7 +1054,7 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
         Q.old_middle_spd += 1/12;
         if (Q.catholics_nsdap >= 1) Q.catholics_nsdap -= 1/12;
         if (Q.catholics_nsdap >= 1) Q.catholics_spd += 1/12;
-        if (Q.pro_republic < 50) Q.pro_republic += strife / 4;
+        if (Q.pro_republic < 50) Q.pro_republic += Q.strife / 4;
     } else if (Q.democracy_paramilitary_med) {
         Q.workers_spd += 2/12;
         Q.workers_nsdap -= 2/12;
@@ -1062,11 +1062,11 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
         Q.unemployed_nsdap -= 4/12;
         Q.new_middle_nsdap -= 1/12;
         Q.new_middle_spd += 1/12;
-        if (Q.pro_republic < 50) Q.pro_republic += strife / 8;
+        if (Q.pro_republic < 50) Q.pro_republic += Q.strife / 8;
     } else if (Q.democracy_paramilitary_low){
         Q.unemployed_nsdap -= 2/12;
         Q.unemployed_spd += 2/12;
-        if (Q.pro_republic < 50) Q.pro_republic += strife / 12;
+        if (Q.pro_republic < 50) Q.pro_republic += Q.strife / 12;
     }
     if (Q.rfb_force >= Q.rb_force) {
         Q.workers_kpd += 4/12;
