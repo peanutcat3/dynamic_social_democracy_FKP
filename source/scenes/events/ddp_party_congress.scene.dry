@@ -82,11 +82,11 @@ if (Q.ddp_right > (Q.ddp_left + 4)) {
 }
 
 if (Q.ddp_ideology == "Right") {
-    Q.dietrich_points += 2;
+    Q.dietrich_points += 3;
 } else if (Q.ddp_ideology == "Moderate") {
     Q.heuss_points += 1;
 } else if (Q.ddp_ideology == "Left") {
-    Q.lemmer_points += 2;
+    Q.lemmer_points += 3;
 }
 
 if (Q.heuss_points > Q.dietrich_points && Q.heuss_points > Q.lemmer_points) {
