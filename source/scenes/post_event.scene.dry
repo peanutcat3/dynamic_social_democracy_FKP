@@ -155,6 +155,7 @@ if (Q.far_right_force >= Q.democracy_force) {
 Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
 Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
 Q.kvp_r = Math.round(Q.kvp_r * 10) / 10
+Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10
 
 // 1. update dates
 if (Q.month_actions >= 1) {
