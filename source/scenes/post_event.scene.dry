@@ -323,10 +323,10 @@ if (Q.month_actions >= 1) {
     }
 
     /////////////////////////////// update opinions based on economy
-    if (Q.unemployed > 15 && Q.pro_republic > 40) {
+    if (Q.unemployed > 15 && Q.pro_republic > 50) {
         Q.pro_republic -= 1;
     }
-    if (Q.unemployed > 30 && Q.pro_republic > 20) {
+    if (Q.unemployed > 30 && Q.pro_republic > 35) {
         Q.pro_republic -= 1;
     }
     if (Q.inflation >= 8 && Q.pro_republic > 40) {
@@ -1025,7 +1025,7 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
         Q.old_middle_spd -= 1/12;
         Q.catholics_nsdap += 1/12;
         Q.catholics_spd -= 1/12;
-        Q.pro_republic -= 0.5;
+        Q.pro_republic -= 0.25;
     }
 } else if (Q.democracy_paramilitary && Q.year >= 1930) {
     if (Q.democracy_paramilitary_highest) {
