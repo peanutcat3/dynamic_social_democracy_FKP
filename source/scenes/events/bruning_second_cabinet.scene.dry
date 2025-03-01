@@ -28,7 +28,25 @@ New elections have been set for [+ next_election_month : month +] [+ next_electi
 @vote_yes
 title: Vote in favor of the Second Brüning cabinet, continuing the toleration agreement.
 subtitle: Currently, [+ bruning_coalition +]% of the Reichstag supports Brüning, but subject to change.
-on-arrival: left_dissent += 20; labor_dissent += 5; unemployed_nsdap += unemployed_spd*0.05; unemployed_kpd += unemployed_spd*0.05; workers_nsdap += workers_spd*0.1; workers_kpd += workers_spd*0.1; workers_spd *= 0.9; unemployed_spd *= 0.9; kpd_relation -= 5; bruning_coalition = neo_weimar_coalition; bruning_coalition_loss -= wp_r if wp_defect and bruning_coalition < 50; wp_reversal = 1 if wp_defect = 1 and bruning_coalition < 50; wp_defect = 0 if wp_reversal; bruning_coalition = bruning_coalition - bruning_coalition_loss
+on-arrival: {!
+Q.left_dissent += 20;
+Q.labor_dissent += 5;
+Q.unemployed_nsdap += Q.unemployed_spd*0.05;
+Q.unemployed_kpd += Q.unemployed_spd*0.05;
+Q.workers_nsdap += Q.workers_spd*0.05;
+Q.workers_kpd += Q.workers_spd*0.05;
+Q.workers_spd *= 0.95;
+Q.unemployed_spd *= 0.95;
+Q.kpd_relation -= 5;
+Q.bruning_coalition = Q.neo_weimar_coalition;
+if (Q.wp_defect && Q.bruning_coalition < 50) Q.bruning_coalition_loss -= Q.wp_r;
+if (Q.wp_defect && Q.bruning_coalition < 50) Q.wp_reversal = 1;
+if (Q.wp_reversal) Q.wp_defect = 0;
+Q.bruning_coalition = Math.round((Q.bruning_coalition - Q.bruning_coalition_loss) * 10) / 10;
+!}
+go-to: bruning_calculations
+
+@bruning_calculations
 go-to: bruning_lives_wp if bruning_coalition >= 50 and wp_reversal; bruning_lives_no_wp if bruning_coalition >= 50 and not wp_reversal; bruning_dies_wp if bruning_coalition < 50 and wp_reversal; bruning_dies_no_wp if bruning_coalition < 50 and not wp_reversal
 
 @bruning_lives_wp
