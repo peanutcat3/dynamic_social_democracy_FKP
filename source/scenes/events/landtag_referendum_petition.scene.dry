@@ -30,7 +30,7 @@ subtitle: -2 resources
 view-if: not campaigned_democracy
 choose-if: resources >= 2
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 2; pro_republic += 5; new_middle_nsdap -= pro_republic / 25; old_middle_nsdap -= pro_republic / 25; workers_nsdap -= pro_republic / 25; campaigned_democracy = 1
+on-arrival: resources -= 2; pro_republic += 6; new_middle_nsdap -= pro_republic / 25; old_middle_nsdap -= pro_republic / 25; workers_nsdap -= pro_republic / 25; campaigned_democracy = 1
 go-to: PLR_launched
 
 We have campaigned against the referendum, but our success ultimately depends on the people's faith in democracy.
