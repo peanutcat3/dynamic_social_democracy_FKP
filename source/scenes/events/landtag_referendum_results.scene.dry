@@ -42,7 +42,53 @@ It's over for German democracy. [+ landtag_ref_votes +]% of the eligible Prussia
 New Prussian elections have been set for [+ next_election_month_prussia : month +] [+ next_election_year_prussia +].
 
 @PLR_failed_votes
-on-arrival: pro_republic += 5 if landtag_ref_votes < 25; workers_spd += 5 if landtag_ref_votes < 25; workers_nsdap -= 3 if landtag_ref_votes < 25; workers_kpd -= 2 if landtag_ref_votes < 25 and landtag_ref_kpd; new_middle_spd += 3 if landtag_ref_votes < 25; new_middle_nsdap -= 3 if landtag_ref_votes < 25; old_middle_spd += 3 if landtag_ref_votes < 25; old_middle_nsdap -= 3 if landtag_ref_votes < 25; catholics_spd += 3 if landtag_ref_votes < 25; catholics_nsdap -= 3 if landtag_ref_votes < 25; catholics_dnvp -= 1 if landtag_ref_votes < 25; unemployed_spd += 5 if landtag_ref_votes < 25; unemployed_nsdap -= 3 if landtag_ref_votes < 25; unemployed_kpd -= 2 if landtag_ref_votes < 25 and landtag_ref_kpd; pro_republic -= 3 if landtag_ref_votes >= 35 and landtag_ref_votes < 42; workers_spd -= 2 if landtag_ref_votes >= 35 and landtag_ref_votes < 42; workers_nsdap += 2 if landtag_ref_votes >= 35 and landtag_ref_votes < 42; workers_kpd += 2 if landtag_ref_votes >= 35 and landtag_ref_votes < 42 and landtag_ref_kpd; new_middle_spd -= 3 if landtag_ref_votes >= 35 and landtag_ref_votes < 42; new_middle_nsdap += 3 if landtag_ref_votes >= 35 and landtag_ref_votes < 42; old_middle_spd -= 3 if landtag_ref_votes >= 35 and landtag_ref_votes < 42; old_middle_nsdap += 3 if landtag_ref_votes >= 35 and landtag_ref_votes < 42; unemployed_spd -= 3 if landtag_ref_votes >= 35 and landtag_ref_votes < 42; unemployed_nsdap += 3 if landtag_ref_votes >= 35 and landtag_ref_votes < 42; unemployed_kpd += 3 if landtag_ref_votes >= 35 and landtag_ref_votes < 42 and landtag_ref_kpd; pro_republic -= 5 if landtag_ref_votes >= 42; workers_spd -= 4 if landtag_ref_votes >= 42; workers_nsdap += 4 if landtag_ref_votes >= 42; workers_kpd += 4 if landtag_ref_votes >= 42 and landtag_ref_kpd; new_middle_spd -= 5 if landtag_ref_votes >= 42; new_middle_nsdap += 5 if landtag_ref_votes >= 42; old_middle_spd -= 4 if landtag_ref_votes >= 42; old_middle_nsdap += 4 if landtag_ref_votes >= 42; unemployed_spd -= 6 if landtag_ref_votes >= 42; unemployed_nsdap += 5 if landtag_ref_votes >= 42; unemployed_kpd += 5 if landtag_ref_votes >= 42 and landtag_ref_kpd;
+on-arrival: {!
+if (Q.landtag_ref_votes < 25) {
+    Q.pro_republic += 5;
+    Q.workers_spd += 5;
+    Q.workers_nsdap -= 3;
+    if (Q.landtag_ref_kpd) Q.workers_kpd -= 2;
+    Q.new_middle_spd += 3;
+    Q.new_middle_nsdap -= 3;
+    Q.old_middle_spd += 3;
+    Q.old_middle_nsdap -= 3;
+    Q.catholics_spd += 3;
+    Q.catholics_nsdap -= 3;
+    Q.catholics_dnvp -= 1;
+    Q.unemployed_spd += 5;
+    Q.unemployed_nsdap -= 3;
+    if (Q.landtag_ref_kpd) Q.unemployed_kpd -= 2;
+} 
+
+if (Q.landtag_ref_votes >= 35 && Q.landtag_ref_votes < 42) {
+    Q.pro_republic -= 3;
+    Q.workers_spd -= 2;
+    Q.workers_nsdap += 2;
+    if (Q.landtag_ref_kpd) Q.workers_kpd += 2;
+    Q.new_middle_spd -= 3;
+    Q.new_middle_nsdap += 3;
+    Q.old_middle_spd -= 3;
+    Q.old_middle_nsdap += 3;
+    Q.unemployed_spd -= 3;
+    Q.unemployed_nsdap += 3;
+    if (Q.landtag_ref_kpd) Q.unemployed_kpd += 3;
+}
+
+if (Q.landtag_ref_votes >= 42) {
+    Q.pro_republic -= 5;
+    Q.workers_spd -= 4;
+    Q.workers_nsdap += 4;
+    if (Q.landtag_ref_kpd) Q.workers_kpd += 4;
+    Q.new_middle_spd -= 5;
+    Q.new_middle_nsdap += 5;
+    Q.old_middle_spd -= 4;
+    Q.old_middle_nsdap += 4;
+    Q.unemployed_spd -= 6;
+    Q.unemployed_nsdap += 5;
+    if (Q.landtag_ref_kpd) Q.unemployed_kpd += 5;
+}
+
+!}
 
 [? if landtag_ref_votes < 25: The referendum has failed, with only [+ landtag_ref_votes +]% of the Prussian population voting in favor. Support for the referendum was lower than expected, barely exceeding the number of signatures collected months ago. This suggests that public sentiment has remained largely unchanged since then. The <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> is demoralized and has suffered significant financial losses. Meanwhile, the democratic press is jubilant at the result, declaring a victory for German democracy. ?]
 
