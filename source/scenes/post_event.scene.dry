@@ -1571,6 +1571,7 @@ if (Q.wp_conflict_time == 2) {
     Q.new_middle_other *= 0.9;
     Q.old_middle_nsdap += Q.old_middle_other*0.1;
     Q.old_middle_other *= 0.9;
+    Q.bruning_coalition_dissent += 1;
 }
 
 if (Q.wp_conflict_time == 8) {
