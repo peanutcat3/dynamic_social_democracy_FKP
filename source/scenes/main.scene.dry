@@ -178,7 +178,7 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && !Q.flavou
     }
 }
 // dingeldey complains bout emergency decree
-if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.dvp_formed && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.dvp_defect && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_22_trigger += 1; 
     if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
         Q.flavour_22_trigger_time = Q.time;
@@ -973,7 +973,7 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && !Q.flavou
     }
 }
 // dingeldey complains bout emergency decree
-if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.dvp_formed && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.liberal_parliament && Q.dvp_leader == "Dingeldey" && !Q.dvp_defect && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_22_trigger += 1; 
     if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
         Q.flavour_22_trigger_time = Q.time;
@@ -1066,6 +1066,14 @@ if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp &
         Q.flavour_33_trigger_time = Q.time;
         Q.flavour_33_trigger_shown = 1;
         Q.flavour_33_effect_trigger = 1;
+    }
+}
+// dingeldey complains bout emergency decree, alt his
+if (Q.emergency_decree_alt_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.liberal_parliament && Q.dvp_leader == "Dingeldey" && !Q.dvp_defect && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_34_trigger += 1; 
+    if (Q.flavour_34_trigger == 1 && !Q.flavour_34_trigger_shown) {
+        Q.flavour_34_trigger_time = Q.time;
+        Q.flavour_34_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1544,6 +1552,8 @@ max-cards: 4
 {!<p class="dnvp">!}[? if flavour_20_trigger and flavour_20_trigger_time == time: The leaders of the <span style="color: #b8996f;">**WP**</span> are struggling desperately to repair the damage caused by the conflict between Drewitz and Colosser, but their efforts are repeatedly undermined by renewed demands for Drewitz’s resignation. In response, Drewitz took his case before the national party congress this month. Backed by strong support from the party’s pro-Brüning faction, he successfully secured re-election as party chairman. Meanwhile, the leaders of several district organizations that had broken away months earlier have returned to the fold just in time for the congress. Perhaps the party can survive after all? ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_22_trigger and flavour_22_trigger_time == time: Dingeldey and the right wing of the <span style="color: #C0A054;">**DVP**</span> are outraged by Brüning's emergency decree, assailing the new tax levies and cuts to civil servant salaries. Dingeldey has strongly urged Brüning to restore bourgeois confidence in his government by severing all ties with the <span style="color: #c00000;">**SPD**</span>. To pressure Brüning, Dingeldey has threatened to vote to reconvene the Reichstag, to allow the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> to introduce a vote of no confidence with their support. This move has gained significant support among the <span style="color: #C0A054;">**DVP**</span>’s right wing, which has long sought to force a cabinet reshuffle. However, with only a narrow majority of the delegation backing him, Brüning—along with Reichsbank President and <span style="color: #C0A054;">**DVP**</span> member Hans Luther—has pleaded for patience, promising a gradual shift to the right and a relaxation of labor laws. Faced with these assurances, as well as threats of resignation from Curtius and other key figures on the party’s left wing, the delegation ultimately reversed its stance. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_34_trigger and flavour_34_trigger_time == time: Dingeldey and the right wing of the <span style="color: #C0A054;">**DVP**</span> are outraged by Brüning's emergency decree, assailing the new tax levies and cuts to civil servant salaries. Dingeldey has strongly urged Brüning to restore bourgeois confidence in his government by severing all ties with the <span style="color: #c00000;">**SPD**</span>. To pressure Brüning, Dingeldey has threatened to vote to reconvene the Reichstag, to allow the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> to introduce a vote of no confidence with their support. This move has gained significant support among the <span style="color: #C0A054;">**DVP**</span>’s right wing, which has long sought to force a cabinet reshuffle. However, with only a narrow majority of the delegation backing him, Brüning—along with Reichsbank President and <span style="color: #C0A054;">**DVP**</span> member Hans Luther—has pleaded for patience, promising a gradual shift to the right and a relaxation of labor laws. Faced with these assurances, as well as threats of resignation from Curtius and other key figures on the party’s left wing, the delegation ultimately reversed its stance. ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_24_trigger and flavour_24_trigger_time == time: The Banking Crisis[? if emergency_decree_seen:&nbsp;and the fallout from Brüning's second emergency decree?] has significantly intensified anti-Brüning sentiment among the bourgeois parties, especially the <span style="color: #C0A054;">**DVP**</span>[? if emergency_decree_seen:, which only narrowly secured a majority within its own ranks to support Brüning?]. The right wing of the <span style="color: #C0A054;">**DVP**</span> is increasingly frustrated by Brüning’s failure to follow through on his promise to shift the cabinet further to the right. However, Dingeldey remains hesitant to bring down the government, fearing it would further destabilize Germany’s financial situation. Additionally, the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> has shown no interest in joining Brüning’s cabinet. Under these circumstances, the <span style="color: #C0A054;">**DVP**</span> has little choice but to continue supporting Brüning. ?]{!</p>!}
 
