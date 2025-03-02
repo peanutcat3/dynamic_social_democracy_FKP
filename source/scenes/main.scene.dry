@@ -118,7 +118,7 @@ if (Q.total_bruning_time >= 12 && (Q.in_center_right_coalition || Q.in_right_coa
         Q.flavour_14_trigger_shown = 1;
     }
 }
-if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && Q.time_since_election < 8 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
     Q.flavour_15_trigger += 1;
     if (Q.flavour_15_trigger && !Q.flavour_15_trigger_shown) {
         Q.flavour_15_trigger_time = Q.time;
@@ -139,7 +139,7 @@ if (Q.year >= 1930 && Q.ddp_factionless && Q.time !== Q.last_time_updated) {
         Q.flavour_17_trigger_shown = 1;
     }
 }
-if (Q.year >= 1930 && Q.total_bruning_time >= 7 && Q.time_since_election < 8 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.total_bruning_time >= 7 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
     Q.flavour_18_trigger += 1;
     if (Q.flavour_18_trigger && !Q.flavour_18_trigger_shown) {
         Q.flavour_18_trigger_time = Q.time;
@@ -811,6 +811,7 @@ if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament &&
         Q.flavour_11_effect_trigger = 1;
     }
 }
+// initial spd toleration message
 if (Q.bruning_toleration_time == 1 && Q.spd_toleration && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_12_trigger += 1;
     if (Q.flavour_12_trigger && !Q.flavour_12_trigger_shown) {
@@ -818,6 +819,7 @@ if (Q.bruning_toleration_time == 1 && Q.spd_toleration && Q.year >= 1930 && Q.ti
         Q.flavour_12_trigger_shown = 1;
     }
 }
+// irl austerity
 if (Q.total_bruning_time >= 12 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_13_trigger += 1;
     if (Q.flavour_13_trigger && !Q.flavour_13_trigger_shown) {
@@ -825,6 +827,7 @@ if (Q.total_bruning_time >= 12 && !Q.in_center_right_coalition && !Q.in_right_co
         Q.flavour_13_trigger_shown = 1;
     }
 }
+// alt-his austerity
 if (Q.total_bruning_time >= 12 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && Q.year >= 1930 && Q.time !== Q.last_time_updated) {
     Q.flavour_14_trigger += 1;
     if (Q.flavour_14_trigger && !Q.flavour_14_trigger_shown) {
@@ -832,13 +835,15 @@ if (Q.total_bruning_time >= 12 && (Q.in_center_right_coalition || Q.in_right_coa
         Q.flavour_14_trigger_shown = 1;
     }
 }
-if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.spd_toleration_right && Q.time !== Q.last_time_updated) {
+// cnblp pt 1
+if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.spd_toleration_right && !Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
     Q.flavour_15_trigger += 1;
     if (Q.flavour_15_trigger && !Q.flavour_15_trigger_shown) {
         Q.flavour_15_trigger_time = Q.time;
         Q.flavour_15_trigger_shown = 1;
     }
 }
+// cnblp pt 2
 if (Q.flavour_15_trigger && Q.time == Q.flavour_15_trigger_time + 4 && Q.time !== Q.last_time_updated) {
     Q.flavour_16_trigger += 1; 
     if (Q.flavour_16_trigger == 1 && !Q.flavour_16_trigger_shown) {
@@ -846,6 +851,7 @@ if (Q.flavour_15_trigger && Q.time == Q.flavour_15_trigger_time + 4 && Q.time !=
         Q.flavour_16_trigger_shown = 1;
     }
 }
+// peasants party collapse cuz they leave for ddp
 if (Q.year >= 1930 && Q.ddp_factionless && Q.time !== Q.last_time_updated) {
     Q.flavour_17_trigger += 1;
     if (Q.flavour_17_trigger == 2 && !Q.flavour_17_trigger_shown) {
@@ -853,13 +859,15 @@ if (Q.year >= 1930 && Q.ddp_factionless && Q.time !== Q.last_time_updated) {
         Q.flavour_17_trigger_shown = 1;
     }
 }
-if (Q.year >= 1930 && Q.total_bruning_time >= 7 && Q.time_since_election < 8 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
+// wp pt 1
+if (Q.year >= 1930 && Q.total_bruning_time >= 7 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.bourgeois_parliament_no_liberals && Q.time !== Q.last_time_updated) {
     Q.flavour_18_trigger += 1;
     if (Q.flavour_18_trigger && !Q.flavour_18_trigger_shown) {
         Q.flavour_18_trigger_time = Q.time;
         Q.flavour_18_trigger_shown = 1;
     }
 }
+// wp pt 2, they split
 if (Q.flavour_18_trigger && Q.time == Q.flavour_18_trigger_time + 2 && Q.time !== Q.last_time_updated) {
     Q.flavour_19_trigger += 1; 
     if (Q.flavour_19_trigger == 1 && !Q.flavour_19_trigger_shown) {
@@ -867,6 +875,7 @@ if (Q.flavour_18_trigger && Q.time == Q.flavour_18_trigger_time + 2 && Q.time !=
         Q.flavour_19_trigger_shown = 1;
     }
 }
+// wp pt 3, party recovers
 if (Q.flavour_19_trigger && Q.time == Q.flavour_19_trigger_time + 4 && Q.time !== Q.last_time_updated) {
     Q.flavour_20_trigger += 1; 
     if (Q.flavour_20_trigger == 1 && !Q.flavour_20_trigger_shown) {
@@ -874,6 +883,7 @@ if (Q.flavour_19_trigger && Q.time == Q.flavour_19_trigger_time + 4 && Q.time !=
         Q.flavour_20_trigger_shown = 1;
     }
 }
+// wp pt 4, party joever, drewitz resigns
 if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && Q.time !== Q.last_time_updated) {
     Q.flavour_21_trigger += 1; 
     if (Q.flavour_21_trigger == 1 && !Q.flavour_21_trigger_shown) {
@@ -881,6 +891,7 @@ if (Q.flavour_20_trigger && Q.time == Q.flavour_20_trigger_time + 2 && Q.time !=
         Q.flavour_21_trigger_shown = 1;
     }
 }
+// dingeldey complains bout emergency decree
 if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.dvp_formed && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_22_trigger += 1; 
     if (Q.flavour_22_trigger == 1 && !Q.flavour_22_trigger_shown) {
@@ -888,6 +899,7 @@ if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.in_right_coali
         Q.flavour_22_trigger_shown = 1;
     }
 }
+// dingeldey schemes to remove curtius, wirth, dietrich, but postponed
 if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.dvp_leader == "Dingeldey" && !Q.dvp_defect && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_23_trigger += 1; 
     if (Q.flavour_23_trigger == 1 && !Q.flavour_23_trigger_shown) {
@@ -895,6 +907,7 @@ if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coa
         Q.flavour_23_trigger_shown = 1;
     }
 }
+// dingeldey complains about banking crisis, precursor to curtius resigning
 if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.banking_crisis_seen && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_24_trigger += 1; 
     if (Q.flavour_24_trigger == 1 && !Q.flavour_24_trigger_shown) {
@@ -902,13 +915,15 @@ if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coal
         Q.flavour_24_trigger_shown = 1;
     }
 }
-if (Q.year >= 1930 && Q.total_bruning_time >= 8 && (Q.kvp_cnblp_sister || Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && !Q.eastern_aid && Q.time !== Q.last_time_updated) {
+// cnblp eastern aid pt 1, when they have power over bruning
+if (Q.year >= 1930 && Q.total_bruning_time >= 8 && (Q.kvp_cnblp_sister || Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament || Q.bourgeois_parliament_no_liberals || Q.spd_toleration_right) && !Q.eastern_aid && Q.time !== Q.last_time_updated) {
     Q.flavour_25_trigger += 1;
     if (Q.flavour_25_trigger && !Q.flavour_25_trigger_shown) {
         Q.flavour_25_trigger_time = Q.time;
         Q.flavour_25_trigger_shown = 1;
     }
 }
+// regular eastern aid, historical
 if (Q.year >= 1930 && Q.total_bruning_time >= 11 && !Q.eastern_aid && Q.time !== Q.last_time_updated) {
     Q.flavour_26_trigger += 1;
     if (Q.flavour_26_trigger && !Q.flavour_26_trigger_shown) {
@@ -916,6 +931,7 @@ if (Q.year >= 1930 && Q.total_bruning_time >= 11 && !Q.eastern_aid && Q.time !==
         Q.flavour_26_trigger_shown = 1;
     }
 }
+// cnblp eastern aid pt 2, with deficit, coalition tensions
 if (Q.flavour_25_trigger && Q.time == Q.flavour_25_trigger_time + 4 && Q.eastern_aid_deficit && Q.bruning_time && Q.time !== Q.last_time_updated) {
     Q.flavour_27_trigger += 1; 
     if (Q.flavour_27_trigger == 1 && !Q.flavour_27_trigger_shown) {
@@ -923,11 +939,20 @@ if (Q.flavour_25_trigger && Q.time == Q.flavour_25_trigger_time + 4 && Q.eastern
         Q.flavour_27_trigger_shown = 1;
     }
 }
+// cnblp eastern aid pt 2, without deficit, no coalition tensions
 if (Q.flavour_25_trigger && Q.time == Q.flavour_25_trigger_time + 4 && !Q.eastern_aid_deficit && Q.bruning_time && Q.time !== Q.last_time_updated) {
     Q.flavour_28_trigger += 1; 
     if (Q.flavour_28_trigger == 1 && !Q.flavour_28_trigger_shown) {
         Q.flavour_28_trigger_time = Q.time;
         Q.flavour_28_trigger_shown = 1;
+    }
+}
+// wp pt 1, alt-history
+if (Q.year >= 1930 && Q.total_bruning_time >= 7 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament || Q.bourgeois_parliament_no_liberals) && Q.time !== Q.last_time_updated) {
+    Q.flavour_29_trigger += 1;
+    if (Q.flavour_29_trigger && !Q.flavour_29_trigger_shown) {
+        Q.flavour_29_trigger_time = Q.time;
+        Q.flavour_29_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
