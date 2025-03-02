@@ -524,6 +524,7 @@ Q.kpd_coalition_dissent = 0;
 
 // does the SPD tolerate the government even if it is not a participant?
 Q.spd_toleration = 0;
+Q.spd_toleration_right = 0;
 
 // is the current government a presidential minority government?
 Q.minority_government = 0;
