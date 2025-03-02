@@ -832,7 +832,7 @@ if (Q.total_bruning_time >= 12 && (Q.in_center_right_coalition || Q.in_right_coa
         Q.flavour_14_trigger_shown = 1;
     }
 }
-if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.spd_toleration_right && Q.time !== Q.last_time_updated) {
     Q.flavour_15_trigger += 1;
     if (Q.flavour_15_trigger && !Q.flavour_15_trigger_shown) {
         Q.flavour_15_trigger_time = Q.time;
@@ -914,6 +914,20 @@ if (Q.year >= 1930 && Q.total_bruning_time >= 11 && !Q.eastern_aid && Q.time !==
     if (Q.flavour_26_trigger && !Q.flavour_26_trigger_shown) {
         Q.flavour_26_trigger_time = Q.time;
         Q.flavour_26_trigger_shown = 1;
+    }
+}
+if (Q.flavour_25_trigger && Q.time == Q.flavour_25_trigger + 4 && Q.eastern_aid_deficit && Q.bruning_time && Q.time !== Q.last_time_updated) {
+    Q.flavour_27_trigger += 1; 
+    if (Q.flavour_27_trigger == 1 && !Q.flavour_27_trigger_shown) {
+        Q.flavour_27_trigger_time = Q.time;
+        Q.flavour_27_trigger_shown = 1;
+    }
+}
+if (Q.flavour_25_trigger && Q.time == Q.flavour_25_trigger + 4 && !Q.eastern_aid_deficit && Q.bruning_time && Q.time !== Q.last_time_updated) {
+    Q.flavour_28_trigger += 1; 
+    if (Q.flavour_28_trigger == 1 && !Q.flavour_28_trigger_shown) {
+        Q.flavour_28_trigger_time = Q.time;
+        Q.flavour_28_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1350,6 +1364,10 @@ max-cards: 4
 {!<p class="both">!}[? if year = 1931 and month = 3 and PLR_launched : The <span style="color: #7A3C00;">**NSDAP**</span> has finally agreed to support the referendum for the dissolution of the Landtag[? if not hitler_deported:, though Hitler remains personally skeptical about its chances of success?].[? if dnvp_ideology == "Moderate": With backing from both the <span style="color: #3E88B3;">**Stahlhelm**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, the <span style="color: #3E88B3;">**DNVP**</span> has also thrown its support behind the initiative. [? if dnvp_leader == "Treviranus": However, Treviranus remains hesitant, but still allows his party members to vote according to their conscience. ?]?] [? if landtag_ref_dvp: Additionally, the <span style="color: #C0A054;">**DVP**</span> has aligned with the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>, with Dingeldey reaffirming his party’s commitment to the struggle against <span style="color: #c00000;">socialism</span>.?] Fortunately, the <span style="color: #700000;">**KPD**</span> has refused to cooperate with figures like Hugenberg and [+ nsdap_leader +] in this initiative[? if kpd_leader != "Conciliators":, keeping the anti-democratic vote divided?]. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 3 and kpd_leader == "Thälmann" : Richard Scheringer, a former Reichswehr officer and prominent member of the <span style='color: #7A3C00;'>**NSDAP**</span> and <span style='color: #7A3C00;'>**SA**</span>, was imprisoned for attempting to establish <span style='color: #7A3C00;'>Nazi</span> cells within the military. In a shocking turn, after extensive discussions with his <span style='color: #700000;'>**Communist**</span> cellmates, he has defected to the <span style='color: #700000;'>**KPD**</span>. Seizing this opportunity, the <span style="color: #700000;">**KPD**</span> is now embracing the so-called 'Scheringer Line,' incorporating more nationalist rhetoric into its messaging to attract <span style="color: #7A3C00;">Nazi</span> defectors. ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_27_trigger and flavour_27_trigger_time == time: The Eastern Aid Act, introduced months ago to relieve the debts of agricultural enterprises in the east, has created tension within the coalition, as it directly contradicts Brüning’s goal of maintaining a balanced budget. The reparation tax—now obsolete due to the Young Plan—continues to be used to fund agricultural subsidies, sparking fierce protests from the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. They argue that this tax, primarily levied on businesses, is an unreasonable burden on job creators given the current economic crisis. Fortunately for Brüning, the [? if budget >= 0: budget surplus?][? if reparations == -2: pause in reparations?] has enabled him to abolish the tax while still maintaining full funding for the program. ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_28_trigger and flavour_28_trigger_time == time: The Eastern Aid Act, introduced months ago to relieve the debts of agricultural enterprises in the east, has created tension within the coalition, as it directly contradicts Brüning’s goal of maintaining a balanced budget. The reparation tax—now obsolete due to the Young Plan—continues to be used to fund agricultural subsidies, sparking fierce protests from the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. They argue that this tax, primarily levied on businesses, is an unreasonable burden on job creators given the current economic crisis. Brüning now finds himself caught between appeasing big industry on one side and placating organized agriculture and Hindenburg on the right. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_26_trigger and flavour_26_trigger_time == time: The Brüning cabinet has introduced the Eastern Aid Act, a policy aimed at relieving the debts of agricultural enterprises in the east—despite the significant financial burden it imposes. This measure directly contradicts Brüning’s broader strategy of economic recovery through budget austerity. To partially fund the policy, the government has retained outdated reparation taxes that became obsolete after the Young Plan. However, the lack of full funding for debt relief has frustrated many influential landowners, prompting them to take their complaints directly to Hindenburg, over whom they wield considerable influence. ?]{!</p>!}
 

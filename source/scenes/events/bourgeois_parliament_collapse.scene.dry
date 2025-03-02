@@ -1,0 +1,21 @@
+title: Bourgeois Parliamentary Group Collapses!
+new-page: true
+subtitle: Crazy stuffs.
+tags: event
+view-if: bruning_time >= 6 and (in_right_coalition or in_center_right_coalition or spd_toleration_right) and bourgeois_parliament and bruning_coalition_dissent >= 2
+on-arrival: pro_republic -= 3
+max-visits: 1
+
+= Bourgeois Parliamentary Group Collapses!
+
+WIP
+
+# TODO
+# make another historical version of this
+
+- @damn
+
+@damn
+on-arrival: bourgeois_parliament = 0; bourgeois_parliament_ddp = 0; bourgeois_parliament_kvp = 0;
+
+Ok.
