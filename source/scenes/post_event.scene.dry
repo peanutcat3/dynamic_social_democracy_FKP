@@ -2258,13 +2258,13 @@ if (Q.spd_in_government_time >= 6) {
     } else if (Q.nsdap_votes < 10 && Q.year >= 1930) {
         Q.hindenburg_angry -= 1;
     }
-    if (Q.spd_votes - Q.spd_r > 0) {
+    if (Q.spd_votes - Q.spd_r > 3) {
         Q.hindenburg_angry += (Q.spd_votes - Q.spd_r) / 2;
-    } else if (Q.spd_votes - Q.spd_r < 0) {
+    } else if (Q.spd_votes - Q.spd_r < 3) {
         Q.hindenburg_angry += (Q.spd_r - Q.spd_votes) / 2;
     }
     if (Q.spd_votes >= 30 && Q.year >= 1930) {
-        Q.hindenburg_angry += Q.spd_votes / 10;
+        Q.hindenburg_angry += Q.spd_votes / 15;
     }
     if (Q.dvp_relation < 30 && !Q.lvp_formed) {
         Q.hindenburg_angry += 1;
