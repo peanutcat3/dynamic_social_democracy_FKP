@@ -1,7 +1,7 @@
 title: Second Emergency Decree for Economy and Finance
 subtitle: Chancellor [+ chancellor +] enacts his a controversial emergency decree.
 new-page: true
-view-if: total_bruning_time == 15 and total_bruning_toleration_time and (hoover_moratorium_seen or reparations == -2)
+view-if: total_bruning_time == 15 and bruning_toleration_time and (hoover_moratorium_seen or reparations == -2)
 on-arrival: emergency_decree_alt_seen = 1; ddp_right += 1; dvp_right += 3; lvp_right += 2; liberal_cooperation -= 1; bourgeois_cooperation -= 1
 tags: event
 face-image: img/article48.jpg

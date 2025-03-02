@@ -2391,7 +2391,7 @@ if (Q.president == "Hindenburg" && Q.chancellor == "Brüning" && !Q.spd_in_gover
     if (Q.spd_toleration) {
         Q.bruning_toleration_time += 1; 
         Q.total_bruning_toleration_time += 1; 
-        Q.left_dissent += 1;
+        Q.left_dissent += 0.5;
     }
     Q.bruning_time += 1;
     Q.total_bruning_time += 1;
