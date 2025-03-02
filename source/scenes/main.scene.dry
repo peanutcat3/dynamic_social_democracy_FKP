@@ -188,6 +188,20 @@ if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coal
         Q.flavour_24_trigger_shown = 1;
     }
 }
+if (Q.year >= 1930 && Q.total_bruning_time >= 8 && (Q.kvp_cnblp_sister || Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && !Q.eastern_aid && Q.time !== Q.last_time_updated) {
+    Q.flavour_25_trigger += 1;
+    if (Q.flavour_25_trigger && !Q.flavour_25_trigger_shown) {
+        Q.flavour_25_trigger_time = Q.time;
+        Q.flavour_25_trigger_shown = 1;
+    }
+}
+if (Q.year >= 1930 && Q.total_bruning_time >= 11 && !Q.eastern_aid && Q.time !== Q.last_time_updated) {
+    Q.flavour_26_trigger += 1;
+    if (Q.flavour_26_trigger && !Q.flavour_26_trigger_shown) {
+        Q.flavour_26_trigger_time = Q.time;
+        Q.flavour_26_trigger_shown = 1;
+    }
+}
 Q.last_time_updated = Q.time;
 !}
 on-display: {!
@@ -605,6 +619,8 @@ max-cards: 3
 
 {!<p class="dnvp">!}[? if flavour_15_trigger and flavour_15_trigger_time == time: The combination of our influence over the Brüning government, the ineffectiveness of his agrarian relief plan, the radicalization of the rural electorate signaled by Martin Schiele's resignation from the RLB, and the <span style="color: #7FCEB1;">**CNBLP**</span>'s third-place finish in rural areas behind the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #7A3C00;">**NSDAP**</span> has led the party to reconsider its support for Brüning. An anti-Brüning right-wing faction now dominates within the <span style="color: #7FCEB1;">**CNBLP**</span>, successfully pushing through a resolution chastising the Chancellor and demanding a reorganization of the coalition to include the <span style="color: #7A3C00;">Nazis</span>. Brüning has refused to comply, prompting the <span style="color: #7FCEB1;">**CNBLP**</span> to become one of the first parties to bolt from his coalition, now voting against his decrees and supporting right-wing motions of no confidence. ?]{!</p>!}
 
+{!<p class="dnvp">!}[? if flavour_25_trigger and flavour_25_trigger_time == time: The general ineffectiveness of Brüning's agrarian relief, led by Agriculture Minister Martin Schiele of the [? if dnvp_split_2: <span style="color: #7FCEB1;">**CNBLP**</span>?][? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?], has led to growing dissatisfaction within his own party. To retain their support, Schiele and Brüning have introduced a formal *Eastern Aid Act*, a policy designed to relieve the debts of agricultural enterprises in the east—despite the heavy financial burden it imposes. While this measure has placated organized agriculture and Hindenburg himself, it stands in direct contradiction to Brüning’s broader strategy of economic recovery through a balanced budget. ?]{!</p>!}
+
 {!<p class="other">!}[? if year = 1930 and month = 12 and kpd_leader == "Thälmann" : Ernst Thälmann has embraced a new <span style='color: #7A3C00;'>national-populist</span> strategy, rallying under the slogan of the *Volksrevolution*. This move is an attempt by the <span style='color: #700000;'>**KPD**</span> to expand its influence in the bourgeoisie social groups where the <span style='color: #7A3C00;'>**NSDAP**</span> are the strongest in. Leon Trotsky and many other <span style='color: #700000;'>**Communists**</span> have condemned this shift, denouncing the use of 'people's revolution' instead of 'proletarian revolution' as a distortion of <span style="color: #9B0000;">Marxism</span>. They also pointed out that its the exact same slogan used by Otto Strasser and the left-wing faction of the <span style='color: #7A3C00;'>**NSDAP**</span>.  ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_17_trigger and flavour_17_trigger_time == time: The defection of the northern wing’s Reichstag members from the <span style="color: #007A00;">German Peasants' Party</span> to the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has effectively ended the party as a national political force. All that remains is the original <span style="color: #38C538;">Bavarian Peasants’ League</span>, which, amid a prevailing mood of resignation, is expected to secure only a fraction of its former support in the next election, as most peasants turn further to the right in search of a solution to Germany's crisis. ?]{!</p>!}
@@ -620,6 +636,8 @@ max-cards: 3
 {!<p class="both">!}[? if year = 1931 and month = 3 and PLR_launched : The <span style="color: #7A3C00;">**NSDAP**</span> has finally agreed to support the referendum for the dissolution of the Landtag[? if not hitler_deported:, though Hitler remains personally skeptical about its chances of success?].[? if dnvp_ideology == "Moderate": With backing from both the <span style="color: #3E88B3;">**Stahlhelm**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, the <span style="color: #3E88B3;">**DNVP**</span> has also thrown its support behind the initiative. [? if dnvp_leader == "Treviranus": However, Treviranus remains hesitant, but still allows his party members to vote according to their conscience. ?]?] [? if landtag_ref_dvp: Additionally, the <span style="color: #C0A054;">**DVP**</span> has aligned with the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>, with Dingeldey reaffirming his party’s commitment to the struggle against <span style="color: #c00000;">socialism</span>.?] Fortunately, the <span style="color: #700000;">**KPD**</span> has refused to cooperate with figures like Hugenberg and [+ nsdap_leader +] in this initiative[? if kpd_leader != "Conciliators":, keeping the anti-democratic vote divided?]. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 3 and kpd_leader == "Thälmann" : Richard Scheringer, a former Reichswehr officer and prominent member of the <span style='color: #7A3C00;'>**NSDAP**</span> and <span style='color: #7A3C00;'>**SA**</span>, was imprisoned for attempting to establish <span style='color: #7A3C00;'>Nazi</span> cells within the military. In a shocking turn, after extensive discussions with his <span style='color: #700000;'>**Communist**</span> cellmates, he has defected to the <span style='color: #700000;'>**KPD**</span>. Seizing this opportunity, the <span style="color: #700000;">**KPD**</span> is now embracing the so-called 'Scheringer Line,' incorporating more nationalist rhetoric into its messaging to attract <span style="color: #7A3C00;">Nazi</span> defectors. ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_26_trigger and flavour_26_trigger_time == time: The Brüning cabinet has introduced the Eastern Aid Act, a policy aimed at relieving the debts of agricultural enterprises in the east—despite the significant financial burden it imposes. This measure directly contradicts Brüning’s broader strategy of economic recovery through budget austerity. To partially fund the policy, the government has retained outdated reparation taxes that became obsolete after the Young Plan. However, the lack of full funding for debt relief has frustrated many influential landowners, prompting them to take their complaints directly to Hindenburg, over whom they wield considerable influence. ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_13_trigger and flavour_13_trigger_time == time: Brüning’s decision to sideline the Reichstag and its parties from any meaningful role in shaping his fiscal and economic policies severely undermined the legitimacy of the bourgeois parties in the eyes of their traditional electorates, due to their powerlessness to dismantle his more repugnant policies. One clear example is the plight of civil servants, who have borne the brunt of salary cuts of approximately 20 percent, pushing many toward the <span style="color: #7A3C00;">Nazis</span>. His deflationary and austerity measures deepened the economic crisis, radicalizing the very social groups upon which these moderate parties relied for electoral support. This has led to heightened tensions between Brüning and his supporting parties, some of whom are even threatening to abandon his coalition. ?]{!</p>!}
 
@@ -814,7 +832,7 @@ if (Q.total_bruning_time >= 12 && (Q.in_center_right_coalition || Q.in_right_coa
         Q.flavour_14_trigger_shown = 1;
     }
 }
-if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && Q.time_since_election < 8 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.time !== Q.last_time_updated) {
     Q.flavour_15_trigger += 1;
     if (Q.flavour_15_trigger && !Q.flavour_15_trigger_shown) {
         Q.flavour_15_trigger_time = Q.time;
@@ -882,6 +900,20 @@ if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coal
     if (Q.flavour_24_trigger == 1 && !Q.flavour_24_trigger_shown) {
         Q.flavour_24_trigger_time = Q.time;
         Q.flavour_24_trigger_shown = 1;
+    }
+}
+if (Q.year >= 1930 && Q.total_bruning_time >= 8 && (Q.kvp_cnblp_sister || Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && !Q.eastern_aid && Q.time !== Q.last_time_updated) {
+    Q.flavour_25_trigger += 1;
+    if (Q.flavour_25_trigger && !Q.flavour_25_trigger_shown) {
+        Q.flavour_25_trigger_time = Q.time;
+        Q.flavour_25_trigger_shown = 1;
+    }
+}
+if (Q.year >= 1930 && Q.total_bruning_time >= 11 && !Q.eastern_aid && Q.time !== Q.last_time_updated) {
+    Q.flavour_26_trigger += 1;
+    if (Q.flavour_26_trigger && !Q.flavour_26_trigger_shown) {
+        Q.flavour_26_trigger_time = Q.time;
+        Q.flavour_26_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1301,6 +1333,8 @@ max-cards: 4
 
 {!<p class="dnvp">!}[? if flavour_15_trigger and flavour_15_trigger_time == time: The combination of our influence over the Brüning government, the ineffectiveness of his agrarian relief plan, the radicalization of the rural electorate signaled by Martin Schiele's resignation from the RLB, and the <span style="color: #7FCEB1;">**CNBLP**</span>'s third-place finish in rural areas behind the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #7A3C00;">**NSDAP**</span> has led the party to reconsider its support for Brüning. An anti-Brüning right-wing faction now dominates within the <span style="color: #7FCEB1;">**CNBLP**</span>, successfully pushing through a resolution chastising the Chancellor and demanding a reorganization of the coalition to include the <span style="color: #7A3C00;">Nazis</span>. Brüning has refused to comply, prompting the <span style="color: #7FCEB1;">**CNBLP**</span> to become one of the first parties to bolt from his coalition, now voting against his decrees and supporting right-wing motions of no confidence. ?]{!</p>!}
 
+{!<p class="dnvp">!}[? if flavour_25_trigger and flavour_25_trigger_time == time: The general ineffectiveness of Brüning's agrarian relief, led by Agriculture Minister Martin Schiele of the [? if dnvp_split_2: <span style="color: #7FCEB1;">**CNBLP**</span>?][? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?], has led to growing dissatisfaction within his own party. To retain their support, Schiele and Brüning have introduced a formal *Eastern Aid Act*, a policy designed to relieve the debts of agricultural enterprises in the east—despite the heavy financial burden it imposes. While this measure has placated organized agriculture and Hindenburg himself, it stands in direct contradiction to Brüning’s broader strategy of economic recovery through a balanced budget. ?]{!</p>!}
+
 {!<p class="other">!}[? if year = 1930 and month = 12 and kpd_leader == "Thälmann" : Ernst Thälmann has embraced a new <span style='color: #7A3C00;'>national-populist</span> strategy, rallying under the slogan of the *Volksrevolution*. This move is an attempt by the <span style='color: #700000;'>**KPD**</span> to expand its influence in the bourgeoisie social groups where the <span style='color: #7A3C00;'>**NSDAP**</span> are the strongest in. Leon Trotsky and many other <span style='color: #700000;'>**Communists**</span> have condemned this shift, denouncing the use of 'people's revolution' instead of 'proletarian revolution' as a distortion of <span style="color: #9B0000;">Marxism</span>. They also pointed out that its the exact same slogan used by Otto Strasser and the left-wing faction of the <span style='color: #7A3C00;'>**NSDAP**</span>.  ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_17_trigger and flavour_17_trigger_time == time: The defection of the northern wing’s Reichstag members from the <span style="color: #007A00;">German Peasants' Party</span> to the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has effectively ended the party as a national political force. All that remains is the original <span style="color: #38C538;">Bavarian Peasants’ League</span>, which, amid a prevailing mood of resignation, is expected to secure only a fraction of its former support in the next election, as most peasants turn further to the right in search of a solution to Germany's crisis. ?]{!</p>!}
@@ -1316,6 +1350,8 @@ max-cards: 4
 {!<p class="both">!}[? if year = 1931 and month = 3 and PLR_launched : The <span style="color: #7A3C00;">**NSDAP**</span> has finally agreed to support the referendum for the dissolution of the Landtag[? if not hitler_deported:, though Hitler remains personally skeptical about its chances of success?].[? if dnvp_ideology == "Moderate": With backing from both the <span style="color: #3E88B3;">**Stahlhelm**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, the <span style="color: #3E88B3;">**DNVP**</span> has also thrown its support behind the initiative. [? if dnvp_leader == "Treviranus": However, Treviranus remains hesitant, but still allows his party members to vote according to their conscience. ?]?] [? if landtag_ref_dvp: Additionally, the <span style="color: #C0A054;">**DVP**</span> has aligned with the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>, with Dingeldey reaffirming his party’s commitment to the struggle against <span style="color: #c00000;">socialism</span>.?] Fortunately, the <span style="color: #700000;">**KPD**</span> has refused to cooperate with figures like Hugenberg and [+ nsdap_leader +] in this initiative[? if kpd_leader != "Conciliators":, keeping the anti-democratic vote divided?]. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 3 and kpd_leader == "Thälmann" : Richard Scheringer, a former Reichswehr officer and prominent member of the <span style='color: #7A3C00;'>**NSDAP**</span> and <span style='color: #7A3C00;'>**SA**</span>, was imprisoned for attempting to establish <span style='color: #7A3C00;'>Nazi</span> cells within the military. In a shocking turn, after extensive discussions with his <span style='color: #700000;'>**Communist**</span> cellmates, he has defected to the <span style='color: #700000;'>**KPD**</span>. Seizing this opportunity, the <span style="color: #700000;">**KPD**</span> is now embracing the so-called 'Scheringer Line,' incorporating more nationalist rhetoric into its messaging to attract <span style="color: #7A3C00;">Nazi</span> defectors. ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_26_trigger and flavour_26_trigger_time == time: The Brüning cabinet has introduced the Eastern Aid Act, a policy aimed at relieving the debts of agricultural enterprises in the east—despite the significant financial burden it imposes. This measure directly contradicts Brüning’s broader strategy of economic recovery through budget austerity. To partially fund the policy, the government has retained outdated reparation taxes that became obsolete after the Young Plan. However, the lack of full funding for debt relief has frustrated many influential landowners, prompting them to take their complaints directly to Hindenburg, over whom they wield considerable influence. ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_13_trigger and flavour_13_trigger_time == time: Brüning’s decision to sideline the Reichstag and its parties from any meaningful role in shaping his fiscal and economic policies severely undermined the legitimacy of the bourgeois parties in the eyes of their traditional electorates, due to their powerlessness to dismantle his more repugnant policies. One clear example is the plight of civil servants, who have borne the brunt of salary cuts of approximately 20 percent, pushing many toward the <span style="color: #7A3C00;">Nazis</span>. His deflationary and austerity measures deepened the economic crisis, radicalizing the very social groups upon which these moderate parties relied for electoral support. This has led to heightened tensions between Brüning and his supporting parties, some of whom are even threatening to abandon his coalition. ?]{!</p>!}
 
