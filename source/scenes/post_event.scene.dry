@@ -1501,7 +1501,7 @@ if (Q.year >= 1930 && Q.total_bruning_time >= 8 && !Q.kvp_cnblp_sister && !Q.in_
     Q.cnblp_defect_pt2_time = Q.time + 4;
 } else if (Q.year >= 1930 && Q.total_bruning_time >= 8 && (Q.kvp_cnblp_sister || Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament || Q.spd_toleration_right || Q.bourgeois_parliament_no_liberals || Q.spd_toleration_right) && !Q.cnblp_defect && !Q.eastern_aid) {
     Q.eastern_aid = 1;
-    if (Q.budget < 0 && Q.reparations > -2) Q.eastern_aid_deficit += 1;
+    if (Q.budget < 0 && Q.reparations > -2) Q.eastern_aid_deficit = 1;
     if (Q.budget < 0 && Q.reparations > -2) Q.bruning_coalition_dissent += 1;
     Q.rural_dnvp += 3;
     Q.rural_other += 2;
