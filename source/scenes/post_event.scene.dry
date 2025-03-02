@@ -2475,7 +2475,7 @@ if (!Q.nazi_peak_triggered) {
     }
     if (Q.nsdap_r >= 30) {
         Q.nazi_peak -= 5;
-    } else if (Q.nsdap_votes >= Q.nsdap_r && Q.chancellor != "Brüning" && !Q.spd_toleration) {
+    } else if (Q.nsdap_votes >= Q.nsdap_r + 10) {
         Q.nazi_peak -= (Q.nsdap_votes - Q.nsdap_r) / 3;
     }
     if (Q.chancellor == "Papen" && Q.dnvp_ideology == "Radical") {
