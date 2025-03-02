@@ -81,7 +81,7 @@ if (Q.dstp_formed && Q.next_election_time - Q.time == 1 && Q.time !== Q.last_tim
         Q.flavour_9_trigger_shown = 1;
     }
 }
-if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_10_trigger += 1;
     if (Q.flavour_10_trigger && !Q.flavour_10_trigger_shown) {
         Q.flavour_10_trigger_time = Q.time;
@@ -89,7 +89,7 @@ if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament &&
         Q.flavour_10_effect_trigger = 1;
     }
 }
-if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_11_trigger += 1;
     if (Q.flavour_11_trigger && !Q.flavour_11_trigger_shown) {
         Q.flavour_11_trigger_time = Q.time;
@@ -255,6 +255,22 @@ if (Q.flavour_29_trigger && Q.flavour_20_trigger && Q.time == Q.flavour_20_trigg
     if (Q.flavour_31_trigger == 1 && !Q.flavour_31_trigger_shown) {
         Q.flavour_31_trigger_time = Q.time;
         Q.flavour_31_trigger_shown = 1;
+    }
+}
+if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_32_trigger += 1;
+    if (Q.flavour_32_trigger && !Q.flavour_32_trigger_shown) {
+        Q.flavour_32_trigger_time = Q.time;
+        Q.flavour_32_trigger_shown = 1;
+        Q.flavour_32_effect_trigger = 1;
+    }
+}
+if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_33_trigger += 1;
+    if (Q.flavour_33_trigger && !Q.flavour_33_trigger_shown) {
+        Q.flavour_33_trigger_time = Q.time;
+        Q.flavour_33_trigger_shown = 1;
+        Q.flavour_33_effect_trigger = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -860,7 +876,7 @@ if (Q.dstp_formed && Q.next_election_time - Q.time == 1 && Q.time !== Q.last_tim
         Q.flavour_9_trigger_shown = 1;
     }
 }
-if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_10_trigger += 1;
     if (Q.flavour_10_trigger && !Q.flavour_10_trigger_shown) {
         Q.flavour_10_trigger_time = Q.time;
@@ -868,7 +884,7 @@ if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament &&
         Q.flavour_10_effect_trigger = 1;
     }
 }
-if (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_11_trigger += 1;
     if (Q.flavour_11_trigger && !Q.flavour_11_trigger_shown) {
         Q.flavour_11_trigger_time = Q.time;
@@ -917,7 +933,7 @@ if (Q.flavour_15_trigger && Q.time == Q.flavour_15_trigger_time + 4 && Q.time !=
     }
 }
 // peasants party collapse cuz they leave for ddp
-if (Q.year >= 1930 && Q.ddp_factionless && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.ddp_factionless && !Q.liberal_parliament && !Q.bourgeois_parliament_ddp && Q.time !== Q.last_time_updated) {
     Q.flavour_17_trigger += 1;
     if (Q.flavour_17_trigger == 2 && !Q.flavour_17_trigger_shown) {
         Q.flavour_17_trigger_time = Q.time;
@@ -1034,6 +1050,22 @@ if (Q.flavour_29_trigger && Q.flavour_20_trigger && Q.time == Q.flavour_20_trigg
     if (Q.flavour_31_trigger == 1 && !Q.flavour_31_trigger_shown) {
         Q.flavour_31_trigger_time = Q.time;
         Q.flavour_31_trigger_shown = 1;
+    }
+}
+if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_32_trigger += 1;
+    if (Q.flavour_32_trigger && !Q.flavour_32_trigger_shown) {
+        Q.flavour_32_trigger_time = Q.time;
+        Q.flavour_32_trigger_shown = 1;
+        Q.flavour_32_effect_trigger = 1;
+    }
+}
+if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_33_trigger += 1;
+    if (Q.flavour_33_trigger && !Q.flavour_33_trigger_shown) {
+        Q.flavour_33_trigger_time = Q.time;
+        Q.flavour_33_trigger_shown = 1;
+        Q.flavour_33_effect_trigger = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1428,6 +1460,10 @@ max-cards: 4
 {!<p class="other">!}[? if flavour_10_trigger and flavour_10_trigger_time == time : For one reason or another, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> lacks the Reichstag delegates to form a parliamentary faction and is now required to negotiate with another party to join forces. In this case, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has decided to work with the <span style="color: #C0A054;">**DVP**</span> to establish a parliamentary faction. Surprisingly, the <span style="color: #C0A054;">**DVP**</span> was interested in accommodating with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, [? if dvp_leader == "Scholz" and dstp_formed: but just as they were about to finalize their agreement, an angry Ernst Scholz torpedoed the negotiations, still furious about how the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> disrupted his efforts toward bourgeois unity. Fortunately, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> was able to accept a few defections from the <span style="color: #b8996f;">**WP**</span> to reach the required size for a parliamentary faction.?][? if dvp_leader != "Scholz" or not dstp_formed: [? if chancellor == "Brüning" and not spd_in_government: having ceased their intrigues against Brüning's government in order to finalize the agreement.?][? if not (chancellor == "Brüning" and not spd_in_government): having put aside their grudges to finalize the agreement.?]?] ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_11_trigger and flavour_11_trigger_time == time : For one reason or another, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> lacks the Reichstag delegates to form a parliamentary faction and is now required to negotiate with another party to join forces. In this case, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has decided to work with the <span style="color: #C0A054;">**DVP**</span> to establish a parliamentary faction. Surprisingly, the <span style="color: #C0A054;">**DVP**</span> was interested in accommodating with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, [? if dvp_leader == "Scholz" and dstp_formed: but just as they were about to finalize their agreement, an angry Ernst Scholz torpedoed the negotiations, still furious about how the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> disrupted his efforts toward bourgeois unity. As a result of this, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has formed an agreement with the <span style="color: #b8996f;">**WP**</span> instead, having exhausted its choices. ?][? if dvp_leader != "Scholz" or not dstp_formed: [? if chancellor == "Brüning" and not spd_in_government: having ceased their intrigues against Brüning's government in order to finalize the agreement.?][? if not (chancellor == "Brüning" and not spd_in_government): having put aside their grudges to finalize the agreement.?]?] ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_32_trigger and flavour_32_trigger_time == time : For one reason or another, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> lacks the Reichstag delegates to form a parliamentary faction and is now required to negotiate with another party to join forces. With the bourgeois parties already grouped together, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is forced to negotiate with them. Surprisingly, the bourgeois parties have gotten over their grudges against the party, and are open to cooperation. [? if dvp_leader == "Scholz" and dstp_formed: However, just as they were about to finalize their agreement, an angry Ernst Scholz torpedoed the negotiations, still furious about how the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> disrupted his efforts toward bourgeois unity. Fortunately, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> was able to accept a few defections from the various parties within the group to reach the required size for a parliamentary faction.?][? if dvp_leader != "Scholz" or not dstp_formed: [? if chancellor == "Brüning" and not spd_in_government: They have all agreed to cease their intrigues against Brüning's government in order to finalize the agreement.?][? if not (chancellor == "Brüning" and not spd_in_government): With past disputes set aside, they've finalized the agreement.?]?] ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_33_trigger and flavour_33_trigger_time == time : For one reason or another, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> lacks the Reichstag delegates to form a parliamentary faction and is now required to negotiate with another party to join forces. With the bourgeois parties already grouped together, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is forced to negotiate with them. Surprisingly, the bourgeois parties have gotten over their grudges against the party, and are open to cooperation. [? if dvp_leader == "Scholz" and dstp_formed: However, just as they were about to finalize their agreement, an angry Ernst Scholz torpedoed the negotiations, still furious about how the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> disrupted his efforts toward bourgeois unity. As a result of this, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is forced to enter the <span style="color: #000000;">Center</span>'s parliamentary group. ?][? if dvp_leader != "Scholz" or not dstp_formed: [? if chancellor == "Brüning" and not spd_in_government: They have all agreed to cease their intrigues against Brüning's government in order to finalize the agreement.?][? if not (chancellor == "Brüning" and not spd_in_government): With past disputes set aside, they've finalized the agreement.?]?] ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if year = 1930 and month = 9 : Adolf Hitler of the <span style="color: #7A3C00;">**NSDAP**</span> has taken an oath of legality, pledging to use constitutional means to gain power. This occurred during a court case involving <span style="color: #7A3C00;">Nazi</span> members and Reichswehr officers Richard Scheringer and Hanns Ludin, who were accused of plotting a national uprising by establishing <span style="color: #7A3C00;">**NSDAP**</span> cells within the Reichswehr. Under normal circumstances, Hitler's statements—tantamount to preparing for high treason—would have led to prosecution. Instead, the authorities are tolerating, even legitimizing the <span style="color: #7A3C00;">Nazi</span> agenda. ?]{!</p>!}
 

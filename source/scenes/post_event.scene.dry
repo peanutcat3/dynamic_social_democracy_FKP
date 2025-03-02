@@ -1451,17 +1451,29 @@ if (Q.dnvp_split_2_timer == 2 && !Q.kvp_cnblp_sister && Q.bourgeois_cooperation 
     Q.bourgeois_cooperation += 1;
 }
 
-if (((Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.flavour_10_effect_trigger == 1) || (Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.flavour_11_effect_trigger == 1)) && (Q.dvp_leader != "Scholz" || !Q.dstp_formed)) {
+if (((Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.flavour_10_effect_trigger == 1) || (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.flavour_11_effect_trigger == 1)) && (Q.dvp_leader != "Scholz" || !Q.dstp_formed)) {
     Q.liberal_parliament = 1;
     Q.liberal_cooperation += 3;
     Q.dvp_left += 5;
     Q.ddp_right += 3;
     Q.ddp_factionless = 0;
-} else if ((Q.ddp_factionless && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.flavour_11_effect_trigger == 1) && (Q.dvp_leader == "Scholz" && Q.dstp_formed)) {
+} else if ((Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.flavour_11_effect_trigger == 1) && (Q.dvp_leader == "Scholz" && Q.dstp_formed)) {
     Q.new_middle_ddp += 2;
     Q.old_middle_ddp += 2;
     Q.ddp_right += 3;
     Q.ddp_relation -= 5;
+    Q.ddp_factionless = 0;
+} else if (((Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.flavour_32_effect_trigger == 1) || (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.flavour_33_effect_trigger == 1)) && (Q.dvp_leader != "Scholz" || !Q.dstp_formed)) {
+    Q.bourgeois_parliament_ddp = 1;
+    Q.liberal_cooperation += 2;
+    Q.bourgeois_cooperation += 1;
+    Q.dvp_left += 3;
+    Q.ddp_right += 3;
+    Q.ddp_factionless = 0;
+} else if ((Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.flavour_33_effect_trigger == 1) && (Q.dvp_leader == "Scholz" && Q.dstp_formed)) {
+    Q.new_middle_ddp -= 2;
+    Q.old_middle_ddp -= 2;
+    Q.catholics_ddp += 2;
     Q.ddp_factionless = 0;
 }
 
