@@ -2377,6 +2377,11 @@ if (Q.spd_in_government_time >= 6) {
     if (Q.rearmament_exposed >= 1) {
         Q.hindenburg_angry += 3;
     }
+    if (Q.sapd_formed) {
+        Q.hindenburg_angry -= 2;
+    } else if (Q.left_split) {
+        Q.hindenburg_angry -= 1;
+    }
     if (Q.hindenburg_angry < Q.hindenburg_angry_base) {
         Q.hindenburg_angry += 5;
     }
