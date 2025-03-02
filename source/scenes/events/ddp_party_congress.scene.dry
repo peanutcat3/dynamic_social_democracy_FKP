@@ -38,7 +38,7 @@ if (Q.major_curriculum == "humanist") {
     Q.heuss_points += 1;
 }
 if (Q.pro_republic >= 75) {
-    Q.heuss_points += 3;
+    Q.heuss_points += 2;
     Q.lemmer_points += 1;
     Q.ddp_left += 3;
 } else if (Q.pro_republic >= 60) {
