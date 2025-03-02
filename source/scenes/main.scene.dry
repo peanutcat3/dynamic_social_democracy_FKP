@@ -916,14 +916,14 @@ if (Q.year >= 1930 && Q.total_bruning_time >= 11 && !Q.eastern_aid && Q.time !==
         Q.flavour_26_trigger_shown = 1;
     }
 }
-if (Q.flavour_25_trigger && Q.time == Q.flavour_25_trigger + 4 && Q.eastern_aid_deficit && Q.bruning_time && Q.time !== Q.last_time_updated) {
+if (Q.flavour_25_trigger && Q.time == Q.flavour_25_trigger_time + 4 && Q.eastern_aid_deficit && Q.bruning_time && Q.time !== Q.last_time_updated) {
     Q.flavour_27_trigger += 1; 
     if (Q.flavour_27_trigger == 1 && !Q.flavour_27_trigger_shown) {
         Q.flavour_27_trigger_time = Q.time;
         Q.flavour_27_trigger_shown = 1;
     }
 }
-if (Q.flavour_25_trigger && Q.time == Q.flavour_25_trigger + 4 && !Q.eastern_aid_deficit && Q.bruning_time && Q.time !== Q.last_time_updated) {
+if (Q.flavour_25_trigger && Q.time == Q.flavour_25_trigger_time + 4 && !Q.eastern_aid_deficit && Q.bruning_time && Q.time !== Q.last_time_updated) {
     Q.flavour_28_trigger += 1; 
     if (Q.flavour_28_trigger == 1 && !Q.flavour_28_trigger_shown) {
         Q.flavour_28_trigger_time = Q.time;
