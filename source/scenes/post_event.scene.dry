@@ -438,7 +438,6 @@ if (Q.month_actions >= 1) {
     // soft cap for nsdap workers
     if (Q.workers_nsdap_normalized >= Q.workers_kpd_normalized && Q.unemployed >= 20) {
         Q.workers_nsdap -= 4/12;
-        Q.workers_kpd += 4/12;
     }
 
     if (Q.bourgeois_parliament && Q.nsdap_votes >= 15) {
@@ -731,6 +730,7 @@ if (Q.month_actions >= 1) {
             Q.rural_lvp -= 4/12;
             Q.workers -= 4/12;
             Q.unemployed_nsdap += 10/12;
+            Q.workers_nsdap += 2/12;
             Q.rural_other -= 3/12;
             Q.rural_nsdap += 6/12;
             if (Q.bruning_time) {
@@ -743,8 +743,6 @@ if (Q.month_actions >= 1) {
             }
             Q.new_middle_nsdap += 8/12;
             Q.old_middle_nsdap += 8/12;
-            Q.workers_nsdap += 2/12;
-            Q.workers_kpd += 2/12;
             Q.sa_strength += 100/12;
             Q.sh_militancy += 0.05/12;
             Q.sa_militancy += 0.1/12;
@@ -824,7 +822,7 @@ if (Q.month_actions >= 1) {
             Q.old_middle_nsdap += 6/12;
             Q.unemployed_nsdap += 4/12;
             Q.unemployed_kpd += 2/12;
-            Q.workers_kpd += 2/12;
+            Q.workers_kpd += 1/12;
             Q.sa_strength += 100/12;
             Q.rfb_strength += 25/12;
             Q.sa_militancy += 0.05/12;
