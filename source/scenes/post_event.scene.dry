@@ -213,16 +213,16 @@ if (Q.month_actions >= 1) {
         Q.unemployed += 0.1;
     }
     if (Q.inflation <= -5 && Q.unemployed < 20) {
-        Q.unemployed += 0.2;
+        Q.unemployed += 0.1;
     }
     // economic growth
     if (Q.economic_growth < -0.5 && Q.unemployed <= 16) {
         Q.unemployed += 0.1;
     }
-    if (Q.economic_growth < -5 && Q.unemployed <= 24) {
+    if (Q.economic_growth < -5 && Q.unemployed <= 22) {
         Q.unemployed += 0.1;
     }
-    if (Q.economic_growth >= 2 && Q.unemployed >= 17) {
+    if (Q.economic_growth >= 2 && Q.unemployed >= 16) {
         Q.unemployed -= 0.1;
     }
     if (Q.economic_growth >= 4 && Q.unemployed >= 12) {
@@ -799,8 +799,8 @@ if (Q.month_actions >= 1) {
         Q.sa_strength += 100/12;
         if (!Q.works_program) {
             Q.workers_other -= 3/12;
-            Q.unemployed += 3/12; 
-            Q.inflation -= 2/12;
+            Q.unemployed += 1/12; 
+            Q.inflation -= 1/12;
             Q.economic_growth -= 1/12;
             Q.catholics_z += 2/12;
             if (Q.z_leader == "Kaas") {
