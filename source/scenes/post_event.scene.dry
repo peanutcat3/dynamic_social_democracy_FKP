@@ -2467,6 +2467,7 @@ if (Q.nazi_decay_timer > 0 && Q.nsdap_votes >= Q.nazi_peak_votes - 10) {
     Q.unemployed_nsdap -= 8/12;
     Q.catholics_nsdap -= 5/12;
     Q.sa_strength *= 0.97;
+    Q.sa_militancy -= 0.01;
     Q.new_middle_ddp += 2/12;
     Q.new_middle_dvp += 2/12;
     Q.workers_kpd += 3/12;
