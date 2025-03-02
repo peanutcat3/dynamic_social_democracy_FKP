@@ -2489,11 +2489,11 @@ if (!Q.nazi_peak_triggered) {
         Q.nazi_peak -= 15;
     }
 }   
-if (Q.nsdap_votes >= Q.nazi_peak && !Q.nazi_peak_triggered && Q.nsdap_votes >= 24) {
+if (Q.nsdap_votes >= Q.nazi_peak && !Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
     Q.nazi_peak_triggered = 1;
     Q.nazi_peak_votes = Q.nsdap_votes;
     Q.nazi_decay_timer = 24;
-    Q.coup_progress += 4;
+    Q.coup_progress += 3;
 }
 
 if (Q.nazi_decay_timer > 0 && Q.nsdap_votes >= Q.nazi_peak_votes - 10) {
