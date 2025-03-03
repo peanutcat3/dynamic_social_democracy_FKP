@@ -556,7 +556,7 @@ if (Q.month_actions >= 1) {
         Q.new_middle_dvp -= 3/12;
         Q.new_middle_lvp -= 3/12;
         Q.new_middle_lvp -= 3/12;
-        Q.workers_kpd += 3/12;
+        Q.workers_kpd += 2/12;
         Q.sa_strength += 50/12;
         Q.rural_dnvp -= 4/12;
         Q.rural_nsdap += 10/12;
@@ -619,7 +619,8 @@ if (Q.month_actions >= 1) {
             Q.new_middle_dnvp += 3/12;
         }
 } else if (Q.year == 1930) {
-        Q.unemployed += 6.8/12; 
+        if (Q.month < 7) Q.unemployed += 2.4/12; 
+        if (Q.month >= 7) Q.unemployed += 4.6/12; 
         Q.inflation -= 4/12;
         Q.rural_nsdap += 8/12;
         if (Q.dvp_leader == "Curtius") {
@@ -660,7 +661,6 @@ if (Q.month_actions >= 1) {
             Q.new_middle_nsdap += 2/12;
             Q.old_middle_nsdap += 5/12;
             Q.workers_nsdap += 3/12;
-            Q.workers_kpd += 2/12;
             Q.sh_militancy += 0.05/12;
             Q.sa_militancy += 0.05/12;
             if (Q.dnf_formed) {
