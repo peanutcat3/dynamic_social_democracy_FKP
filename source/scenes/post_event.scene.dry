@@ -2405,6 +2405,10 @@ if (Q.president == "Hindenburg" && Q.chancellor == "Brüning" && !Q.spd_in_gover
     Q.bruning_time = 0;
 }
 
+if (!Q.spd_toleration) {
+    Q.bruning_toleration_time = 0;
+}
+
 if (Q.bruning_time == 1) {
     Q.hindenburg_angry_bruning = 0;
 }
