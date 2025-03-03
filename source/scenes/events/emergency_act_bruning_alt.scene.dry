@@ -2,7 +2,7 @@ title: Act for the Protection of the Economy and Finance
 subtitle: Chancellor [+ chancellor +] introduces his most controversial act yet.
 new-page: true
 view-if: total_bruning_time == 15 and (in_center_right_coalition or in_right_coalition) and (hoover_moratorium_seen or reparations == -2)
-on-arrival: emergency_decree_seen = 1; ddp_right += 1; dvp_right += 2; lvp_right += 1.5
+on-arrival: emergency_decree_alt_seen = 1; emergency_act_alt_seen = 1; ddp_right += 1; dvp_right += 2; lvp_right += 1.5
 tags: event
 face-image: img/bruning.jpg
 max-visits: 1
@@ -20,7 +20,7 @@ With the bourgeois-right holding a majority coalition, it is now up to them to r
 - @bruning_survive: We await the decision of the bourgeois parties.
 
 @bruning_survive
-on-arrival: new_middle_nsdap += 2; new_middle_dvp -= 2; old_middle_nsdap += 2; budget += 1; inflation -= 1
+on-arrival: new_middle_nsdap += 2; new_middle_dvp -= 2; old_middle_dnvp -= 2; old_middle_nsdap += 2; budget += 1; inflation -= 1
 
 The more radical anti-Brüning factions within the <span style="color: #C0A054;">**DVP**</span> and <span style="color: #3E88B3;">**DNVP**</span> initially pushed to break with Brüning, threatening to vote against the act. However, the strong pro-Brüning faction—including figures like Westarp, Curtius, and influential industrialists such as Hans Luther—managed to sway their colleagues, arguing the act is a necessary, albeit painful, step to stabilize Germany’s economy. Their confidence in Brüning was further restored by the fact that the measures were not as severe as initially feared.
 
