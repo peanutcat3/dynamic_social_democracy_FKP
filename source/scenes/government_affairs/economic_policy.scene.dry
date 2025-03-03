@@ -31,7 +31,7 @@ We have already formulated an economic plan. Now we have to implement it. [? if 
 @austerity
 title: Look into potential austerity measures.
 subtitle: We have to scrounge up money somehow.
-view-if: budget < 0
+view-if: budget <= 0
 
 - @cut_salaries
 - @industrial_levy
