@@ -1613,7 +1613,7 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
 }
 
 if (Q.dnvp_conflict_time == Q.time) {
-    Q.bruning_coalition_dissent += 1;
+    Q.bruning_coalition_dissent += 2;
     Q.new_middle_dnf += 2;
     Q.old_middle_dnf += 3;
     Q.new_middle_dnvp -= 2;
