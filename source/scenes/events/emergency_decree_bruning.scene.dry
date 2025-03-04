@@ -21,7 +21,53 @@ The decree is deeply unpopular, provoking widespread outrage across German socie
 
 @nothing_to_do
 view-if: spd_toleration == 0
-on-arrival: unemployed += 1.5; budget += 1; inflation -= 2; economic_growth -= 0.5; emergency_decree_mitigated = 1 if liberal_parliament or bourgeois_parliament or lvp_formed; emergency_decree_mitigated_more = 1 if emergency_decree_mitigated and (lvp_leader == "Luther" and lvp_formed or bourgeois_parliament and bourgeois_parliament_ddp or liberal_parliament and liberal_cooperation >= 8); unemployed -= 1 if emergency_decree_mitigated; budget -= 1 if emergency_decree_mitigated; inflation += 1 if emergency_decree_mitigated; economic_growth += 0.3 if emergency_decree_mitigated; unemployed -= 0.2 if emergency_decree_mitigated_more; inflation += 0.2 if emergency_decree_mitigated_more; economic_growth += 0.1 if emergency_decree_mitigated_more; new_middle_ddp += 3 if emergency_decree_mitigated; old_middle_ddp += 2 if emergency_decree_mitigated; new_middle_dvp += 4 if emergency_decree_mitigated; old_middle_dvp += 4 if emergency_decree_mitigated; rural_dvp += 2 if emergency_decree_mitigated; new_middle_lvp += 6 if emergency_decree_mitigated; old_middle_lvp += 6 if emergency_decree_mitigated; rural_lvp += 2 if emergency_decree_mitigated; new_middle_nsdap -= 6 if emergency_decree_mitigated; old_middle_nsdap -= 6 if emergency_decree_mitigated; new_middle_ddp += 2 if emergency_decree_mitigated_more; old_middle_ddp += 1 if emergency_decree_mitigated_more; new_middle_dvp += 2 if emergency_decree_mitigated_more; old_middle_dvp += 2 if emergency_decree_mitigated_more; rural_dvp += 1 if emergency_decree_mitigated_more; new_middle_lvp += 3 if emergency_decree_mitigated_more; old_middle_lvp += 3 if emergency_decree_mitigated_more; rural_lvp += 1.5 if emergency_decree_mitigated_more; new_middle_nsdap -= 3 if emergency_decree_mitigated_more; old_middle_nsdap -= 3 if emergency_decree_mitigated_more; dvp_left += 5 if emergency_decree_mitigated; dvp_left += 3 if emergency_decree_mitigated_more; ddp_left += 3 if emergency_decree_mitigated; ddp_cohesion += 3 if emergency_decree_mitigated; ddp_left += 1 if emergency_decree_mitigated_more; lvp_left += 4 if emergency_decree_mitigated; lvp_left += 2 if emergency_decree_mitigated_more
+on-arrival: {!
+Q.unemployed += 1.5;
+Q.budget += 1;
+Q.inflation -= 2;
+Q.economic_growth -= 0.5;
+Q.emergency_decree_mitigated = Q.liberal_parliament || Q.bourgeois_parliament || Q.lvp_formed;
+Q.emergency_decree_mitigated_more = Q.emergency_decree_mitigated && ((Q.lvp_leader == "Luther" && Q.lvp_formed) || (Q.bourgeois_parliament && Q.bourgeois_parliament_ddp) || (Q.liberal_parliament && Q.liberal_cooperation >= 8));
+
+if (Q.emergency_decree_mitigated) {
+    Q.unemployed -= 1;
+    Q.budget -= 1;
+    Q.inflation += 1;
+    Q.economic_growth += 0.3;
+    Q.new_middle_ddp += 3;
+    Q.old_middle_ddp += 2;
+    Q.new_middle_dvp += 4;
+    Q.old_middle_dvp += 4;
+    Q.rural_dvp += 2;
+    Q.new_middle_lvp += 6;
+    Q.old_middle_lvp += 6;
+    Q.rural_lvp += 2;
+    Q.new_middle_nsdap -= 6;
+    Q.old_middle_nsdap -= 6;
+    Q.dvp_left += 5;
+    Q.ddp_left += 3;
+    Q.ddp_cohesion += 3;
+    Q.lvp_left += 4;
+}
+if (Q.emergency_decree_mitigated_more) {
+    Q.unemployed -= 0.2;
+    Q.inflation += 0.2;
+    Q.economic_growth += 0.1;
+    Q.new_middle_ddp += 2;
+    Q.old_middle_ddp += 1;
+    Q.new_middle_dvp += 2;
+    Q.old_middle_dvp += 2;
+    Q.rural_dvp += 1;
+    Q.new_middle_lvp += 3;
+    Q.old_middle_lvp += 3;
+    Q.rural_lvp += 1.5;
+    Q.new_middle_nsdap -= 3;
+    Q.old_middle_nsdap -= 3;
+    Q.dvp_left += 3;
+    Q.ddp_left += 1;
+    Q.lvp_left += 2;
+}
+!}
 
 The emergency policy passes under emergency rules, as the Reichstag is currently dissolved. The <span style="color: #7A3C00;">Nazis</span> use this as a recruiting tool, and so do we. [? if bourgeois_parliament: Fortunately, the bourgeois parliamentary group, with their leverage over Brüning, has managed to persuade him to present President [+ president +] with a follow-up decree, reversing the most repugnant cuts that would threaten their electoral standing. [? if bourgeois_parliament_ddp: Furthermore, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s presence in the parliamentary group has led Vice-Chancellor and Finance Minister Dietrich of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to personally mitigate the severity of Brüning's austerity measures.?]?][? if liberal_parliament: Fortunately, the liberal parliamentary group has allowed the liberal parties to combine their leverage over Brüning, and persuade him to present President [+ president +] with a follow-up decree, reversing the most repugnant cuts that would threaten their electoral standing. [? if liberal_parliament and liberal_cooperation >= 8: Furthermore, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s Vice-Chancellor and Finance Minister Dietrich is able to personally mitigate the severity of Brüning's austerity measures.?]?][? if lvp_formed: Fortunately, the <span style="color: #FFCC00;">**LVP**</span> with their leverage over Brüning, has managed to persuade him to present President [+ president +] with a follow-up decree, reversing the most repugnant cuts that would threaten their electoral standing. [? if lvp_leader == "Luther": Furthermore, the <span style="color: #FFCC00;">**LVP**</span>'s leader Hans Luther is able to use his connections with Brüning and the industrial community to influence his economic policy away from unrestrained austerity.?]?]
 
@@ -31,7 +77,57 @@ The emergency policy passes under emergency rules, as the Reichstag is currently
 title: Vote against this measure, ending the toleration agreement.
 subtitle: The decree has already been signed by [+ president +], we are powerless to prevent it.
 view-if: spd_toleration
-on-arrival: unemployed += 1.5; budget += 1; inflation -= 2; emergency_decree_mitigated = 1 if liberal_parliament or bourgeois_parliament or lvp_formed; emergency_decree_mitigated_more = 1 if emergency_decree_mitigated and (lvp_leader == "Luther" and lvp_formed or bourgeois_parliament and bourgeois_parliament_ddp or liberal_parliament and liberal_cooperation >= 8); unemployed -= 1 if emergency_decree_mitigated; budget -= 1 if emergency_decree_mitigated; inflation += 1 if emergency_decree_mitigated; economic_growth += 0.3 if emergency_decree_mitigated; unemployed -= 0.2 if emergency_decree_mitigated_more; inflation += 0.2 if emergency_decree_mitigated_more; economic_growth += 0.1 if emergency_decree_mitigated_more; new_middle_ddp += 3 if emergency_decree_mitigated; old_middle_ddp += 2 if emergency_decree_mitigated; new_middle_dvp += 4 if emergency_decree_mitigated; old_middle_dvp += 4 if emergency_decree_mitigated; rural_dvp += 2 if emergency_decree_mitigated; new_middle_lvp += 6 if emergency_decree_mitigated; old_middle_lvp += 6 if emergency_decree_mitigated; rural_lvp += 2 if emergency_decree_mitigated; new_middle_nsdap -= 6 if emergency_decree_mitigated; old_middle_nsdap -= 6 if emergency_decree_mitigated; new_middle_ddp += 2 if emergency_decree_mitigated_more; old_middle_ddp += 1 if emergency_decree_mitigated_more; new_middle_dvp += 2 if emergency_decree_mitigated_more; old_middle_dvp += 2 if emergency_decree_mitigated_more; rural_dvp += 1 if emergency_decree_mitigated_more; new_middle_lvp += 3 if emergency_decree_mitigated_more; old_middle_lvp += 3 if emergency_decree_mitigated_more; rural_lvp += 1.5 if emergency_decree_mitigated_more; new_middle_nsdap -= 3 if emergency_decree_mitigated_more; old_middle_nsdap -= 3 if emergency_decree_mitigated_more; dvp_left += 5 if emergency_decree_mitigated; dvp_left += 3 if emergency_decree_mitigated_more; ddp_left += 3 if emergency_decree_mitigated; ddp_cohesion += 3 if emergency_decree_mitigated; ddp_left += 1 if emergency_decree_mitigated_more; lvp_left += 4 if emergency_decree_mitigated; lvp_left += 2 if emergency_decree_mitigated_more; time_to_election = 3; spd_in_government = 0; in_grand_coalition = 0; spd_toleration = 0
+on-arrival: {!
+Q.time_to_election = 3;
+Q.spd_in_government = 0;
+Q.in_grand_coalition = 0;
+Q.spd_toleration = 0
+Q.unemployed += 1.5;
+Q.budget += 1;
+Q.inflation -= 2;
+Q.economic_growth -= 0.5;
+Q.emergency_decree_mitigated = Q.liberal_parliament || Q.bourgeois_parliament || Q.lvp_formed;
+Q.emergency_decree_mitigated_more = Q.emergency_decree_mitigated && ((Q.lvp_leader == "Luther" && Q.lvp_formed) || (Q.bourgeois_parliament && Q.bourgeois_parliament_ddp) || (Q.liberal_parliament && Q.liberal_cooperation >= 8));
+
+if (Q.emergency_decree_mitigated) {
+    Q.unemployed -= 1;
+    Q.budget -= 1;
+    Q.inflation += 1;
+    Q.economic_growth += 0.3;
+    Q.new_middle_ddp += 3;
+    Q.old_middle_ddp += 2;
+    Q.new_middle_dvp += 4;
+    Q.old_middle_dvp += 4;
+    Q.rural_dvp += 2;
+    Q.new_middle_lvp += 6;
+    Q.old_middle_lvp += 6;
+    Q.rural_lvp += 2;
+    Q.new_middle_nsdap -= 6;
+    Q.old_middle_nsdap -= 6;
+    Q.dvp_left += 5;
+    Q.ddp_left += 3;
+    Q.ddp_cohesion += 3;
+    Q.lvp_left += 4;
+}
+if (Q.emergency_decree_mitigated_more) {
+    Q.unemployed -= 0.2;
+    Q.inflation += 0.2;
+    Q.economic_growth += 0.1;
+    Q.new_middle_ddp += 2;
+    Q.old_middle_ddp += 1;
+    Q.new_middle_dvp += 2;
+    Q.old_middle_dvp += 2;
+    Q.rural_dvp += 1;
+    Q.new_middle_lvp += 3;
+    Q.old_middle_lvp += 3;
+    Q.rural_lvp += 1.5;
+    Q.new_middle_nsdap -= 3;
+    Q.old_middle_nsdap -= 3;
+    Q.dvp_left += 3;
+    Q.ddp_left += 1;
+    Q.lvp_left += 2;
+}
+!}
 call: set_next_election_time
 
 We have broken with the [+ chancellor +] government, and have voted against them in a vote of no confidence. The decree has still been enacted, but at the very least, we are spared from bearing the full brunt of its effects ending our association with the [+ chancellor +]. [? if bourgeois_parliament: Fortunately, the bourgeois parliamentary group, with their leverage over Brüning, has managed to persuade him to present President [+ president +] with a follow-up decree, reversing the most repugnant cuts that would threaten their electoral standing. [? if bourgeois_parliament_ddp: Furthermore, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s presence in the parliamentary group has led Vice-Chancellor and Finance Minister Dietrich of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to personally mitigate the severity of Brüning's austerity measures.?]?][? if liberal_parliament: Fortunately, the liberal parliamentary group has allowed the liberal parties to combine their leverage over Brüning, and persuade him to present President [+ president +] with a follow-up decree, reversing the most repugnant cuts that would threaten their electoral standing. [? if liberal_parliament and liberal_cooperation >= 8: Furthermore, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s Vice-Chancellor and Finance Minister Dietrich is able to personally mitigate the severity of Brüning's austerity measures.?]?][? if lvp_formed: Fortunately, the <span style="color: #FFCC00;">**LVP**</span> with their leverage over Brüning, has managed to persuade him to present President [+ president +] with a follow-up decree, reversing the most repugnant cuts that would threaten their electoral standing. [? if lvp_leader == "Luther": Furthermore, the <span style="color: #FFCC00;">**LVP**</span>'s leader Hans Luther is able to use his connections with Brüning and the industrial community to influence his economic policy away from unrestrained austerity.?]?]
@@ -43,7 +139,62 @@ New elections have been set for [+ next_election_month : month +] [+ next_electi
 @vote_yes
 title: Vote in favor of this measure to continue the toleration agreement.
 view-if: spd_toleration
-on-arrival: unemployed += 1.5; budget += 1; inflation -= 2; emergency_decree_mitigated = 1 if liberal_parliament or bourgeois_parliament or lvp_formed; emergency_decree_mitigated_more = 1 if emergency_decree_mitigated and (lvp_leader == "Luther" and lvp_formed or bourgeois_parliament and bourgeois_parliament_ddp or liberal_parliament and liberal_cooperation >= 8); unemployed -= 1 if emergency_decree_mitigated; budget -= 1 if emergency_decree_mitigated; inflation += 1 if emergency_decree_mitigated; economic_growth += 0.3 if emergency_decree_mitigated; unemployed -= 0.2 if emergency_decree_mitigated_more; inflation += 0.2 if emergency_decree_mitigated_more; economic_growth += 0.1 if emergency_decree_mitigated_more; new_middle_ddp += 3 if emergency_decree_mitigated; old_middle_ddp += 2 if emergency_decree_mitigated; new_middle_dvp += 4 if emergency_decree_mitigated; old_middle_dvp += 4 if emergency_decree_mitigated; rural_dvp += 2 if emergency_decree_mitigated; new_middle_lvp += 6 if emergency_decree_mitigated; old_middle_lvp += 6 if emergency_decree_mitigated; rural_lvp += 2 if emergency_decree_mitigated; new_middle_nsdap -= 6 if emergency_decree_mitigated; old_middle_nsdap -= 6 if emergency_decree_mitigated; new_middle_ddp += 2 if emergency_decree_mitigated_more; old_middle_ddp += 1 if emergency_decree_mitigated_more; new_middle_dvp += 2 if emergency_decree_mitigated_more; old_middle_dvp += 2 if emergency_decree_mitigated_more; rural_dvp += 1 if emergency_decree_mitigated_more; new_middle_lvp += 3 if emergency_decree_mitigated_more; old_middle_lvp += 3 if emergency_decree_mitigated_more; rural_lvp += 1.5 if emergency_decree_mitigated_more; new_middle_nsdap -= 3 if emergency_decree_mitigated_more; old_middle_nsdap -= 3 if emergency_decree_mitigated_more; dvp_left += 5 if emergency_decree_mitigated; dvp_left += 3 if emergency_decree_mitigated_more; ddp_left += 3 if emergency_decree_mitigated; ddp_cohesion += 3 if emergency_decree_mitigated; ddp_left += 1 if emergency_decree_mitigated_more; lvp_left += 4 if emergency_decree_mitigated; lvp_left += 2 if emergency_decree_mitigated_more; kpd_relation -= 5; left_dissent += 15; labor_dissent += 5; new_middle_spd -= 4; new_middle_nsdap += 4; old_middle_spd -= 2; old_middle_nsdap += 2
+on-arrival: {!
+Q.kpd_relation -= 5;
+Q.left_dissent += 15;
+Q.labor_dissent += 5;
+Q.new_middle_spd -= 4;
+Q.new_middle_nsdap += 4;
+Q.old_middle_spd -= 2;
+Q.old_middle_nsdap += 2;
+Q.workers_spd -= 3; 
+Q.workers_nsdap += 3;
+Q.unemployed += 1.5;
+Q.budget += 1;
+Q.inflation -= 2;
+Q.economic_growth -= 0.5;
+Q.emergency_decree_mitigated = Q.liberal_parliament || Q.bourgeois_parliament || Q.lvp_formed;
+Q.emergency_decree_mitigated_more = Q.emergency_decree_mitigated && ((Q.lvp_leader == "Luther" && Q.lvp_formed) || (Q.bourgeois_parliament && Q.bourgeois_parliament_ddp) || (Q.liberal_parliament && Q.liberal_cooperation >= 8));
+
+if (Q.emergency_decree_mitigated) {
+    Q.unemployed -= 1;
+    Q.budget -= 1;
+    Q.inflation += 1;
+    Q.economic_growth += 0.3;
+    Q.new_middle_ddp += 3;
+    Q.old_middle_ddp += 2;
+    Q.new_middle_dvp += 4;
+    Q.old_middle_dvp += 4;
+    Q.rural_dvp += 2;
+    Q.new_middle_lvp += 6;
+    Q.old_middle_lvp += 6;
+    Q.rural_lvp += 2;
+    Q.new_middle_nsdap -= 6;
+    Q.old_middle_nsdap -= 6;
+    Q.dvp_left += 5;
+    Q.ddp_left += 3;
+    Q.ddp_cohesion += 3;
+    Q.lvp_left += 4;
+}
+if (Q.emergency_decree_mitigated_more) {
+    Q.unemployed -= 0.2;
+    Q.inflation += 0.2;
+    Q.economic_growth += 0.1;
+    Q.new_middle_ddp += 2;
+    Q.old_middle_ddp += 1;
+    Q.new_middle_dvp += 2;
+    Q.old_middle_dvp += 2;
+    Q.rural_dvp += 1;
+    Q.new_middle_lvp += 3;
+    Q.old_middle_lvp += 3;
+    Q.rural_lvp += 1.5;
+    Q.new_middle_nsdap -= 3;
+    Q.old_middle_nsdap -= 3;
+    Q.dvp_left += 3;
+    Q.ddp_left += 1;
+    Q.lvp_left += 2;
+}
+!}
 
 We are compelled to vote in favor of the [+ chancellor +] government to prevent the extremist parties on the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> and <span style="color: #700000;">left</span> from translating their growing popular support into parliamentary gains.
 
