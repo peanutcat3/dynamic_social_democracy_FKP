@@ -920,8 +920,9 @@ if (Q.month_actions >= 1) {
             }
         }
         if (!Q.works_program) {
-            Q.unemployed -= 4/12;
-            Q.inflation += 4/12;
+            Q.unemployed *= 0.99;
+            Q.inflation += 2/12;
+            Q.economic_growth += 2/12;
         }
         if (Q.unemployed > 20) {
             Q.rural_nsdap += 2/12;
@@ -936,8 +937,9 @@ if (Q.month_actions >= 1) {
     // prevent forever support if the economy is bad
     if (Q.year >= 1934) {
         if (!Q.works_program) {
-            Q.unemployed -= 6/12;
-            Q.inflation += 4/12;
+            Q.unemployed *= 0.98;
+            Q.inflation += 2/12;
+            Q.economic_growth += 3/12;
         }
         if ((Q.inflation >= 8 || Q.unemployed >= 20) && Q.pro_republic <= 45 && Q.spd_in_government) {
             if (Q.workers_spd_normalized > 40) {
