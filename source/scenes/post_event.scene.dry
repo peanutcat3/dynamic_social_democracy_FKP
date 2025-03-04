@@ -1603,6 +1603,20 @@ if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.right_coalitio
     Q.old_middle_dvp -= 2;
 }
 
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && !Q.lvp_formed && !Q.dnvp_conflict_time) {
+    Q.dnvp_conflict_time = Q.time + 1
+}
+
+if (Q.dnvp_conflict_time == Q.time) {
+    Q.bruning_coalition_dissent += 1;
+    Q.new_middle_dnf += 2;
+    Q.old_middle_dnf += 3;
+    Q.new_middle_dnvp -= 2;
+    Q.old_middle_dnf += 3;
+    Q.rural_dnf += 2;
+    Q.rural_dnvp -= 2;
+}
+
 // historical route, ddp is right-wing and doesn't care about socialist cooperation as much, bourgeois parliament with ddp
 if (Q.bourgeois_negotiations_1930_timer == 4 && (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") && Q.ddp_ideology == "Right" && Q.ddp_relation < 45 && !Q.bourgeois_negotiations_election_soon && !Q.lvp_formed && !Q.dstp_formed) {
     Q.bourgeois_parliament_trigger = 1;
@@ -2445,11 +2459,6 @@ if (Q.bruning_time > 1) {
     if (Q.bourgeois_parliament) {
         Q.hindenburg_angry_bruning -= 2;
     } else if (Q.cnblp_defect && Q.wp_defect) {
-        Q.hindenburg_angry_bruning += 2;
-    } else if (Q.cnblp_defect || Q.wp_defect) {
-        Q.hindenburg_angry_bruning += 1;
-    }
-    if (Q.dvp_defect) {
         Q.hindenburg_angry_bruning += 1;
     }
     if (Q.bourgeois_list) {
