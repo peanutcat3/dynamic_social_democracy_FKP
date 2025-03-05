@@ -2455,6 +2455,10 @@ if (!Q.spd_toleration) {
     Q.bruning_toleration_time = 0;
 }
 
+if (!Q.spd_toleration_right) {
+    Q.dnvp_angry = 0;
+}
+
 if (Q.bruning_time == 1) {
     Q.hindenburg_angry_bruning = 0;
 }
