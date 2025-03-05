@@ -1609,17 +1609,41 @@ if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.right_coalitio
 }
 
 if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && !Q.lvp_formed && !Q.dnvp_conflict_time) {
-    Q.dnvp_conflict_time = Q.time + 1
+    Q.dnvp_conflict_time = Q.time + 1;
+    Q.curtius_resign = Q.time + 3;
 }
 
-if (Q.dnvp_conflict_time == Q.time) {
-    Q.bruning_coalition_dissent += 2;
+if (Q.dnvp_conflict_time == Q.time && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right)) {
+    Q.bruning_coalition_dissent += 1;
     Q.new_middle_dnf += 2;
     Q.old_middle_dnf += 3;
     Q.new_middle_dnvp -= 2;
     Q.old_middle_dnf += 3;
     Q.rural_dnf += 2;
     Q.rural_dnvp -= 2;
+}
+
+if (Q.curtius_resign && !Q.curtius_resign_seen && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right)) {
+    Q.bruning_coalition_dissent += 1;
+    Q.new_middle_dvp -= 2;
+    Q.old_middle_dvp -= 2;
+    Q.new_middle_lvp -= 3;
+    Q.old_middle_lvp -= 3;
+    Q.rural_lvp -= 2;
+    Q.dvp_right += 5;
+    Q.lvp_right += 3;
+    Q.curtius_resign_seen = 1;
+}
+
+if (Q.flavour_40_trigger && Q.flavour_40_trigger_time == Q.time - 1) {
+    Q.new_middle_lvp -= 2;
+    Q.old_middle_lvp -= 2;
+    Q.rural_lvp -= 2;
+    Q.dvp_right += 5;
+    Q.lvp_right += 5;
+    Q.curtius_resign_seen = 1;
+    Q.bruning_coalition_loss += (Q.lvp_r / 2);
+    Q.lvp_defect = 1;
 }
 
 // historical route, ddp is right-wing and doesn't care about socialist cooperation as much, bourgeois parliament with ddp

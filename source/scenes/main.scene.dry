@@ -1134,6 +1134,38 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
         Q.flavour_37_trigger_shown = 1;
     }
 }
+// lvp complains bout emergency decree
+if ((Q.emergency_decree_seen or Q.emergency_decree_alt_seen) && !Q.in_center_right_coalition && !Q.in_right_coalition && Q.lvp_leader == "Dingeldey" && Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_38_trigger += 1; 
+    if (Q.flavour_38_trigger == 1 && !Q.flavour_38_trigger_shown) {
+        Q.flavour_38_trigger_time = Q.time;
+        Q.flavour_38_trigger_shown = 1;
+    }
+}
+// lvp gets mad over bruning
+if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.spd_toleration_right && Q.lbp_leader == "Dingeldey" && Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_39_trigger += 1; 
+    if (Q.flavour_39_trigger == 1 && !Q.flavour_39_trigger_shown) {
+        Q.flavour_39_trigger_time = Q.time;
+        Q.flavour_39_trigger_shown = 1;
+    }
+}
+// lvp complains about banking crisis, precursor to curtius resigning
+if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.spd_toleration_right && Q.banking_crisis_seen && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_40_trigger += 1; 
+    if (Q.flavour_40_trigger == 1 && !Q.flavour_40_trigger_shown) {
+        Q.flavour_40_trigger_time = Q.time;
+        Q.flavour_40_trigger_shown = 1;
+    }
+}
+// curtius resigns, dnvp in coalition
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.time == Q.flavour_37_trigger_time + 3 && Q.time !== Q.last_time_updated) {
+    Q.flavour_41_trigger += 1; 
+    if (Q.flavour_41_trigger == 1 && !Q.flavour_41_trigger_shown) {
+        Q.flavour_41_trigger_time = Q.time;
+        Q.flavour_41_trigger_shown = 1;
+    }
+}
 Q.last_time_updated = Q.time;
 !}
 on-display: {!
@@ -1571,6 +1603,8 @@ max-cards: 4
 
 {!<p class="other">!}[? if flavour_23_trigger and flavour_23_trigger_time == time: Dingeldey of the <span style="color: #C0A054;">**DVP**</span> has attempted to pressure Brüning into reorganizing his cabinet by removing relatively left-leaning ministers, including their own Julius Curtius, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s Vice-Chancellor Hermann Dietrich, and the <span style="color: #000000;">Center</span>'s Interior Minister Joseph Wirth. However, these efforts failed to secure majority support within the <span style="color: #C0A054;">**DVP**</span>'s Reichstag delegation, forcing Dingeldey to put the plan on hold, as he still resents how [+ chancellor +] has effectively excluded his supporting parties in the formulation of his decrees. In the meantime, Dingeldey has been working on establishing closer relations with the "<span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>". ?]{!</p>!}
 
+{!<p class="other">!}[? if flavour_39_trigger and flavour_39_trigger_time == time: Dingeldey of the <span style="color: #FFCC00;">**LVP**</span> has been scheming to pressure Brüning into removing relatively left-leaning ministers, including their own Vice-Chancellor Hermann Dietrich and the <span style="color: #000000;">Center</span>'s Interior Minister Joseph Wirth. However, these efforts have sparked strong backlash from nearly all corners of the party. Still, an anti-Brüning right wing is slowly emerging, fueled by resentment over how [+ chancellor +] has effectively excluded his supporting parties from the formulation of his decrees.?]{!</p>!}
+
 {!<p class="other">!}[? if flavour_35_trigger and flavour_35_trigger_time == time: Dingeldey of the <span style="color: #C0A054;">**DVP**</span> has attempted to pressure Brüning into reorganizing his cabinet by removing relatively left-leaning ministers, including their own Julius Curtius, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s Vice-Chancellor Hermann Dietrich. However, these efforts failed to secure support within the <span style="color: #C0A054;">**DVP**</span>'s Reichstag delegation, forcing Dingeldey to abandon his plans. The inclusion of the right-wing <span style="color: #3E88B3;">**DNVP**</span> in the government has led the <span style="color: #C0A054;">**DVP**</span>’s right wing to abandon its efforts to court Hugenberg’s <span style="color: #003755;">**DNF**</span> and Hitler’s <span style="color: #7A3C00;">**NSDAP**</span>, as they believe the cabinet is already sufficiently right-wing. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 2 and dstp_formed and not lvp_formed and not lvp_timer_2_trigger : Most local organizations that have formerly belonged to the <span style="color: #D3C24D;">**DDP**</span> are extremely hesitant about becoming involved in the new party, and many of the <span style="color: #D3C24D;">**DDP**</span> auxiliary organizations, such as their youth and women's groups have collapsed and need to be built anew. All of this combined with the heavy psychological toll under which the leaders of the <span style="color: #D3C24D;">**State Party**</span> were already laboring as a result of the deepening economic crisis to produce a mood of growing resignation and pessimism about the future of the party.?]{!</p>!}
@@ -1615,7 +1649,11 @@ max-cards: 4
 
 {!<p class="other">!}[? if flavour_34_trigger and flavour_34_trigger_time == time: Dingeldey and the right wing of the <span style="color: #C0A054;">**DVP**</span> are outraged by Brüning's emergency decree, criticizing the new tax levies and cuts to civil servant salaries. Dingeldey has strongly urged Brüning to restore bourgeois confidence in his government by severing all ties with the <span style="color: #c00000;">**SPD**</span>. This push has gained significant support from the <span style="color: #C0A054;">**DVP**</span>’s right wing, which has long advocated for a cabinet reshuffle. In response, Brüning—along with Reichsbank President and <span style="color: #C0A054;">**DVP**</span> member Hans Luther—has pleaded for patience, promising a shift to the right in a cabinet reorganization and a relaxation of labor laws. With these assurances, Dingeldey is no longer working to bring down the government. ?]{!</p>!}
 
+{!<p class="other">!}[? if flavour_38_trigger and flavour_38_trigger_time == time: Dingeldey and the right wing of the <span style="color: #FFCC00;">**LVP**</span> are disappointed by Brüning's emergency decree, criticizing the new taxes and cuts to civil servant salaries. Dingeldey has personally urged Brüning to form a coalition with the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> to end his reliance on our votes. However, it would be impossible for him to convince the majority of his own party to oppose Brüning, so he is unable to act on his plans—at least for now. ?]{!</p>!}
+
 {!<p class="other">!}[? if flavour_24_trigger and flavour_24_trigger_time == time: The Banking Crisis[? if emergency_decree_seen:&nbsp;and the fallout from Brüning's second emergency decree?] has significantly intensified anti-Brüning sentiment among the bourgeois parties, especially the <span style="color: #C0A054;">**DVP**</span>[? if emergency_decree_seen:, which only narrowly secured a majority within its own ranks to support Brüning?]. The right wing of the <span style="color: #C0A054;">**DVP**</span> is increasingly frustrated by Brüning’s failure to follow through on his promise to shift the cabinet further to the right. However, Dingeldey remains hesitant to bring down the government, fearing it would further destabilize Germany’s financial situation. Additionally, the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> has shown no interest in joining Brüning’s cabinet. Under these circumstances, the <span style="color: #C0A054;">**DVP**</span> has little choice but to continue supporting Brüning. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_40_trigger and flavour_40_trigger_time == time: The Banking Crisis and the austerity measures that followed has worsened the <span style="color: #FFCC00;">**LVP**</span>'s perception of Brüning's government, and has caused their own leader Dingeldey to make public statements criticizing him, despite their own Julius Curtius having been the architect of the disastrous Austro-German customs union in the first place. A significant portion of the <span style="color: #FFCC00;">**LVP**</span> is still opposed to an outright break with the government, especially those who came from the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_36_trigger and flavour_36_trigger_time == time: The Banking Crisis[? if emergency_decree_seen:&nbsp;and the fallout from Brüning's second emergency decree?][? if emergency_act_seen:&nbsp;and the fallout from Brüning's emergency act?] has intensified anti-Brüning sentiment among the bourgeois parties, especially the <span style="color: #C0A054;">**DVP**</span>[? if emergency_decree_seen:, which already been frustrated with his actions?][? if emergency_act_seen:, which already been frustrated by the lack of consultation with his supporting parties?]. However, Dingeldey remains hesitant to bring down the government, fearing it would further destabilize Germany’s financial situation. Additionally, the <span style="color: #7A3C00;">national</span> <span style="color: #003755;">opposition</span> still shows no interest in joining Brüning’s cabinet. Under these circumstances, the <span style="color: #C0A054;">**DVP**</span> has little choice but to continue supporting Brüning. ?]{!</p>!}
 
@@ -1633,11 +1671,15 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1931 and month = 9: The Japanese have invaded Manchuria following the Mukden incident. ?]{!</p>!}
 
+{!<p class="other">!}[? if flavour_41_trigger and flavour_41_trigger_time == time: Following the failure of the Austro-German customs union project and its disastrous consequences, the architect of the plan, Julius Curtius of the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] has taken responsibility and resigned. This has severely weakened the stability of the Brüning government, as Curtius was one of his strongest supporters. Now, with Brüning taking over the Foreign Ministry, the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] now has less reasons to support his government. [? if dvp_leader == "Curtius" or lvp_leader == "Curtius" and lvp_formed: Furthermore, Curtius has resigned from his party's leadership, and right-wing forces are expected to succeed him as the leader of the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?], as the pro-Brüning forces are weakened within the party as well.?] ?]{!</p>!}
+
 {!<p class="other">!}[? if year == 1931 and month == 10 and not bourgeois_list and not bourgeois_parliament and (dnvp_split_2 or kvp_formed) and dvp_leader == "Dingeldey" and not lvp_formed and not lvp_timer_2_trigger: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has reached out to moderate right-wing parties instead of the <span style="color: #C0A054;">**DVP**</span>, whose leader, Dingeldey, doesn't plan to take meaningful action on the issue. This effort stems from a shared fear of being politically destroyed by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>[? if bruning_toleration_time:, and to influence Brüning's legislative agenda?]. Hans Schlange-Schöningen, one of [? if not bruning_toleration_time: the strongest supporters for bourgeois unity?][? if bruning_toleration_time: Brüning's strongest supporters?] in the [? if not kvp_formed: <span style="color: #7FCEB1;">**CNBLP**</span>?][? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>?][? if cnblp_defect:, which has since split from Brüning,?], has pleaded with Westarp[? if csvd_formed:, the <span style="color: #8ED8E4;">**CSVD**</span>,?] and some representatives from the <span style="color: #C0A054;">**DVP**</span> to put aside their differences. [? if bruning_toleration_time: With Brüning's strong encouragement, they agreed to issue a joint statement in the Reichstag affirming their support for his government. However, leaks about the plan surfaced, forcing them to abandon it after multiple parties withdrew from negotiations.?]?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 10: The recent United Kingdom general elections have resulted in the greatest landslide in the country's history, with <span style="color: #f0456a;">Labour</span> receiving only a meager 52 seats, losing 235 of them from the previous election. Despite this, the incumbent <span style="color: #008000;">National Labour</span> Prime Minister Ramsay MacDonald has remained in office, ruling with the <span style="color: #0087DC;">Tories</span>. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 12 : The new Second Spanish Republic has adopted its new democratic constitution, establishing a secular, progressive, and republican government. Times are looking bright for Spain. ?]{!</p>!}
+
+{!<p class="other">!}[? if year = 1932 and month = 4 and pro_republic < 50 : Hans Luther has been shot! Luckily, he was only injured in the shoulder, and will be able to continue his job as the [? if luther_reichsbank: President of the Reichsbank?][? if dvp_leader == "Luther" or lvp_leader == "Luther" and lvp_formed: leader of the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?]. [? if luther_reichsbank: The assailants have written a letter beforehand, criticizing his monetary policy.?][? if dvp_leader == "Luther" or lvp_leader == "Luther" and lvp_formed: The assailants have written a letter beforehand, criticizing his leadership over the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?]. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 5 : <span style="color: #002654;">France</span> held its legislative elections this month, resulting in a majority for the <span style="color: #FFC0C0;">Left Cartel</span>, and a decline in the vote share for the <span style="color: #88001A;">French Communists</span>. However, the <span style="color: #F0001C;">**SFIO**</span> has refused to participate in government, prompting the <span style="color: #E0B0FF;">Radical Socialists</span> to form a coalition with the center-right instead. ?]{!</p>!}
 
