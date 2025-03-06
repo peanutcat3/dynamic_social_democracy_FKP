@@ -2508,7 +2508,7 @@ if (Q.bruning_time > 1) {
     if (Q.rb_militancy >= 0.1 || Q.sa_force >= 30 || Q.rfb_force >= 40) {
         Q.hindenburg_angry_bruning += 2;
     }
-    if (Q.dnvp_ideology == "Moderate") {
+    if (Q.dnvp_ideology == "Moderate" && !Q.dnvp_defect) {
         Q.hindenburg_angry_bruning -= 3;
     }
 }
