@@ -1922,7 +1922,7 @@ Who should be the chancellor?
 @muller
 title: Hermann Müller for Chancellor
 view-if: muller_dead = 0
-subtitle: Müller is popular within the party, and is the preferred candidate of the <span style="color: #000000;">Center</span> and other parties.
+subtitle: Müller is popular within the party, and is the preferred candidate of the [? if not in_social_liberal_coalition: <span style="color: #000000;">Center</span>?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] and other parties.
 on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
 go-to: ministries
 
@@ -1942,11 +1942,11 @@ title: Otto Braun for Chancellor
 view-if: not historical_mode or not prussia_leader = "Braun"
 subtitle: Braun is currently the Minister-President of Prussia, and is one of our most popular leaders. However, other parties may have qualms about concentrating too much power in one man.
 
-The <span style="color: #000000;">Center Party</span> has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role. The latter is completely unacceptable.
+The [? if not in_social_liberal_coalition: <span style="color: #000000;">Center Party</span>?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] has significant qualms about appointing Braun as chancellor, given that he is already Minister-President of Prussia. They ask for either more cabinet positions, or for Braun to resign his state government role. The latter is completely unacceptable.
 
 - @muller
 - @wels
-- @braun_2: Let the <span style="color: #000000;">Center</span> have their cabinet positions.
+- @braun_2: Let the [? if not in_social_liberal_coalition: <span style="color: #000000;">Center</span>?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] have their cabinet positions.
 
 @braun_2
 subtitle: Otto Braun will be Chancellor.
@@ -1954,7 +1954,7 @@ view-if: not historical_mode
 on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition); hindenburg_angry += 10
 go-to: ministries
 
-We have promised to let the <span style="color: #000000;">Center</span> have more influence in the government in response to the appointment of Braun as chancellor.
+We have promised to let the [? if not in_social_liberal_coalition: <span style="color: #000000;">Center</span>?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] have more influence in the government in response to the appointment of Braun as chancellor.
 
 
 @z_chancellor
