@@ -322,7 +322,7 @@ if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coa
     }
 }
 // lvp complains about banking crisis, precursor to curtius resigning
-if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.spd_toleration_right && Q.banking_crisis_seen && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.spd_toleration_right && Q.banking_crisis_seen && Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_40_trigger += 1; 
     if (Q.flavour_40_trigger == 1 && !Q.flavour_40_trigger_shown) {
         Q.flavour_40_trigger_time = Q.time;
@@ -354,7 +354,7 @@ if (Q.total_bruning_time == 9 && (Q.in_center_right_coalition || Q.in_right_coal
     }
 }
 // lvp complains about banking crisis, precursor to curtius resigning, alt his
-if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.lvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.lvp_leader == "Dingeldey" && Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_44_trigger += 1; 
     if (Q.flavour_44_trigger == 1 && !Q.flavour_44_trigger_shown) {
         Q.flavour_44_trigger_time = Q.time;
@@ -370,7 +370,7 @@ if ((Q.emergency_decree_seen || Q.emergency_decree_alt_seen) && (Q.in_center_rig
     }
 }
 // lvp complains about banking crisis, precursor to curtius resigning, no dingeldey, alt his
-if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.lvp_leader != "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.lvp_leader != "Dingeldey" && Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_46_trigger += 1; 
     if (Q.flavour_46_trigger == 1 && !Q.flavour_46_trigger_shown) {
         Q.flavour_46_trigger_time = Q.time;
@@ -1253,7 +1253,7 @@ if (Q.total_bruning_time == 9 && !Q.in_center_right_coalition && !Q.in_right_coa
     }
 }
 // lvp complains about banking crisis, precursor to curtius resigning
-if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.spd_toleration_right && Q.banking_crisis_seen && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.spd_toleration_right && Q.banking_crisis_seen && Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_40_trigger += 1; 
     if (Q.flavour_40_trigger == 1 && !Q.flavour_40_trigger_shown) {
         Q.flavour_40_trigger_time = Q.time;
@@ -1285,7 +1285,7 @@ if (Q.total_bruning_time == 9 && (Q.in_center_right_coalition || Q.in_right_coal
     }
 }
 // lvp complains about banking crisis, precursor to curtius resigning, alt his
-if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.lvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.lvp_leader == "Dingeldey" && Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_44_trigger += 1; 
     if (Q.flavour_44_trigger == 1 && !Q.flavour_44_trigger_shown) {
         Q.flavour_44_trigger_time = Q.time;
@@ -1301,7 +1301,7 @@ if ((Q.emergency_decree_seen || Q.emergency_decree_alt_seen) && (Q.in_center_rig
     }
 }
 // lvp complains about banking crisis, precursor to curtius resigning, no dingeldey, alt his
-if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.lvp_leader != "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.lvp_leader != "Dingeldey" && Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_46_trigger += 1; 
     if (Q.flavour_46_trigger == 1 && !Q.flavour_46_trigger_shown) {
         Q.flavour_46_trigger_time = Q.time;
