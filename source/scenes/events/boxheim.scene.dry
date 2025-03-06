@@ -2,7 +2,7 @@ title: The Boxheim Documents
 new-page: true
 subtitle: A set of documents detailing a violent seizure of power by the <span style="color: #7A3C00;">Nazis</span> is discovered...
 view-if: year = 1931 and month == 11 and nsdap_votes >= 26 and not spd_in_government and investigate_far_right < 3
-on-arrival: boxheim_seen = 1
+on-arrival: boxheim_seen = 1; nazi_urgency += 1; investigate_far_right += 1;
 max-visits: 1
 face-image: img/boxheim.jpg
 tags: event
@@ -20,7 +20,7 @@ In an attempt to protect themselves from the severe damage this revelation cause
 
 @pressure_drop
 view-if: judicial_reform >= 4
-on-arrival: boxheim_persecuted = 1; neorevisionist_dissent -= 20; neorevisionist_strength += 10; workers_nsdap -= 3; new_middle_nsdap -= 5; old_middle_nsdap -= 5; rural_nsdap -= 3; catholics_nsdap -= 3; workers_spd += 3; new_middle_spd += 3; pro_republic += 10; sa_militancy -= 0.1; hindenburg_angry_bruning -= 50; 
+on-arrival: boxheim_persecuted = 1; neorevisionist_dissent -= 20; neorevisionist_strength += 10; workers_nsdap -= 5; new_middle_nsdap -= 6; old_middle_nsdap -= 6; rural_nsdap -= 3; catholics_nsdap -= 3; workers_spd += 3; new_middle_spd += 3; pro_republic += 10; sa_militancy -= 0.1; hindenburg_angry_bruning -= 50; 
 
 Due to our thorough reform of the judicial system, the <span style="color: #7A3C00;">Nazis</span> behind these documents can now be publicly exposed and prosecuted by the state for high treason. This has dealt a severe blow to the constitutional appearance of the <span style="color: #7A3C00;">**NSDAP**</span>, causing great distrust between them and the bourgeois establishment, including President Hindenburg himself.
 
