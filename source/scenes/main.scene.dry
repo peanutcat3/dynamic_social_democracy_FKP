@@ -46,7 +46,7 @@ if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenbu
         Q.flavour_4_trigger = 0;
     }
 }
-if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 && (!Q.in_right_coalition && !Q.in_weimar_coalition) && Q.next_election_time - Q.time >= 3 && Q.time !== Q.last_time_updated) {
+if (Q.in_grand_coalition && (Q.liberal_vote < 13 || Q.peoples_party_support >= 2) && (!Q.in_right_coalition && !Q.in_weimar_coalition) && Q.next_election_time - Q.time >= 3 && Q.time !== Q.last_time_updated) {
     Q.flavour_5_trigger += 1;
     if (Q.flavour_5_trigger && !Q.flavour_5_trigger_shown) {
         Q.flavour_5_trigger_time = Q.time;
@@ -977,7 +977,7 @@ if (Q.spd_in_government && Q.hindenburg_angry >= 100 && Q.president == "Hindenbu
         Q.flavour_4_trigger = 0;
     }
 }
-if (Q.in_grand_coalition && Q.liberal_vote < 13 && Q.peoples_party_support >= 2 && (!Q.in_right_coalition && !Q.in_weimar_coalition) && Q.next_election_time - Q.time >= 3 && Q.time !== Q.last_time_updated) {
+if (Q.in_grand_coalition && (Q.liberal_vote < 13 || Q.peoples_party_support >= 2) && (!Q.in_right_coalition && !Q.in_weimar_coalition) && Q.next_election_time - Q.time >= 3 && Q.time !== Q.last_time_updated) {
     Q.flavour_5_trigger += 1;
     if (Q.flavour_5_trigger && !Q.flavour_5_trigger_shown) {
         Q.flavour_5_trigger_time = Q.time;
