@@ -2344,8 +2344,8 @@ if (Q.spd_in_government_time >= 6) {
     if (Q.reparations <= -2) {
         Q.hindenburg_angry -= 3;
     }
-    if (Q.pro_republic >= 70) {
-        Q.hindenburg_angry -= (Q.pro_republic / 20);
+    if (Q.pro_republic >= 50) {
+        Q.hindenburg_angry -= ((Q.pro_republic - 50) / 10);
     } else if (Q.pro_republic < 50) {
         Q.hindenburg_angry += ((100 - Q.pro_republic) / 50);
     }
