@@ -475,6 +475,8 @@ Q.grand_coalition_failed = 0;
 Q.in_minority_government = 0;
 // national unity governmet
 Q.in_center_right_coalition = 0;
+Q.in_social_catholic_coalition = 0;
+Q.in_social_liberal_coalition = 0;
 
 Q.in_right_coalition_prussia = 0;
 Q.in_weimar_coalition_prussia = 1;
