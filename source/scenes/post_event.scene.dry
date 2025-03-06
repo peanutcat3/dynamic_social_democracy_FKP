@@ -820,7 +820,6 @@ if (Q.month_actions >= 1) {
             Q.old_middle_nsdap += 6/12;
             Q.unemployed_nsdap += 4/12;
             Q.unemployed_kpd += 2/12;
-            Q.workers_kpd += 1/12;
             Q.sa_strength += 100/12;
             Q.rfb_strength += 25/12;
             Q.sa_militancy += 0.05/12;
