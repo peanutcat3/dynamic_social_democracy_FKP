@@ -809,9 +809,10 @@ United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span styl
 
 [? if not kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span> + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition_wurttemberg +]% ?]
 
+
 @wurttemberg_coalition_menu
 
-- @bvp_toleration_wurttemberg
+- @z_toleration_wurttemberg
 - @spd_toleration_wurttemberg
 - @nsdap_majority_wurttemberg
 - @bourgeois_coalition_wurttemberg
