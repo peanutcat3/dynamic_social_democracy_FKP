@@ -117,6 +117,8 @@ Q.other_bavaria_elections_vote = 0;
 Q.kvp_bavaria_elections_vote = 0;
 Q.dnf_bavaria_elections_vote = 0;
 
+if (Q.catholics_spd_normalized >= 30) wurttemberg_adjustment_factors.spd += 0.2;
+if (Q.rural_spd_normalized >= 30) wurttemberg_adjustment_factors.spd += 0.2;
 Q.spd_bavaria_elections_vote = Q.spd_local_elections_vote*bavaria_adjustment_factors.spd;
 Q.sapd_bavaria_elections_vote = Q.sapd_local_elections_vote*bavaria_adjustment_factors.sapd;
 Q.kpd_bavaria_elections_vote = Q.kpd_local_elections_vote*bavaria_adjustment_factors.kpd;
@@ -535,10 +537,12 @@ Q.other_wurttemberg_elections_vote = 0;
 Q.kvp_wurttemberg_elections_vote = 0;
 Q.dnf_wurttemberg_elections_vote = 0;
 
+if (Q.catholics_spd_normalized >= 30) wurttemberg_adjustment_factors.spd += 0.1;
+if (Q.rural_spd_normalized >= 30) wurttemberg_adjustment_factors.spd += 0.1;
 Q.spd_wurttemberg_elections_vote = Q.spd_local_elections_vote*wurttemberg_adjustment_factors.spd;
-if (Q.catholics_spd_normalized >= 40) Q.spd_wurttemberg_elections_vote += 10;
 Q.sapd_wurttemberg_elections_vote = Q.sapd_local_elections_vote*wurttemberg_adjustment_factors.sapd;
 Q.kpd_wurttemberg_elections_vote = Q.kpd_local_elections_vote*wurttemberg_adjustment_factors.kpd;
+if (Q.ddp_votes >= 4) wurttemberg_adjustment_factors.ddp -= 0.5;
 Q.ddp_wurttemberg_elections_vote = Q.ddp_local_elections_vote*wurttemberg_adjustment_factors.ddp;
 Q.lvp_wurttemberg_elections_vote = Q.lvp_local_elections_vote*wurttemberg_adjustment_factors.lvp;
 if (!Q.stegerwald_path) Q.z_wurttemberg_elections_vote = Q.z_local_elections_vote*wurttemberg_adjustment_factors.z;
@@ -546,6 +550,7 @@ if (Q.stegerwald_path) Q.z_wurttemberg_elections_vote = Q.z_local_elections_vote
 Q.dvp_wurttemberg_elections_vote = Q.dvp_local_elections_vote*wurttemberg_adjustment_factors.dvp;
 Q.dnvp_wurttemberg_elections_vote = Q.dnvp_local_elections_vote*wurttemberg_adjustment_factors.dnvp;
 Q.nsdap_wurttemberg_elections_vote = Q.nsdap_local_elections_vote*wurttemberg_adjustment_factors.nsdap;
+if (Q.other_votes >= 8) wurttemberg_adjustment_factors.other -= 1.0;
 Q.other_wurttemberg_elections_vote = Q.other_local_elections_vote*wurttemberg_adjustment_factors.other;
 Q.kvp_wurttemberg_elections_vote = Q.kvp_local_elections_vote*wurttemberg_adjustment_factors.kvp;
 Q.dnf_wurttemberg_elections_vote = Q.dnf_local_elections_vote*wurttemberg_adjustment_factors.dnf;
@@ -820,7 +825,7 @@ United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span styl
 
 [? if not kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span> + **Others**[? if dnvp_ideology == "Moderate":&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ bourgeois_coalition_wurttemberg +]% ?]
 
-[? if not kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span> + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition_wurttemberg +]% ?]
+[? if kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span> + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition_wurttemberg +]% ?]
 
 
 @wurttemberg_coalition_menu
