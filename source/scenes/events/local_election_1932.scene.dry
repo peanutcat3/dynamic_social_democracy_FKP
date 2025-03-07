@@ -847,7 +847,7 @@ Despite the <span style="color: #000000;">Center Party</span> and its protestant
 @spd_toleration_wurttemberg
 title: The incumbent <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> government has fallen short of a majority, but continue to rule in caretaker capacity.
 subtitle: Bless the constructive vote of no confidence. 🙏🙏🙏
-view-if: weimar_coalition_wurttemberg < 50 and not state_governments_taken
+view-if: spd_coalition_wurttemberg < 50 and not state_governments_taken
 on-arrival: wurttemberg_spd = 1; pro_republic += 2; new_middle_spd += 2; rural_nsdap -= 2; rural_other += 2
 go-to: election_menu
 
