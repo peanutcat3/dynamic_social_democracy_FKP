@@ -502,13 +502,13 @@ var wurttemberg_adjustment_factors = {
     kpd: 0.7,
     ddp: 2.5,
     lvp: 2.0,
-    z: 1.4,
-    dvp: 1.1,
-    dnvp: 0.6,
-    nsdap: 1.0,
+    z: 1.5,
+    dvp: 1.3,
+    dnvp: 0.8,
+    nsdap: 0.9,
     other: 3.1,
     kvp: 1.0,
-    dnf: 0.25
+    dnf: 0.4
 };
 
 Q.spd_r_wurttemberg = 0;
