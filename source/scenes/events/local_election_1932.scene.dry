@@ -890,7 +890,7 @@ title: A <span style="color: #000000;">We</span><span style="color: #DD0000;">im
 subtitle: [? if not state_governments_taken: This is the incumbent coalition. ?][? if state_governments_taken: This was the former incumbent coalition, before the <span style="color: #FFCC00;">liberals</span> betrayed us. ?]
 unavailable-subtitle: [? if z_relation < 40: We need higher relations with the <span style="color: #000000;">Center Party</span>. ?][? if (ddp_relation < 40 and not lvp_formed) or (lvp_relation < 40 and lvp_formed): We need higher relations with the [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?]
 view-if: spd_coalition_wurttemberg >= 50
-choose-if: z_relation >= 40 and ((ddp_relation >= 40 and not lvp_formed) or (lvp_relation >= 40 and lvp_formed))
+choose-if: (z_relation >= 40 and ((ddp_relation >= 40 and not lvp_formed) or (lvp_relation >= 40 and lvp_formed))) or not state_governments_taken
 on-arrival: wurttemberg_spd = 1; rural_nsdap -= 2; new_middle_spd += 2; old_middle_spd += 2; rural_other += 4; z_relation += 3; ddp_relation += 3; lvp_relation += 3; pro_republic += 3
 go-to: election_menu
 
