@@ -117,8 +117,8 @@ Q.other_bavaria_elections_vote = 0;
 Q.kvp_bavaria_elections_vote = 0;
 Q.dnf_bavaria_elections_vote = 0;
 
-if (Q.catholics_spd_normalized >= 30) wurttemberg_adjustment_factors.spd += 0.2;
-if (Q.rural_spd_normalized >= 30) wurttemberg_adjustment_factors.spd += 0.2;
+if (Q.catholics_spd_normalized >= 30) bavaria_adjustment_factors.spd += 0.2;
+if (Q.rural_spd_normalized >= 30) bavaria_adjustment_factors.spd += 0.2;
 Q.spd_bavaria_elections_vote = Q.spd_local_elections_vote*bavaria_adjustment_factors.spd;
 Q.sapd_bavaria_elections_vote = Q.sapd_local_elections_vote*bavaria_adjustment_factors.sapd;
 Q.kpd_bavaria_elections_vote = Q.kpd_local_elections_vote*bavaria_adjustment_factors.kpd;
