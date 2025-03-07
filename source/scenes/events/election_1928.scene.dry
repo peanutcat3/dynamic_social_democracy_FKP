@@ -2002,7 +2002,6 @@ What are our goals here, exactly?
 go-to: no_govt_2
 
 @trap
-on-arrival: radicalization += 1
 go-to: no_govt_2
 
 @socialism
