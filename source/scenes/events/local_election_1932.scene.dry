@@ -86,6 +86,32 @@ var bavaria_adjustment_factors = {
     dnf: 0.2
 };
 
+Q.spd_r_bavaria = 0;
+Q.sapd_r_bavaria = 0;
+Q.kpd_r_bavaria = 0;
+Q.ddp_r_bavaria = 0;
+Q.lvp_r_bavaria = 0;
+Q.z_r_bavaria = 0;
+Q.dvp_r_bavaria = 0;
+Q.dnvp_r_bavaria = 0;
+Q.nsdap_r_bavaria = 0;
+Q.other_r_bavaria = 0;
+Q.kvp_r_bavaria = 0;
+Q.dnf_r_bavaria = 0;
+
+Q.spd_bavaria_elections_vote = 0;
+Q.sapd_bavaria_elections_vote = 0;
+Q.kpd_bavaria_elections_vote = 0;
+Q.ddp_bavaria_elections_vote = 0;
+Q.lvp_bavaria_elections_vote = 0;
+Q.z_bavaria_elections_vote = 0;
+Q.dvp_bavaria_elections_vote = 0;
+Q.dnvp_bavaria_elections_vote = 0;
+Q.nsdap_bavaria_elections_vote = 0;
+Q.other_bavaria_elections_vote = 0;
+Q.kvp_bavaria_elections_vote = 0;
+Q.dnf_bavaria_elections_vote = 0;
+
 Q.spd_bavaria_elections_vote = Q.spd_local_elections_vote*bavaria_adjustment_factors.spd;
 Q.sapd_bavaria_elections_vote = Q.sapd_local_elections_vote*bavaria_adjustment_factors.sapd;
 Q.kpd_bavaria_elections_vote = Q.kpd_local_elections_vote*bavaria_adjustment_factors.kpd;
@@ -143,18 +169,18 @@ if (Q.other_bavaria_elections_vote >= 3.3) Q.other_r_bavaria = Q.other_bavaria_e
 if (Q.kvp_bavaria_elections_vote >= 3.3) Q.kvp_r_bavaria = Q.kvp_bavaria_elections_vote;
 if (Q.dnf_bavaria_elections_vote >= 3.3) Q.dnf_r_bavaria = Q.dnf_bavaria_elections_vote;
 
-if (Q.spd_r_bavaria) Q.total_r_bavaria += Q.spd_r_bavaria
-if (Q.sapd_r_bavaria) Q.total_r_bavaria += Q.sapd_r_bavaria
-if (Q.kpd_r_bavaria) Q.total_r_bavaria += Q.kpd_r_bavaria
-if (Q.ddp_r_bavaria) Q.total_r_bavaria += Q.ddp_r_bavaria
-if (Q.lvp_r_bavaria) Q.total_r_bavaria += Q.lvp_r_bavaria
-if (Q.z_r_bavaria) Q.total_r_bavaria += Q.z_r_bavaria
-if (Q.dvp_r_bavaria) Q.total_r_bavaria += Q.dvp_r_bavaria
-if (Q.dnvp_r_bavaria) Q.total_r_bavaria += Q.dnvp_r_bavaria
-if (Q.nsdap_r_bavaria) Q.total_r_bavaria += Q.nsdap_r_bavaria
-if (Q.other_r_bavaria) Q.total_r_bavaria += Q.other_r_bavaria
-if (Q.kvp_r_bavaria) Q.total_r_bavaria += Q.kvp_r_bavaria
-if (Q.dnf_r_bavaria) Q.total_r_bavaria += Q.dnf_r_bavaria
+if (Q.spd_r_bavaria) Q.total_r_bavaria += Q.spd_r_bavaria;
+if (Q.sapd_r_bavaria) Q.total_r_bavaria += Q.sapd_r_bavaria;
+if (Q.kpd_r_bavaria) Q.total_r_bavaria += Q.kpd_r_bavaria;
+if (Q.ddp_r_bavaria) Q.total_r_bavaria += Q.ddp_r_bavaria;
+if (Q.lvp_r_bavaria) Q.total_r_bavaria += Q.lvp_r_bavaria;
+if (Q.z_r_bavaria) Q.total_r_bavaria += Q.z_r_bavaria;
+if (Q.dvp_r_bavaria) Q.total_r_bavaria += Q.dvp_r_bavaria;
+if (Q.dnvp_r_bavaria) Q.total_r_bavaria += Q.dnvp_r_bavaria;
+if (Q.nsdap_r_bavaria) Q.total_r_bavaria += Q.nsdap_r_bavaria;
+if (Q.other_r_bavaria) Q.total_r_bavaria += Q.other_r_bavaria;
+if (Q.kvp_r_bavaria) Q.total_r_bavaria += Q.kvp_r_bavaria;
+if (Q.dnf_r_bavaria) Q.total_r_bavaria += Q.dnf_r_bavaria;
 
 if (Q.total_r_bavaria > 0) {
     Q.spd_r_bavaria = (Q.spd_r_bavaria / Q.total_r_bavaria) * 100;
