@@ -100,33 +100,21 @@ Q.other_bavaria_elections_vote = Q.other_local_elections_vote*bavaria_adjustment
 Q.kvp_bavaria_elections_vote = Q.kvp_local_elections_vote*bavaria_adjustment_factors.kvp;
 Q.dnf_bavaria_elections_vote = Q.dnf_local_elections_vote*bavaria_adjustment_factors.dnf;
 
-var total_votes_bavaria = 
-    Q.spd_bavaria_elections_vote +
-    Q.sapd_bavaria_elections_vote +
-    Q.kpd_bavaria_elections_vote +
-    Q.ddp_bavaria_elections_vote +
-    Q.lvp_bavaria_elections_vote +
-    Q.z_bavaria_elections_vote +
-    Q.dvp_bavaria_elections_vote +
-    Q.dnvp_bavaria_elections_vote +
-    Q.nsdap_bavaria_elections_vote +
-    Q.other_bavaria_elections_vote +
-    Q.kvp_bavaria_elections_vote +
-    Q.dnf_bavaria_elections_vote;
+Q.total_votes_bavaria = Q.spd_bavaria_elections_vote + Q.sapd_bavaria_elections_vote + Q.kpd_bavaria_elections_vote + Q.ddp_bavaria_elections_vote + Q.lvp_bavaria_elections_vote + Q.z_bavaria_elections_vote + Q.dvp_bavaria_elections_vote + Q.dnvp_bavaria_elections_vote + Q.nsdap_bavaria_elections_vote + Q.other_bavaria_elections_vote + Q.kvp_bavaria_elections_vote + Q.dnf_bavaria_elections_vote;
 
-if (total_votes_bavaria > 0) {
-    Q.spd_bavaria_elections_vote = (Q.spd_bavaria_elections_vote / total_votes) * 100;
-    Q.sapd_bavaria_elections_vote = (Q.sapd_bavaria_elections_vote / total_votes) * 100;
-    Q.kpd_bavaria_elections_vote = (Q.kpd_bavaria_elections_vote / total_votes) * 100;
-    Q.ddp_bavaria_elections_vote = (Q.ddp_bavaria_elections_vote / total_votes) * 100;
-    Q.lvp_bavaria_elections_vote = (Q.lvp_bavaria_elections_vote / total_votes) * 100;
-    Q.z_bavaria_elections_vote = (Q.z_bavaria_elections_vote / total_votes) * 100;
-    Q.dvp_bavaria_elections_vote = (Q.dvp_bavaria_elections_vote / total_votes) * 100;
-    Q.dnvp_bavaria_elections_vote = (Q.dnvp_bavaria_elections_vote / total_votes) * 100;
-    Q.nsdap_bavaria_elections_vote = (Q.nsdap_bavaria_elections_vote / total_votes) * 100;
-    Q.other_bavaria_elections_vote = (Q.other_bavaria_elections_vote / total_votes) * 100;
-    Q.kvp_bavaria_elections_vote = (Q.kvp_bavaria_elections_vote / total_votes) * 100;
-    Q.dnf_bavaria_elections_vote = (Q.dnf_bavaria_elections_vote / total_votes) * 100;
+if (Q.total_votes_bavaria_bavaria > 0) {
+    Q.spd_bavaria_elections_vote = (Q.spd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.sapd_bavaria_elections_vote = (Q.sapd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.kpd_bavaria_elections_vote = (Q.kpd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.ddp_bavaria_elections_vote = (Q.ddp_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.lvp_bavaria_elections_vote = (Q.lvp_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.z_bavaria_elections_vote = (Q.z_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.dvp_bavaria_elections_vote = (Q.dvp_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.dnvp_bavaria_elections_vote = (Q.dnvp_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.nsdap_bavaria_elections_vote = (Q.nsdap_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.other_bavaria_elections_vote = (Q.other_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.kvp_bavaria_elections_vote = (Q.kvp_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.dnf_bavaria_elections_vote = (Q.dnf_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
 }
 if (Q.spd_bavaria_elections_vote >= 3.3) Q.spd_r_bavaria = Q.spd_bavaria_elections_vote;
 if (Q.sapd_bavaria_elections_vote >= 3.3) Q.sapd_r_bavaria = Q.sapd_bavaria_elections_vote;
@@ -167,6 +155,18 @@ if (Q.total_r_bavaria > 0) {
     Q.other_r_bavaria = (Q.other_r_bavaria / Q.total_r_bavaria) * 100;
     Q.kvp_r_bavaria = (Q.kvp_r_bavaria / Q.total_r_bavaria) * 100;
     Q.dnf_r_bavaria = (Q.dnf_r_bavaria / Q.total_r_bavaria) * 100;
+    Q.spd_r_bavaria = parseFloat(Q.spd_r_bavaria.toFixed(1));
+    Q.sapd_r_bavaria = parseFloat(Q.sapd_r_bavaria.toFixed(1));
+    Q.kpd_r_bavaria = parseFloat(Q.kpd_r_bavaria.toFixed(1));
+    Q.ddp_r_bavaria = parseFloat(Q.ddp_r_bavaria.toFixed(1));
+    Q.lvp_r_bavaria = parseFloat(Q.lvp_r_bavaria.toFixed(1));
+    Q.z_r_bavaria = parseFloat(Q.z_r_bavaria.toFixed(1));
+    Q.dvp_r_bavaria = parseFloat(Q.dvp_r_bavaria.toFixed(1));
+    Q.dnvp_r_bavaria = parseFloat(Q.dnvp_r_bavaria.toFixed(1));
+    Q.nsdap_r_bavaria = parseFloat(Q.nsdap_r_bavaria.toFixed(1));
+    Q.other_r_bavaria = parseFloat(Q.other_r_bavaria.toFixed(1));
+    Q.kvp_r_bavaria = parseFloat(Q.kvp_r_bavaria.toFixed(1));
+    Q.dnf_r_bavaria = parseFloat(Q.dnf_r_bavaria.toFixed(1));
 }
 
 Q.left_coalition_bavaria = Q.spd_r_bavaria + Q.kpd_r_bavaria + Q.sapd_r_bavaria
