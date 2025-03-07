@@ -86,19 +86,19 @@ var bavaria_adjustment_factors = {
     dnf: 0.2
 };
 
-Q.spd_bavaria_elections_vote *= bavaria_adjustment_factors.spd;
-Q.sapd_bavaria_elections_vote *= bavaria_adjustment_factors.sapd;
-Q.kpd_bavaria_elections_vote *= bavaria_adjustment_factors.kpd;
-Q.ddp_bavaria_elections_vote *= bavaria_adjustment_factors.ddp;
-Q.lvp_bavaria_elections_vote *= bavaria_adjustment_factors.lvp;
-if (!Q.stegerwald_path) Q.z_bavaria_elections_vote *= bavaria_adjustment_factors.z;
-if (Q.stegerwald_path) Q.z_bavaria_elections_vote *= 1.5;
-Q.dvp_bavaria_elections_vote *= bavaria_adjustment_factors.dvp;
-Q.dnvp_bavaria_elections_vote *= bavaria_adjustment_factors.dnvp;
-Q.nsdap_bavaria_elections_vote *= bavaria_adjustment_factors.nsdap;
-Q.other_bavaria_elections_vote *= bavaria_adjustment_factors.other;
-Q.kvp_bavaria_elections_vote *= bavaria_adjustment_factors.kvp;
-Q.dnf_bavaria_elections_vote *= bavaria_adjustment_factors.dnf;
+Q.spd_bavaria_elections_vote = Q.spd_local_elections_vote*bavaria_adjustment_factors.spd;
+Q.sapd_bavaria_elections_vote = Q.sapd_local_elections_vote*bavaria_adjustment_factors.sapd;
+Q.kpd_bavaria_elections_vote = Q.kpd_local_elections_vote*bavaria_adjustment_factors.kpd;
+Q.ddp_bavaria_elections_vote = Q.ddp_local_elections_vote*bavaria_adjustment_factors.ddp;
+Q.lvp_bavaria_elections_vote = Q.lvp_local_elections_vote*bavaria_adjustment_factors.lvp;
+if (!Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_local_elections_vote*bavaria_adjustment_factors.z;
+if (Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_local_elections_vote * 1.5;
+Q.dvp_bavaria_elections_vote = Q.dvp_local_elections_vote*bavaria_adjustment_factors.dvp;
+Q.dnvp_bavaria_elections_vote = Q.dnvp_local_elections_vote*bavaria_adjustment_factors.dnvp;
+Q.nsdap_bavaria_elections_vote = Q.nsdap_local_elections_vote*bavaria_adjustment_factors.nsdap;
+Q.other_bavaria_elections_vote = Q.other_local_elections_vote*bavaria_adjustment_factors.other;
+Q.kvp_bavaria_elections_vote = Q.kvp_local_elections_vote*bavaria_adjustment_factors.kvp;
+Q.dnf_bavaria_elections_vote = Q.dnf_local_elections_vote*bavaria_adjustment_factors.dnf;
 
 var total_votes_bavaria = 
     Q.spd_bavaria_elections_vote +
