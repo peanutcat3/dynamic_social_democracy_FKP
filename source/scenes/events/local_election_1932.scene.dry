@@ -61,9 +61,9 @@ go-to: election_menu
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_local_elections_vote +]% {!</td></tr>!}
 {!</table>!}
 
-@election_menu
-
 [? if nsdap_local_elections_vote >= 20: The strong performance of the <span style="color: #7A3C00;">**NSDAP**</span> leaves little room for a democratic coalition in many Landtags, and may force the <span style="color: #000000;">Center Party</span> to negotiate with them as a last resort. ?][? if spd_local_elections_vote >= 30: We have maintained a strong performance, maintaining many of our seats we've won in 1928. Hopefully our coalition partners have won enough votes as well, to continue our stable and democratic coalitions. ?][? if kpd_local_elections_vote + sapd_local_elections_vote >= 20: The gains made by the <span style="color: #700000;">KPD</span> have left our grassroots clamoring for a United Left coalition, as our local-level relations are far more cooperative than those between our national leaderships ?][? if z_local_elections_vote + ddp_local_elections_vote + dvp_local_elections_vote + lvp_local_elections_vote + other_local_elections_vote + kvp_local_elections_vote >= 40: The bourgeois parties have performed unexpectedly well in these elections, despite expectations that the economic crisis would push voters toward the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. ?]
+
+@election_menu
 
 - @bavaria
 - @wurttemberg
