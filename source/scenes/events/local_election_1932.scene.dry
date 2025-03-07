@@ -133,7 +133,7 @@ Q.dnf_bavaria_elections_vote = Q.dnf_local_elections_vote*bavaria_adjustment_fac
 
 Q.total_votes_bavaria = Q.spd_bavaria_elections_vote + Q.sapd_bavaria_elections_vote + Q.kpd_bavaria_elections_vote + Q.ddp_bavaria_elections_vote + Q.lvp_bavaria_elections_vote + Q.z_bavaria_elections_vote + Q.dvp_bavaria_elections_vote + Q.dnvp_bavaria_elections_vote + Q.nsdap_bavaria_elections_vote + Q.other_bavaria_elections_vote + Q.kvp_bavaria_elections_vote + Q.dnf_bavaria_elections_vote;
 
-if (Q.total_votes_bavaria_bavaria > 0) {
+if (Q.total_votes_bavaria > 0) {
     Q.spd_bavaria_elections_vote = (Q.spd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
     Q.sapd_bavaria_elections_vote = (Q.sapd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
     Q.kpd_bavaria_elections_vote = (Q.kpd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
@@ -552,7 +552,7 @@ Q.dnf_wurttemberg_elections_vote = Q.dnf_local_elections_vote*wurttemberg_adjust
 
 Q.total_votes_wurttemberg = Q.spd_wurttemberg_elections_vote + Q.sapd_wurttemberg_elections_vote + Q.kpd_wurttemberg_elections_vote + Q.ddp_wurttemberg_elections_vote + Q.lvp_wurttemberg_elections_vote + Q.z_wurttemberg_elections_vote + Q.dvp_wurttemberg_elections_vote + Q.dnvp_wurttemberg_elections_vote + Q.nsdap_wurttemberg_elections_vote + Q.other_wurttemberg_elections_vote + Q.kvp_wurttemberg_elections_vote + Q.dnf_wurttemberg_elections_vote;
 
-if (Q.total_votes_wurttemberg_wurttemberg > 0) {
+if (Q.total_votes_wurttemberg > 0) {
     Q.spd_wurttemberg_elections_vote = (Q.spd_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
     Q.sapd_wurttemberg_elections_vote = (Q.sapd_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
     Q.kpd_wurttemberg_elections_vote = (Q.kpd_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
