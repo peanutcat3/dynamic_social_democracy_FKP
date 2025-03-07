@@ -465,7 +465,7 @@ if (Q.month_actions >= 1) {
         Q.old_middle_nsdap -= 6/12;
         Q.rural_other += 3/12;
         Q.rural_ddp += 1/12;
-        Q.rural_dvp += 3/12;
+        Q.rural_dvp += 2/12;
         if (Q.kvp_formed && Q.bourgeois_parliament_kvp) {
             Q.rural_kvp += 3/12;
             Q.rural_nsdap -= 2/12;
@@ -508,7 +508,7 @@ if (Q.month_actions >= 1) {
         Q.old_middle_nsdap -= 8/12;
         Q.rural_other += 3/12;
         Q.rural_ddp += 1/12;
-        Q.rural_dvp += 3/12;
+        Q.rural_dvp += 2/12;
         Q.rural_lvp += 3/12;
         if (Q.kvp_formed && Q.bourgeois_list_kvp) {
             Q.rural_kvp += 3/12;
@@ -2584,10 +2584,10 @@ if (Q.nazi_decay_timer > 0 && Q.nsdap_votes >= Q.nazi_peak_votes - 10) {
         Q.old_middle_other += 4/12;
     }
     if (Q.dnvp_ideology == "Moderate") {
-        Q.rural_dnvp += 8/12;
-        Q.rural_dnf += 4/12;
+        Q.rural_dnvp += 12/12;
+        Q.rural_dnf += 6/12;
     } else if (Q.dnvp_ideology == "Radical") {
-        Q.rural_dnvp += 8/12;
+        Q.rural_dnvp += 10/12;
         Q.rural_kvp += 4/12;
         Q.rural_other += 4/12;
     }
