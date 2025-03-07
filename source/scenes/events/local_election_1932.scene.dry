@@ -66,6 +66,7 @@ go-to: election_menu
 [? if nsdap_local_elections_vote >= 20: The strong performance of the <span style="color: #7A3C00;">**NSDAP**</span> leaves little room for a democratic coalition in many Landtags, and may force the <span style="color: #000000;">Center Party</span> to negotiate with them as a last resort. ?][? if spd_local_elections_vote >= 30: We have maintained a strong performance, maintaining many of our seats we've won in 1928. Hopefully our coalition partners have won enough votes as well, to continue our stable and democratic coalitions. ?][? if kpd_local_elections_vote + sapd_local_elections_vote >= 20: The gains made by the <span style="color: #700000;">KPD</span> have left our grassroots clamoring for a United Left coalition, as our local-level relations are far more cooperative than those between our national leaderships ?][? if z_local_elections_vote + ddp_local_elections_vote + dvp_local_elections_vote + lvp_local_elections_vote + other_local_elections_vote + kvp_local_elections_vote >= 40: The bourgeois parties have performed unexpectedly well in these elections, despite expectations that the economic crisis would push voters toward the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. ?]
 
 - @bavaria
+- @wurttemberg
 
 @bavaria
 title: <span style="color: #00CCFF;">Bavaria</span>'s Landtag Election
@@ -214,8 +215,8 @@ Q.kvp_r_bavaria = (Q.kvp_r_bavaria != undefined ? parseFloat(Q.kvp_r_bavaria.toF
 Q.dnf_r_bavaria = (Q.dnf_r_bavaria != undefined ? parseFloat(Q.dnf_r_bavaria.toFixed(1)) : 0);
 
 Q.left_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.kpd_r_bavaria + Q.sapd_r_bavaria).toFixed(1));
-Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.lvp_r_bavaria + Q.kvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
-if (Q.dnvp_ideology == "Moderate") Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.lvp_r_bavaria + Q.dnvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
+Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.kvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
+if (Q.dnvp_ideology == "Moderate") Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.dnvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
 Q.spd_coalition_bavaria = parseFloat((Q.spd_r_bavaria + (Q.other_r_bavaria * 0.9) + Q.ddp_r_bavaria + Q.lvp_r_bavaria).toFixed(1));
 
 !}
@@ -474,3 +475,408 @@ view-if: left_coalition_bavaria >= 50 and (kpd_relation >= 60 and kpd_leader == 
 on-arrival: bavaria_spd = 1; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5; coup_progress += 10
 
 Yup. That's crazy.
+
+@wurttemberg
+title: <span style="color: #000000;">Wurtt</span><span style="color: #c00025;">emberg</span>'s Landtag Election
+subtitle: Will the <span style="color: #FFCC00;">liberal</span> stronghold survive?
+on-arrival: {!
+
+var wurttemberg_adjustment_factors = {
+    spd: 0.8,
+    sapd: 0.0,
+    kpd: 0.7,
+    ddp: 2.5,
+    lvp: 2.0,
+    z: 1.4,
+    dvp: 1.1,
+    dnvp: 0.6,
+    nsdap: 1.0,
+    other: 3.1,
+    kvp: 1.0,
+    dnf: 0.25
+};
+
+Q.spd_r_wurttemberg = 0;
+Q.sapd_r_wurttemberg = 0;
+Q.kpd_r_wurttemberg = 0;
+Q.ddp_r_wurttemberg = 0;
+Q.lvp_r_wurttemberg = 0;
+Q.z_r_wurttemberg = 0;
+Q.dvp_r_wurttemberg = 0;
+Q.dnvp_r_wurttemberg = 0;
+Q.nsdap_r_wurttemberg = 0;
+Q.other_r_wurttemberg = 0;
+Q.kvp_r_wurttemberg = 0;
+Q.dnf_r_wurttemberg = 0;
+
+Q.spd_wurttemberg_elections_vote = 0;
+Q.sapd_wurttemberg_elections_vote = 0;
+Q.kpd_wurttemberg_elections_vote = 0;
+Q.ddp_wurttemberg_elections_vote = 0;
+Q.lvp_wurttemberg_elections_vote = 0;
+Q.z_wurttemberg_elections_vote = 0;
+Q.dvp_wurttemberg_elections_vote = 0;
+Q.dnvp_wurttemberg_elections_vote = 0;
+Q.nsdap_wurttemberg_elections_vote = 0;
+Q.other_wurttemberg_elections_vote = 0;
+Q.kvp_wurttemberg_elections_vote = 0;
+Q.dnf_wurttemberg_elections_vote = 0;
+
+Q.spd_wurttemberg_elections_vote = Q.spd_local_elections_vote*wurttemberg_adjustment_factors.spd;
+if (Q.catholics_spd_normalized >= 40) Q.spd_wurttemberg_elections_vote += 10;
+Q.sapd_wurttemberg_elections_vote = Q.sapd_local_elections_vote*wurttemberg_adjustment_factors.sapd;
+Q.kpd_wurttemberg_elections_vote = Q.kpd_local_elections_vote*wurttemberg_adjustment_factors.kpd;
+Q.ddp_wurttemberg_elections_vote = Q.ddp_local_elections_vote*wurttemberg_adjustment_factors.ddp;
+Q.lvp_wurttemberg_elections_vote = Q.lvp_local_elections_vote*wurttemberg_adjustment_factors.lvp;
+if (!Q.stegerwald_path) Q.z_wurttemberg_elections_vote = Q.z_local_elections_vote*wurttemberg_adjustment_factors.z;
+if (Q.stegerwald_path) Q.z_wurttemberg_elections_vote = Q.z_local_elections_vote * 1.5;
+Q.dvp_wurttemberg_elections_vote = Q.dvp_local_elections_vote*wurttemberg_adjustment_factors.dvp;
+Q.dnvp_wurttemberg_elections_vote = Q.dnvp_local_elections_vote*wurttemberg_adjustment_factors.dnvp;
+Q.nsdap_wurttemberg_elections_vote = Q.nsdap_local_elections_vote*wurttemberg_adjustment_factors.nsdap;
+Q.other_wurttemberg_elections_vote = Q.other_local_elections_vote*wurttemberg_adjustment_factors.other;
+Q.kvp_wurttemberg_elections_vote = Q.kvp_local_elections_vote*wurttemberg_adjustment_factors.kvp;
+Q.dnf_wurttemberg_elections_vote = Q.dnf_local_elections_vote*wurttemberg_adjustment_factors.dnf;
+
+Q.total_votes_wurttemberg = Q.spd_wurttemberg_elections_vote + Q.sapd_wurttemberg_elections_vote + Q.kpd_wurttemberg_elections_vote + Q.ddp_wurttemberg_elections_vote + Q.lvp_wurttemberg_elections_vote + Q.z_wurttemberg_elections_vote + Q.dvp_wurttemberg_elections_vote + Q.dnvp_wurttemberg_elections_vote + Q.nsdap_wurttemberg_elections_vote + Q.other_wurttemberg_elections_vote + Q.kvp_wurttemberg_elections_vote + Q.dnf_wurttemberg_elections_vote;
+
+if (Q.total_votes_wurttemberg_wurttemberg > 0) {
+    Q.spd_wurttemberg_elections_vote = (Q.spd_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.sapd_wurttemberg_elections_vote = (Q.sapd_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.kpd_wurttemberg_elections_vote = (Q.kpd_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.ddp_wurttemberg_elections_vote = (Q.ddp_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.lvp_wurttemberg_elections_vote = (Q.lvp_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.z_wurttemberg_elections_vote = (Q.z_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.dvp_wurttemberg_elections_vote = (Q.dvp_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.dnvp_wurttemberg_elections_vote = (Q.dnvp_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.nsdap_wurttemberg_elections_vote = (Q.nsdap_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.other_wurttemberg_elections_vote = (Q.other_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.kvp_wurttemberg_elections_vote = (Q.kvp_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+    Q.dnf_wurttemberg_elections_vote = (Q.dnf_wurttemberg_elections_vote / Q.total_votes_wurttemberg) * 100;
+}
+
+Q.spd_wurttemberg_elections_vote = (Q.spd_wurttemberg_elections_vote != undefined ? parseFloat(Q.spd_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.sapd_wurttemberg_elections_vote = (Q.sapd_wurttemberg_elections_vote != undefined ? parseFloat(Q.sapd_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.kpd_wurttemberg_elections_vote = (Q.kpd_wurttemberg_elections_vote != undefined ? parseFloat(Q.kpd_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.ddp_wurttemberg_elections_vote = (Q.ddp_wurttemberg_elections_vote != undefined ? parseFloat(Q.ddp_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.lvp_wurttemberg_elections_vote = (Q.lvp_wurttemberg_elections_vote != undefined ? parseFloat(Q.lvp_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.z_wurttemberg_elections_vote = (Q.z_wurttemberg_elections_vote != undefined ? parseFloat(Q.z_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.dvp_wurttemberg_elections_vote = (Q.dvp_wurttemberg_elections_vote != undefined ? parseFloat(Q.dvp_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.dnvp_wurttemberg_elections_vote = (Q.dnvp_wurttemberg_elections_vote != undefined ? parseFloat(Q.dnvp_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.nsdap_wurttemberg_elections_vote = (Q.nsdap_wurttemberg_elections_vote != undefined ? parseFloat(Q.nsdap_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.other_wurttemberg_elections_vote = (Q.other_wurttemberg_elections_vote != undefined ? parseFloat(Q.other_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.kvp_wurttemberg_elections_vote = (Q.kvp_wurttemberg_elections_vote != undefined ? parseFloat(Q.kvp_wurttemberg_elections_vote.toFixed(1)) : 0);
+Q.dnf_wurttemberg_elections_vote = (Q.dnf_wurttemberg_elections_vote != undefined ? parseFloat(Q.dnf_wurttemberg_elections_vote.toFixed(1)) : 0);
+
+if (Q.spd_wurttemberg_elections_vote >= 3.3) Q.spd_r_wurttemberg = Q.spd_wurttemberg_elections_vote;
+if (Q.sapd_wurttemberg_elections_vote >= 3.3) Q.sapd_r_wurttemberg = Q.sapd_wurttemberg_elections_vote;
+if (Q.kpd_wurttemberg_elections_vote >= 3.3) Q.kpd_r_wurttemberg = Q.kpd_wurttemberg_elections_vote;
+if (Q.ddp_wurttemberg_elections_vote >= 3.3) Q.ddp_r_wurttemberg = Q.ddp_wurttemberg_elections_vote;
+if (Q.lvp_wurttemberg_elections_vote >= 3.3) Q.lvp_r_wurttemberg = Q.lvp_wurttemberg_elections_vote;
+if (Q.z_wurttemberg_elections_vote >= 3.3) Q.z_r_wurttemberg = Q.z_wurttemberg_elections_vote;
+if (Q.dvp_wurttemberg_elections_vote >= 3.3) Q.dvp_r_wurttemberg = Q.dvp_wurttemberg_elections_vote;
+if (Q.dnvp_wurttemberg_elections_vote >= 3.3) Q.dnvp_r_wurttemberg = Q.dnvp_wurttemberg_elections_vote;
+if (Q.nsdap_wurttemberg_elections_vote >= 3.3) Q.nsdap_r_wurttemberg = Q.nsdap_wurttemberg_elections_vote;
+if (Q.other_wurttemberg_elections_vote >= 3.3) Q.other_r_wurttemberg = Q.other_wurttemberg_elections_vote;
+if (Q.kvp_wurttemberg_elections_vote >= 3.3) Q.kvp_r_wurttemberg = Q.kvp_wurttemberg_elections_vote;
+if (Q.dnf_wurttemberg_elections_vote >= 3.3) Q.dnf_r_wurttemberg = Q.dnf_wurttemberg_elections_vote;
+
+Q.total_r_wurttemberg = 0;
+
+if (Q.spd_r_wurttemberg) Q.total_r_wurttemberg += Q.spd_r_wurttemberg;
+if (Q.sapd_r_wurttemberg) Q.total_r_wurttemberg += Q.sapd_r_wurttemberg;
+if (Q.kpd_r_wurttemberg) Q.total_r_wurttemberg += Q.kpd_r_wurttemberg;
+if (Q.ddp_r_wurttemberg) Q.total_r_wurttemberg += Q.ddp_r_wurttemberg;
+if (Q.lvp_r_wurttemberg) Q.total_r_wurttemberg += Q.lvp_r_wurttemberg;
+if (Q.z_r_wurttemberg) Q.total_r_wurttemberg += Q.z_r_wurttemberg;
+if (Q.dvp_r_wurttemberg) Q.total_r_wurttemberg += Q.dvp_r_wurttemberg;
+if (Q.dnvp_r_wurttemberg) Q.total_r_wurttemberg += Q.dnvp_r_wurttemberg;
+if (Q.nsdap_r_wurttemberg) Q.total_r_wurttemberg += Q.nsdap_r_wurttemberg;
+if (Q.other_r_wurttemberg) Q.total_r_wurttemberg += Q.other_r_wurttemberg;
+if (Q.kvp_r_wurttemberg) Q.total_r_wurttemberg += Q.kvp_r_wurttemberg;
+if (Q.dnf_r_wurttemberg) Q.total_r_wurttemberg += Q.dnf_r_wurttemberg;
+
+if (Q.total_r_wurttemberg > 0) {
+    Q.spd_r_wurttemberg = (Q.spd_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.sapd_r_wurttemberg = (Q.sapd_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.kpd_r_wurttemberg = (Q.kpd_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.ddp_r_wurttemberg = (Q.ddp_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.lvp_r_wurttemberg = (Q.lvp_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.z_r_wurttemberg = (Q.z_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.dvp_r_wurttemberg = (Q.dvp_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.dnvp_r_wurttemberg = (Q.dnvp_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.nsdap_r_wurttemberg = (Q.nsdap_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.other_r_wurttemberg = (Q.other_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.kvp_r_wurttemberg = (Q.kvp_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+    Q.dnf_r_wurttemberg = (Q.dnf_r_wurttemberg / Q.total_r_wurttemberg) * 100;
+}
+
+Q.spd_r_wurttemberg = (Q.spd_r_wurttemberg != undefined ? parseFloat(Q.spd_r_wurttemberg.toFixed(1)) : 0);
+Q.sapd_r_wurttemberg = (Q.sapd_r_wurttemberg != undefined ? parseFloat(Q.sapd_r_wurttemberg.toFixed(1)) : 0);
+Q.kpd_r_wurttemberg = (Q.kpd_r_wurttemberg != undefined ? parseFloat(Q.kpd_r_wurttemberg.toFixed(1)) : 0);
+Q.ddp_r_wurttemberg = (Q.ddp_r_wurttemberg != undefined ? parseFloat(Q.ddp_r_wurttemberg.toFixed(1)) : 0);
+Q.lvp_r_wurttemberg = (Q.lvp_r_wurttemberg != undefined ? parseFloat(Q.lvp_r_wurttemberg.toFixed(1)) : 0);
+Q.z_r_wurttemberg = (Q.z_r_wurttemberg != undefined ? parseFloat(Q.z_r_wurttemberg.toFixed(1)) : 0);
+Q.dvp_r_wurttemberg = (Q.dvp_r_wurttemberg != undefined ? parseFloat(Q.dvp_r_wurttemberg.toFixed(1)) : 0);
+Q.dnvp_r_wurttemberg = (Q.dnvp_r_wurttemberg != undefined ? parseFloat(Q.dnvp_r_wurttemberg.toFixed(1)) : 0);
+Q.nsdap_r_wurttemberg = (Q.nsdap_r_wurttemberg != undefined ? parseFloat(Q.nsdap_r_wurttemberg.toFixed(1)) : 0);
+Q.other_r_wurttemberg = (Q.other_r_wurttemberg != undefined ? parseFloat(Q.other_r_wurttemberg.toFixed(1)) : 0);
+Q.kvp_r_wurttemberg = (Q.kvp_r_wurttemberg != undefined ? parseFloat(Q.kvp_r_wurttemberg.toFixed(1)) : 0);
+Q.dnf_r_wurttemberg = (Q.dnf_r_wurttemberg != undefined ? parseFloat(Q.dnf_r_wurttemberg.toFixed(1)) : 0);
+
+Q.left_coalition_wurttemberg = parseFloat((Q.spd_r_wurttemberg + Q.kpd_r_wurttemberg + Q.sapd_r_wurttemberg).toFixed(1));
+Q.bourgeois_coalition_wurttemberg = parseFloat((Q.z_r_wurttemberg + Q.ddp_r_bavaria + Q.dvp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.kvp_r_wurttemberg + Q.other_r_wurttemberg).toFixed(1));
+if (Q.dnvp_ideology == "Moderate") Q.bourgeois_coalition_wurttemberg = parseFloat((Q.z_r_wurttemberg + Q.ddp_r_wurttemberg + Q.dvp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.dnvp_r_wurttemberg + Q.other_r_wurttemberg).toFixed(1));
+Q.spd_coalition_wurttemberg = parseFloat((Q.spd_r_wurttemberg + Q.ddp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
+
+!}
+on-display: {!
+data = [{
+    "id": "kpd",
+    "legend": "KPD",
+    "name": "KPD",
+    "seats": Math.round(Q.kpd_r_wurttemberg * 0.8),
+}];
+
+if (Q.sapd_formed && Q.sapd_r_wurttemberg) {
+    data.push({
+        "id": "sapd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Math.round(Q.sapd_r_wurttemberg * 0.8),
+    });
+}
+
+data = data.concat([{
+    "id": "spd",
+    "legend": "SPD",
+    "name": "SPD",
+    "seats": Math.round(Q.spd_r_wurttemberg * 0.8),
+}]);
+
+if (Q.ddp_r_wurttemberg && !Q.lvp_formed) {
+    data.push({
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_r_wurttemberg * 0.8),
+    });
+}
+
+if (Q.lvp_r_wurttemberg && Q.lvp_formed) {
+    data.push({
+        "id": "lvp",
+        "legend": "LVP",
+        "name": "LVP",
+        "seats": Math.round(Q.lvp_r_wurttemberg * 0.8),
+    });
+}
+
+data = data.concat([{
+        "id": "bvp",
+        "legend": "BVP",
+        "name": "BVP",
+        "seats": Math.round((Q.z_r_wurttemberg) * 0.8),
+}
+]);
+
+if (Q.dvp_r_wurttemberg && !Q.lvp_formed) {
+    data.push({
+        "id": "dvp",
+        "legend": "DVP",
+        "name": "DVP",
+        "seats": Math.round(Q.dvp_r_wurttemberg * 0.8),
+    });
+}
+
+if (Q.other_r_wurttemberg) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_r_wurttemberg * 0.27),
+    });
+    data.push({
+        "id": "farm",
+        "legend": "Farm",
+        "name": "Farm",
+        "seats": Math.round(Q.other_r_wurttemberg * 0.53),
+    });
+}
+if (Q.kvp_formed && Q.kvp_r_wurttemberg) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round(Q.kvp_r_wurttemberg * 0.8),
+    });
+}
+
+data = data.concat([{
+    "id": "dnvp",
+    "legend": "DNVP",
+    "name": "DNVP",
+    "seats": Math.round(Q.dnvp_r_wurttemberg * 0.8),
+}]);
+if (Q.dnf_formed && Q.dnf_r_wurttemberg) {
+    data.push({
+        "id": "dnf",
+        "legend": "DNF",
+        "name": "DNF",
+        "seats": Math.round(Q.dnf_r_wurttemberg * 0.8),
+    });
+}
+data = data.concat([{
+    "id": "nsdap",
+    "legend": "NSDAP",
+    "name": "NSDAP",
+    "seats": Math.round(Q.nsdap_r_wurttemberg * 0.8),
+}, ]);
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+
+    var lines = d3.linegraph(false, false,
+            Q.parties,
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP'});
+    lines.width(width).height(400);
+    //var svg = lines(Q.election_records);
+    d3.select("#election_history").datum(Q.election_records).call(lines);
+    //document.getElementById('election_history').innerHTML = svg.outerHTML;
+
+    // party support records should not have so many ticks
+    if (!Q.historical_mode) {
+        var lines_2 = d3.linegraph(true, true,
+            Q.parties,
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP'});
+        lines_2.width(width).height(400);
+        d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
+    }
+}
+!}
+go-to: wurttemberg_coalition_menu
+
+
+**Wurttemberg results:**
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_wurttemberg_elections_vote +]%** {!</td><td>!} [+ spd_r_wurttemberg +]% {!</td></tr>!}
+
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_wurttemberg_elections_vote +]% {!</td><td>!} [+ sapd_r_wurttemberg +]% {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_wurttemberg_elections_vote +]% {!</td><td>!} [+ kpd_r_wurttemberg +]%  {!</td></tr>!}
+
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_wurttemberg_elections_vote +]% {!</td><td>!} [+ ddp_r_wurttemberg +]%  {!</td></tr>!} ?]
+
+[? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ lvp_r_wurttemberg +]%  {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_wurttemberg_elections_vote +]% {!</td><td>!} [+ z_r_wurttemberg +]%  {!</td></tr>!}
+
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ dvp_r_wurttemberg +]%  {!</td></tr>!} ?]
+ 
+{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_wurttemberg_elections_vote +]% {!</td><td>!} [+ other_r_wurttemberg +]%  {!</td></tr>!}
+
+[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ kvp_r_wurttemberg +]%  {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_wurttemberg_elections_vote +]% {!</td><td>!} [+ dnvp_r_wurttemberg +]%  {!</td></tr>!}
+
+[? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_wurttemberg_elections_vote +]% {!</td><td>!} [+ dnf_r_wurttemberg +]%  {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_wurttemberg_elections_vote +]% {!</td><td>!} [+ nsdap_r_wurttemberg +]%  {!</td></tr>!}
+{!</table>!}
+
+United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_wurttemberg +]% 
+
+<span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #000000;">**Z**</span>): [+ spd_coalition_wurttemberg +]% 
+
+[? if not kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span> + **Others**[? if dnvp_ideology == "Moderate":&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ bourgeois_coalition_wurttemberg +]% ?]
+
+[? if not kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span> + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition_wurttemberg +]% ?]
+
+@wurttemberg_coalition_menu
+
+- @bvp_toleration_wurttemberg
+- @spd_toleration_wurttemberg
+- @nsdap_majority_wurttemberg
+- @bourgeois_coalition_wurttemberg
+- @spd_majority_wurttemberg
+- @weimar_coalition_wurttemberg
+- @united_left_wurttemberg
+
+
+
+@z_toleration_wurttemberg
+title: The incumbent <span style="color: #000000;">Center Party</span> government has fallen short of a majority, but continue to rule in caretaker capacity.
+subtitle: Bless the constructive vote of no confidence. 🙏🙏🙏
+view-if: bourgeois_coalition_wurttemberg < 50 and state_governments_taken
+on-arrival: wurttemberg_right = 1; pro_republic -= 1
+
+Despite the <span style="color: #000000;">Center Party</span> and its protestant conservative partners falling short of a majority, they continue to rule in as a caretaker government. Negotiations with the <span style="color: #7A3C00;">**NSDAP**</span> have also collapsed, again due to their disdain for Catholics.
+
+@spd_toleration_wurttemberg
+title: The incumbent <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> government has fallen short of a majority, but continue to rule in caretaker capacity.
+subtitle: Bless the constructive vote of no confidence. 🙏🙏🙏
+view-if: weimar_coalition_wurttemberg < 50 and not state_governments_taken
+on-arrival: wurttemberg_spd = 1; pro_republic += 2; new_middle_spd += 2; rural_nsdap -= 2; rural_other += 2
+
+The constructive vote of no confidence in place across many state governments has also allowed our <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition to function as a caretaker government indefinitely. This has intensified agitation from the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>, who ironically denounce this as "anti-democratic."
+
+@nsdap_majority_wurttemberg
+title: The <span style="color: #7A3C00;">**NSDAP**</span> wins a majority?
+subtitle: How did it come to this...?
+view-if: (nsdap_r_wurttemberg + dnf_r_wurttemberg >= 50 and dnvp_ideology == "Moderate") or (nsdap_r_wurttemberg + dnvp_r_wurttemberg >= 50 and dnvp_ideology == "Radical")
+on-arrival: wurttemberg_nsdap = 1; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_dnvp -= 2; old_middle_dnvp -= 2; rural_other -= 6; pro_republic -= 6
+
+Damn that's crazy. Look dude I don't know what to write for this.
+
+@bourgeois_coalition_wurttemberg
+title: The <span style="color: #000000;">Center</span> coalitions with the <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span>, the <span style="color: #FFCC00;">liberals</span>, and other minor bourgeois parties.
+subtitle: [? if state_governments_taken: This is the incumbent coalition. ?][? if not state_governments_taken: This is a right wing coalition. ?]
+view-if: bourgeois_coalition_wurttemberg >= 50
+on-arrival: wurttemberg_right = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; rural_other += 4; pro_republic += 2
+
+[? if state_governments_taken: The incumbent coalition consisting of the <span style="color: #A2D8E0;">**BVP**</span>, <span style="color: #38C538;">Bavarian Peasants’ League</span>, and the various smaller bourgeois parties has continued. This show of stability will weaken the <span style="color: #7A3C00;">Nazis</span>. ?][? if not state_governments_taken: The bourgeois parties have abandoned us, choosing to form a coalition among themselves rather than continue the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. ?]
+
+@spd_majority_wurttemberg
+title: The <span style="color: #c00000;">**SPD**</span> forms a majority government.
+subtitle: Congratulations.
+view-if: spd_r_wurttemberg >= 50
+on-arrival: wurttemberg_spd = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 1; old_middle_z -= 1; rural_z -= 1; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 2; pro_republic += 4
+
+Somehow, we have captured the majority of seats, bypassing the coalition negotiation process and appointing an <span style="color: #c00000;">**SPD**</span> Minister-President for the first time in a decade.
+
+@weimar_coalition_wurttemberg
+title: A <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition is formed!
+subtitle: [? if not state_governments_taken: This is the incumbent coalition. ?][? if state_governments_taken: This was the former incumbent coalition, before the <span style="color: #FFCC00;">liberals</span> betrayed us. ?]
+unavailable-subtitle: [? if z_relation < 40: We need higher relations with the <span style="color: #000000;">Center Party</span>. ?][? if (ddp_relation < 40 and not lvp_formed) or (lvp_relation < 40 and lvp_formed): We need higher relations with the [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?]
+view-if: spd_coalition_wurttemberg >= 50
+choose-if: z_relation >= 40 and ((ddp_relation >= 40 and not lvp_formed) or (lvp_relation >= 40 and lvp_formed))
+on-arrival: wurttemberg_spd = 1; rural_nsdap -= 2; new_middle_spd += 2; old_middle_spd += 2; rural_other += 4; z_relation += 3; ddp_relation += 3; lvp_relation += 3; pro_republic += 3
+
+[? if state_governments_taken: Despite the replacement of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition, formed in 1928, with a right-wing government due to the betrayal of the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], a strong electoral performance has led to a new coalition agreement. ?][? if not state_governments_taken: The incumbent <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition has persisted, despite expectations that the economic crisis would weaken the ruling parties. This display of stability will undermine the extremists and strengthen cooperation with our coalition partners. ?]
+
+The <span style="color: #000000;">Center Party</span> retains the Minister-President position.
+
+@united_left_wurttemberg
+title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the <span style="color: #700000;">**KPD**</span>?
+subtitle: History will repeat itself.
+view-if: left_coalition_wurttemberg >= 50 and (kpd_relation >= 50 and kpd_leader == "Conciliators") or (kpd_relation >= 70 and kpd_leader != "Conciliators")
+on-arrival: wurttemberg_spd = 1; z_relation -= 3; ddp_relation -= 3; dvp_relation -= 3; lvp_relation -= 3; coup_progress += 3
+
+Yup. That's crazy. I don't know what to write here.

@@ -1366,6 +1366,7 @@ if (Q.year == 1930 && Q.month == 1 && Q.pro_republic < 65 && Q.ddp_ideology != "
     if (Q.ddp_ideology == "Right") {
         Q.liberal_cooperation += 1;
     }
+    Q.state_governments_taken = 1;
 }
 
 if (Q.year == 1930 && Q.month == 3 && Q.ddp_relation < 60 && !Q.lvp_formed) {
