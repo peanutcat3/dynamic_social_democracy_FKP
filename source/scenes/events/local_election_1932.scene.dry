@@ -335,13 +335,13 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+        document.getElementById("bavaria_landtag").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
+    d3.select("#bavaria_landtag").datum(data).call(parliament);
 
     var lines = d3.linegraph(false, false,
             Q.parties,
@@ -368,7 +368,7 @@ go-to: bavaria_coalition_menu
 
 **Bavarian results:**
 
-{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="bavaria_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
@@ -757,13 +757,13 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+        document.getElementById("wurttemberg_landtag").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
+    d3.select("#wurttemberg_landtag").datum(data).call(parliament);
 
     var lines = d3.linegraph(false, false,
             Q.parties,
@@ -790,7 +790,7 @@ go-to: wurttemberg_coalition_menu
 
 **Wurttemberg results:**
 
-{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="wurttemberg_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
