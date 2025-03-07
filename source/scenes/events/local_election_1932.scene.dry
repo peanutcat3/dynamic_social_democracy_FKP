@@ -685,9 +685,9 @@ if (Q.lvp_r_wurttemberg && Q.lvp_formed) {
 }
 
 data = data.concat([{
-        "id": "bvp",
-        "legend": "BVP",
-        "name": "BVP",
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
         "seats": Math.round((Q.z_r_wurttemberg) * 0.8),
 }
 ]);
