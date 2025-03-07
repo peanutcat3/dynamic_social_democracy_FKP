@@ -415,7 +415,7 @@ Traffic Light Coalition (<span style="color: #c00000;">**SPD**</span> + [? if no
 title: The <span style="color: #A2D8E0;">**BVP**</span> has fallen short of a majority, but continue to rule in caretaker capacity.
 subtitle: Bless the constructive vote of no confidence. 🙏🙏🙏
 view-if: bourgeois_coalition_bavaria < 50
-on-arrival: bavaria_minority_bvp = 1; pro_republic -= 3
+on-arrival: bavaria_minority_bvp = 1; pro_republic -= 2
 
 Despite the <span style="color: #A2D8E0;">**BVP**</span> falling short of a majority, even with the inclusion of other bourgeois parties, they continue to rule in as a caretaker government. [? if nsdap_bavaria_elections_vote >= 15: Negotiations with the <span style="color: #7A3C00;">**NSDAP**</span> has collapsed, due to their disdain for Catholics. ?]
 
@@ -425,7 +425,7 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 title: The <span style="color: #A2D8E0;">**BVP**</span> has captured another majority.
 subtitle: As expected?
 view-if: z_r_bavaria >= 50
-on-arrival: bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z += 2; old_middle_z += 2; rural_z += 2
+on-arrival: bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z += 2; old_middle_z += 2; rural_z += 2; pro_republic += 1
 
 The <span style="color: #A2D8E0;">**BVP**</span> has surprisingly won an outright majority, and no longer needs the support of the bourgeois parties. This has cemented Bavaria as one of the most stable state governments, maybe not "democratic" though.
 
@@ -435,7 +435,7 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 title: The <span style="color: #7A3C00;">**NSDAP**</span> wins a majority?
 subtitle: How did it come to this...?
 view-if: (nsdap_r_bavaria + dnf_r_bavaria >= 50 and dnvp_ideology == "Moderate") or (nsdap_r_bavaria + dnvp_r_bavaria >= 50 and dnvp_ideology == "Radical")
-on-arrival: bavaria_nsdap = 1; new_middle_nsdap += 6; old_middle_nsdap += 6; rural_nsdap += 6; new_middle_z -= 4; old_middle_z -= 4; rural_z -= 4
+on-arrival: bavaria_nsdap = 1; new_middle_nsdap += 6; old_middle_nsdap += 6; rural_nsdap += 6; new_middle_z -= 4; old_middle_z -= 4; rural_z -= 4; pro_republic -= 10
 
 How the hell.
 
@@ -443,7 +443,7 @@ How the hell.
 title: The <span style="color: #A2D8E0;">**BVP**</span> coalitions with the <span style="color: #38C538;">Bavarian Peasants’ League</span> and various bourgeois parties.
 subtitle: This is the incumbent coalition.
 view-if: bourgeois_coalition_bavaria >= 50
-on-arrival: bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 1; rural_other += 1
+on-arrival: bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 1; rural_other += 1; pro_republic += 2
 
 The incumbent coalition consisting of the <span style="color: #A2D8E0;">**BVP**</span>, <span style="color: #38C538;">Bavarian Peasants’ League</span>, and the various smaller bourgeois parties has continued. This show of stability will weaken the <span style="color: #7A3C00;">Nazis</span>.
 
@@ -453,7 +453,7 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 title: The <span style="color: #c00000;">**SPD**</span> forms a majority government.
 subtitle: Congratulations.
 view-if: spd_r_bavaria >= 50
-on-arrival: bavaria_spd = 1; new_middle_nsdap -= 3; old_middle_nsdap -= 3; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 5; old_middle_Spd += 6; rural_spd += 4
+on-arrival: bavaria_spd = 1; new_middle_nsdap -= 3; old_middle_nsdap -= 3; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 5; old_middle_Spd += 6; rural_spd += 4; pro_republic += 5
 
 We have somehow managed to capture a majority in the Landtag, and have put our Minister-President as the head of the most conservative state in the country. Hopefully this doesn't end badly like last time.
 
@@ -463,7 +463,7 @@ subtitle: We will negotiate behind the <span style="color: #A2D8E0;">**BVP**</sp
 unavailable-subtitle: Not enough resources (need 2).
 view-if: spd_coalition_bavaria >= 50
 choose-if: resources >= 2
-on-arrival: resources -= 2; bavaria_spd = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 3; old_middle_Spd += 3; rural_spd += 1; rural_other += 3; z_relation -= 5
+on-arrival: resources -= 2; bavaria_spd = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 1; rural_other += 3; z_relation -= 5; pro_republic += 3
 
 Somehow, we have brought the [? if not lvp_formed and ddp_r_bavaria: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and?][? if lvp_formed and lvp_r_bavaria: <span style="color: #FFCC00;">**LVP**</span> and?] <span style="color: #38C538;">Bavarian Peasants’ League</span> to the negotiating table, despite their preference for working with the <span style="color: #A2D8E0;">**BVP**</span>. One <span style="color: #38C538;">agrarian</span> <span style="color: #9B0000;">socialism</span> later, we are now in government!
 
