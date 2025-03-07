@@ -5,6 +5,7 @@ tags: event
 on-arrival: local_elections_seen = 1;
 set-jump: new_elections
 face-image: img/states.png
+max-visits: 1
 
 = Local Elections, [+ month : month +] [+ year +]
 
