@@ -377,6 +377,38 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
         Q.flavour_46_trigger_shown = 1;
     }
 }
+// dvp party conflict post 2nd bruning, pt 1
+if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_47_trigger += 1; 
+    if (Q.flavour_47_trigger == 2 && !Q.flavour_47_trigger_shown) {
+        Q.flavour_47_trigger_time = Q.time;
+        Q.flavour_47_trigger_shown = 1;
+    }
+}
+// dvp party conflict post 2nd bruning, pt 2
+if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_47_trigger_time + 1 && Q.time !== Q.last_time_updated) {
+    Q.flavour_48_trigger += 1; 
+    if (Q.flavour_48_trigger == 1 && !Q.flavour_48_trigger_shown) {
+        Q.flavour_48_trigger_time = Q.time;
+        Q.flavour_48_trigger_shown = 1;
+    }
+}
+// dvp party conflict post 2nd bruning, pt 3
+if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_48_trigger_time + 1 && Q.time !== Q.last_time_updated) {
+    Q.flavour_49_trigger += 1; 
+    if (Q.flavour_49_trigger == 1 && !Q.flavour_49_trigger_shown) {
+        Q.flavour_49_trigger_time = Q.time;
+        Q.flavour_49_trigger_shown = 1;
+    }
+}
+// dvp party conflict post 2nd bruning, pt 4
+if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_49_trigger_time + 1 && Q.time !== Q.last_time_updated) {
+    Q.flavour_50_trigger += 1; 
+    if (Q.flavour_50_trigger == 1 && !Q.flavour_50_trigger_shown) {
+        Q.flavour_50_trigger_time = Q.time;
+        Q.flavour_50_trigger_shown = 1;
+    }
+}
 Q.last_time_updated = Q.time;
 !}
 on-display: {!
@@ -430,7 +462,7 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1928 and month = 6 : The poor showing for the liberal parties has convinced their leadership that Germany no longer has the luxury of two liberal parties. However, the prospect of a merger is held back by the left <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and the right <span style="color: #C0A054;">**DVP**</span>, who are strongly against compromising their own interests. Despite this, a parliamentary group between the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> is seeming likely. ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if year = 1928 and month = 7 : Kuno von Westarp, the moderate leader of the <span style="color: #3E88B3;">**DNVP**</span>, has resigned as party leader following conflict with Hugenberg and his allies. Westarp, although opposed to Lambach's views, refrained from expelling him from the party to prevent a possible succession from the party's left wing, to the outrage of many monarchists. [? if pro_republic < 65 and not ((pro_republic >= 57 and in_right_coalition and in_right_coalition_prussia) and not (pro_republic >= 59 and in_right_coalition) and not (pro_republic >= 62 and in_right_coalition_prussia)): This has prompted Westarp to resign as chairman, and Lambach to be expelled from the party due to unrelenting attacks from Hugenberg's allies. ?][? if pro_republic >= 65 or ((pro_republic >= 57 and in_right_coalition and in_right_coalition_prussia) or (pro_republic >= 59 and in_right_coalition) or (pro_republic >= 62 and in_right_coalition_prussia)): This has prompted Westarp to resign as chairman due to unrelenting attacks from Hugenberg's allies, but Lambach is saved from expulsion by the <span style="color: #3E88B3;">**DNVP**</span>'s left wing. ?] Meanwhile, Hugenberg and his allies in the Pan-German League have been garnering considerable support within their local party organizations. ?]{!</p>!}
+{!<p class="dnvp">!}[? if year = 1928 and month = 7 : Kuno von Westarp, the moderate leader of the <span style="color: #3E88B3;">**DNVP**</span>, has resigned as party leader following conflict with Hugenberg and his allies. Westarp, although opposed to Lambach's views, refrained from expelling him from the party to prevent a possible secession from the party's left wing, to the outrage of many monarchists. [? if pro_republic < 65 and not ((pro_republic >= 57 and in_right_coalition and in_right_coalition_prussia) and not (pro_republic >= 59 and in_right_coalition) and not (pro_republic >= 62 and in_right_coalition_prussia)): This has prompted Westarp to resign as chairman, and Lambach to be expelled from the party due to unrelenting attacks from Hugenberg's allies. ?][? if pro_republic >= 65 or ((pro_republic >= 57 and in_right_coalition and in_right_coalition_prussia) or (pro_republic >= 59 and in_right_coalition) or (pro_republic >= 62 and in_right_coalition_prussia)): This has prompted Westarp to resign as chairman due to unrelenting attacks from Hugenberg's allies, but Lambach is saved from expulsion by the <span style="color: #3E88B3;">**DNVP**</span>'s left wing. ?] Meanwhile, Hugenberg and his allies in the Pan-German League have been garnering considerable support within their local party organizations. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1928 and month = 7 and (liberal_vote >= 13 and peoples_party_support < 2) or (in_right_coalition or in_weimar_coalition) and next_election_time - time >= 3: The efforts of Stresemann and the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> under Koch-Weser to strengthen ties between their two parties have been a failure due to the strong opposition voiced by the extreme wings of both parties. Stresemann is growing disillusioned with his own party, viewing it as a vehicle for industrial interests rather than liberal values. The leftists in the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> argue that the merger would have to take into account the interests of the working class, a policy vehemently opposed by the industrial interests. ?]{!</p>!}
 
@@ -898,7 +930,17 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1931 and month = 10: The recent United Kingdom general elections have resulted in the greatest landslide in the country's history, with <span style="color: #f0456a;">Labour</span> receiving only a meager 52 seats, losing 235 of them from the previous election. Despite this, the incumbent <span style="color: #008000;">National Labour</span> Prime Minister Ramsay MacDonald has remained in office, ruling with the <span style="color: #0087DC;">Tories</span>. ?]{!</p>!}
 
+{!<p class="other">!}[? if flavour_47_trigger and flavour_47_trigger_time == time: [? if year == 1931 and month >= 11: During the Hessian Landtag election campaign?][? if year != 1931 or month < 11: While campaigning for local elections?], Dingeldey proposed to Hitler that their parties refrain from attacking each other to present a united front against the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties. Their <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> shift, coupled with their exit from the Brüning cabinet, has galvanized the party’s left wing, now rallying around the "Kunz-Dohna" group, named after its leaders. Their goal is to steer the <span style="color: #C0A054;">**DVP**</span> back to the political course of its late founder and chairman, Stresemann, and away from any alignment with the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_48_trigger and flavour_48_trigger_time == time: Dingeldey’s reluctance to challenge the <span style="color: #C0A054;">DVP</span>’s industrial wing has strained relations with the DHV, a white-collar union that has consistently supported the party since the republic's founding. His refusal to recognize unions' role in collective bargaining has left the DHV feeling sidelined and questioning its future with the party. The Kunz-Dohna group has decided to raise their concerns at this month's executive committee meeting, where their isolation and impotence is shown when only 14 out of 344 votes are cast against a resolution unequivocally denouncing Brüning. The group is now considering a secession, following those on the extreme right advocating for a merger with [? if dnvp_ideology == "Moderate":the?][? if dnvp_ideology == "Radical":Hugenberg's?] <span style="color: #3E88B3;">**DNVP**</span> in the same meeting. ?]{!</p>!}
+
 {!<p class="other">!}[? if year = 1931 and month = 12 : The new Second Spanish Republic has adopted its new democratic constitution, establishing a secular, progressive, and republican government. Times are looking bright for Spain. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_49_trigger and flavour_49_trigger_time == time: Ever since the party executive meeting and the victory of the extreme right-wing forces, Dingeldey has been increasingly under pressure to pursue closer ties to the parties of the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. Erich von Gilsa, the party's liaison to the <span style="color: #3E88B3;">**Stahlhelm**</span>, has forced Dingeldey to meet with local district organization leaders to pressure the party into closer ties with [? if dnvp_ideology == "Moderate":the?][? if dnvp_ideology == "Radical":Hugenberg's?] <span style="color: #3E88B3;">**DNVP**</span>, and ultimately a merger. [? if dnvp_ideology == "Radical": So far, he has resisted these attempts, arguing that Hugenberg will demand nothing less than a complete absorption of the <span style="color: #C0A054;">**DVP**</span>.?][? if dnvp_ideology == "Moderate": With the decline in the vote share of the bourgeois parties, this option sounds quite appealing, and negotiations between the two parties have begun.?] ?]{!</p>!}
+
+# make version for if dvp never split cuz of many reasons
+
+{!<p class="other">!}[? if flavour_50_trigger and flavour_50_trigger_time == time: Erich von Gilsa has resigned from the <span style="color: #C0A054;">**DVP**</span> as a way of protesting Dingeldey’s lack of interest in a merger with the <span style="color: #3E88B3;">**DNVP**</span>. This has set off a chain of events, with many local district organizations and key leaders on the extreme-right wing of the party resigning and defecting to the <span style="color: #3E88B3;">**DNVP**</span>. [? if bruning_time: Furthermore, when the Reichstag was back in session, Dingeldey attempted to impose party discipline, forcing the delegation to unanimously vote against Brüning, resulting in the expulsion of Curtius and Siegfried von Kardorff, the left wing's most respected spokesmen. ?] It's safe to say that the <span style="color: #C0A054;">**DVP**</span> is no longer a viable national political force. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 4 and pro_republic < 50 : Hans Luther has been shot! Luckily, he was only injured in the shoulder, and will be able to continue his job as the [? if luther_reichsbank: President of the Reichsbank?][? if dvp_leader == "Luther" or lvp_leader == "Luther" and lvp_formed: leader of the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?]. [? if luther_reichsbank: The assailants have written a letter beforehand, criticizing his monetary policy.?][? if dvp_leader == "Luther" or lvp_leader == "Luther" and lvp_formed: The assailants have written a letter beforehand, criticizing his leadership over the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?]. ?]{!</p>!}
 
@@ -1308,6 +1350,38 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
         Q.flavour_46_trigger_shown = 1;
     }
 }
+// dvp party conflict post 2nd bruning, pt 1
+if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+    Q.flavour_47_trigger += 1; 
+    if (Q.flavour_47_trigger == 2 && !Q.flavour_47_trigger_shown) {
+        Q.flavour_47_trigger_time = Q.time;
+        Q.flavour_47_trigger_shown = 1;
+    }
+}
+// dvp party conflict post 2nd bruning, pt 2
+if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_47_trigger_time + 1 && Q.time !== Q.last_time_updated) {
+    Q.flavour_48_trigger += 1; 
+    if (Q.flavour_48_trigger == 1 && !Q.flavour_48_trigger_shown) {
+        Q.flavour_48_trigger_time = Q.time;
+        Q.flavour_48_trigger_shown = 1;
+    }
+}
+// dvp party conflict post 2nd bruning, pt 3
+if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_48_trigger_time + 1 && Q.time !== Q.last_time_updated) {
+    Q.flavour_49_trigger += 1; 
+    if (Q.flavour_49_trigger == 1 && !Q.flavour_49_trigger_shown) {
+        Q.flavour_49_trigger_time = Q.time;
+        Q.flavour_49_trigger_shown = 1;
+    }
+}
+// dvp party conflict post 2nd bruning, pt 4
+if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_49_trigger_time + 1 && Q.time !== Q.last_time_updated) {
+    Q.flavour_50_trigger += 1; 
+    if (Q.flavour_50_trigger == 1 && !Q.flavour_50_trigger_shown) {
+        Q.flavour_50_trigger_time = Q.time;
+        Q.flavour_50_trigger_shown = 1;
+    }
+}
 Q.last_time_updated = Q.time;
 !}
 on-display: {!
@@ -1361,7 +1435,7 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1928 and month = 6 : The poor showing for the liberal parties has convinced their leadership that Germany no longer has the luxury of two liberal parties. However, the prospect of a merger is held back by the left <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and the right <span style="color: #C0A054;">**DVP**</span>, who are strongly against compromising their own interests. Despite this, a parliamentary group between the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> is seeming likely. ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if year = 1928 and month = 7 : Kuno von Westarp, the moderate leader of the <span style="color: #3E88B3;">**DNVP**</span>, has resigned as party leader following conflict with Hugenberg and his allies. Westarp, although opposed to Lambach's views, refrained from expelling him from the party to prevent a possible succession from the party's left wing, to the outrage of many monarchists. [? if pro_republic < 65 and not ((pro_republic >= 57 and in_right_coalition and in_right_coalition_prussia) and not (pro_republic >= 59 and in_right_coalition) and not (pro_republic >= 62 and in_right_coalition_prussia)): This has prompted Westarp to resign as chairman, and Lambach to be expelled from the party due to unrelenting attacks from Hugenberg's allies. ?][? if pro_republic >= 65 or ((pro_republic >= 57 and in_right_coalition and in_right_coalition_prussia) or (pro_republic >= 59 and in_right_coalition) or (pro_republic >= 62 and in_right_coalition_prussia)): This has prompted Westarp to resign as chairman due to unrelenting attacks from Hugenberg's allies, but Lambach is saved from expulsion by the <span style="color: #3E88B3;">**DNVP**</span>'s left wing. ?] Meanwhile, Hugenberg and his allies in the Pan-German League have been garnering considerable support within their local party organizations. ?]{!</p>!}
+{!<p class="dnvp">!}[? if year = 1928 and month = 7 : Kuno von Westarp, the moderate leader of the <span style="color: #3E88B3;">**DNVP**</span>, has resigned as party leader following conflict with Hugenberg and his allies. Westarp, although opposed to Lambach's views, refrained from expelling him from the party to prevent a possible secession from the party's left wing, to the outrage of many monarchists. [? if pro_republic < 65 and not ((pro_republic >= 57 and in_right_coalition and in_right_coalition_prussia) and not (pro_republic >= 59 and in_right_coalition) and not (pro_republic >= 62 and in_right_coalition_prussia)): This has prompted Westarp to resign as chairman, and Lambach to be expelled from the party due to unrelenting attacks from Hugenberg's allies. ?][? if pro_republic >= 65 or ((pro_republic >= 57 and in_right_coalition and in_right_coalition_prussia) or (pro_republic >= 59 and in_right_coalition) or (pro_republic >= 62 and in_right_coalition_prussia)): This has prompted Westarp to resign as chairman due to unrelenting attacks from Hugenberg's allies, but Lambach is saved from expulsion by the <span style="color: #3E88B3;">**DNVP**</span>'s left wing. ?] Meanwhile, Hugenberg and his allies in the Pan-German League have been garnering considerable support within their local party organizations. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1928 and month = 7 and (liberal_vote >= 13 and peoples_party_support < 2) or (in_right_coalition or in_weimar_coalition) and next_election_time - time >= 3: The efforts of Stresemann and the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> under Koch-Weser to strengthen ties between their two parties have been a failure due to the strong opposition voiced by the extreme wings of both parties. Stresemann is growing disillusioned with his own party, viewing it as a vehicle for industrial interests rather than liberal values. The leftists in the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> argue that the merger would have to take into account the interests of the working class, a policy vehemently opposed by the industrial interests. ?]{!</p>!}
 
@@ -1829,7 +1903,17 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1931 and month = 10: The recent United Kingdom general elections have resulted in the greatest landslide in the country's history, with <span style="color: #f0456a;">Labour</span> receiving only a meager 52 seats, losing 235 of them from the previous election. Despite this, the incumbent <span style="color: #008000;">National Labour</span> Prime Minister Ramsay MacDonald has remained in office, ruling with the <span style="color: #0087DC;">Tories</span>. ?]{!</p>!}
 
+{!<p class="other">!}[? if flavour_47_trigger and flavour_47_trigger_time == time: [? if year == 1931 and month >= 11: During the Hessian Landtag election campaign?][? if year != 1931 or month < 11: While campaigning for local elections?], Dingeldey proposed to Hitler that their parties refrain from attacking each other to present a united front against the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties. Their <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> shift, coupled with their exit from the Brüning cabinet, has galvanized the party’s left wing, now rallying around the "Kunz-Dohna" group, named after its leaders. Their goal is to steer the <span style="color: #C0A054;">**DVP**</span> back to the political course of its late founder and chairman, Stresemann, and away from any alignment with the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_48_trigger and flavour_48_trigger_time == time: Dingeldey’s reluctance to challenge the <span style="color: #C0A054;">DVP</span>’s industrial wing has strained relations with the DHV, a white-collar union that has consistently supported the party since the republic's founding. His refusal to recognize unions' role in collective bargaining has left the DHV feeling sidelined and questioning its future with the party. The Kunz-Dohna group has decided to raise their concerns at this month's executive committee meeting, where their isolation and impotence is shown when only 14 out of 344 votes are cast against a resolution unequivocally denouncing Brüning. The group is now considering a secession, following those on the extreme right advocating for a merger with [? if dnvp_ideology == "Moderate":the?][? if dnvp_ideology == "Radical":Hugenberg's?] <span style="color: #3E88B3;">**DNVP**</span> in the same meeting. ?]{!</p>!}
+
 {!<p class="other">!}[? if year = 1931 and month = 12 : The new Second Spanish Republic has adopted its new democratic constitution, establishing a secular, progressive, and republican government. Times are looking bright for Spain. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_49_trigger and flavour_49_trigger_time == time: Ever since the party executive meeting and the victory of the extreme right-wing forces, Dingeldey has been increasingly under pressure to pursue closer ties to the parties of the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. Erich von Gilsa, the party's liaison to the <span style="color: #3E88B3;">**Stahlhelm**</span>, has forced Dingeldey to meet with local district organization leaders to pressure the party into closer ties with [? if dnvp_ideology == "Moderate":the?][? if dnvp_ideology == "Radical":Hugenberg's?] <span style="color: #3E88B3;">**DNVP**</span>, and ultimately a merger. [? if dnvp_ideology == "Radical": So far, he has resisted these attempts, arguing that Hugenberg will demand nothing less than a complete absorption of the <span style="color: #C0A054;">**DVP**</span>.?][? if dnvp_ideology == "Moderate": With the decline in the vote share of the bourgeois parties, this option sounds quite appealing, and negotiations between the two parties have begun.?] ?]{!</p>!}
+
+# make version for if dvp never split cuz of many reasons
+
+{!<p class="other">!}[? if flavour_50_trigger and flavour_50_trigger_time == time: Erich von Gilsa has resigned from the <span style="color: #C0A054;">**DVP**</span> as a way of protesting Dingeldey’s lack of interest in a merger with the <span style="color: #3E88B3;">**DNVP**</span>. This has set off a chain of events, with many local district organizations and key leaders on the extreme-right wing of the party resigning and defecting to the <span style="color: #3E88B3;">**DNVP**</span>. [? if bruning_time: Furthermore, when the Reichstag was back in session, Dingeldey attempted to impose party discipline, forcing the delegation to unanimously vote against Brüning, resulting in the expulsion of Curtius and Siegfried von Kardorff, the left wing's most respected spokesmen. ?] It's safe to say that the <span style="color: #C0A054;">**DVP**</span> is no longer a viable national political force. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 4 and pro_republic < 50 : Hans Luther has been shot! Luckily, he was only injured in the shoulder, and will be able to continue his job as the [? if luther_reichsbank: President of the Reichsbank?][? if dvp_leader == "Luther" or lvp_leader == "Luther" and lvp_formed: leader of the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?]. [? if luther_reichsbank: The assailants have written a letter beforehand, criticizing his monetary policy.?][? if dvp_leader == "Luther" or lvp_leader == "Luther" and lvp_formed: The assailants have written a letter beforehand, criticizing his leadership over the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?]. ?]{!</p>!}
 

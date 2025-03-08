@@ -740,6 +740,8 @@ if (Q.month_actions >= 1) {
                 Q.old_middle_other -= 3/12;
                 Q.new_middle_nsdap += 3/12;
                 Q.old_middle_nsdap += 3/12;
+                Q.catholics_other -= 3/12;
+                Q.catholics_nsdap += 3/12;
             }
             Q.new_middle_nsdap += 8/12;
             Q.old_middle_nsdap += 8/12;
@@ -812,7 +814,7 @@ if (Q.month_actions >= 1) {
             Q.new_middle_dnf += 2/12;
             }
             Q.catholics_nsdap += 3/12;
-            Q.catholics_other -= 2/12;
+            Q.catholics_other -= 3/12;
             Q.rural_dnvp -= 4/12;
             Q.new_middle_other -= 2/12;
             Q.old_middle_other -= 2/12;
@@ -834,13 +836,6 @@ if (Q.month_actions >= 1) {
                 Q.new_middle_kvp -= 3/12;
                 Q.new_middle_dnvp += 3/12;
             }
-            if (Q.bruning_time) {
-                Q.new_middle_dvp -= 2/12;
-                Q.old_middle_dvp -= 2/12;
-                Q.new_middle_lvp -= 2/12;
-                Q.old_middle_lvp -= 2/12;
-            }
-            Q.rural_dvp -= 2/12;
             Q.new_middle_lvp -= 4/12;
             Q.old_middle_lvp -= 4/12;
             Q.rural_lvp -= 2/12;
@@ -1646,6 +1641,23 @@ if (Q.flavour_40_trigger && Q.flavour_40_trigger_time == Q.time - 1) {
     Q.curtius_resign_seen = 1;
     Q.bruning_coalition_loss += (Q.lvp_r / 2);
     Q.lvp_defect = 1;
+}
+
+if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && !Q.dvp_conflict_time_trigger) {
+    Q.dvp_conflict_time_trigger = 1;
+}
+
+if (Q.dvp_conflict_time_trigger) { 
+    Q.dvp_conflict_time += 1;
+}
+
+if (Q.dvp_conflict_time == 4) {
+    if (Q.bruning_time) Q.new_middle_dvp *= 0.6;
+    if (Q.bruning_time) Q.old_middle_dvp *= 0.6;
+    if (Q.bruning_time) Q.rural_dvp *= 0.6;
+    if (!Q.bruning_time) Q.new_middle_dvp *= 0.7;
+    if (!Q.bruning_time) Q.old_middle_dvp *= 0.7;
+    if (!Q.bruning_time) Q.rural_dvp *= 0.7;
 }
 
 // historical route, ddp is right-wing and doesn't care about socialist cooperation as much, bourgeois parliament with ddp
