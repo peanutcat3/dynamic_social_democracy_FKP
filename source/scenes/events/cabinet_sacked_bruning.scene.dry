@@ -1,6 +1,6 @@
 title: Brüning Sacks Our Ministers!
 subtitle: Hindenburg has turned on us...
-view-if: (president == "Hindenburg" and spd_in_government and hindenburg_angry >= 125 and hindenburg_angry_trigger) and chancellor == "Brüning"
+view-if: (president == "Hindenburg" and spd_in_government and hindenburg_angry >= 125 and hindenburg_angry_trigger) and chancellor == "Brüning" and next_election_time - time > 3
 priority: -1
 new-page: true
 on-arrival: dvp_relation -= 8; ddp_relation -= 4; lvp_relation -= 4; z_relation -= 4; pro_republic -= 3; pro_republic -= 1 if spd_r >= 30; pro_republic -= 1 if weimar_coalition >= 50; coup_progress -= 1; judicial_reform -= 1

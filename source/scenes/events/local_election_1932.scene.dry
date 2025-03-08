@@ -32,6 +32,130 @@ Q.nsdap_local_elections_vote = Q.nsdap_votes;
 !}
 go-to: election_menu
 
+
+@election_menu
+
+- @bavaria
+- @wurttemberg
+- @results_overall
+
+@results_overall
+title: Overall Results
+view-if: bavaria_seen and wurttemberg_seen
+on-arrival: {!
+if (Q.liberal_wurttemberg_defeat) {
+    Q.new_middle_dvp *= 0.5;
+    Q.old_middle_dvp *= 0.5;
+    Q.new_middle_ddp *= 0.5;
+    Q.old_middle_ddp *= 0.5;
+    Q.lvp_right += 5;
+    Q.ddp_right += 3;
+    Q.dvp_right += 5;
+    Q.pro_republic -= Q.ddp_votes + Q.dvp_votes + Q.lvp_votes;
+}
+
+if (Q.nsdap_local_elections_vote >= 20) {
+    Q.new_middle_nsdap += 3;
+    Q.old_middle_nsdap += 3;
+    Q.rural_nsdap += 3;
+    Q.pro_republic -= 3;
+    Q.hindenburg_angry_bruning += 10;
+    Q.z_relation -= 5;
+}
+if (Q.nsdap_bavaria_elections_vote >= 25) {
+    Q.rural_nsdap += 3;
+}
+if (Q.nsdap_wurttemberg_elections_vote >= 15) {
+    Q.catholics_nsdap += 3;
+}
+if (Q.nsdap_local_elections_vote >= 34) {
+    Q.workers_nsdap += 3;
+    Q.unemployed_nsdap += 3;
+    Q.hindenburg_angry_bruning += 30;
+    Q.pro_republic -= 3;
+    Q.z_relation -= 3;
+}
+
+if (Q.spd_local_elections_vote >= 30) {
+    if (Q.pro_republic < 50) Q.pro_republic += 8;
+    Q.pro_republic += 3;
+    Q.z_relation += 5;
+    Q.ddp_relation += 5;
+    Q.dvp_relation += 3;
+    Q.lvp_relation += 5;
+    Q.ddp_left += 3;
+    Q.ddp_cohesion += 1;
+    Q.dvp_left += 1.5;
+    Q.lvp_left += 3;
+    Q.new_middle_spd += 2;
+    Q.workers_spd += 2;
+    Q.hindenburg_angry += 30;
+}
+
+if (Q.kpd_local_elections_vote >= 20) {
+    Q.kpd_relation += 20;
+    Q.communist_coalition += 1;
+    Q.workers_kpd += 3;
+    Q.unemployed_kpd += 3;
+    Q.workers_sapd += 3;
+    Q.unemployed_sapd += 3;
+    Q.pro_republic -= 3;
+    Q.sa_strength += 100;
+    Q.sh_strength += 50;
+    Q.coup_progress += 3;
+    Q.z_relation -= 3;
+    Q.ddp_relation -= 3;
+    Q.dvp_relation -= 3;
+    Q.lvp_relation -= 3;
+    Q.ddp_right += 2;
+    Q.dvp_right += 2;
+    Q.lvp_right += 2;
+    Q.hindenburg_angry += 30;
+    Q.hindenburg_angry_bruning += 50;
+}
+
+if (Q.z_local_elections_vote + Q.ddp_local_elections_vote + Q.dvp_local_elections_vote + Q.lvp_local_elections_vote + Q.other_local_elections_vote + Q.kvp_local_elections_vote >= 40 and dnvp_ideology == "Radical") {
+    Q.pro_republic += 3;
+    Q.hindenburg_angry_bruning -= 50;
+    Q.new_middle_ddp *= 1.2;
+    Q.old_middle_ddp *= 1.2;
+    Q.new_middle_dvp *= 1.2;
+    Q.old_middle_dvp *= 1.2;
+    Q.new_middle_lvp *= 1.1;
+    Q.old_middle_lvp *= 1.1;
+    Q.new_middle_other += 2;
+    Q.old_middle_other += 2;
+    Q.rural_other += 3;
+    Q.z_relation -= 5;
+    Q.ddp_relation -= 5;
+    Q.dvp_relation -= 5;
+    Q.lvp_relation -= 5;
+    Q.ddp_right += 2;
+    Q.dvp_right += 4;
+    Q.lvp_right += 3;
+} else if (Q.z_local_elections_vote + Q.ddp_local_elections_vote + Q.dvp_local_elections_vote + Q.lvp_local_elections_vote + Q.other_local_elections_vote + Q.dnvp_local_elections_vote >= 40 and dnvp_ideology == "Moderate") {
+    Q.pro_republic += 5;
+    Q.hindenburg_angry_bruning -= 50;
+    Q.new_middle_ddp *= 1.2;
+    Q.old_middle_ddp *= 1.2;
+    Q.new_middle_dvp *= 1.2;
+    Q.old_middle_dvp *= 1.2;
+    Q.new_middle_lvp *= 1.1;
+    Q.old_middle_lvp *= 1.1;
+    Q.new_middle_dnvp += 2;
+    Q.old_middle_dnvp += 2;
+    Q.rural_dnvp += 3;
+    Q.z_relation -= 5;
+    Q.ddp_relation -= 5;
+    Q.dvp_relation -= 5;
+    Q.lvp_relation -= 5;
+    Q.ddp_right += 2;
+    Q.dvp_right += 4;
+    Q.lvp_right += 3;
+}
+
+!}
+
 **Overall results:**
 
 {!<table>!} 
@@ -61,12 +185,9 @@ go-to: election_menu
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_local_elections_vote +]% {!</td></tr>!}
 {!</table>!}
 
-[? if nsdap_local_elections_vote >= 20: The strong performance of the <span style="color: #7A3C00;">**NSDAP**</span> leaves little room for a democratic coalition in many Landtags, and may force the <span style="color: #000000;">Center Party</span> to negotiate with them as a last resort. ?][? if spd_local_elections_vote >= 30: We have maintained a strong performance, maintaining many of our seats we've won in 1928. Hopefully our coalition partners have won enough votes as well, to continue our stable and democratic coalitions. ?][? if kpd_local_elections_vote + sapd_local_elections_vote >= 20: The gains made by the <span style="color: #700000;">KPD</span> have left our grassroots clamoring for a United Left coalition, as our local-level relations are far more cooperative than those between our national leaderships ?][? if z_local_elections_vote + ddp_local_elections_vote + dvp_local_elections_vote + lvp_local_elections_vote + other_local_elections_vote + kvp_local_elections_vote >= 40: The bourgeois parties have performed unexpectedly well in these elections, despite expectations that the economic crisis would push voters toward the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. ?]
+[? if nsdap_local_elections_vote >= 20: The strong performance of the <span style="color: #7A3C00;">**NSDAP**</span> leaves little room for a democratic coalition in many Landtags, and may force the <span style="color: #000000;">Center Party</span> to negotiate with them as a last resort. ?][? if spd_local_elections_vote >= 30: We have maintained a strong performance, maintaining many of our seats we've won in 1928. Hopefully our coalition partners have won enough votes as well, to continue our stable and democratic coalitions. ?][? if kpd_local_elections_vote + sapd_local_elections_vote >= 20: The gains made by the <span style="color: #700000;">**KPD**</span> have left our grassroots clamoring for a United Left coalition, as our local-level relations are far more cooperative than those between our national leaderships ?][? if z_local_elections_vote + ddp_local_elections_vote + dvp_local_elections_vote + lvp_local_elections_vote + other_local_elections_vote + kvp_local_elections_vote >= 40: The bourgeois parties have performed unexpectedly well in these elections, despite expectations that the economic crisis would push voters toward the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. ?]
 
-@election_menu
-
-- @bavaria
-- @wurttemberg
+[? if bruning_time and nsdap_local_elections_vote >= 20 and president == "Hindenburg": These results are likely the final nail in the coffin for Brüning's government, as President Hindenburg loses confidence in him. It is likely that someone even more right-wing than Brüning will replace him, given the nation's continued political shift to the right. ?]
 
 @bavaria
 title: <span style="color: #00CCFF;">Bavaria</span>'s Landtag Election
@@ -220,8 +341,8 @@ Q.kvp_r_bavaria = (Q.kvp_r_bavaria != undefined ? parseFloat(Q.kvp_r_bavaria.toF
 Q.dnf_r_bavaria = (Q.dnf_r_bavaria != undefined ? parseFloat(Q.dnf_r_bavaria.toFixed(1)) : 0);
 
 Q.left_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.kpd_r_bavaria + Q.sapd_r_bavaria).toFixed(1));
-Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.kvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
-if (Q.dnvp_ideology == "Moderate") Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.dnvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
+Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.other_r_bavaria + Q.dnvp_r_bavaria).toFixed(1));
+if (Q.dnvp_ideology == "Radical" && Q.kvp_formed) Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.kvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
 Q.spd_coalition_bavaria = parseFloat((Q.spd_r_bavaria + (Q.other_r_bavaria * 0.9) + Q.ddp_r_bavaria + Q.lvp_r_bavaria).toFixed(1));
 
 !}
@@ -397,11 +518,13 @@ go-to: bavaria_coalition_menu
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_bavaria_elections_vote +]% {!</td><td>!} [+ nsdap_r_bavaria +]%  {!</td></tr>!}
 {!</table>!}
 
+The <span style="color: #38C538;">Bavarian Peasants’ League</span> serves as the nucleus of the federal <span style="color: #007A00;">German Peasants' Party</span> and is surprisingly liberal and <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> compared to other agricultural parties and organizations, such as the <span style="color: #7FCEB1;">**CNBLP**</span>. Recently, they even exited the <span style="color: #A2D8E0;">**BVP**</span>'s cabinet over a dispute about taxes. 
+
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_bavaria +]% 
 
 Traffic Light Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span>): [+ spd_coalition_bavaria +]% 
 
-[? if not kvp_formed: Bourgeois Coalition (<span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if dnvp_ideology == "Moderate":&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ bourgeois_coalition_bavaria +]% ?]
+[? if not kvp_formed: Bourgeois Coalition (<span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + **Others** + <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_bavaria +]% ?]
 
 [? if kvp_formed: Bourgeois Coalition (<span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition_bavaria +]% ?]
 
@@ -421,7 +544,7 @@ Traffic Light Coalition (<span style="color: #c00000;">**SPD**</span> + [? if no
 title: The <span style="color: #A2D8E0;">**BVP**</span> has fallen short of a majority, but continue to rule in caretaker capacity.
 subtitle: Bless the constructive vote of no confidence. 🙏🙏🙏
 view-if: bourgeois_coalition_bavaria < 50
-on-arrival: bavaria_minority_bvp = 1; pro_republic -= 2
+on-arrival: bavaria_minority_bvp = 1; pro_republic -= 2; catholics_nsdap -= 2
 go-to: election_menu
 
 Despite the <span style="color: #A2D8E0;">**BVP**</span> falling short of a majority, even with the inclusion of other bourgeois parties, they continue to rule in as a caretaker government. [? if nsdap_bavaria_elections_vote >= 15: Negotiations with the <span style="color: #7A3C00;">**NSDAP**</span> has collapsed, due to their disdain for Catholics. ?]
@@ -432,7 +555,7 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 title: The <span style="color: #A2D8E0;">**BVP**</span> has captured another majority.
 subtitle: As expected?
 view-if: z_r_bavaria >= 50
-on-arrival: bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z += 2; old_middle_z += 2; rural_z += 2; pro_republic += 1
+on-arrival: bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; catholics_nsdap -= 2; new_middle_z += 2; old_middle_z += 2; catholics_other += 2; rural_z += 2; pro_republic += 1
 go-to: election_menu
 
 The <span style="color: #A2D8E0;">**BVP**</span> has surprisingly won an outright majority, and no longer needs the support of the bourgeois parties. This has cemented Bavaria as one of the most stable state governments, maybe not "democratic" though.
@@ -450,12 +573,12 @@ How the hell.
 
 @bvp_coalition
 title: The <span style="color: #A2D8E0;">**BVP**</span> coalitions with the <span style="color: #38C538;">Bavarian Peasants’ League</span> and various bourgeois parties.
-subtitle: This is the incumbent coalition.
+subtitle: The <span style="color: #A2D8E0;">BVP</span> will make amends with the <span style="color: #38C538;">farmers</span>.
 view-if: bourgeois_coalition_bavaria >= 50
-on-arrival: bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 1; rural_other += 1; pro_republic += 2
+on-arrival: bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; catholics_nsdap -= 2; rural_nsdap -= 3; rural_other += 3; pro_republic += 3
 go-to: election_menu
 
-The incumbent coalition consisting of the <span style="color: #A2D8E0;">**BVP**</span>, <span style="color: #38C538;">Bavarian Peasants’ League</span>, and the various smaller bourgeois parties has continued. This show of stability will weaken the <span style="color: #7A3C00;">Nazis</span>.
+The former incumbent coalition consisting of the <span style="color: #A2D8E0;">**BVP**</span>, <span style="color: #38C538;">Bavarian Peasants’ League</span>, and the various smaller bourgeois parties has continued. This show of stability will weaken the <span style="color: #7A3C00;">Nazis</span>.
 
 Heinrich Held, the incumbent Minister-President and a pro-democratic member of the <span style="color: #A2D8E0;">**BVP**</span> remains in power.
 
@@ -463,21 +586,21 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 title: The <span style="color: #c00000;">**SPD**</span> forms a majority government.
 subtitle: Congratulations.
 view-if: spd_r_bavaria >= 50
-on-arrival: bavaria_spd = 1; new_middle_nsdap -= 3; old_middle_nsdap -= 3; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 5; old_middle_Spd += 6; rural_spd += 4; pro_republic += 5
+on-arrival: bavaria_spd = 1; new_middle_nsdap -= 3; old_middle_nsdap -= 3; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 5; old_middle_spd += 6; rural_spd += 4; catholics_z -= 6; catholics_spd += 6; pro_republic += 5
 go-to: election_menu
 
 We have somehow managed to capture a majority in the Landtag, and have put our Minister-President as the head of the most conservative state in the country. Hopefully this doesn't end badly like last time.
 
 @spd_coalition
 title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the bourgeois parties.
-subtitle: We will negotiate behind the <span style="color: #A2D8E0;">**BVP**</span>'s back.
-unavailable-subtitle: Not enough resources (need 2).
+subtitle: The <span style="color: #38C538;">Bavarian Peasants’ League</span> had a falling out right? Let's utilize our contacts with their left wing.
+unavailable-subtitle: Not enough resources.
 view-if: spd_coalition_bavaria >= 50
-choose-if: resources >= 2
-on-arrival: resources -= 2; bavaria_spd = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 1; rural_other += 3; z_relation -= 5; pro_republic += 3
+choose-if: resources >= 1
+on-arrival: resources -= 1; bavaria_spd = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 1; rural_other += 3; catholics_z -= 4; catholics_spd += 4; z_relation -= 5; pro_republic += 3
 go-to: election_menu
 
-Somehow, we have brought the [? if not lvp_formed and ddp_r_bavaria: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and?][? if lvp_formed and lvp_r_bavaria: <span style="color: #FFCC00;">**LVP**</span> and?] <span style="color: #38C538;">Bavarian Peasants’ League</span> to the negotiating table, despite their preference for working with the <span style="color: #A2D8E0;">**BVP**</span>. One <span style="color: #38C538;">agrarian</span> <span style="color: #9B0000;">socialism</span> later, we are now in government!
+Somehow, we have brought the [? if not lvp_formed and ddp_r_bavaria: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and?][? if lvp_formed and lvp_r_bavaria: <span style="color: #FFCC00;">**LVP**</span> and?] <span style="color: #38C538;">Bavarian Peasants’ League</span> to the negotiating table, despite their preference for working with the <span style="color: #A2D8E0;">**BVP**</span>. Through connections with the left-wing and liberal factions within the <span style="color: #38C538;">Bavarian Peasants’ League</span>, we have overcome their reluctance—and now, we are in government!
 
 @united_left
 title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the <span style="color: #700000;">**KPD**</span>?
@@ -714,7 +837,7 @@ if (Q.other_r_wurttemberg) {
         "seats": Math.round(Q.other_r_wurttemberg * 0.27),
     });
     data.push({
-        "id": "farm",
+        "id": "farm2",
         "legend": "Farm",
         "name": "Farm",
         "seats": Math.round(Q.other_r_wurttemberg * 0.53),
@@ -784,11 +907,12 @@ if (window && d3) {
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
 }
+if (Q.ddp_wurttemberg_elections_vote + Q.dvp_wurttemberg_elections_vote < 8 && !Q.lvp_formed || Q.lvp_wurttemberg_elections_vote < 12 && Q.lvp_formed) Q.liberal_wurttemberg_defeat = 1;
 !}
 go-to: wurttemberg_coalition_menu
 
 
-**Wurttemberg results:**
+**Württemberg results:**
 
 {!<svg id="wurttemberg_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
@@ -819,19 +943,25 @@ go-to: wurttemberg_coalition_menu
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_wurttemberg_elections_vote +]% {!</td><td>!} [+ nsdap_r_wurttemberg +]%  {!</td></tr>!}
 {!</table>!}
 
+The <span style="color: #006400;">Württemberg Farmers' and Winegrowers' Association</span> (<span style="color: #006400;">**WBWB**</span>) is a regional branch of the National Rural League (RLB), and closely cooperates with the regional party of the <span style="color: #3E88B3;">**DNVP**</span>, the <span style="color: #3E88B3;">Württemberg Citizens' Party</span>.
+
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_wurttemberg +]% 
 
 <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #000000;">**Z**</span>): [+ spd_coalition_wurttemberg +]% 
 
-[? if not kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span> + **Others**[? if dnvp_ideology == "Moderate":&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ bourgeois_coalition_wurttemberg +]% ?]
+[? if not kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #006400;">**WBWB**</span> + **Others**[? if dnvp_ideology == "Moderate":&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ bourgeois_coalition_wurttemberg +]% ?]
 
-[? if kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span> + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition_wurttemberg +]% ?]
+[? if kvp_formed: Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #006400;">**WBWB**</span> + **Others** + <span style="color: #0087DC;">**KVP**</span>): [+ bourgeois_coalition_wurttemberg +]% ?]
 
+[? if ddp_wurttemberg_elections_vote + dvp_wurttemberg_elections_vote < 8 and not lvp_formed or lvp_wurttemberg_elections_vote < 12 and lvp_formed: The [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] have suffered a major defeat, losing a significant number of seats compared to 1928. This will severely demoralize the <span style="color: #FFCC00;">liberals</span>, who had hoped to maintain their traditional stronghold over Württemberg. Combined with other local elections, the <span style="color: #FFCC00;">liberal parties</span> are essentially dead as an effective political force. ?]
 
 @wurttemberg_coalition_menu
 
+The <span style="color: #000000;">Center Party</span> in Württemberg has historically been unfriendly toward us, opting to continue governing in a minority coalition with the <span style="color: #3E88B3;">**DNVP**</span> as they view us as incapable of governing, even when a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition was possible in 1928.
+
+Under the stable leadership of <span style="color: #000000;">Eugen Bolz</span> and <span style="color: #3E88B3;">Wilhelm Bazille</span>, Württemberg has surprisingly managed to mitigate the worst effects of the economic depression. However, its police force is notorious for its anti-<span style="color: #c00000;">socialist</span> bias, targeting us more aggressively than the more violent <span style="color: #7A3C00;">Nazis</span>.
+
 - @z_toleration_wurttemberg
-- @spd_toleration_wurttemberg
 - @nsdap_majority_wurttemberg
 - @bourgeois_coalition_wurttemberg
 - @spd_majority_wurttemberg
@@ -843,60 +973,53 @@ United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span styl
 @z_toleration_wurttemberg
 title: The incumbent <span style="color: #000000;">Center Party</span> government has fallen short of a majority, but continue to rule in caretaker capacity.
 subtitle: Bless the constructive vote of no confidence. 🙏🙏🙏
-view-if: bourgeois_coalition_wurttemberg < 50 and state_governments_taken
-on-arrival: wurttemberg_right = 1; pro_republic -= 1
+view-if: bourgeois_coalition_wurttemberg < 50
+on-arrival: wurttemberg_right = 1; pro_republic -= 1; catholics_nsdap -= 1
 go-to: election_menu
 
-Despite the <span style="color: #000000;">Center Party</span> and its protestant conservative partners falling short of a majority, they continue to rule in as a caretaker government. Negotiations with the <span style="color: #7A3C00;">**NSDAP**</span> have also collapsed, again due to their disdain for Catholics.
-
-@spd_toleration_wurttemberg
-title: The incumbent <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> government has fallen short of a majority, but continue to rule in caretaker capacity.
-subtitle: Bless the constructive vote of no confidence. 🙏🙏🙏
-view-if: spd_coalition_wurttemberg < 50 and not state_governments_taken
-on-arrival: wurttemberg_spd = 1; pro_republic += 2; new_middle_spd += 2; rural_nsdap -= 2; rural_other += 2
-go-to: election_menu
-
-The constructive vote of no confidence in place across many state governments has also allowed our <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition to function as a caretaker government indefinitely. This has intensified agitation from the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>, who ironically denounce this as "anti-democratic."
+Despite the <span style="color: #000000;">Center Party</span> and its Protestant conservative partners falling short of a majority, they continue to rule as a caretaker government. This outcome mirrors the one of the 1928 elections, so perhaps this outcome is to be expected.
 
 @nsdap_majority_wurttemberg
 title: The <span style="color: #7A3C00;">**NSDAP**</span> wins a majority?
 subtitle: How did it come to this...?
 view-if: (nsdap_r_wurttemberg + dnf_r_wurttemberg >= 50 and dnvp_ideology == "Moderate") or (nsdap_r_wurttemberg + dnvp_r_wurttemberg >= 50 and dnvp_ideology == "Radical")
-on-arrival: wurttemberg_nsdap = 1; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_dnvp -= 2; old_middle_dnvp -= 2; rural_other -= 6; pro_republic -= 6
+on-arrival: wurttemberg_nsdap = 1; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_dnvp -= 2; old_middle_dnvp -= 2; catholics_z -= 3; catholics_spd -= 3; catholics_nsdap += 6; rural_other -= 6; pro_republic -= 6
 go-to: election_menu
 
 Damn that's crazy. Look dude I don't know what to write for this.
 
 @bourgeois_coalition_wurttemberg
-title: The <span style="color: #000000;">Center</span> coalitions with the <span style="color: #38C538;">**Württemberg Farmers' and Winegrowers' Association**</span>, the <span style="color: #FFCC00;">liberals</span>, and other minor bourgeois parties.
-subtitle: [? if state_governments_taken: This is the incumbent coalition. ?][? if not state_governments_taken: This is a right wing coalition. ?]
+title: The <span style="color: #000000;">Center</span> coalitions with the <span style="color: #006400;">**WBWB**</span>, the <span style="color: #FFCC00;">liberals</span>, and other minor bourgeois parties.
+subtitle: This is the incumbent coalition.
 view-if: bourgeois_coalition_wurttemberg >= 50
-on-arrival: wurttemberg_right = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; rural_other += 4; pro_republic += 2
+on-arrival: wurttemberg_right = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; rural_other += 4; pro_republic += 2; catholics_nsdap -= 3; catholics_z += 2; catholics_other += 1;
 go-to: election_menu
 
-[? if state_governments_taken: The incumbent coalition consisting of the <span style="color: #A2D8E0;">**BVP**</span>, <span style="color: #38C538;">Bavarian Peasants’ League</span>, and the various smaller bourgeois parties has continued. This show of stability will weaken the <span style="color: #7A3C00;">Nazis</span>. ?][? if not state_governments_taken: The bourgeois parties have abandoned us, choosing to form a coalition among themselves rather than continue the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. ?]
+The incumbent coalition consisting of the <span style="color: #000000;">Center Party</span>, <span style="color: #3E88B3;">**DNVP**</span>, <span style="color: #FFCC00;">liberals</span> and toleration from the <span style="color: #006400;">**WBWB**</span> has won another majority. The continuation of the stable leadership over Württemberg will weaken the <span style="color: #7A3C00;">Nazis</span>.
 
 @spd_majority_wurttemberg
 title: The <span style="color: #c00000;">**SPD**</span> forms a majority government.
 subtitle: Congratulations.
 view-if: spd_r_wurttemberg >= 50
-on-arrival: wurttemberg_spd = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 1; old_middle_z -= 1; rural_z -= 1; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 2; pro_republic += 4
+on-arrival: wurttemberg_spd = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 1; old_middle_z -= 1; rural_z -= 1; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 2; catholics_nsdap -= 2; catholics_z -= 2; catholics_spd += 4; pro_republic += 4
 go-to: election_menu
 
 Somehow, we have captured the majority of seats, bypassing the coalition negotiation process and appointing an <span style="color: #c00000;">**SPD**</span> Minister-President for the first time in a decade.
 
+Kurt Schumacher is elected as Minister-President.
+
 @weimar_coalition_wurttemberg
 title: A <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition is formed!
-subtitle: [? if not state_governments_taken: This is the incumbent coalition. ?][? if state_governments_taken: This was the former incumbent coalition, before the <span style="color: #FFCC00;">liberals</span> betrayed us. ?]
-unavailable-subtitle: [? if z_relation < 40: We need higher relations with the <span style="color: #000000;">Center Party</span>. ?][? if (ddp_relation < 40 and not lvp_formed) or (lvp_relation < 40 and lvp_formed): We need higher relations with the [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?]
+subtitle: We have somehow convinced the <span style="color: #000000;">Center</span> to let us into government.
+unavailable-subtitle: [? if z_relation < 50: We need higher relations with the <span style="color: #000000;">Center Party</span>. ?][? if (ddp_relation < 40 and not lvp_formed) or (lvp_relation < 40 and lvp_formed): We need higher relations with the [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?]
 view-if: spd_coalition_wurttemberg >= 50
-choose-if: (z_relation >= 40 and ((ddp_relation >= 40 and not lvp_formed) or (lvp_relation >= 40 and lvp_formed))) or not state_governments_taken
-on-arrival: wurttemberg_spd = 1; rural_nsdap -= 2; new_middle_spd += 2; old_middle_spd += 2; rural_other += 4; z_relation += 3; ddp_relation += 3; lvp_relation += 3; pro_republic += 3
+choose-if: (z_relation >= 50 and ((ddp_relation >= 40 and not lvp_formed) or (lvp_relation >= 40 and lvp_formed))) or not state_governments_taken
+on-arrival: wurttemberg_spd = 1; rural_nsdap -= 2; new_middle_spd += 2; old_middle_spd += 2; rural_other += 4; z_relation += 3; ddp_relation += 3; lvp_relation += 3; pro_republic += 3; catholics_nsdap -= 2; catholics_spd += 2; catholics_z += 1; catholics_other += 1; sa_strength -= 25
 go-to: election_menu
 
-[? if state_governments_taken: Despite the replacement of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition, formed in 1928, with a right-wing government due to the betrayal of the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], a strong electoral performance has led to a new coalition agreement. ?][? if not state_governments_taken: The incumbent <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition has persisted, despite expectations that the economic crisis would weaken the ruling parties. This display of stability will undermine the extremists and strengthen cooperation with our coalition partners. ?]
+Despite the <span style="color: #000000;">Center Party</span> in Württemberg being historically hostile, we've managed to convince them to form a majority <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. We will now focus on eliminating the <span style="color: #3E88B3;">nationalist</span> and anti-democratic biases in the police force.
 
-The <span style="color: #000000;">Center Party</span> retains the Minister-President position.
+<span style="color: #000000;">Eugen Bolz</span> retains the Minister-President position, as part of our agreement.
 
 @united_left_wurttemberg
 title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the <span style="color: #700000;">**KPD**</span>?
