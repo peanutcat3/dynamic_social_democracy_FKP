@@ -717,6 +717,7 @@ if (Q.month_actions >= 1) {
         Q.old_middle_dnvp -= 2/12;
         Q.rural_dnvp -= 2/12;
         if (!Q.works_program) { 
+            Q.workers_kpd += 2/12;
             Q.workers_other -= 4/12;
             Q.old_middle_dvp -= 4/12;
             Q.new_middle_dvp -= 2/12;
