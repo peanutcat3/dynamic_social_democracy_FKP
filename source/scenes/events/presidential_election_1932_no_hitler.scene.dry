@@ -1,11 +1,11 @@
 title: Presidential Election
 subtitle: Hindenburg runs for re-election...
-view-if: year = 1932 and month == 4 and presidential_election_seen = 0 and not hindenburg_term_extended
+view-if: year = 1932 and month == 4 and presidential_election_seen = 0
 frequency: 1000
 max-visits: 1
 new-page: true
 on-arrival: braun_campaign = 0; hitler_support_hindenburg = 0; presidential_election_seen = 1; nsdap_candidate = "Hitler" if hitler_deported == 0 else nsdap_candidate = "Göring";
-tags: event
+#tags: event
 go-to: election_algorithm
 set-jump: pres_election
 face-image: img/hindenburg_election.jpg
