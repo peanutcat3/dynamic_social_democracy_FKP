@@ -368,7 +368,7 @@ if (Q.dstp_formed && !Q.dstp_collapse_seen) {
     Q.dstp_election = 1;
 }
 
-if (Q.ddp_r < 3.6 && !Q.lvp_formed && !Q.liberal_parliament && !Q.bourgeois_parliament_ddp) {
+if (Q.ddp_r < 3.6 && !Q.lvp_formed && !Q.liberal_parliament && !Q.bourgeois_parliament_ddp && Q.ddp_r) {
     Q.ddp_factionless = 1
 }
 

@@ -211,7 +211,7 @@ title: Convince the <span style="color: #000000;">Center Party</span> to support
 view-if: (spd_candidate = "Eckener" or spd_candidate = "Gessler") and z_candidate != spd_candidate
 on-arrival: {!
 Q.z_support_braun = 0;
-if (Q.z_relation >= 40 || (Q.z_relation > 20 && Q.z_party_leader == "Joos")) {
+if (Q.z_relation >= 40 || (Q.z_relation > 20 && Q.z_leader == "Joos")) {
     Q.z_support_braun = 1;
 } else if (Q.z_relation <= 20) {
     Q.z_support_braun = 0;
@@ -235,7 +235,7 @@ view-if: (spd_candidate = "Braun" or spd_candidate = "Schumacher" or spd_candida
 on-arrival: {!
 Q.z_support_braun = 0;
 if (Q.spd_candidate == "Juchacz") {
-    if (Q.z_relation >= 60 || (Q.z_relation > 40 && Q.z_party_leader == "Joos")) {
+    if (Q.z_relation >= 60 || (Q.z_relation > 40 && Q.z_leader == "Joos")) {
         Q.z_support_braun = 1;
     } else if (Q.z_relation <= 40) {
         Q.z_support_braun = 0;
@@ -243,7 +243,7 @@ if (Q.spd_candidate == "Juchacz") {
         Q.z_support_braun = 2;
     }
 } else {
-    if (Q.z_relation >= 55 || (Q.z_relation > 35 && Q.z_party_leader == "Joos")) {
+    if (Q.z_relation >= 55 || (Q.z_relation > 35 && Q.z_leader == "Joos")) {
         Q.z_support_braun = 1;
     } else if (Q.z_relation <= 35) {
         Q.z_support_braun = 0;
