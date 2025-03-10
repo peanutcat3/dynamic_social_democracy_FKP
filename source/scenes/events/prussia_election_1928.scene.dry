@@ -148,7 +148,7 @@ if (Q.other_votes < 8) Q.adjustmentFactors_other_prussia = 0.5;
 if (Q.other_votes < 7) Q.adjustmentFactors_other_prussia = 0.4;
 if (Q.other_votes < 6) Q.adjustmentFactors_other_prussia = 0.3;
 if (Q.other_votes < 5) Q.adjustmentFactors_other_prussia = 0.15;
-if (Q.other_votes >= 10) Q.adjustmentFactors_ddp_prussia = 0.7;
+if (Q.other_votes >= 10) Q.adjustmentFactors_other_prussia = 0.7;
 
 // Calculate support for each of the parties
 var total_support = 0;
