@@ -326,9 +326,9 @@ Unfortunately, under the influence of their business wing, the <span style="colo
 view-if: lvp_formed
 max-visits: 1
 on-arrival: {!
-if ((Q.lvp_relation >= 65 && Q.lvp_ideology == "Right" || Q.lvp_relation >= 55 && Q.lvp_ideology == "Moderate" || Q.lvp_relation >= 40 && Q.lvp_ideology == "Left") and Q.lvp_leader != "Dingeldey") {
+if ((Q.lvp_relation >= 65 && Q.lvp_ideology == "Right" || Q.lvp_relation >= 55 && Q.lvp_ideology == "Moderate" || Q.lvp_relation >= 40 && Q.lvp_ideology == "Left") && Q.lvp_leader != "Dingeldey") {
     Q.convince_lvp_success = 1;
-} else if ((Q.lvp_relation >= 55 && Q.lvp_ideology == "Right" || Q.lvp_relation >= 45 && Q.lvp_ideology == "Moderate" || Q.lvp_relation >= 30 && Q.lvp_ideology == "Left") and Q.lvp_leader != "Dingeldey") {
+} else if ((Q.lvp_relation >= 55 && Q.lvp_ideology == "Right" || Q.lvp_relation >= 45 && Q.lvp_ideology == "Moderate" || Q.lvp_relation >= 30 && Q.lvp_ideology == "Left") && Q.lvp_leader != "Dingeldey") {
     Q.convince_lvp_success = 2;
 } else {
     Q.convince_lvp_success = 0;

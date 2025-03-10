@@ -2475,6 +2475,7 @@ if (Q.bruning_time == 1) {
 }
 
 if (Q.bruning_time > 1) {
+    Q.hindenburg_angry_bruning_newer = Q.hindenburg_angry_bruning;
     Q.hindenburg_angry_bruning -= 5;
     if (Q.economic_growth < 0) {
         Q.hindenburg_angry_bruning += ((Q.economic_growth*-1) / 2)
@@ -2522,6 +2523,10 @@ if (Q.bruning_time > 1) {
     }
     if (Q.dnvp_ideology == "Moderate" && !Q.dnvp_defect) {
         Q.hindenburg_angry_bruning -= 3;
+    }
+    Q.hindenburg_angry_bruning_new = Q.hindenburg_angry_bruning;
+    if (Q.hindenburg_angry_bruning_new > Q.hindenburg_angry_bruning_newer) {
+        Q.hindenburg_angry_bruning -= ((Q.hindenburg_angry_bruning_new - Q.hindenburg_angry_bruning_newer) / 2);
     }
 }
 

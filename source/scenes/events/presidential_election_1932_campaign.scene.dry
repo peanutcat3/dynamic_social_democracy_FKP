@@ -286,8 +286,7 @@ go-to: campaign_menu
 
 
 @catholics
-view-if: campaigning_count < 2
-view-if: peoples_party
+view-if: campaigning_count < 2 and peoples_party
 on-arrival: catholics_spd += 4*(1 - dissent); campaigning_count += 1
 go-to: campaign_menu
 
