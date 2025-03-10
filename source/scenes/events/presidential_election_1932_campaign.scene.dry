@@ -244,13 +244,12 @@ subtitle: This will cost us 1 resource.
 view-if: not campaigning_seen
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; campaigning_seen = 1
+on-arrival: resources -= 1; campaigning_seen = 1; campaigning_count = 0
 max-visits: 1
 go-to: campaign_menu
 
 
 @campaign_menu
-on-arrival: campaigning_count = 0;
 
 
 Since it's election season, we are able to accelerate campaigning efforts. Buy one campaign, get another one completely free of charge!
@@ -260,6 +259,7 @@ Since it's election season, we are able to accelerate campaigning efforts. Buy o
 - @rural: Add 1 "Rural" to the cart.
 - @unemployed: Add "Unemployed" to the cart.
 - @catholics: Add "Catholic" to the cart.
+- @checkout
 
 @workers
 view-if: campaigning_count < 2
