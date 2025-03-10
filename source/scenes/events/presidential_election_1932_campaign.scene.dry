@@ -242,7 +242,7 @@ Despite our earlier insistence on keeping the <span style="color: #700000;">**Co
 title: Accelerate campaign efforts in general.
 subtitle: This will cost us 1 resource.
 view-if: not campaigning_seen
-choose-if: resources >= 1;
+choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; campaigning_seen = 1
 max-visits: 1
