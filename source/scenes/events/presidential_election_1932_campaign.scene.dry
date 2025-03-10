@@ -11,7 +11,7 @@ on-display: {!
     var image = new Image();
     image.className = "face-img";
     cardEl.appendChild(image);
-    image.src = faceImage;
+    image.src = img/campaign.jpg;
 !}
 max-visits: 1
 
