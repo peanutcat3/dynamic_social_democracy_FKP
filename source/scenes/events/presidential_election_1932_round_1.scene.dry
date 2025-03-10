@@ -304,7 +304,7 @@ go-to: round2_menu
 The <span style="color: #700000;">**KPD**</span> now endorses Braun in the presidential election! We ask them to keep their support low-key, so as to not alienate the bourgeois voters. 
 
 @round2_convince_ddp
-view-if: not lvp_formed
+view-if: not lvp_formed and braun_campaign > 0 and ddp_support_braun != 1 
 max-visits: 1
 go-to: convince_ddp_success if (((ddp_relation >= 55 and ddp_ideology == "Right" or dstp_maintained) or ddp_relation >= 45 and ddp_ideology == "Moderate" and not dstp_maintained or ddp_relation >= 35 and ddp_ideology == "Left" and not dstp_maintained) and not hitler_support_hindenburg) or (((ddp_relation >= 50 and ddp_ideology == "Right" or dstp_maintained) or ddp_relation >= 40 and ddp_ideology == "Moderate" and not dstp_maintained or ddp_relation >= 30 and ddp_ideology == "Left" and not dstp_maintained) and hitler_support_hindenburg); convince_ddp_fail if not ((((ddp_relation >= 55 and ddp_ideology == "Right" or dstp_maintained) or ddp_relation >= 45 and ddp_ideology == "Moderate" and not dstp_maintained or ddp_relation >= 35 and ddp_ideology == "Left" and not dstp_maintained) and not hitler_support_hindenburg) or (((ddp_relation >= 50 and ddp_ideology == "Right" or dstp_maintained) or ddp_relation >= 40 and ddp_ideology == "Moderate" and not dstp_maintained or ddp_relation >= 30 and ddp_ideology == "Left" and not dstp_maintained) and hitler_support_hindenburg))
 
@@ -323,7 +323,7 @@ go-to: round2_menu
 Unfortunately, under the influence of their business wing, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has refused to support a <span style="color: #c00000;">socialist</span> for the presidency. 
 
 @round2_convince_lvp
-view-if: lvp_formed
+view-if: lvp_formed and braun_campaign > 0 and lvp_support_braun != 1 
 max-visits: 1
 on-arrival: {!
 if ((Q.lvp_relation >= 65 && Q.lvp_ideology == "Right" || Q.lvp_relation >= 55 && Q.lvp_ideology == "Moderate" || Q.lvp_relation >= 40 && Q.lvp_ideology == "Left") && Q.lvp_leader != "Dingeldey") {
