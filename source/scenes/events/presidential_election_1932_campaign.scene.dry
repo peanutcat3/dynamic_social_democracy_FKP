@@ -5,13 +5,15 @@ on-arrival: presidential_election_campaigning_seen = 1
 tags: event
 view-if: year = 1932 and month >= 2 and not hindenburg_term_extended
 priority: -1
-on-display: {!
-    var cardEl = document.createElement('div');
-    cardEl.className = "face-figure2";
-    var image = new Image();
-    image.className = "face-img";
-    cardEl.appendChild(image);
-    image.src = img/campaign.jpg;
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/campaign.jpg"; 
+
+    cardEl.appendChild(image);  
 !}
 max-visits: 1
 
