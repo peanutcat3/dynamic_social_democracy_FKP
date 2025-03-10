@@ -3,7 +3,18 @@ subtitle: Due to its militarization, the <span style="color: #FFCC00;">liberals<
 view-if: rb_militancy >= 0.04 and not rb_exit and not rb_stay and lvp_formed and lvp_ideology != "Left"
 new-page: true
 tags: event
-face-image: img/reichsbanner_flag.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/reichsbanner_flag.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 max-visits: 1
 
 = The <span style="color: #FFCC00;">**LVP**</span> and the Reichsbanner

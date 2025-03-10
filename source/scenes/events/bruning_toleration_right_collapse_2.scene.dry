@@ -5,7 +5,18 @@ tags: event
 view-if: total_bruning_time >= 6 and spd_toleration_right and dnf_votes + nsdap_votes + dnvp_angry >= (dnvp_votes * 5) and moderate_dnvp_hitler
 on-arrival: pro_republic -= dnvp_votes / 2; hindenburg_angry_bruning += 10
 max-visits: 1
-face-image: img/dnvp4.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/dnvp4.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 
 = The <span style="color: #3E88B3;">**DNVP**</span> breaks with Brüning
 

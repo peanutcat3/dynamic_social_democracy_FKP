@@ -3,7 +3,18 @@ subtitle: Owing to its militarization, the <span style="color: #000000;">Center 
 view-if: rb_militancy >= 0.2 and not rb_exit and not rb_stay and not lvp_leave
 new-page: true
 tags: event
-face-image: img/reichsbanner_flag.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/reichsbanner_flag.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 
 = Exodus from the Reichsbanner
 

@@ -3,7 +3,18 @@ subtitle: The <span style="color: #3E88B3;">DNVP</span> decides their fate...
 view-if: year = 1929 and month = 11 and dnvp_leader = "Triumvirate"
 max-visits: 1
 tags: event
-face-image: img/dnvp2.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/dnvp2.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 new-page: true
 
 = <span style="color: #3E88B3;">**DNVP**</span> Congress

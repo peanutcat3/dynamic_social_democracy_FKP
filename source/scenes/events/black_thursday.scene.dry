@@ -5,7 +5,18 @@ on-arrival: black_thursday_seen = 1; workers_kpd += 5; workers_nsdap += 5; worke
 tags: event
 view-if: year = 1929 and month >= 10
 max-visits: 1
-face-image: img/bankrun.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/bankrun.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 priority: 1
 
 = Black Thursday

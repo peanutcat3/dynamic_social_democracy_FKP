@@ -4,7 +4,18 @@ view-if: year = 1928 and month = 10 and dnvp_leader = "Westarp"
 on-arrival: dnvp_westarp = 0
 max-visits: 1
 tags: event
-face-image: img/dnvp.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/dnvp.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 new-page: true
 
 = <span style="color: #3E88B3;">**DNVP**</span> Congress

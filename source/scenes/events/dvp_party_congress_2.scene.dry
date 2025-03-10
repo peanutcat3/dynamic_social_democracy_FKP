@@ -1,7 +1,7 @@
 title: <span style="color: #C0A054;">**DVP**</span> Party Vote
-subtitle: The industrialists attempt to force the resignation of [+ dvp_leader +]...
-view-if: year = 1930 and month = 12 and (dvp_leader == "Luther" or dvp_leader == "Curtius") and not lvp_formed
-on-arrival: dvp_right += 3 if dvp_relation < 25; dvp_left += 3 if dvp_relation >= 45; dvp_left += 2 if in_grand_coalition; dvp_left += 3 if dvp_leader == "Luther"; dvp_right += 3 if foreign_minister_party == "DVP" and dvp_leader == "Curtius"; dvp_left += 3 if liberal_parliament; dvp_right += 3 if bourgeois_parliament
+subtitle: Julius Curtius has resigned!
+view-if: curtius_explosion_timer == 1 and dvp_leader == "Curtius" and not lvp_formed
+on-arrival: dvp_right += 3 if dvp_relation < 25; dvp_left += 3 if dvp_relation >= 45; dvp_left += 2 if in_grand_coalition; dvp_left += 3 if liberal_parliament; dvp_right += 3
 max-visits: 1
 tags: event
 face-image: img/dvp.jpg

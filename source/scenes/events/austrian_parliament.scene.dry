@@ -4,7 +4,18 @@ subtitle: Our southern neighbor is sliding into dictatorship.
 view-if: year = 1933 and month = 3 and ((spd_in_government and foreign_minister_party = "SPD") or (austria_relation >= 1))
 max-visits: 1
 on-arrival: austrian_parliament_seen = 1
-face-image: img/Dollfuss.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/Dollfuss.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 tags: event
 
 # Must control foreign ministry or have made contact with Austrian socialists.

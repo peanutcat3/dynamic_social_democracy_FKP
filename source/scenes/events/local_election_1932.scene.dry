@@ -4,7 +4,18 @@ new-page: true
 tags: event
 on-arrival: local_elections_seen = 1;
 set-jump: new_elections
-face-image: img/states.png
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/states.png";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 max-visits: 1
 
 = Local Elections, [+ month : month +] [+ year +]
