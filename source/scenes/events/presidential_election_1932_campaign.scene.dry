@@ -11,7 +11,6 @@ on-display: {!
     var image = new Image();
     image.className = "face-img";
     cardEl.appendChild(image);
-    $html.splice(1, 0, cardEl);
     image.src = faceImage;
 !}
 max-visits: 1
