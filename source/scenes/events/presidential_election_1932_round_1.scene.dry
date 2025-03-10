@@ -244,7 +244,7 @@ The <span style="color: #000000;">Center</span> is not satisfied with our argume
 
 - @give_up_prussia: Give up on leadership of Prussia.
 - @pay_z: Give them the resources they need.
-- @endorsements_braun: Forget about the <span style="color: #000000;">Center</span>.
+- @round2_menu: Forget about the <span style="color: #000000;">Center</span>.
 
 @give_up_prussia
 subtitle: Braun will resign.
