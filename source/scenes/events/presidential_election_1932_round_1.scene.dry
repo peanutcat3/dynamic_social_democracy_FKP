@@ -286,7 +286,7 @@ The <span style="color: #700000;">**KPD**</span> is committed to supporting Erns
 - @round2_menu: Forget about the <span style="color: #700000;">KPD</span>.
 
 @r2_kpd_resources
-view-if: kpd_relation >= 55 or kpd_relation >= 40 and kpd_leader == "Conciliators
+view-if: kpd_relation >= 55 or kpd_relation >= 40 and kpd_leader == "Conciliators"
 choose-if: resources >= 3
 subtitle: -3 resources
 unavailable-subtitle: Not enough resources (need 3).
