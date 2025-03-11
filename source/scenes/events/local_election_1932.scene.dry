@@ -254,6 +254,7 @@ if (Q.rural_spd_normalized >= 30) bavaria_adjustment_factors.spd += 0.2;
 Q.spd_bavaria_elections_vote = Q.spd_local_elections_vote*bavaria_adjustment_factors.spd;
 Q.sapd_bavaria_elections_vote = Q.sapd_local_elections_vote*bavaria_adjustment_factors.sapd;
 Q.kpd_bavaria_elections_vote = Q.kpd_local_elections_vote*bavaria_adjustment_factors.kpd;
+if (Q.ddp_votes >= 3) bavaria_adjustment_factors.ddp = 0.4;
 Q.ddp_bavaria_elections_vote = Q.ddp_local_elections_vote*bavaria_adjustment_factors.ddp;
 Q.lvp_bavaria_elections_vote = Q.lvp_local_elections_vote*bavaria_adjustment_factors.lvp;
 if (!Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_local_elections_vote*bavaria_adjustment_factors.z;
