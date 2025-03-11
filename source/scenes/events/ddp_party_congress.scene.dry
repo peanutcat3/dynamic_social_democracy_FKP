@@ -116,18 +116,7 @@ if (!Q.dietrich_lead && !Q.heuss_lead_ddp && !Q.lemmer_lead) {
 !}
 max-visits: 1
 tags: event
-on-display: {!  
-    var cardEl = document.createElement('div');  
-    cardEl.className = "face-figure2";  
-
-    var image = new Image();  
-    image.className = "face-img";  
-    image.src = "img/ddp.jpg";  
-
-    cardEl.appendChild(image);  
-    var contentDiv = document.querySelector("#page #mid_panel #content");
-    contentDiv.appendChild(cardEl);
-!}
+face-image: img/ddp.jpg
 new-page: true
 
 = <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Party Congress
