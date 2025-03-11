@@ -82,7 +82,7 @@ We can't win this election alone, we need support from other parties. [? if spd_
 @convince_ddp
 view-if: not lvp_formed
 max-visits: 1
-go-to: convince_ddp_success if (ddp_relation >= 60 and ddp_ideology == "Right" or dstp_maintained) or ddp_relation >= 50 and ddp_ideology == "Moderate" and not dstp_maintained or ddp_relation >= 40 and ddp_ideology == "Left" and not dstp_maintained; convince_ddp_fail if not ((ddp_relation >= 60 and ddp_ideology == "Right" or dstp_maintained) or ddp_relation >= 50 and ddp_ideology == "Moderate" and not dstp_maintained or ddp_relation >= 40 and ddp_ideology == "Left" and not dstp_maintained)
+go-to: convince_ddp_success if (ddp_relation >= 60 and ddp_ideology == "Right" or dstp_maintained) or (ddp_relation >= 50 and ddp_ideology == "Moderate" and not dstp_maintained) or (ddp_relation >= 40 and ddp_ideology == "Left" and not dstp_maintained); convince_ddp_fail if not ((ddp_relation >= 60 and ddp_ideology == "Right" or dstp_maintained) or (ddp_relation >= 50 and ddp_ideology == "Moderate" and not dstp_maintained) or (ddp_relation >= 40 and ddp_ideology == "Left" and not dstp_maintained))
 
 The <span style="color: #FFCC00;">liberal</span> vote has been falling over time, especially during the current economic depression, so they will probably be of minimal help to us. Still, every little bit counts.
 
@@ -101,7 +101,7 @@ Unfortunately, under the influence of their business wing, the <span style="colo
 @convince_lvp
 view-if: lvp_formed
 max-visits: 1
-go-to: convince_lvp_success if (lvp_relation >= 70 and lvp_ideology == "Right" or lvp_relation >= 60 and lvp_ideology == "Moderate" or lvp_relation >= 50 and lvp_ideology == "Left") and lvp_leader != "Dingeldey"; convince_lvp_fail if not (lvp_relation >= 70 and lvp_ideology == "Right" or lvp_relation >= 60 and lvp_ideology == "Moderate" or lvp_relation >= 50 and lvp_ideology == "Left") or lvp_leader == "Dingeldey"
+go-to: convince_lvp_success if ((lvp_relation >= 70 and lvp_ideology == "Right") or (lvp_relation >= 60 and lvp_ideology == "Moderate") or (lvp_relation >= 50 and lvp_ideology == "Left")) and lvp_leader != "Dingeldey"; convince_lvp_fail if not (((lvp_relation >= 70 and lvp_ideology == "Right") or (lvp_relation >= 60 and lvp_ideology == "Moderate") or (lvp_relation >= 50 and lvp_ideology == "Left")) and lvp_leader != "Dingeldey")
 
 The <span style="color: #FFCC00;">liberal</span> vote has been falling over time, especially during the current economic depression, so they will probably be of minimal help to us. Still, every little bit counts. They will certainly be a hard party to convince, with vehemently anti-<span style="color: #c00000;">socialist</span> industrialists influencing the party.
 
