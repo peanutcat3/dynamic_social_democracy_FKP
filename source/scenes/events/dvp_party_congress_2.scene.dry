@@ -62,6 +62,8 @@ Frank Glatzel is elected to become the new leader of the <span style="color: #C0
 As expected, the remaining industrialists within the <span style="color: #C0A054;">**DVP**</span> are worried, as the party begins to shift towards including the demands of the worker. This has led to a dramatic shift in the party’s financial backing, as funding from big business dwindles and is replaced by donations and dues from the DHV and its affiliated members. His <span class="tooltip-text" title="good mod">dynamic</span> leadership should be closely watched. [? if in_grand_coalition: We have noticed a significant decrease in coalition tensions. ?] [? if dnvp_leader == "Lambach": Interestingly, alongside Lambach, yet another party traditionally aligned with heavy industry and big business has now elected a DHV unionist as its leader. ?]
 
 @kardorff
+subtitle: Kardorff is able to secure the continuation of Curtius's leadership.
+unavailable-subtitle: The <span style='color: #C0A054;'>DVP</span> has shifted too far to the right.
 choose-if: kardorff_unlock
 on-arrival: dvp_leader = "Kardorff"; dvp_left += 3 if in_grand_coalition; liberal_cooperation += 3; bourgeois_cooperation += 3; dvp_relation += 5 if in_grand_coalition; new_middle_dvp += 4; catholics_dvp += 2; rural_dvp += 2; old_middle_dvp += 2; pro_republic += 3
 face-image: img/portraits/kardorff.jpg
@@ -71,6 +73,8 @@ Kardorff is elected to succeed Curtius as the leader of the <span style="color: 
 [? if bruning_time: He is also one of the strongest supporters of the Brüning government, frequently coming into conflict with the right of the party over support for it. ?]
 
 @dingeldey
+subtitle: Dingeldey aims to revert all of Curtius's progress.
+unavailable-subtitle: The right-industrial faction of <span style='color: #C0A054;'>DVP</span> lacks the required influence.
 choose-if: dingeldey_unlock
 on-arrival: old_dvp_leader = dvp_leader; dvp_leader = "Dingeldey"; dvp_right += 10; dvp_relation -= 25; old_middle_dvp -= 3; new_middle_dvp -= 6; rural_dvp -= 4; pro_republic -= 5; ddp_cohesion -= 1; liberal_cooperation -= 5; bourgeois_cooperation -= 5
 face-image: img/portraits/dingeldey.jpg
