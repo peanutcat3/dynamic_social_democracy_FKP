@@ -63,7 +63,7 @@ As expected, the remaining industrialists within the <span style="color: #C0A054
 
 @kardorff
 subtitle: Kardorff is able to secure the continuation of Curtius's leadership.
-unavailable-subtitle: The <span style='color: #C0A054;'>DVP</span> has shifted too far to the right.
+unavailable-subtitle: His closeness to Curtius has undermined his position.
 choose-if: kardorff_unlock
 on-arrival: dvp_leader = "Kardorff"; dvp_left += 3 if in_grand_coalition; liberal_cooperation += 3; bourgeois_cooperation += 3; dvp_relation += 5 if in_grand_coalition; new_middle_dvp += 4; catholics_dvp += 2; rural_dvp += 2; old_middle_dvp += 2; pro_republic += 3
 face-image: img/portraits/kardorff.jpg
