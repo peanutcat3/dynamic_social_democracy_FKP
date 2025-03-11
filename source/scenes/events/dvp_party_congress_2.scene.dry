@@ -3,10 +3,10 @@ subtitle: Julius Curtius has resigned!
 view-if: curtius_explosion_timer == time and dvp_leader == "Curtius" and not lvp_formed
 on-arrival: {!
 
-if (dvp_relation < 25) Q.dvp_right += 3;
-if (dvp_relation >= 45) Q.dvp_left += 3;
-if (in_grand_coalition) Q.dvp_left += 2;
-if (liberal_parliament) Q.dvp_left += 3;
+if (Q.dvp_relation < 25) Q.dvp_right += 3;
+if (Q.dvp_relation >= 45) Q.dvp_left += 3;
+if (Q.in_grand_coalition) Q.dvp_left += 2;
+if (Q.liberal_parliament) Q.dvp_left += 3;
 Q.dvp_right += 3;
 
 if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 4))) {
@@ -42,7 +42,7 @@ An internal election must now be held to determine Curtius’s successor. With t
 @thiel
 subtitle: Thiel is a controversial unionist within the party, being more left wing than Glatzel.
 unavailable-subtitle: The <span style='color: #C0A054;'>DVP</span> is too right-wing to back an openly pro-labor unionist for leadership. 
-view-if: thiel_unlock
+choose-if: thiel_unlock
 on-arrival: dvp_leader = "Thiel"; bourgeois_cooperation -= 3; dvp_left += 10; coalition_dissent -= 2 if in_grand_coalition; dvp_relation += 15; workers_dvp += 6; workers_dnvp -= 2; workers_other -= 2; workers_spd -= 2; new_middle_dvp += 6; new_middle_nsdap -= 3; new_middle_other -= 3; catholics_dvp += 3; catholics_other -= 3; old_middle_dvp -= 4; old_middle_dnvp += 2; old_middle_kvp += 2 if kvp_formed; rural_dvp -= 4; rural_dnvp += 2; rural_dnvp += 2 if dnvp_ideology == "Moderate"; rural_kvp += 2 if kvp_formed; pro_republic += 5; ddp_left += 3; ddp_relation += 5
 face-image: img/portraits/placeholder.jpg
 
@@ -53,7 +53,7 @@ As expected, the remaining industrialists within the <span style="color: #C0A054
 @glatzel
 subtitle: Glatzel, being a former member of the <span style="color: #3E88B3;">**DNVP**</span> as well, has shown nationalist sympathies.
 unavailable-subtitle: The <span style='color: #C0A054;'>DVP</span> is too right-wing to back a trade unionist for leadership. 
-view-if: glatzel_unlock
+choose-if: glatzel_unlock
 on-arrival: dvp_leader = "Glatzel"; bourgeois_cooperation += 1; dvp_right += 3; dvp_relation += 3; workers_dvp += 6; workers_dnvp -= 2; workers_other -= 2; workers_nsdap -= 2; new_middle_dvp += 6; new_middle_nsdap -= 4; new_middle_other -= 2; catholics_dvp += 4; catholics_other -= 2; catholics_dnvp -= 2; old_middle_dvp += 2; old_middle_dnvp -= 2; rural_dvp -= 4; rural_dnvp += 2; rural_dnvp += 2 if dnvp_ideology == "Moderate"; rural_kvp += 2 if kvp_formed
 face-image: img/portraits/glatzel.jpg
 
@@ -62,6 +62,7 @@ Frank Glatzel is elected to become the new leader of the <span style="color: #C0
 As expected, the remaining industrialists within the <span style="color: #C0A054;">**DVP**</span> are worried, as the party begins to shift towards including the demands of the worker. This has led to a dramatic shift in the party’s financial backing, as funding from big business dwindles and is replaced by donations and dues from the DHV and its affiliated members. His <span class="tooltip-text" title="good mod">dynamic</span> leadership should be closely watched. [? if in_grand_coalition: We have noticed a significant decrease in coalition tensions. ?] [? if dnvp_leader == "Lambach": Interestingly, alongside Lambach, yet another party traditionally aligned with heavy industry and big business has now elected a DHV unionist as its leader. ?]
 
 @kardorff
+choose-if: kardorff_unlock
 on-arrival: dvp_leader = "Kardorff"; dvp_left += 3 if in_grand_coalition; liberal_cooperation += 3; bourgeois_cooperation += 3; dvp_relation += 5 if in_grand_coalition; new_middle_dvp += 4; catholics_dvp += 2; rural_dvp += 2; old_middle_dvp += 2; pro_republic += 3
 face-image: img/portraits/kardorff.jpg
 
@@ -70,6 +71,7 @@ Kardorff is elected to succeed Curtius as the leader of the <span style="color: 
 [? if bruning_time: He is also one of the strongest supporters of the Brüning government, frequently coming into conflict with the right of the party over support for it. ?]
 
 @dingeldey
+choose-if: dingeldey_unlock
 on-arrival: old_dvp_leader = dvp_leader; dvp_leader = "Dingeldey"; dvp_right += 10; dvp_relation -= 25; old_middle_dvp -= 3; new_middle_dvp -= 6; rural_dvp -= 4; pro_republic -= 5; ddp_cohesion -= 1; liberal_cooperation -= 5; bourgeois_cooperation -= 5
 face-image: img/portraits/dingeldey.jpg
 
