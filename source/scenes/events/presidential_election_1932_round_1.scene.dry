@@ -269,6 +269,7 @@ Ironic, considering that seven years ago, we brokered a deal for Wilhelm Marx to
 The Minister-President position is transferred to the <span style="color: #000000;">Center</span>'s [+ prussia_leader +]. Hopefully, their support will outweigh the loss of popularity and internal dissent caused by the resignation of our most well-known figure.
 
 @pay_z
+view-if: prussia_leader != "Braun"
 choose-if: resources >= 3
 subtitle: -3 resources
 unavailable-subtitle: Not enough resources (need 3)
