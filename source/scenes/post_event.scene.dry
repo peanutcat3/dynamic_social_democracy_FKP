@@ -1602,7 +1602,7 @@ if (Q.emergency_decree_seen && !Q.in_center_right_coalition && !Q.right_coalitio
     Q.old_middle_dvp -= 2;
 }
 
-if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && !Q.lvp_formed && !Q.dnvp_conflict_time) {
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && !Q.dnvp_conflict_time) {
     Q.dnvp_conflict_time = Q.time + 1;
     Q.curtius_resign = Q.time + 3;
 }
