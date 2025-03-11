@@ -1,6 +1,6 @@
 title: <span style="color: #C0A054;">**DVP**</span> Party Vote
 subtitle: Julius Curtius has resigned!
-view-if: curtius_explosion_timer == 1 and dvp_leader == "Curtius" and not lvp_formed
+view-if: curtius_explosion_timer == time and dvp_leader == "Curtius" and not lvp_formed
 on-arrival: {!
 
 if (dvp_relation < 25) Q.dvp_right += 3;
