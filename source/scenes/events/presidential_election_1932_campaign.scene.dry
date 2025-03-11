@@ -42,7 +42,7 @@ It takes effort to run a somewhat unexpected campaign. First, Braun has to be co
 
 [? if not lvp_formed: The [? if ddp_votes < 2: miniscule remnants of the?] [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic Party**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State Party**</span>?] aren't guaranteed to support us, [? if ddp_relation < 40: with a deterioration in our relationship?][? if ddp_relation >= 40: but are open to it due to their reluctance in supporting Hindenburg?]?][? if lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> aren't exactly the biggest fans of <span style="color: #c00000;">socialism</span>, [? if lvp_relation < 40: with the deterioration in relations making their support a near impossibility.?][? if lvp_relation >= 40: but are at least open to it due to their reluctance in supporting Hindenburg?]?]. Who else will? Can we convince the <span style="color: #000000;">Center</span> to support Braun? What about the <span style="color: #700000;">**Communists**</span>?
 
-- @endorsements_braun: Can we court the bourgeois parties (and possibly the <span style="color: #700000;">Communists</span>) for their endorsement?
+- @endorsements_braun: Scout out potential endorsements. 
 
 @support_hindenburg
 subtitle: This is the default option.
