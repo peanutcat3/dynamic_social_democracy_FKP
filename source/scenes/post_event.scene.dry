@@ -2534,10 +2534,14 @@ if (Q.bruning_time > 1) {
     }
     if (Q.dnvp_ideology == "Moderate" && !Q.dnvp_defect) {
         Q.hindenburg_angry_bruning -= 3;
+    } else if (Q.kvp_formed && Q.kvp_cnblp_sister) {
+        Q.hindenburg_angry_bruning -= 2;
+    } else if (Q.kvp_formed) {
+        Q.hindenburg_angry_bruning -= 1;
     }
     Q.hindenburg_angry_bruning_new = Q.hindenburg_angry_bruning;
     if (Q.hindenburg_angry_bruning_new > Q.hindenburg_angry_bruning_newer) {
-        Q.hindenburg_angry_bruning -= ((Q.hindenburg_angry_bruning_new - Q.hindenburg_angry_bruning_newer) / 2);
+        Q.hindenburg_angry_bruning -= ((Q.hindenburg_angry_bruning_new - Q.hindenburg_angry_bruning_newer) / 3);
     }
 }
 
