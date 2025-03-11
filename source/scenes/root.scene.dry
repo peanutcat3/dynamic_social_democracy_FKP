@@ -504,6 +504,7 @@ Q.labor_goal_spd = 0;
 Q.unemployment_goal_spd = 0;
 Q.women_goal_spd = 0;
 Q.education_goal_spd = 0;
+Q.economic_plan_goal_spd = 0;
 Q.agriculture_goal_spd = 0;
 Q.reichswehr_goal_spd = 0;
 Q.goal_spd_cancel = 0;

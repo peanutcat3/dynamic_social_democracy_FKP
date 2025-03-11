@@ -693,10 +693,14 @@ if (Q.month_actions >= 1) {
         if (Q.bruning_time) {
             Q.old_middle_ddp -= 4/12;
             Q.new_middle_ddp -= 4/12;
-            Q.old_middle_dvp -= 4/12;
-            Q.new_middle_dvp -= 4/12;
-            Q.new_middle_lvp -= 6/12;
-            Q.old_middle_lvp -= 6/12;
+            if (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") Q.old_middle_dvp -= 2/12;
+            if (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") Q.new_middle_dvp -= 2/12;
+            Q.old_middle_dvp -= 2/12;
+            Q.new_middle_dvp -= 2/12;
+            if (Q.lvp_leader == "Dingeldey") Q.new_middle_lvp -= 3/12;
+            if (Q.lvp_leader == "Dingeldey") Q.old_middle_lvp -= 3/12;
+            Q.new_middle_lvp -= 3/12;
+            Q.old_middle_lvp -= 3/12;
         }
         Q.sa_strength += 75/12;
         Q.new_middle_nsdap += 6/12;
@@ -2140,6 +2144,9 @@ if (Q.spd_government_burden_seen == 1 && Q.spd_in_government) {
     if (Q.education_goal_spd >= 1) {
         Q.goal_spd_total += 1
     }
+    if (Q.economic_plan_goal_spd >= 1) {
+        Q.goal_spd_total += 1
+    }
     if (Q.agriculture_goal_spd >= 1) {
         Q.goal_spd_total += 1
     }
@@ -2196,6 +2203,9 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
     if (Q.education_goal_spd >= 1) {
         Q.goal_spd_total += 1
     }
+    if (Q.economic_plan_goal_spd >= 1) {
+        Q.goal_spd_total += 1
+    }
     if (Q.agriculture_goal_spd >= 1) {
         Q.goal_spd_total += 1
     }
@@ -2216,6 +2226,7 @@ if (Q.spd_government_burden_timer == 0 && Q.spd_government_burden_seen == 1 && Q
     Q.unemployment_goal_spd = 0;
     Q.women_goal_spd = 0;
     Q.education_goal_spd = 0;
+    Q.economic_plan_goal_spd = 0;
     Q.agriculture_goal_spd = 0;
     Q.reichswehr_goal_spd = 0;
     Q.goal_spd_cancel = 0;

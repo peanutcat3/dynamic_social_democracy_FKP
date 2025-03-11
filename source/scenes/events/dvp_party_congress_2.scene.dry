@@ -1,22 +1,14 @@
 title: <span style="color: #C0A054;">**DVP**</span> Party Vote
 subtitle: Julius Curtius has resigned!
 view-if: curtius_explosion_timer == 1 and dvp_leader == "Curtius" and not lvp_formed
-on-arrival: dvp_right += 3 if dvp_relation < 25; dvp_left += 3 if dvp_relation >= 45; dvp_left += 2 if in_grand_coalition; dvp_left += 3 if liberal_parliament; dvp_right += 3
-max-visits: 1
-tags: event
-face-image: img/dvp.jpg
-new-page: true
-
-= <span style="color: #C0A054;">**DVP**</span> Party Vote
-
-Over the past few months, the dire state of the economy—and of Germany as a whole—has pushed the landscape of bourgeois parties toward radicalization and a rightward shift. While the <span style="color: #C0A054;">**DVP**</span> resisted this trend with the election of [+ dvp_leader +] last year, the party’s right-wing industrial forces have now united their resources for one final effort to oust [+ dvp_leader +].
-
-[? if dvp_leader == "Curtius": Julius Curtius, the incumbent chairman of the party, has been pressured to delegate some of his responsibilities to the newly appointed deputy leader, Eduard Dingeldey[? if foreign_minister_party == "DVP":, due to his preoccupation with his duties as Foreign Minister?][? if foreign_minister_party != "DVP":, due to his preoccupation with governmental affairs?]. Dingeldey was among the first within the <span style="color: #C0A054;">**DVP**</span> to support the movement for bourgeois unity. He also holds sufficiently conservative views—particularly regarding cooperation with the <span style="color: #c00000;">**SPD**</span>—to garner support from Scholz and the party's right wing. Given his broad support within the party, the right wing of the <span style="color: #C0A054;">**DVP**</span> has put him forward as a replacement for Curtius, citing [? if foreign_minister_party == "DVP": his lackluster performance as Foreign Minister following Stresemann's death?][? if foreign_minister_party != "DVP": his lackluster performance as the successor of Stresemann?]. ?][? if dvp_leader == "Luther": Hans Luther, despite being elected with strong backing from German businesses, has partially fallen out of favor with his former supporters, mainly due to his unpopular stance in favor of constructive cooperation with the <span style="color: #c00000;">**SPD**</span>. As the German electorate has shifted significantly to the right, the party's right wing sees this as a weakness to exploit. They have put forth Eduard Dingeldey, who was among the first in the <span style="color: #C0A054;">**DVP**</span> to support the movement for bourgeois unity, granting his support over the <span style="color: #C0A054;">**DVP**</span> affiliated bourgeois unity groups. He is also sufficiently conservative—particularly regarding cooperation with the <span style="color: #c00000;">**SPD**</span>—to gain unified support from Scholz and the party’s right wing. ?]
-
-- @resultsdvp: The party votes...
-
-@resultsdvp
 on-arrival: {!
+
+if (dvp_relation < 25) Q.dvp_right += 3;
+if (dvp_relation >= 45) Q.dvp_left += 3;
+if (in_grand_coalition) Q.dvp_left += 2;
+if (liberal_parliament) Q.dvp_left += 3;
+Q.dvp_right += 3;
+
 if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 4))) {
     Q.dvp_ideology = "Right"
 } else if (Q.dvp_left > (Q.dvp_right*1.5) || (Q.dvp_left > (Q.dvp_right + 4))) {
@@ -24,30 +16,64 @@ if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 4))) {
 } else {
     Q.dvp_ideology = "Moderate"
 }
+
+if (((Q.pro_republic >= 80 && Q.dvp_ideology == "Left") && Q.dvp_reform) || Q.dnvp_leader == "Lambach") Q.thiel_unlock = 1;
+if (((Q.pro_republic < 80 || Q.dvp_ideology != "Left") && Q.dvp_reform) || Q.dnvp_leader == "Lambach") Q.glatzel_unlock = 1;
+if (Q.dvp_ideology == "Right" && !Q.thiel_unlock && !Q.glatzel_unlock) Q.dingeldey_unlock = 1;
+if ((Q.dvp_ideology == "Moderate" || Q.dvp_ideology == "Left") && !Q.thiel_unlock && !Q.glatzel_unlock) Q.kardorff_unlock = 1;
+
 !}
-go-to: curtius if dvp_leader == "Curtius" and dvp_ideology != "Right"; luther if dvp_leader == "Luther" and dvp_ideology != "Right"; dingeldey if dvp_ideology == "Right"
+max-visits: 1
+tags: event
+face-image: img/dvp.jpg
+new-page: true
 
-@curtius
-on-arrival: dvp_leader = "Curtius"; liberal_cooperation += 2; bourgeois_cooperation -= 1; dvp_left += 5; coalition_dissent -= 1 if in_grand_coalition; dvp_relation += 10; new_middle_dvp += 4; new_middle_nsdap -= 4; new_middle_other -= 4; catholics_dvp += 3; catholics_other -= 3; old_middle_dvp -= 2; old_middle_dnvp += 2; old_middle_kvp += 2 if kvp_formed; rural_dvp += 2; rural_dnvp += 2; rural_dnvp += 2 if dnvp_ideology == "Moderate"; rural_kvp += 2 if kvp_formed; pro_republic += (dvp_votes * 2); ddp_right += 3 if ddp_ideology != "Right"; ddp_relation += 5;
-face-image: img/portraits/curtius.jpg
+= <span style="color: #C0A054;">**DVP**</span> Party Vote
 
-Julius Curtius has once again won the vote to retain his position against the right wing of the <span style="color: #C0A054;">**DVP**</span>. The industrialists have lost their final battle, paving the way for the <span style="color: #C0A054;">**DVP**</span> to become a party Stresemann would be proud of—a genuinely liberal <span style="color: #C0A054;">German People's Party</span>, free from the obstruction of <span style="color: #808080;">reactionary</span> forces.
+Following the disastrous Austrian customs union project, of which he was the architect, he has tendered his resignation from both the Foreign Ministry and the leadership of the <span style="color: #C0A054;">**DVP**</span>. This debacle has significantly discredited him and his allies on the party’s left wing, leading to a rightward shift within the <span style="color: #C0A054;">**DVP**</span>, particularly at the local level.
 
-This is more than excellent news for us and our relationship with the <span style="color: #C0A054;">**DVP**</span>, sending notable ripple effects throughout the entire party system. In response to their loss, the industrialists have shifted their donations toward the <span style="color: #3E88B3;">**DNVP**</span> and even the <span style="color: #7A3C00;">**NSDAP**</span>, hoping to establish a new political home for their interests.
+An internal election must now be held to determine Curtius’s successor. With the industrial wing largely weakened, none of the leading candidates have particularly strong ties to big business. Otto Thiel and Frank Glatzel, both members of the DHV - a conservative white-collar union - and leaders of the <span style="color: #C0A054;">**DVP**</span>'s Young Liberal wing, [? if not dvp_reform: are the leading voices pushing for a genuine People's Party?][? if dvp_reform: were instrumental in pushing the <span style="color: #C0A054;">**DVP**</span> toward reform years ago?]. Meanwhile, Siegfried von Kardorff, a veteran parliamentarian despite his past affiliation with the <span style="color: #3E88B3;">**DNVP**</span>, has significantly moderated over the years and was a close follower of Stresemann, advocating for a Grand Coalition with the <span style="color: #c00000;">**SPD**</span>. And, of course, Dingeldey is running again, undeterred by his previous defeat.
 
-@luther
-on-arrival: dvp_leader = "Luther"; dvp_left += 3 if in_grand_coalition; liberal_cooperation += 3; bourgeois_cooperation += 5; dvp_relation += 10 if in_grand_coalition; new_middle_dvp += 3; catholics_dvp += 5; catholics_other -= 3; catholics_z -= 2; rural_dvp += 3; coalition_dissent -= 1 if in_grand_coalition; pro_republic += dvp_votes; ddp_right += 5 if ddp_ideology != "Right"
-face-image: img/portraits/luther.jpg
+- @thiel: Otto Thiel is elected!
+- @thiel: Frank Glatzel is elected!
+- @kardorff: Siegfried von Kardorff is elected!
+- @dingeldey: Eduard Dingeldey is elected.
 
-Hans Luther has, as expected, won his re-election for the <span style="color: #C0A054;">**DVP**</span>'s chairmanship. Despite his tarnished reputation among the party’s right wing, his broad support was sufficient for a decisive victory in the vote of no confidence. His plans for a united liberal—and even bourgeois—party to presumably counter the influence of the <span style="color: #c00000;">socialists</span> have reassured most industrial donors, though some have begun shifting their funding toward the <span style="color: #3E88B3;">**DNVP**</span>.
+@thiel
+subtitle: Thiel is a controversial unionist within the party, being more left wing than Glatzel.
+unavailable-subtitle: The <span style='color: #C0A054;'>DVP</span> is too right-wing to back an openly pro-labor unionist for leadership. 
+view-if: thiel_unlock
+on-arrival: dvp_leader = "Thiel"; bourgeois_cooperation -= 3; dvp_left += 10; coalition_dissent -= 2 if in_grand_coalition; dvp_relation += 15; workers_dvp += 6; workers_dnvp -= 2; workers_other -= 2; workers_spd -= 2; new_middle_dvp += 6; new_middle_nsdap -= 3; new_middle_other -= 3; catholics_dvp += 3; catholics_other -= 3; old_middle_dvp -= 4; old_middle_dnvp += 2; old_middle_kvp += 2 if kvp_formed; rural_dvp -= 4; rural_dnvp += 2; rural_dnvp += 2 if dnvp_ideology == "Moderate"; rural_kvp += 2 if kvp_formed; pro_republic += 5; ddp_left += 3; ddp_relation += 5
+face-image: img/portraits/placeholder.jpg
 
-This is excellent news for democracy and for our constructive cooperation with the <span style="color: #C0A054;">**DVP**</span>. The right-wing forces have been defeated once again, ensuring that the party will likely remain on its democratic path for the foreseeable future. 
+Surprisingly, Otto Thiel has been elected as the new leader of the <span style="color: #C0A054;">**DVP**</span>! Compared to his colleague Glatzel, Thiel leans further left within the party’s unionist faction. He has even voiced support for increased welfare spending, arguing that austerity measures would only deepen the hardships faced by the people. In his push for *Volksgemeinschaft*, he has begun introducing more labor-friendly policies into the party’s platform, backing collective bargaining rights and worker protections.
+
+As expected, the remaining industrialists within the <span style="color: #C0A054;">**DVP**</span> are outraged—even those with sympathies toward the late Stresemann. This has led to a dramatic shift in the party’s financial backing, as funding from big business dwindles and is replaced by donations and dues from the DHV and its affiliated members. [? if in_grand_coalition: We have noticed a significant decrease in coalition tensions. ?] [? if dnvp_leader == "Lambach": Interestingly, alongside Lambach, yet another party traditionally aligned with heavy industry and big business has now elected a DHV unionist as its leader. ?]
+
+@glatzel
+subtitle: Glatzel, being a former member of the <span style="color: #3E88B3;">**DNVP**</span> as well, has shown nationalist sympathies.
+unavailable-subtitle: The <span style='color: #C0A054;'>DVP</span> is too right-wing to back a trade unionist for leadership. 
+view-if: glatzel_unlock
+on-arrival: dvp_leader = "Glatzel"; bourgeois_cooperation += 1; dvp_right += 3; dvp_relation += 3; workers_dvp += 6; workers_dnvp -= 2; workers_other -= 2; workers_nsdap -= 2; new_middle_dvp += 6; new_middle_nsdap -= 4; new_middle_other -= 2; catholics_dvp += 4; catholics_other -= 2; catholics_dnvp -= 2; old_middle_dvp += 2; old_middle_dnvp -= 2; rural_dvp -= 4; rural_dnvp += 2; rural_dnvp += 2 if dnvp_ideology == "Moderate"; rural_kvp += 2 if kvp_formed
+face-image: img/portraits/glatzel.jpg
+
+Frank Glatzel is elected to become the new leader of the <span style="color: #C0A054;">**DVP**</span>, being more nationalist and right-wing than his colleague Thiel. He stands for a "New Nationalism," a solidarity among all classes, to defend the country's "<span class="tooltip-text" title="Lebensraum">living space</span>" and to create freedom for the people. In his push for *Volksgemeinschaft*, to reduce the conflict between the classes, he has begun including more nationalistic and corporatist elements into the party platform.
+
+As expected, the remaining industrialists within the <span style="color: #C0A054;">**DVP**</span> are worried, as the party begins to shift towards including the demands of the worker. This has led to a dramatic shift in the party’s financial backing, as funding from big business dwindles and is replaced by donations and dues from the DHV and its affiliated members. His <span class="tooltip-text" title="good mod">dynamic</span> leadership should be closely watched. [? if in_grand_coalition: We have noticed a significant decrease in coalition tensions. ?] [? if dnvp_leader == "Lambach": Interestingly, alongside Lambach, yet another party traditionally aligned with heavy industry and big business has now elected a DHV unionist as its leader. ?]
+
+@kardorff
+on-arrival: dvp_leader = "Kardorff"; dvp_left += 3 if in_grand_coalition; liberal_cooperation += 3; bourgeois_cooperation += 3; dvp_relation += 5 if in_grand_coalition; new_middle_dvp += 4; catholics_dvp += 2; rural_dvp += 2; old_middle_dvp += 2; pro_republic += 3
+face-image: img/portraits/kardorff.jpg
+
+Kardorff is elected to succeed Curtius as the leader of the <span style="color: #C0A054;">**DVP**</span>. He is expected to be a continuation of Curtius's leadership, being another Stresemann follower and supporter of constructive cooperation with the <span style="color: #c00000;">**SPD**</span>. [? if ui0_seen: He even rallied his parliamentary faction to save our Grand Coalition back in 1929.?]
+
+[? if bruning_time: He is also one of the strongest supporters of the Brüning government, frequently coming into conflict with the right of the party over support for it. ?]
 
 @dingeldey
-on-arrival: old_dvp_leader = dvp_leader; dvp_leader = "Dingeldey"; dvp_right += 5; dvp_relation -= 15; old_middle_dvp -= 3; new_middle_dvp -= 6; rural_dvp -= 4; pro_republic -= 5; ddp_left += 3 if ddp_ideology == "Right"; ddp_cohesion -= 1; liberal_cooperation -= 3; bourgeois_cooperation -= 3
+on-arrival: old_dvp_leader = dvp_leader; dvp_leader = "Dingeldey"; dvp_right += 10; dvp_relation -= 25; old_middle_dvp -= 3; new_middle_dvp -= 6; rural_dvp -= 4; pro_republic -= 5; ddp_cohesion -= 1; liberal_cooperation -= 5; bourgeois_cooperation -= 5
 face-image: img/portraits/dingeldey.jpg
 
-Eduard Dingeldey has unexpectedly won the vote to replace [+ old_dvp_leader +] as chairman of the <span style="color: #C0A054;">**DVP**</span>. Backed by broad and unified support from the party’s right wing, led by Ernst Scholz, along with some reform-minded elements and <span style="color: #C0A054;">**DVP**</span>-affiliated youth groups, he has narrowly clinched victory in a vote of no confidence against [+ old_dvp_leader +].
+Eduard Dingeldey has unexpectedly won the vote to replace [+ old_dvp_leader +] as chairman of the <span style="color: #C0A054;">**DVP**</span>. Backed by broad and unified support from the party’s right wing, and endorsed by Ernst Scholz, he has narrowly clinched victory against Kardorff.
 
 Dingeldey's election represents a significant and irreversible shift to the right,[? if dvp_reform:&nbsp;with him even repealing Stresemann's reform of the internal party structure,?] granting the industrialists back their lost influence on the <span style="color: #C0A054;">**DVP**</span>'s decision making. [? if chancellor == "Brüning" and not spd_in_government: Dingeldey doesn't even feel great loyalty toward the Brüning government and believes that the party could only fulfill its mission towards bourgeois concentration after it is freed from the burden of governmental responsibility.?] 
 

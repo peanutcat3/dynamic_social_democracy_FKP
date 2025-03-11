@@ -24,6 +24,8 @@ The weight of governance now falls upon our shoulders. It is our responsibility 
 
 [? if spd_in_government: - Reform or expand education for workers. ?]
 
+[? if spd_in_government and black_thursday_seen : - Institute an economic plan. ?]
+
 [? if spd_in_government : - Secure low food prices for workers. ?]
 
 [? if spd_in_government : - Reduce funding for the Reichswehr. ?]
