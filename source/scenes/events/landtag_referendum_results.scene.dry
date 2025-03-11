@@ -5,16 +5,16 @@ tags: event
 view-if: year = 1931 and month >= 8 and landtag_ref_signatures_passed
 on-arrival: {!
 if (Q.landtag_ref_dvp && Q.landtag_ref_kpd) {
-    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dvp_votes + Q.kpd_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dvp_votes + Q.kpd_votes + 5) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_votes = Math.round(Q.landtag_ref_votes * 10) / 10;
 } else if (!Q.landtag_ref_dvp && Q.landtag_ref_kpd) {
-    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.kpd_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.kpd_votes + 5) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_votes = Math.round(Q.landtag_ref_votes * 10) / 10;
 } else if (Q.landtag_ref_dvp && !Q.landtag_ref_kpd) {
-    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dvp_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + Q.dvp_votes + 5) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_votes = Math.round(Q.landtag_ref_votes * 10) / 10;
 } else if (!Q.landtag_ref_dvp && !Q.landtag_ref_kpd) {
-    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes) * ((100 - Q.pro_republic) / 100);
+    Q.landtag_ref_votes = (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dnf_votes + 5) * ((100 - Q.pro_republic) / 100);
     Q.landtag_ref_votes = Math.round(Q.landtag_ref_votes * 10) / 10;
 }
 Q.landtag_ref_votes_collected = 1;
