@@ -298,7 +298,7 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
     }
 }
 // center-right coalition complains about banking crisis, alt his
-if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.time !== Q.last_time_updated) {
     Q.flavour_37_trigger += 1; 
     if (Q.flavour_37_trigger == 1 && !Q.flavour_37_trigger_shown) {
         Q.flavour_37_trigger_time = Q.time + 1;
@@ -330,7 +330,7 @@ if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coal
     }
 }
 // curtius resigns, dnvp in coalition
-if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.time == Q.flavour_37_trigger_time + 3 && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.time >= Q.flavour_37_trigger_time + 3 && Q.time !== Q.last_time_updated) {
     Q.flavour_41_trigger += 1; 
     if (Q.flavour_41_trigger == 1 && !Q.flavour_41_trigger_shown) {
         Q.flavour_41_trigger_time = Q.time;
@@ -1278,7 +1278,7 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
     }
 }
 // center-right coalition complains about banking crisis, alt his
-if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.time !== Q.last_time_updated) {
     Q.flavour_37_trigger += 1; 
     if (Q.flavour_37_trigger == 1 && !Q.flavour_37_trigger_shown) {
         Q.flavour_37_trigger_time = Q.time + 1;
@@ -1310,7 +1310,7 @@ if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coal
     }
 }
 // curtius resigns, dnvp in coalition
-if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.time == Q.flavour_37_trigger_time + 3 && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right) && Q.banking_crisis_seen && Q.time >= Q.flavour_37_trigger_time + 3 && Q.time !== Q.last_time_updated) {
     Q.flavour_41_trigger += 1; 
     if (Q.flavour_41_trigger == 1 && !Q.flavour_41_trigger_shown) {
         Q.flavour_41_trigger_time = Q.time;
