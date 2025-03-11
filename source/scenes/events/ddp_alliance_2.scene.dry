@@ -1,6 +1,6 @@
 title: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s Proposal
 subtitle: The <span style="color: #D3C24D;">[+ ddp_name +]</span> has reconsidered their prior opposition.
-view-if: (year >= 1932 and not lvp_formed and not dstp_maintained and next_election_time - time < 3) and ddp_alliance_seen and ddp_r < 1 and time_since_election < 5
+view-if: (year >= 1932 and not lvp_formed and not dstp_maintained and next_election_time - time < 3) and ddp_alliance_seen and ddp_r < 1
 on-arrival: ddp_alliance_2_seen = 1;
 max-visits: 1
 tags: event
