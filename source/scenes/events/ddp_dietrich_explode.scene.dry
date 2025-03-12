@@ -103,6 +103,7 @@ if (!Q.stolper_lead && !Q.heuss_lead_ddp && !Q.maier_lead) {
 max-visits: 1
 tags: event
 new-page: true
+face-image: img/portraits/dietrich.jpg
 
 = Hermann Dietrich resigns!
 
