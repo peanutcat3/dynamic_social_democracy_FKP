@@ -64,8 +64,8 @@ if (Q.chancellor == "Brüning" && Q.spd_toleration) {
 }
 if (Q.stolper_program_adopted) {
     Q.heuss_points += 1;
-    Q.dietrich_points += 1;
-    Q.lemmer_points -= 1;
+    Q.dietrich_points += 2;
+    Q.lemmer_points -= 2;
 }
 if (Q.ddp_cohesion >= 10) {
     Q.heuss_points += 1;
