@@ -1,6 +1,6 @@
 title: Hermann Dietrich resigns!
 subtitle: The electoral decline of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> forces him to resign.
-view-if: year >= 1931 and not lvp_formed and not bruning_time and ddp_votes >= 1.8 and ddp_votes - previous_ddp_last_election_votes > 1 and not dstp_maintained
+view-if: year >= 1931 and not lvp_formed and not bruning_time and ddp_votes >= 1.8 and ddp_votes - previous_ddp_last_election_votes > 1 and not dstp_maintained and ddp_leader == "Dietrich"
 on-arrival: {!
 Q.dietrich_resign = 1;
 
