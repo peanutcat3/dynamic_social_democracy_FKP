@@ -33,7 +33,7 @@ The <span style="color: #000000;">bourgeois</span>-<span style="color: #3E88B3;"
 title: Oppose the vote of no confidence, voting in favor of the government.
 subtitle: We will hope that the <span style="color: #3E88B3;">**DNVP**</span> manages to get its house in order.
 on-arrival: left_dissent += 5
-go-to: vonc_hergt if dnvp_leader == "Hergt"; vonc_treviranus if dnvp_leader == "Treviranus"; vonc_moderate if dnvp_leader == "Schiele" or dnvp_leader == "Westarp"
+go-to: vonc_hergt if dnvp_leader == "Hergt"; vonc_treviranus if dnvp_leader == "Treviranus"; vonc_lambach if dnvp_leader == "Lambach"; vonc_moderate if dnvp_leader == "Schiele" or dnvp_leader == "Westarp"
 
 
 @vonc_hergt
@@ -120,6 +120,45 @@ on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0;
 go-to: election_set
 
 The defections of some members of the <span style="color: #3E88B3;">**DNVP**</span>'s parliamentary delegation to Hugenberg's <span style="color: #003755;">**DNF**</span> has successfully caused Brüning to lose the vote of no confidence, ushering in new elections where the extremists stand to gain.
+
+@vonc_lambach
+on-arrival: {!
+Q.dnf_r += Q.dnvp_r*0.4;
+Q.dnvp_r *= 0.6;
+if (Q.kvp_formed && Q.lvp_formed) {
+    Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.lvp_r + Q.z_r + Q.other_r + Q.kvp_r).toFixed(1));
+} else if (Q.kvp_formed && !Q.lvp_formed) {
+    Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r + Q.kvp_r).toFixed(1));
+} else if (Q.lvp_formed && !Q.kvp_formed) {
+    Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.z_r + Q.lvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
+} else {
+    Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
+}
+Q.bruning_coalition = Q.cordon_sanitaire;
+Q.bruning_coalition = Math.round((Q.bruning_coalition - Q.bruning_coalition_loss) * 10) / 10;
+!}
+
+Walther Lambach, a strong supporter of Brüning and, to some extent, democracy, has enforced party discipline to ensure the Reichstag delegation votes in favor of Brüning. However, the anger many within his party has against him and his <span style="color: #6D5298;">Christian Socialist</span> ideals has split the party almost down the middle.
+
+- @results2: The Reichstag convenes.
+- @results3: The Reichstag convenes.
+
+@results2
+view-if: bruning_coalition >= 50
+on-arrival: new_middle_dnvp -= 6; new_middle_dnf += 4; new_middle_nsdap += 2; old_middle_dnvp *= 0.5; old_middle_dnf += 4; old_middle_nsdap += 2; rural_dnvp *= 0.6; rural_dnf += 4; rural_nsdap += 2; workers_dnvp -= 2; workers_nsdap += 2; dvp_left += 1; ddp_left += 1; lvp_left += 1; lambachover = 1
+
+Despite the defection of a significant portion of the <span style="color: #3E88B3;">**DNVP**</span>'s parliamentary delegation to the <span style="color: #003755;">**DNF**</span>, Brüning's government has retained the support of [+ bruning_coalition +]% of the Reichstag. 
+
+However, while this may seem like a victory, the loss of nearly 40% of the party's parliamentary group has triggered a broader defection of the <span style="color: #3E88B3;">**DNVP**</span>'s non-worker voter base to the <span style="color: #003755;">**DNF**</span>—and even the <span style="color: #7A3C00;">**NSDAP**</span>.
+
+@results3
+view-if: bruning_coalition < 50
+on-arrival: time_to_election = 3; spd_in_government = 0; in_right_coalition = 0; new_middle_dnvp -= 6; new_middle_dnf += 4; new_middle_nsdap += 2; old_middle_dnvp *= 0.5; old_middle_dnf += 4; old_middle_nsdap += 2; rural_dnvp *= 0.6; rural_dnf += 4; rural_nsdap += 2; workers_dnvp -= 2; workers_nsdap += 2; lambachover = 1; dvp_right += 3; ddp_right += 1; lvp_right += 2
+go-to: election_set
+
+The defections of some members of the <span style="color: #3E88B3;">**DNVP**</span>'s parliamentary delegation to Hugenberg's <span style="color: #003755;">**DNF**</span> has successfully caused Brüning to lose the vote of no confidence, ushering in new elections where the extremists stand to gain.
+
+The loss of nearly 40% of the <span style="color: #3E88B3;">**DNVP**</span>'s parliamentary group has triggered a broader defection of the <span style="color: #3E88B3;">**DNVP**</span>'s non-worker voter base to the <span style="color: #003755;">**DNF**</span>—and even the <span style="color: #7A3C00;">**NSDAP**</span>.
 
 @vonc_moderate
 on-arrival: {!
