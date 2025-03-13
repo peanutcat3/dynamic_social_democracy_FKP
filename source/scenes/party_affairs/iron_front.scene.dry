@@ -6,6 +6,18 @@ on-arrival: iron_front_timer = 7; month_actions += 1; month_actions -= 1 if harz
 card-image: img/iron_front.png
 frequency: 200
 tags: party_affairs, antifascism
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/tnoreference.png";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 
 = The <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span>
 

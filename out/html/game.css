@@ -602,6 +602,9 @@ td, th {
 .seat.farm2 {
   fill: #006400;
 }
+.seat.wp {
+  fill: #b8996f;
+}
 .tooltip-text {
   text-decoration: underline;
   text-decoration-style: dotted;
