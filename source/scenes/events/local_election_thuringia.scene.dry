@@ -216,6 +216,7 @@ Q.wp_thuringia_elections_vote = Q.other_thuringia_elections_vote*0.35
 Q.wp_r_thuringia = Q.other_r_thuringia*0.4
 
 Q.true_other_thuringia_elections_vote = Q.other_thuringia_elections_vote*0.05
+Q.true_other_thuringia_elections_vote = (Q.true_other_thuringia_elections_vote != undefined ? parseFloat(Q.true_other_thuringia_elections_vote.toFixed(1)) : 0);
 
 Q.kpo_thuringia_elections_vote = Q.kpd_thuringia_elections_vote*0.1
 Q.kpd_thuringia_elections_vote -= Q.kpo_thuringia_elections_vote;
@@ -392,7 +393,7 @@ go-to: thuringia_coalition_menu
  
 {!<tr><td><div class="box" style='background-color:#006400'> </div> !} CNBLP: {!</td><td>!} [+ farm_thuringia_elections_vote +]% {!</td><td>!} [+ farm_r_thuringia +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} WP: {!</td><td>!} [+ wp_thuringia_elections_vote +]% {!</td><td>!} [+ wp_r_thuringia +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_thuringia_elections_vote +]% {!</td><td>!} [+ wp_r_thuringia +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ true_other_thuringia_elections_vote +]% {!</td><td>!} 0%  {!</td></tr>!}
 
