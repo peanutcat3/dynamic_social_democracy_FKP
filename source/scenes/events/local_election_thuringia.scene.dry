@@ -72,22 +72,22 @@ if (Q.rural_spd_normalized >= 20) thuringia_adjustment_factors.spd += 0.1;
 Q.spd_thuringia_elections_vote = Q.spd_votes*thuringia_adjustment_factors.spd;
 Q.sapd_thuringia_elections_vote = Q.sapd_votes*thuringia_adjustment_factors.sapd;
 Q.kpd_thuringia_elections_vote = Q.kpd_votes*thuringia_adjustment_factors.kpd;
-if (Q.stolper_program_adopted) thuringia_adjustment_factors.ddp += 0.2;
+if (Q.stolper_program_adopted) thuringia_adjustment_factors.ddp += 0.4;
 Q.ddp_thuringia_elections_vote = Q.ddp_votes*thuringia_adjustment_factors.ddp;
 Q.lvp_thuringia_elections_vote = Q.lvp_votes*thuringia_adjustment_factors.lvp;
 if (!Q.stegerwald_path) Q.z_thuringia_elections_vote = Q.z_votes*thuringia_adjustment_factors.z;
 if (Q.stegerwald_path) Q.z_thuringia_elections_vote = Q.z_votes * 1.0;
 if (Q.dvp_leader != "Scholz") thuringia_adjustment_factors.dvp += 0.2;
 Q.dvp_thuringia_elections_vote = Q.dvp_votes*thuringia_adjustment_factors.dvp;
-if (Q.dnvp_ideology == "Moderate") thuringia_adjustment_factors.other += 0.6;
+if (Q.dnvp_ideology == "Moderate") thuringia_adjustment_factors.dnvp += 0.6;
 Q.dnvp_thuringia_elections_vote = Q.dnvp_votes*thuringia_adjustment_factors.dnvp;
 Q.nsdap_thuringia_elections_vote = Q.nsdap_votes*thuringia_adjustment_factors.nsdap;
 if (Q.dvp_leader != "Scholz") thuringia_adjustment_factors.other -= 0.2;
 if (Q.stolper_program_adopted) thuringia_adjustment_factors.other -= 0.2;
 if (Q.dnvp_ideology == "Moderate") thuringia_adjustment_factors.other -= 0.5;
+if (Q.kvp_formed) thuringia_adjustment_factors.other -= 0.3;
 Q.other_thuringia_elections_vote = Q.other_votes*thuringia_adjustment_factors.other;
-if (Q.kvp_formed) thuringia_adjustment_factors.other -= 0.5;
-if (Q.kvp_formed) thuringia_adjustment_factors.kvp += 0.5;
+if (Q.kvp_formed) thuringia_adjustment_factors.kvp += 0.3;
 Q.kvp_thuringia_elections_vote = Q.kvp_votes*thuringia_adjustment_factors.kvp;
 Q.dnf_thuringia_elections_vote = Q.dnf_votes*thuringia_adjustment_factors.dnf;
 
@@ -122,6 +122,8 @@ Q.kvp_thuringia_elections_vote = (Q.kvp_thuringia_elections_vote != undefined ? 
 Q.dnf_thuringia_elections_vote = (Q.dnf_thuringia_elections_vote != undefined ? parseFloat(Q.dnf_thuringia_elections_vote.toFixed(1)) : 0);
 
 if (Q.spd_thuringia_elections_vote >= 1.6) Q.spd_r_thuringia = Q.spd_thuringia_elections_vote;
+let target = 32;
+Q.spd_thuringia_elections_vote = Math.round((Q.spd_thuringia_elections_vote + (target - Q.spd_thuringia_elections_vote) * 0.35) * 10) / 10;
 if (Q.sapd_thuringia_elections_vote >= 1.6) Q.sapd_r_thuringia = Q.sapd_thuringia_elections_vote;
 if (Q.kpd_thuringia_elections_vote >= 1.6) Q.kpd_r_thuringia = Q.kpd_thuringia_elections_vote;
 if (Q.ddp_thuringia_elections_vote >= 1.6) Q.ddp_r_thuringia = Q.ddp_thuringia_elections_vote;
@@ -223,8 +225,8 @@ let other_share = 0.05;
 
 let total_share = wp_share + farm_share + other_share;
 
-Q.farm_share = (Q.farm_share / total_share) * 100;
-Q.wp_share = (Q.wp_share / total_share) * 100;
+farm_share = (farm_share / total_share) * 100;
+wp_share = (wp_share / total_share) * 100;
 
 Q.farm_thuringia_elections_vote = Q.other_thuringia_elections_vote*farm_share;
 Q.farm_r_thuringia = Q.other_r_thuringia*farm_share;
