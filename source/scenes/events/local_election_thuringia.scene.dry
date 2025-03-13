@@ -226,6 +226,7 @@ Q.wp_thuringia_elections_vote = (Q.wp_thuringia_elections_vote != undefined ? pa
 Q.farm_r_thuringia = (Q.farm_r_thuringia != undefined ? parseFloat(Q.farm_r_thuringia.toFixed(1)) : 0);
 Q.wp_r_thuringia = (Q.wp_r_thuringia != undefined ? parseFloat(Q.wp_r_thuringia.toFixed(1)) : 0);
 Q.kpo_thuringia_elections_vote = (Q.kpo_thuringia_elections_vote != undefined ? parseFloat(Q.kpo_thuringia_elections_vote.toFixed(1)) : 0);
+Q.kpd_thuringia_elections_vote = (Q.kpd_thuringia_elections_vote != undefined ? parseFloat(Q.kpd_thuringia_elections_vote.toFixed(1)) : 0);
 
 !}
 on-display: {!
@@ -412,7 +413,7 @@ go-to: thuringia_coalition_menu
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_thuringia_elections_vote +]% {!</td><td>!} [+ nsdap_r_thuringia +]%  {!</td></tr>!}
 {!</table>!}
 
-A broad center-right coalition currently rules Thuringia, with toleration from the <span style="color: #7A3C00;">**NSDAP**</span>. It consists of all the parties to the right of us, and includes the special interest parties, the <span style="color: #b8996f;">**WP**</span> and <span style="color: #7FCEB1;">**CNBLP**</span>, who are historically prevalent within state politics.
+Thuringia is currently governed by a broad center-right coalition, tolerated by the <span style="color: #7A3C00;">**NSDAP**</span>. This coalition includes all parties to the right of us, along with the special interest parties, the <span style="color: #b8996f;">**WP**</span> and <span style="color: #7FCEB1;">**CNBLP**</span>, both of which have a significant presence in state politics.
 
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #C43988;">**KPO**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_thuringia +]% 
 
