@@ -109,7 +109,7 @@ if (!Q.dietrich_lead && !Q.heuss_lead && !Q.dingeldey_lead) {
 
 !}
 max-visits: 1
-#tags: event
+tags: event
 face-image: img/weimar_coalition_3.jpg
 new-page: true
 
