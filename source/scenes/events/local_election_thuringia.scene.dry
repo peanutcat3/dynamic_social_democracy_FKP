@@ -288,18 +288,23 @@ if (Q.dvp_r_thuringia && !Q.lvp_formed) {
 }
 
 if (Q.other_r_thuringia) {
-    data.push({
-        "id": "farm3",
-        "legend": "Farm",
-        "name": "Farm",
-        "seats": Math.round(Q.farm_r_thuringia * 0.318),
-    });
-    data.push({
-        "id": "wp",
-        "legend": "WP",
-        "name": "WP",
-        "seats": Math.round(Q.wp_r_thuringia * 0.212),
-    });
+    let total = Q.farm_r_thuringia + Q.wp_r_thuringia; 
+    if (total > 0) {
+        let farmShare = (Q.farm_r_thuringia / total) * 0.56;
+        let wpShare = (Q.wp_r_thuringia / total) * 0.56;
+        data.push({
+            "id": "farm3",
+            "legend": "Farm",
+            "name": "Farm",
+            "seats": Math.round(Q.farm_r_thuringia * farmShare),
+        });
+        data.push({
+            "id": "wp",
+            "legend": "WP",
+            "name": "WP",
+            "seats": Math.round(Q.wp_r_thuringia * wpShare),
+        });
+    }
 }
 if (Q.kvp_formed && Q.kvp_r_thuringia) {
     data.push({
