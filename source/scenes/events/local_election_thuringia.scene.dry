@@ -290,23 +290,18 @@ if (Q.dvp_r_thuringia && !Q.lvp_formed) {
 }
 
 if (Q.other_r_thuringia) {
-    let total = Q.farm_r_thuringia + Q.wp_r_thuringia; 
-    if (total > 0) {
-        let farmShare = (Q.farm_r_thuringia / total) * 0.56;
-        let wpShare = (Q.wp_r_thuringia / total) * 0.56;
-        data.push({
-            "id": "farm3",
-            "legend": "Farm",
-            "name": "Farm",
-            "seats": Math.round(Q.farm_r_thuringia * farmShare),
-        });
-        data.push({
-            "id": "wp",
-            "legend": "WP",
-            "name": "WP",
-            "seats": Math.round(Q.wp_r_thuringia * wpShare),
-        });
-    }
+    data.push({
+        "id": "farm3",
+        "legend": "Farm",
+        "name": "Farm",
+        "seats": Math.round(Q.farm_r_thuringia * 0.53),
+    });
+    data.push({
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_r_thuringia * 0.53),
+    });
 }
 if (Q.kvp_formed && Q.kvp_r_thuringia) {
     data.push({
@@ -398,7 +393,7 @@ go-to: thuringia_coalition_menu
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_thuringia_elections_vote +]% {!</td><td>!} [+ dvp_r_thuringia +]%  {!</td></tr>!} ?]
  
-{!<tr><td><div class="box" style='background-color:#006400'> </div> !} CNBLP: {!</td><td>!} [+ farm_thuringia_elections_vote +]% {!</td><td>!} [+ farm_r_thuringia +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#7FCEB1'> </div> !} CNBLP: {!</td><td>!} [+ farm_thuringia_elections_vote +]% {!</td><td>!} [+ farm_r_thuringia +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_thuringia_elections_vote +]% {!</td><td>!} [+ wp_r_thuringia +]%  {!</td></tr>!}
 
