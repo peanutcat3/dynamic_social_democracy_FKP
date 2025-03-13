@@ -28,16 +28,16 @@ The Thuringian state elections are to be held now.
 on-arrival: {!
 
 var thuringia_adjustment_factors = {
-    spd: 1.1,
+    spd: 1.2,
     sapd: 1.0,
-    kpd: 1.1,
+    kpd: 1.15,
     ddp: 0.8,
     lvp: 1.0,
     z: 0.08,
     dvp: 1.5,
     dnvp: 0.4,
-    nsdap: 1.1,
-    other: 2.0,
+    nsdap: 1.0,
+    other: 1.9,
     kvp: 0.6,
     dnf: 0.3
 };
@@ -218,7 +218,7 @@ Q.wp_r_thuringia = Q.other_r_thuringia*0.4
 Q.true_other_thuringia_elections_vote = Q.other_thuringia_elections_vote*0.05
 Q.true_other_thuringia_elections_vote = (Q.true_other_thuringia_elections_vote != undefined ? parseFloat(Q.true_other_thuringia_elections_vote.toFixed(1)) : 0);
 
-Q.kpo_thuringia_elections_vote = Q.kpd_thuringia_elections_vote*0.1
+Q.kpo_thuringia_elections_vote = Q.kpd_thuringia_elections_vote*0.15
 Q.kpd_thuringia_elections_vote -= Q.kpo_thuringia_elections_vote;
 
 Q.farm_thuringia_elections_vote = (Q.farm_thuringia_elections_vote != undefined ? parseFloat(Q.farm_thuringia_elections_vote.toFixed(1)) : 0);
