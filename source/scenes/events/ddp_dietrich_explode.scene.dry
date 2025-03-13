@@ -75,6 +75,8 @@ if (Q.ddp_ideology == "Right") {
     Q.stolper_points += 1;
 }
 
+Q.heuss_points *= 0.5;
+
 if (Q.heuss_points > Q.stolper_points && Q.heuss_points > Q.maier_points) {
     Q.heuss_lead_ddp = 1;
 } else {
@@ -133,7 +135,7 @@ title: Reinhold Maier is elected!
 subtitle: A youthful and energetic rising star, free from helplessness, defeatism, and rigid dogma.
 unavailable-subtitle: Maier is the preferred candidate of the business wing, and it appears they don't have enough power over the <span style="color: #D3C24D;">[+ ddp_name +]</span>.
 choose-if: maier_lead
-on-arrival: ddp_relation -= 3; ddp_right += 3; new_middle_ddp *= 1.5; old_middle_ddp *= 1.5; rural_ddp += 2; pro_republic += 3; liberal_cooperation += 3; bourgeois_cooperation += 2
+on-arrival: ddp_leader = "Maier"; ddp_relation -= 3; ddp_right += 3; new_middle_ddp *= 1.5; old_middle_ddp *= 1.5; rural_ddp += 2; pro_republic += 3; liberal_cooperation += 3; bourgeois_cooperation += 2
 face-image: img/portraits/maier.jpg
 
 Reinhold Maier, a major figure in Württemberg politics and a rising star in the dying party, has been elected chairman of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. Youthful and energetic, he is not bound by traditional liberal principles like many veteran members of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, making him a strong choice for a party plagued by defeatism and internal strife.
@@ -145,7 +147,7 @@ title: Gustav Stolper is elected!
 subtitle: Creator of the famed Stolper Program, and a <span style="color: #005EB8;">Jew</span>.
 unavailable-subtitle: The <span style="color: #D3C24D;">[+ ddp_name +]</span> prefers not to exacerbate their reputation as the party for <span style="color: #005EB8;">Jews</span>.
 choose-if: stolper_lead
-on-arrival: ddp_relation += 3; ddp_left += 1; ddp_cohesion -= 3; rural_ddp *= 0.7; rural_nsdap += 1; new_middle_ddp *= 2; old_middle_ddp *= 1.5; pro_republic += 5
+on-arrival: ddp_leader = "Stolper"; ddp_relation += 3; ddp_left += 1; ddp_cohesion -= 3; rural_ddp *= 0.7; rural_nsdap += 1; new_middle_ddp *= 2; old_middle_ddp *= 1.5; pro_republic += 5
 face-image: img/portraits/stolper.jpg
 
 Gustav Stolper, a German-Austrian economist and the son of <span style="color: #005EB8;">Jewish</span> immigrants from Poland, has been elected chairman of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, reinforcing a stereotype the party has long struggled to dispel. Despite this, Stolper—renowned for the economic program bearing his name—could be exactly what the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> needs to revitalize its middle-class support.
@@ -166,4 +168,4 @@ With no candidate able to secure a majority, everyone has unanimously agreed to 
 title: Very funny, please revert the changes.
 on-arrival: ddp_leader = "Stolper"; ddp_relation += 3; ddp_left += 1; ddp_cohesion -= 3; rural_ddp *= 0.7; rural_nsdap += 1; new_middle_ddp *= 2; old_middle_ddp *= 1.5; pro_republic += 5; ddp_name = "DStP" if dstp_formed; ddp_name = "DDP" if not dstp_formed
 
-You are no fun.
+You are no fun. Stolper is eventually chosen as a compromise candidate.
