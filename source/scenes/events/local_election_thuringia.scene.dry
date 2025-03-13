@@ -270,13 +270,14 @@ if (Q.lvp_r_thuringia && Q.lvp_formed) {
     });
 }
 
-data = data.concat([{
+if (Q.z_r_thuringia) {
+    data.push({
         "id": "z",
         "legend": "Center",
         "name": "Center",
-        "seats": Math.round((Q.z_r_thuringia) * 0.53),
+        "seats": Math.round(Q.z_r_thuringia * 0.53),
+    });
 }
-]);
 
 if (Q.dvp_r_thuringia && !Q.lvp_formed) {
     data.push({
