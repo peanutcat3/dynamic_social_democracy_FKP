@@ -166,7 +166,7 @@ subtitle: No candidate is able to gather a sufficient amount of votes.
 view-if: lvp_deadlock
 on-arrival: {!
 if ((Q.dnvp_leader == "Lambach" || Q.workers_spd_normalized < 40 || Q.unions_independent) || Q.new_middle_lvp_normalized >= 50 || Q.nationalism >= 55) Q.glatzel_lvp_unlock = 1;
-if ((Q.lvp_ideology == "Left" || Q.lvp_relation >= 65 || Q.nationalism >= 60) && Q.womens_rights >= 4) Q.baumer_lvp_unlock = 1;
+if ((Q.nationalism >= 60) && Q.womens_rights >= 4) Q.baumer_lvp_unlock = 1;
 if (((Q.lvp_ideology == "Left" || Q.lvp_relation >= 50) || (Q.new_middle_lvp_normalized + Q.old_middle_lvp_normalized >= 65)) && Q.confronting_antisemitism >= 1 && Q.stolper_program_adopted) Q.stolper_lvp_unlock = 1;
 if (Q.baumer_lvp_unlock) {
     Q.glatzel_lvp_unlock = 0;
