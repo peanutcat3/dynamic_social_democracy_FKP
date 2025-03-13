@@ -456,6 +456,10 @@ if (Q.lvp_ideology == "Right") {
 } else if (Q.lvp_ideology == "Left") {
     lvp_toleration_threshold -= 5;
 }
+if (Q.united_left_thuringia >= 50) {
+    Q.lvp_toleration_threshold -= 10;
+    Q.dvp_toleration_threshold -= 10;
+}
 if ((Q.dvp_relation >= dvp_toleration_threshold && !Q.lvp_formed) || (Q.lvp_relation >= lvp_toleration_threshold && Q.lvp_formed)) Q.toleration_possible = 1;
 if (((Q.z_relation >= 60 || !Q.stegerwald_path) && ((Q.dvp_relation >= (dvp_toleration_threshold + 5) && !Q.lvp_formed) || (Q.lvp_relation >= (lvp_toleration_threshold + 5) && Q.lvp_formed)))) Q.spd_coalition_possible = 1;
 !}
@@ -559,6 +563,10 @@ if (Q.lvp_ideology == "Right") {
     lvp_toleration_threshold += 15;
 } else if (Q.lvp_ideology == "Left") {
     lvp_toleration_threshold -= 5;
+}
+if (Q.united_left_thuringia >= 50) {
+    Q.lvp_toleration_threshold -= 10;
+    Q.dvp_toleration_threshold -= 10;
 }
 if ((Q.dvp_relation >= dvp_toleration_threshold && !Q.lvp_formed) || (Q.lvp_relation >= lvp_toleration_threshold && Q.lvp_formed)) Q.toleration_possible = 1;
 !}
