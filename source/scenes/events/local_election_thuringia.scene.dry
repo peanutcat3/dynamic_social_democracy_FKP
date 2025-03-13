@@ -439,8 +439,25 @@ Right-wing Coalition ([? if z_r_thuringia: <span style="color: #000000;">**Z**</
 
 @thuringia_coalition_menu
 on-arrival: {!
-if ((Q.dvp_relation >= 50 && !Q.lvp_formed) || (Q.lvp_relation >= 60 && Q.lvp_formed)) Q.toleration_possible = 1;
-if (((Q.z_relation >= 60 || !Q.stegerwald_path) && ((Q.dvp_relation >= 55 && !Q.lvp_formed) || (Q.lvp_relation >= 65 && Q.lvp_formed)))) Q.spd_coalition_possible = 1;
+let dvp_toleration_threshold = 50;
+let lvp_toleration_threshold = 60;
+if (Q.dvp_leader == "Scholz") {
+    dvp_toleration_threshold += 5;
+} else if (Q.dvp_leader == "Curtius") {
+    dvp_toleration_threshold -= 5;
+}
+if (Q.dvp_ideology == "Right") {
+    dvp_toleration_threshold += 10;
+} else if (Q.dvp_ideology == "Left") {
+    dvp_toleration_threshold -= 10;
+}
+if (Q.lvp_ideology == "Right") {
+    lvp_toleration_threshold += 15;
+} else if (Q.lvp_ideology == "Left") {
+    lvp_toleration_threshold -= 5;
+}
+if ((Q.dvp_relation >= dvp_toleration_threshold && !Q.lvp_formed) || (Q.lvp_relation >= lvp_toleration_threshold && Q.lvp_formed)) Q.toleration_possible = 1;
+if (((Q.z_relation >= 60 || !Q.stegerwald_path) && ((Q.dvp_relation >= (dvp_toleration_threshold + 5) && !Q.lvp_formed) || (Q.lvp_relation >= (lvp_toleration_threshold + 5) && Q.lvp_formed)))) Q.spd_coalition_possible = 1;
 !}
 
 
@@ -526,7 +543,24 @@ title: No majority can be found!
 subtitle: [? if bourgeois_coalition_thuringia < 50 and far_right_coalition_thuringia < 50 and spd_coalition_thuringia < 50: All possible coalitions lack a majority. ?][? if (bourgeois_coalition_thuringia < 50 and not toleration_possible) or (spd_coalition_thuringia >= 50 and not spd_coalition_possible): The bourgeois parties still haven't forgiven us. ?]
 view-if: bourgeois_coalition_thuringia < 50 and far_right_coalition_thuringia < 50 and not toleration_possible and not spd_coalition_possible
 on-arrival: {!
-if ((Q.dvp_relation >= 30 && !Q.lvp_formed) || (Q.lvp_relation >= 40 && Q.lvp_formed)) Q.toleration_possible = 1;
+let dvp_toleration_threshold = 30;
+let lvp_toleration_threshold = 40;
+if (Q.dvp_leader == "Scholz") {
+    dvp_toleration_threshold += 5;
+} else if (Q.dvp_leader == "Curtius") {
+    dvp_toleration_threshold -= 5;
+}
+if (Q.dvp_ideology == "Right") {
+    dvp_toleration_threshold += 10;
+} else if (Q.dvp_ideology == "Left") {
+    dvp_toleration_threshold -= 10;
+}
+if (Q.lvp_ideology == "Right") {
+    lvp_toleration_threshold += 15;
+} else if (Q.lvp_ideology == "Left") {
+    lvp_toleration_threshold -= 5;
+}
+if ((Q.dvp_relation >= dvp_toleration_threshold && !Q.lvp_formed) || (Q.lvp_relation >= lvp_toleration_threshold && Q.lvp_formed)) Q.toleration_possible = 1;
 !}
 
 With the bourgeois parties unable to secure a majority even with the inclusion of the <span style="color: #7A3C00;">**NSDAP**</span>, and their refusal to form a coalition with us, no viable majority can be established. The ruling coalition fears that calling new elections will only accelerate their decline and further erode their support.
