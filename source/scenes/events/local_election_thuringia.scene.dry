@@ -224,6 +224,7 @@ Q.farm_thuringia_elections_vote = (Q.farm_thuringia_elections_vote != undefined 
 Q.wp_thuringia_elections_vote = (Q.wp_thuringia_elections_vote != undefined ? parseFloat(Q.wp_thuringia_elections_vote.toFixed(1)) : 0);
 Q.farm_r_thuringia = (Q.farm_r_thuringia != undefined ? parseFloat(Q.farm_r_thuringia.toFixed(1)) : 0);
 Q.wp_r_thuringia = (Q.wp_r_thuringia != undefined ? parseFloat(Q.wp_r_thuringia.toFixed(1)) : 0);
+Q.kpo_thuringia_elections_vote = (Q.kpo_thuringia_elections_vote != undefined ? parseFloat(Q.kpo_thuringia_elections_vote.toFixed(1)) : 0);
 
 !}
 on-display: {!
