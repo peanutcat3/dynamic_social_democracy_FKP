@@ -28,7 +28,7 @@ The Thuringian state elections are to be held now.
 on-arrival: {!
 
 var thuringia_adjustment_factors = {
-    spd: 1.2,
+    spd: 1.15,
     sapd: 1.0,
     kpd: 1.15,
     ddp: 0.8,
