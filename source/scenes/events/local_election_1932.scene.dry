@@ -870,21 +870,6 @@ if (Q.dvp_r_wurttemberg && !Q.lvp_formed) {
         "seats": Math.round(Q.dvp_r_wurttemberg * 0.8),
     });
 }
-
-if (Q.other_r_wurttemberg) {
-    data.push({
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r_wurttemberg * 0.27),
-    });
-    data.push({
-        "id": "farm2",
-        "legend": "Farm",
-        "name": "Farm",
-        "seats": Math.round(Q.other_r_wurttemberg * 0.53),
-    });
-}
 if (Q.other_r_wurttemberg) {
     let total = Q.farm_r_wurttemberg + Q.non_farm_r_wurttemberg; 
     if (total > 0) {
