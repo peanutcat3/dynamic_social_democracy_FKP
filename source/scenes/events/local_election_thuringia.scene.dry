@@ -1,5 +1,5 @@
 title: Thuringian Landtag Election
-view-if: (year == 1929 and month == 12) or thuringia_election_2_trigger_time == time
+view-if: (year == 1929 and month == 12 and not thuringia_election_seen) or thuringia_election_2_trigger_time == time
 new-page: true
 tags: event
 on-arrival: thuringia_election_seen = 1;
@@ -16,7 +16,6 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
-max-visits: 1
 
 = Elections, [+ month : month +] [+ year +]
 
