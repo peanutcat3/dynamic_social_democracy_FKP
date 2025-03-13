@@ -79,7 +79,7 @@ if (!Q.stegerwald_path) Q.z_thuringia_elections_vote = Q.z_votes*thuringia_adjus
 if (Q.stegerwald_path) Q.z_thuringia_elections_vote = Q.z_votes * 1.0;
 if (Q.dvp_leader != "Scholz") thuringia_adjustment_factors.dvp += 0.2;
 Q.dvp_thuringia_elections_vote = Q.dvp_votes*thuringia_adjustment_factors.dvp;
-if (Q.dnvp_ideology == "Moderate") thuringia_adjustment_factors.dnvp += 0.6;
+if (Q.dnvp_ideology == "Moderate") thuringia_adjustment_factors.dnvp += 1.0;
 Q.dnvp_thuringia_elections_vote = Q.dnvp_votes*thuringia_adjustment_factors.dnvp;
 Q.nsdap_thuringia_elections_vote = Q.nsdap_votes*thuringia_adjustment_factors.nsdap;
 if (Q.dvp_leader != "Scholz") thuringia_adjustment_factors.other -= 0.2;
@@ -94,6 +94,20 @@ Q.dnf_thuringia_elections_vote = Q.dnf_votes*thuringia_adjustment_factors.dnf;
 Q.total_votes_thuringia = Q.spd_thuringia_elections_vote + Q.sapd_thuringia_elections_vote + Q.kpd_thuringia_elections_vote + Q.ddp_thuringia_elections_vote + Q.lvp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote + Q.nsdap_thuringia_elections_vote + Q.other_thuringia_elections_vote + Q.kvp_thuringia_elections_vote + Q.dnf_thuringia_elections_vote;
 
 if (Q.total_votes_thuringia > 0) {
+    Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.sapd_thuringia_elections_vote = (Q.sapd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.kpd_thuringia_elections_vote = (Q.kpd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.ddp_thuringia_elections_vote = (Q.ddp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.lvp_thuringia_elections_vote = (Q.lvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.z_thuringia_elections_vote = (Q.z_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.dvp_thuringia_elections_vote = (Q.dvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.dnvp_thuringia_elections_vote = (Q.dnvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.nsdap_thuringia_elections_vote = (Q.nsdap_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.other_thuringia_elections_vote = (Q.other_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.kvp_thuringia_elections_vote = (Q.kvp_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    Q.dnf_thuringia_elections_vote = (Q.dnf_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
+    let target = 32;
+    Q.spd_thuringia_elections_vote = Math.round((Q.spd_thuringia_elections_vote + (target - Q.spd_thuringia_elections_vote) * 0.35) * 10) / 10;
     Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.sapd_thuringia_elections_vote = (Q.sapd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.kpd_thuringia_elections_vote = (Q.kpd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
@@ -122,8 +136,6 @@ Q.kvp_thuringia_elections_vote = (Q.kvp_thuringia_elections_vote != undefined ? 
 Q.dnf_thuringia_elections_vote = (Q.dnf_thuringia_elections_vote != undefined ? parseFloat(Q.dnf_thuringia_elections_vote.toFixed(1)) : 0);
 
 if (Q.spd_thuringia_elections_vote >= 1.6) Q.spd_r_thuringia = Q.spd_thuringia_elections_vote;
-let target = 32;
-Q.spd_thuringia_elections_vote = Math.round((Q.spd_thuringia_elections_vote + (target - Q.spd_thuringia_elections_vote) * 0.35) * 10) / 10;
 if (Q.sapd_thuringia_elections_vote >= 1.6) Q.sapd_r_thuringia = Q.sapd_thuringia_elections_vote;
 if (Q.kpd_thuringia_elections_vote >= 1.6) Q.kpd_r_thuringia = Q.kpd_thuringia_elections_vote;
 if (Q.ddp_thuringia_elections_vote >= 1.6) Q.ddp_r_thuringia = Q.ddp_thuringia_elections_vote;
@@ -459,8 +471,8 @@ if (Q.lvp_ideology == "Right") {
     lvp_toleration_threshold -= 5;
 }
 if (Q.united_left_thuringia >= 50) {
-    Q.lvp_toleration_threshold -= 10;
-    Q.dvp_toleration_threshold -= 10;
+    lvp_toleration_threshold -= 10;
+    dvp_toleration_threshold -= 10;
 }
 if ((Q.dvp_relation >= dvp_toleration_threshold && !Q.lvp_formed) || (Q.lvp_relation >= lvp_toleration_threshold && Q.lvp_formed)) Q.toleration_possible = 1;
 if (((Q.z_relation >= 60 || !Q.stegerwald_path) && ((Q.dvp_relation >= (dvp_toleration_threshold + 5) && !Q.lvp_formed) || (Q.lvp_relation >= (lvp_toleration_threshold + 5) && Q.lvp_formed)))) Q.spd_coalition_possible = 1;
@@ -567,8 +579,8 @@ if (Q.lvp_ideology == "Right") {
     lvp_toleration_threshold -= 5;
 }
 if (Q.united_left_thuringia >= 50) {
-    Q.lvp_toleration_threshold -= 10;
-    Q.dvp_toleration_threshold -= 10;
+    lvp_toleration_threshold -= 10;
+    dvp_toleration_threshold -= 10;
 }
 if ((Q.dvp_relation >= dvp_toleration_threshold && !Q.lvp_formed) || (Q.lvp_relation >= lvp_toleration_threshold && Q.lvp_formed)) Q.toleration_possible = 1;
 !}
