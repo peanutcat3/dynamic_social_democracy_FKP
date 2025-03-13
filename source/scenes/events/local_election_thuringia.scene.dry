@@ -1,5 +1,5 @@
 title: Thuringian Landtag Election
-view-if: year == 1929 and month == 12
+view-if: (year == 1929 and month == 12) or thuringia_election_2_trigger_time == time
 new-page: true
 tags: event
 on-arrival: thuringia_election_seen = 1;
@@ -439,6 +439,11 @@ Right-wing Coalition ([? if z_r_thuringia: <span style="color: #000000;">**Z**</
 [? if nsdap_thuringia_elections_vote >= 8: The rapid rise of the <span style="color: #7A3C00;">**NSDAP**</span> in state and local elections is certainly worth keeping an eye on. ?]
 
 @thuringia_coalition_menu
+on-arrival: {!
+if ((Q.dvp_relation >= 50 && !Q.lvp_formed) || (Q.lvp_relation >= 60 && Q.lvp_formed)) Q.toleration_possible = 1;
+if (((Q.z_relation >= 60 || !Q.stegerwald_path) && ((Q.dvp_relation >= 55 && !Q.lvp_formed) || (Q.lvp_relation >= 65 && Q.lvp_formed)))) Q.spd_coalition_possible = 1;
+!}
+
 
 The bourgeois parties have historically been hostile to us in state politics, especially after the notorious <span style="color: #c00000;">**SPD**</span>-<span style="color: #D47B9B;">**USPD**</span>-<span style="color: #700000;">**KPD**</span> United Left government faced a *Reichsexekution* six years ago. They still haven't forgiven the <span style="color: #c00000;">**SPD**</span> for this. 
 
@@ -456,7 +461,7 @@ Meanwhile, the surging <span style="color: #7A3C00;">**NSDAP**</span>, now contr
 title: The incumbent bourgeois-right government has fallen short of a majority.
 subtitle: We will offer our toleration to them, to prevent their dependence on the <span style="color: #7A3C00;">**NSDAP**</span>.
 unavailable-subtitle: The bourgeois would rather work with <span style="color: #7A3C00;">Nazis</span> than accept our toleration.
-choose-if: (dvp_relation >= 50 and not lvp_formed) or (lvp_relation >= 60 and lvp_formed)
+choose-if: toleration_possible
 view-if: bourgeois_coalition_thuringia < 50
 on-arrival: thuringia_right = 1; pro_republic -= 1; rural_nsdap += 2; old_middle_nsdap += 2; rural_other -= 2; old_middle_dnvp -= 2
 
@@ -488,7 +493,7 @@ title: A [? if lvp_formed: <span style="color: #000000;">We</span><span style="c
 subtitle: We have somehow reconciled with the bourgeois parties, that they're willing to govern with us again.
 unavailable-subtitle: [? if z_relation < 60 and stegerwald_path: We need higher relations with the <span style="color: #000000;">Center Party</span>. ?][? if (dvp_relation < 55 and not lvp_formed) or (lvp_relation < 65 and lvp_formed): We need higher relations with the [? if not lvp_formed: <span style="color: #C0A054;">DVP</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?]
 view-if: spd_coalition_thuringia >= 50
-choose-if: ((z_relation >= 60 or not stegerwald_path) and ((dvp_relation >= 55 and not lvp_formed) or (lvp_relation >= 65 and lvp_formed)))
+choose-if: spd_coalition_possible
 on-arrival: thuringia_spd = 1; rural_nsdap -= 2; new_middle_nsdap -= 2; old_middle_nsdap -= 2; new_middle_spd += 2; old_middle_spd += 2; rural_spd += 2; z_relation += 3; ddp_relation += 3; lvp_relation += 3; pro_republic += 3; sa_strength -= 25
 
 Somehow, the bourgeois parties are willing to form a [? if lvp_formed: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span>?][? if not lvp_formed: Grand?] Coalition with us, rather than continuing their current government.
@@ -516,3 +521,28 @@ on-display: {!
 Surprisingly, despite reluctance on both sides due to fears that the <span style="color: #808080;">reactionary</span> Hindenburg will order a *Reichsexekution* if a coalition were to form. <span style="color: #c00000;">Red</span> Thuringia is restored! 
 
 Hindenburg’s patience is especially thin. Tread carefully.
+
+@no_majority
+title: No majority can be found!
+subtitle: [? if bourgeois_coalition_thuringia < 50 and far_right_coalition_thuringia < 50 and spd_coalition_thuringia < 50: All possible coalitions lack a majority. ?][? if (bourgeois_coalition_thuringia < 50 and not toleration_possible) or (spd_coalition_thuringia >= 50 and not spd_coalition_possible): The bourgeois parties still haven't forgiven us. ?]
+view-if: bourgeois_coalition_thuringia < 50 and far_right_coalition_thuringia < 50 and not toleration_possible and not spd_coalition_possible
+on-arrival: {!
+if ((Q.dvp_relation >= 30 && !Q.lvp_formed) || (Q.lvp_relation >= 40 && Q.lvp_formed)) Q.toleration_possible = 1;
+!}
+
+With the bourgeois parties unable to secure a majority even with the inclusion of the <span style="color: #7A3C00;">**NSDAP**</span>, and their refusal to form a coalition with us, no viable majority can be established. The ruling coalition fears that calling new elections will only accelerate their decline and further erode their support.
+
+In an effort to avoid this, they are more open to negotiating a toleration agreement.
+
+- @toleration_thuringia
+- @no_majority_2
+
+@no_majority_2
+title: A majority still can't be found!
+subtitle: This is getting ridiculous.
+view-if: not toleration_possible
+on-arrival: thuringia_election_2_trigger_time = time + 3; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 2; unemployed_nsdap += 4; pro_republic -= 3
+
+The bourgeois parties remain unwilling to accept our offer of toleration. [? if far_right_coalition_thuringia + ddp_r_thuringia >= 50: One option the incumbent coalition has considered is including both the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, but for obvious reasons, both parties have vetoed this proposal. ?]
+
+With no viable alternatives, the Landtag faces dissolution, triggering new elections—an opportunity the <span style="color: #7A3C00;">**NSDAP**</span> hopes to exploit by capitalizing on political instability and the perceived failure of parliamentary democracy.
