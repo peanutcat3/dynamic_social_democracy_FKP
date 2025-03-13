@@ -583,6 +583,10 @@ if (Q.united_left_thuringia >= 50) {
     lvp_toleration_threshold -= 10;
     dvp_toleration_threshold -= 10;
 }
+if (Q.thuringia_no_majority) {
+    lvp_toleration_threshold = 0;
+    dvp_toleration_threshold = 0;
+}
 if ((Q.dvp_relation >= dvp_toleration_threshold && !Q.lvp_formed) || (Q.lvp_relation >= lvp_toleration_threshold && Q.lvp_formed)) Q.toleration_possible = 1;
 !}
 
@@ -597,7 +601,7 @@ In an effort to avoid this, they are more open to negotiating a toleration agree
 title: A majority still can't be found!
 subtitle: This is getting ridiculous.
 view-if: not toleration_possible
-on-arrival: thuringia_election_2_trigger_time = time + 3; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 2; unemployed_nsdap += 4; pro_republic -= 3
+on-arrival: thuringia_election_2_trigger_time = time + 3; thuringia_no_majority = 1; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 2; unemployed_nsdap += 4; pro_republic -= 3
 
 The bourgeois parties remain unwilling to accept our offer of toleration. [? if far_right_coalition_thuringia + ddp_r_thuringia >= 50: One option the incumbent coalition has considered is including both the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, but for obvious reasons, both parties have vetoed this proposal. ?]
 
