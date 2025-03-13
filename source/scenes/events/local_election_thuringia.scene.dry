@@ -3,7 +3,6 @@ view-if: year == 1929 and month == 12
 new-page: true
 tags: event
 on-arrival: thuringia_election_seen = 1;
-set-jump: new_elections
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
@@ -422,10 +421,9 @@ The bourgeois parties have historically been hostile to us in state politics, es
 
 Meanwhile, the surging <span style="color: #7A3C00;">**NSDAP**</span>, now controlling [+ nsdap_r_thuringia +]% of the Landtag, is no longer content with mere toleration and demands a role in government. With the bourgeois parties determined to exclude us from power, Thuringia may well become the first state to appoint a <span style="color: #7A3C00;">Nazi</span> minister.
 
-- @z_toleration_thuringia
-- @nsdap_majority_thuringia
+- @toleration_thuringia
+- @far_right_coalition_thuringia
 - @bourgeois_coalition_thuringia
-- @spd_majority_thuringia
 - @grand_coalition_thuringia
 - @united_left_thuringia
 
