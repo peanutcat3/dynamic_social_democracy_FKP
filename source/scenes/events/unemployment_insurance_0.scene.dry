@@ -47,13 +47,13 @@ Stresemann has managed to rally [? if dvp_ideology == "Right" or dvp_ideology ==
 - @destroy: Reject the compromise and end this coalition.
 
 @accept_compromise_worse
-on-arrival: workers_spd -= 2; unemployed_spd -= 2; unemployed_kpd += 3; unemployed_nsdap += 2; workers_nsdap += 2; left_dissent += 8; labor_dissent += 5; center_dissent += 3; welfare -= 1; kpd_relation -= 4; unemployment_insurance_threshold = unemployed; dvp_left += 1; goal_spd_cancel += 1; economic_growth -= 0.2
+on-arrival: workers_spd -= 2; unemployed_spd -= 2; unemployed_kpd += 2; unemployed_nsdap += 2; workers_nsdap += 2; left_dissent += 8; labor_dissent += 5; center_dissent += 3; welfare -= 1; kpd_relation -= 4; unemployment_insurance_threshold = unemployed; dvp_left += 1; goal_spd_cancel += 1; economic_growth -= 0.2
 
 We have accepted the compromise offered by the bourgeoisie. Many of the workers and unemployed see this as a betrayal, as we cut welfare without increasing employer contributions. We present it as the successful aversion of a much worse alternative.
 
 @accept_compromise_good
 choose-if: dvp_ideology == "Left" and dvp_relation >= 40
 unavailable-subtitle: [? if dvp_ideology != "Left": The <span style="color: #C0A054;">DVP</span> are too far gone. ?] [? if dvp_relation < 40: We do not have good enough relations with the right-wing parties. ?]
-on-arrival: workers_spd -= 1; unemployed_spd -= 2; unemployed_kpd += 2; unemployed_nsdap += 2; workers_nsdap += 1; left_dissent += 5; labor_dissent += 3; kpd_relation -= 4; reformist_strength += 10; reformist_dissent -= 5; coalition_dissent -= 1; old_middle_dvp -= 3; old_middle_nsdap += 3; unemployment_insurance_threshold = unemployed; dvp_left += 3; ddp_left += 1; ddp_cohesion += 1; unemployment_goal_spd += 1; economic_growth -= 0.1
+on-arrival: workers_spd -= 1; unemployed_spd -= 1; unemployed_kpd += 1; unemployed_nsdap += 1; workers_nsdap += 1; left_dissent += 5; labor_dissent += 3; kpd_relation -= 4; reformist_strength += 10; reformist_dissent -= 5; coalition_dissent -= 1; old_middle_dvp -= 3; old_middle_nsdap += 3; unemployment_insurance_threshold = unemployed; dvp_left += 3; ddp_left += 1; ddp_cohesion += 1; unemployment_goal_spd += 1; economic_growth -= 0.1
 
 We have pushed for an increase in both employer and employee contributions rather than to cut benefits for the program itself. The <span style="color: #C0A054;">**DVP**</span> accepts with the influence of Stresemann and their left wing.

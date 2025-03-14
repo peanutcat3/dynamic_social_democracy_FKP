@@ -47,7 +47,7 @@ Stresemann and other friendly figures of the former <span style="color: #C0A054;
 - @destroy: Reject the compromise and end this coalition.
 
 @accept_compromise_worse
-on-arrival: workers_spd -= 2; unemployed_spd -= 2; unemployed_kpd += 3; unemployed_nsdap += 2; workers_nsdap += 2; left_dissent += 8; labor_dissent += 5; center_dissent += 3; welfare -= 1; kpd_relation -= 4; unemployment_insurance_threshold = unemployed; lvp_left += 1; goal_spd_cancel += 1; economic_growth -= 0.2
+on-arrival: workers_spd -= 2; unemployed_spd -= 2; unemployed_kpd += 2; unemployed_nsdap += 2; workers_nsdap += 2; left_dissent += 8; labor_dissent += 5; center_dissent += 3; welfare -= 1; kpd_relation -= 4; unemployment_insurance_threshold = unemployed; lvp_left += 1; goal_spd_cancel += 1; economic_growth -= 0.2
 
 We have accepted the compromise offered by the bourgeoisie. Many of the workers and unemployed see this as a betrayal, as we cut welfare without increasing employer contributions. We present it as the successful aversion of a much worse alternative.
 
