@@ -108,6 +108,7 @@ if (Q.total_votes_thuringia > 0) {
     Q.dnf_thuringia_elections_vote = (Q.dnf_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     let target = 32;
     Q.spd_thuringia_elections_vote = Math.round((Q.spd_thuringia_elections_vote + (target - Q.spd_thuringia_elections_vote) * 0.35) * 10) / 10;
+    Q.total_votes_thuringia = Q.spd_thuringia_elections_vote + Q.sapd_thuringia_elections_vote + Q.kpd_thuringia_elections_vote + Q.ddp_thuringia_elections_vote + Q.lvp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote + Q.nsdap_thuringia_elections_vote + Q.other_thuringia_elections_vote + Q.kvp_thuringia_elections_vote + Q.dnf_thuringia_elections_vote;
     Q.spd_thuringia_elections_vote = (Q.spd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.sapd_thuringia_elections_vote = (Q.sapd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
     Q.kpd_thuringia_elections_vote = (Q.kpd_thuringia_elections_vote / Q.total_votes_thuringia) * 100;
