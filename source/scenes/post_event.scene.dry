@@ -652,6 +652,10 @@ if (Q.month_actions >= 1) {
         Q.new_middle_dnvp -= 2/12;
         Q.rural_dnvp -= 2/12;
         if (!Q.works_program) {
+            if (!Q.wtb_adopted) {
+                Q.workers_kpd += 3/12;
+                Q.workers_spd -= 3/12;
+            }
             Q.catholics_nsdap += 1/12;
             Q.rural_nsdap += 3/12;
             Q.new_middle_nsdap += 6/12;
