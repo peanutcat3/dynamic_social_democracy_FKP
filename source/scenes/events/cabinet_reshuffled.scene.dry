@@ -67,14 +67,14 @@ on-arrival: resources -= 3; coalition_dissent -= 1
 By transferring resources to our coalition partners, we can reduce their dissent against our policies. This is a crude, but effective solution.
 
 @right_coalition
-view-if: right_coalition >= 50 and bourgeois_coalition < 50 and (bruning_event_seen or year < 1930)
+view-if: right_coalition >= 50 and bourgeois_coalition < 50
 choose-if: (dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)
 on-arrival: center_dissent += 5; reformist_dissent += 5; spd_in_government = 0; grand_coalition_collapsed = 1 if in_grand_coalition; in_grand_coalition = 0; in_weimar_coalition = 0; coalition_dissent = 0
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> isn't willing to enter government.
 go-to: election_1928.right_coalition_2
 
 @center_right_coalition
-view-if: right_coalition < 50 and center_right_coalition >= 50 and bourgeois_coalition < 50 and dnvp_ideology == "Moderate" and (bruning_event_seen or year < 1930)
+view-if: right_coalition < 50 and center_right_coalition >= 50 and bourgeois_coalition < 50 and dnvp_ideology == "Moderate"
 choose-if: not (year = 1929 and month >= 7)
 on-arrival: center_dissent += 5; reformist_dissent += 5; spd_in_government = 0; grand_coalition_collapsed = 1 if in_grand_coalition; in_grand_coalition = 0; in_weimar_coalition = 0; coalition_dissent = 0
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> isn't willing to enter government.
