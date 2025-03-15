@@ -882,7 +882,7 @@ if (Q.other_r_wurttemberg) {
             "seats": Math.round(Q.other_r_wurttemberg * otherShare),
         });
         data.push({
-            "id": "farm",
+            "id": "farm2",
             "legend": "Farm",
             "name": "Farm",
             "seats": Math.round(Q.other_r_wurttemberg * farmShare),
