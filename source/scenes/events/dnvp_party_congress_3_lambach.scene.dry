@@ -15,7 +15,7 @@ if (Q.unions_independent) {
 if (Q.workers_spd_normalized < 40 || Q.workers_dnvp_normalized >= 15) {
     Q.lambach_points += 1;
 }
-if (Q.welfare == 0) {
+if (Q.welfare <= 0) {
     Q.lambach_points += 1;
     Q.workers_dnvp += 3;
 }
