@@ -62,7 +62,7 @@ if (Q.spd_campaign) {
         }
         if (Q.z_ideology == "Right" && !Q.z_glaze_spd) {
             Q.spd_president_votes += (Q.z_normalized - 0.03)*0.8;
-            Q.hindenburg_votes = (Q.z_normalized - 0.03)*0.2;
+            Q.hindenburg_votes += (Q.z_normalized - 0.03)*0.2;
             Q.hindenburg_votes += 0.03;
         } else if (Q.z_ideology == "Right" && Q.z_glaze_spd) {
             Q.spd_president_votes += (Q.z_normalized - 0.03)*0.9;
