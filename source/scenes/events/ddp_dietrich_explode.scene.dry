@@ -1,5 +1,5 @@
 title: Hermann Dietrich resigns!
-subtitle: The electoral decline of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> forces him to resign.
+subtitle: The [? if ddp_ideology != "Left": electoral decline?][? if ddp_ideology == "Left": shifting ideologies?] of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> forces him to resign.
 view-if: year >= 1931 and not lvp_formed and not bruning_time and ((ddp_votes >= 1.8 and (previous_ddp_last_election_votes - ddp_votes > 1 or change_ddp_votes < -1)) or ddp_ideology == "Left") and not dstp_maintained and ddp_leader == "Dietrich"
 on-arrival: {!
 Q.dietrich_resign = 1;
@@ -117,6 +117,7 @@ face-image: img/portraits/dietrich.jpg
 - @maier
 - @heuss
 - @stolper
+- @luders
 - @deadlock
 
 @heuss
@@ -167,7 +168,7 @@ face-image: img/portraits/luders.jpg
 
 Marie-Elisabeth Lüders, the second most important woman in the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and easily the most active advocate for the rights and wellbeing of women, children, and the workers of Germany, is elected to the leadership of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. This victory comes with the backing of Ernst Lemmer and his liberal trade unions, who have gained significant influence in recent months.
 
-Our relationship with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has greatly improved compared to how it was under Dietrich. Lüders is a strong internationalist and has previously advocated for Pan-European cooperation, which will benefit us in future negotiations. However, it remains to be seen whether she will gain more votes than she loses due to her feminism, as many refuse to support her purely out of misogyny.
+Our relationship with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has greatly improved compared to how it was under Dietrich. Lüders is a strong internationalist and has previously advocated for Pan-European cooperation, which will benefit us in future negotiations. She was also one of the strongest opponents of the merger with the Young German Order, arguing against their antisemitism. However, it remains to be seen whether she will gain more votes than she loses due to her feminism, as many refuse to support her purely out of misogyny.
 
 @deadlock
 title: The vote has been deadlocked!
