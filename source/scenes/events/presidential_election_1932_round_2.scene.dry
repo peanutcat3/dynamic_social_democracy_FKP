@@ -5,6 +5,7 @@ frequency: 1000
 max-visits: 1
 new-page: true
 tags: event
+priority: 2
 go-to: election_algorithm
 set-jump: pres_election
 face-image: img/hindenburg_election.jpg

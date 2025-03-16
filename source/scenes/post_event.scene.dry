@@ -721,7 +721,7 @@ if (Q.month_actions >= 1) {
         Q.new_middle_nsdap += 6/12;
         Q.old_middle_nsdap += 8/12;
         Q.rural_other -= 2/12;
-        Q.rural_nsdap += 9/12;
+        Q.rural_nsdap += 10/12;
         Q.catholics_dvp -= 2/12;
         Q.catholics_lvp -= 2/12;
         Q.workers_z += 1/12;
@@ -735,11 +735,11 @@ if (Q.month_actions >= 1) {
         if (!Q.works_program) { 
             Q.workers_kpd += 2/12;
             Q.workers_other -= 4/12;
-            Q.old_middle_dvp -= 4/12;
-            Q.new_middle_dvp -= 2/12;
-            Q.new_middle_ddp -= 1/12;
-            Q.old_middle_ddp -= 1/12;
-            Q.rural_dvp -= 2/12;
+            Q.old_middle_dvp -= 6/12;
+            Q.new_middle_dvp -= 6/12;
+            Q.new_middle_ddp -= 2/12;
+            Q.old_middle_ddp -= 2/12;
+            Q.rural_dvp -= 4/12;
             Q.old_middle_lvp -= 6/12;
             Q.new_middle_lvp -= 6/12;
             Q.rural_lvp -= 3/12;
@@ -1499,17 +1499,17 @@ if (((Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_dd
 
 // total middle class death cuz bruning cut salaries n stuff
 if (Q.total_bruning_time >= 12 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.year >= 1930 && !Q.bruning_austerity_seen) {
-    Q.new_middle_nsdap += Q.new_middle_ddp*0.2
-    Q.new_middle_nsdap += Q.new_middle_dvp*0.2
-    Q.new_middle_ddp *= 0.8;
-    Q.new_middle_dvp *= 0.8;
+    Q.new_middle_nsdap += Q.new_middle_ddp*0.1
+    Q.new_middle_nsdap += Q.new_middle_dvp*0.1
+    Q.new_middle_ddp *= 0.9;
+    Q.new_middle_dvp *= 0.9;
     Q.bruning_austerity_seen = 1;
     Q.pro_republic -= Q.unemployed / 5;
 } else if (Q.total_bruning_time >= 12 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && Q.year >= 1930 && !Q.bruning_austerity_seen) {
-    Q.new_middle_ddp *= 1.2;
-    Q.new_middle_dvp *= 1.2;
-    Q.new_middle_nsdap -= Q.new_middle_ddp*0.2;
-    Q.new_middle_nsdap -= Q.new_middle_dvp*0.2;
+    Q.new_middle_ddp *= 1.1;
+    Q.new_middle_dvp *= 1.1;
+    Q.new_middle_nsdap -= Q.new_middle_ddp*0.1;
+    Q.new_middle_nsdap -= Q.new_middle_dvp*0.1;
     Q.unemployed -= 0.5;
     Q.economic_growth += 0.5;
     Q.bruning_austerity_seen = 1;
@@ -2666,6 +2666,13 @@ if (Q.heuss_election_time == Q.time - 1 && Q.lvp_leader == "Heuss") {
     Q.lvp_votes_start = Q.lvp_votes;
 } else if (Q.dingeldey_election_time == Q.time - 1 && Q.lvp_leader == "Dingeldey") {
     Q.lvp_votes_start = Q.lvp_votes;
+}
+
+if (Q.year == 1930 && Q.month == 8) {
+    Q.brunswick_election_seen = 1;
+    if (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dvp_votes + Q.dnf_votes + Q.kvp_votes + Q.lvp_votes >= (Q.spd_votes*1.6)) {
+        Q.brunswick_hitler = 1;
+    }
 }
 
 if (Q.chancellor != "Papen") {

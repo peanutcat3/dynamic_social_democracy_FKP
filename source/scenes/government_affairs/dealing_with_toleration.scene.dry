@@ -82,8 +82,8 @@ We have successfully pressured Brüning to tone down the severity of his austeri
 
 @urge_paramilitary
 view-if: political_decree < 2
-choose-if: spd_prussia and strife >= 3 and z_relation >= 35
-unavailable-subtitle: [? if not spd_prussia: We don't control the Prussian government. ?] [? if strife < 3: Paramilitary violence isn't severe enough to justify an emergency decree. ?] [? if z_relation < 35: We lack sufficient relations with Brüning. ?]
+choose-if: spd_prussia and strife >= 3 and z_relation >= 35 and not second_bruning_cabinet_seen
+unavailable-subtitle: [? if not spd_prussia: We don't control the Prussian government. ?] [? if strife < 3: Paramilitary violence isn't severe enough to justify an emergency decree. ?] [? if z_relation < 35: We lack sufficient relations with Brüning. ?] [? if second_bruning_cabinet_seen: Joseph Wirth is no longer in charge of the Interior Ministry, meaning we can no longer rely on his connections. ?]
 title: Urge Brüning to grant us stronger actions against political extremists, and to restrict certain rights.
 on-arrival: political_decree += 1; prussian_police_loyalty += 0.04; prussian_police_strength += 5; kpd_relation -= 6; rfb_militancy *= 0.9; rfb_strength *= 0.85; sa_militancy *= 0.96; sa_strength *= 0.96; sh_militancy *= 0.98; sh_strength *= 0.98; workers_kpd -= 1; workers_nsdap -= 1; unemployed_kpd -= 3; unemployed_nsdap -= 3; new_middle_nsdap -= 2; hindenburg_angry_bruning += 5
 

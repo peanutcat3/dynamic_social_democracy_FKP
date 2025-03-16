@@ -17,6 +17,7 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
+priority: 2
 max-visits: 1
 
 = Presidential Election campaigning

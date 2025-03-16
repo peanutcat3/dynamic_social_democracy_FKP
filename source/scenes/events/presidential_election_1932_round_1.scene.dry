@@ -6,6 +6,7 @@ max-visits: 1
 new-page: true
 on-arrival: hitler_support_hindenburg = 0; presidential_election_seen = 1; nsdap_candidate = "Hitler" if hitler_deported == 0 else nsdap_candidate = "Göring"; workers_nsdap += 3 if nsdap_candidate == "Hitler"; new_middle_nsdap += 3 if nsdap_candidate == "Hitler"; old_middle_nsdap += 3 if nsdap_candidate == "Hitler"; catholics_nsdap += 3 if nsdap_candidate == "Hitler"; rural_nsdap += 3 if nsdap_candidate == "Hitler"; unemployed_nsdap += 3 if nsdap_candidate == "Hitler"
 tags: event
+priority: 2
 go-to: election_algorithm
 set-jump: pres_election
 face-image: img/hindenburg_hitler.jpg
