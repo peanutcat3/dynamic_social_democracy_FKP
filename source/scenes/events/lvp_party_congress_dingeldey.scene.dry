@@ -1,12 +1,11 @@
 title: <span style="color: #FFCC00;">**LVP**</span> Party Vote
 subtitle: Dingeldey faces a vote of no confidence!
-view-if: time >= dingeldey_explode_time and (previous_lvp_last_election_votes - lvp_votes > 4 or lvp_ideology == "Left") and lvp_leader == "Dingeldey" and lvp_formed
+view-if: time >= dingeldey_explode_time and ((lvp_votes_start - lvp_votes > 4 or (change_lvp_votes < -3 and (last_election_time >= dingeldey_election_time))) or ((lvp_ideology == "Left" and lvp_votes_start - lvp_votes > 2) or (lvp_ideology == "Left" and (change_lvp_votes < -1 and last_election_time >= dingeldey_election_time)))) and lvp_leader == "Dingeldey" and lvp_formed
 on-arrival: {!
 Q.heuss_points = 0;
 Q.dietrich_points = 0;
 Q.curtius_points = 0;
-Q.dingeldey_points = 3;
-Q.opposition_points = 0;
+Q.dingeldey_points = 1;
 
 if (Q.in_grand_coalition || Q.in_weimar_coalition) {
     Q.lvp_relation += 5;
@@ -27,7 +26,7 @@ if (Q.foreign_minister_party == "LVP") {
     Q.curtius_points += 1;
 }
 
-if (!Q.banking_crisis_seen) Q.curtius_points += 1;
+if (!Q.banking_crisis_seen || (Q.banking_crisis_seen && !Q.curtius_banking_crisis)) Q.curtius_points += 1;
 
 if (Q.dvp_reform) Q.curtius_points += 1;
 
@@ -155,8 +154,7 @@ Despite his unpopularity, the industrial-right remains firmly behind him, giving
 @dingeldey
 title: Dingeldey is re-elected.
 subtitle: The industrialists wield significant influence within the <span style="color: #FFCC00;">**LVP**</span>, allowing them to leverage their power to sway votes in Dingeldey's favor.
-unavailable-subtitle: The industrialists cannot buy their way out of the mess Dingeldey has created.
-choose-if: dingeldey_lead
+view-if: dingeldey_lead
 on-arrival: lvp_relation -= 6; lvp_right += 5; workers_lvp -= 2; new_middle_lvp -= 2; rural_lvp -= 2; catholic_lvp -= 2; pro_republic -= 5
 face-image: img/portraits/dingeldey.jpg
 
@@ -165,7 +163,6 @@ Unexpectedly—and unfortunately for us—Dingeldey has survived the vote of no 
 @dingeldey_fail
 title: Dingeldey is ousted!
 subtitle: The industrialists cannot buy their way out of the mess Dingeldey has created.
-unavailable-subtitle: The industrialists wield significant influence within the <span style="color: #FFCC00;">LVP</span>, allowing them to leverage their power to sway votes in Dingeldey's favor.
 view-if: not dingeldey_lead
 on-arrival: {!
 
@@ -207,7 +204,7 @@ title: Theodor Heuss is elected!
 subtitle: Heuss is a <span style="color: #c00000;">Social</span> <span style="color: #000000;">Rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span>, and a member of the former <span style="color: #D3C24D;">**[+ ddp_name +]**</span>.
 unavailable-subtitle: The wider <span style="color: #FFCC00;">LVP</span> perceive him as too left-wing, despite his previous affiliation with the <span style="color: #D3C24D;">[+ ddp_name +]</span>'s business wing.
 choose-if: heuss_lead
-on-arrival: lvp_relation += 20; lvp_left += 10; lvp_leader = "Heuss"; pro_republic += (lvp_votes / 2); workers_lvp += 4; workers_spd -= 2; new_middle_lvp += 6; old_middle_lvp -= 4; old_middle_other += 4 if (dnvp_ideology == "Radical"); old_middle_dnvp += 4 if dnvp_ideology == "Moderate"; old_middle_kvp += 4; rural_lvp -= 2; rural_other += 2 if (dnvp_ideology == "Radical" and not kvp_formed); rural_dnvp += 2 if dnvp_ideology == "Moderate"; rural_kvp += 2; catholic_lvp += 4; catholic_spd -= 2; coalition_dissent -= 1
+on-arrival: lvp_relation += 20; lvp_left += 10; lvp_leader = "Heuss"; pro_republic += (lvp_votes / 2); workers_lvp += 4; workers_spd -= 2; new_middle_lvp += 6; old_middle_lvp -= 4; old_middle_other += 4 if (dnvp_ideology == "Radical"); old_middle_dnvp += 4 if dnvp_ideology == "Moderate"; old_middle_kvp += 4; rural_lvp -= 2; rural_other += 2 if (dnvp_ideology == "Radical" and not kvp_formed); rural_dnvp += 2 if dnvp_ideology == "Moderate"; rural_kvp += 2; catholic_lvp += 4; catholic_spd -= 2; coalition_dissent -= 1; heuss_explode_time = time + 8; heuss_election_time = time
 face-image: img/portraits/heuss.jpg
 
 Theodor Heuss, a rising star and former member of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, has been elected chairman of the <span style="color: #FFCC00;">Liberal People's Party</span>. Backed primarily by the 'Social Republican Circle,' composed of former <span style="color: #D3C24D;">**[+ ddp_name +]**</span> members and liberal intellectuals and newspapers, Heuss has also garnered support from the broader party due to his decently conservative stances on economic and national issues.
@@ -219,7 +216,7 @@ title: Hermann Dietrich is elected!
 subtitle: Dietrich was the former leader of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s business wing, and is somewhat skeptical of cooperation with us.
 unavailable-subtitle: [? if not heuss_lead: The wider <span style="color: #FFCC00;">LVP</span> perceive him as too left-wing, despite his previous affiliation with the <span style="color: #D3C24D;">[+ ddp_name +]</span>'s business wing. ?][? if heuss_lead: His lack of energy and the burden of his governmental roles have led the party to favor Heuss instead. ?]
 choose-if: dietrich_lead
-on-arrival: lvp_relation += 10; lvp_left += 5; lvp_leader = "Dietrich"; pro_republic += 5; old_middle_lvp += 2; rural_lvp += 4; new_middle_lvp += 2; catholic_lvp += 2; dietrich_lvp_explode_time = time + 8
+on-arrival: lvp_relation += 10; lvp_left += 5; lvp_leader = "Dietrich"; pro_republic += 5; old_middle_lvp += 2; rural_lvp += 4; new_middle_lvp += 2; catholic_lvp += 2; dietrich_lvp_explode_time = time + 8; dietrich_election_time = time
 face-image: img/portraits/dietrich.jpg
 
 Hermann Dietrich, [? if not dietrich_resign_lvp: formerly affiliated with the business wing of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if dietrich_resign_lvp: former chairman of the <span style="color: #FFCC00;">**LVP**</span>?], has been [? if not dietrich_resign_lvp: elected chairman of the <span style="color: #FFCC00;">**LVP**</span>?][? if dietrich_resign_lvp: reelected to the leadership?]. Dietrich is mainly supported by smaller businesses and ruralites, and [? if chancellor == "Brüning" and not spd_in_government: is known for formulating Brüning's emergency decrees during his tenure as Finance Minister.?][? if not (chancellor == "Brüning" and not spd_in_government): is known for his fiscal conservatism.?]

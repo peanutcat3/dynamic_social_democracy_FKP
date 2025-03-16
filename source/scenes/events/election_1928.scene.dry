@@ -3,7 +3,7 @@ new-page: true
 tags: event
 priority: -1
 view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
-on-departure: in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48
+on-departure: in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; last_election_time = time
 set-jump: post_election_1928
 #face-image: img/Rothe_Wahlen_1903.jpg
 
@@ -1837,7 +1837,7 @@ The people's faith in democracy is shaken by this ordeal. Of course, the <span s
 
 @toleration_bruning
 view-if: dnvp_ideology == "Radical" or dnvp_defect
-choose-if: bruning_coalition >= 50 or (cordon_sanitaire >= 50 and kvp_formed)
+choose-if: bruning_coalition >= 50
 unavailable-subtitle: The parties supporting Brüning do not have a majority.
 on-arrival: spd_in_government = 0; spd_toleration = 1; minority_government = 1; chancellor = "Brüning"; chancellor_party = "Z"; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; pro_republic -= 3; new_middle_dvp -= 2; new_middle_ddp -= 2; new_middle_lvp -= 4; old_middle_dvp -= 2; old_middle_ddp -= 2; old_middle_lvp -= 4; old_middle_nsdap += 2; new_middle_nsdap += 2; rural_dnvp -= 3; dvp_right += 2; ddp_right += 1; lvp_right += 2; liberal_cooperation += 0.5
 
