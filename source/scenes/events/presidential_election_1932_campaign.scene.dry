@@ -4,7 +4,6 @@ new-page: true
 on-arrival: presidential_election_campaigning_seen = 1
 tags: event
 view-if: year = 1932 and month >= 2 and not hindenburg_term_extended
-priority: -1
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
@@ -17,7 +16,7 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
-priority: 2
+priority: -1
 max-visits: 1
 
 = Presidential Election campaigning
