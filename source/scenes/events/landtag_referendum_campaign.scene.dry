@@ -72,7 +72,7 @@ view-if: not political_decree_landtag_2 and political_decree == 1 and chancellor
 choose-if: spd_prussia and z_relation >= 35
 unavailable-subtitle: [? if not spd_prussia: We don't control the Prussian government. ?] [? if z_relation < 35: We lack sufficient relations with Brüning. ?]
 title: Urge Brüning to pass a second decree against "political excesses", further restricting press freedoms.
-on-arrival: political_decree += 1; prussian_police_loyalty += 0.04; prussian_police_strength += 5; kpd_relation -= 6; rfb_militancy *= 0.9; rfb_strength *= 0.85; sa_militancy *= 0.96; sa_strength *= 0.96; sh_militancy *= 0.98; sh_militancy *= 0.98; workers_kpd -= 2; workers_nsdap -= 2; unemployed_kpd -= 4; unemployed_nsdap -= 4; new_middle_nsdap -= 3; hindenburg_angry_bruning += 5; political_decree_landtag_2 = 1
+on-arrival: political_decree += 1; prussian_police_loyalty += 0.04; prussian_police_strength += 5; kpd_relation -= 6; rfb_militancy *= 0.9; rfb_strength *= 0.85; sa_militancy *= 0.96; sa_strength *= 0.96; sh_militancy *= 0.98; sh_strength *= 0.98; workers_kpd -= 2; workers_nsdap -= 2; unemployed_kpd -= 4; unemployed_nsdap -= 4; new_middle_nsdap -= 3; hindenburg_angry_bruning += 5; political_decree_landtag_2 = 1
 face-image: img/stahlhelm_poster.jpg
 go-to: do_campaign
 
