@@ -151,6 +151,12 @@ if (Q.thalmann_to_spd_bonus) {
     Q.spd_president_votes += Q.thalmann_to_spd_bonus;
 }
 
+console.log(Q.hindenburg_votes)
+console.log(Q.nsdap_presidential_votes)
+console.log(Q.thalmann_votes)
+console.log(Q.spd_president_votes)
+console.log(Q.duesterburg_votes)
+
 Q.total_votes_pres = Q.hindenburg_votes + Q.nsdap_presidential_votes + Q.thalmann_votes + Q.spd_president_votes + Q.duesterburg_votes;
 Q.hindenburg_votes_normalized = (Q.hindenburg_votes/Q.total_votes_pres);
 Q.nsdap_presidential_votes_normalized = (Q.nsdap_presidential_votes/Q.total_votes_pres);
