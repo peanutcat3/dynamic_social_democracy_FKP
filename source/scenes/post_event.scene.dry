@@ -1637,6 +1637,11 @@ if (Q.dnvp_conflict_time == Q.time && (Q.in_center_right_coalition || Q.in_right
     Q.rural_dnvp -= 2;
 }
 
+if (!Q.dnvp_scared_hitler && (Q.in_center_right_coalition || Q.in_right_coalition) && Q.nsdap_votes >= (Q.dnvp_votes * 3)) {
+    Q.dnvp_scared_hitler = 1;
+    Q.bruning_coalition_dissent += 1;
+}
+
 if (Q.curtius_resign && !Q.curtius_resign_seen && (Q.in_center_right_coalition || Q.in_right_coalition || Q.spd_toleration_right)) {
     Q.bruning_coalition_dissent += 1;
     Q.new_middle_dvp -= 2;

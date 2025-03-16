@@ -940,6 +940,8 @@ max-cards: 3
 
 {!<p class="dnvp">!}[? if flavour_37_trigger and flavour_37_trigger_time == time: The <span style="color: #3E88B3;">**DNVP**</span> has come under heavy fire from the <span style="color: #7A3C00;">national</span> <span style="color: #003755;">opposition</span> for their continued support of the Brüning cabinet following the Banking Crisis, with the <span style="color: #003755;">**DNF**</span> seeking to win over disillusioned <span style="color: #3E88B3;">nationalists</span>. This has caused great concern within the party, as they're[? if dnvp_votes >= nsdap_votes:&nbsp;threatening to be?] eclipsed by the more radical <span style="color: #7A3C00;">**NSDAP**</span>, whose rise has led the <span style="color: #3E88B3;">**DNVP**</span>’s industrial backers to pressure the party into cooperating with them by forcing Brüning to allow the <span style="color: #7A3C00;">far</span>-<span style="color: #003755;">right</span> into government. ?]{!</p>!}
 
+{!<p class="dnvp">!}[? if flavour_52_trigger and flavour_52_trigger_time == time: The rapid rise of the <span style="color: #7A3C00;">**NSDAP**</span> at the expense of the <span style="color: #3E88B3;">**DNVP**</span> has triggered concern among many members of the party. They blame their association with the unpopular Brüning government for their decline and believe that developing closer ties with the <span style="color: #7A3C00;">national</span> <span style="color: #003755;">opposition</span> is crucial for regaining lost support. As a result, numerous <span style="color: #3E88B3;">**DNVP**</span> members have begun openly criticizing Chancellor Brüning and are actively pushing for a coalition with the national opposition. This doesn't bode well for the future stability of his cabinet. ?]{!</p>!}
+
 {!<p class="other">!}[? if year = 1931 and month == 9 and banking_crisis_seen: The Austro-German customs union is officially dead, with international courts striking down the project. [? if foreign_minister_party == "DVP": Julius Curtius of the <span style="color: #C0A054;">**DVP**</span>, the architect of this project, has suffered a severe blow to his reputation, with growing calls from within his own party for his resignation. [? if bruning_toleration_time and dvp_ideology == "Right": If he steps down, the <span style="color: #C0A054;">**DVP**</span> will no longer have any representation in the cabinet, freeing them to support votes of no confidence against Brüning.?]?]?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month = 9: The Japanese have invaded Manchuria following the Mukden incident. ?]{!</p>!}
@@ -1415,6 +1417,14 @@ if (Q.year >= 1930 && Q.dnvp_ideology == "Radical" && Q.banking_crisis_seen && Q
     if (Q.flavour_51_trigger == 1 && !Q.flavour_51_trigger_shown) {
         Q.flavour_51_trigger_time = Q.time;
         Q.flavour_51_trigger_shown = 1;
+    }
+}
+// dnvp spooked at nsdap gains
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition) && Q.dnvp_scared_hitler && Q.time !== Q.last_time_updated) {
+    Q.flavour_52_trigger += 1; 
+    if (Q.flavour_52_trigger == 1 && !Q.flavour_52_trigger_shown) {
+        Q.flavour_52_trigger_time = Q.time;
+        Q.flavour_52_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1939,6 +1949,8 @@ max-cards: 4
 {!<p class="other">!}[? if year = 1931 and month == 8 and landtag_ref_votes and landtag_ref_dvp and not lvp_formed: The remaining influential members of the <span style="color: #C0A054;">**DVP**</span>'s left wing, has denounced the party’s strong endorsement of the Prussian Landtag referendum. Some even call refusing to support the referendum a "patriotic duty", with Curtius giving a speech over the radio announcing that he won't be following his party's position on the plebiscite. Unfortunately, the pro-democratic forces within the party are powerless and impotent, but every little bit helps. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_37_trigger and flavour_37_trigger_time == time: The <span style="color: #3E88B3;">**DNVP**</span> has come under heavy fire from the <span style="color: #7A3C00;">national</span> <span style="color: #003755;">opposition</span> for their continued support of the Brüning cabinet following the Banking Crisis, with the <span style="color: #003755;">**DNF**</span> seeking to win over disillusioned <span style="color: #3E88B3;">nationalists</span>. This has caused great concern within the party, as they're[? if dnvp_votes >= nsdap_votes:&nbsp;threatening to be?] eclipsed by the more radical <span style="color: #7A3C00;">**NSDAP**</span>, whose rise has led the <span style="color: #3E88B3;">**DNVP**</span>’s industrial backers to pressure the party into cooperating with them by forcing Brüning to allow the <span style="color: #7A3C00;">far</span>-<span style="color: #003755;">right</span> into government. ?]{!</p>!}
+
+{!<p class="dnvp">!}[? if flavour_52_trigger and flavour_52_trigger_time == time: The rapid rise of the <span style="color: #7A3C00;">**NSDAP**</span> at the expense of the <span style="color: #3E88B3;">**DNVP**</span> has triggered concern among many members of the party. They blame their association with the unpopular Brüning government for their decline and believe that developing closer ties with the <span style="color: #7A3C00;">national</span> <span style="color: #003755;">opposition</span> is crucial for regaining lost support. As a result, numerous <span style="color: #3E88B3;">**DNVP**</span> members have begun openly criticizing Chancellor Brüning and are actively pushing for a coalition with the national opposition. This doesn't bode well for the future stability of his cabinet. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1931 and month == 9 and banking_crisis_seen: The Austro-German customs union is officially dead, with international courts striking down the project. [? if foreign_minister_party == "DVP": Julius Curtius of the <span style="color: #C0A054;">**DVP**</span>, the architect of this project, has suffered a severe blow to his reputation, with growing calls from within his own party for his resignation. [? if bruning_toleration_time and dvp_ideology == "Right": If he steps down, the <span style="color: #C0A054;">**DVP**</span> will no longer have any representation in the cabinet, freeing them to support votes of no confidence against Brüning.?]?]?]{!</p>!}
 
