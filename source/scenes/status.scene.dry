@@ -133,6 +133,22 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: Nazism ([+ nsdap_leader +])?]
 
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <h4>Industrialist backing:</h4> ?]
+
+[? if ddp_ideology == "Right" and ddp_leader == "Dietrich" and not dstp_formed and ddp_votes >= dvp_votes and not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
+
+[? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span> ?]
+
+[? if ((dvp_leader == "Dingeldey" or dvp_leader == "Scholz" or dvp_leader == "Luther" or (dvp_leader == "Stresemann" and not dvp_reform)) or (dvp_ideology == "Right" or (dvp_ideology == "Moderate" and dvp_relation < 40))) and not lvp_formed: <span style="color: #C0A054;">**DVP**</span> ?]
+
+[? if ((dnvp_ideology == "Moderate" and dnvp_leader != "Lambach") or dnvp_westarp): <span style="color: #3E88B3;">**DNVP**</span> ?]
+
+[? if kvp_formed: <span style="color: #0087DC;">**KVP**</span> ?]
+
+[? if nsdap_votes >= 25 and not hitler_deported: <span style="color: #7A3C00;">**NSDAP**</span> ?]
+
+# redo above later
+
 = Internal Factions of the <span style="color: #c00000;">**SPD**</span>
 
 {!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]

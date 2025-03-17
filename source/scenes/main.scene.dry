@@ -378,7 +378,7 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
     }
 }
 // dvp party conflict post 2nd bruning, pt 1
-if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (((Q.year == 1931 && Q.month >= 6 && Q.dvp_defect) or Q.year >= 1932) && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_47_trigger += 1; 
     if (Q.flavour_47_trigger == 2 && !Q.flavour_47_trigger_shown) {
         Q.flavour_47_trigger_time = Q.time;
@@ -415,6 +415,14 @@ if (Q.year >= 1930 && Q.dnvp_ideology == "Radical" && Q.banking_crisis_seen && Q
     if (Q.flavour_51_trigger == 1 && !Q.flavour_51_trigger_shown) {
         Q.flavour_51_trigger_time = Q.time;
         Q.flavour_51_trigger_shown = 1;
+    }
+}
+// dnvp spooked at nsdap gains
+if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coalition) && Q.dnvp_scared_hitler && Q.time !== Q.last_time_updated) {
+    Q.flavour_52_trigger += 1; 
+    if (Q.flavour_52_trigger == 1 && !Q.flavour_52_trigger_shown) {
+        Q.flavour_52_trigger_time = Q.time;
+        Q.flavour_52_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -818,6 +826,8 @@ max-cards: 3
 
 {!<p class="other">!}[? if flavour_33_trigger and flavour_33_trigger_time == time : For one reason or another, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> lacks the Reichstag delegates to form a parliamentary faction and is now required to negotiate with another party to join forces. With the bourgeois parties already grouped together, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is forced to negotiate with them. Surprisingly, the bourgeois parties have gotten over their grudges against the party, and are open to cooperation. [? if dvp_leader == "Scholz" and dstp_formed: However, just as they were about to finalize their agreement, an angry Ernst Scholz torpedoed the negotiations, still furious about how the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> disrupted his efforts toward bourgeois unity. As a result of this, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is forced to enter the <span style="color: #000000;">Center</span>'s parliamentary group. ?][? if dvp_leader != "Scholz" or not dstp_formed: [? if chancellor == "Brüning" and not spd_in_government: They have all agreed to cease their intrigues against Brüning's government in order to finalize the agreement.?][? if not (chancellor == "Brüning" and not spd_in_government): With past disputes set aside, they've finalized the agreement.?]?] ?]{!</p>!}
 
+{!<p class="other">!}[? if year = 1930 and month = 9 : In the small Free State of Brunswick, elections are held, resulting in [? if not brunswick_hitler: another majority for the <span style="color: #c00000;">**SPD**</span>?][? if brunswick_hitler: a victory for the bourgeois unity list and the <span style="color: #7A3C00;">**NSDAP**</span>, who enter government together despite our plurality of votes?]. [? if brunswick_hitler: The <span style="color: #7A3C00;">**NSDAP**</span> is expected to use their new position in government to grant Hitler citizenship, as he remains stateless. ?]?]{!</p>!}
+
 {!<p class="dnvp">!}[? if year = 1930 and month = 9 : Adolf Hitler of the <span style="color: #7A3C00;">**NSDAP**</span> has taken an oath of legality, pledging to use constitutional means to gain power. This occurred during a court case involving <span style="color: #7A3C00;">Nazi</span> members and Reichswehr officers Richard Scheringer and Hanns Ludin, who were accused of plotting a national uprising by establishing <span style="color: #7A3C00;">**NSDAP**</span> cells within the Reichswehr. Under normal circumstances, Hitler's statements—tantamount to preparing for high treason—would have led to prosecution. Instead, the authorities are tolerating, even legitimizing the <span style="color: #7A3C00;">Nazi</span> agenda. ?]{!</p>!}
 
 {!<p class="dnvp">!}[? if flavour_18_trigger and flavour_18_trigger_time == time: The <span style="color: #b8996f;">**WP**</span>, once an enthusiastic supporter of Brüning's bourgeois government—and the only special interest party to secure a cabinet position—is now scrambling to extricate itself from government following its electoral defeat. While the party reports gains from expanding its electoral base into new states, these are more than offset by disproportionately heavy losses in the regions where it first found success. The same trend can also be observed with the <span style="color: #7FCEB1;">**CNBLP**</span>. Currently, a divisive internal struggle has emerged between chairman Hermann Drewitz and the party’s anti-Brüning faction on the right. The latter seeks to compel the resignation of their sole minister from the government, aiming to pressure Brüning into abandoning his reliance on our votes and instead forming a coalition with the <span style="color: #7A3C00;">**NSDAP**</span>. ?]{!</p>!}
@@ -954,7 +964,7 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1931 and month = 10: The recent United Kingdom general elections have resulted in the greatest landslide in the country's history, with <span style="color: #f0456a;">Labour</span> receiving only a meager 52 seats, losing 235 of them from the previous election. Despite this, the incumbent <span style="color: #008000;">National Labour</span> Prime Minister Ramsay MacDonald has remained in office, ruling with the <span style="color: #0087DC;">Tories</span>. ?]{!</p>!}
 
-{!<p class="other">!}[? if flavour_47_trigger and flavour_47_trigger_time == time: [? if year == 1931 and month >= 11: During the Hessian Landtag election campaign?][? if year != 1931 or month < 11: While campaigning for local elections?], Dingeldey proposed to Hitler that their parties refrain from attacking each other to present a united front against the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties. Their <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> shift, coupled with their exit from the Brüning cabinet, has galvanized the party’s left wing, now rallying around the "Kunz-Dohna" group, named after its leaders. Their goal is to steer the <span style="color: #C0A054;">**DVP**</span> back to the political course of its late founder and chairman, Stresemann, and away from any alignment with the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. ?]{!</p>!}
+{!<p class="other">!}[? if flavour_47_trigger and flavour_47_trigger_time == time: [? if year == 1931 and month >= 11: During the Hessian Landtag election campaign?][? if year != 1931 or month < 11: While campaigning for local elections?], Dingeldey proposed to Hitler that their parties refrain from attacking each other to present a united front against the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties. Their <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> shift, [? if dvp_defect: coupled with their exit from the Brüning cabinet,?] has galvanized the party’s left wing, now rallying around the "Kunz-Dohna" group, named after its leaders. Their goal is to steer the <span style="color: #C0A054;">**DVP**</span> back to the political course of its late founder and chairman, Stresemann, and away from any alignment with the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_48_trigger and flavour_48_trigger_time == time: Dingeldey’s reluctance to challenge the <span style="color: #C0A054;">DVP</span>’s industrial wing has strained relations with the DHV, a white-collar union that has consistently supported the party since the republic's founding. His refusal to recognize unions' role in collective bargaining has left the DHV feeling sidelined and questioning its future with the party. The Kunz-Dohna group has decided to raise their concerns at this month's executive committee meeting, where their isolation and impotence is shown when only 14 out of 344 votes are cast against a resolution unequivocally denouncing Brüning. The group is now considering a secession, following those on the extreme right advocating for a merger with [? if dnvp_ideology == "Moderate":the?][? if dnvp_ideology == "Radical":Hugenberg's?] <span style="color: #3E88B3;">**DNVP**</span> in the same meeting. ?]{!</p>!}
 
@@ -1382,7 +1392,7 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
     }
 }
 // dvp party conflict post 2nd bruning, pt 1
-if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (((Q.year == 1931 && Q.month >= 6 && Q.dvp_defect) or Q.year >= 1932) && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_47_trigger += 1; 
     if (Q.flavour_47_trigger == 2 && !Q.flavour_47_trigger_shown) {
         Q.flavour_47_trigger_time = Q.time;
@@ -1390,7 +1400,7 @@ if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q
     }
 }
 // dvp party conflict post 2nd bruning, pt 2
-if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_47_trigger_time + 1 && Q.time !== Q.last_time_updated) {
+if (Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_47_trigger_time + 1 && Q.time !== Q.last_time_updated) {
     Q.flavour_48_trigger += 1; 
     if (Q.flavour_48_trigger == 1 && !Q.flavour_48_trigger_shown) {
         Q.flavour_48_trigger_time = Q.time;
@@ -1398,7 +1408,7 @@ if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.
     }
 }
 // dvp party conflict post 2nd bruning, pt 3
-if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_48_trigger_time + 1 && Q.time !== Q.last_time_updated) {
+if (Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_48_trigger_time + 1 && Q.time !== Q.last_time_updated) {
     Q.flavour_49_trigger += 1; 
     if (Q.flavour_49_trigger == 1 && !Q.flavour_49_trigger_shown) {
         Q.flavour_49_trigger_time = Q.time;
@@ -1406,7 +1416,7 @@ if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.
     }
 }
 // dvp party conflict post 2nd bruning, pt 4
-if (Q.dvp_defect && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_49_trigger_time + 1 && Q.time !== Q.last_time_updated) {
+if (Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_49_trigger_time + 1 && Q.dnvp_ideology == "Radical" && Q.time !== Q.last_time_updated) {
     Q.flavour_50_trigger += 1; 
     if (Q.flavour_50_trigger == 1 && !Q.flavour_50_trigger_shown) {
         Q.flavour_50_trigger_time = Q.time;
@@ -1427,6 +1437,14 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
     if (Q.flavour_52_trigger == 1 && !Q.flavour_52_trigger_shown) {
         Q.flavour_52_trigger_time = Q.time;
         Q.flavour_52_trigger_shown = 1;
+    }
+}
+// dvp party conflict post 2nd bruning, pt 4, alt his
+if (Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_49_trigger_time + 1 && Q.dnvp_ideology == "Moderate" && Q.time !== Q.last_time_updated) {
+    Q.flavour_53_trigger += 1; 
+    if (Q.flavour_53_trigger == 1 && !Q.flavour_53_trigger_shown) {
+        Q.flavour_53_trigger_time = Q.time;
+        Q.flavour_53_trigger_shown = 1;
     }
 }
 Q.last_time_updated = Q.time;
@@ -1968,7 +1986,7 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1931 and month = 10: The recent United Kingdom general elections have resulted in the greatest landslide in the country's history, with <span style="color: #f0456a;">Labour</span> receiving only a meager 52 seats, losing 235 of them from the previous election. Despite this, the incumbent <span style="color: #008000;">National Labour</span> Prime Minister Ramsay MacDonald has remained in office, ruling with the <span style="color: #0087DC;">Tories</span>. ?]{!</p>!}
 
-{!<p class="other">!}[? if flavour_47_trigger and flavour_47_trigger_time == time: [? if year == 1931 and month >= 11: During the Hessian Landtag election campaign?][? if year != 1931 or month < 11: While campaigning for local elections?], Dingeldey proposed to Hitler that their parties refrain from attacking each other to present a united front against the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties. Their <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> shift, coupled with their exit from the Brüning cabinet, has galvanized the party’s left wing, now rallying around the "Kunz-Dohna" group, named after its leaders. Their goal is to steer the <span style="color: #C0A054;">**DVP**</span> back to the political course of its late founder and chairman, Stresemann, and away from any alignment with the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. ?]{!</p>!}
+{!<p class="other">!}[? if flavour_47_trigger and flavour_47_trigger_time == time: [? if year == 1931 and month >= 11: During the Hessian Landtag election campaign?][? if year != 1931 or month < 11: While campaigning for local elections?], Dingeldey proposed to Hitler that their parties refrain from attacking each other to present a united front against the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties. Their <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> shift, [? if dvp_defect: coupled with their exit from the Brüning cabinet,?] has galvanized the party’s left wing, now rallying around the "Kunz-Dohna" group, named after its leaders. Their goal is to steer the <span style="color: #C0A054;">**DVP**</span> back to the political course of its late founder and chairman, Stresemann, and away from any alignment with the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_48_trigger and flavour_48_trigger_time == time: Dingeldey’s reluctance to challenge the <span style="color: #C0A054;">DVP</span>’s industrial wing has strained relations with the DHV, a white-collar union that has consistently supported the party since the republic's founding. His refusal to recognize unions' role in collective bargaining has left the DHV feeling sidelined and questioning its future with the party. The Kunz-Dohna group has decided to raise their concerns at this month's executive committee meeting, where their isolation and impotence is shown when only 14 out of 344 votes are cast against a resolution unequivocally denouncing Brüning. The group is now considering a secession, following those on the extreme right advocating for a merger with [? if dnvp_ideology == "Moderate":the?][? if dnvp_ideology == "Radical":Hugenberg's?] <span style="color: #3E88B3;">**DNVP**</span> in the same meeting. ?]{!</p>!}
 
@@ -1986,6 +2004,8 @@ max-cards: 4
 {!<p class="other">!}[? if year = 1932 and month = 1 and not hindenburg_term_extended: [? if not hitler_deported: Adolf Hitler?][? if hitler_deported: Hermann Göring?] of the <span style="color: #7A3C00;">**NSDAP**</span> has [? if nsdap_r < 25:&nbsp;reluctantly?] declared their candidacy in this year's presidential election. [? if not hitler_deported: Hitler has been granted German citizenship through an appointment to a post in the civil service, allowing him to run. Hugenberg has attempted to keep Hitler in line with the Harzburg Front to no avail, with Hitler declaring his own candidacy rather than a shared candidate. Now, the <span style="color: #3E88B3;">**Stahlhelm**</span> and Hugenberg have made a deal, running Theodor Duesterberg, the deputy leader of the <span style="color: #3E88B3;">**Stahlhelm**</span>. ?][? if hitler_deported: Despite Hitler's deportation, the party is still going ahead with fielding a candidate, Wilhelm Frick, the first <span style="color: #7A3C00;">Nazi</span> minister in Thuringia and their parliamentary leader. He lacks the charisma of Hitler and is not expected to win. ?] ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_50_trigger and flavour_50_trigger_time == time: Erich von Gilsa has resigned from the <span style="color: #C0A054;">**DVP**</span> as a way of protesting Dingeldey’s lack of interest in a merger with the <span style="color: #3E88B3;">**DNVP**</span>. This has set off a chain of events, with many local district organizations and key leaders on the extreme-right wing of the party resigning and defecting to the <span style="color: #3E88B3;">**DNVP**</span>. [? if bruning_time: Furthermore, when the Reichstag was back in session, Dingeldey attempted to impose party discipline, forcing the delegation to unanimously vote against Brüning, resulting in the expulsion of Curtius and Siegfried von Kardorff, the left wing's most respected spokesmen. ?] It's safe to say that the <span style="color: #C0A054;">**DVP**</span> is no longer a viable national political force. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_53_trigger and flavour_53_trigger_time == time: [? if dnvp_leader == "Lambach": The negotiations between the <span style="color: #C0A054;">**DVP**</span> and <span style="color: #3E88B3;">**DNVP**</span> have so far failed, as Lambach's <span style="color: #6D5298;">Christian Socialist</span> and illiberal ideals clash with the <span style="color: #C0A054;">**DVP**</span> on nearly every issue. However, the radical right faction within the <span style="color: #C0A054;">**DVP**</span> continues to push for closer ties, believing that a merger could force a leadership change within the <span style="color: #3E88B3;">**DNVP**</span>. ?][? if dnvp_leader != "Lambach": The negotiations between the <span style="color: #C0A054;">**DVP**</span> and <span style="color: #3E88B3;">**DNVP**</span> have yielded progress, leading to further cooperation between the two parties. Recognizing their declining vote shares and ideological similarities, they have agreed to run on a joint list in the next election. [? if dnvp_leader == "Treviranus": Treviranus is particularly in favor of closer bourgeois cooperation, as he has long sought the consolidation of the democratic bourgeois right. ?][? if dnvp_leader == "Schiele": Schiele's agrarian conservatism has clashed with the <span style="color: #C0A054;">**DVP**</span>'s industrial capitalism, causing unease among the party's backers, who fear their influence may be diluted within a broader party. ?][? if dnvp_leader == "Hergt" or dnvp_leader == "Westarp": [+ dnvp_leader +] has expressed skepticism about a proposed merger, arguing that despite the <span style="color: #C0A054;">**DVP**</span>'s shift to the right, fundamental differences remain—particularly on issues like monarchism and [? if reparations >= 0: reparations?][? if reparations == -2: the "national questions"?]. ?]?] ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 4 and pro_republic < 50 : Hans Luther has been shot! Luckily, he was only injured in the shoulder, and will be able to continue his job as the [? if luther_reichsbank: President of the Reichsbank?][? if dvp_leader == "Luther" or lvp_leader == "Luther" and lvp_formed: leader of the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?]. [? if luther_reichsbank: The assailants have written a letter beforehand, criticizing his monetary policy?][? if dvp_leader == "Luther" or lvp_leader == "Luther" and lvp_formed: The assailants have written a letter beforehand, criticizing his leadership over the [? if not lvp_formed:<span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?]. ?]{!</p>!}
 
