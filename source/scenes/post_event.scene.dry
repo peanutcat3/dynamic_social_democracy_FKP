@@ -402,12 +402,18 @@ if (Q.month_actions >= 1) {
     } else if (Q.year >= 1932) {
         Q.kpd_target = 15;
     }
-    if ((Q.kpd_votes + 1) >= Q.kpd_target && !Q.works_program && !Q.in_popular_front && !Q.in_left_front && !Q.in_spd_majority) {
+    if ((Q.kpd_votes + 2) >= Q.kpd_target && !Q.works_program && !Q.in_popular_front && !Q.in_left_front && !Q.in_spd_majority) {
         Q.workers_spd += Q.workers_kpd*0.01;
         Q.workers_kpd *= 0.99;
-        Q.unemployed_spd += Q.unemployed_kpd*0.03;
-        Q.unemployed_kpd *= 0.97;
+        Q.unemployed_spd += Q.unemployed_kpd*0.02;
+        Q.unemployed_kpd *= 0.98;
     }
+    Q.ddp_votes_pre_event = Q.ddp_votes; 
+    Q.dvp_votes_pre_event = Q.dvp_votes; 
+    Q.lvp_votes_pre_event = Q.lvp_votes; 
+    Q.dnvp_votes_pre_event = Q.dnvp_votes; 
+    Q.kvp_votes_pre_event = Q.kvp_votes; 
+    Q.nsdap_votes_pre_event = Q.nsdap_votes; 
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
     if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + Q.lvp_votes + Q.z_votes - 3)) {
@@ -2675,6 +2681,37 @@ if (Q.year == 1930 && Q.month == 8) {
     }
 }
 
+for (var c of Q.classes) {
+    var class_votes = 0;
+    for (var party of Q.parties) {
+        if (Q[c+'_'+party] < 0) {
+            Q[c+'_'+party] = 0;
+        }
+        class_votes += Q[c+'_'+party];
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_calculations_normalized'] = 100*Q[c+'_'+party]/class_votes;
+        Q[c + '_' + party + '_calculations_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
+    }
+}
+var total_support = 0; 
+for (var party of Q.parties) {
+    var party_support = 0;
+    for (var c of Q.classes) {
+        if (Q.old_demographics) { 
+            party_support += Q[c]*Q[c+'_'+party];
+        } else  { 
+            party_support += Q[c]*Q[c+'_'+party+'_normalized'];
+        } 
+    }
+    Q[party + '_support_calculations'] = party_support;
+    total_support += party_support; 
+}
+for (var party of Q.parties) {
+    Q[party+'_normalized_calculations'] = Q[party + '_support_calculations']/total_support;
+    Q[party+'_votes_calculations'] = Math.round(Q[party+'_normalized_calculations']*1000)/ 10;
+}
+
 if (Q.ddp_ideology == "Right" && Q.ddp_leader == "Dietrich" && !Q.dstp_formed && (Q.bourgeois_parliament_ddp || Q.liberal_parliament) && !Q.lvp_formed) {
     Q.industrial_ddp_backing = 2;
 } else if (!Q.lvp_formed && !Q.dstp_formed) {
@@ -2713,6 +2750,37 @@ if (Q.dnvp_ideology == "Moderate" && Q.dnvp_leader != "Lambach" && Q.dnvp_leader
     Q.industrial_dnvp_backing = 1;
 } else {
     Q.industrial_dnvp_backing = 0;
+}
+
+if (Q.kvp_formed) {
+    Q.industrial_kvp_backing = 3;
+} else if (Q.dnvp_ideology == "Moderate") {
+    Q.industrial_dnf_backing = 0;
+}
+
+Q.industrial_total_backing = Q.industrial_ddp_backing + Q.industrial_dvp_backing + Q.industrial_lvp_backing + Q.industrial_dnvp_backing + Q.industrial_kvp_backing + Q.industrial_dnf_backing;
+
+if (Q.industrial_total_backing) {
+    if (Q.ddp_votes_calculations < Q.ddp_votes_pre_event) {
+        Q.new_middle_ddp += Q.industrial_ddp_backing/Q.industrial_total_backing;
+        Q.old_middle_ddp += Q.industrial_ddp_backing/Q.industrial_total_backing;
+        Q.rural_ddp += Q.industrial_ddp_backing/Q.industrial_total_backing/2;
+    }
+    if (Q.dvp_votes_calculations < Q.dvp_votes_pre_event) {
+        Q.new_middle_dvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
+        Q.old_middle_dvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
+        Q.rural_dvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
+    }
+    if (Q.dnvp_votes_calculations < Q.dnvp_votes_pre_event) {
+        Q.new_middle_dnvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
+        Q.old_middle_dnvp += Q.industrial_dvp_backing/Q.industrial_total_backing*2;
+        Q.rural_dnvp += Q.industrial_dvp_backing/Q.industrial_total_backing*2;
+    }
+    if (Q.kvp_votes_calculations < Q.kvp_votes_pre_event) {
+        Q.new_middle_kvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
+        Q.old_middle_kvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
+        Q.rural_kvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
+    }
 }
 
 if (Q.chancellor != "Papen") {
