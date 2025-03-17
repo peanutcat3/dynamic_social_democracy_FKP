@@ -378,7 +378,7 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
     }
 }
 // dvp party conflict post 2nd bruning, pt 1
-if (((Q.year == 1931 && Q.month >= 6 && Q.dvp_defect) or Q.year >= 1932) && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (((Q.year == 1931 && Q.month >= 6 && Q.dvp_defect) || Q.year >= 1932) && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_47_trigger += 1; 
     if (Q.flavour_47_trigger == 2 && !Q.flavour_47_trigger_shown) {
         Q.flavour_47_trigger_time = Q.time;
@@ -1392,7 +1392,7 @@ if (Q.total_bruning_time > 0 && (Q.in_center_right_coalition || Q.in_right_coali
     }
 }
 // dvp party conflict post 2nd bruning, pt 1
-if (((Q.year == 1931 && Q.month >= 6 && Q.dvp_defect) or Q.year >= 1932) && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (((Q.year == 1931 && Q.month >= 6 && Q.dvp_defect) || Q.year >= 1932) && Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
     Q.flavour_47_trigger += 1; 
     if (Q.flavour_47_trigger == 2 && !Q.flavour_47_trigger_shown) {
         Q.flavour_47_trigger_time = Q.time;
