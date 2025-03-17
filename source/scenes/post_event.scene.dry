@@ -2677,7 +2677,7 @@ if (Q.year == 1930 && Q.month == 8) {
 
 if (Q.ddp_ideology == "Right" && Q.ddp_leader == "Dietrich" && !Q.dstp_formed && (Q.bourgeois_parliament_ddp || Q.liberal_parliament) && !Q.lvp_formed) {
     Q.industrial_ddp_backing = 2;
-} else if (!Q.lvp_formed) {
+} else if (!Q.lvp_formed && !Q.dstp_formed) {
     Q.industrial_ddp_backing = 1;
 } else {
     Q.industrial_ddp_backing = 0;
@@ -2694,7 +2694,7 @@ if (((Q.dvp_ideology == "Right" || (Q.dvp_leader == "Dingeldey" || Q.dvp_leader 
 }
 
 if (Q.lvp_formed) {
-    if (Q.lvp_ideology == "Right" && Q.lvp_leader == "Dingeldey") {
+    if ((Q.lvp_ideology == "Right" && Q.lvp_leader == "Dingeldey") || Q.lvp_leader == "Luther") {
         Q.industrial_lvp_backing = 4;
     } else if (Q.lvp_leader != "Glatzel") {
         Q.industrial_lvp_backing = 3;
