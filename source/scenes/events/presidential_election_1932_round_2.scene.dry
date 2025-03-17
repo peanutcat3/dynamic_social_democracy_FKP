@@ -208,7 +208,7 @@ Results:
 [? if spd_campaign > 0 : <span style="color: #c00000;">**Braun**</span> - [+ spd_president_votes_disp +]% ?]
 
 @hindenburg_wins
-on-arrival: president = "Hindenburg"; hindenburg_angry_bruning += 20
+on-arrival: president = "Hindenburg"; hindenburg_angry_bruning += 20 if not spd_campaign
 
 As expected, the incumbent Hindenburg wins the presidency. Let's hope he continues to keep the <span style="color: #7A3C00;">Nazis</span> out of power.
 
