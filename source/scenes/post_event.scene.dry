@@ -2683,7 +2683,7 @@ if (Q.ddp_ideology == "Right" && Q.ddp_leader == "Dietrich" && !Q.dstp_formed &&
     Q.industrial_ddp_backing = 0;
 }
 
-if (Q.dvp_ideology == "Right" && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz" || Q.dvp_leader == "Luther" || (Q.dvp_leader == "Stresemann" && !Q.dvp_reform)) && ((Q.bourgeois_parliament || Q.liberal_parliament) || Q.year < 1930) && !Q.lvp_formed) {
+if (((Q.dvp_ideology == "Right" || (Q.dvp_leader == "Dingeldey" || Q.dvp_leader == "Scholz" || Q.dvp_leader == "Luther" || (Q.dvp_leader == "Stresemann" && !Q.dvp_reform))) || (Q.dvp_ideology == "Moderate" && Q.dvp_relation < 30)) && ((Q.bourgeois_parliament || Q.liberal_parliament) || Q.year < 1930) && !Q.lvp_formed) {
     Q.industrial_dvp_backing = 3;
 } else if (Q.dvp_leader != "Glatzel" && Q.dvp_leader != "Thiel" && !Q.lvp_formed) {
     Q.industrial_dvp_backing = 2;
@@ -2692,8 +2692,6 @@ if (Q.dvp_ideology == "Right" && (Q.dvp_leader == "Dingeldey" || Q.dvp_leader ==
 } else {
     Q.industrial_dvp_backing = 0;
 }
-
-[? if ((dvp_leader == "Dingeldey" or dvp_leader == "Scholz" or dvp_leader == "Luther" or (dvp_leader == "Stresemann" and not dvp_reform)) or (dvp_ideology == "Right" or (dvp_ideology == "Moderate" and dvp_relation < 40))) and not lvp_formed: <span style="color: #C0A054;">**DVP**</span> ?]
 
 if (Q.lvp_formed) {
     if (Q.lvp_ideology == "Right" && Q.lvp_leader == "Dingeldey") {
