@@ -133,21 +133,21 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: Nazism ([+ nsdap_leader +])?]
 
-[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <h4>Industrialist backing:</h4> ?]
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <h4>Industrialist backing</h4> ?]
 
-[? if ddp_ideology == "Right" and ddp_leader == "Dietrich" and not dstp_formed and ddp_votes >= dvp_votes and not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
+[? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [? if industrial_ddp_backing == 1: Low?][? if industrial_ddp_backing == 2: Medium?]  ?]
 
-[? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span> ?]
+[? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>: [? if industrial_lvp_backing == 2: Medium?][? if industrial_lvp_backing == 3: High?][? if industrial_lvp_backing == 4: Highest?] ?]
 
-[? if ((dvp_leader == "Dingeldey" or dvp_leader == "Scholz" or dvp_leader == "Luther" or (dvp_leader == "Stresemann" and not dvp_reform)) or (dvp_ideology == "Right" or (dvp_ideology == "Moderate" and dvp_relation < 40))) and not lvp_formed: <span style="color: #C0A054;">**DVP**</span> ?]
+[? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>: [? if industrial_dvp_backing == 1: Low?][? if industrial_dvp_backing == 2: Medium?][? if industrial_dvp_backing == 3: High?] ?]
 
-[? if ((dnvp_ideology == "Moderate" and dnvp_leader != "Lambach") or dnvp_westarp): <span style="color: #3E88B3;">**DNVP**</span> ?]
+<span style="color: #3E88B3;">**DNVP**</span>: [? if industrial_dnvp_backing == 3: High?][? if industrial_dnvp_backing == 2: Medium?][? if industrial_dnvp_backing == 1: High?][? if industrial_dnvp_backing == 0: Hugenberg funded?]
 
-[? if kvp_formed: <span style="color: #0087DC;">**KVP**</span> ?]
+[? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>: High ?]
 
-[? if nsdap_votes >= 25 and not hitler_deported: <span style="color: #7A3C00;">**NSDAP**</span> ?]
+<span style="color: #7A3C00;">**NSDAP**</span>: Low
 
-# redo above later
+# redo above later, nsdap
 
 = Internal Factions of the <span style="color: #c00000;">**SPD**</span>
 
