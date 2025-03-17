@@ -1,7 +1,6 @@
 on-arrival: {!
 
 Q.dnvp_dvp_formed = 1;
-Q.parties.push('lvp');
 
 Q.workers_dnvp += Q.workers_dvp;
 
