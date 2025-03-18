@@ -1,10 +1,9 @@
 title: The WTB Plan
 subtitle: Wladimir Woytinsky and the ADGB have presented a proposal.
-view-if: black_thursday_seen and wtb_points >= 200 and not economic_plan
-max-visits: 1
+view-if: black_thursday_seen and wtb_points >= 200 and not economic_plan and not wtb_proposed
 tags: event
 new-page: true
-on-arrival: crisis_urgency += 1
+on-arrival: crisis_urgency += 1; wtb_proposed = 1
 
 = The WTB Plan
 
