@@ -504,7 +504,7 @@ Surprisingly, through our reconciliation with the bourgeois parties, they have a
 title: The incumbent coalition is expanded to include the <span style="color: #7A3C00;">**NSDAP**</span>.
 subtitle: A testament to how biased the "democratic" parties are when it comes to working with us.
 view-if: far_right_coalition_thuringia >= 50
-on-arrival: thuringia_nsdap = 1; workers_nsdap += 2; new_middle_nsdap += 4; old_middle_nsdap += 6; rural_nsdap += 2; unemployed_kpd -= 4; unemployed_nsdap += 4; sa_strength += 50; sa_militancy += 0.03; prussian_police_loyalty -= 0.05; pro_republic -= 5
+on-arrival: thuringia_nsdap = 1; workers_nsdap += 2; new_middle_nsdap += 4; old_middle_nsdap += 6; rural_nsdap += 2; unemployed_kpd -= 2; unemployed_nsdap += 2; sa_strength += 50; sa_militancy += 0.03; prussian_police_loyalty -= 0.05; pro_republic -= 5
 face-image: img/portraits/frick.jpg
 
 Wilhelm Frick, a convicted Beer Hall Putsch participant, becomes the first <span style="color: #7A3C00;">Nazi</span> to hold a ministerial-level post in Germany. He is given control of the Interior and Education Ministries, and by passing an "Enabling Act" through a simple majority as an emergency decree, granting him the power to radically transform Thuringia.
