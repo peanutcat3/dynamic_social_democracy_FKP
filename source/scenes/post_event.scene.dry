@@ -2786,22 +2786,22 @@ if (Q.industrial_total_backing) {
         Q.old_middle_ddp += Q.industrial_ddp_backing/Q.industrial_total_backing/1.5;
         Q.rural_ddp += Q.industrial_ddp_backing/Q.industrial_total_backing/3;
     }
-    if (Q.dvp_votes_calculations < Q.dvp_votes_pre_event) {
+    if (Q.dvp_votes_calculations < Q.dvp_votes_pre_event + 0.2) {
         Q.new_middle_dvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.old_middle_dvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.rural_dvp += Q.industrial_dvp_backing/Q.industrial_total_backing/2;
     }
-    if (Q.dnvp_votes_calculations < Q.dnvp_votes_pre_event) {
+    if (Q.dnvp_votes_calculations < Q.dnvp_votes_pre_event + 0.3) {
         Q.new_middle_dnvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.old_middle_dnvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.rural_dnvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
     }
-    if (Q.kvp_votes_calculations < Q.kvp_votes_pre_event) {
+    if (Q.kvp_votes_calculations < Q.kvp_votes_pre_event + 0.2) {
         Q.new_middle_kvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.old_middle_kvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.rural_kvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
     }
-    if (Q.industrial_total_backing < 6) {
+    if (Q.industrial_total_backing < 6 && Q.nsdap_r >= 18) {
         Q.new_middle_nsdap += 6 - Q.industrial_total_backing/2;
         Q.old_middle_nsdap += 6 - Q.industrial_total_backing/2;
         Q.rural_nsdap += 6 - Q.industrial_total_backing/4;
