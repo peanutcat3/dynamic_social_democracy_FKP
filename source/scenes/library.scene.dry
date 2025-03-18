@@ -65,11 +65,11 @@ go-to: cabinet if spd_in_government; menu if not spd_in_government
 
 = Current Government
 
-President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun" or president == "Schumacher" or president == "Juchacz": <span style="color: #c00000;">[+ president +]</span> ?][? if president == "Thälmann": <span style="color: #700000;">Thälmann</span> ?][? if president == "Münzenberg": <span style="color: #9B0000;">**Münzenberg**</span> ?][? if president == "Hitler": <span style="color: #7A3C00;">Hitler</span> ?][? if president == "Göring": <span style="color: #7A3C00;">Göring</span> ?][? if president == "Eckener": <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span> ?][? if president == "Gessler": <span style="color: #D3C24D;">**Gessler**</span> ?][? if president == "Adenauer": <span style="color: #000000;">**Adenauer**</span> ?][? if president == "Seldte": <span style="color: #3E88B3;">**Seldte**</span> ?]
+President: [? if president == "Hindenburg": <span style="color: #808080;">Hindenburg</span> ?][? if president == "Braun" or president == "Schumacher" or president == "Juchacz": <span style="color: #c00000;">[+ president +]</span> ?][? if president == "Thälmann": <span style="color: #700000;">Thälmann</span> ?][? if president == "Münzenberg": <span style="color: #9B0000;">Münzenberg</span> ?][? if president == "Hitler": <span style="color: #7A3C00;">Hitler</span> ?][? if president == "Göring": <span style="color: #7A3C00;">Göring</span> ?][? if president == "Eckener": <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span> ?][? if president == "Gessler": <span style="color: #D3C24D;">Gessler</span> ?][? if president == "Adenauer": <span style="color: #000000;">Adenauer</span> ?][? if president == "Seldte": <span style="color: #3E88B3;">Seldte</span> ?] [? if president == "Adenauer":(<span style="color: #000000;">**Z**</span>) ?][? if president == "Braun" or president == "Schumacher" or president == "Juchacz":(<span style="color: #c00000;">**SPD**</span>) ?][? if president == "Thälmann" or president == "Münzenberg":(<span style="color: #700000;">**KPD**</span>) ?][? if president == "Hitler":(<span style="color: #7A3C00;">**NSDAP**</span>) ?][? if president == "Gessler":(<span style="color: #D3C24D;">**[+ ddp_name +]**</span>) ?][? if president == "Eckener" or president == "Hindenburg":(<span style="color: #808080;">I</span>) ?]
 
 Chancellor: [? if chancellor_party == "SPD": <span style="color: #c00000;">[+ chancellor +]</span>?][? if chancellor_party == "Z": <span style="color: #000000;">[+ chancellor +]</span>?][? if chancellor_party == "NSDAP": <span style="color: #7A3C00;">Hitler</span>?][? if chancellor_party == "KPD": <span style="color: #700000;">[+ chancellor +]</span>?][? if chancellor == "Schleicher" or chancellor == "Papen": <span style="color: #808080;">[+ chancellor +]</span>?] [? if chancellor_party == "Z":(<span style="color: #000000;">**Z**</span>) ?][? if chancellor_party == "SPD":(<span style="color: #c00000;">**SPD**</span>) ?][? if chancellor_party == "KPD":(<span style="color: #700000;">**KPD**</span>) ?][? if chancellor_party == "NSDAP":(<span style="color: #7A3C00;">**NSDAP**</span>) ?][? if chancellor_party == "I":(<span style="color: #808080;">I</span>) ?]
 
-Prussian Minister-President: [? if prussia_leader = "Braun" and not chancellor == "Hitler": <span style="color: #c00000;">Braun</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and not sapd_formed and not chancellor == "Hitler": <span style="color: #c00000;">Rosenfeld</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and sapd_formed and not chancellor == "Hitler": <span style="color: #9B0000;">Rosenfeld</span> (<span style="color: #9B0000;">**SAPD**</span>)?][? if prussia_leader = "Stegerwald" and not chancellor == "Hitler": <span style="color: #000000;">Stegerwald</span> (<span style="color: #000000;">**Z**</span>)?][? if prussia_leader = "Brüning" and not chancellor == "Hitler": <span style="color: #000000;">Brüning</span> (<span style="color: #000000;">**Z**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler": <span style="color: #C0A054;">Luther</span> (<span style="color: #C0A054;">**DVP**</span>)?][? if prussia_leader = "Goring": <span style="color: #7A3C00;">Göring</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?][? if (prussia_leader = "Papen" and chancellor == "Papen") or chancellor == "Hitler": <span style="color: #808080;">Papen</span> (<span style="color: #808080;">I</span>)?][? if (prussia_leader = "Papen" and chancellor == "Schleicher") and not chancellor == "Hitler": <span style="color: #808080;">Schleicher</span> (<span style="color: #808080;">I</span>)?]
+Prussian Minister-President: [? if prussia_leader = "Braun" and not chancellor == "Hitler": <span style="color: #c00000;">Braun</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and not sapd_formed and not chancellor == "Hitler": <span style="color: #c00000;">Rosenfeld</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and sapd_formed and not chancellor == "Hitler": <span style="color: #9B0000;">Rosenfeld</span> (<span style="color: #9B0000;">**SAPD**</span>)?][? if prussia_leader = "Stegerwald" and not chancellor == "Hitler": <span style="color: #000000;">Stegerwald</span> (<span style="color: #000000;">**Z**</span>)?][? if prussia_leader = "Brüning" and not chancellor == "Hitler": <span style="color: #000000;">Brüning</span> (<span style="color: #000000;">**Z**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler" and not lvp_formed and not luther_ddp: <span style="color: #C0A054;">Luther</span> (<span style="color: #C0A054;">**DVP**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler" and not lvp_formed and luther_ddp: <span style="color: #D3C24D;">Luther</span> (<span style="color: #D3C24D;">**DVP**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler" and lvp_formed: <span style="color: #FFCC00;">Luther</span> (<span style="color: #FFCC00;">**LVP**</span>)?][? if prussia_leader = "Goring": <span style="color: #7A3C00;">Göring</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?][? if (prussia_leader = "Papen" and chancellor == "Papen") or chancellor == "Hitler" and not prussia_leader == "Goring": <span style="color: #808080;">Papen</span> (<span style="color: #808080;">I</span>)?][? if (prussia_leader = "Papen" and chancellor == "Schleicher") and not chancellor == "Hitler": <span style="color: #808080;">Schleicher</span> (<span style="color: #808080;">I</span>)?]
 
 Reichstag composition:
 
@@ -85,7 +85,7 @@ Reichstag composition:
 [? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [+ lvp_r +]% ?]
 [? if (not lvp_formed or not ddp_name) : [? if not ddp_name:<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**DDP**</span>?][? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_r +]% ?]
 # 1928: 9, 1930: 5
-[? if not lvp_formed: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]% ?]
+[? if not lvp_formed and dvp_exist: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [+ dvp_r +]% ?]
 [? if kvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_r +]% ?]
 # 1928: 14, 1930: 7
 <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_r +]%
@@ -291,7 +291,7 @@ go-to: menu
 
 [? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>: [+ lvp_votes +]% ?]
 # 1928: 9, 1930: 5
-[? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>: [+ dvp_votes +]% ?]
+[? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>: [+ dvp_votes +]% ?]
 
 [? if kvp_formed: <span style="color: #0087DC;">**KVP**</span>: [+ kvp_votes +]% ?]
 
@@ -364,7 +364,7 @@ go-to: menu
             <td style="background-color: rgba(211, 194, 77, 0.2);">[+ unemployed_ddp_display +]%</td>
             <td style="background-color: rgba(211, 194, 77, 0.2);">[+ catholics_ddp_display +]%</td>
         </tr>
-        <tr>
+        [? if dvp_exist: <tr>
             <td><span style="color: #C0A054;">**DVP**</span></td>
             <td style="background-color: rgba(192, 160, 84, 0.2); padding: 10px;">[+ workers_dvp_display +]%</td>
             <td style="background-color: rgba(192, 160, 84, 0.2);">[+ new_middle_dvp_display +]%</td>
@@ -372,7 +372,7 @@ go-to: menu
             <td style="background-color: rgba(192, 160, 84, 0.2);">[+ rural_dvp_display +]%</td>
             <td style="background-color: rgba(192, 160, 84, 0.2);">[+ unemployed_dvp_display +]%</td>
             <td style="background-color: rgba(192, 160, 84, 0.2);">[+ catholics_dvp_display +]%</td>
-        </tr> ?]
+        </tr> ?]?]
         [? if lvp_formed: <tr>
             <td><span style="color: #FFCC00;">**LVP**</span></td>
             <td style="background-color: rgba(255, 204, 0, 0.2); padding: 10px;">[+ workers_lvp_display +]%</td>
@@ -443,9 +443,9 @@ Current relations: [+ z_relation : relationships +]
 
 [? if not lvp_formed: Current relations: [+ ddp_relation : relationships +] ?]
 
-[? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span> - *Deutsche Volkspartei* (German People's Party) - a conservative-liberal party founded by Gustav Stresemann, supported by the middle classes, bourgeoisie and industrialists. The industrial and right wing of the party has been gaining noticeable influence in recent years with Stresemann's neglect of party affairs. [? if dvp_ideology == "Right": The industrial wing of the party has succeeded in it's takeover of the party and are much less inclined to work with us.?] We have occasionally been in coalitions. ?]
+[? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span> - *Deutsche Volkspartei* (German People's Party) - a conservative-liberal party founded by Gustav Stresemann, supported by the middle classes, bourgeoisie and industrialists. The industrial and right wing of the party has been gaining noticeable influence in recent years with Stresemann's neglect of party affairs. [? if dvp_ideology == "Right": The industrial wing of the party has succeeded in it's takeover of the party and are much less inclined to work with us.?] We have occasionally been in coalitions. ?]
 
-[? if not lvp_formed: Current relations: [+ dvp_relation : relationships +] ?]
+[? if not lvp_formed and dvp_exist: Current relations: [+ dvp_relation : relationships +] ?]
 
 [? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span> - *Liberale Volkspartei* (Liberal People's Party) - a liberal party, popular among the bourgeois and the middle class. Formed from a merger of the two former liberal parties, the left-liberal <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and conservative-liberal <span style="color: #C0A054;">**DVP**</span>. Its predecessors have often been in coalitions with us. ?]
 
@@ -455,7 +455,7 @@ Current relations: [+ z_relation : relationships +]
 
 [? if kvp_formed: Current relations: [+ kvp_relation : relationships +] ?]
 
-<span style="color: #3E88B3;">**DNVP**</span> - *Deutschnationale Volkspartei* (German National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans.
+<span style="color: #3E88B3;">**DNVP**</span> - *Deutschnationale Volkspartei* (German National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative Lutherans. [? if dnvp_dvp_formed: They have recently merged with the <span style="color: #C0A054;">**DVP**</span>. ?]
 
 Current relations: [+ dnvp_relation : relationships +]
 
@@ -473,7 +473,7 @@ Current relations: [+ kpd_relation : relationships +]
 
 Current relations: [+ nsdap_relation : relationships +]
 
-**Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others. [? if dnvp_split == 1: They also consist of splinter parties from the <span style="color: #3E88B3;">**DNVP**</span>, as a result of Hugenberg's radical right policies as chairman. ?]Their political position usually lies between the <span style="color: #C0A054;">**DVP**</span> and the <span style="color: #3E88B3;">**DNVP**</span>.
+**Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others. [? if dnvp_split == 1: They also consist of splinter parties from the <span style="color: #3E88B3;">**DNVP**</span>, as a result of Hugenberg's radical right policies as chairman. ?]Their political position usually lies between the [? if dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not dvp_exist: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?] and the <span style="color: #3E88B3;">**DNVP**</span>.
 
 @paramilitaries
 on-arrival: {!
@@ -635,7 +635,7 @@ on-display: {!
         }
     ]);
 
-    if (Q.dvp_r && !Q.lvp_formed) {
+    if (Q.dvp_r && !Q.lvp_formed && Q.dvp_exist) {
         data.push({
             "id": "dvp",
             "legend": "DVP",
@@ -750,7 +750,7 @@ if (d3 && window) {
 
 {!<tr><td><div class="box" style='background-color:#A2D8E0'> </div></td><td>!} BVP: {!</td><td>!} 3% {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!} ?]
+[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div></td><td>!} Other parties: {!</td><td>!} [+ other_r +]% {!</td></tr>!}
 

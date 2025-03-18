@@ -2681,6 +2681,15 @@ if (Q.year == 1930 && Q.month == 8) {
     }
 }
 
+if (!Q.dvp_exist) {
+    if (Q.foreign_minister_party == "DVP") { 
+        Q.foreign_minister_party = "Z";
+        Q.foreign_minister = "Brüning";
+    }
+    if (Q.economic_minister_party == "DVP") Q.economic_minister_party = "DNVP";
+    if (Q.finance_minister_party == "DVP") Q.finance_minister_party = "DNVP";
+}
+
 for (var c of Q.classes) {
     var class_votes = 0;
     for (var party of Q.parties) {

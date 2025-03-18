@@ -419,7 +419,7 @@ data = data.concat([{
 }
 ]);
 
-if (Q.dvp_r_bavaria && !Q.lvp_formed) {
+if (Q.dvp_r_bavaria && !Q.lvp_formed && Q.dvp_exist) {
     data.push({
         "id": "dvp",
         "legend": "DVP",
@@ -862,7 +862,7 @@ data = data.concat([{
 }
 ]);
 
-if (Q.dvp_r_wurttemberg && !Q.lvp_formed) {
+if (Q.dvp_r_wurttemberg && !Q.lvp_formed && Q.dvp_exist) {
     data.push({
         "id": "dvp",
         "legend": "DVP",

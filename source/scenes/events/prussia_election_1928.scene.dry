@@ -423,7 +423,7 @@ data = data.concat([{
 }
 ]);
 
-if (Q.dvp_r_prussia && !Q.lvp_formed) {
+if (Q.dvp_r_prussia && !Q.lvp_formed && Q.dvp_exist) {
     data.push({
         "id": "dvp",
         "legend": "DVP",
@@ -526,7 +526,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#000'> </div> !} Z: {!</td><td>!} [+ z_votes_prussia +]% {!</td><td>!} [+ str_votes_change_z_prussia +] {!</td><td>!} [+ z_r_prussia +]% {!</td><td>!} [+ str_change_z_prussia +] {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dvp_prussia +] {!</td><td>!} [+ dvp_r_prussia +]% {!</td><td>!} [+ str_change_dvp_prussia +] {!</td></tr>!} ?]
+[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dvp_prussia +] {!</td><td>!} [+ dvp_r_prussia +]% {!</td><td>!} [+ str_change_dvp_prussia +] {!</td></tr>!} ?]
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes_prussia +]% {!</td><td>!} [+ str_votes_change_other_prussia +] {!</td><td>!} [+ other_r_prussia +]% {!</td><td>!} [+ str_change_other_prussia +] {!</td></tr>!}
 
@@ -596,7 +596,7 @@ We have enough votes to form a "<span style="color: #000000;">We</span><span sty
 
 @grand_coalition_prussia
 title: We can form a Grand Coalition.
-view-if: grand_coalition_prussia >= 45 and not lvp_formed
+view-if: grand_coalition_prussia >= 45 and not lvp_formed and dvp_exist
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] ([+ grand_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> ([+ grand_coalition_prussia +]%) [? if not ((z_relation >= 30 and z_ideology == "Right") or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser")): - We do not have the adequate relations with the <span style="color: #000000;">Center Party</span>. ?] [? if not (ddp_relation >= 30 and ddp_ideology == "Right") and not (ddp_relation >= 25 and ddp_ideology == "Moderate") and not (ddp_relation >= 20 and ddp_ideology == "Left" and ddp_cohesion >= 8) and not lvp_formed: - We do not have the adequate relations with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. ?][? if not (lvp_relation >= 40 and lvp_ideology == "Right") and not (lvp_relation >= 35 and lvp_ideology == "Moderate") and not (lvp_relation >= 30 and lvp_ideology == "Left") and lvp_formed: - We do not have the adequate relations with the <span style="color: #FFCC00;">LVP</span>. ?] [? if not (dvp_relation >= 25 and dvp_ideology == "Left") and not (dvp_relation >= 30 and dvp_ideology == "Moderate") and not (dvp_relation >= 45 and dvp_ideology == "Right") and not lvp_formed: - We do not have the adequate relations with the <span style="color: #C0A054;">**DVP**</span>. ?]
 choose-if: grand_coalition_prussia >= 50 and ( ( (z_relation >= 30 and z_ideology == "Right") or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser") ) and ( ( ((ddp_relation >= 30 and ddp_ideology == "Right") or (ddp_relation >= 25 and ddp_ideology == "Moderate") or (ddp_relation >= 20 and ddp_ideology == "Left" and ddp_cohesion >= 8)) and ((dvp_relation >= 25 and dvp_ideology == "Left") or (dvp_relation >= 30 and dvp_ideology == "Moderate") or (dvp_relation >= 45 and dvp_ideology == "Right")) and not lvp_formed ) or ( lvp_formed and ((lvp_relation >= 40 and lvp_ideology == "Right") or (lvp_relation >= 35 and lvp_ideology == "Moderate") or (lvp_relation >= 30 and lvp_ideology == "Left")) ) ) )
@@ -608,7 +608,7 @@ We have formed a majority coalition with the <span style="color: #c00000;">**SPD
 
 @minority_grand_coalition_prussia
 title: We can form a minority Grand Coalition.
-view-if: grand_coalition_prussia < 50 and was_in_grand_coalition_prussia == 1 and not lvp_formed
+view-if: grand_coalition_prussia < 50 and was_in_grand_coalition_prussia == 1 and not lvp_formed and dvp_exist
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] ([+ grand_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span> ([+ grand_coalition_prussia +]%) [? if far_right_coalition_prussia >= 50: - The <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> are able to form a government. ?] [? if not ((z_relation >= 30 and z_ideology == "Right") or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser")): - We do not have the adequate relations with the <span style="color: #000000;">Center Party</span>. ?] [? if not (ddp_relation >= 30 and ddp_ideology == "Right") and not (ddp_relation >= 25 and ddp_ideology == "Moderate") and not (ddp_relation >= 20 and ddp_ideology == "Left" and ddp_cohesion >= 8): - We do not have the adequate relations with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. ?] [? if not (dvp_relation >= 25 and dvp_ideology == "Left") and not (dvp_relation >= 30 and dvp_ideology == "Moderate") and not (dvp_relation >= 45 and dvp_ideology == "Right"): - We do not have the adequate relations with the <span style="color: #C0A054;">**DVP**</span>. ?]
 choose-if: far_right_coalition_prussia < 50 and (((z_relation >= 30 and z_ideology == "Right") or (z_relation >= 25 and z_leader == "Joos") or (z_relation >= 20 and z_leader == "Kaiser")) and ((ddp_relation >= 35 and ddp_ideology == "Right") or (ddp_relation >= 30 and ddp_ideology == "Moderate") or (ddp_relation >= 25 and ddp_ideology == "Left" and ddp_cohesion >= 8)) and ((dvp_relation >= 25 and dvp_ideology == "Left") or (dvp_relation >= 30 and dvp_ideology == "Moderate") or (dvp_relation >= 50 and dvp_ideology == "Right")))
@@ -621,7 +621,7 @@ We have formed a minority coalition with the <span style="color: #c00000;">**SPD
 @new_grand_coalition_prussia
 title: A "New Grand Coalition" of all the constitutional parties?
 subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + **Others** ([+ neo_weimar_coalition_prussia +]%)
-view-if: grand_coalition_prussia < 50
+view-if: grand_coalition_prussia < 50 and dvp_Exist
 choose-if: far_right_coalition_prussia < 50 and neo_weimar_coalition_prussia >= 50 and (z_relation >= 50 or (z_relation < 35 and z_ideology == "Left")) and ((dvp_relation >= 30 and ddp_relation >= 35 and not lvp_formed) or (lvp_relation >= 35 and lvp_formed))
 unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?] + Others ([+ neo_weimar_coalition_prussia +]%) [? if far_right_coalition_prussia >= 50: - The <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span> are able to form a government. ?] [? if z_relation < 50 or (z_relation < 35 and z_ideology == "Left") : - We do not have adequate relations with the <span style="color: #000000;">Center Party</span>. ?][? if dvp_relation < 30 and not lvp_formed : - We do not have adequate relations with the <span style="color: #C0A054;">DVP</span>. ?][? if ddp_relation < 35 and not lvp_formed : - We do not have adequate relations with the <span style="color: #D3C24D;">[+ ddp_name +]</span>. ?][? if lvp_relation < 35 and lvp_formed : - We do not have adequate relations with the <span style="color: #FFCC00;">LVP</span>. ?]
 
@@ -785,7 +785,7 @@ on-arrival: prussia_negotiations_kpd_left_trigger = 0
 
 @right_coalition_prussia
 title: Refuse to form a government, so that a right-wing coalition may be formed.
-subtitle: <span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition_prussia +]%)
+subtitle: <span style="color: #000000;">**Z**</span> + [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition_prussia +]%)
 unavailable-subtitle: <span style="color: #000000;">Z</span> + [? if not lvp_formed: <span style="color: #C0A054;">DVP</span>?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?] + <span style="color: #3E88B3;">DNVP</span> + Others ([+ right_coalition_prussia +]%) [? if (dnvp_ideology == "Radical" and not dnvp_westarp) or (year = 1929 and month >= 7):- The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.?]
 view-if: right_coalition_prussia >= 50
 choose-if: (dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)
@@ -797,8 +797,8 @@ Letting go the democratic bulwark to the right-wing parties is deeply unpopular 
 
 @center_right_coalition_prussia
 title: Refuse to form a government, so that a center-right coalition may be formed.
-unavailable-subtitle: <span style="color: #000000;">Z</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span> + <span style="color: #C0A054;">DVP</span>?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?] + Others + <span style="color: #3E88B3;">DNVP</span> ([+ center_right_coalition_prussia +]%) [? if (year = 1929 and month >= 7): The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.?]
-subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span> + **Others** + <span style="color: #3E88B3;">**DNVP**</span> ([+ center_right_coalition_prussia +]%)
+unavailable-subtitle: <span style="color: #000000;">Z</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">DVP</span>?]?][? if lvp_formed:<span style="color: #FFCC00;">LVP</span>?] + Others + <span style="color: #3E88B3;">DNVP</span> ([+ center_right_coalition_prussia +]%) [? if (year = 1929 and month >= 7): The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the <span style="color: #000000;">Center</span>.?]
+subtitle: <span style="color: #000000;">**Z**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?] + **Others** + <span style="color: #3E88B3;">**DNVP**</span> ([+ center_right_coalition_prussia +]%)
 view-if: dnvp_ideology == "Moderate" and center_right_coalition_prussia >= 50 and dnf_formed and right_coalition_prussia < 50 and not lvp_formed
 choose-if: not (year = 1929 and month >= 7)
 on-arrival: in_center_right_coalition_prussia = 1; prussia_leader = "Stegerwald"; prussia_leader = "Brüning" if z_leader == "Stegerwald"; new_middle_spd -= 4; ddp_right += 1; ddp_cohesion -= 1; dvp_right += 1; lvp_right += 1; center_dissent += 10; left_dissent += 5; labor_dissent += 20; reformist_dissent += 20; neorevisionist_dissent += 10; prussian_police_loyalty -= 0.06; prussian_police_strength -= 8; pro_republic -= 3; ddp_relation -= 4; z_relation -= 4; dvp_relation -= 4

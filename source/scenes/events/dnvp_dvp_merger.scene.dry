@@ -1,6 +1,6 @@
 title: The <span style="color: #C0A054;">**DVP**</span> merges with the <span style="color: #3E88B3;">**DNVP**</span>!
 subtitle: Dingeldey and [+ dnvp_leader +] has reached an agreement.
-view-if: (time >= flavour_53_trigger_time + 1) and dnvp_ideology == "Moderate" and dnvp_leader != "Lambach" and not lvp_formed and not lvp_merger_2_timer and not in_grand_coalition and not in_grand_coalition_prussia and not in_new_grand_coalition_prussia and not liberal_parliament
+view-if: (time >= flavour_53_trigger_time + 1 and flavour_53_trigger) and dnvp_ideology == "Moderate" and dnvp_leader != "Lambach" and dvp_ideology == "Right" and dvp_leader == "Dingeldey" and not lvp_formed and not lvp_merger_2_timer and not in_grand_coalition and not in_grand_coalition_prussia and not in_new_grand_coalition_prussia and not liberal_parliament
 on-arrival: dnvp_westarp = 0
 max-visits: 1
 tags: event
@@ -29,5 +29,7 @@ Internal reactions within the <span style="color: #C0A054;">**DVP**</span> are m
 @dnvp_dvp
 face-image: img/dvpposter.jpg
 go-to: dnvp_dvp_formed
+
+Many on the <span style="color: #C0A054;">**DVP**</span>'s left, such as Luther and Curtius, along with their supporters, have defected to the flourishing <span style="color: #D3C24D;">[+ ddp_name +]</span>, seeing it as the last bastion of liberalism.
 
 If Stresemann were alive, he would be quite disappointed in what has become of his party.

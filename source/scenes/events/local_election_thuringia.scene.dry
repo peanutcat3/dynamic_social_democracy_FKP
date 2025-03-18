@@ -309,7 +309,7 @@ if (Q.z_r_thuringia) {
     });
 }
 
-if (Q.dvp_r_thuringia && !Q.lvp_formed) {
+if (Q.dvp_r_thuringia && !Q.lvp_formed && Q.dvp_exist) {
     data.push({
         "id": "dvp",
         "legend": "DVP",
