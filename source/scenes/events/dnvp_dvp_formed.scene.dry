@@ -26,8 +26,6 @@ Q.rural_dnf += 2;
 Q.dnvp_r = Math.round((Q.dnvp_r + Q.dvp_r) * 10) / 10;
 Q.dnvp_relation += 5;
 
-Q.luther_ddp = 1;
-
 Q.dvp_r = 0;
 Q.dvp_votes = 0;
 Q.dvp_normalized = 0;
