@@ -21,7 +21,7 @@ on-arrival: reichsbanner_unpopularity_time = time + 6
 
 Unfortunately, the Reichsbanner's effectiveness is dragged down by the <span style="color: #c00000;">**SPD**</span>'s unpopularity, as the <span style="color: #c00000;">**SPD**</span> is no longer the dominant party among the workers. Many Reichsbanner members have left, and many workers are not interested.
 
-- @lower_militancy: Unfortunate.
+- @reichsbanner_joever: Unfortunate.
 
 @reichsbanner_joever
 on-arrival: rb_strength *= 0.95; rb_militancy *= 0.95

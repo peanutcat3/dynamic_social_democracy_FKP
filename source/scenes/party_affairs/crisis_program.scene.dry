@@ -1,7 +1,7 @@
 title: The Economic Crisis
 new-page: true
 is-card: true
-view-if: crisis_urgency >= 1 and crisis_program_timer = 0 and economic_plan = 0 and black_thursday_seen == 1
+view-if: crisis_urgency >= 2 and crisis_program_timer = 0 and economic_plan = 0 and black_thursday_seen == 1
 frequency: 200
 on-arrival: month_actions += 1; crisis_program_timer = 5
 card-image: img/bankrun.jpg
@@ -11,7 +11,7 @@ tags: party_affairs, govt_affairs
 
 Our party is wracked as to how to deal with the economic crisis. From the centrist faction, Hilferding argues that the economic crisis must be allowed to play out, because it is simply a part of the cyclic nature of capitalism.
 
-From labor, the economist Wladimir Woytinsky argues that we must pursue a massive public works program to reduce unemployment and stimulate demand, perhaps including deficit spending. His opponents, like Hilferding, argue that this plan will cause a return to hyper-inflation, and that it would not even help the economy. In addition, according to Hilferding, Woytinsky's strategy is opposed to Marxist principles.
+[? if wtb_concept: From labor, the economist Wladimir Woytinsky argues that we must pursue a massive public works program to reduce unemployment and stimulate demand, perhaps including deficit spending. His opponents, like Hilferding, argue that this plan will cause a return to hyper-inflation, and that it would not even help the economy. In addition, according to Hilferding, Woytinsky's strategy is opposed to Marxist principles. ?]
 
 The so-called WTB plan, after its chief supporters Woytinsky, Tarnow, and Baade, is receiving more attention within the party.
 
@@ -21,6 +21,7 @@ Meanwhile, moderates and reformists draw up proposals for a limited plan of job 
 
 - @support_centrist: Support the Centrist view.
 - @support_labor: Support the Labor view.
+- @support_labor_pre: Support the Labor view.
 - @support_left: Support the Left view.
 - @support_moderate: Support the Reformist view.
 - @defer: Defer making a decision until we have more information.
@@ -33,31 +34,30 @@ Woytinsky and the trade unions vehemently criticize the centrists for their poli
 
 Our policy course is currently that nothing can be done to alleviate the depression.
 
-
 @support_labor
 subtitle: Call for increased public works and fiscal stimulus.
 unavailable-subtitle: The Labor faction is not strong enough.
 choose-if: labor_strength >= left_strength and labor_strength >= center_strength
-on-arrival: center_dissent += 10; left_dissent += 5; labor_strength += 5; wtb_support += 1;
-go-to: plan_adopted if wtb_support >= 3; plan_support if wtb_support < 3
-
-@plan_support
+view-if: wtb_concept
+on-arrival: center_dissent += 10; left_dissent += 5; labor_strength += 5; wtb_support += 1; wtb_points += 10
 
 Our support of the WTB plan alienates the orthodox Marxists of the Centrist faction, and faces both opposition and support from a variety of sources across the spectrum. Leftists argue that the plan is flawed because it leaves capitalism intact, while some reformists are cautiously optimistic.
 
 We have not yet convinced the party to formally adopt the plan. More work needs to be done.
 
-@plan_adopted
-on-arrival: wtb_adopted = 1; labor_dissent -= 15; reformist_dissent -= 10; labor_strength += 10; center_strength -= 10; center_dissent += 20; left_dissent += 5; economic_plan = 1
+@support_labor_pre
+subtitle: Call for welfare spending and emergency relief for the workers.
+view-if: not wtb_concept
+on-arrival: center_dissent += 5; left_dissent += 5; labor_strength += 5; labor_dissent -= 5; wtb_support += 1
 
-With our hard work, we have finally convinced the majority of the party to adopt the WTB plan! [? if spd_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?][? if spd_in_government = 0 : We should emphasize the plan in our electoral propaganda. ?]
+The Labor faction hasn't come up with a concrete solution to our economic woes yet, but has called for increased welfare spending in light of the rise in unemployment. Perhaps supporting their efforts will encourage a real solution to the crisis to be introduced.
 
 @support_left
 subtitle: Call for mass nationalizations and the transformation of the economy.
 unavailable-subtitle: The Left faction is not strong enough.
 choose-if: left_strength >= labor_strength and left_strength >= center_strength and left_strength >= reformist_strength
 on-arrival: left_strength += 10; reformist_dissent += 5; labor_dissent += 5; nationalization_support += 2
-go-to: support_left_progress if nationalization_support < 3; adopt_left if nationalization_support >= 3
+go-to: support_left_progress if nationalization_support < 5; adopt_left if nationalization_support >= 5
 
 @support_left_progress
 
@@ -72,10 +72,10 @@ With our hard work, we have convinced the majority of the party to adopt the <sp
 
 @support_moderate
 subtitle: Call for a limited program of job creation without deficit spending.
-unavailable-subtitle: The Reformist faction is not strong enough.
-choose-if: historical_mode == 0 or (reformist_strength >= left_strength and reformist_strength >= center_strength and reformist_strength >= labor_strength)
+unavailable-subtitle: A plan hasn't even been conceptualized yet. The Reformist faction is not strong enough.
+choose-if: reformist_strength >= left_strength and reformist_strength >= center_strength and wtb_concept
 on-arrival: moderate_plan_support += 1; reformist_strength += 8; reformist_dissent -= 5; left_dissent += 6; labor_dissent += 5
-go-to: adopt_moderate if moderate_plan_support >= 2; support_moderate_progress if moderate_plan_support < 2
+go-to: adopt_moderate if moderate_plan_support >= 3; support_moderate_progress if moderate_plan_support < 3
 
 @support_moderate_progress
 

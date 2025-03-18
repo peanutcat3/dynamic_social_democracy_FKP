@@ -790,6 +790,7 @@ Q.bruning_coalition_dissent = 0;
 Q.dnvp_angry = 0;
 Q.dvp_exist = 1;
 Q.reichsbanner_unpopularity_time = 0;
+Q.wtb_points = 0;
 
 // flavour text stuff
 for (let i = 0; i <= 100; i++) {

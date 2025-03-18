@@ -1104,6 +1104,29 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
     if (Q.democracy_force >= Q.pro_republic) Q.pro_republic += 1;
 }
 
+if (!Q.wtb_adopted && Q.black_thursday_seen) {
+    Q.wtb_points_gain = 0;
+    Q.wtb_points_gain += Q.labor_strength/50;
+    if (Q.woytinsky_advisor) {
+        Q.wtb_points_gain += Q.labor_strength/100;
+    }
+    Q.wtb_points_gain += Q.leipart_advisor + Q.baade_advisor;
+    if (Q.inflation < -2) Q.wtb_points_gain += ((Q.inflation/5)*-1);
+    if (Q.economic_growth < -2) Q.wtb_points_gain += ((Q.economic_growth/10)*-1);
+    Q.wtb_points_gain += Q.unemployed/10;
+    if (Q.banking_crisis_seen) Q.wtb_points_gain += 2;
+    if (Q.nsdap_votes + Q.kpd_votes >= 35) Q.wtb_points += (Q.nsdap_votes + Q.kpd_votes) / 20
+    if (Q.unions_independent) Q.wtb_points_gain -= 3;
+    if (Q.wtb_support) Q.wtb_points_gain += Q.wtb_support;
+    if (Q.year >= 1931) Q.wtb_points_gain += 1;
+    Q.wtb_points_gain += Q.budget;
+    Q.wtb_points_gain += Q.crisis_urgency + (Q.nazi_urgency / 2)
+    Q.wtb_points_gain*=(1-dissent)
+    if (Q.wtb_points_gain > 0) {
+        Q.wtb_points += Q.wtb_points_gain;
+    }
+}
+
 if (Q.works_program >= 4 && Q.wtb_enactment_2_finish > Q.time) {
     if (Q.unemployed > 8) {
         Q.unemployed -= 3/10;
