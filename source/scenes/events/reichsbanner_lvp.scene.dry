@@ -26,7 +26,7 @@ The Reichsbanner has increasingly militarized, acquiring arms, conducting parami
 - @keep_them: Can we convince them that a militant Reichsbanner is necessary for defending the Republic?
 
 @let_go
-on-arrival: rb_strength *= 0.95; z_relation -= 3; lvp_relation -= 5; lvp_right += 3; pro_republic -= 3
+on-arrival: rb_strength *= 0.95; z_relation -= 3; lvp_relation -= 5; lvp_right += 3; pro_republic -= 3; lvp_leave_reichsbanner = 1
 
 We have judged that the Reichsbanner's militancy is more important than maintaining a coalition with the <span style="color: #FFCC00;">**LVP**</span>. The Reichsbanner members affiliated with the <span style="color: #FFCC00;">liberals</span> leave, and this may inspire the <span style="color: #000000;">Center Party</span> to follow suit.
 

@@ -1,0 +1,29 @@
+title: Reichsbanner Membership Dwindles
+subtitle: Our unpopularity has impaired the Reichsbanner's recruitment ability.
+view-if: rb_militancy >= 0.1 and workers_spd_normalized < (workers_kpd_normalized + workers_nsdap_normalized + 20) and time >= reichsbanner_unpopularity_time
+new-page: true
+tags: event
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/tnoreference.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+on-arrival: reichsbanner_unpopularity_time = time + 6
+
+= Reichsbanner Membership Dwindles
+
+Unfortunately, the Reichsbanner's effectiveness is dragged down by the <span style="color: #c00000;">**SPD**</span>'s unpopularity, as the <span style="color: #c00000;">**SPD**</span> is no longer the dominant party among the workers. Many Reichsbanner members have left, and many workers are not interested.
+
+- @lower_militancy: Unfortunate.
+
+@reichsbanner_joever
+on-arrival: rb_strength *= 0.95; rb_militancy *= 0.95
+
+This will continue to be a problem if our popularity continues to flag.
