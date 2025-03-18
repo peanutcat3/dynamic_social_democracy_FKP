@@ -1997,21 +1997,21 @@ if (Q.bourgeois_negotiations_1930_timer == 4 && !Q.bourgeois_negotiations_electi
 }
 
 // spd outta gov, bruning in his spot, and first time doing negotiations
-if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0 && !Q.bourgeois_parliament && !Q.liberal_parliament) {
+if (Q.year >= 1930 && Q.year < 1932 && !Q.spd_in_government && Q.chancellor == "Brüning" && Q.bourgeois_negotiations == 0 && !Q.bourgeois_parliament && !Q.liberal_parliament && Q.dvp_exist) {
     Q.bourgeois_negotiations = 1;
     Q.bourgeois_negotiations_1 = 1;
     Q.bourgeois_negotiations_1930_timer = 6;
 }
 
 // elections close...
-if (Q.year >= 1930 && Q.year < 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament && !Q.liberal_parliament && !Q.bourgeois_negotiations_elections_1930_timer) {
+if (Q.year >= 1930 && Q.year < 1932 && Q.bourgeois_negotiations <= 1 && Q.next_election_time - Q.time < 4 && !Q.bourgeois_parliament && !Q.liberal_parliament && !Q.bourgeois_negotiations_elections_1930_timer && Q.dvp_exist) {
     Q.bourgeois_negotiations = 2;
     Q.bourgeois_negotiations_1_election = 1;
     Q.bourgeois_negotiations_elections_1930_timer = 2;
 }
 
 // when both timers are active, this triggers so things don't repeat hopefully...
-if ((Q.bourgeois_negotiations_elections_1930_timer > 0) && (Q.bourgeois_negotiations_1930_timer > 0) && !Q.bourgeois_parliament) {
+if (Q.bourgeois_negotiations_elections_1930_timer > 0 && Q.bourgeois_negotiations_1930_timer > 0 && !Q.bourgeois_parliament) {
     Q.bourgeois_negotiations_election_soon = 1;
 } else {
     Q.bourgeois_negotiations_election_soon = 0;
@@ -2021,19 +2021,19 @@ if (Q.bourgeois_negotiations_1930_timer == 3 && !Q.lvp_formed || Q.bourgeois_neg
     Q.bourgeois_negotiations_1930_done = 1;
 }
 
-if (Q.bourgeois_parliament && !Q.lvp_formed) {
+if ((Q.bourgeois_parliament || !Q.dvp_exist) && !Q.lvp_formed) {
     Q.bourgeois_negotiations_election_soon = 0;
     Q.bourgeois_negotiations = 2;
     Q.bourgeois_negotiations_1_election = 0;
     Q.bourgeois_negotiations_elections_1930_timer = 0;
 }
 
-if (Q.bourgeois_negotiations_1930_done && (Q.bourgeois_parliament || Q.liberal_parliament) && !Q.bourgeois_negotiations_elections_1930_timer && !Q.bourgeois_negotiations_1930_aftermath_timer_trigger) {
+if (Q.bourgeois_negotiations_1930_done && (Q.bourgeois_parliament || Q.liberal_parliament) && !Q.bourgeois_negotiations_elections_1930_timer && !Q.bourgeois_negotiations_1930_aftermath_timer_trigger && Q.dvp_exist) {
     Q.bourgeois_negotiations_1930_aftermath_timer = 2;
     Q.bourgeois_negotiations_1930_aftermath_timer_trigger = 1;
 }
 
-if (Q.year == 1930 && Q.bourgeois_negotiations >= 1 && (Q.bourgeois_negotiations_1930_timer < 3 || (Q.bourgeois_negotiations_elections_1930_timer < 3 && Q.bourgeois_negotiations_1_election)) && Q.liberal_cooperation >= 10 && (Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Right" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Moderate" && Q.ddp_relation < 40) && !Q.dstp_formed && !Q.in_weimar_coalition && (!Q.in_popular_front || Q.in_popular_front && Q.liberal_parliament == 1) && Q.lvp_merger_2_timer == 0 && !Q.lvp_timer_2_trigger && !Q.lvp_formed) {
+if (Q.year == 1930 && Q.bourgeois_negotiations >= 1 && (Q.bourgeois_negotiations_1930_timer < 3 || (Q.bourgeois_negotiations_elections_1930_timer < 3 && Q.bourgeois_negotiations_1_election)) && Q.liberal_cooperation >= 10 && (Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Right" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Moderate" && Q.ddp_relation < 40) && !Q.dstp_formed && !Q.in_weimar_coalition && (!Q.in_popular_front || Q.in_popular_front && Q.liberal_parliament == 1) && Q.lvp_merger_2_timer == 0 && !Q.lvp_timer_2_trigger && !Q.lvp_formed && Q.dvp_exist) {
     Q.lvp_timer_2_trigger = 1;
     Q.lvp_merger_2_timer = 3;
 }

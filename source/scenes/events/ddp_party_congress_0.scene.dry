@@ -75,7 +75,7 @@ However, internal opposition to Koch-Weser has reached a boiling point. Forces w
 
 @recalculate
 on-arrival: {!
-if (Q.bourgeois_negotiations_elections_1930_timer == 1 && Q.bourgeois_negotiations_1930_done && Q.dstp_formed && !Q.liberal_parliament) {
+if (Q.bourgeois_negotiations_elections_1930_timer == 1 && Q.bourgeois_negotiations_1930_done && Q.dstp_formed && !Q.liberal_parliament && Q.dvp_exist) {
     Q.bourgeois_negotiations_fail_elections_dstp = 1;
     Q.bourgeois_negotiations_fail_elections = 0;
     Q.bourgeois_merger_trigger_scholz = 0;
