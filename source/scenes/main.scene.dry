@@ -1058,6 +1058,7 @@ max-cards: 3
 
 - @party
 - @govt
+- @eco
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -2148,7 +2149,7 @@ is-deck: true
 @eco
 title: Economic Policy
 view-if: spd_in_government = 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and economic_policy_timer <= 0 and economic_plan > 0 and black_thursday_seen
-card-image: img/reichstag_2.jpg
+card-image: img/portraits/SchmidtRobert.jpg
 is-deck: true
 
 - @economic_policy
