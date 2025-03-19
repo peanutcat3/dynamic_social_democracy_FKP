@@ -21,15 +21,15 @@ if (Q.nsdap_candidate_1932 == "Hitler") {
 Q.spd_candidate_1932 = "Braun";
 Q.reactionary_candidate_1932 = "Hindenburg";
 Q.communist_candidate_1932 = "Thälmann";
-Q.dnvp_candidate = "Duesterberg";
+Q.dnvp_candidate_1932 = "Duesterberg";
 
 Q.spd_candidate_1932_disp = "Otto Braun";
 Q.reactionary_candidate_1932_disp = "Paul von Hindenburg";
 Q.communist_candidate_1932_disp = "Ernst Thälmann";
 
 if (Q.nsdap_candidate_1932) {
-    Q.dnvp_candidate = "Duesterberg";
-    Q.dnvp_candidate_disp = "Theodor Duesterberg";
+    Q.dnvp_candidate_1932 = "Duesterberg";
+    Q.dnvp_candidate_1932_disp = "Theodor Duesterberg";
 }
 !}
 tags: event
@@ -55,7 +55,7 @@ With the 1932 German Presidential election coming up next month, we need to deci
 
 On the other hand, many in our party are calling for [+ spd_candidate_1932_disp +] to run again, but he is reluctant. [? if kpd_relation >= 50 : Another strange possibility is an united front with the <span style="color: #700000;">Communists</span>, either to support [+ communist_candidate_1932 +] or our own candidate. ?][? if sapd_formed: The <span style="color: #9B0000;">**SAPD**</span>, our former leftists, are supporting [+ communist_candidate_1932 +] of the <span style="color: #700000;">**KPD**</span>, and will likely share an endorsement with the <span style="color: #700000;">Communists</span>. ?]
 
-[? if spd_in_government = 0 : While the position of Chancellor is typically more important, recent governments have depended on the president's emergency decree powers, making the office vital. ?] [? if nsdap_candidate_1932 == "Hitler" : The <span style="color: #7A3C00;">Nazis</span> will run Hitler, while the <span style="color: #700000;">**KPD**</span> will run [+ communist_candidate_1932_disp +]. [? if dnvp_candidate: The <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span> will run [+ dnvp_candidate_disp +]. ?]A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of <span style="color: #440a0a;">unspeakable</span> <span style="color: #220303;">**horrors**</span>. ?][? if nsdap_candidate_1932 != "Hitler" : Since Hitler [? if hitler_deported: has been deported?][? if not hitler_citizen and hitler_citizenship_seen: lacks German citizenship?], the <span style="color: #7A3C00;">Nazis</span> will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler[? if hitler_citizen or not hitler_citizenship_seen, who, despite his legal persecution, retains a popular base who wishes to see him returned to Germany?]. Meanwhile, the <span style="color: #700000;">**KPD**</span> will run [+ communist_candidate_1932_disp +]. [? if dnvp_candidate: The <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span> will run [+ dnvp_candidate_disp +]. ?]A victory for the <span style="color: #7A3C00;">Nazis</span> would mean the end of parliamentary democracy, and the beginning of an era of <span style="color: #7e0000;">**unspeakable**</span> <span style="color: #3f0000;">**horrors**</span>.?]
+[? if spd_in_government = 0 : While the position of Chancellor is typically more important, recent governments have depended on the president's emergency decree powers, making the office vital. ?] [? if nsdap_candidate_1932 == "Hitler" : The <span style="color: #7A3C00;">Nazis</span> will run Hitler, while the <span style="color: #700000;">**KPD**</span> will run [+ communist_candidate_1932_disp +]. [? if dnvp_candidate_1932: The <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span> will run [+ dnvp_candidate_1932_disp +]. ?]A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of <span style="color: #440a0a;">unspeakable</span> <span style="color: #220303;">**horrors**</span>. ?][? if nsdap_candidate_1932 != "Hitler" : Since Hitler [? if hitler_deported: has been deported?][? if not hitler_citizen and hitler_citizenship_seen: lacks German citizenship?], the <span style="color: #7A3C00;">Nazis</span> will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler[? if hitler_citizen or not hitler_citizenship_seen:, who, despite his legal persecution, retains a popular base who wishes to see him returned to Germany?]. Meanwhile, the <span style="color: #700000;">**KPD**</span> will run [+ communist_candidate_1932_disp +]. [? if dnvp_candidate_1932: The <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span> will run [+ dnvp_candidate_1932_disp +]. ?]A victory for the <span style="color: #7A3C00;">Nazis</span> would mean the end of parliamentary democracy, and the beginning of an era of <span style="color: #7e0000;">**unspeakable**</span> <span style="color: #3f0000;">**horrors**</span>.?]
 
 
 - @run_braun: Run [+ spd_candidate_1932_disp +] of the <span style="color: #c00000;">**SPD**</span>.
