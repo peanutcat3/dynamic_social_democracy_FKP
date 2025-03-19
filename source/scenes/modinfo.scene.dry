@@ -54,6 +54,10 @@ Nothing in Dynamic relies on RNG, aside from card draws. The Support for the Rep
 
 Woytinsky only came up with the plan in late 1931 after the Banking Crisis, so to represent this, you need to get the event where Woytinsky proposes the concept in order to support it. The event is dynamic, and can trigger depending on factors such as: the state of the economy, deflation, labor faction strength, and most importantly internal party dissent. Appointing Woytinsky as an advisor aids significantly, as his presence passively increases the rate.
 
+**What is Dynamic Mode?**
+
+Dynamic mode is the intended way to play the mod, combining elements of both easy and historical modes. It reduces RNG with the shuffle leadership and card dismissal features of easy mode while retaining the starting variables of historical mode, such as relations and Reichsbanner strength.
+
 - @flavors: Back
 
 @paths
