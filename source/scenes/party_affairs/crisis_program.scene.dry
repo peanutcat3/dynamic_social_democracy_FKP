@@ -72,8 +72,8 @@ With our hard work, we have convinced the majority of the party to adopt the <sp
 
 @support_moderate
 subtitle: Call for a limited program of job creation without deficit spending.
-unavailable-subtitle: A plan hasn't even been conceptualized yet. The Reformist faction is not strong enough.
-choose-if: reformist_strength >= left_strength and reformist_strength >= center_strength and wtb_concept
+unavailable-subtitle: The Reformist faction is not strong enough.
+choose-if: reformist_strength >= left_strength and reformist_strength >= center_strength
 on-arrival: moderate_plan_support += 1; reformist_strength += 8; reformist_dissent -= 5; left_dissent += 6; labor_dissent += 5
 go-to: adopt_moderate if moderate_plan_support >= 3; support_moderate_progress if moderate_plan_support < 3
 

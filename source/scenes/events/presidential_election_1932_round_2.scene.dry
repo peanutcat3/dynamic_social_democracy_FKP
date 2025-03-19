@@ -75,17 +75,17 @@ if (Q.spd_campaign) {
     if (Q.kpd_support_spd) {
         if (!Q.kpd_glaze_spd) {
             Q.spd_president_votes += Q.kpd_normalized*0.8;
-            if (!Q.hitler_support_hindenburg && Q.nsdap_candidate == "Hitler") Q.nsdap_presidential_votes += Q.kpd_normalized*0.1;
+            if (!Q.hitler_support_hindenburg && Q.nsdap_candidate_1932 == "Hitler") Q.nsdap_presidential_votes += Q.kpd_normalized*0.1;
         } else if (Q.kpd_glaze_spd) {
             Q.spd_president_votes += Q.kpd_normalized*0.95;
-            if (!Q.hitler_support_hindenburg && Q.nsdap_candidate == "Hitler") Q.nsdap_presidential_votes += Q.kpd_normalized*0.05;
+            if (!Q.hitler_support_hindenburg && Q.nsdap_candidate_1932 == "Hitler") Q.nsdap_presidential_votes += Q.kpd_normalized*0.05;
         }
         if (Q.sapd_formed && Q.sapd_votes) {
             Q.spd_president_votes += Q.sapd_normalized;
         }
     } else {
         Q.thalmann_votes += Q.kpd_normalized*0.95;
-        if (!Q.hitler_support_hindenburg && Q.nsdap_candidate == "Hitler") Q.nsdap_presidential_votes += Q.kpd_normalized*0.05;
+        if (!Q.hitler_support_hindenburg && Q.nsdap_candidate_1932 == "Hitler") Q.nsdap_presidential_votes += Q.kpd_normalized*0.05;
         if (Q.sapd_formed && Q.sapd_votes) {
             Q.thalmann_votes += Q.sapd_normalized;
         }
@@ -201,7 +201,7 @@ Results:
 
 <span style="color: #808080;">**Hindenburg**</span> - [+ hindenburg_votes_disp +]%
 
-<span style="color: #7A3C00;">**[+ nsdap_candidate +]**</span> - [+ nsdap_presidential_votes_disp +]%
+<span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span> - [+ nsdap_presidential_votes_disp +]%
 
 [? if kpd_support_spd == 0 : <span style="color: #700000;">**Thälmann**</span> - [+ thalmann_votes_disp +]% ?]
 
@@ -222,10 +222,10 @@ Ernst Thälmann of the <span style="color: #700000;">**KPD**</span> has won the 
 - @civil_war: This is civil war.
 
 @hitler_wins
-on-arrival: president = nsdap_candidate; chancellor = "Hitler"; chancellor_party = "NSDAP"
+on-arrival: president = nsdap_candidate_1932; chancellor = "Hitler"; chancellor_party = "NSDAP"
 
-[? if nsdap_candidate == "Hitler" : Adolf Hitler of the <span style="color: #7A3C00;">**NSDAP**</span> has won the presidency. He wastes no time in consolidating power. ?]
-[? if nsdap_candidate != "Hitler" : The <span style="color: #7A3C00;">**NSDAP**</span> candidate [+ president +] has won. The first action President [+ president +] takes is inviting Hitler back into Germany, and appointing him chancellor. The <span style="color: #7A3C00;">Nazis</span> waste no time in consolidating power. ?]
+[? if nsdap_candidate_1932 == "Hitler" : Adolf Hitler of the <span style="color: #7A3C00;">**NSDAP**</span> has won the presidency. He wastes no time in consolidating power. ?]
+[? if nsdap_candidate_1932 != "Hitler" : The <span style="color: #7A3C00;">**NSDAP**</span> candidate [+ president +] has won. The first action President [+ president +] takes is inviting Hitler back into Germany, and appointing him chancellor. The <span style="color: #7A3C00;">Nazis</span> waste no time in consolidating power. ?]
 
 - @hitler_takes_power: What do we do now?
 
