@@ -73,39 +73,39 @@ go-to: candidate_selection if not spd_campaign; endorsements_braun if spd_campai
 
 [? if spd_campaign: - <span style="color: #c00000;">**SPD**</span> ?]
 
-[? if z_support_spd == 1 and spd_campaign: <span style="color: #000000;">Center Party</span> ?]
+[? if z_support_spd == 1 and spd_campaign: - <span style="color: #000000;">Center Party</span> ?]
 
-[? if ddp_support_spd == 1 and spd_campaign: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
+[? if ddp_support_spd == 1 and spd_campaign: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
 
-[? if lvp_support_spd == 1 and spd_campaign: <span style="color: #FFCC00;">**LVP**</span> ?]
+[? if lvp_support_spd == 1 and spd_campaign: - <span style="color: #FFCC00;">**LVP**</span> ?]
 
 [? if reactionary_candidate_1932: <span style="color: #808080;">**[+ reactionary_candidate_1932_disp +]**</span> - supported by: ?]
 
-[? if spd_support_hindenburg and reactionary_candidate_1932: <span style="color: #c00000;">**SPD**</span> ?]
+[? if spd_support_hindenburg and reactionary_candidate_1932: - <span style="color: #c00000;">**SPD**</span> ?]
 
-[? if z_support_spd != 1 and reactionary_candidate_1932: <span style="color: #000000;">Center Party</span> ?]
+[? if z_support_spd != 1 and reactionary_candidate_1932: - <span style="color: #000000;">Center Party</span> ?]
 
-[? if reactionary_candidate_1932: <span style="color: #A2D8E0;">**BVP**</span> ?]
+[? if reactionary_candidate_1932: - <span style="color: #A2D8E0;">**BVP**</span> ?]
 
-[? if lvp_support_spd != 1 and lvp_formed and reactionary_candidate_1932: <span style="color: #FFCC00;">**LVP**</span> ?]
+[? if lvp_support_spd != 1 and lvp_formed and reactionary_candidate_1932: - <span style="color: #FFCC00;">**LVP**</span> ?]
 
-[? if ddp_support_spd != 1 and not lvp_formed and reactionary_candidate_1932: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
+[? if ddp_support_spd != 1 and not lvp_formed and reactionary_candidate_1932: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
 
-[? if not lvp_formed and reactionary_candidate_1932: <span style="color: #C0A054;">**DVP**</span> ?]
+[? if not lvp_formed and reactionary_candidate_1932: - <span style="color: #C0A054;">**DVP**</span> ?]
 
-[? if reactionary_candidate_1932: **Others** ?]
+[? if reactionary_candidate_1932: - **Others** ?]
 
-[? if nsdap_candidate_1932: <span style="color: #7A3C00;">**nsdap_candidate_1932_disp**</span> - supported by: ?]
+[? if nsdap_candidate_1932: <span style="color: #7A3C00;">**[+ nsdap_candidate_1932_disp +]**</span> - supported by: ?]
 
-[? if nsdap_candidate_1932: <span style="color: #7A3C00;">**NSDAP**</span> ?]
+[? if nsdap_candidate_1932: - <span style="color: #7A3C00;">**NSDAP**</span> ?]
 
 [? if kpd_support_braun == 0 and communist_candidate_1932: <span style="color: #700000;">**[+ communist_candidate_1932_disp +]**</span> - supported by: ?]
 
-[? if kpd_support_braun == 0 and communist_candidate_1932: <span style="color: #700000;">**KPD**</span> ?]
+[? if kpd_support_braun == 0 and communist_candidate_1932: - <span style="color: #700000;">**KPD**</span> ?]
 
 [? if dnvp_candidate_1932: <span style="color: #3E88B3;">**[+ dnvp_candidate_1932_disp +]**</span> - supported by: ?]
 
-[? if dnvp_candidate_1932: <span style="color: #3E88B3;">**DNVP**</span> ?]
+[? if dnvp_candidate_1932: - <span style="color: #3E88B3;">**DNVP**</span> ?]
 
 @run_braun
 subtitle: This will cost us 2 resources.
