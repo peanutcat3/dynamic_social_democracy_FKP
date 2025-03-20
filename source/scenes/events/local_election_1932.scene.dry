@@ -459,13 +459,14 @@ if (Q.kvp_formed && Q.kvp_r_bavaria) {
         "seats": Math.round(Q.kvp_r_bavaria * 1.28),
     });
 }
-
-data = data.concat([{
-    "id": "dnvp",
-    "legend": "DNVP",
-    "name": "DNVP",
-    "seats": Math.round(Q.dnvp_r_bavaria * 1.28),
-}]);
+if (Q.dnvp_r_bavaria) {
+    data.push({
+        "id": "dnvp",
+        "legend": "DNVP",
+        "name": "DNVP",
+        "seats": Math.round(Q.dnvp_r_bavaria * 1.28),
+    });
+}
 if (Q.dnf_formed && Q.dnf_r_bavaria) {
     data.push({
         "id": "dnf",
@@ -906,12 +907,14 @@ if (Q.kvp_formed && Q.kvp_r_wurttemberg) {
     });
 }
 
-data = data.concat([{
-    "id": "dnvp",
-    "legend": "DNVP",
-    "name": "DNVP",
-    "seats": Math.round(Q.dnvp_r_wurttemberg * 0.8),
-}]);
+if (Q.dnvp_r_wurttemberg) {
+    data.push({
+        "id": "dnvp",
+        "legend": "DNVP",
+        "name": "DNVP",
+        "seats": Math.round(Q.dnvp_r_wurttemberg * 0.8),
+    });
+}
 if (Q.dnf_formed && Q.dnf_r_wurttemberg) {
     data.push({
         "id": "dnf",
