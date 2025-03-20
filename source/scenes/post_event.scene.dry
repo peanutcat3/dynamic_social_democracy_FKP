@@ -2901,6 +2901,27 @@ if (Q.spd_toleration) {
     }
 }
 
+if (Q.dues > Q.base_dues) {
+    if (Q.workers_spd_difference > 0) {
+        Q.workers_spd -= Q.workers_spd_difference*((Q.dues-Q.base_dues) / 10);
+    }
+    if (Q.new_middle_spd_difference > 0) {
+        Q.new_middle_spd -= Q.new_middle_spd_difference*((Q.dues-Q.base_dues) / 10);
+    }
+    if (Q.old_middle_spd_difference > 0) {
+        Q.old_middle_spd -= Q.old_middle_spd_difference*((Q.dues-Q.base_dues) / 10);
+    }
+    if (Q.rural_spd_difference > 0) {
+        Q.rural_spd -= Q.rural_spd_difference*((Q.dues-Q.base_dues) / 10);
+    }
+    if (Q.unemployed_spd_difference > 0) { 
+        Q.unemployed_spd -= Q.unemployed_spd_difference*((Q.dues-Q.base_dues) / 10);
+    }
+    if (Q.catholics_spd_difference > 0) {
+        Q.catholics_spd -= Q.catholics_spd_difference*((Q.dues-Q.base_dues) / 10);
+    }
+}
+
 if (Q.hitler_deported) {
     if (Q.workers_nsdap_difference > 0) {
         Q.workers_nsdap -= Q.workers_nsdap_difference / 3;
