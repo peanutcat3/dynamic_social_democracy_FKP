@@ -935,6 +935,25 @@ if (Q.month_actions >= 1) {
             Q.unemployed *= 0.99;
             Q.inflation += 2/12;
             Q.economic_growth += 2/12;
+            if (Q.bruning_time) {
+                Q.new_middle_ddp -= 2/12;
+                Q.old_middle_ddp -= 1/12;
+                Q.new_middle_dvp -= 2/12;
+                Q.new_middle_lvp -= 4/12;
+                Q.old_middle_dvp -= 2/12;
+                Q.old_middle_lvp -= 3/12;
+                Q.rural_dvp -= 2/12;
+                Q.rural_lvp -= 2/12;
+            }
+            if (Q.bruning_toleration_time) {
+                Q.workers_spd -= 4/12;
+                Q.workers_kpd += 6/12;
+                Q.workers_nsdap -= 2/12;
+                Q.new_middle_spd -= 4/12;
+                Q.old_middle_spd -= 4/12;
+                Q.rural_spd -= 4/12;
+                Q.catholics_spd -= 2/12;
+            }
         }
         if (Q.unemployed > 20) {
             Q.rural_nsdap += 2/12;
@@ -948,7 +967,7 @@ if (Q.month_actions >= 1) {
     }
     // prevent forever support if the economy is bad
     if (Q.year >= 1934) {
-        if (!Q.works_program) {
+        if (!Q.works_program && Q.year == 1934) {
             Q.unemployed *= 0.98;
             Q.inflation += 2/12;
             Q.economic_growth += 3/12;
