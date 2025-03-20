@@ -26,6 +26,8 @@ view-if: spd_toleration == 0
 on-arrival: {!
 Q.budget += 1;
 Q.inflation -= 1;
+Q.unemployed += 1;
+Q.economic_growth -= 0.5;
 Q.emergency_decree_mitigated = Q.liberal_parliament || (Q.bourgeois_parliament && !Q.lvp_formed) || Q.lvp_formed;
 if (Q.emergency_decree_mitigated) {
     Q.unemployed -= 0.5;
@@ -81,6 +83,8 @@ Q.in_grand_coalition = 0;
 Q.spd_toleration = 0;
 Q.budget += 1;
 Q.inflation -= 1;
+Q.unemployed += 1;
+Q.economic_growth -= 0.5;
 Q.emergency_decree_mitigated = Q.liberal_parliament || (Q.bourgeois_parliament && !Q.lvp_formed) || Q.lvp_formed;
 if (Q.emergency_decree_mitigated) {
     Q.unemployed -= 0.4;
@@ -140,6 +144,8 @@ Q.old_middle_spd -= 2;
 Q.kpd_relation -= 3;
 Q.budget += 1;
 Q.inflation -= 1;
+Q.unemployed += 1;
+Q.economic_growth -= 0.5;
 Q.emergency_decree_mitigated = Q.liberal_parliament || (Q.bourgeois_parliament && !Q.lvp_formed) || Q.lvp_formed;
 if (Q.emergency_decree_mitigated) {
     Q.unemployed -= 0.5;

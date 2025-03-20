@@ -1,7 +1,7 @@
 title: Act for the Protection of the Economy and Finance
 subtitle: Chancellor [+ chancellor +] introduces his most controversial act yet.
 new-page: true
-view-if: total_bruning_time == 15 and (in_center_right_coalition or in_right_coalition) and reparations >= 0 and not hoover_moratorium_seen and not lvp_formed and not liberal_parliament and not bourgeois_parliament
+view-if: total_bruning_time == 15 and (in_center_right_coalition or in_right_coalition) and reparations >= 0 and not hoover_moratorium_seen and not lvp_formed and not liberal_parliament and not bourgeois_parliament and not emergency_act_alt_seen
 on-arrival: emergency_act_seen = 1; ddp_right += 2; ddp_cohesion -= 2; dvp_right += 3; lvp_right += 2; pro_republic -= 3; new_middle_nsdap += new_middle_ddp*0.2; old_middle_nsdap += old_middle_ddp*0.2; new_middle_nsdap += new_middle_dvp*0.2; old_middle_nsdap += old_middle_dvp*0.2; new_middle_ddp *= 0.8; old_middle_ddp *= 0.8; new_middle_dvp *= 0.8; old_middle_dvp *= 0.8; new_middle_nsdap += new_middle_lvp*0.1; old_middle_nsdap += old_middle_lvp*0.1; new_middle_lvp *= 0.9; old_middle_lvp *= 0.9; new_middle_dnvp -= 4; old_middle_dnvp -= 4; new_middle_nsdap += 4; old_middle_nsdap += 4; new_middle_dnf += 2; old_middle_dnf += 2; rural_dnvp -= 2; rural_dnf += 2; hindenburg_angry_bruning += 10; liberal_cooperation -= 3; bourgeois_cooperation -= 3; bruning_coalition_dissent += 1
 tags: event
 face-image: img/bruning.jpg
@@ -31,7 +31,7 @@ Despite these divisions, when the [? if not lvp_formed and dvp_exist:<span style
 
 @bruning_survive
 view-if: bruning_coalition_dissent < 4
-on-arrival: unemployed += 0.8; new_middle_nsdap += 2; old_middle_nsdap += 2; budget += 1; inflation -= 1.5; economic_growth -= 0.5
+on-arrival: unemployed += 0.8; new_middle_nsdap += 2; old_middle_nsdap += 2; budget += 1; inflation -= 2; economic_growth -= 1; unemployed += 1
 
 [? if not lvp_formed and dvp_exist: A significant portion of the <span style="color: #C0A054;">**DVP**</span> and?][? if not lvp_formed and not dvp_exist:The?][? if lvp_formed: The right wing and former <span style="color: #C0A054;">**DVP**</span> portion of the <span style="color: #FFCC00;">**LVP**</span> and?] <span style="color: #3E88B3;">**DNVP**</span>'s Reichstag delegations initially pushed to break with Brüning, threatening to vote against the act. This sparked fierce internal divisions within both parties, as a strong pro-Brüning faction—including figures like Westarp, [? if not lvp_formed: Curtius?][? if lvp_formed: Dietrich?], and several influential industrialists such as Hans Luther—argued for continued support, persuading their colleagues to back the act as a necessary, albeit painful, remedy for Germany’s economic woes.
 

@@ -73,6 +73,10 @@ go-to: candidate_selection if not spd_campaign; endorsements_braun if spd_campai
 
 [? if spd_campaign: - <span style="color: #c00000;">**SPD**</span> ?]
 
+[? if kpd_support_spd == 1 and sapd_formed: - <span style="color: #9B0000;">**SAPD**</span> ?]
+
+[? if kpd_support_spd == 1: - <span style="color: #700000;">**KPD**</span> ?]
+
 [? if z_support_spd == 1 and spd_campaign: - <span style="color: #000000;">Center Party</span> ?]
 
 [? if ddp_support_spd == 1 and spd_campaign: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
@@ -92,6 +96,8 @@ go-to: candidate_selection if not spd_campaign; endorsements_braun if spd_campai
 [? if ddp_support_spd != 1 and not lvp_formed and reactionary_candidate_1932: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
 
 [? if not lvp_formed and reactionary_candidate_1932: - <span style="color: #C0A054;">**DVP**</span> ?]
+
+[? if kvp_formed and reactionary_candidate_1932: - <span style="color: #0087DC;">**KVP**</span> ?]
 
 [? if reactionary_candidate_1932: - **Others** ?]
 
