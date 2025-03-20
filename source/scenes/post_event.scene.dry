@@ -397,7 +397,7 @@ if (Q.month_actions >= 1) {
         Q.ddp_left += 0.05;
         Q.dvp_left += 0.1;
     }
-    if (Q.year == 1930 || Q.year == 1931) {
+    if (Q.year <= 1931) {
         Q.kpd_target = 13;
     } else if (Q.year >= 1932) {
         Q.kpd_target = 15;
