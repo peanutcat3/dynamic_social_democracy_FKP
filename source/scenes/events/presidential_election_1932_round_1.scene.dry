@@ -14,16 +14,6 @@ if (!Q.hitler_deported && Q.hitler_citizen) {
     Q.nsdap_candidate_1932 = "Göring";
     Q.nsdap_candidate_1932_disp = "Hermann Göring";
 }
-
-Q.spd_candidate_1932 = "Braun";
-Q.reactionary_candidate_1932 = "Hindenburg";
-Q.communist_candidate_1932 = "Thälmann";
-Q.burgerblock_candidate_1932 = "Eckener";
-
-Q.spd_candidate_1932_disp = "Otto Braun";
-Q.reactionary_candidate_1932_disp = "Paul von Hindenburg";
-Q.communist_candidate_1932_disp = "Ernst Thälmann";
-Q.burgerblock_candidate_1932_disp = "Hugo Eckener";
 !}
 tags: event
 priority: 2
@@ -33,9 +23,9 @@ face-image: img/hindenburg_hitler.jpg
 
 @pres_election
 
-The presidential election is coming up soon. [? if spd_in_government = 0 : While the position of Chancellor is typically more important, recent governments have depended on the president's emergency decree powers, making the office vital. ?] [? if hitler_deported==0 : The <span style="color: #7A3C00;">Nazis</span> will run Hitler, while the <span style="color: #700000;">**KPD**</span> will run Thälmann. A victory for Hitler would mean the end of parliamentary democracy, and the beginning of an era of <span style="color: #440a0a;">unspeakable</span> <span style="color: #220303;">**horrors**</span>. ?][? if hitler_deported==1 : Since Hitler has been deported, the <span style="color: #7A3C00;">Nazis</span> will run Hermann Göring in his stead. He is widely seen as a proxy for Hitler, who, despite his legal persecution, retains a popular base who wishes to see him returned to Germany. Meanwhile, the <span style="color: #700000;">**KPD**</span> will run Ernst Thälmann. A victory for the <span style="color: #7A3C00;">Nazis</span> would mean the end of parliamentary democracy, and the beginning of an era of <span style="color: #7e0000;">**unspeakable**</span> <span style="color: #3f0000;">**horrors**</span>.?]
+The presidential election's first round is set to take place this month. If no candidate secures a majority, a second round will be held, with the candidate receiving the most votes winning the presidency.
 
-Meanwhile, Theodor Duesterberg, the deeply antisemitic candidate of the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>, has suffered a severe blow after the <span style="color: #7A3C00;">Nazis</span> revealed that he had <span style="color: #005EB8;">Jewish</span> ancestry. The revelation led to a nervous breakdown, forcing him to resign from the <span style="color: #3E88B3;">**Stahlhelm**</span> in shame.
+[? if dnvp_candidate_1932 == "Duesterberg": Theodor Duesterberg, the deeply antisemitic candidate of the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span>, has suffered a severe blow after the <span style="color: #7A3C00;">Nazis</span> revealed that he had <span style="color: #005EB8;">Jewish</span> ancestry. The revelation led to a nervous breakdown, forcing him to resign from the <span style="color: #3E88B3;">**Stahlhelm**</span> in shame. ?]
 
 - @final_election: The first round results...
 
@@ -51,7 +41,7 @@ Q.spd_president_votes = 0;
 Q.hindenburg_votes = 0;
 Q.nsdap_presidential_votes = 0;
 Q.thalmann_votes = 0;
-Q.duesterburg_votes = 0;
+Q.dnvp_presidential_votes = 0;
 
 // initial phase:
 Q.nsdap_presidential_votes += Q.nsdap_normalized;
@@ -59,8 +49,8 @@ Q.nsdap_presidential_votes += Q.nsdap_normalized;
 Q.hindenburg_votes += Q.other_normalized;
 Q.hindenburg_votes += (Q.dnvp_normalized*0.6);
 
-Q.duesterburg_votes += (Q.dnvp_normalized*0.4);
-Q.duesterburg_votes += ((Q.other_normalized*((100-Q.pro_republic)/100))*0.1);
+Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.4);
+Q.dnvp_presidential_votes += ((Q.other_normalized*((100-Q.pro_republic)/100))*0.1);
 
 if (Q.spd_campaign) {
     Q.spd_president_votes += Q.spd_normalized;
@@ -174,33 +164,33 @@ if (Q.thalmann_to_spd_bonus) {
     Q.spd_president_votes += Q.thalmann_to_spd_bonus;
 }
 
-Q.total_votes_pres = Q.hindenburg_votes + Q.nsdap_presidential_votes + Q.thalmann_votes + Q.spd_president_votes + Q.duesterburg_votes;
+Q.total_votes_pres = Q.hindenburg_votes + Q.nsdap_presidential_votes + Q.thalmann_votes + Q.spd_president_votes + Q.dnvp_presidential_votes;
 Q.hindenburg_votes_normalized = (Q.hindenburg_votes/Q.total_votes_pres);
 Q.nsdap_presidential_votes_normalized = (Q.nsdap_presidential_votes/Q.total_votes_pres);
 Q.spd_president_votes_normalized = (Q.spd_president_votes/Q.total_votes_pres);
 Q.thalmann_votes_normalized = (Q.thalmann_votes/Q.total_votes_pres);
-Q.duesterburg_votes_normalized = (Q.duesterburg_votes/Q.total_votes_pres);
+Q.dnvp_presidential_votes_normalized = (Q.dnvp_presidential_votes/Q.total_votes_pres);
 
 // check for majority
 Q.hindenburg_votes = Math.round(Q.hindenburg_votes_normalized*1000)/10;
 Q.spd_president_votes = Math.round(Q.spd_president_votes_normalized*1000)/10;
 Q.nsdap_presidential_votes = Math.round(Q.nsdap_presidential_votes_normalized*1000)/10;
 Q.thalmann_votes = Math.round(Q.thalmann_votes_normalized*1000)/10;
-Q.duesterburg_votes = Math.round(Q.duesterburg_votes_normalized*1000)/10;
+Q.dnvp_presidential_votes = Math.round(Q.dnvp_presidential_votes_normalized*1000)/10;
 
 Q.hindenburg_majority = (Q.hindenburg_votes >= 50);
 Q.thalmann_majority = (Q.thalmann_votes >= 50);
 Q.nsdap_president_majority = (Q.nsdap_presidential_votes >= 50);
 Q.spd_president_majority = (Q.spd_president_votes >= 50);
-Q.duesterburg_majority = (Q.duesterburg_votes >= 50);
-Q.any_majority = Q.hindenburg_majority | Q.thalmann_majority | Q.nsdap_president_majority | Q.spd_president_majority | Q.duesterburg_majority;
+Q.dnvp_presidential_majority = (Q.dnvp_presidential_votes >= 50);
+Q.any_majority = Q.hindenburg_majority | Q.thalmann_majority | Q.nsdap_president_majority | Q.spd_president_majority | Q.dnvp_presidential_majority;
 
 // check for plurality
-Q.hindenburg_plurality = (Q.hindenburg_votes >= Q.nsdap_presidential_votes && Q.hindenburg_votes >= Q.spd_president_votes && Q.hindenburg_votes >= Q.thalmann_votes && Q.hindenburg_votes >= Q.duesterburg_votes);
-Q.thalmann_plurality = (Q.thalmann_votes >= Q.hindenburg_votes && Q.thalmann_votes >= Q.spd_president_votes && Q.thalmann_votes >= Q.nsdap_presidential_votes && Q.thalmann_votes >= Q.duesterburg_votes);
-Q.nsdap_president_plurality = (Q.nsdap_presidential_votes >= Q.hindenburg_votes && Q.nsdap_presidential_votes >= Q.spd_president_votes && Q.nsdap_presidential_votes >= Q.thalmann_votes && Q.nsdap_presidential_votes >= Q.duesterburg_votes);
-Q.spd_plurality = (Q.spd_president_votes >= Q.hindenburg_votes && Q.spd_president_votes >= Q.nsdap_presidential_votes && Q.spd_president_votes >= Q.thalmann_votes && Q.spd_president_votes >= Q.duesterburg_votes);
-Q.duesterburg_plurality = (Q.duesterburg_votes >= Q.thalmann_votes && Q.duesterburg_votes >= Q.nsdap_presidential_votes && Q.duesterburg_votes >= Q.hindenburg_votes && Q.duesterburg_votes >= Q.spd_president_votes);
+Q.hindenburg_plurality = (Q.hindenburg_votes >= Q.nsdap_presidential_votes && Q.hindenburg_votes >= Q.spd_president_votes && Q.hindenburg_votes >= Q.thalmann_votes && Q.hindenburg_votes >= Q.dnvp_presidential_votes);
+Q.thalmann_plurality = (Q.thalmann_votes >= Q.hindenburg_votes && Q.thalmann_votes >= Q.spd_president_votes && Q.thalmann_votes >= Q.nsdap_presidential_votes && Q.thalmann_votes >= Q.dnvp_presidential_votes);
+Q.nsdap_president_plurality = (Q.nsdap_presidential_votes >= Q.hindenburg_votes && Q.nsdap_presidential_votes >= Q.spd_president_votes && Q.nsdap_presidential_votes >= Q.thalmann_votes && Q.nsdap_presidential_votes >= Q.dnvp_presidential_votes);
+Q.spd_plurality = (Q.spd_president_votes >= Q.hindenburg_votes && Q.spd_president_votes >= Q.nsdap_presidential_votes && Q.spd_president_votes >= Q.thalmann_votes && Q.spd_president_votes >= Q.dnvp_presidential_votes);
+Q.dnvp_presidential_plurality = (Q.dnvp_presidential_votes >= Q.thalmann_votes && Q.dnvp_presidential_votes >= Q.nsdap_presidential_votes && Q.dnvp_presidential_votes >= Q.hindenburg_votes && Q.dnvp_presidential_votes >= Q.spd_president_votes);
 // If no candidate gets above 50%, then there's a second round. In the second round, a plurality wins. 
 Q.election_round += 1;
 
@@ -209,21 +199,21 @@ Q.hindenburg_votes_disp = Q.hindenburg_votes.toFixed(1);
 Q.spd_president_votes_disp = Q.spd_president_votes.toFixed(1);
 Q.nsdap_presidential_votes_disp = Q.nsdap_presidential_votes.toFixed(1);
 Q.thalmann_votes_disp = Q.thalmann_votes.toFixed(1);
-Q.duesterburg_votes_disp = Q.duesterburg_votes.toFixed(1);
+Q.dnvp_presidential_votes_disp = Q.dnvp_presidential_votes.toFixed(1);
 !}
 go-to: hindenburg_wins if hindenburg_majority == 1; thalmann_wins if thalmann_majority == 1; hitler_wins if nsdap_president_majority == 1; braun_wins if spd_president_majority == 1; duesterburg_wins if duesterburg_majority == 1; no_majority_round1 if any_majority == 0
 
 Results:
 
-<span style="color: #808080;">**Hindenburg**</span> - [+ hindenburg_votes_disp +]%
+<span style="color: #808080;">**[+ reactionary_candidate_1932 +]**</span> - [+ hindenburg_votes_disp +]%
 
-<span style="color: #3E88B3;">**Duesterberg**</span> - [+ duesterburg_votes_disp +]%
+<span style="color: #3E88B3;">**[+ dnvp_candidate_1932 +]**</span> - [+ dnvp_presidential_votes_disp +]%
 
 <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span> - [+ nsdap_presidential_votes_disp +]%
 
-[? if kpd_support_braun == 0 : <span style="color: #700000;">**Thälmann**</span> - [+ thalmann_votes_disp +]% ?]
+[? if kpd_support_braun == 0 : <span style="color: #700000;">**[+ communist_candidate_1932 +]**</span> - [+ thalmann_votes_disp +]% ?]
 
-[? if braun_campaign > 0 : <span style="color: #c00000;">**Braun**</span> - [+ spd_president_votes_disp +]% ?]
+[? if braun_campaign > 0 : <span style="color: #c00000;">**[+ spd_candidate_1932 +]**</span> - [+ spd_president_votes_disp +]% ?]
 
 @no_majority_round1
 on-arrival: hitler_support_hindenburg = 1 if (spd_plurality or thalmann_plurality)

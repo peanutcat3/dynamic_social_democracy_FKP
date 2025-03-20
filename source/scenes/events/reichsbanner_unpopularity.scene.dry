@@ -1,6 +1,6 @@
 title: Reichsbanner Membership Dwindles
 subtitle: Our unpopularity has impaired the Reichsbanner's recruitment ability.
-view-if: rb_militancy >= 0.1 and workers_spd_normalized < (workers_kpd_normalized + workers_nsdap_normalized + workers_dnvp_normalized + (rb_militancy*100)) and time >= reichsbanner_unpopularity_time
+view-if: rb_militancy >= 0.1 and workers_spd_normalized < (workers_kpd_normalized + workers_nsdap_normalized + workers_dnvp_normalized + (rb_militancy*75)) and time >= reichsbanner_unpopularity_time
 new-page: true
 tags: event
 on-display: {!  
@@ -19,7 +19,7 @@ on-arrival: reichsbanner_unpopularity_time = time + 6
 
 = Reichsbanner Membership Dwindles
 
-Unfortunately, the Reichsbanner's effectiveness is dragged down by the <span style="color: #c00000;">**SPD**</span>'s unpopularity, as the <span style="color: #c00000;">**SPD**</span> is no longer the dominant party among the workers. Many Reichsbanner members have left, and many workers are not interested.
+Unfortunately, the Reichsbanner's effectiveness is dragged down by the <span style="color: #c00000;">**SPD**</span>'s unpopularity, as the workers aren't particularly enthusiastic about joining. [? if spd_votes >= 29: Furthermore, we are unable to recruit significant amount of supporters from non-worker demographics. ?]
 
 - @reichsbanner_joever: Unfortunate.
 

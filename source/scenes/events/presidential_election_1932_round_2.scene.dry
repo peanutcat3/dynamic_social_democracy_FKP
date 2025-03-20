@@ -29,7 +29,7 @@ Q.spd_president_votes = 0;
 Q.hindenburg_votes = 0;
 Q.nsdap_presidential_votes = 0;
 Q.thalmann_votes = 0;
-Q.duesterburg_votes = 0;
+Q.dnvp_presidential_votes = 0;
 
 // initial phase:
 Q.nsdap_presidential_votes += Q.nsdap_normalized;
@@ -156,35 +156,35 @@ console.log(Q.hindenburg_votes)
 console.log(Q.nsdap_presidential_votes)
 console.log(Q.thalmann_votes)
 console.log(Q.spd_president_votes)
-console.log(Q.duesterburg_votes)
+console.log(Q.dnvp_presidential_votes)
 
-Q.total_votes_pres = Q.hindenburg_votes + Q.nsdap_presidential_votes + Q.thalmann_votes + Q.spd_president_votes + Q.duesterburg_votes;
+Q.total_votes_pres = Q.hindenburg_votes + Q.nsdap_presidential_votes + Q.thalmann_votes + Q.spd_president_votes + Q.dnvp_presidential_votes;
 Q.hindenburg_votes_normalized = (Q.hindenburg_votes/Q.total_votes_pres);
 Q.nsdap_presidential_votes_normalized = (Q.nsdap_presidential_votes/Q.total_votes_pres);
 Q.spd_president_votes_normalized = (Q.spd_president_votes/Q.total_votes_pres);
 Q.thalmann_votes_normalized = (Q.thalmann_votes/Q.total_votes_pres);
-Q.duesterburg_votes_normalized = (Q.duesterburg_votes/Q.total_votes_pres);
+Q.dnvp_presidential_votes_normalized = (Q.dnvp_presidential_votes/Q.total_votes_pres);
 
 // check for majority
 Q.hindenburg_votes = Math.round(Q.hindenburg_votes_normalized*1000)/10;
 Q.spd_president_votes = Math.round(Q.spd_president_votes_normalized*1000)/10;
 Q.nsdap_presidential_votes = Math.round(Q.nsdap_presidential_votes_normalized*1000)/10;
 Q.thalmann_votes = Math.round(Q.thalmann_votes_normalized*1000)/10;
-Q.duesterburg_votes = Math.round(Q.duesterburg_votes_normalized*1000)/10;
+Q.dnvp_presidential_votes = Math.round(Q.dnvp_presidential_votes_normalized*1000)/10;
 
 Q.hindenburg_majority = (Q.hindenburg_votes >= 50);
 Q.thalmann_majority = (Q.thalmann_votes >= 50);
 Q.nsdap_president_majority = (Q.nsdap_presidential_votes >= 50);
 Q.spd_president_majority = (Q.spd_president_votes >= 50);
-Q.duesterburg_majority = (Q.duesterburg_votes >= 50);
-Q.any_majority = Q.hindenburg_majority | Q.thalmann_majority | Q.nsdap_president_majority | Q.spd_president_majority | Q.duesterburg_majority;
+Q.dnvp_presidential_majority = (Q.dnvp_presidential_votes >= 50);
+Q.any_majority = Q.hindenburg_majority | Q.thalmann_majority | Q.nsdap_president_majority | Q.spd_president_majority | Q.dnvp_presidential_majority;
 
 // check for plurality
-Q.hindenburg_plurality = (Q.hindenburg_votes >= Q.nsdap_presidential_votes && Q.hindenburg_votes >= Q.spd_president_votes && Q.hindenburg_votes >= Q.thalmann_votes && Q.hindenburg_votes >= Q.duesterburg_votes);
-Q.thalmann_plurality = (Q.thalmann_votes >= Q.hindenburg_votes && Q.thalmann_votes >= Q.spd_president_votes && Q.thalmann_votes >= Q.nsdap_presidential_votes && Q.thalmann_votes >= Q.duesterburg_votes);
-Q.nsdap_president_plurality = (Q.nsdap_presidential_votes >= Q.hindenburg_votes && Q.nsdap_presidential_votes >= Q.spd_president_votes && Q.nsdap_presidential_votes >= Q.thalmann_votes && Q.nsdap_presidential_votes >= Q.duesterburg_votes);
-Q.spd_plurality = (Q.spd_president_votes >= Q.hindenburg_votes && Q.spd_president_votes >= Q.nsdap_presidential_votes && Q.spd_president_votes >= Q.thalmann_votes && Q.spd_president_votes >= Q.duesterburg_votes);
-Q.duesterburg_plurality = (Q.duesterburg_votes >= Q.thalmann_votes && Q.duesterburg_votes >= Q.nsdap_presidential_votes && Q.duesterburg_votes >= Q.hindenburg_votes && Q.duesterburg_votes >= Q.spd_president_votes);
+Q.hindenburg_plurality = (Q.hindenburg_votes >= Q.nsdap_presidential_votes && Q.hindenburg_votes >= Q.spd_president_votes && Q.hindenburg_votes >= Q.thalmann_votes && Q.hindenburg_votes >= Q.dnvp_presidential_votes);
+Q.thalmann_plurality = (Q.thalmann_votes >= Q.hindenburg_votes && Q.thalmann_votes >= Q.spd_president_votes && Q.thalmann_votes >= Q.nsdap_presidential_votes && Q.thalmann_votes >= Q.dnvp_presidential_votes);
+Q.nsdap_president_plurality = (Q.nsdap_presidential_votes >= Q.hindenburg_votes && Q.nsdap_presidential_votes >= Q.spd_president_votes && Q.nsdap_presidential_votes >= Q.thalmann_votes && Q.nsdap_presidential_votes >= Q.dnvp_presidential_votes);
+Q.spd_plurality = (Q.spd_president_votes >= Q.hindenburg_votes && Q.spd_president_votes >= Q.nsdap_presidential_votes && Q.spd_president_votes >= Q.thalmann_votes && Q.spd_president_votes >= Q.dnvp_presidential_votes);
+Q.dnvp_presidential_plurality = (Q.dnvp_presidential_votes >= Q.thalmann_votes && Q.dnvp_presidential_votes >= Q.nsdap_presidential_votes && Q.dnvp_presidential_votes >= Q.hindenburg_votes && Q.dnvp_presidential_votes >= Q.spd_president_votes);
 // If no candidate gets above 50%, then there's a second round. In the second round, a plurality wins. 
 Q.election_round += 1;
 
@@ -193,19 +193,19 @@ Q.hindenburg_votes_disp = Q.hindenburg_votes.toFixed(1);
 Q.spd_president_votes_disp = Q.spd_president_votes.toFixed(1);
 Q.nsdap_presidential_votes_disp = Q.nsdap_presidential_votes.toFixed(1);
 Q.thalmann_votes_disp = Q.thalmann_votes.toFixed(1);
-Q.duesterburg_votes_disp = Q.duesterburg_votes.toFixed(1);
+Q.dnvp_presidential_votes_disp = Q.dnvp_presidential_votes.toFixed(1);
 !}
 go-to: hindenburg_wins if hindenburg_plurality == 1; thalmann_wins if thalmann_plurality == 1; hitler_wins if nsdap_president_plurality == 1; braun_wins if spd_plurality == 1
 
 Results:
 
-<span style="color: #808080;">**Hindenburg**</span> - [+ hindenburg_votes_disp +]%
+<span style="color: #808080;">**[+ reactionary_candidate_1932 +]**</span> - [+ hindenburg_votes_disp +]%
 
 <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span> - [+ nsdap_presidential_votes_disp +]%
 
-[? if kpd_support_spd == 0 : <span style="color: #700000;">**Thälmann**</span> - [+ thalmann_votes_disp +]% ?]
+[? if kpd_support_spd == 0 : <span style="color: #700000;">**[+ communist_candidate_1932 +]**</span> - [+ thalmann_votes_disp +]% ?]
 
-[? if spd_campaign > 0 : <span style="color: #c00000;">**Braun**</span> - [+ spd_president_votes_disp +]% ?]
+[? if spd_campaign > 0 : <span style="color: #c00000;">**[+ spd_candidate_1932 +]**</span> - [+ spd_president_votes_disp +]% ?]
 
 @hindenburg_wins
 on-arrival: president = "Hindenburg"; hindenburg_angry_bruning += 20 if not spd_campaign
