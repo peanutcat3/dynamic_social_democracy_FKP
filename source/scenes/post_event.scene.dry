@@ -1123,6 +1123,7 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
 
 if (!Q.wtb_adopted && Q.black_thursday_seen) {
     Q.wtb_points_gain = 0;
+    Q.wtb_points_gain += 2;
     Q.wtb_points_gain += Q.labor_strength/50;
     if (Q.woytinsky_advisor) {
         Q.wtb_points_gain += Q.labor_strength/100;
