@@ -24,6 +24,6 @@ Unfortunately, the Reichsbanner's effectiveness is dragged down by the <span sty
 - @reichsbanner_joever: Unfortunate.
 
 @reichsbanner_joever
-on-arrival: rb_strength *= 0.95; rb_militancy *= 0.95
+on-arrival: rb_strength *= 0.95; rb_militancy *= 0.9
 
 This will continue to be a problem if our popularity continues to flag.
