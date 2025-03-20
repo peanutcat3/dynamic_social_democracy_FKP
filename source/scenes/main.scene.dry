@@ -410,7 +410,7 @@ if (Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_49_trigg
     }
 }
 // hugenberg fumble banking crisis
-if (Q.year >= 1930 && Q.dnvp_ideology == "Radical" && Q.banking_crisis_seen && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.dnvp_ideology == "Radical" && Q.banking_crisis_seen && Q.bruning_toleration_time && Q.time !== Q.last_time_updated) {
     Q.flavour_51_trigger += 1; 
     if (Q.flavour_51_trigger == 1 && !Q.flavour_51_trigger_shown) {
         Q.flavour_51_trigger_time = Q.time;
@@ -975,7 +975,7 @@ max-cards: 3
 
 {!<p class="other">!}[? if flavour_45_trigger and flavour_45_trigger_time == time: The <span style="color: #FFCC00;">**LVP**</span> is disappointed by Brüning's emergency decrees thus far, criticizing the new taxes and cuts to civil servant salaries. There is a growing call within the right of the party for Brüning to form a coalition with the <span style="color: #7A3C00;">national</span> <span style="color: #003755;">opposition</span>[? if spd_toleration_right:&nbsp;to end his reliance on our votes?]. However, the party is still largely satisfied with his government, especially with the inclusion of the <span style="color: #3E88B3;">**DNVP**</span>[? if not spd_toleration_right:, effectively locking us into opposition?]. ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if flavour_51_trigger and flavour_51_trigger_time == time: The <span style="color: #3E88B3;">**DNVP**</span> has failed to capitalize on the rightward radicalization triggered by the Banking Crisis and its devastating economic effects, largely due to Hugenberg's support for replacing the welfare state with a program of "self-help." As a result, many newly unemployed urban workers and middle-class voters are likely to turn to the <span style="color: #7A3C00;">Nazis</span> instead. ?]{!</p>!}
+{!<p class="dnvp">!}[? if flavour_51_trigger and flavour_51_trigger_time == time: Kurt von Schleicher, who initially convinced Hindenburg to appoint Brüning, is now skeptical—especially in the aftermath of the Banking Crisis—that Brüning can carry out the far-reaching reforms needed to restore Germany’s great power status. As a result, Schleicher is now seeking to establish connections with the anti-parliamentary right. ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_24_trigger and flavour_24_trigger_time == time: The Banking Crisis[? if emergency_decree_seen:&nbsp;and the fallout from Brüning's second emergency decree?] has significantly intensified anti-Brüning sentiment among the bourgeois parties, especially the <span style="color: #C0A054;">**DVP**</span>[? if emergency_decree_seen:, which only narrowly secured a majority within its own ranks to support Brüning?]. The right wing of the <span style="color: #C0A054;">**DVP**</span> is increasingly frustrated by Brüning’s failure to follow through on his promise to shift the cabinet further to the right. However, [+ dvp_leader +] remains hesitant to bring down the government, fearing it would further destabilize Germany’s financial situation. Additionally, the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> has shown no interest in joining Brüning’s cabinet. Under these circumstances, the <span style="color: #C0A054;">**DVP**</span> has little choice but to continue supporting Brüning. ?]{!</p>!}
 
@@ -1474,7 +1474,7 @@ if (Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.time == Q.flavour_49_trigg
     }
 }
 // hugenberg fumble banking crisis
-if (Q.year >= 1930 && Q.dnvp_ideology == "Radical" && Q.banking_crisis_seen && Q.time !== Q.last_time_updated) {
+if (Q.year >= 1930 && Q.dnvp_ideology == "Radical" && Q.banking_crisis_seen && Q.bruning_toleration_time && Q.time !== Q.last_time_updated) {
     Q.flavour_51_trigger += 1; 
     if (Q.flavour_51_trigger == 1 && !Q.flavour_51_trigger_shown) {
         Q.flavour_51_trigger_time = Q.time;
@@ -2039,7 +2039,7 @@ max-cards: 4
 
 {!<p class="other">!}[? if flavour_45_trigger and flavour_45_trigger_time == time: The <span style="color: #FFCC00;">**LVP**</span> is disappointed by Brüning's emergency decrees thus far, criticizing the new taxes and cuts to civil servant salaries. There is a growing call within the right of the party for Brüning to form a coalition with the <span style="color: #7A3C00;">national</span> <span style="color: #003755;">opposition</span>[? if spd_toleration_right:&nbsp;to end his reliance on our votes?]. However, the party is still largely satisfied with his government, especially with the inclusion of the <span style="color: #3E88B3;">**DNVP**</span>[? if not spd_toleration_right:, effectively locking us into opposition?]. ?]{!</p>!}
 
-{!<p class="dnvp">!}[? if flavour_51_trigger and flavour_51_trigger_time == time: The <span style="color: #3E88B3;">**DNVP**</span> has failed to capitalize on the rightward radicalization triggered by the Banking Crisis and its devastating economic effects, largely due to Hugenberg's support for replacing the welfare state with a program of "self-help." As a result, many newly unemployed urban workers and middle-class voters are likely to turn to the <span style="color: #7A3C00;">Nazis</span> instead. ?]{!</p>!}
+{!<p class="dnvp">!}[? if flavour_51_trigger and flavour_51_trigger_time == time: Kurt von Schleicher, who initially convinced Hindenburg to appoint Brüning, is now skeptical—especially in the aftermath of the Banking Crisis—that Brüning can carry out the far-reaching reforms needed to restore Germany’s great power status. As a result, Schleicher is now seeking to establish connections with the anti-parliamentary right. ?]{!</p>!}
 
 {!<p class="other">!}[? if flavour_24_trigger and flavour_24_trigger_time == time: The Banking Crisis[? if emergency_decree_seen:&nbsp;and the fallout from Brüning's second emergency decree?] has significantly intensified anti-Brüning sentiment among the bourgeois parties, especially the <span style="color: #C0A054;">**DVP**</span>[? if emergency_decree_seen:, which only narrowly secured a majority within its own ranks to support Brüning?]. The right wing of the <span style="color: #C0A054;">**DVP**</span> is increasingly frustrated by Brüning’s failure to follow through on his promise to shift the cabinet further to the right. However, [+ dvp_leader +] remains hesitant to bring down the government, fearing it would further destabilize Germany’s financial situation. Additionally, the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span> has shown no interest in joining Brüning’s cabinet. Under these circumstances, the <span style="color: #C0A054;">**DVP**</span> has little choice but to continue supporting Brüning. ?]{!</p>!}
 

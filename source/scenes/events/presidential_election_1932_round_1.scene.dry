@@ -211,9 +211,9 @@ Results:
 
 <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span> - [+ nsdap_presidential_votes_disp +]%
 
-[? if kpd_support_braun == 0 : <span style="color: #700000;">**[+ communist_candidate_1932 +]**</span> - [+ thalmann_votes_disp +]% ?]
+[? if kpd_support_spd == 0 : <span style="color: #700000;">**[+ communist_candidate_1932 +]**</span> - [+ thalmann_votes_disp +]% ?]
 
-[? if braun_campaign > 0 : <span style="color: #c00000;">**[+ spd_candidate_1932 +]**</span> - [+ spd_president_votes_disp +]% ?]
+[? if spd_campaign > 0 : <span style="color: #c00000;">**[+ spd_candidate_1932 +]**</span> - [+ spd_president_votes_disp +]% ?]
 
 @no_majority_round1
 on-arrival: hitler_support_hindenburg = 1 if (spd_plurality or thalmann_plurality)
