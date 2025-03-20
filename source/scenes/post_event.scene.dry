@@ -819,8 +819,8 @@ if (Q.month_actions >= 1) {
         Q.sa_strength += 100/12;
         if (!Q.works_program) {
             Q.workers_other -= 3/12;
-            Q.unemployed += 1/12; 
-            Q.inflation -= 1/12;
+            Q.unemployed += 2/12; 
+            Q.inflation -= 2/12;
             Q.economic_growth -= 1/12;
             Q.catholics_z += 2/12;
             if (Q.z_leader == "Kaas") {
