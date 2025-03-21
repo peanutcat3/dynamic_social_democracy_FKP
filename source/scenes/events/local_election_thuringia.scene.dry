@@ -1,5 +1,5 @@
 title: Thuringian Landtag Election
-view-if: (year == 1929 and month == 12 and not thuringia_election_seen) or thuringia_election_2_trigger_time == time and thuringia_election_seen_time != time
+view-if: (year == 1929 and month == 12 and not thuringia_election_seen) or (thuringia_election_2_trigger_time == time and thuringia_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: thuringia_election_seen = 1; thuringia_election_seen_time = time
@@ -76,7 +76,7 @@ if (Q.stolper_program_adopted) thuringia_adjustment_factors.ddp += 0.6;
 Q.ddp_thuringia_elections_vote = Q.ddp_votes*thuringia_adjustment_factors.ddp;
 Q.lvp_thuringia_elections_vote = Q.lvp_votes*thuringia_adjustment_factors.lvp;
 if (!Q.stegerwald_path) Q.z_thuringia_elections_vote = Q.z_votes*thuringia_adjustment_factors.z;
-if (Q.stegerwald_path) Q.z_thuringia_elections_vote = Q.z_votes * 1.0;
+if (Q.stegerwald_path) Q.z_thuringia_elections_vote = Q.z_votes * 0.8;
 if (Q.dvp_leader != "Scholz") thuringia_adjustment_factors.dvp += 0.1;
 Q.dvp_thuringia_elections_vote = Q.dvp_votes*thuringia_adjustment_factors.dvp;
 if (Q.dnvp_ideology == "Moderate") thuringia_adjustment_factors.dnvp += 1.0;
@@ -439,7 +439,7 @@ go-to: thuringia_coalition_menu
 
 Thuringia is currently governed by a broad center-right coalition, tolerated by the <span style="color: #7A3C00;">**NSDAP**</span>. This coalition includes all parties to the right of us, along with the special interest parties, the <span style="color: #b8996f;">**WP**</span> and <span style="color: #7FCEB1;">**CNBLP**</span>, both of which have a significant presence in state politics.
 
-United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #C43988;">**KPO**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_thuringia +]% 
+United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #C43988;">**KPO**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_thuringia +]% 
 
 Grand Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if z_r_thuringia:&nbsp;+&nbsp;<span style="color: #000000;">**Z**</span> ?][? if not lvp_formed:&nbsp;+&nbsp;<span style="color: #C0A054;">**DVP**</span>?]): [+ spd_coalition_thuringia +]% 
 

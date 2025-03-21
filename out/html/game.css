@@ -605,8 +605,17 @@ td, th {
 .seat.farm3 {
   fill: #7FCEB1;
 }
+.seat.farm4 {
+  fill: #11DD11;
+}
 .seat.wp {
   fill: #b8996f;
+}
+.seat.vrp {
+  fill: #0075EB;
+}
+.seat.aspd {
+  fill: #fe9e00;
 }
 .tooltip-text {
   text-decoration: underline;
