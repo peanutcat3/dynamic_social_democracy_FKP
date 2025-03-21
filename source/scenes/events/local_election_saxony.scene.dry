@@ -219,8 +219,8 @@ Q.other_r_saxony = (Q.other_r_saxony != undefined ? parseFloat(Q.other_r_saxony.
 Q.kvp_r_saxony = (Q.kvp_r_saxony != undefined ? parseFloat(Q.kvp_r_saxony.toFixed(1)) : 0);
 Q.dnf_r_saxony = (Q.dnf_r_saxony != undefined ? parseFloat(Q.dnf_r_saxony.toFixed(1)) : 0);
 
-let spd_share = 0.94;
-let aspd_share = 0.06;
+let spd_share = 0.95;
+let aspd_share = 0.05;
 
 if (Q.reformists_resign) aspd_share += 0.1;
 if (Q.unions_independent) aspd_share += 0.2;
