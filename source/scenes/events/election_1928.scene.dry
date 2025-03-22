@@ -1725,7 +1725,7 @@ go-to: grand_coalition
 # In the first election, SPD always leads. In subsequent elections, if spd_r >= 29 then SPD leads, otherwise Z leads?
 
 @grand_coalition_z_lead
-go-to: grand_coalition_z_lead_2 if (dvp_relation >= 30 or lvp_relation >= 30); grand_coalition_fail if (dvp_relation < 30 or lvp_relation < 30)
+go-to: grand_coalition_z_lead_2 if ((dvp_relation >= 30 and not lvp_formed) or (lvp_relation >= 30 and lvp_formed)); grand_coalition_fail if ((dvp_relation < 30 and not lvp_formed) or (lvp_relation < 30 and lvp_formed))
 
 There are enough votes to form a majority coalition consisting of the <span style="color: #c00000;">**SPD**</span>, <span style="color: #000000;">Center</span> (<span style="color: #000000;">**Z**</span>), <span style="color: #A2D8E0;">**Bavarian People's**</span> (<span style="color: #A2D8E0;">**BVP**</span>), [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] [? if not lvp_formed: (<span style="color: #D3C24D;">**[+ ddp_name +]**</span>)?][? if lvp_formed: (<span style="color: #FFCC00;">**LVP**</span>)?][? if not lvp_formed: , and <span style="color: #C0A054;">**People's**</span> (<span style="color: #C0A054;">**DVP**</span>)?] parties. Given our rather weak electoral performance, [? if spd_no_confidence = 1 : and our previous vote of no confidence against the government, ?][? if no_confidence_against_spd = 1 : and the vote of no confidence against us, ?] President Hindenburg has asked the <span style="color: #000000;">Center Party</span> to take the lead role in forming a government.
 
