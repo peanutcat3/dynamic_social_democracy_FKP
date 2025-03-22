@@ -1123,6 +1123,7 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
 
 if (!Q.wtb_adopted && Q.black_thursday_seen) {
     Q.wtb_points_gain = 0;
+    if (Q.labor_strength >= (Q.center_strength + Q.left_strength)) Q.wtb_points_gain += 3
     Q.wtb_points_gain += Q.labor_strength/50;
     if (Q.woytinsky_advisor) {
         Q.wtb_points_gain += Q.labor_strength/100;
@@ -1146,7 +1147,7 @@ if (!Q.wtb_adopted && Q.black_thursday_seen) {
         Q.wtb_points_gain += 1;
     }
     Q.wtb_points_gain*=(1-Q.dissent)
-    Q.wtb_points_gain += 2;
+    Q.wtb_points_gain += 3;
     if (Q.wtb_points_gain > 0) {
         Q.wtb_points += Q.wtb_points_gain;
     }
