@@ -5,6 +5,7 @@ on-arrival: schleicher_wtb_proposal_seen = 1
 new-page: true
 max-visits: 1
 tags: event
+face-image: img/portraits/SchleicherKurt.jpg
 
 = Schleicher's Proposal
 
