@@ -448,7 +448,7 @@ if (Q.month_actions >= 1) {
         Q.new_middle_ddp += 3/12;
     }
     // soft cap for nsdap workers
-    if (Q.workers_nsdap_normalized >= Q.workers_kpd_normalized && Q.unemployed >= 20) {
+    if (Q.workers_nsdap_normalized >= (Q.workers_kpd_normalized - 5) && Q.unemployed >= 15) {
         Q.workers_nsdap -= 4/12;
     }
 
@@ -948,7 +948,7 @@ if (Q.month_actions >= 1) {
             if (Q.bruning_toleration_time && Q.spd_votes >= 26) {
                 Q.workers_spd -= 4/12;
                 Q.workers_kpd += 6/12;
-                Q.workers_nsdap -= 2/12;
+                Q.workers_nsdap += 2/12;
                 Q.new_middle_spd -= 4/12;
                 Q.old_middle_spd -= 4/12;
                 Q.rural_spd -= 4/12;
