@@ -1405,6 +1405,7 @@ if (Q.year == 1929 && Q.month == 3) {
 if (Q.year == 1929 && Q.month == 10 && !Q.lvp_formed) {
     Q.new_middle_other += 2;
     Q.old_middle_other += 2;
+    Q.vnr_formed = 1;
 }
 
 if (Q.year == 1929 && Q.month == 8 && Q.ddp_cohesion >= 12 && !Q.lvp_formed) {

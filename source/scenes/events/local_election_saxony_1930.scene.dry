@@ -1,8 +1,8 @@
 title: Saxony Landtag Election
-view-if: (year == 1929 and month == 5 and not saxony_election_seen) or (saxony_election_2_trigger_time == time and saxony_election_seen_time != time)
+view-if: (year == 1930 and month >= 6 and not saxony_election_1930_seen and saxony_1930_trigger) or (saxony_election_3_trigger_time == time and saxony_election_seen_2_time != time)
 new-page: true
 tags: event
-on-arrival: saxony_election_seen = 1; saxony_election_seen_time = time
+on-arrival: saxony_election_1930_seen = 1; saxony_election_seen_2_time = time
 priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
@@ -31,19 +31,20 @@ on-arrival: {!
 var saxony_adjustment_factors = {
     spd: 1.25,
     sapd: 1.0,
-    kpd: 1.25,
+    kpd: 1.2,
     ddp: 1.0,
-    lvp: 1.5,
+    lvp: 1.4,
     z: 0.06,
     dvp: 1.6,
     dnvp: 0.6,
     nsdap: 1.0,
-    other: 1.3,
+    other: 1.43,
     kvp: 1.3,
     dnf: 0.3
 };
 
 Q.spd_r_saxony = 0;
+Q.aspd_r_saxony = 0;
 Q.sapd_r_saxony = 0;
 Q.kpd_r_saxony = 0;
 Q.ddp_r_saxony = 0;
@@ -55,6 +56,9 @@ Q.nsdap_r_saxony = 0;
 Q.other_r_saxony = 0;
 Q.kvp_r_saxony = 0;
 Q.dnf_r_saxony = 0;
+Q.farm_r_saxony = 0;
+Q.csvd_r_saxony = 0;
+Q.vnr_r_saxony = 0;
 
 Q.spd_saxony_elections_vote = 0;
 Q.sapd_saxony_elections_vote = 0;
@@ -75,15 +79,20 @@ Q.spd_saxony_elections_vote = Q.spd_votes*saxony_adjustment_factors.spd;
 Q.sapd_saxony_elections_vote = Q.sapd_votes*saxony_adjustment_factors.sapd;
 Q.kpd_saxony_elections_vote = Q.kpd_votes*saxony_adjustment_factors.kpd;
 if (Q.stolper_program_adopted) saxony_adjustment_factors.ddp += 0.2;
+if (!Q.vnr_formed) saxony_adjustment_factors.ddp += 0.1;
 Q.ddp_saxony_elections_vote = Q.ddp_votes*saxony_adjustment_factors.ddp;
 Q.lvp_saxony_elections_vote = Q.lvp_votes*saxony_adjustment_factors.lvp;
 if (!Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes*saxony_adjustment_factors.z;
-if (Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes * 0.8;
+if (Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes * 0.9;
+if (Q.dvp_ideology != "Right" || Q.dvp_leader != "Scholz") saxony_adjustment_factors.dvp += 0.1;
 Q.dvp_saxony_elections_vote = Q.dvp_votes*saxony_adjustment_factors.dvp;
-if (Q.dnvp_ideology == "Moderate") saxony_adjustment_factors.dnvp += 0.15;
+if (Q.dnvp_ideology == "Moderate") saxony_adjustment_factors.dnvp += 0.3;
 Q.dnvp_saxony_elections_vote = Q.dnvp_votes*saxony_adjustment_factors.dnvp;
 Q.nsdap_saxony_elections_vote = Q.nsdap_votes*saxony_adjustment_factors.nsdap;
-if (Q.stolper_program_adopted) saxony_adjustment_factors.other -= 0.1;
+if (Q.stolper_program_adopted) saxony_adjustment_factors.other -= 0.05;
+if (!Q.vnr_formed) saxony_adjustment_factors.other -= 0.05;
+if (!Q.csvd_formed) saxony_adjustment_factors.other -= 0.05;
+if (Q.dnvp_ideology == "Moderate") saxony_adjustment_factors.other -= 0.1;
 Q.other_saxony_elections_vote = Q.other_votes*saxony_adjustment_factors.other;
 Q.kvp_saxony_elections_vote = Q.kvp_votes*saxony_adjustment_factors.kvp;
 Q.dnf_saxony_elections_vote = Q.dnf_votes*saxony_adjustment_factors.dnf;
@@ -103,7 +112,7 @@ if (Q.total_votes_saxony > 0) {
     Q.other_saxony_elections_vote = (Q.other_saxony_elections_vote / Q.total_votes_saxony) * 100;
     Q.kvp_saxony_elections_vote = (Q.kvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
     Q.dnf_saxony_elections_vote = (Q.dnf_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    let target = 34;
+    let target = 33.37;
     Q.spd_saxony_elections_vote = Math.round((Q.spd_saxony_elections_vote + (target - Q.spd_saxony_elections_vote) * 0.35) * 10) / 10;
     Q.total_votes_saxony = Q.spd_saxony_elections_vote + Q.sapd_saxony_elections_vote + Q.kpd_saxony_elections_vote + Q.ddp_saxony_elections_vote + Q.lvp_saxony_elections_vote + Q.z_saxony_elections_vote + Q.dvp_saxony_elections_vote + Q.dnvp_saxony_elections_vote + Q.nsdap_saxony_elections_vote + Q.other_saxony_elections_vote + Q.kvp_saxony_elections_vote + Q.dnf_saxony_elections_vote;
     Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote / Q.total_votes_saxony) * 100;
@@ -219,11 +228,11 @@ Q.other_r_saxony = (Q.other_r_saxony != undefined ? parseFloat(Q.other_r_saxony.
 Q.kvp_r_saxony = (Q.kvp_r_saxony != undefined ? parseFloat(Q.kvp_r_saxony.toFixed(1)) : 0);
 Q.dnf_r_saxony = (Q.dnf_r_saxony != undefined ? parseFloat(Q.dnf_r_saxony.toFixed(1)) : 0);
 
-let spd_share = 0.95;
-let aspd_share = 0.05;
+let spd_share = 0.98;
+let aspd_share = 0.02;
 
-if (Q.reformists_resign) aspd_share += 0.1;
-if (Q.unions_independent) aspd_share += 0.2;
+if (Q.reformists_resign) aspd_share += 0.03;
+if (Q.unions_independent) aspd_share += 0.06;
 
 let total_spd_share = aspd_share + spd_share;
 
@@ -236,27 +245,35 @@ Q.spd_r_saxony = Q.spd_r_saxony*spd_share;
 Q.aspd_saxony_elections_vote = Q.spd_saxony_elections_vote*aspd_share;
 Q.aspd_r_saxony = Q.spd_r_saxony*aspd_share;
 
-Q.left_coalition_saxony = parseFloat((Q.spd_r_saxony + Q.kpd_r_saxony + Q.sapd_r_saxony).toFixed(1));
-Q.bourgeois_coalition_saxony = parseFloat((Q.aspd_r_saxony + Q.z_r_saxony + Q.ddp_r_saxony + Q.dvp_r_saxony + Q.lvp_r_saxony + Q.kvp_r_saxony + Q.other_r_saxony + Q.dnvp_r_saxony + Q.nsdap_r_saxony).toFixed(1));
-Q.true_bourgeois_coalition_saxony = parseFloat((Q.aspd_r_saxony + Q.z_r_saxony + Q.ddp_r_saxony + Q.dvp_r_saxony + Q.lvp_r_saxony + Q.kvp_r_saxony + Q.other_r_saxony + Q.dnvp_r_saxony).toFixed(1));
-Q.spd_coalition_saxony = parseFloat((Q.aspd_r_saxony + Q.spd_r_saxony + Q.ddp_r_saxony + Q.lvp_r_saxony + Q.z_r_saxony + Q.dvp_r_saxony).toFixed(1));
-
-let farm_share = 0.27;
+let farm_share = 0.22;
 if (Q.dnvp_ideology == "Moderate") farm_share -= 0.1;
-let wp_share = 0.59;
+let wp_share = 0.52;
 if (Q.stolper_program_adopted) wp_share -= 0.05;
 if (Q.dvp_reform) wp_share -= 0.1;
-let vrp_share = 0.14;
+let csvd_share = 0.11;
+if (!Q.csvd_formed) csvd_share = 0;
+let vrp_share = 0.08;
 if (Q.stolper_program_adopted) vrp_share -= 0.05;
+let vnr_share = 0.07;
+if (!Q.vnr_formed) vnr_share = 0;
 
-let total_share = wp_share + farm_share + vrp_share;
+let total_share = wp_share + farm_share + vrp_share + csvd_share + vnr_share;
 
 farm_share = (farm_share / total_share);
 wp_share = (wp_share / total_share);
 vrp_share = (vrp_share / total_share);
+csvd_share = (csvd_share / total_share);
+vnr_share = (vnr_share / total_share);
 
 Q.farm_saxony_elections_vote = Q.other_saxony_elections_vote*farm_share;
 Q.farm_r_saxony = Q.other_r_saxony*farm_share;
+if (Q.dnvp_ideology == "Radical") {
+    Q.other_r_saxony -= Q.farm_r_saxony;
+}
+if (Q.no_majority_2) {
+    Q.other_r_saxony -= Q.vnr_r_saxony;
+    Q.other_r_saxony -= Q.csvd_r_saxony;
+}
 
 Q.wp_saxony_elections_vote = Q.other_saxony_elections_vote*wp_share;
 Q.wp_r_saxony = Q.other_r_saxony*wp_share;
@@ -264,7 +281,13 @@ Q.wp_r_saxony = Q.other_r_saxony*wp_share;
 Q.vrp_saxony_elections_vote = Q.other_saxony_elections_vote*vrp_share;
 Q.vrp_r_saxony = Q.other_r_saxony*vrp_share;
 
-Q.kpo_saxony_elections_vote = Q.kpd_saxony_elections_vote*0.06
+Q.csvd_saxony_elections_vote = Q.other_saxony_elections_vote*csvd_share;
+Q.csvd_r_saxony = Q.other_r_saxony*csvd_share;
+
+Q.vnr_saxony_elections_vote = Q.other_saxony_elections_vote*vnr_share;
+Q.vnr_r_saxony = Q.other_r_saxony*vnr_share;
+
+Q.kpo_saxony_elections_vote = Q.kpd_saxony_elections_vote*0.04
 Q.kpd_saxony_elections_vote -= Q.kpo_saxony_elections_vote;
 
 Q.farm_saxony_elections_vote = (Q.farm_saxony_elections_vote != undefined ? parseFloat(Q.farm_saxony_elections_vote.toFixed(1)) : 0);
@@ -274,12 +297,24 @@ Q.kpo_saxony_elections_vote = (Q.kpo_saxony_elections_vote != undefined ? parseF
 Q.kpd_saxony_elections_vote = (Q.kpd_saxony_elections_vote != undefined ? parseFloat(Q.kpd_saxony_elections_vote.toFixed(1)) : 0);
 Q.aspd_saxony_elections_vote = (Q.aspd_saxony_elections_vote != undefined ? parseFloat(Q.aspd_saxony_elections_vote.toFixed(1)) : 0);
 Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote != undefined ? parseFloat(Q.spd_saxony_elections_vote.toFixed(1)) : 0);
+Q.vnr_saxony_elections_vote = (Q.vnr_saxony_elections_vote != undefined ? parseFloat(Q.vnr_saxony_elections_vote.toFixed(1)) : 0);
+Q.csvd_saxony_elections_vote = (Q.csvd_saxony_elections_vote != undefined ? parseFloat(Q.csvd_saxony_elections_vote.toFixed(1)) : 0);
+Q.other_r_saxony = (Q.dnvp_r_saxony != undefined ? parseFloat(Q.dnvp_r_saxony.toFixed(1)) : 0);
 Q.farm_r_saxony = (Q.farm_r_saxony != undefined ? parseFloat(Q.farm_r_saxony.toFixed(1)) : 0);
 Q.wp_r_saxony = (Q.wp_r_saxony != undefined ? parseFloat(Q.wp_r_saxony.toFixed(1)) : 0);
 Q.vrp_r_saxony = (Q.vrp_r_saxony != undefined ? parseFloat(Q.vrp_r_saxony.toFixed(1)) : 0);
 Q.aspd_r_saxony = (Q.aspd_r_saxony != undefined ? parseFloat(Q.aspd_r_saxony.toFixed(1)) : 0);
 Q.spd_r_saxony = (Q.spd_r_saxony != undefined ? parseFloat(Q.spd_r_saxony.toFixed(1)) : 0);
+Q.csvd_r_saxony = (Q.csvd_r_saxony != undefined ? parseFloat(Q.csvd_r_saxony.toFixed(1)) : 0);
+Q.vnr_r_saxony = (Q.vnr_r_saxony != undefined ? parseFloat(Q.vnr_r_saxony.toFixed(1)) : 0);
 
+Q.left_coalition_saxony = parseFloat((Q.spd_r_saxony + Q.kpd_r_saxony + Q.sapd_r_saxony).toFixed(1));
+Q.true_bourgeois_coalition_saxony = parseFloat((Q.z_r_saxony + Q.ddp_r_saxony + Q.dvp_r_saxony + Q.lvp_r_saxony + Q.kvp_r_saxony + Q.other_r_saxony + Q.vnr_r_saxony + Q.csvd_r_saxony).toFixed(1));
+if (Q.dnvp_ideology == "Moderate") Q.true_bourgeois_coalition_saxony = parseFloat((Q.z_r_saxony + Q.ddp_r_saxony + Q.dvp_r_saxony + Q.lvp_r_saxony + Q.other_r_saxony + Q.dnvp_r_saxony + Q.farm_r_saxony + Q.vnr_r_saxony + Q.csvd_r_saxony).toFixed(1));
+Q.mega_bourgeois_coalition_saxony = parseFloat((Q.spd_r_saxony + Q.aspd_r_saxony + Q.z_r_saxony + Q.ddp_r_saxony + Q.dvp_r_saxony + Q.lvp_r_saxony + Q.kvp_r_saxony + Q.other_r_saxony + Q.vnr_r_saxony + Q.csvd_r_saxony).toFixed(1));
+if (Q.dnvp_ideology == "Moderate") Q.mega_bourgeois_coalition_saxony = parseFloat((Q.spd_r_saxony + Q.aspd_r_saxony + Q.z_r_saxony + Q.ddp_r_saxony + Q.dvp_r_saxony + Q.lvp_r_saxony + Q.other_r_saxony + Q.dnvp_r_saxony + Q.farm_r_saxony + Q.vnr_r_saxony + Q.csvd_r_saxony).toFixed(1));
+Q.far_right_coalition_saxony = parseFloat((Q.z_r_saxony + Q.dvp_r_saxony + Q.lvp_r_saxony + Q.other_r_saxony + Q.dnvp_r_saxony + Q.farm_r_saxony + Q.kvp_r_saxony + Q.dnf_r_saxony + Q.nsdap_r_saxony).toFixed(1));
+Q.spd_coalition_saxony = parseFloat((Q.aspd_r_saxony + Q.spd_r_saxony + Q.ddp_r_saxony + Q.lvp_r_saxony + Q.z_r_saxony + Q.dvp_r_saxony).toFixed(1));
 !}
 on-display: {!
 data = [{
@@ -350,13 +385,24 @@ if (Q.dvp_r_saxony && !Q.lvp_formed && Q.dvp_exist) {
     });
 }
 
-if (Q.other_r_saxony) {
+if (Q.vnr_r_saxony) {
     data.push({
+        "id": "vnr",
+        "legend": "VNR",
+        "name": "VNR",
+        "seats": Math.round(Q.vnr_r_saxony * 0.96),
+    });
+}
+
+if (Q.other_r_saxony) {
+    if (Q.dnvp_ideology == "Moderate") {
+        data.push({
         "id": "farm4",
         "legend": "Farm",
         "name": "Farm",
         "seats": Math.round(Q.farm_r_saxony * 0.96),
     });
+    }
     data.push({
         "id": "wp",
         "legend": "WP",
@@ -370,6 +416,16 @@ if (Q.other_r_saxony) {
         "seats": Math.round(Q.vrp_r_saxony * 0.96),
     });
 }
+
+if (Q.csvd_formed && Q.csvd_r_saxony) {
+    data.push({
+        "id": "csvd",
+        "legend": "CSVD",
+        "name": "CSVD",
+        "seats": Math.round(Q.csvd_r_saxony * 0.96),
+    });
+}
+
 if (Q.kvp_formed && Q.kvp_r_saxony) {
     data.push({
         "id": "kvp",
@@ -377,6 +433,15 @@ if (Q.kvp_formed && Q.kvp_r_saxony) {
         "name": "KVP",
         "seats": Math.round(Q.kvp_r_saxony * 0.96),
     });
+}
+
+if (Q.dnvp_ideology == "Radical" && Q.farm_r_saxony) {
+    data.push({
+    "id": "farm4",
+    "legend": "Farm",
+    "name": "Farm",
+    "seats": Math.round(Q.farm_r_saxony * 0.96),
+});
 }
 
 data = data.concat([{
@@ -461,14 +526,20 @@ go-to: saxony_coalition_menu
 {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_saxony_elections_vote +]% {!</td><td>!} [+ z_r_saxony +]%  {!</td></tr>!}
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_saxony_elections_vote +]% {!</td><td>!} [+ dvp_r_saxony +]%  {!</td></tr>!} ?]
- 
-{!<tr><td><div class="box" style='background-color:#11DD11'> </div> !} SLV: {!</td><td>!} [+ farm_saxony_elections_vote +]% {!</td><td>!} [+ farm_r_saxony +]%  {!</td></tr>!}
+
+[? if vnr_formed: {!<tr><td><div class="box" style='background-color:#D3D3A9'> </div> !} VNR: {!</td><td>!} [+ vnr_saxony_elections_vote +]% {!</td><td>!} [+ vnr_r_saxony +]%  {!</td></tr>!} ?]
+
+[? if dnvp_ideology == "Moderate": {!<tr><td><div class="box" style='background-color:#11DD11'> </div> !} SLV: {!</td><td>!} [+ farm_saxony_elections_vote +]% {!</td><td>!} [+ farm_r_saxony +]%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_saxony_elections_vote +]% {!</td><td>!} [+ wp_r_saxony +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#0075EB'> </div> !} VRP: {!</td><td>!} [+ vrp_saxony_elections_vote +]% {!</td><td>!} [+ vrp_r_saxony +]%  {!</td></tr>!}
 
+[? if csvd_formed : {!<tr><td><div class="box" style='background-color:#8ED8E4'> </div> !}CSVD: {!</td><td>!} [+ csvd_saxony_elections_vote +]% {!</td><td>!} [+ csvd_r_saxony +]%  {!</td></tr>!} ?]
+
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_saxony_elections_vote +]% {!</td><td>!} [+ kvp_r_saxony +]%  {!</td></tr>!} ?]
+
+[? if dnvp_ideology == "Radical": {!<tr><td><div class="box" style='background-color:#11DD11'> </div> !} SLV: {!</td><td>!} [+ farm_saxony_elections_vote +]% {!</td><td>!} [+ farm_r_saxony +]%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_saxony_elections_vote +]% {!</td><td>!} [+ dnvp_r_saxony +]%  {!</td></tr>!}
 
@@ -477,26 +548,24 @@ go-to: saxony_coalition_menu
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_saxony_elections_vote +]% {!</td><td>!} [+ nsdap_r_saxony +]%  {!</td></tr>!}
 {!</table>!}
 
-Saxony is currently governed by the <span style="color: #fe9e00;">Old Social Democratic Party</span> (<span style="color: #fe9e00;">**ASPD**</span>) under Max Heldt (formerly of the <span style="color: #c00000;">**SPD**</span>), leading a majority coalition that includes all parties positioned between the <span style="color: #c00000;">**SPD**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, including the <span style="color: #3E88B3;">**DNVP**</span> and various <span style="color: #b8996f;">special</span> <span style="color: #11DD11;">interest</span> parties.
-
-The Saxon Dispute arose when the Saxon branch of the <span style="color: #c00000;">**SPD**</span> clashed with the party’s parliamentary delegation, demanding that Heldt dissolve the Grand Coalition and negotiate with the <span style="color: #700000;">**KPD**</span>—even after the Reichsexekution. This conflict led to the party’s reformists breaking away and forming the <span style="color: #fe9e00;">**ASPD**</span>, which has since evolved into a left-wing nationalist offshoot of the <span style="color: #c00000;">**SPD**</span>. Despite initially securing a majority of the Landtag delegation following the dispute, the <span style="color: #fe9e00;">**ASPD**</span> has struggled to achieve electoral success and now appears destined for irrelevance.
-
-Notable members of the <span style="color: #fe9e00;">**ASPD**</span> include Max Heldt, August Winnig (a supporter of the Kapp Putsch), Ernst Niekisch (a "<span style="color: #7A3C00;">national</span> <span style="color: #700000;">bolshevik</span>"), and its party leader, former Minister-President Wilhelm Buck. The party was labeled "<span style="color: #c00000;">social</span> <span style="color: #7A3C00;">fascist</span>" by the <span style="color: #700000;">**Communists**</span>, marking the <span class="tooltip-text" title="that's me! the modman!">origin</span> of the term.
+The Bünger Cabinet has collapsed a few months ago due to a dispute involving the Saxon Reichrat delegation voting for the Young Plan, which has resulted in the loss of confidence from the <span style="color: #3E88B3;">**DNVP**</span>, <span style="color: #11DD11;">**SLV**</span>, and <span style="color: #7A3C00;">**NSDAP**</span>. However, they do elect the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]'s Walther Schieck as Minister-President in a caretaker cabinet of experts, before the <span style="color: #7A3C00;">**NSDAP**</span> ultimately voted for dissolving parliament. The political climate has greatly changed from last year, and the extremist parties are expected to gain. 
 
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #C43988;">**KPO**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_saxony +]% 
 
 Grand Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #fe9e00;">**ASPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if z_r_saxony:&nbsp;+&nbsp;<span style="color: #000000;">**Z**</span> ?][? if not lvp_formed:&nbsp;+&nbsp;<span style="color: #C0A054;">**DVP**</span>?]): [+ spd_coalition_saxony +]% 
 
-Bourgeois Coalition ([? if aspd_r_saxony: <span style="color: #fe9e00;">**ASPD**</span> + ?][? if z_r_saxony: <span style="color: #000000;">**Z**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #11DD11;">**SLV**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #0075EB;">**VRP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ true_bourgeois_coalition_saxony +]%
+[? if dnvp_ideology == "Moderate": Bourgeois Coalition ([? if z_r_saxony: <span style="color: #000000;">**Z**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if vnr_formed:&nbsp;+ <span style="color: #D3D3A9;">**VNR**</span> ?] + <span style="color: #11DD11;">**SLV**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #0075EB;">**VRP**</span>[? if csvd_formed:&nbsp;+ <span style="color: #8ED8E4;">**CSVD**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ true_bourgeois_coalition_saxony +]% ?]
 
-Right-Wing Coalition ([? if aspd_r_saxony: <span style="color: #fe9e00;">**ASPD**</span> + ?][? if z_r_saxony: <span style="color: #000000;">**Z**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #11DD11;">**SLV**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #0075EB;">**VRP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ bourgeois_coalition_saxony +]%
+[? if dnvp_ideology == "Radical": Bourgeois Coalition ([? if z_r_saxony: <span style="color: #000000;">**Z**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if vnr_formed:&nbsp;+ <span style="color: #D3D3A9;">**VNR**</span> ?] + <span style="color: #b8996f;">**WP**</span> + <span style="color: #0075EB;">**VRP**</span>[? if csvd_formed:&nbsp;+ <span style="color: #8ED8E4;">**CSVD**</span> ?][? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span>?]): [+ true_bourgeois_coalition_saxony +]% ?]
 
-[? if nsdap_saxony_elections_vote >= 4: The rise of the <span style="color: #7A3C00;">**NSDAP**</span> is quite unexpected, especially given their meager 1.6% of the vote in the last election. ?]
+[? if saxony_no_majority_2: Right-wing Coalition ([? if z_r_saxony: <span style="color: #000000;">**Z**</span> + ?][? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #b8996f;">**WP**</span> + <span style="color: #0075EB;">**VRP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span>?] + <span style="color: #11DD11;">**SLV**</span> + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ true_bourgeois_coalition_saxony +]% ?]
+
+[? if nsdap_saxony_elections_vote >= 13 and not saxony_no_majority_2: The <span style="color: #7A3C00;">**NSDAP**</span> has rose significantly compared to the last election, shifting votes from the moderate right to the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. ?]
 
 @saxony_coalition_menu
 on-arrival: {!
-let dvp_toleration_threshold = 50;
-let lvp_toleration_threshold = 60;
+let dvp_toleration_threshold = 40;
+let lvp_toleration_threshold = 50;
 if (!Q.dvp_reform) {
     dvp_toleration_threshold += 5;
 } else if (Q.dvp_reform) {
@@ -534,12 +603,13 @@ if ((Q.dvp_relation < (dvp_toleration_threshold + 5) && !Q.lvp_formed) || (Q.lvp
 !}
 
 
-The bourgeois parties have historically been hostile to us in state politics, particularly after the notorious <span style="color: #c00000;">**SPD**</span>-<span style="color: #700000;">**KPD**</span> United Left government faced a *Reichsexekution* six years ago. The split of our reformist wing into the <span style="color: #fe9e00;">**ASPD**</span> further pushed our state organization toward the left.
+The rapid rise of the <span style="color: #7A3C00;">**NSDAP**</span> is alarming, as the economic depression continues to radicalize voters toward the right. Their support largely comes from the bourgeois right, whose vote is splintered across various bourgeois and special interest parties. Lacking a strong, unified right-of-center alternative, many have turned to the <span style="color: #7A3C00;">**NSDAP**</span> as a protest vote.
 
-With the <span style="color: #fe9e00;">**ASPD**</span>’s disastrous result of [+ aspd_saxony_elections_vote +]%, their viability as a political force in the state is coming to an end, with bourgeois parties are seeking a replacement for Max Heldt. Despite our cooperation on the local level, the national <span style="color: #700000;">**KPD**</span> is unlikely to ever accept a coalition.
+Meanwhile, the <span style="color: #fe9e00;">**ASPD**</span> is essentially dead, having secured a negligible [+ aspd_saxony_elections_vote +]% of the vote. While discussions of a merger with the Saxon <span style="color: #c00000;">**SPD**</span> have emerged, but our party's leftist tilt has so far stalled any meaningful progress.
+
+With Schieck elected as Minister-President, he remains in power as a caretaker government, relying on the constructive vote of no confidence to stay in office unless an alternative majority emerges. However, a majority vote can still dissolve the Landtag, making toleration a crucial factor in maintaining stability.
 
 - @true_bourgeois_coalition_saxony
-- @bourgeois_coalition_saxony
 - @grand_coalition_saxony
 - @united_left_saxony
 - @no_majority
@@ -547,43 +617,49 @@ With the <span style="color: #fe9e00;">**ASPD**</span>’s disastrous result of 
 
 @toleration_saxony
 title: We will enter a toleration agreement with the incumbent government.
-choose-if: toleration_possible_saxony and left_strength < 30
-unavailable-subtitle: [? if not toleration_possible_saxony: The bourgeois parties won't even accept our toleration. ?][? if left_strength >= 30: Our Saxon organization is too left-wing to even consider this as an option. With the reformists having largely split into the <span style="color: #fe9e00;">ASPD</span>, the left wing is dominant. ?]
-on-arrival: saxony_right = 1; old_middle_nsdap -= 1; rural_nsdap -= 1; workers_spd += 1; workers_kpd += 2; left_dissent += 10
+choose-if: mega_bourgeois_coalition_saxony >= 50
+unavailable-subtitle: Our votes won't matter, as the anti-democratic parties hold a majority.
+on-arrival: saxony_right = 1; pro_republic += 2
 
-We have entered a toleration agreement with the bourgeois cabinet, and have made it unnecessary for them to cooperate with the <span style="color: #7A3C00;">**NSDAP**</span>. As part of our agreement, the bourgeois parties have allowed Max Heldt to retain his Minister-President position, and for the <span style="color: #fe9e00;">**ASPD**</span> to occupy the Work and Welfare	ministry. 
+Together with the bourgeois parties, we've successfully blocked the <span style="color: #7A3C00;">**NSDAP**</span>'s vote for new elections. This marks one of the first uses of toleration to prevent the <span style="color: #7A3C00;">Nazis</span> from gaining more influence.
 
-Despite the unsavory qualities of the <span style="color: #fe9e00;">**ASPD**</span>, they're still Marxist at the end of the day. The leftist Saxon organization has protested at our intervention, and many have jumped ship to the <span style="color: #700000;">**KPD**</span>.
+The Schieck Cabinet will remain unchanged, composed only of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?].
+
+@far_right_coalition_saxony
+title: We will enter a toleration agreement with the incumbent government.
+view-if: saxony_no_majority_2
+choose-if: mega_bourgeois_coalition_saxony < 50 and far_right_coalition_saxony >= 50
+unavailable-subtitle: Even when including the <span style="color: #7A3C00;">NSDAP</span>, the bourgeois government can't find a majority.
+on-arrival: saxony_nsdap = 1; nsdap_left += 5; hitler_explode = time + 36; data_miner_detected = 1; workers_nsdap += 6; workers_kpd -= 3; workers_spd -= 2; unemployed_nsdap += 6; unemployed_kpd -= 3; unemployed_spd -= 2; new_middle_nsdap += 4; new_middle_ddp -= 1; new_middle_lvp -= 1; new_middle_spd -= 3; sa_strength += 100; sa_militancy += 0.05; prussian_police_loyalty -= 0.05; pro_republic -= 5
+face-image: img/portraits/strasser.jpg
+
+After a failed negotiation previously, the bourgeois parties are now willing to offer a ministerial position to the <span style="color: #7A3C00;">**NSDAP**</span> in exchange for their support. Gregor Strasser, leader of the <span style="color: #7A3C00;">**NSDAP**</span>'s left wing, has been appointed as the new Interior Minister, a role he had been denied in the past due to his more radical anti-capitalist views.
+
+Saxony, once a stronghold of <span style="color: #c00000;">socialism</span> and democracy, is now being dismantled by the <span style="color: #7A3C00;">Nazis</span>. The "democratic" aspect more so, as Strasser has pushed for the cabinet to adopt pro-worker and anti-capitalist policies in an attempt to win their votes. The state police, now largely comprised of <span style="color: #7A3C00;">Nazis</span>, are actively suppressing <span style="color: #c00000;">socialist</span> and <span style="color: #700000;">communist</span> organizations and meetings. Socialist newspapers critical of the government have been banned, and civil servants with suspected <span style="color: #c00000;">socialist</span> or <span style="color: #D3C24D;">democratic</span> leanings are being purged in large numbers.
+
+However, there is a real possibility that Strasser could be removed from his position by his coalition partners, as they were never a huge fan of him.
 
 @true_bourgeois_coalition_saxony
-title: The incumbent Heldt III cabinet will continue.
-subtitle: They are able to retain their majority. Surprising.
+title: The Schieck government has garnered a majority to rule via parliament.
+subtitle: The bourgeois parties have survived the onslaught from the <span style="color: #7A3C00;">Nazis</span>, at least for now.
 view-if: true_bourgeois_coalition_saxony >= 50
-on-arrival: saxony_right = 1; pro_republic += 1; rural_nsdap -= 2; old_middle_nsdap -= 2; rural_other += 2 if dnvp_ideology == "Radical"; old_middle_other += 2 if dnvp_ideology == "Radical"; rural_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"
+on-arrival: saxony_right = 1; pro_republic += 2; rural_nsdap -= 2; old_middle_nsdap -= 2; rural_other += 2 if dnvp_ideology == "Radical"; old_middle_other += 2 if dnvp_ideology == "Radical"; rural_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"
 
-The surprisingly good results for the incumbent coalition[? if aspd_saxony_elections_vote >= 4:&nbsp;and <span style="color: #fe9e00;">**ASPD**</span>?] have allowed them and Heldt to continue governing. The <span style="color: #7A3C00;">**NSDAP**</span> is discouraged by this defeat, as they had hoped to use their gains to influence the government.
+Surprisingly, the bourgeois parties have held their ground, 
 
-@bourgeois_coalition_saxony
-title: A bourgeois coalition is formed.
-subtitle: The incumbent coalition, which will survive on toleration from the <span style="color: #7A3C00;">**NSDAP**</span>.
-view-if: bourgeois_coalition_saxony >= 50 and true_bourgeois_coalition_saxony < 50
-on-arrival: saxony_right = 1; saxony_irl = 1
-
-The incumbent coalition has failed to win a majority, and toleration from the <span style="color: #7A3C00;">**NSDAP**</span> is required. They've demanded the exclusion of the <span style="color: #fe9e00;">**ASPD**</span>[? if not lvp_formed:&nbsp;and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?] from the cabinet, and the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]'s new Minister-President Wilhelm Bünger has no choice but to agree. However, this decision was soon reverted and the <span style="color: #fe9e00;">**ASPD**</span> is granted the Ministry of Work and Welfare. 
-
-Despite the exclusion of many supporting parties from the cabinet in favor of non-partisan figures, they choose to tolerate the coalition nonetheless.
+The <span style="color: #7A3C00;">**NSDAP**</span> is heavily demoralized by this defeat, as they are relegated to the powerless opposition role. They had expected the national political climate to benefit them, and to allow them to influence government.
 
 @grand_coalition_saxony
 title: A [? if lvp_formed and stegerwald_path: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span>?][? if not lvp_formed or not stegerwald_path: Grand?] Coalition is formed!
 subtitle: We have somehow reconciled with the bourgeois parties, that they're willing to govern with us again.
-unavailable-subtitle: [? if z_relation < 50 and stegerwald_path: We need higher relations with the <span style="color: #000000;">Center Party</span>. ?][? if dvp_toleration_threshold_fail_saxony: We need higher relations with the [? if not lvp_formed: <span style="color: #C0A054;">DVP</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?][? if left_strength >= 15: Our Saxon organization is too left-wing to even consider this as an option—after all, their stubborn refusal in the past led to the expulsion of the majority of the parliamentary faction and the subsequent formation of the <span style="color: #fe9e00;">ASPD</span>. ?]
+unavailable-subtitle: [? if z_relation < 50 and stegerwald_path: We need higher relations with the <span style="color: #000000;">Center Party</span>. ?][? if dvp_toleration_threshold_fail_saxony: We need higher relations with the [? if not lvp_formed: <span style="color: #C0A054;">DVP</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?][? if left_strength >= 20: Our Saxon organization is too left-wing to even consider this as an option—after all, their stubborn refusal in the past led to the expulsion of the majority of the parliamentary faction and the subsequent formation of the <span style="color: #fe9e00;">ASPD</span>. ?]
 view-if: spd_coalition_saxony >= 50
-choose-if: spd_coalition_possible_saxony and left_strength < 15
-on-arrival: saxony_spd = 1; workers_nsdap -= 3; unemployed_nsdap -= 3; workers_spd += 3; unemployed_spd += 3; z_relation += 3; ddp_relation += 3; lvp_relation += 3; dvp_relation += 5; pro_republic += 3; reformist_dissent -= 15; reformist_strength += 10; aspd_dead = 1
+choose-if: spd_coalition_possible_saxony and left_strength < 20
+on-arrival: saxony_spd = 1; workers_nsdap -= 3; unemployed_nsdap -= 3; workers_spd += 3; unemployed_spd += 3; workers_nsdap -= 3; unemployed_nsdap -= 3; z_relation += 3; ddp_relation += 3; lvp_relation += 3; dvp_relation += 5; pro_republic += 3; reformist_dissent -= 15; reformist_strength += 10; aspd_dead = 1
 
 Somehow, the bourgeois parties are willing to form a [? if lvp_formed and stegerwald_path: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span>?][? if not lvp_formed or not stegerwald_path: Grand?] Coalition with us, rather than continuing their current government with Max Heldt and the right-wing parties.
 
-With the <span style="color: #fe9e00;">**ASPD**</span> (whose Saxon chapter is notably more sane) now convinced of our reformist path, they have rejoined the Saxon <span style="color: #c00000;">**SPD**</span>!
+With the <span style="color: #fe9e00;">**ASPD**</span> (whose Saxon chapter is notably more sane) now convinced of our reformist path, they have rejoined the Saxon <span style="color: #c00000;">**SPD**</span>! This development has weakened the <span style="color: #7A3C00;">NSDAP</span>, who are now relegated to the powerless opposition.
 
 @united_left_saxony
 title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the <span style="color: #700000;">**KPD**</span>.
@@ -609,53 +685,20 @@ As one of the most left-wing and industrial states in Germany, we will use our l
 
 @no_majority
 title: No majority can be found!
-subtitle: [? if bourgeois_coalition_saxony < 50 and spd_coalition_saxony < 50: All possible coalitions lack a majority. ?][? if spd_coalition_saxony >= 50 and not spd_coalition_possible_saxony: The bourgeois parties are antagonistic to our Saxon organization. ?][? if spd_coalition_saxony >= 50 and left_strength >= 15: Our party itself rejects the possibility of a majority coalition with the liberals. ?]
-view-if: bourgeois_coalition_saxony < 50 and (not spd_coalition_possible_saxony or left_strength >= 15)
-on-arrival: {!
-let dvp_toleration_threshold = 30;
-let lvp_toleration_threshold = 40;
-if (!Q.dvp_reform) {
-    dvp_toleration_threshold += 5;
-} else if (Q.dvp_reform) {
-    dvp_toleration_threshold -= 5;
-}
-if (Q.dvp_ideology != "Left") {
-    dvp_toleration_threshold += 10;
-} else if (Q.dvp_ideology == "Left") {
-    dvp_toleration_threshold -= 10;
-}
-if (Q.lvp_ideology != "Left") {
-    lvp_toleration_threshold += 10;
-} else if (Q.lvp_ideology == "Left") {
-    lvp_toleration_threshold -= 5;
-}
-if (Q.united_left_saxony >= 50) {
-    lvp_toleration_threshold -= 15;
-    dvp_toleration_threshold -= 15;
-}
-if (Q.saxony_no_majority) {
-    lvp_toleration_threshold = 0;
-    dvp_toleration_threshold = 0;
-}
-if ((Q.dvp_relation >= dvp_toleration_threshold && !Q.lvp_formed) || (Q.lvp_relation >= lvp_toleration_threshold && Q.lvp_formed)) { 
-    Q.toleration_possible_saxony = 1;
-} else {
-    Q.toleration_possible_saxony = 0;
-}
-!}
+subtitle: [? if bourgeois_coalition_saxony < 50 and spd_coalition_saxony < 50: All possible coalitions lack a majority. ?][? if spd_coalition_saxony >= 50 and not spd_coalition_possible_saxony: The bourgeois parties are antagonistic to our Saxon organization. ?][? if spd_coalition_saxony >= 50 and left_strength >= 20: Our party itself rejects the possibility of a majority coalition with the liberals. ?]
+view-if: bourgeois_coalition_saxony < 50 and (not spd_coalition_possible_saxony or left_strength >= 20)
 
-With the bourgeois parties unable to secure a majority even with the toleration of the <span style="color: #7A3C00;">**NSDAP**</span>, and their refusal to form a coalition with us, no viable majority can be established. The ruling coalition fears that calling new elections will only accelerate their decline and further erode their support.
+With the bourgeois parties unable to secure a majority, and the <span style="color: #7A3C00;">**NSDAP**</span> refusing to enter government, the Landtag is in a deadlock. The Schieck Cabinet remains in power as a caretaker government, but a simple majority vote can still dissolve the Landtag, making toleration a necessity.
 
-In an effort to avoid this, they are more open to negotiating a toleration agreement.
+[? if mega_bourgeois_coalition_saxony >= 50: The coalition of parties in between the <span style="color: #700000;">**KPD**</span> and the anti-democratic Right constitute a majority, but it is our decision whether or not to tolerate the incumbent government, to prevent new elections from being called. ?][? if mega_bourgeois_coalition_saxony < 50: The coalition of parties in between the <span style="color: #700000;">**KPD**</span> and the anti-democratic Right don't even constitute a majority, making any majority government impossible. ?]
 
 - @toleration_saxony
 - @no_majority_2
 
 @no_majority_2
 title: A majority still can't be found!
-subtitle: [? if not toleration_possible_saxony: This is getting ridiculous. ?][? if toleration_possible_saxony: We will refuse to tolerate the bourgeois government, forcing new elections. ?]
-on-arrival: saxony_election_2_trigger_time = time + 3; saxony_no_majority = 1; new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 1; unemployed_nsdap += 2; pro_republic -= 3; new_middle_spd -= 2 if toleration_possible; old_middle_spd -= 2 if toleration_possible; rural_spd -= 1 if toleration_possible
-
-A coalition of all the parties to the right of the <span style="color: #c00000;">**SPD**</span> isn't possible, and the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] is refusing any form of a Grand Coalition including us.
+subtitle: [? if mega_bourgeois_coalition_saxony < 50: Even with our votes, it is still joever for the coalition. ?][? if mega_bourgeois_coalition_saxony >= 5: We will refuse to tolerate the bourgeois government, forcing new elections. ?]
+view-if: not saxony_no_majority_2 or far_right_coalition_saxony < 50
+on-arrival: saxony_election_3_trigger_time = time + 3; saxony_no_majority_2 = 1; new_middle_nsdap += 3; old_middle_nsdap += 3; rural_nsdap += 3; unemployed_nsdap += 3; pro_republic -= 3; new_middle_spd -= 2 if toleration_possible; old_middle_spd -= 2 if toleration_possible; rural_spd -= 1 if toleration_possible; reformist_dissent += 10 if toleration_possible; left_dissent -= 5 if toleration_possible
 
 With no viable alternatives, the Landtag faces dissolution, triggering new elections—an opportunity the <span style="color: #7A3C00;">**NSDAP**</span> hopes to exploit by capitalizing on political instability and the perceived failure of parliamentary democracy.

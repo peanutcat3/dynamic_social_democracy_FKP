@@ -617,6 +617,12 @@ td, th {
 .seat.aspd {
   fill: #fe9e00;
 }
+.seat.csvd {
+  fill: #8ED8E4;
+}
+.seat.vnr {
+  fill: #D3D3A9;
+}
 .tooltip-text {
   text-decoration: underline;
   text-decoration-style: dotted;
