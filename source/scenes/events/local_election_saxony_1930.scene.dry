@@ -29,16 +29,16 @@ The Saxon state elections are to be held now.
 on-arrival: {!
 
 var saxony_adjustment_factors = {
-    spd: 1.25,
+    spd: 1.27,
     sapd: 1.0,
     kpd: 1.2,
-    ddp: 1.0,
-    lvp: 1.4,
-    z: 0.06,
+    ddp: 0.9,
+    lvp: 1.5,
+    z: 0.0,
     dvp: 1.6,
-    dnvp: 0.6,
+    dnvp: 0.55,
     nsdap: 1.0,
-    other: 1.43,
+    other: 1.65,
     kvp: 1.3,
     dnf: 0.3
 };
@@ -83,15 +83,15 @@ if (!Q.vnr_formed) saxony_adjustment_factors.ddp += 0.1;
 Q.ddp_saxony_elections_vote = Q.ddp_votes*saxony_adjustment_factors.ddp;
 Q.lvp_saxony_elections_vote = Q.lvp_votes*saxony_adjustment_factors.lvp;
 if (!Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes*saxony_adjustment_factors.z;
-if (Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes * 0.9;
+if (Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes * 0.8;
 if (Q.dvp_ideology != "Right" || Q.dvp_leader != "Scholz") saxony_adjustment_factors.dvp += 0.1;
 Q.dvp_saxony_elections_vote = Q.dvp_votes*saxony_adjustment_factors.dvp;
 if (Q.dnvp_ideology == "Moderate") saxony_adjustment_factors.dnvp += 0.3;
 Q.dnvp_saxony_elections_vote = Q.dnvp_votes*saxony_adjustment_factors.dnvp;
 Q.nsdap_saxony_elections_vote = Q.nsdap_votes*saxony_adjustment_factors.nsdap;
 if (Q.stolper_program_adopted) saxony_adjustment_factors.other -= 0.05;
-if (!Q.vnr_formed) saxony_adjustment_factors.other -= 0.05;
-if (!Q.csvd_formed) saxony_adjustment_factors.other -= 0.05;
+if (!Q.vnr_formed) saxony_adjustment_factors.other -= 0.1;
+if (!Q.csvd_formed) saxony_adjustment_factors.other -= 0.1;
 if (Q.dnvp_ideology == "Moderate") saxony_adjustment_factors.other -= 0.1;
 Q.other_saxony_elections_vote = Q.other_votes*saxony_adjustment_factors.other;
 Q.kvp_saxony_elections_vote = Q.kvp_votes*saxony_adjustment_factors.kvp;
