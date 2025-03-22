@@ -467,7 +467,7 @@ if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coal
     }
 }
 // rlb takeover by extremists
-if (Q.total_bruning_time >= 7 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor = "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time >= 7 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_58_trigger += 1;
     if (Q.flavour_58_trigger && !Q.flavour_58_trigger_shown) {
         Q.flavour_58_trigger_time = Q.time;
@@ -1541,7 +1541,7 @@ if (Q.total_bruning_time > 0 && !Q.in_center_right_coalition && !Q.in_right_coal
     }
 }
 // rlb takeover by extremists
-if (Q.total_bruning_time >= 7 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor = "Brüning" && Q.time !== Q.last_time_updated) {
+if (Q.total_bruning_time >= 7 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor == "Brüning" && Q.time !== Q.last_time_updated) {
     Q.flavour_58_trigger += 1;
     if (Q.flavour_58_trigger && !Q.flavour_58_trigger_shown) {
         Q.flavour_58_trigger_time = Q.time;
