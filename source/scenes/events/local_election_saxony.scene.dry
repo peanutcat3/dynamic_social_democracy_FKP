@@ -549,7 +549,7 @@ With the <span style="color: #fe9e00;">**ASPD**</span>’s disastrous result of 
 title: We will enter a toleration agreement with the incumbent government.
 choose-if: toleration_possible_saxony and left_strength < 30
 unavailable-subtitle: [? if not toleration_possible_saxony: The bourgeois parties won't even accept our toleration. ?][? if left_strength >= 30: Our Saxon organization is too left-wing to even consider this as an option. With the reformists having largely split into the <span style="color: #fe9e00;">ASPD</span>, the left wing is dominant. ?]
-on-arrival: saxony_right = 1; old_middle_nsdap -= 1; rural_nsdap -= 1; workers_spd += 1; workers_kpd += 2; left_dissent += 10
+on-arrival: saxony_toleration = 1; old_middle_nsdap -= 1; rural_nsdap -= 1; workers_spd += 1; workers_kpd += 2; left_dissent += 10
 
 We have entered a toleration agreement with the bourgeois cabinet, and have made it unnecessary for them to cooperate with the <span style="color: #7A3C00;">**NSDAP**</span>. As part of our agreement, the bourgeois parties have allowed Max Heldt to retain his Minister-President position, and for the <span style="color: #fe9e00;">**ASPD**</span> to occupy the Work and Welfare	ministry. 
 

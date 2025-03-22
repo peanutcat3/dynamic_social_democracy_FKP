@@ -1,6 +1,6 @@
 title: Collapse of the Saxon Cabinet
 subtitle: Wilhelm Bünger faces a vote of no confidence.
-view-if: saxony_irl and year == 1930 and month >= 2
+view-if: saxony_right and year == 1930 and month >= 2
 on-arrival: {!
 Q.saxony_kill = 1;
 let dvp_toleration_threshold = 40;
