@@ -1123,7 +1123,6 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
 
 if (!Q.wtb_adopted && Q.black_thursday_seen) {
     Q.wtb_points_gain = 0;
-    Q.wtb_points_gain += 2;
     Q.wtb_points_gain += Q.labor_strength/50;
     if (Q.woytinsky_advisor) {
         Q.wtb_points_gain += Q.labor_strength/100;
@@ -1138,7 +1137,7 @@ if (!Q.wtb_adopted && Q.black_thursday_seen) {
     if (Q.wtb_support) Q.wtb_points_gain += Q.wtb_support;
     if (Q.year >= 1931) Q.wtb_points_gain += 1;
     Q.wtb_points_gain += Q.budget;
-    Q.wtb_points_gain += Q.crisis_urgency + (Q.nazi_urgency / 2);
+    Q.wtb_points_gain += (Q.crisis_urgency*2) + (Q.nazi_urgency / 2);
     if (Q.spd_in_government) Q.wtb_points_gain += 1;
     if (Q.spd_in_government && Q.labor_minister_party == "SPD") {
         Q.wtb_points_gain += 1;
@@ -1147,6 +1146,7 @@ if (!Q.wtb_adopted && Q.black_thursday_seen) {
         Q.wtb_points_gain += 1;
     }
     Q.wtb_points_gain*=(1-Q.dissent)
+    Q.wtb_points_gain += 2;
     if (Q.wtb_points_gain > 0) {
         Q.wtb_points += Q.wtb_points_gain;
     }
