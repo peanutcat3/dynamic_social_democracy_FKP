@@ -792,6 +792,7 @@ Q.dvp_exist = 1;
 Q.reichsbanner_unpopularity_time = 0;
 Q.wtb_points = 0;
 Q.hindenburg_grr_time = 0;
+Q.hindenburg_angry_pause_time = 0;
 
 // flavour text stuff
 for (let i = 0; i <= 100; i++) {

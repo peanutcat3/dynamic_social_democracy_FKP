@@ -225,11 +225,21 @@ Albert Einstein, possibly the most famous scientist in the world, has been elect
 
 @spd_victorious
 title: <span style="color: #c00000;">**SPD**</span> still in government
-view-if: spd_in_government == 1 and chancellor_party == "SPD" and total_defeat == 0 and long_war == 0
+view-if: spd_in_government == 1 and chancellor_party == "SPD" and total_defeat == 0 and long_war == 0 and not schleicher_spd
 tags: endings
 go-to: eg_menu
 
 The <span style="color: #c00000;">**SPD**</span> is still in government, under Chancellor [+ chancellor +]. Given the circumstances, this is a substantial accomplishment.
+
+@spd_victorious_2
+title: The <span style="color: #c00000;">**SPD**</span> is victorious?
+view-if: total_defeat == 0 and long_war == 0 and schleicher_spd and wtb_implemented
+tags: endings
+go-to: eg_menu
+
+We were forced to strike a deal with Kurt von Schleicher, abandoning our pacifist and anti-militarist roots. With his reputation as a schemer, he could betray us at any moment.
+
+Was it really worth it?
 
 @communist_victory
 title: <span style="color: #700000;">**Communist**</span> victory
