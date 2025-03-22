@@ -1628,7 +1628,7 @@ if (Q.cnblp_defect_pt2_time == Q.time && Q.cnblp_defect == 1) {
     Q.bourgeois_cooperation -= 3;
 }
 
-if (Q.total_bruning_time >= 7 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor = "Brüning") {
+if (Q.total_bruning_time >= 7 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor == "Brüning") {
     Q.rlb_nazi = 1;
     Q.rural_nsdap += Q.rural_other*0.25;
     Q.rural_other *= 0.75;
