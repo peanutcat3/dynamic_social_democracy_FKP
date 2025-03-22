@@ -91,7 +91,7 @@ With the <span style="color: #fe9e00;">**ASPD**</span> (whose Saxon chapter is n
 @no_majority_saxony
 title: A majority can't be found!
 subtitle: New elections will be called.
-on-arrival: saxony_1930_trigger = 1; old_middle_nsdap += 3; rural_nsdap += 2; pro_republic -= 3
+on-arrival: saxony_1930_trigger = 1
 
 As expected, the bourgeois government in Saxony isn't able to survive the vote of no confidence. New elections are called for June, but the Bünger Cabinet continues to operate as a caretaker government.
 
