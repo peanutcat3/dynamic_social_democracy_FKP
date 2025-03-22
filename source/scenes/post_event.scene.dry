@@ -1147,7 +1147,6 @@ if (!Q.wtb_adopted && Q.black_thursday_seen) {
         Q.wtb_points_gain += 1;
     }
     Q.wtb_points_gain*=(1-Q.dissent)
-    Q.wtb_points_gain += 3;
     if (Q.wtb_points_gain > 0) {
         Q.wtb_points += Q.wtb_points_gain;
     }
