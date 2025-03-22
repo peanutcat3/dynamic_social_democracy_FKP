@@ -32,10 +32,10 @@ var saxony_adjustment_factors = {
     spd: 1.27,
     sapd: 1.0,
     kpd: 1.2,
-    ddp: 0.9,
+    ddp: 1.0,
     lvp: 1.5,
     z: 0.0,
-    dvp: 1.6,
+    dvp: 1.7,
     dnvp: 0.55,
     nsdap: 1.0,
     other: 1.65,
@@ -85,6 +85,9 @@ Q.lvp_saxony_elections_vote = Q.lvp_votes*saxony_adjustment_factors.lvp;
 if (!Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes*saxony_adjustment_factors.z;
 if (Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes * 0.8;
 if (Q.dvp_ideology != "Right" || Q.dvp_leader != "Scholz") saxony_adjustment_factors.dvp += 0.1;
+if (Q.dvp_votes >= 6) saxony_adjustment_factors.dvp -= 0.1;
+if (Q.dvp_votes >= 7) saxony_adjustment_factors.dvp -= 0.1;
+if (Q.dvp_votes >= 8) saxony_adjustment_factors.dvp -= 0.1;
 Q.dvp_saxony_elections_vote = Q.dvp_votes*saxony_adjustment_factors.dvp;
 if (Q.dnvp_ideology == "Moderate") saxony_adjustment_factors.dnvp += 0.3;
 Q.dnvp_saxony_elections_vote = Q.dnvp_votes*saxony_adjustment_factors.dnvp;
