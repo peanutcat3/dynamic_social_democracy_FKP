@@ -25,14 +25,14 @@ We can either continue tolerating Brüning’s government or use this decree as 
 view-if: spd_toleration == 0
 on-arrival: {!
 Q.budget += 1;
-Q.inflation -= 1;
-Q.unemployed += 1;
-Q.economic_growth -= 0.5;
+Q.inflation -= 2;
+Q.unemployed += 2;
+Q.economic_growth -= 2;
 Q.emergency_decree_mitigated = Q.liberal_parliament || (Q.bourgeois_parliament && !Q.lvp_formed) || Q.lvp_formed;
 if (Q.emergency_decree_mitigated) {
-    Q.unemployed -= 0.5;
+    Q.unemployed -= 0.8;
     Q.budget -= 1;
-    Q.inflation += 1;
+    Q.inflation += 0.8;
     Q.economic_growth += 0.5;
     Q.new_middle_ddp += 2;
     Q.old_middle_ddp += 1;
@@ -50,9 +50,9 @@ if (Q.emergency_decree_mitigated) {
     Q.lvp_left += 3;
 }
 if (Q.emergency_decree_mitigated_more) {
-    Q.unemployed -= 0.2;
-    Q.inflation += 0.2;
-    Q.economic_growth += 0.1;
+    Q.unemployed -= 0.3;
+    Q.inflation += 0.3;
+    Q.economic_growth += 0.2;
     Q.new_middle_ddp += 1;
     Q.old_middle_ddp += 1;
     Q.new_middle_dvp += 2;
