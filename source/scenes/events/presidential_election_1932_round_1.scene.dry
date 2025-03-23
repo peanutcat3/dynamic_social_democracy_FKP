@@ -47,10 +47,10 @@ Q.dnvp_presidential_votes = 0;
 Q.nsdap_presidential_votes += Q.nsdap_normalized;
 
 Q.hindenburg_votes += Q.other_normalized;
-Q.hindenburg_votes += (Q.dnvp_normalized*0.6);
+Q.hindenburg_votes += (Q.dnvp_normalized*0.7);
 
-Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.4);
-Q.dnvp_presidential_votes += ((Q.other_normalized*((100-Q.pro_republic)/100))*0.1);
+Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.3);
+Q.dnvp_presidential_votes += ((Q.other_normalized*((100-Q.pro_republic)/100))*0.5);
 
 if (Q.spd_campaign) {
     Q.spd_president_votes += Q.spd_normalized;
