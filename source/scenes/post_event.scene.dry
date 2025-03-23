@@ -2559,7 +2559,7 @@ if (Q.spd_in_government_time >= 6) {
     }
 }
 
-if (Q.time >= Q.hindenburg_angry_pause_time) {
+if (Q.hindenburg_angry_pause_time >= Q.time) {
     Q.hindenburg_angry = Q.hindenburg_angry_base;
 }
 
