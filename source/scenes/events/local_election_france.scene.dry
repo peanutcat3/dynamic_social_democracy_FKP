@@ -416,19 +416,19 @@ go-to: france_coalition_menu
 
 <tr><td colspan="5" style="text-align: center;"><strong>French Section of the Communist International</strong></td></tr>
 
-{!<tr><td><div class="box" style='background-color:#B22222'> </div> !}PUP: {!</td><td>!} [+ pup_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pup_france +] {!</td><td>!} [+ pup_r_france +]% {!</td><td>!} [+ str_change_pup_france +] {!</td></tr>!}
-
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}PCF: {!</td><td>!} [+ pcf_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pcf_france +] {!</td><td>!} [+ pcf_r_france +]% {!</td><td>!} [+ str_change_pcf_france +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#B22222'> </div> !}PUP: {!</td><td>!} [+ pup_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pup_france +] {!</td><td>!} [+ pup_r_france +]% {!</td><td>!} [+ str_change_pup_france +] {!</td></tr>!}
 
 <tr><td colspan="5" style="text-align: center;"><strong>Republican and Democratic Union</strong></td></tr>
 
-{!<tr><td><div class="box" style='background-color:#aa4fff'> </div> !} RI: {!</td><td>!} [+ disp_ind_rad_votes_france +]% {!</td><td>!} [+ str_votes_change_rad2_france +] {!</td><td>!} [+ disp_ind_rad_r_france +]% {!</td><td>!} [+ str_change_rad2_france +] {!</td></tr>!}
-
 {!<tr><td><div class="box" style='background-color:#FFBF00'> </div> !} AD: {!</td><td>!} [+ ad_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_ad_france +] {!</td><td>!} [+ ad_r_france +]% {!</td><td>!} [+ str_change_ad_france +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#00CCCC'> </div> !} PDP: {!</td><td>!} [+ pdp_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_ad_france +] {!</td><td>!} [+ pdp_r_france +]% {!</td><td>!} [+ str_change_pdp_france +] {!</td></tr>!}
-
 {!<tr><td><div class="box" style='background-color:#005ACA'> </div> !} FR: {!</td><td>!} [+ disp_fr_votes_france +]% {!</td><td>!} [+ str_votes_change_fr_france +] {!</td><td>!} [+ disp_fr_r_france +]% {!</td><td>!} [+ str_change_fr_france +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#aa4fff'> </div> !} RI: {!</td><td>!} [+ disp_ind_rad_votes_france +]% {!</td><td>!} [+ str_votes_change_rad2_france +] {!</td><td>!} [+ disp_ind_rad_r_france +]% {!</td><td>!} [+ str_change_rad2_france +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#00CCCC'> </div> !} PDP: {!</td><td>!} [+ pdp_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_ad_france +] {!</td><td>!} [+ pdp_r_france +]% {!</td><td>!} [+ str_change_pdp_france +] {!</td></tr>!}
  
 {!<tr><td><div class="box" style='background-color:#ADC1FD'> </div> !} DVD: {!</td><td>!} [+ disp_ind_fr_votes_france +]% {!</td><td>!} [+ str_votes_change_fr2_france +] {!</td><td>!} [+ disp_ind_fr_r_france +]% {!</td><td>!} [+ str_change_fr2_france +] {!</td></tr>!}
 {!</table>!}
