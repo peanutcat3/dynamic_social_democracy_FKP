@@ -627,13 +627,13 @@ td, th {
   fill: #88001A;
 }
 .seat.pup {
-  fill: #BB0000;
+  fill: #B22222;
 }
 .seat.sfio {
-  fill: #F0001C;
+  fill: #FF3366; 
 }
 .seat.prs {
-  fill: #DE3163;
+  fill: #FF6699;
 }
 .seat.rad {
   fill: #E0B0FF;
