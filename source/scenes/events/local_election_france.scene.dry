@@ -16,6 +16,7 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
+max-visits: 1
 set-bg: img/france_map.jpg
 
 = Elections, [+ month : month +] [+ year +]
@@ -258,7 +259,21 @@ Q.prs_r_france = (Q.prs_r_france != undefined ? parseFloat(Q.prs_r_france.toFixe
 Q.pdp_r_france = (Q.pdp_r_france != undefined ? parseFloat(Q.pdp_r_france.toFixed(1)) : 0);
 Q.pup_r_france = (Q.pup_r_france != undefined ? parseFloat(Q.pup_r_france.toFixed(1)) : 0);
 
+Q.disp_ind_rad_votes_france = Q.rad_france_elections_vote*0.34;
+Q.disp_rad_votes_france = Q.rad_france_elections_vote*0.66;
+Q.disp_ind_rad_r_france = Q.rad_r_france*0.28;
+Q.disp_rad_r_france = Q.rad_r_france*0.72;
+
+Q.disp_ind_fr_votes_france = Q.fr_france_elections_vote*0.32;
+Q.disp_fr_votes_france = Q.fr_france_elections_vote*0.68;
+Q.disp_ind_fr_r_france = Q.fr_r_france*0.30;
+Q.disp_fr_r_france = Q.fr_r_france*0.70;
+
 Q.disp_rad_r_france = (Q.disp_rad_r_france != undefined ? parseFloat(Q.disp_rad_r_france.toFixed(1)) : 0);
+Q.disp_ind_rad_r_france = (Q.disp_ind_rad_r_france != undefined ? parseFloat(Q.disp_ind_rad_r_france.toFixed(1)) : 0);
+Q.disp_rad_votes_france = (Q.disp_rad_votes_france != undefined ? parseFloat(Q.disp_rad_votes_france.toFixed(1)) : 0);
+Q.disp_ind_rad_votes_france = (Q.disp_ind_rad_votes_france != undefined ? parseFloat(Q.disp_ind_rad_votes_france.toFixed(1)) : 0);
+Q.disp_ind_fr_votes_france = (Q.disp_ind_fr_votes_france != undefined ? parseFloat(Q.disp_ind_fr_votes_france.toFixed(1)) : 0);
 Q.disp_fr_votes_france = (Q.disp_fr_votes_france != undefined ? parseFloat(Q.disp_fr_votes_france.toFixed(1)) : 0);
 Q.disp_ind_fr_r_france = (Q.disp_ind_fr_r_france != undefined ? parseFloat(Q.disp_ind_fr_r_france.toFixed(1)) : 0);
 Q.disp_fr_r_france = (Q.disp_fr_r_france != undefined ? parseFloat(Q.disp_fr_r_france.toFixed(1)) : 0);
