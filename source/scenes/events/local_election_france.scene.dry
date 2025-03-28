@@ -405,15 +405,22 @@ go-to: france_coalition_menu
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Assembly Seats</td><td>% Change</td></tr>!}
+
+<tr><td colspan="4"><strong>Left Cartel</strong></td></tr>
+
 {!<tr><td><div class="box" style='background-color:#ff0000; outline: 2px; outline-style: solid;'> </div> !} **SFIO:** {!</td><td>!} **[+ sfio_france_elections_vote +]%** {!</td><td>!} **[+ str_votes_change_sfio_france +]** {!</td><td>!} **[+ sfio_r_france +]%** {!</td><td>!} **[+ str_change_sfio_france +]** {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#FF6699'> </div> !}PRS: {!</td><td>!} [+ prs_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_prs_france +] {!</td><td>!} [+ prs_r_france +]% {!</td><td>!} [+ str_change_prs_france +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#E0B0FF'> </div> !} PRRRS: {!</td><td>!} [+ disp_rad_votes_france +]% {!</td><td>!} [+ str_votes_change_rad_france +] {!</td><td>!} [+ disp_rad_r_france +]% {!</td><td>!} [+ str_change_rad_france +] {!</td></tr>!}
+
+<tr><td colspan="4"><strong>French Section of the Communist International</strong></td></tr>
 
 {!<tr><td><div class="box" style='background-color:#B22222'> </div> !}PUP: {!</td><td>!} [+ pup_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pup_france +] {!</td><td>!} [+ pup_r_france +]% {!</td><td>!} [+ str_change_pup_france +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}PCF: {!</td><td>!} [+ pcf_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pcf_france +] {!</td><td>!} [+ pcf_r_france +]% {!</td><td>!} [+ str_change_pcf_france +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#FF6699'> </div> !}PRS: {!</td><td>!} [+ prs_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_prs_france +] {!</td><td>!} [+ prs_r_france +]% {!</td><td>!} [+ str_change_prs_france +] {!</td></tr>!}
-
-{!<tr><td><div class="box" style='background-color:#E0B0FF'> </div> !} PRRRS: {!</td><td>!} [+ disp_rad_votes_france +]% {!</td><td>!} [+ str_votes_change_rad_france +] {!</td><td>!} [+ disp_rad_r_france +]% {!</td><td>!} [+ str_change_rad_france +] {!</td></tr>!}
+<tr><td colspan="4"><strong>Republican and Democratic Union</strong></td></tr>
 
 {!<tr><td><div class="box" style='background-color:#aa4fff'> </div> !} RI: {!</td><td>!} [+ disp_ind_rad_votes_france +]% {!</td><td>!} [+ str_votes_change_rad2_france +] {!</td><td>!} [+ disp_ind_rad_r_france +]% {!</td><td>!} [+ str_change_rad2_france +] {!</td></tr>!}
 
@@ -431,7 +438,7 @@ Popular Front (<span style="color: #700000;">**PCF**</span> + <span style="color
 
 Left Cartel (<span style="color: #F0001C;">**SFIO**</span> + <span style="color: #FF6699;">**PRS**</span> + <span style="color: #E0B0FF;">**PRRRS**</span>): [+ left_coalition_france +]% 
 
-Right-wing Coalition (<span style="color: #FFBF00;">**AD**</span> + <span style="color: #005ACA;">**FR**</span> + <span style="color: #00CCCC;">**PDP**</span>): [+ bourgeois_coalition_france +]% 
+Right-wing Coalition (<span style="color: #aa4fff;">**RI**</span> + <span style="color: #00CCCC;">**PDP**</span> + <span style="color: #FFBF00;">**AD**</span> + <span style="color: #005ACA;">**FR**</span>): [+ bourgeois_coalition_france +]% 
 
 Republican Concentration (<span style="color: #FF6699;">**PRS**</span> + <span style="color: #E0B0FF;">**RAD**</span> + <span style="color: #aa4fff;">**RI**</span> + <span style="color: #FFBF00;">**AD**</span>): [+ republican_coalition_france +]%
 
@@ -445,5 +452,6 @@ Republican Concentration (<span style="color: #FF6699;">**PRS**</span> + <span s
 @center_right_france
 title: The <span style="color: #FF6699;">**PRS**</span> and <span style="color: #E0B0FF;">**PRRRS**</span> enter government with the right-liberal <span style="color: #FFBF00;">**AD**</span>.
 subtitle: The economically right-wing <span style="color: #E0B0FF;">**PRRRS**</span> and <span style="color: #aa4fff;">**RI**</span> are opposed to the <span style="color: #F0001C;">**SFIO**</span>'s socialistic policies.
+on-arrival: west_relation += 2; reparations_negotiation += 1
 
 While not the best outcome, the return of the <span style="color: #E0B0FF;">Radical</span> Édouard Herriot to the Prime Minister position is excellent news for our relations with <span style="color: #002654;">France</span>, as he is much more open to renegotiating Germany's reparation payments compared to the previous government.
