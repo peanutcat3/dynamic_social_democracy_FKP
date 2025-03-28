@@ -240,6 +240,29 @@ var sign2 = Q.change_fr2_r_france > 0
   : '<img src="img/steady.jpg"> ';
 Q.str_change_fr2_france = sign2 + Math.abs(Q.change_fr2_r_france).toFixed(1);
 
+Q.sfio_france_elections_vote = (Q.sfio_france_elections_vote != undefined ? parseFloat(Q.sfio_france_elections_vote.toFixed(1)) : 0);
+Q.rad_france_elections_vote = (Q.rad_france_elections_vote != undefined ? parseFloat(Q.rad_france_elections_vote.toFixed(1)) : 0);
+Q.ad_france_elections_vote = (Q.ad_france_elections_vote != undefined ? parseFloat(Q.ad_france_elections_vote.toFixed(1)) : 0);
+Q.fr_france_elections_vote = (Q.fr_france_elections_vote != undefined ? parseFloat(Q.fr_france_elections_vote.toFixed(1)) : 0);
+Q.pcf_france_elections_vote = (Q.pcf_france_elections_vote != undefined ? parseFloat(Q.pcf_france_elections_vote.toFixed(1)) : 0);
+Q.prs_france_elections_vote = (Q.prs_france_elections_vote != undefined ? parseFloat(Q.prs_france_elections_vote.toFixed(1)) : 0);
+Q.pdp_france_elections_vote = (Q.pdp_france_elections_vote != undefined ? parseFloat(Q.pdp_france_elections_vote.toFixed(1)) : 0);
+Q.pup_france_elections_vote = (Q.pup_france_elections_vote != undefined ? parseFloat(Q.pup_france_elections_vote.toFixed(1)) : 0);
+
+Q.sfio_r_france = (Q.sfio_r_france != undefined ? parseFloat(Q.sfio_r_france.toFixed(1)) : 0);
+Q.rad_r_france = (Q.rad_r_france != undefined ? parseFloat(Q.rad_r_france.toFixed(1)) : 0);
+Q.ad_r_france = (Q.ad_r_france != undefined ? parseFloat(Q.ad_r_france.toFixed(1)) : 0);
+Q.fr_r_france = (Q.fr_r_france != undefined ? parseFloat(Q.fr_r_france.toFixed(1)) : 0);
+Q.pcf_r_france = (Q.pcf_r_france != undefined ? parseFloat(Q.pcf_r_france.toFixed(1)) : 0);
+Q.prs_r_france = (Q.prs_r_france != undefined ? parseFloat(Q.prs_r_france.toFixed(1)) : 0);
+Q.pdp_r_france = (Q.pdp_r_france != undefined ? parseFloat(Q.pdp_r_france.toFixed(1)) : 0);
+Q.pup_r_france = (Q.pup_r_france != undefined ? parseFloat(Q.pup_r_france.toFixed(1)) : 0);
+
+Q.disp_rad_r_france = (Q.disp_rad_r_france != undefined ? parseFloat(Q.disp_rad_r_france.toFixed(1)) : 0);
+Q.disp_fr_votes_france = (Q.disp_fr_votes_france != undefined ? parseFloat(Q.disp_fr_votes_france.toFixed(1)) : 0);
+Q.disp_ind_fr_r_france = (Q.disp_ind_fr_r_france != undefined ? parseFloat(Q.disp_ind_fr_r_france.toFixed(1)) : 0);
+Q.disp_fr_r_france = (Q.disp_fr_r_france != undefined ? parseFloat(Q.disp_fr_r_france.toFixed(1)) : 0);
+
 !}
 on-display: {!
 data = [{
