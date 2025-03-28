@@ -321,6 +321,15 @@ if (Q.ad_r_france) {
     });
 }
 
+if (Q.pdp_r_france) {
+    data.push({
+        "id": "pdp",
+        "legend": "PDP",
+        "name": "PDP",
+        "seats": Math.round(Q.pdp_r_france * 6.5),
+    });
+}
+
 if (Q.fr_r_france) {
     data.push({
         "id": "fr",
@@ -333,14 +342,6 @@ if (Q.fr_r_france) {
         "legend": "FR2",
         "name": "FR2",
         "seats": Math.round(Q.disp_ind_fr_r_france * 6.5),
-    });
-}
-if (Q.pdp_r_france) {
-    data.push({
-        "id": "pdp",
-        "legend": "PDP",
-        "name": "PDP",
-        "seats": Math.round(Q.pdp_r_france * 6.5),
     });
 }
 
