@@ -224,7 +224,7 @@ var sign2 = Q.change_fr_r_france > 0
 : Q.change_fr_r_france < 0 
   ? '<img src="img/arrowdown.jpg"> ' 
   : '<img src="img/steady.jpg"> ';
-Q.str_change_rad_france = sign2 + Math.abs(Q.change_fr_r_france).toFixed(1);
+Q.str_change_fr_france = sign2 + Math.abs(Q.change_fr_r_france).toFixed(1);
 
 Q.change_fr2_votes_france = Q.disp_ind_fr_votes_france - 2.3;
 var sign2 = Q.change_fr2_votes_france > 0 
