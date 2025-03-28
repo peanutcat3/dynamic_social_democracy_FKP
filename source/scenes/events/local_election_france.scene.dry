@@ -406,7 +406,7 @@ go-to: france_coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Assembly Seats</td><td>% Change</td></tr>!}
 
-<tr><td colspan="4"><strong>Left Cartel</strong></td></tr>
+<tr><td colspan="5" style="text-align: center;"><strong>Left Cartel</strong></td></tr>
 
 {!<tr><td><div class="box" style='background-color:#ff0000; outline: 2px; outline-style: solid;'> </div> !} **SFIO:** {!</td><td>!} **[+ sfio_france_elections_vote +]%** {!</td><td>!} **[+ str_votes_change_sfio_france +]** {!</td><td>!} **[+ sfio_r_france +]%** {!</td><td>!} **[+ str_change_sfio_france +]** {!</td></tr>!}
 
@@ -414,13 +414,13 @@ go-to: france_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#E0B0FF'> </div> !} PRRRS: {!</td><td>!} [+ disp_rad_votes_france +]% {!</td><td>!} [+ str_votes_change_rad_france +] {!</td><td>!} [+ disp_rad_r_france +]% {!</td><td>!} [+ str_change_rad_france +] {!</td></tr>!}
 
-<tr><td colspan="4"><strong>French Section of the Communist International</strong></td></tr>
+<tr><td colspan="5" style="text-align: center;"><strong>French Section of the Communist International</strong></td></tr>
 
 {!<tr><td><div class="box" style='background-color:#B22222'> </div> !}PUP: {!</td><td>!} [+ pup_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pup_france +] {!</td><td>!} [+ pup_r_france +]% {!</td><td>!} [+ str_change_pup_france +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}PCF: {!</td><td>!} [+ pcf_france_elections_vote +]% {!</td><td>!} [+ str_votes_change_pcf_france +] {!</td><td>!} [+ pcf_r_france +]% {!</td><td>!} [+ str_change_pcf_france +] {!</td></tr>!}
 
-<tr><td colspan="4"><strong>Republican and Democratic Union</strong></td></tr>
+<tr><td colspan="5" style="text-align: center;"><strong>Republican and Democratic Union</strong></td></tr>
 
 {!<tr><td><div class="box" style='background-color:#aa4fff'> </div> !} RI: {!</td><td>!} [+ disp_ind_rad_votes_france +]% {!</td><td>!} [+ str_votes_change_rad2_france +] {!</td><td>!} [+ disp_ind_rad_r_france +]% {!</td><td>!} [+ str_change_rad2_france +] {!</td></tr>!}
 
