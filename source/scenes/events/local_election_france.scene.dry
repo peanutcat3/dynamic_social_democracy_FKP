@@ -65,14 +65,14 @@ Q.prs_france_elections_vote = 5.4;
 Q.pdp_france_elections_vote = 3.2;
 Q.pup_france_elections_vote = 0.8;
 
-Q.sfio_france_elections_vote = Q.sfio_france_elections_vote*thuringia_adjustment_factors.sfio;
-Q.rad_france_elections_vote = Q.rad_france_elections_vote*thuringia_adjustment_factors.rad;
-Q.ad_france_elections_vote = Q.ad_france_elections_vote*thuringia_adjustment_factors.ad;
-Q.fr_france_elections_vote = Q.fr_france_elections_vote*thuringia_adjustment_factors.fr;
-Q.pcf_france_elections_vote = Q.pcf_france_elections_vote*thuringia_adjustment_factors.pcf;
-Q.prs_france_elections_vote = Q.prs_france_elections_vote*thuringia_adjustment_factors.prs;
-Q.pdp_france_elections_vote = Q.pdp_france_elections_vote*thuringia_adjustment_factors.pdp;
-Q.pup_france_elections_vote = Q.pup_france_elections_vote*thuringia_adjustment_factors.pup;
+Q.sfio_france_elections_vote = Q.sfio_france_elections_vote*france_adjustment_factors.sfio;
+Q.rad_france_elections_vote = Q.rad_france_elections_vote*france_adjustment_factors.rad;
+Q.ad_france_elections_vote = Q.ad_france_elections_vote*france_adjustment_factors.ad;
+Q.fr_france_elections_vote = Q.fr_france_elections_vote*france_adjustment_factors.fr;
+Q.pcf_france_elections_vote = Q.pcf_france_elections_vote*france_adjustment_factors.pcf;
+Q.prs_france_elections_vote = Q.prs_france_elections_vote*france_adjustment_factors.prs;
+Q.pdp_france_elections_vote = Q.pdp_france_elections_vote*france_adjustment_factors.pdp;
+Q.pup_france_elections_vote = Q.pup_france_elections_vote*france_adjustment_factors.pup;
 
 Q.total_votes_france = Q.sfio_france_elections_vote + Q.rad_france_elections_vote + Q.ad_france_elections_vote + Q.fr_france_elections_vote + Q.pcf_france_elections_vote + Q.prs_france_elections_vote + Q.pdp_france_elections_vote + Q.pup_france_elections_vote;
 
