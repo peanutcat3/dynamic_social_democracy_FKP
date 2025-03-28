@@ -623,6 +623,36 @@ td, th {
 .seat.vnr {
   fill: #D3D3A9;
 }
+.seat.pcf {
+  fill: #88001A;
+}
+.seat.pup {
+  fill: #BB0000;
+}
+.seat.sfio {
+  fill: #F0001C;
+}
+.seat.prs {
+  fill: #DE3163;
+}
+.seat.rad {
+  fill: #E0B0FF;
+}
+.seat.rad2 {
+  fill: #aa4fff;
+}
+.seat.ad {
+  fill: #FFBF00;
+}
+.seat.pdp {
+  fill: #00CCCC;
+}
+.seat.fr {
+  fill: #005ACA;
+}
+.seat.fr2 {
+  fill: #ADC1FD;
+}
 .tooltip-text {
   text-decoration: underline;
   text-decoration-style: dotted;
