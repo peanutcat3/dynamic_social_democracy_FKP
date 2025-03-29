@@ -528,9 +528,9 @@ Republican Concentration (<span style="color: #FF6699;" class="tooltip-text" tit
 - @right_wing_france
 
 @pop_front_france
-title: he <span style="color: #c00000;">**SFIO**</span> abandons the <span style="color: #E0B0FF;">**PRRRS**</span> and forms a government with the <span style="color: #700000;">**PCF**</span>!
+title: The <span style="color: #c00000;">**SFIO**</span> abandons the <span style="color: #E0B0FF;">**PRRRS**</span> and forms a government with the <span style="color: #700000;">**PCF**</span>!
 subtitle: Cheater.
-unavailable-subtitle: <span style="color: #700000;">PCF</span> + <span style="color: #B22222;">PUP</span> + <span style="color: #F0001C;">SFIO</span> + <span style="color: #FF6699;">PRS</span> ([+ pop_front_france +]%).
+unavailable-subtitle: <span style="color: #700000;">PCF</span> + <span style="color: #B22222;">PUP</span> + <span style="color: #F0001C;">SFIO</span> + <span style="color: #FF6699;">PRS</span> ([+ pop_front_france +]%)
 choose-if: pop_front_france >= 50
 on-arrival: dataminer_detected = 1
 
@@ -559,7 +559,7 @@ This is excellent news for our relations with <span style="color: #002654;">Fran
 @right_wing_france
 title: A Right-wing Coalition is somehow formed, without needing the <span style="color: #E0B0FF;">**PRRRS**</span>.
 subtitle: Cheater.
-unavailable-subtitle: <span style="color: #aa4fff;">**RI**</span> + <span style="color: #00CCCC;">**PDP**</span> + <span style="color: #FFBF00;">**AD**</span> + <span style="color: #005ACA;">**FR**</span> ([+ bourgeois_coalition_france +]%).
+unavailable-subtitle: <span style="color: #aa4fff;">**RI**</span> + <span style="color: #00CCCC;">**PDP**</span> + <span style="color: #FFBF00;">**AD**</span> + <span style="color: #005ACA;">**FR**</span> ([+ bourgeois_coalition_france +]%)
 choose-if: bourgeois_coalition_france >= 50
 on-arrival: dataminer_detected = 1
 
