@@ -66,6 +66,80 @@ Q.prs_france_elections_vote = 5.4;
 Q.pdp_france_elections_vote = 3.2;
 Q.pup_france_elections_vote = 0.8;
 
+if (Q.unemployed < 10) {
+    france_adjustment_factors.ad += 0.06;
+    france_adjustment_factors.fr += 0.06;
+    france_adjustment_factors.pdp += 0.06;
+    france_adjustment_factors.rad += 0.06;
+} else if (Q.unemployed < 18) {
+    france_adjustment_factors.ad += 0.04;
+    france_adjustment_factors.fr += 0.04;
+    france_adjustment_factors.pdp += 0.04;
+    france_adjustment_factors.rad += 0.04;
+} else if (Q.unemployed < 25) {
+    france_adjustment_factors.ad += 0.03;
+    france_adjustment_factors.fr += 0.03;
+    france_adjustment_factors.pdp += 0.03;
+    france_adjustment_factors.rad += 0.03;
+} else if (Q.unemployed < 32) {
+    france_adjustment_factors.ad += 0.02;
+    france_adjustment_factors.fr += 0.02;
+    france_adjustment_factors.pdp += 0.02;
+    france_adjustment_factors.rad += 0.02;
+} else if (Q.unemployed < 40) {
+    france_adjustment_factors.ad += 0.01;
+    france_adjustment_factors.fr += 0.01;
+    france_adjustment_factors.pdp += 0.01;
+    france_adjustment_factors.rad += 0.01;
+}
+
+if (Q.economic_growth >= 6) {
+    france_adjustment_factors.ad += 0.06;
+    france_adjustment_factors.fr += 0.06;
+    france_adjustment_factors.pdp += 0.06;
+    france_adjustment_factors.rad += 0.06;
+} else if (Q.economic_growth >= 4) {
+    france_adjustment_factors.ad += 0.04;
+    france_adjustment_factors.fr += 0.04;
+    france_adjustment_factors.pdp += 0.04;
+    france_adjustment_factors.rad += 0.04;
+} else if (Q.economic_growth >= 2) {
+    france_adjustment_factors.ad += 0.03;
+    france_adjustment_factors.fr += 0.03;
+    france_adjustment_factors.pdp += 0.03;
+    france_adjustment_factors.rad += 0.03;
+} else if (Q.economic_growth >= 0) {
+    france_adjustment_factors.ad += 0.02;
+    france_adjustment_factors.fr += 0.02;
+    france_adjustment_factors.pdp += 0.02;
+    france_adjustment_factors.rad += 0.02;
+} else if (Q.economic_growth >= -2) {
+    france_adjustment_factors.ad += 0.01;
+    france_adjustment_factors.fr += 0.01;
+    france_adjustment_factors.pdp += 0.01;
+    france_adjustment_factors.rad += 0.01;
+}
+
+if (Q.west_relation >= 3) {
+    france_adjustment_factors.sfio += (Q.west_relation / 50);
+    france_adjustment_factors.prs += (Q.west_relation / 100);
+    france_adjustment_factors.rad += (Q.west_relation / 100);
+    if (Q.kpd_relation >= 50) {
+        france_adjustment_factors.pcf += (Q.kpd_relation / 40);
+        france_adjustment_factors.pup += (Q.kpd_relation / 40);
+    }
+}
+
+if (Q.pacifism >= 3) {
+    france_adjustment_factors.sfio += (Q.pacifism / 50);
+    france_adjustment_factors.prs += (Q.pacifism / 100);
+    france_adjustment_factors.rad += (Q.pacifism / 100);
+    if (Q.kpd_relation >= 50) {
+        france_adjustment_factors.pcf += (Q.kpd_relation / 40);
+        france_adjustment_factors.pup += (Q.kpd_relation / 40);
+    }
+}
+
 Q.sfio_france_elections_vote = Q.sfio_france_elections_vote*france_adjustment_factors.sfio;
 Q.rad_france_elections_vote = Q.rad_france_elections_vote*france_adjustment_factors.rad;
 Q.ad_france_elections_vote = Q.ad_france_elections_vote*france_adjustment_factors.ad;
@@ -448,12 +522,45 @@ Republican Concentration (<span style="color: #FF6699;" class="tooltip-text" tit
 
 <span style="color: #002654;">France</span> is known for its historically unstable governments, with most cabinets lasting a few months at best. The last four years have been governed by various groupings of parties to the right of the <span style="color: #F0001C;">**SFIO**</span>, our <span style="color: #c00000;">socialist</span> comrades. Perhaps it's their turn to rule now, with the return of the Left-Cartel alliance. However, concerns over their radical economic policies may push the <span style="color: #FF6699;">**PRS**</span> and <span style="color: #E0B0FF;">**PRRRS**</span> to form a coalition with the <span style="color: #FFBF00;">**AD**</span> instead.
 
+- @pop_front_france
+- @left_cartel_france
 - @center_right_france
+- @right_wing_france
 
+@pop_front_france
+title: he <span style="color: #c00000;">**SFIO**</span> abandons the <span style="color: #E0B0FF;">**PRRRS**</span> and forms a government with the <span style="color: #700000;">**PCF**</span>!
+subtitle: Cheater.
+unavailable-subtitle: <span style="color: #700000;">PCF</span> + <span style="color: #B22222;">PUP</span> + <span style="color: #F0001C;">SFIO</span> + <span style="color: #FF6699;">PRS</span> ([+ pop_front_france +]%).
+choose-if: pop_front_france >= 50
+on-arrival: dataminer_detected = 1
+
+ok.
 
 @center_right_france
 title: The <span style="color: #FF6699;">**PRS**</span> and <span style="color: #E0B0FF;">**PRRRS**</span> enter government with the right-liberal <span style="color: #FFBF00;">**AD**</span>.
 subtitle: The economically right-wing <span style="color: #E0B0FF;">**PRRRS**</span> and <span style="color: #aa4fff;">**RI**</span> are opposed to the <span style="color: #F0001C;">**SFIO**</span>'s socialistic policies.
+unavailable-subtitle: The <span style="color: #E0B0FF;">**PRRRS**</span> would rather work with their electoral allies.
+choose-if: left_coalition_france < republican_coalition_france
 on-arrival: west_relation += 2; reparations_negotiation += 1
 
 While not the best outcome, the return of the <span style="color: #E0B0FF;">Radical</span> Édouard Herriot to the Prime Minister position is excellent news for our relations with <span style="color: #002654;">France</span>, as he is much more open to renegotiating Germany's reparation payments compared to the previous government.
+
+@left_cartel_france
+title: The <span style="color: #FFC0C0;">Left-Cartel</span> shall enter government.
+subtitle: The strong electoral results of the <span style="color: #F0001C;">**SFIO**</span> and <span style="color: #FF6699;">**PRS**</span> have pressured the <span style="color: #E0B0FF;">**PRRRS**</span> to enter government with their electoral allies.
+unavailable-subtitle: The <span style="color: #E0B0FF;">**PRRRS**</span> would rather work pursue an agreement with the <span style="color: #FFBF00;">**AD**</span>.
+choose-if: left_coalition_france >= republican_coalition_france
+on-arrival: west_relation += 3; reparations_negotiation += 2; eu_progress += 1; left_cartel_france = 1
+
+Surprisingly, the <span style="color: #E0B0FF;">**PRRRS**</span> have decided to enter government with the <span style="color: #F0001C;">**SFIO**</span>, despite their concerns over economic matters. <span style="color: #E0B0FF;">Radical</span> Édouard Herriot has been appointed as the new Prime Minister.
+
+This is excellent news for our relations with <span style="color: #002654;">France</span>, as he and our <span style="color: #F0001C;">socialist</span> comrades are much more open to renegotiating Germany's reparation payments compared to the previous government. There are even talks of a <span style="color: #FFDD00;">United States</span> of <span style="color: #001489;">Europe</span> within their new left-wing cabinet.
+
+@right_wing_france
+title: A Right-wing Coalition is somehow formed, without needing the <span style="color: #E0B0FF;">**PRRRS**</span>.
+subtitle: Cheater.
+unavailable-subtitle: <span style="color: #aa4fff;">**RI**</span> + <span style="color: #00CCCC;">**PDP**</span> + <span style="color: #FFBF00;">**AD**</span> + <span style="color: #005ACA;">**FR**</span> ([+ bourgeois_coalition_france +]%).
+choose-if: bourgeois_coalition_france >= 50
+on-arrival: dataminer_detected = 1
+
+ok.
