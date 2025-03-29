@@ -125,8 +125,8 @@ if (Q.west_relation >= 3) {
     france_adjustment_factors.prs += (Q.west_relation / 100);
     france_adjustment_factors.rad += (Q.west_relation / 100);
     if (Q.kpd_relation >= 50) {
-        france_adjustment_factors.pcf += (Q.kpd_relation / 40);
-        france_adjustment_factors.pup += (Q.kpd_relation / 40);
+        france_adjustment_factors.pcf += (Q.kpd_relation / 400);
+        france_adjustment_factors.pup += (Q.kpd_relation / 400);
     }
 }
 
@@ -135,8 +135,8 @@ if (Q.pacifism >= 3) {
     france_adjustment_factors.prs += (Q.pacifism / 100);
     france_adjustment_factors.rad += (Q.pacifism / 100);
     if (Q.kpd_relation >= 50) {
-        france_adjustment_factors.pcf += (Q.kpd_relation / 40);
-        france_adjustment_factors.pup += (Q.kpd_relation / 40);
+        france_adjustment_factors.pcf += (Q.kpd_relation / 400);
+        france_adjustment_factors.pup += (Q.kpd_relation / 400);
     }
 }
 
