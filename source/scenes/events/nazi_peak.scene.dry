@@ -16,6 +16,7 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
+priority: -2
 
 = The <span style="color: #7A3C00;">Nazis</span> Have Peaked!
 
