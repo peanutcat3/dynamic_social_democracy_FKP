@@ -202,9 +202,12 @@ Q.bvp_r = Q.bvp_votes*1.05;
 if (Q.stegerwald_path && Q.bvp_r >= 4.4) {
     Q.bvp_r = 4.4;
 }
+
+Q.bvp_r = parseFloat(Q.bvp_r.toFixed(1));
+Q.bvp_votes = parseFloat(Q.bvp_votes.toFixed(1));
+
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - Q.bvp_votes).toFixed(1));
 Q.z_minus_bvp_r = parseFloat((Q.z_r - Q.bvp_r).toFixed(1));
-
 Q.str_votes_change_bvp = Q.bvp_votes - Q.previous_bvp_last_election_votes;
 var sign2 = Q.str_votes_change_bvp > 0 
 ? '<img src="img/arrowup.jpg"> ' 
