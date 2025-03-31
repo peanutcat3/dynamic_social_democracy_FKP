@@ -231,6 +231,9 @@ if (Q.bvp_r) {
     Q.old_z_r -= Q.bvp_r;
 }
 
+Q.z_last_election_votes = parseFloat(Q.z_votes - Q.bvp_votes).toFixed(1);
+Q.previous_z_last_election_votes = parseFloat(parseFloat(Q.z_last_election_votes).toFixed(1));
+
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
 if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r) {
