@@ -298,7 +298,6 @@ subtitle: This will cost us 2 resources.
 choose-if: resources >= 2 and not schleicher_spd
 unavailable-subtitle: [? if resources < 2: Not enough resources. ?][? if schleicher_spd: As part of our deal with Schleicher, we are now obligated to support Hindenburg’s re-election. ?]
 on-arrival: resources -= 2; spd_campaign = 1; braun_campaign = 1; reformist_dissent -= 10; reformist_strength += 10; ddp_support_spd = 0; lvp_support_spd = 0
-go-to: candidate_selection_1
 
 It takes effort to run a somewhat unexpected campaign. First, Braun has to be convinced to run. He himself had supported voting for Hindenburg, and it takes a good deal of prodding to convince him of his destiny.
 
@@ -311,8 +310,6 @@ subtitle: This is the default option.
 on-arrival: spd_support_hindenburg = 1; left_dissent += 15; labor_dissent += 10; hindenburg_angry_bruning += 25; hindenburg_angry -= 40; workers_spd -= 3; workers_kpd += 3; unemployed_spd -= 3; unemployed_kpd += 3
 
 Despite his known <span style="color: #808080;">reactionary</span> nature, Hindenburg has at least been keeping the <span style="color: #7A3C00;">Nazis</span> at bay. Thus, we must support him. [? if bruning_time: Hindenburg is reportedly dissatisfied with having been elected with the support of <span style="color: #c00000;">socialists</span>, blaming Brüning and his unpopular cabinet for this outcome. ?]
-
-- @campaigning_hindenburg: Review our campaign options.
 
 @support_thalmann
 choose-if: kpd_relation >= 50 and reformist_strength < left_strength and not schleicher_spd
@@ -329,8 +326,6 @@ on-arrival: spd_support_thalmann = 1; reformist_dissent += 15; center_dissent +=
 
 Fine. We have thrown our support to Chairman [+ communist_candidate_1932 +] of the <span style="color: #700000;">**KPD**</span> to the dismay of our bourgeois allies.
 
-- @campaigning_thalmann: Review our campaign options.
-
 @endorsements_braun
 
 We can't win this election alone, we need support from other parties. [? if spd_votes >= 50: Nevermind. We actually can win this election alone. ?]
@@ -340,7 +335,11 @@ We can't win this election alone, we need support from other parties. [? if spd_
 - @convince_ddp: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #c00000;">**Braun**</span>.
 - @convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">**Braun**</span>.
 - @view_candidates: View party endorsements.
-- @campaigning_spd: Review our campaign options.
+- @hope: We have concluded negotiations with other parties.
+
+@hope
+
+Hopefully, the <span style="color: #c00000;">**Braun**</span> coalition is strong enough to rival [+ reactionary_candidate_1932 +].
 
 @convince_ddp
 view-if: not lvp_formed
