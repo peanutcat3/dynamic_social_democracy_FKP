@@ -222,7 +222,7 @@ go-to: campaign_menu
 
 @checkout
 title: Checkout your order.
-go-to: campaigning_spd if spd_campaign; campaigning_thalmann if spd_support_thalmann; campaigning_hindenburg if spd_support_hindenburg
+go-to: campaigning_spd if spd_campaign; campaigning_thalmann if spd_support_thalmann; campaigning_hindenburg_2 if spd_support_hindenburg
 
 
 @hope
