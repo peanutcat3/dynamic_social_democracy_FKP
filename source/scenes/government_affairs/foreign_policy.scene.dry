@@ -140,7 +140,7 @@ Negotiations proceed smoothly for the most part. The Western powers are convince
 @reduce_reparations
 title: The <span style="color: #0A3161;">Western</span> <span style="color: #C8102E;">Allies</span> are finally willing to pause our reparations payments!
 subtitle: Our negotiations have been successful.
-unavailable-subtitle: [? if not young_plan_ratified: We must wait for the ratification of the Young Plan. ?][? if west_relation < 3: <span style="color: #002654;">France</span>'s government has major quarrels with other Western powers regarding a pause in reparations. ?]
+unavailable-subtitle: [? if not young_plan_ratified: We must wait for the ratification of the Young Plan. ?][? if west_relation < 4: <span style="color: #002654;">France</span>'s government has major quarrels with other Western powers regarding a pause in reparations. ?]
 choose-if: young_plan_ratified == 1 and west_relation >= 4
 view-if: reparations_negotiation >= 3 and reparations > -2 and young_plan_seen
 on-arrival: west_relation += 1; reparations = -2; budget += 2 if hoover_memorandum_seen == 0; budget += 1 if hoover_memorandum_seen == 1; coalition_dissent -= 1 if coalition_dissent > 0; workers_spd += 8*(1-dissent); old_middle_spd += 5*(1-dissent); new_middle_spd += 5*(1-dissent); rural_spd += 5*(1-dissent); coup_progress -= 2 if coup_progress > 2; dvp_left += 3; pro_republic += 8; ddp_left += 1; ddp_cohesion += 1; lvp_left += 3; hindenburg_angry -= 20; economic_growth += 0.5 if economic_growth < 0; labor_dissent -= 15; dvp_relation += 5; ddp_relation += 5; z_relation += 5; lvp_relation += 5
