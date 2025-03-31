@@ -10,7 +10,7 @@ Q.lvp_right += 2;
 Q.pro_republic -= 3;
 Q.new_middle_dvp -= 1;
 !}
-priority: -1
+priority: -2
 tags: event
 face-image: img/bruningetcurtius.jpg
 max-visits: 1
