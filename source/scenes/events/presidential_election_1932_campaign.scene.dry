@@ -240,6 +240,7 @@ if (Q.industrial_total_backing) {
     Q.hindenburg_funds += ((100 - Q.nsdap_votes) / 25);
     if (Q.spd_in_government) Q.hindenburg_funds += ((100 - Q.kpd_votes) / 10);
 }
+Q.hindenburg_funds_old = Q.hindenburg_funds;
 !}
 view-if: spd_support_hindenburg
 go-to: embezzlement_options
@@ -316,7 +317,7 @@ if (Q.hindenburg_funds >= 5 && !Q.industrial_hindenburg) {
 }
 Q.industrial_hindenburg = 1;
 !}
-view-if: embezzle_1 or embezzle_2
+view-if: hindenburg_funds >= hindenburg_funds_old + 3
 
 We have a plethora of campaign options at our disposal.
 
@@ -333,7 +334,7 @@ view-if: iron_front_formed
 on-arrival: radicalization = 3 if radicalization > 3; workers_spd += radicalization + 2; new_middle_spd += radicalization + 1; unemployed_spd += radicalization + 1; pro_republic += 3; nationalism -= 3; neorevisionist_dissent -= 10; neorevisionist_strength += 10; rb_strength += 100; workers_nsdap -= 2 if strife >= 5 and far_right_paramilitary; new_middle_nsdap -= 2 if strife >= 5 and far_right_paramilitary; unemployed_nsdap -= 2 if strife >= 5 and far_right_paramilitary
 max-visits: 1
 face-image: img/iron_front_poster.png
-go-to: campaigning_hindenburg
+go-to: campaigning_hindenburg_2
 
 The <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span> immediately gets to work, rallying around its slogan of opposing <span style="color: #7A3C00;">Fascism</span> and <span style="color:rgb(90, 0, 0);">Stalinism</span>. Although many leftists in the alliance are reluctant to support the <span style="color: #808080;">reactionary</span> Hindenburg.
 
@@ -345,7 +346,7 @@ unavailable-subtitle: [? if radio < 2: We haven't sufficiently built up our radi
 on-arrival: resources -= 1; new_middle_spd += (radio + commercialized_media); old_middle_spd += (radio + commercialized_media); workers_spd += (campaign_media + radio - 2); unemployed_spd += (campaign_media + radio); new_middle_nsdap -= (radio + commercialized_media); old_middle_nsdap -= (radio + commercialized_media); workers_nsdap -= (campaign_media + radio - 2); unemployed_nsdap -= (campaign_media + radio); socialism += 3; nationalism -= 1; nationalism -= 2 if pacifism > 1; pro_republic += (radio + commercialized_media)
 face-image: img/poster_0.jpg
 max-visits: 1
-go-to: campaigning_hindenburg
+go-to: campaigning_hindenburg_2
 
 We are able to broadcast radio addresses urging turnout for Hindenburg, spreading our message to the middle classes in hopes of overcoming their radicalization caused by the economic crisis.
 
@@ -357,7 +358,7 @@ unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; hindenburg_democracy_bonus = 1; pro_republic += 5; center_dissent -= 5; labor_dissent -= 5; neorevisionist_dissent -= 5; reformist_dissent -= 5; left_dissent -= 5; workers_spd += 3*(1-dissent) if democratization >= 3; unemployed_spd += 3*(1-dissent) if democratization >= 3; pro_republic += 2*(1 - dissent) if democratization >= 3; new_middle_spd += 3*(1-dissent) if democratization >= 3; hindenburg_angry += 10; hindenburg_angry_bruning += 10; z_relation += 3; ddp_relation += 3; lvp_relation += 3
 face-image: img/weimar_coalition.jpg
 max-visits: 1
-go-to: campaigning_hindenburg
+go-to: campaigning_hindenburg_2
 
 We argue to our base that, despite Hindenburg's well-known <span style="color: #808080;">reactionary</span> beliefs, he has refrained from outright dismantling our democracy, and supporting him as the lesser evil is necessary. However, our strong campaign in favor of President Hindenburg has discredited him in the eyes of his <span style="color: #808080;">reactionary</span> supporters who initially voted for him in 1925. This has increased Hindenburg's desire to distance himself from our support by shifting further to the right.
 
@@ -369,7 +370,7 @@ unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; left_dissent -= 10; workers_spd += 3; workers_kpd -= 3; kpd_relation -= 10; hindenburg_angry -= 10; hindenburg_angry_bruning -= 10
 face-image: img/social_fascist.jpg
 max-visits: 1
-go-to: campaigning_hindenburg
+go-to: campaigning_hindenburg_2
 
 We have lost an alarming number of voters to the <span style="color: #700000;">**Communists**</span> due to our support for the <span style="color: #808080;">reactionary</span> President Hindenburg. To ensure Hindenburg secures an outright majority in the first round, we must prevent further defections.
 
