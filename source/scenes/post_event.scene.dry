@@ -1035,9 +1035,57 @@ if (Q.reichsbank_policy_time >= Q.time) {
 }
 
 if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_government) {
-    if (Q.unemployed >= 20) Q.unemployed *= 0.985;
-    if (Q.economic_growth < 0) Q.economic_growth *= 0.98;
-    if (Q.inflation < 0) Q.inflation *= 0.98;
+    if (Q.unemployed >= 20) Q.unemployed *= 0.988;
+    if (Q.economic_growth < 0) Q.economic_growth *= 0.985;
+    if (Q.inflation < 0) Q.inflation *= 0.985;
+    if (Q.stegerwald_path) {
+        Q.workers_z += 8/12;
+        Q.new_middle_z += 8/12;
+        Q.old_middle_z += 8/12;
+        Q.rural_z += 6/12;
+        Q.unemployed_z += 12/12;
+        Q.catholics_z += 6/12;
+    } else {
+        Q.workers_z += 5/12;
+        Q.new_middle_z += 5/12;
+        Q.old_middle_z += 5/12;
+        Q.rural_z += 3/12;
+        Q.unemployed_z += 8/12;
+        Q.catholics_z += 5/12;
+    }
+    if (!Q.dvp_defect) {
+        Q.new_middle_dvp += 6/12;
+        Q.old_middle_dvp += 6/12;
+    } 
+    if (Q.ddp_leader == "Lemmer") Q.workers_ddp += 8/12;
+    if (Q.ddp_leader != "Lemmer") Q.workers_ddp += 4/12;
+    Q.new_middle_ddp += 6/12;
+    Q.old_middle_ddp += 6/12;
+    Q.rural_ddp += 2/12;
+    if (Q.ddp_leader == "Lemmer") Q.unemployed_ddp += 6/12;
+    if (Q.ddp_leader != "Lemmer") Q.unemployed_ddp += 2/12;
+    if (!Q.lvp_defect) {
+        Q.workers_lvp += 4/12;
+        Q.new_middle_lvp += 12/12;
+        Q.old_middle_lvp += 12/12;
+    }
+    if (Q.spd_toleration_right || Q.in_right_coalition || Q.in_center_right_coalition) {
+        Q.workers_dnvp += 4/12;
+        if (Q.dnvp_leader == "Lambach") Q.workers_dnvp += 12/12;
+        Q.new_middle_dnvp += 6/12;
+        Q.old_middle_dnvp += 6/12;
+        Q.rural_dnvp += 4/12;
+        Q.unemployed_dnvp += 6/12;
+        Q.catholics_dnvp += 2/12;
+    }
+    if (Q.nsdap_votes >= 18 && !Q.nazi_decay_timer) {
+        Q.workers_nsdap -= 6/12;
+        Q.new_middle_nsdap -= 10/12;
+        Q.old_middle_nsdap -= 10/12;
+        Q.rural_nsdap -= 4/12;
+        Q.unemployed_nsdap -= 10/12;
+        Q.catholics_nsdap -= 5/12;
+    }
 } else if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && Q.spd_in_government) {
     if (Q.unemployed >= 14) Q.unemployed *= 0.98;
     if (Q.economy_growth < -4) {
@@ -1053,6 +1101,54 @@ if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_govern
         Q.inflation += 0.3;
     } else if (Q.inflation < 4) {
         Q.inflation += 0.2;
+    }
+    if (Q.stegerwald_path) {
+        Q.workers_z += 4/12;
+        Q.new_middle_z += 6/12;
+        Q.old_middle_z += 6/12;
+        Q.rural_z += 2/12;
+        Q.unemployed_z += 4/12;
+        Q.catholics_z += 3/12;
+    } else {
+        Q.workers_z += 3/12;
+        Q.new_middle_z += 4/12;
+        Q.old_middle_z += 4/12;
+        Q.rural_z += 2/12;
+        Q.unemployed_z += 4/12;
+        Q.catholics_z += 2/12;
+    }
+    if (!Q.dvp_defect) {
+        Q.new_middle_dvp += 4/12;
+        Q.old_middle_dvp += 4/12;
+    } 
+    if (Q.ddp_leader == "Lemmer") Q.workers_ddp += 4/12;
+    if (Q.ddp_leader != "Lemmer") Q.workers_ddp += 2/12;
+    Q.new_middle_ddp += 4/12;
+    Q.old_middle_ddp += 4/12;
+    Q.rural_ddp += 1/12;
+    if (Q.ddp_leader == "Lemmer") Q.unemployed_ddp += 4/12;
+    if (Q.ddp_leader != "Lemmer") Q.unemployed_ddp += 2/12;
+    if (!Q.lvp_defect) {
+        Q.workers_lvp += 2/12;
+        Q.new_middle_lvp += 10/12;
+        Q.old_middle_lvp += 10/12;
+    }
+    if (Q.spd_toleration_right || Q.in_right_coalition || Q.in_center_right_coalition) {
+        Q.workers_dnvp += 3/12;
+        if (Q.dnvp_leader == "Lambach") Q.workers_dnvp += 6/12;
+        Q.new_middle_dnvp += 4/12;
+        Q.old_middle_dnvp += 4/12;
+        Q.rural_dnvp += 2/12;
+        Q.unemployed_dnvp += 4/12;
+        Q.catholics_dnvp += 2/12;
+    }
+    if (Q.nsdap_votes >= 15 && !Q.nazi_decay_timer) {
+        Q.workers_nsdap -= 5/12;
+        Q.new_middle_nsdap -= 8/12;
+        Q.old_middle_nsdap -= 8/12;
+        Q.rural_nsdap -= 2/12;
+        Q.unemployed_nsdap -= 10/12;
+        Q.catholics_nsdap -= 2/12;
     }
 }
 
