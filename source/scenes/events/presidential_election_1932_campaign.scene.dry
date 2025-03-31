@@ -449,7 +449,7 @@ on-arrival: religion_used = 1; catholics_z += 4 if catholics_z_normalized < 50; 
 max-visits: 1
 go-to: religion_2 if hindenburg_unity >= 3; religion_3 if hindenburg_unity < 3
 
-Prominent leaders of the Lutheran Church have endorsed President Hindenburg, arguing that despite their historical political neutrality, his reelection is a pressing necessity. Meanwhile, the Catholic Church is even more united in support of Hindenburg than it was for Wilhelm Marx in 1925. Catholic leaders, historically skeptical of <span style="color: #7A3C00;">Nazism</span>, have actively discouraged their members from joining Nazi paramilitary organizations. This, combined with the strong support of Catholic-affiliated trade unions, will prove enormously significant in rallying a skeptical Catholic population behind a candidate whom most instinctively associate with Lutheran orthodoxy and Prussian authoritarianism.
+Prominent leaders of the Lutheran Church have endorsed President Hindenburg, arguing that despite their historical political neutrality, his reelection is a pressing necessity. Meanwhile, the Catholic Church is even more united in support of Hindenburg than it was for Wilhelm Marx in 1925. Catholic leaders, historically skeptical of <span style="color: #7A3C00;">Nazism</span>, have actively discouraged their members from joining <span style="color: #7A3C00;">Nazi</span> paramilitary organizations. This, combined with the strong support of Catholic-affiliated trade unions, will prove enormously significant in rallying a skeptical Catholic population behind a candidate whom most instinctively associate with Lutheran orthodoxy and Prussian authoritarianism.
 
 @religion_2
 on-arrival: hindenburg_support += 1
@@ -707,7 +707,7 @@ on-arrival: religion_used = 1; catholics_z += 4 if catholics_z_normalized < 50; 
 max-visits: 1
 go-to: religion_2_op if hindenburg_unity >= 3; religion_3_op if hindenburg_unity < 3
 
-Prominent leaders of the Lutheran Church have endorsed President Hindenburg, arguing that despite their historical political neutrality, his reelection is a pressing necessity. Meanwhile, the Catholic Church is even more united in support of Hindenburg than it was for Wilhelm Marx in 1925. Catholic leaders, historically skeptical of <span style="color: #7A3C00;">Nazism</span>, have actively discouraged their members from joining Nazi paramilitary organizations. This, combined with the strong support of Catholic-affiliated trade unions, will prove enormously significant in rallying a skeptical Catholic population behind a candidate whom most instinctively associate with Lutheran orthodoxy and Prussian authoritarianism.
+Prominent leaders of the Lutheran Church have endorsed President Hindenburg, arguing that despite their historical political neutrality, his reelection is a pressing necessity. Meanwhile, the Catholic Church is even more united in support of Hindenburg than it was for Wilhelm Marx in 1925. Catholic leaders, historically skeptical of <span style="color: #7A3C00;">Nazism</span>, have actively discouraged their members from joining <span style="color: #7A3C00;">Nazi</span> paramilitary organizations. This, combined with the strong support of Catholic-affiliated trade unions, will prove enormously significant in rallying a skeptical Catholic population behind a candidate whom most instinctively associate with Lutheran orthodoxy and Prussian authoritarianism.
 
 @religion_2_op
 on-arrival: hindenburg_support += 1
