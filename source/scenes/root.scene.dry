@@ -334,7 +334,7 @@ Q.old_bvp_r = 3.9;
 // old election votes
 Q.previous_spd_last_election_votes = 26;
 Q.previous_kpd_last_election_votes = 9;
-Q.previous_z_last_election_votes = 17.3;
+Q.previous_z_last_election_votes = 13.6;
 Q.previous_ddp_last_election_votes = 6.3;
 Q.previous_dvp_last_election_votes = 10.1;
 Q.previous_dnvp_last_election_votes = 20.5;
