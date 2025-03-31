@@ -2717,9 +2717,6 @@ if (Q.bruning_time > 1) {
     if (Q.hindenburg_angry_bruning_new > Q.hindenburg_angry_bruning_newer) {
         Q.hindenburg_angry_bruning -= ((Q.hindenburg_angry_bruning_new - Q.hindenburg_angry_bruning_newer) / 3);
     }
-    if (Q.hindenburg_angry_bruning < 0) {
-        Q.hindenburg_angry_bruning = 0;
-    }
 }
 
 if (!Q.nazi_peak_triggered) {
