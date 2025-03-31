@@ -373,7 +373,7 @@ if (Q.kpd_relation >= 30 && Q.sapd_formed == 1) {
     Q.weimar_coalition_prussia += Q.sapd_r_prussia;
 }
 
-if ((Q.nsdap_votes + Q.dnf_votes >= 30 && Q.dnvp_ideology == "Moderate" || Q.nsdap_votes + Q.dnvp_votes >= 30 and dnvp_ideology == "Radical") && Q.weimar_coalition_prussia < 45 && Q.president == "Hindenburg") {
+if ((Q.nsdap_votes + Q.dnf_votes >= 30 && Q.dnvp_ideology == "Moderate" || Q.nsdap_votes + Q.dnvp_votes >= 30 && dnvp_ideology == "Radical") && Q.weimar_coalition_prussia < 45 && Q.president == "Hindenburg") {
     Q.hindenburg_angry_bruning += 35;
     Q.hindenburg_angry += 20;
     Q.hindenburg_angry_prussia = 1;

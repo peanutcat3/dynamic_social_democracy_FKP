@@ -56,7 +56,6 @@ go-to: candidate_selection
 - @view_candidates: View the running candidates.
 
 @view_candidates
-go-to: candidate_selection if not spd_campaign; endorsements_braun if spd_campaign
 
 [? if spd_campaign: <span style="color: #c00000;">**[+ spd_candidate_1932_disp +]**</span> - supported by: ?]
 
