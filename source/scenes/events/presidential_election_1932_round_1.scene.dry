@@ -45,7 +45,7 @@ Q.dnvp_presidential_votes = 0;
 Q.nsdap_presidential_votes += Q.nsdap_normalized;
 
 Q.hindenburg_votes += Q.other_normalized;
-Q.hindenburg_votes += Q.kvp_normalized;
+if (Q.kvp_formed) Q.hindenburg_votes += Q.kvp_normalized;
 Q.hindenburg_votes += (Q.dnvp_normalized*0.2);
 
 Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.8);
