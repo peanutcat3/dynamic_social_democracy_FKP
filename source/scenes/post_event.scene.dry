@@ -2933,22 +2933,22 @@ if (Q.dnvp_ideology == "Moderate") {
 Q.industrial_total_backing = Q.industrial_ddp_backing + Q.industrial_dvp_backing + Q.industrial_lvp_backing + Q.industrial_dnvp_backing + Q.industrial_kvp_backing + Q.industrial_dnf_backing;
 
 if (Q.industrial_total_backing) {
-    if (Q.ddp_votes_calculations < Q.ddp_votes_pre_event + 0.1) {
+    if (Q.ddp_votes_calculations < Q.ddp_votes_pre_event + 0.2) {
         Q.new_middle_ddp += Q.industrial_ddp_backing/Q.industrial_total_backing/1.5;
         Q.old_middle_ddp += Q.industrial_ddp_backing/Q.industrial_total_backing/1.5;
         Q.rural_ddp += Q.industrial_ddp_backing/Q.industrial_total_backing/3;
     }
-    if (Q.dvp_votes_calculations < Q.dvp_votes_pre_event + 0.1) {
+    if (Q.dvp_votes_calculations < Q.dvp_votes_pre_event + 0.2) {
         Q.new_middle_dvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.old_middle_dvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.rural_dvp += Q.industrial_dvp_backing/Q.industrial_total_backing/2;
     }
-    if (Q.dnvp_votes_calculations < Q.dnvp_votes_pre_event + 0.1) {
+    if (Q.dnvp_votes_calculations < Q.dnvp_votes_pre_event + 0.2) {
         Q.new_middle_dnvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.old_middle_dnvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.rural_dnvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
     }
-    if (Q.kvp_votes_calculations < Q.kvp_votes_pre_event + 0.1) {
+    if (Q.kvp_votes_calculations < Q.kvp_votes_pre_event + 0.2) {
         Q.new_middle_kvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.old_middle_kvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
         Q.rural_kvp += Q.industrial_dvp_backing/Q.industrial_total_backing;
