@@ -3,38 +3,36 @@ subtitle: The President is to announce whether or not he will run again.
 new-page: true
 on-arrival: {!
 Q.the_decision_2010 = 1;
-if (Q.year == 1932 && Q.month == 1) {
-    Q.hindenburg_run_points = 0;
-    if (Q.nsdap_votes + Q.dnf_votes > Q.dnvp_votes + Q.other_votes + Q.dvp_votes + Q.z_votes + Q.ddp_votes + Q.lvp_votes && Q.dnvp_ideology == "Moderate") {
-        Q.hindenburg_run_points += 3;
-    } else if (Q.nsdap_votes + Q.dnvp_votes > Q.kvp_votes + Q.other_votes + Q.dvp_votes + Q.z_votes + Q.ddp_votes + Q.lvp_votes && Q.dnvp_ideology == "Radical") {
-        Q.hindenburg_run_points += 3;
-    }
-    if (Q.dnvp_ideology == "Radical") {
-        Q.hindenburg_run_points += 1;
-    } else if (Q.dnvp_ideology == "Moderate") {
-        Q.hindenburg_run_points += 3;
-    }
-    if (Q.schleicher_spd) Q.hindenburg_run_points += 8;
-    if (Q.bruning_toleration_time) Q.hindenburg_run_points += 3;
-    if (Q.in_center_right_coalition || Q.in_right_coalition) Q.hindenburg_run_points -= 1;
-    if (Q.spd_votes >= 26) Q.hindenburg_run_points += 1;
-    if (Q.spd_votes >= 29) Q.hindenburg_run_points += 1;
-    if (Q.spd_votes >= 32) Q.hindenburg_run_points += 1;
-    if (Q.left_strength >= Q.reformist_strength) {
-        Q.hindenburg_run_points += 1;
-    } else {
-        Q.hindenburg_run_points -= 1;
-    }
-    if (Q.spd_votes + (Q.z_votes*0.8) + Q.ddp_votes + (Q.lvp_votes / 2) >= 50) Q.hindenburg_run_points += 2;
-    if (Q.kpd_relation >= 40) Q.hindenburg_run_points += 1;
-    if (Q.capital_strike_progress >= 6) Q.hindenburg_run_points += 1;
-    if (Q.coup_progress >= 5) Q.hindenburg_run_points += 1;
-    if (Q.pro_republic >= 70) Q.hindenburg_run_points -= 1;
-    if (Q.unemployed < 15) Q.hindenburg_run_points -= 1;
-    if (Q.unemployed >= 30) Q.hindenburg_run_points += 1;
-    if (Q.hindenburg_run_points >= 8) Q.hindenburg_run = 1;
+Q.hindenburg_run_points = 0;
+if (Q.nsdap_votes + Q.dnf_votes > Q.dnvp_votes + Q.other_votes + Q.dvp_votes + Q.z_votes + Q.ddp_votes + Q.lvp_votes && Q.dnvp_ideology == "Moderate") {
+    Q.hindenburg_run_points += 3;
+} else if (Q.nsdap_votes + Q.dnvp_votes > Q.kvp_votes + Q.other_votes + Q.dvp_votes + Q.z_votes + Q.ddp_votes + Q.lvp_votes && Q.dnvp_ideology == "Radical") {
+    Q.hindenburg_run_points += 3;
 }
+if (Q.dnvp_ideology == "Radical") {
+    Q.hindenburg_run_points += 1;
+} else if (Q.dnvp_ideology == "Moderate") {
+    Q.hindenburg_run_points += 3;
+}
+if (Q.schleicher_spd) Q.hindenburg_run_points += 8;
+if (Q.bruning_toleration_time) Q.hindenburg_run_points += 3;
+if (Q.in_center_right_coalition || Q.in_right_coalition) Q.hindenburg_run_points -= 1;
+if (Q.spd_votes >= 26) Q.hindenburg_run_points += 1;
+if (Q.spd_votes >= 29) Q.hindenburg_run_points += 1;
+if (Q.spd_votes >= 32) Q.hindenburg_run_points += 1;
+if (Q.left_strength >= Q.reformist_strength) {
+    Q.hindenburg_run_points += 1;
+} else {
+    Q.hindenburg_run_points -= 1;
+}
+if (Q.spd_votes + (Q.z_votes*0.8) + Q.ddp_votes + (Q.lvp_votes / 2) >= 50) Q.hindenburg_run_points += 2;
+if (Q.kpd_relation >= 40) Q.hindenburg_run_points += 1;
+if (Q.capital_strike_progress >= 6) Q.hindenburg_run_points += 1;
+if (Q.coup_progress >= 5) Q.hindenburg_run_points += 1;
+if (Q.pro_republic >= 70) Q.hindenburg_run_points -= 1;
+if (Q.unemployed < 15) Q.hindenburg_run_points -= 1;
+if (Q.unemployed >= 30) Q.hindenburg_run_points += 1;
+if (Q.hindenburg_run_points >= 8) Q.hindenburg_run = 1;
 Q.hindenburg_signatures = Math.round(Q.hindenburg_run_points * 0.445 * 100) / 100;
 !}
 on-display: {!  
