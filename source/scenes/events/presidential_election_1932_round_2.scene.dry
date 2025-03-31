@@ -37,7 +37,6 @@ Q.nsdap_presidential_votes += (Q.dnvp_normalized*0.4);
 
 Q.hindenburg_votes += Q.other_normalized;
 Q.hindenburg_votes += (Q.dnvp_normalized*0.6);
-console.log(Q.hindenburg_votes);  // Debug here
 
 if (Q.spd_campaign) {
     Q.spd_president_votes += Q.spd_normalized;
@@ -207,12 +206,18 @@ Results:
 
 [? if spd_campaign > 0 : <span style="color: #c00000;">**[+ spd_candidate_1932 +]**</span> - [+ spd_president_votes_disp +]% ?]
 
+[? if thalmann_votes_rnd_1 > thalmann_votes_disp: The decline of [+ communist_candidate_1932 +]'s vote share is largely attributed to the futility of his campaign, with estimates suggesting that a significant portion of his former voters have either defected to Hitler or abstained from the second round. The <span style="color: #700000;">**Communist**</span> camp is overcome with resignation, as this outcome suggests that the German masses are still far from ready for the revolutionary assault against capitalism that he and his party’s leadership had been preparing for. ?]
+
+It is seen that [+ nsdap_candidate_1932 +] was the one to benefit from Duesterberg's withdrawal, rather than [+ reactionary_candidate_1932 +], having garnered 60% of his former voters. Even if [+ nsdap_candidate_1932 +] doesn't win, the destruction of the parties between the <span style="color: #7A3C00;">**NSDAP**</span> and <span style="color: #000000;">Center</span> will have drastic consequences for German democracy.
+
 @hindenburg_wins
-on-arrival: president = "Hindenburg"; hindenburg_angry_bruning += 20 if not spd_campaign
+on-arrival: president = "Hindenburg"; hindenburg_angry_bruning += 15 if not spd_campaign and spd_support_hindenburg
 
 As expected, the incumbent Hindenburg wins the presidency. Let's hope he continues to keep the <span style="color: #7A3C00;">Nazis</span> out of power.
 
-[? if spd_support_hindenburg: The fact that, even with the votes from the <span style="color: #c00000;">socialists</span> and <span style="color: #000000;">Catholics</span>, Hindenburg has failed to secure a majority in the first round has been a great embarrassment to him. Realizing that many of his former supporters have turned to Hitler, he is now shifting further to the right. [? if bruning_time: He personally blames Brüning for this, and his patience with the Chancellor is wearing especially thin as of late.?] ?]
+[? if spd_support_hindenburg and not bruning_time: The fact that, even with the votes from the <span style="color: #c00000;">socialists</span> and <span style="color: #000000;">Catholics</span>, Hindenburg has failed to secure a majority in the first round has been a great embarrassment to him. Realizing that many of his former supporters have turned to Hitler, he is now shifting further to the right. ?]
+
+[? if spd_support_hindenburg and bruning_time: The fact that [+ reactionary_candidate_1932 +] owed his reelection to the parties who opposed him in 1925 rather than those with whom he felt the closest natural affinity with is a source of great personal anguish to the aging president and severely strained his relations with Brüning and the conservatives who had orchestrated his reelection campaign. ?]
 
 @thalmann_wins
 on-arrival: president = "Thälmann"; kpd_relation = 80;

@@ -120,7 +120,7 @@ if (Q.economic_growth >= 6) {
     france_adjustment_factors.rad += 0.01;
 }
 
-if (Q.west_relation >= 3) {
+if (Q.west_relation >= 3 && Q.spd_in_government) {
     france_adjustment_factors.sfio += (Q.west_relation / 50);
     france_adjustment_factors.prs += (Q.west_relation / 100);
     france_adjustment_factors.rad += (Q.west_relation / 100);
@@ -130,7 +130,17 @@ if (Q.west_relation >= 3) {
     }
 }
 
-if (Q.pacifism >= 3) {
+if (!Q.spd_in_government && Q.international_socialist_support) {
+    france_adjustment_factors.sfio += (Q.international_socialist_support / 50);
+    france_adjustment_factors.prs += (Q.international_socialist_support / 100);
+    france_adjustment_factors.rad += (Q.international_socialist_support / 100);
+    if (Q.kpd_relation >= 50) {
+        france_adjustment_factors.pcf += (Q.kpd_relation / 400);
+        france_adjustment_factors.pup += (Q.kpd_relation / 400);
+    }
+}
+
+if (Q.pacifism >= 3 && Q.spd_in_government) {
     france_adjustment_factors.sfio += (Q.pacifism / 50);
     france_adjustment_factors.prs += (Q.pacifism / 100);
     france_adjustment_factors.rad += (Q.pacifism / 100);

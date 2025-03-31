@@ -52,9 +52,9 @@ The <span style="color: #C0A054;">**DVP**</span> fills up the bureaucracy with t
 
 @ban_sa
 view-if: nazi_urgency >= 3 and sa_banned == 0
-on-arrival: sa_strength *= 0.92; sa_strength *= 0.8 if prussian_police_loyalty >= 0.75; sa_banned = 1; prussian_police_loyalty -= 0.07; sa_militancy -= 0.03; sa_ban_timer = 6; coup_progress -= 2 if coup_progress >= 6
+on-arrival: sa_strength *= 0.92; sa_strength *= 0.8 if prussian_police_loyalty >= 0.75; sa_banned_pro = 1 if prussian_police_loyalty >= 0.75; sa_banned_pro = 0 if prussian_police_loyalty < 0.75; sa_banned = 1; prussian_police_loyalty -= 0.07; sa_militancy -= 0.03; sa_ban_timer = 6; coup_progress -= 2 if coup_progress >= 6
 
-As it turns out, the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has many allies in the police and bureaucracy, such as in the <span style="color: #C0A054;">**DVP**</span>. Our relationship with the police weakens, and the <span style="color: #7A3C00;">**SA**</span> can still organize illegally, right under the police's noses. [? if prussian_police_loyalty >= 0.75 : Nevertheless, the <span style="color: #7A3C00;">**SA**</span> is substantially weakened by our ban. ?] 
+As it turns out, the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has many allies in the police and bureaucracy, such as in the <span style="color: #C0A054;">**DVP**</span>. Our relationship with the police weakens, and the <span style="color: #7A3C00;">**SA**</span> can still organize illegally, right under the police's noses. [? if sa_banned_pro : Nevertheless, the <span style="color: #7A3C00;">**SA**</span> is substantially weakened by our ban. ?] 
 
 [? if coup_progress >= 6: There are reports of an imminent coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have disrupted some of these plans, but the threat is still present. ?]
 

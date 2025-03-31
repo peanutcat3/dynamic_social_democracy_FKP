@@ -576,8 +576,8 @@ Dissent: [+ neorevisionist_dissent : dissent +]
 title: Figures and Charts
 go-to: menu
 on-arrival: {!
-Q.z_minus_bvp_r = parseFloat((Q.z_r - 3).toFixed(1)); 
-Q.z_minus_bvp_votes = parseFloat((Q.z_votes - 3).toFixed(1));
+Q.z_minus_bvp_votes = parseFloat((Q.z_votes - Q.bvp_votes).toFixed(1));
+Q.z_minus_bvp_r = parseFloat((Q.z_r - Q.bvp_r).toFixed(1));
 !}
 on-display: {!
     data = [{
@@ -625,13 +625,13 @@ on-display: {!
             "id": "z",
             "legend": "Center",
             "name": "Center",
-            "seats": Math.round((Q.z_r - 3) * 5),
+            "seats": Math.round(Q.z_minus_bvp_r * 5),
         },
         {
             "id": "bvp",
             "legend": "BVP",
             "name": "BVP",
-            "seats": Math.round(3 * 5),
+            "seats": Math.round(Q.bvp_r * 5),
         }
     ]);
 

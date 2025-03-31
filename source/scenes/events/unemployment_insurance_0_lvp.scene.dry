@@ -40,7 +40,7 @@ The workers are furious at our betrayal, as are a good portion of our membership
 unavailable-subtitle: [? if lvp_relation < 25: We do not have good enough relations with the right-wing parties.?] [? if lvp_right - lvp_left > 8: The <span style="color: #FFCC00;">**LVP**</span> industrialists have great control over their party. ?]
 choose-if: lvp_relation >= 25 and (lvp_right - lvp_left < 8)
 
-Stresemann and other friendly figures of the former <span style="color: #C0A054;">**DVP**</span> has managed to rally [? if lvp_ideology == "Right" or lvp_ideology == "Moderate": an extremely slim majority of the party?][? if lvp_ideology == "Left": a majority of the party?] to vote in favor of a compromise that contains cuts to the program without increasing contributions. While this is not an ideal solution, what other choice do we have?
+[? if not stresemann_dead: Stresemann?][? if stresemann_dead: The Stresemannites?] and other friendly figures of the former <span style="color: #C0A054;">**DVP**</span> has managed to rally [? if lvp_ideology == "Right" or lvp_ideology == "Moderate": an extremely slim majority of the party?][? if lvp_ideology == "Left": a majority of the party?] to vote in favor of a compromise that contains cuts to the program without increasing contributions. While this is not an ideal solution, what other choice do we have?
 
 - @accept_compromise_worse: Accept the compromise.
 - @accept_compromise_good: Is it possible to increase contribution rates?
@@ -56,4 +56,4 @@ choose-if: lvp_ideology == "Left" and lvp_relation >= 45
 unavailable-subtitle: [? if lvp_ideology != "Left": The <span style="color: #FFCC00;">**LVP**</span> industrialists have great control over their party. ?] [? if lvp_relation < 45: We do not have good enough relations with the right-wing parties. ?]
 on-arrival: reformist_strength += 10; reformist_dissent -= 5; coalition_dissent -= 1; old_middle_lvp -= 3; old_middle_nsdap += 3; unemployment_insurance_threshold = unemployed; dvp_left += 3; ddp_left += 1; lvp_left += 3; ddp_cohesion += 1; unemployment_goal_spd += 1; economic_growth -= 0.1
 
-We have pushed for an increase in both employer and employee contributions rather than to cut benefits for the program itself. The <span style="color: #FFCC00;">**LVP**</span> accepts with the influence of Stresemann and pressures from members of the former <span style="color: #D3C24D;">**[+ ddp_name +]**</span>.
+We have pushed for an increase in both employer and employee contributions rather than to cut benefits for the program itself. The <span style="color: #FFCC00;">**LVP**</span> accepts with the influence of [? if not stresemann_dead: Stresemann?][? if stresemann_dead: the Stresemannites?] and pressures from members of the former <span style="color: #D3C24D;">**[+ ddp_name +]**</span>.

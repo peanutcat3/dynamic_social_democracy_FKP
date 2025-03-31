@@ -4,7 +4,7 @@ subtitle: Hitler still hadn't achieved German citizenship yet...
 view-if: year = 1932 and month == 2 and not hitler_deported
 on-arrival: hitler_citizenship_seen = 1; workers_nsdap *= 0.9; new_middle_nsdap *= 0.95; old_middle_nsdap *= 0.95; rural_nsdap *= 0.95; unemployed_nsdap *= 0.9; catholics_nsdap *= 0.9
 max-visits: 1
-priority: 1
+priority: 3
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  

@@ -40,7 +40,7 @@ The workers are furious at our betrayal, as are a good portion of our membership
 unavailable-subtitle: [? if dvp_relation < 25: We do not have good enough relations with the right-wing parties.?] [? if dvp_right - dvp_left > 8: The <span style="color: #C0A054;">DVP</span> have changed. ?]
 choose-if: dvp_relation >= 25 and (dvp_right - dvp_left < 8)
 
-Stresemann has managed to rally [? if dvp_ideology == "Right" or dvp_ideology == "Moderate": an extremely slim majority of his party?][? if dvp_ideology == "Left": a majority of his party?] to vote in favor of a compromise that contains cuts to the program without increasing contributions. While this is not an ideal solution, what other choice do we have?
+[? if not stresemann_dead: Stresemann has?][? if stresemann_dead: The Stresemannites in the party have?] managed to rally [? if dvp_ideology == "Right" or dvp_ideology == "Moderate": an extremely slim majority of his party?][? if dvp_ideology == "Left": a majority of his party?] to vote in favor of a compromise that contains cuts to the program without increasing contributions. While this is not an ideal solution, what other choice do we have?
 
 - @accept_compromise_worse: Accept the compromise.
 - @accept_compromise_good: Is it possible to increase contribution rates?
@@ -56,4 +56,4 @@ choose-if: dvp_ideology == "Left" and dvp_relation >= 40
 unavailable-subtitle: [? if dvp_ideology != "Left": The <span style="color: #C0A054;">DVP</span> are too far gone. ?] [? if dvp_relation < 40: We do not have good enough relations with the right-wing parties. ?]
 on-arrival: workers_spd -= 1; unemployed_spd -= 1; unemployed_kpd += 1; unemployed_nsdap += 1; workers_nsdap += 1; left_dissent += 5; labor_dissent += 3; kpd_relation -= 4; reformist_strength += 10; reformist_dissent -= 5; coalition_dissent -= 1; old_middle_dvp -= 3; old_middle_nsdap += 3; unemployment_insurance_threshold = unemployed; dvp_left += 3; ddp_left += 1; ddp_cohesion += 1; unemployment_goal_spd += 1; economic_growth -= 0.1
 
-We have pushed for an increase in both employer and employee contributions rather than to cut benefits for the program itself. The <span style="color: #C0A054;">**DVP**</span> accepts with the influence of Stresemann and their left wing.
+We have pushed for an increase in both employer and employee contributions rather than to cut benefits for the program itself. The <span style="color: #C0A054;">**DVP**</span> accepts with the influence of [? if not stresemann_dead: Stresemann and?] their left wing.

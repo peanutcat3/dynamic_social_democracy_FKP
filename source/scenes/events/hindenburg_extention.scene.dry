@@ -3,8 +3,7 @@ subtitle: An amendment to the constitution can be made...
 new-page: true
 on-arrival: hindenburg_extension_seen = 1; dvp_left += 1; ddp_right += 1; ddp_cohesion -= 1; lvp_left += 1
 tags: event
-view-if: year = 1932 and month >= 2 and ((neo_weimar_coalition + kvp_r >= 66.6 and dnvp_ideology == "Radical") or (neo_weimar_coalition + dnvp_r >= 66.6 and dnvp_ideology == "Moderate"))
-priority: 2
+view-if: year = 1932 and month >= 1 and ((neo_weimar_coalition + kvp_r >= 66.6 and dnvp_ideology == "Radical") or (neo_weimar_coalition + dnvp_r >= 66.6 and dnvp_ideology == "Moderate"))
 face-image: img/portraits/Hindenburg.jpg
 max-visits: 1
 
@@ -23,7 +22,7 @@ We can either support this resolution, postponing elections in what many in the 
 @support_resolution
 choose-if: (reformist_strength >= left_strength) or schleicher_spd
 unavailable-subtitle: We do not have the full support of our Reichstag delegation.
-on-arrival: hindenburg_term_extended = 1; left_dissent += 30; center_dissent += 20; labor_dissent += 15; workers_kpd += workers_spd*0.1; unemployed_spd *= 0.9; unemployed_kpd += unemployed_spd*0.1; workers_spd *= 0.9; workers_nsdap += 3; unemployed_nsdap += 3; new_middle_spd -= 3; old_middle_spd += 3; pro_republic -= (spd_votes / 2); hindenburg_angry -= 100; hindenburg_angry_bruning -= 100
+on-arrival: hindenburg_term_extended = 1; left_dissent += 30; center_dissent += 20; labor_dissent += 15; workers_kpd += workers_spd*0.1; unemployed_spd *= 0.9; unemployed_kpd += unemployed_spd*0.1; workers_spd *= 0.9; workers_nsdap += 3; unemployed_nsdap += 5; new_middle_spd -= 3; old_middle_spd += 3; pro_republic -= (spd_votes / 2); hindenburg_angry -= 80; hindenburg_angry_bruning -= 80
 
 In a contentious vote, ridden with heckling from the <span style="color: #7A3C00;">far</span>-[? if dnvp_ideology == "Moderate":<span style="color: #003755;">right</span>?][? if dnvp_ideology == "Radical":<span style="color: #3E88B3;">right</span>?] and <span style="color: #700000;">left</span>, the resolution has passed.
 

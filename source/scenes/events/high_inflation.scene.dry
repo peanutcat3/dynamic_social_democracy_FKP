@@ -2,7 +2,7 @@ title: High Inflation
 subtitle: Workers are seeing their purchasing power decline.
 view-if: inflation >= 7 and high_inflation_timer = 0 and spd_in_government
 new-page: true
-on-arrival: capital_strike_progress += 1; workers_spd -= 4; old_middle_spd -= 6; new_middle_spd -= 6; rural_spd -= 5; unemployed_spd -= 4; high_inflation_timer = 6; high_inflation_timer = 4 if inflation > 8; high_inflation_timer = 2 if inflation >= 10; pro_republic -= 5; old_middle_nsdap += 2; new_middle_nsdap += 2; old_middle_ddp += 2; old_middle_dvp += 2; new_middle_lvp += 4; old_middle_lvp += 4; rural_lvp += 4; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; new_middle_ddp += 2; new_middle_dvp += 2; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_nsdap += 2; rural_ddp += 2; rural_dvp += 2; rural_dnvp += 2 if dnvp_ideology == "Moderate";
+on-arrival: capital_strike_progress += 1; workers_spd -= 4; old_middle_spd -= 6; new_middle_spd -= 6; rural_spd -= 5; unemployed_spd -= 4; high_inflation_timer = 6; high_inflation_timer = 4 if inflation > 8; high_inflation_timer = 2 if inflation >= 10; pro_republic -= 5; old_middle_nsdap += 2; new_middle_nsdap += 2; old_middle_ddp += 2; old_middle_dvp += 2; new_middle_lvp += 4; old_middle_lvp += 4; rural_lvp += 4; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; new_middle_ddp += 2; new_middle_dvp += 2; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_nsdap += 2; rural_ddp += 2; rural_dvp += 2; rural_dnvp += 2 if dnvp_ideology == "Moderate"; goal_spd_cancel += 1; goal_spd_cancel_peoples += 1
 tags: event
 
 = High Inflation
@@ -35,7 +35,7 @@ Price controls are very unpopular with the bourgeoisie and their representatives
 @bank
 on-arrival: capital_strike_progress += 2
 
-Unfortunately, but perhaps expectedly, the Reichsbank is refusing to help the government, claiming that our <span style="color: #c00000;">socialist</span> policies are solely to blame. Reichsbank president [? if not luther_reichsbank: Hjalmar Schacht ?][? if luther_reichsbank: Hans Luther ?] is all but calling for the fall of the government.
+Unfortunately, but perhaps expectedly, the Reichsbank is refusing to help the government, claiming that our <span style="color: #c00000;">socialist</span> policies are solely to blame. Reichsbank president [? if not luther_reichsbank: Friedrich Dreyse ?][? if luther_reichsbank: Hans Luther ?] is all but calling for the fall of the government.
 
 @nothing
 on-arrival: capital_strike_progress += 1

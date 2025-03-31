@@ -159,7 +159,7 @@ title: Despite the deportation of Hitler, the <span style="color: #7A3C00;">Nazi
 tags: endings
 go-to: eg_menu
 
-<p>Despite the deportation of Hitler, the <span style="color: #7A3C00;">NSDAP</span> has somehow still wormed its way into power.</p> [? if long_war == 1 : We are fighting them for control of Germany. ?]
+<p>Despite the deportation of Hitler, the <span style="color: #7A3C00;">**NSDAP**</span> has somehow still wormed its way into power.</p> [? if long_war == 1 : We are fighting them for control of Germany. ?]
 
 
 @civil_war_won

@@ -17,7 +17,7 @@ We must do something to protect the workers against these predations.
 - @if_training: Train union members to fight as part of the <span style="color: #c00000;">Iron</span> <span style="color: #1A1A1A;">Front</span>.
 - @prussian_police_training: Use the Prussian police to help train the Reichsbanner.
 - @peace: Try to avoid all militant confrontations, as much as possible.
-- @truce_rfb: Try to make peace with the <span style="color: #8B0000;">RFB</span>.
+- @truce_rfb: Try to make peace with the <span style="color: #8B0000;">**RFB**</span>.
 - @easy_discard
 
 @battle
@@ -57,6 +57,7 @@ on-arrival: rb_militancy -= 0.02; rb_strength -= 50; pacifism += 1
 By not fighting, the strength of the Reichsbanner atrophies. Pacifists in the party are gaining the upper hand.
 
 @truce_rfb
+subtitle: The <span style="color: #8B0000;">RFB</span> will be added to the balance of power.
 choose-if: kpd_relation >= 45
 view-if: kpd_truce == 0
 unavailable-subtitle: The <span style="color: #700000;">KPD</span> is not interested.
