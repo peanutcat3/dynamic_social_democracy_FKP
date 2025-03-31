@@ -655,80 +655,80 @@ on-arrival: {!
 if (Q.z_support_spd != 1) Q.religion_available = 1;
 !}
 
-- @eckener
-- @industrial
-- @religion
-- @westarp
-- @organizational_endorsements
+- @eckener_op
+- @industrial_op
+- @religion_op
+- @westarp_op
+- @organizational_endorsements_op
 
-@eckener
+@eckener_op
 title: Famed Zeppelin Captain Hugo Eckener is recruited for the campaign.
 subtitle: Being a stanch support of the President, he will utilize the *Graf Zeppelin* for the campaign.
 on-arrival: eckener_used = 1
 max-visits: 1
-go-to: eckener_2 if hindenburg_unity >= 8; eckener_3 if hindenburg_unity < 8
+go-to: eckener_2_op if hindenburg_unity >= 8; eckener_3_op if hindenburg_unity < 8
 
-@eckener_2
+@eckener_2_op
 on-arrival: hindenburg_support += 2
 go-to: bourgeois_campaign_menu_op
 
 In an attempt to rival the <span class="tooltip-text" title="good mod">dynamism</span> of the <span style="color: #7A3C00;">Nazi</span> campaign, which has utilized aircraft to quickly transport high-profile <span style="color: #7A3C00;">Nazi</span> leaders to deliver up to four speeches per day, Hugo Eckener has been convinced to take flight across Germany to drum up popular support for Hindenburg. 
 
-@eckener_3
+@eckener_3_op
 on-arrival: unemployed_nsdap += 6; unemployed_kpd -= 3; unemployed_spd -= 3
 go-to: bourgeois_campaign_menu_op
 
 In an attempt to rival the dynamism of the <span style="color: #7A3C00;">Nazi</span> campaign, the Hindenburg campaign initially tried to convince Graf Zeppelin pilot Hugo Eckener to fly across Germany in support of Hindenburg. However, with Eckener already scheduled for a flight to South America, the campaign had to pivot to an alternative approach. They opted to rent airplanes to drop twenty million leaflets over the German population. However, this isn't enough to counteract the <span style="color: #7A3C00;">Nazi</span> style of campaigning.
 
-@industrial
+@industrial_op
 title: Carl Duisberg of IG Farben will attempt to gain support of key industrialists.
 subtitle: Hindenburg has lost the favor of many of his former backers, maybe they can be convinced again?
 on-arrival: industry_used = 1
 max-visits: 1
-go-to: industrial_2 if hindenburg_unity >= 5; industrial_3 if hindenburg_unity < 5
+go-to: industrial_2_op if hindenburg_unity >= 5; industrial_3_op if hindenburg_unity < 5
 
 Carl Duisberg, the chairman of the United Hindenburg Committees have largely been unsuccessful in convincing big business leaders to sign the petition for Hindenburg's reelection, but perhaps the gravity of this race would help convince them?
 
-@industrial_2
+@industrial_2_op
 on-arrival: hindenburg_support += 2
 go-to: bourgeois_campaign_menu_op
 
 Duisberg, being the former chairman of the National Federation of German Industry (RDI) and one of the more moderate members, has been successful in soliciting donations from many business leaders who had reservations about backing Hindenburg again. The radical revolutionary and socialistic policies of <span style="color: #7A3C00;">**NSDAP**</span> have greatly discouraged them from donating to [+ nsdap_candidate_1932 +]. It now looks like the Hindenburg campaign finally has the resources to properly establish a campaign infrastructure that can rival Goebbels' efforts and the <span style="color: #7A3C00;">Nazis</span>.
 
-@industrial_3
+@industrial_3_op
 on-arrival: old_middle_nsdap += 4; old_middle_kvp -= 2; old_middle_dnvp -= 2 if industrial_dnvp_backing >= 2 and dnvp_ideology == "Moderate"; old_middle_other -= 4; rural_nsdap += 2
 go-to: bourgeois_campaign_menu_op
 
 Despite the antipathy the industrialists have toward [? if not hitler_deported: Hitler and the ?]<span style="color: #7A3C00;">**NSDAP**</span> due to their crypto-<span style="color: #c00000;">socialist</span> policies, a large part of them are firmly opposed to Hindenburg, and will withhold their donations. The Hindenburg campaign is beginning to heavily fall behind the <span style="color: #7A3C00;">**NSDAP**</span> in more rural areas, primarily due to the lack of resources.
 
-@religion
+@religion_op
 title: The Catholic Church and Lutheran Church have long held political neutrality, perhaps that will change?
 view-if: z_support_spd != 1
 on-arrival: religion_used = 1; catholics_z += 4 if catholics_z_normalized < 50; catholics_nsdap -= 4 if catholics_z_normalized < 50
 max-visits: 1
-go-to: religion_2 if hindenburg_unity >= 3; religion_3 if hindenburg_unity < 3
+go-to: religion_2_op if hindenburg_unity >= 3; religion_3_op if hindenburg_unity < 3
 
 Prominent leaders of the Lutheran Church have endorsed President Hindenburg, arguing that despite their historical political neutrality, his reelection is a pressing necessity. Meanwhile, the Catholic Church is even more united in support of Hindenburg than it was for Wilhelm Marx in 1925. Catholic leaders, historically skeptical of <span style="color: #7A3C00;">Nazism</span>, have actively discouraged their members from joining Nazi paramilitary organizations. This, combined with the strong support of Catholic-affiliated trade unions, will prove enormously significant in rallying a skeptical Catholic population behind a candidate whom most instinctively associate with Lutheran orthodoxy and Prussian authoritarianism.
 
-@religion_2
+@religion_2_op
 on-arrival: hindenburg_support += 1
 go-to: bourgeois_campaign_menu_op
 
 Despite strong opposition from state and local Protestant church organizations—many of whose members sympathize with [+ nsdap_candidate_1932 +] and the <span style="color: #7A3C00;">**NSDAP**</span>—they have taken a public stand and will be campaigning in favor of Hindenburg, even amid growing calls for them to withdraw their endorsements.
 
-@religion_3
+@religion_3_op
 on-arrival: new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 2; new_middle_kvp -= 2; old_middle_kvp -= 2; rural_kvp -= 2; new_middle_dnvp -= 2 if dnvp_ideology == "Moderate"; old_middle_dnvp -= 2 if dnvp_ideology == "Moderate"; rural_dnvp -= 2 if dnvp_ideology == "Moderate"; new_middle_other -= 2 if not kvp_formed; old_middle_other -= 2 if not kvp_formed; rural_other -= 2 if not kvp_formed
 go-to: bourgeois_campaign_menu_op
 
 Unfortunately for the Hindenburg campaign, the pro-<span style="color: #7A3C00;">Nazi</span> sentiment within state and local churches has prevented church leaders from taking a public stand for Hindenburg. Many devout Protestants will now be voting for [+ nsdap_candidate_1932 +] as a result, as the church now claims that intervening in a presidential election would be against its nature.
 
-@westarp
+@westarp_op
 title: Westarp, one of Hindenburg's close friends, will attempt to rally conservative forces for Hindenburg.
 on-arrival: westarp_used = 1; hindenburg_support += 1
 
 Of course, the main goal of the United Hindenburg Committees is to dispel the notion that Hindenburg is supported by the <span style="color: #000000;">Black</span>-<span style="color: #c00000;">Red</span> parties. To this end, Westarp has sent a letter to 750 conservative elites who supported Hindenburg's election in 1925, with 500 reaffirming their support of Hindenburg today. [? if dnvp_ideology == "Moderate": He has also played a key role in rallying the <span style="color: #3E88B3;">**DNVP**</span> around his candidacy. ?]
 
-@organizational_endorsements
+@organizational_endorsements_op
 title: What about the endorsements of the non-partisan organizations?
 subtitle: Influential groups such as the RLB, DHV, and the Pan-Germans, have been growing a rift between themselves and Hindenburg.
 view-if: eckener_used and industry_used and (religion_used or not religion_available) and westarp_used
