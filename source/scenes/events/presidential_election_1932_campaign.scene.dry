@@ -585,11 +585,11 @@ if (Q.industrial_total_backing) {
 }
 !}
 view-if: not spd_support_hindenburg
-go-to: embezzlement_options
+go-to: embezzlement_options_op
 
 The finances of the Hindenburg campaign are in disarray. Influential industrialists and business leaders are withholding significant donations due to his perceived betrayal of the Right. A lingering debt of five million Reichsmarks from his 1925 campaign remains unpaid, while additional funds are needed to cover organizational costs. [? if hindenburg_funds < 5: Efforts to raise money from the parties backing Hindenburg’s reelection are further complicated by their own financial struggles. Many have already depleted their resources and are carefully preserving what little remains for the upcoming state elections at the end of April. ?][? if hindenburg_funds >= 5: Fundraising efforts are further hindered by the parties backing Hindenburg’s reelection, as they prefer to reserve their funds for the upcoming state elections in late April, believing his victory is already assured. ?]
 
-@embezzlement_options
+@embezzlement_options_op
 
 - @embezzle_op
 - @embezzle_op_2
@@ -600,7 +600,7 @@ title: Gunther Gereke has miraculously presented millions of Reichsmarks from an
 view-if: bruning_time
 max-visits: 1
 on-arrival: hindenburg_funds += 3; new_middle_kvp += 2; old_middle_kvp += 2; rural_kvp += 4; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_dnvp += 4 if dnvp_ideology == "Moderate"; rural_other += 4 if not kvp_formed; rural_nsdap -= 4; pro_republic += 3; embezzle_1_op = 1
-go-to: embezzlement_options
+go-to: embezzlement_options_op
 
 Gunther Gereke, [? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?][? if dnvp_ideology == "Radical": <span style="color: #7FCEB1;">**CNBLP**</span>?] member responsible for raising funds for the Hindenburg campaign, has managed to secure and disburse seven million marks to the campaign—though some of these funds have been diverted to his own party. The volume of private and corporate donations alone would have been insufficient to cover the campaign's expenses, making it evident that state financing, particularly from the Reichswehr, played a role.
 
@@ -609,7 +609,7 @@ title: Gunther Gereke has miraculously presented millions of Reichsmarks from an
 view-if: not bruning_time
 max-visits: 1
 on-arrival: hindenburg_funds += 1
-go-to: embezzlement_options
+go-to: embezzlement_options_op
 
 Gunther Gereke, [? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?][? if dnvp_ideology == "Radical": <span style="color: #7FCEB1;">**CNBLP**</span>?] member responsible for raising funds for the Hindenburg campaign, has managed to secure and disburse two million marks to the campaign—though some of these funds have been diverted to his own party. The volume of private and corporate donations alone would have been insufficient to cover the campaign's expenses, so we suspect the million or so marks that suddenly materialized was provided by Schleicher from the Reichswehr’s secret funds.
 
