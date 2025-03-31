@@ -1056,6 +1056,10 @@ if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_govern
     if (!Q.dvp_defect) {
         Q.new_middle_dvp += 6/12;
         Q.old_middle_dvp += 6/12;
+        if (Q.dvp_leader == "Thiel" || Q.dvp_leader == "Glatzel") {
+            Q.workers_dvp += 4/12;
+            Q.new_middle_dvp += 4/12;
+        }
     } 
     if (Q.ddp_leader == "Lemmer") Q.workers_ddp += 8/12;
     if (Q.ddp_leader != "Lemmer") Q.workers_ddp += 4/12;
@@ -1068,6 +1072,10 @@ if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_govern
         Q.workers_lvp += 4/12;
         Q.new_middle_lvp += 12/12;
         Q.old_middle_lvp += 12/12;
+        if (Q.lvp_leader == "Glatzel") {
+            Q.workers_lvp += 6/12;
+            Q.new_middle_lvp += 6/12;
+        }
     }
     if (Q.spd_toleration_right || Q.in_right_coalition || Q.in_center_right_coalition) {
         Q.workers_dnvp += 4/12;
@@ -1120,6 +1128,10 @@ if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_govern
     if (!Q.dvp_defect) {
         Q.new_middle_dvp += 4/12;
         Q.old_middle_dvp += 4/12;
+        if (Q.dvp_leader == "Thiel" || Q.dvp_leader == "Glatzel") {
+            Q.workers_dvp += 2/12;
+            Q.new_middle_dvp += 2/12;
+        }
     } 
     if (Q.ddp_leader == "Lemmer") Q.workers_ddp += 4/12;
     if (Q.ddp_leader != "Lemmer") Q.workers_ddp += 2/12;
@@ -1132,6 +1144,10 @@ if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_govern
         Q.workers_lvp += 2/12;
         Q.new_middle_lvp += 10/12;
         Q.old_middle_lvp += 10/12;
+        if (Q.lvp_leader == "Glatzel") {
+            Q.workers_lvp += 4/12;
+            Q.new_middle_lvp += 4/12;
+        }
     }
     if (Q.spd_toleration_right || Q.in_right_coalition || Q.in_center_right_coalition) {
         Q.workers_dnvp += 3/12;
