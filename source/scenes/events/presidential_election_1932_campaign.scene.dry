@@ -467,6 +467,7 @@ Unfortunately for the Hindenburg campaign, the pro-<span style="color: #7A3C00;"
 @westarp
 title: Westarp, one of Hindenburg's close friends, will attempt to rally conservative forces for Hindenburg.
 on-arrival: westarp_used = 1; hindenburg_support += 1
+go-to: bourgeois_campaign_menu_op
 
 Of course, the main goal of the United Hindenburg Committees is to dispel the notion that Hindenburg is supported by the <span style="color: #000000;">Black</span>-<span style="color: #c00000;">Red</span> parties. To this end, Westarp has sent a letter to 750 conservative elites who supported Hindenburg's election in 1925, with 500 reaffirming their support of Hindenburg today. [? if dnvp_ideology == "Moderate": He has also played a key role in rallying the <span style="color: #3E88B3;">**DNVP**</span> around his candidacy. ?]
 
@@ -726,6 +727,7 @@ Unfortunately for the Hindenburg campaign, the pro-<span style="color: #7A3C00;"
 @westarp_op
 title: Westarp, one of Hindenburg's close friends, will attempt to rally conservative forces for Hindenburg.
 on-arrival: westarp_used = 1; hindenburg_support += 1
+go-to: bourgeois_campaign_menu_op
 
 Of course, the main goal of the United Hindenburg Committees is to dispel the notion that Hindenburg is supported by the <span style="color: #000000;">Black</span>-<span style="color: #c00000;">Red</span> parties. To this end, Westarp has sent a letter to 750 conservative elites who supported Hindenburg's election in 1925, with 500 reaffirming their support of Hindenburg today. [? if dnvp_ideology == "Moderate": He has also played a key role in rallying the <span style="color: #3E88B3;">**DNVP**</span> around his candidacy. ?]
 
