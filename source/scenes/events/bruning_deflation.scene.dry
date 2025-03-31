@@ -17,7 +17,7 @@ on-display: {!
     contentDiv.appendChild(cardEl);
 !}
 on-arrival: {!
-if (Q.budget >= 1 && Q.inflation < -8 && Q.unemployed >= 30 && Q.reparations <= -2) Q.lautenbach_adopted = 1;
+if (Q.budget >= 2 && Q.inflation < -8 && Q.unemployed >= 30 && Q.reparations <= -2) Q.lautenbach_adopted = 1;
 if (!Q.lautenbach_adopted) Q.lautenbach_failed = 1;
 !}
 
@@ -38,7 +38,7 @@ Those in opposition to the deflationary policy and are open to public works incl
 
 @lautenbach_adopted
 choose-if: lautenbach_adopted
-unavailable-subtitle: [? if budget < 1: The government lacks sufficient funds to implement the plan. ?] [? if inflation >= -8: Economic experts believe that deflation is still in its initial, beneficial phase, helping to eliminate inefficient companies. ?] [? if unemployed < 30: A job creation program is not deemed necessary, as the worst of the depression has not yet arrived. ?] [? if reparations > -2: An expansive monetary policy would complicate Brüning's efforts to renegotiate reparations. ?]
+unavailable-subtitle: [? if budget < 2: The government lacks sufficient funds to implement the plan. ?] [? if inflation >= -8: Economic experts believe that deflation is still in its initial, beneficial phase, helping to eliminate inefficient companies. ?] [? if unemployed < 30: A job creation program is not deemed necessary, as the worst of the depression has not yet arrived. ?] [? if reparations > -2: An expansive monetary policy would complicate Brüning's efforts to renegotiate reparations. ?]
 on-arrival: labor_dissent -= 20; wtb_points += 200; lautenbach_plan_time = time + 12; hindenburg_angry_bruning -= 75; dvp_left += 5; ddp_left += 3; lvp_left += 3; ddp_cohesion += 3; z_relation += 5 if wtb_adopted; ddp_relation += 5 if wtb_adopted; lvp_relation += 5 if wtb_adopted; inflation += 3; budget -= 2; economic_growth += 2; works_program += 1; unemployed_nsdap -= 5; unemployed_z += 3; unemployed_ddp += 2
 
 The pause in reparation payments, a budgetary surplus, and a struggling economy have created the conditions necessary to persuade both the Brüning cabinet and many economic experts that a stimulus plan is essential. The economy has hit rock bottom, deflation is in its damaging second phase, and the Lautenbach Plan is considered crucial for a rapid 'ignition' of the German economy, especially as reparations have already been paused. However, due to the German public's fear of inflation, announcing any dramatic expansion of the money supply has proven impossible. As a result, the Reichsbank is forced to scale back the plan to avoid any potential scandal that could threaten the Brüning government.
