@@ -801,6 +801,7 @@ Q.reichsbank_policy_time = 0;
 Q.dnvp_scared_hitler_time = 0;
 Q.international_socialist_support = 0;
 Q.banking_crisis_fallout_time = 0;
+Q.reformist_plan_time = 0;
 
 Q.industrial_ddp_backing = 1;
 Q.industrial_dvp_backing = 3;

@@ -241,7 +241,7 @@ subtitle: -2 budget.
 unavailable-subtitle: -2 budget. [? if budget < 2 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
 view-if: moderate_plan_adopted == 1
 choose-if: budget >= 2 and unemployed >= 8
-on-arrival: budget -= 2; works_program += 1; unemployed -= 3 if unemployed >= 8; inflation += 1.5; workers_spd += 6*(1-dissent); unemployed_spd += 4*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); moderate_plan_progress += 1; kpd_coalition_dissent += 1; inflation += 1 if unemployed < 10; kpd_relation -= 5 if in_popular_front or in_left_front; dvp_left += 2; ddp_left += 1; ddp_cohesion += 0.5; lvp_left += 2; economic_plan_goal_spd += 1; economy_goal_spd_peoples += 1; economic_growth += 1.6;
+on-arrival: budget -= 2; works_program += 1; reformist_plan_time = time + 10 if time >= reformist_plan_time; reformist_plan_time += 10 if reformist_plan_time >= time; unemployed -= 3 if unemployed >= 8; unemployed -= 2 if unemployed >= 30; inflation += 1.5; workers_spd += 6*(1-dissent); unemployed_spd += 4*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); moderate_plan_progress += 1; kpd_coalition_dissent += 1; inflation += 1 if unemployed < 10; kpd_relation -= 5 if in_popular_front or in_left_front; dvp_left += 2; ddp_left += 1; ddp_cohesion += 0.5; lvp_left += 2; economic_plan_goal_spd += 1; economy_goal_spd_peoples += 1; economic_growth += 1.6;
 achievement: wirtschaftspolitik
 
 [? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Germany, reducing unemployment. ?]
@@ -260,7 +260,7 @@ subtitle: -1 budget.
 unavailable-subtitle: -1 budget. [? if budget < 1 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?]
 view-if: moderate_plan_adopted == 1
 choose-if: budget >= 1 and unemployed >= 8
-on-arrival: budget -= 1; works_program += 1; unemployed -= 2 if unemployed >= 8; inflation += 1; workers_spd += 4*(1-dissent); unemployed_spd += 2*(1-dissent); new_middle_spd += 2*(1-dissent); old_middle_spd += 1*(1-dissent); rural_spd += 1*(1-dissent); moderate_plan_progress += 1; kpd_coalition_dissent += 1; inflation += 1 if unemployed < 10; kpd_relation -= 5 if in_popular_front or in_left_front; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.25; lvp_left += 1; economic_plan_goal_spd += 1; economy_goal_spd_peoples += 1; economic_growth += 0.7;
+on-arrival: budget -= 1; works_program += 1; reformist_plan_time = time + 10 if time >= reformist_plan_time; reformist_plan_time += 10 if reformist_plan_time >= time; unemployed -= 2 if unemployed >= 8; unemployed -= 2 if unemployed >= 30; inflation += 1; workers_spd += 4*(1-dissent); unemployed_spd += 2*(1-dissent); new_middle_spd += 2*(1-dissent); old_middle_spd += 1*(1-dissent); rural_spd += 1*(1-dissent); moderate_plan_progress += 1; kpd_coalition_dissent += 1; inflation += 1 if unemployed < 10; kpd_relation -= 5 if in_popular_front or in_left_front; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.25; lvp_left += 1; economic_plan_goal_spd += 1; economy_goal_spd_peoples += 1; economic_growth += 0.7;
 achievement: wirtschaftspolitik
 
 [? if moderate_plan_progress == 1 : We have started to implement the job-creation plan! Funds are sent to build public works projects across Germany, reducing unemployment. ?]

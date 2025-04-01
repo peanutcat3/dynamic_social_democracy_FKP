@@ -1173,6 +1173,25 @@ if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_govern
     }
 }
 
+if (Q.reformist_plan_time >= Q.time) {
+    if (Q.unemployed >= 8) Q.unemployed *= 0.99;
+    if (Q.unemployed >= 24) Q.unemployed *= 0.995;
+    if (Q.economy_growth < -4) {
+        Q.economic_growth += 0.6;
+    } else if (Q.economic_growth < 0) {
+        Q.economic_growth += 0.4;
+    } else if (Q.economic_growth < 4) {
+        Q.economic_growth += 0.2;
+    }
+    if (Q.inflation < -4) {
+        Q.inflation += 0.4;
+    } else if (Q.inflation < 0) {
+        Q.inflation += 0.3;
+    } else if (Q.inflation < 4) {
+        Q.inflation += 0.2;
+    }
+}
+
 if (Q.far_right_paramilitary && Q.year >= 1930) {
     if (Q.far_right_paramilitary_highest) {
         Q.workers_nsdap += 4/12;
