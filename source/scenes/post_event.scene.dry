@@ -1100,20 +1100,22 @@ if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_govern
         Q.catholics_nsdap -= 5/12;
     }
 } else if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && Q.spd_in_government) {
-    if (Q.unemployed >= 14) Q.unemployed *= 0.98;
+    if (Q.unemployed >= 28) {
+        Q.unemployed *= 0.98;
+    } else if (Q.unemployed >= 20) {
+        Q.unemployed *= 0.99;
+    } else if (Q.unemployed >= 10) {
+        Q.unemployed *= 0.995;
+    }
     if (Q.economy_growth < -4) {
-        Q.economic_growth += 0.6;
-    } else if (Q.economic_growth < 0) {
-        Q.economic_growth += 0.4;
-    } else if (Q.economic_growth < 4) {
         Q.economic_growth += 0.2;
     }
     if (Q.inflation < -4) {
-        Q.inflation += 0.4;
-    } else if (Q.inflation < 0) {
         Q.inflation += 0.3;
-    } else if (Q.inflation < 4) {
+    } else if (Q.inflation < 0) {
         Q.inflation += 0.2;
+    } else if (Q.inflation < 4) {
+        Q.inflation += 0.1;
     }
     if (Q.stegerwald_path) {
         Q.workers_z += 4/12;
@@ -1174,7 +1176,7 @@ if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_govern
 }
 
 if (Q.reformist_plan_time >= Q.time) {
-    if (Q.unemployed >= 8) Q.unemployed *= 0.99;
+    if (Q.unemployed >= 8) Q.unemployed *= 0.995;
     if (Q.unemployed >= 24) Q.unemployed *= 0.995;
     if (Q.economy_growth < -4) {
         Q.economic_growth += 0.6;
