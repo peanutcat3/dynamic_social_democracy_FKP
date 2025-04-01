@@ -382,6 +382,9 @@ if (Q.dvp_defect) Q.hindenburg_unity -= 1;
 if (Q.cnblp_defect) Q.hindenburg_unity -= 1;
 if (Q.second_bruning_cabinet_seen) Q.hindenburg_unity -= 1;
 if (Q.spd_support_hindenburg) Q.hindenburg_unity -= 3;
+if (Q.nsdap_votes >= 20) Q.hindenburg_unity -= 1;
+if (Q.nsdap_votes >= 30) Q.hindenburg_unity -= 1;
+if (Q.nsdap_votes >= 35) Q.hindenburg_unity -= 1;
 if (Q.spd_campaign || Q.spd_support_thalmann || Q.kpd_support_spd) Q.hindenburg_unity += 3;
 !}
 go-to: bourgeois_campaign_menu
