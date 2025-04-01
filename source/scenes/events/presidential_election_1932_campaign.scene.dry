@@ -588,6 +588,7 @@ if (Q.industrial_total_backing) {
     Q.hindenburg_funds += ((100 - Q.nsdap_votes) / 25);
     if (Q.spd_in_government) Q.hindenburg_funds += ((100 - Q.kpd_votes) / 10);
 }
+Q.hindenburg_funds_old = Q.hindenburg_funds;
 !}
 view-if: not spd_support_hindenburg
 go-to: embezzlement_options_op
