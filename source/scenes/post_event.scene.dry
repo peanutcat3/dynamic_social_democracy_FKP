@@ -446,7 +446,7 @@ if (Q.month_actions >= 1) {
         if (Q.catholics_spd > 10) {
             Q.catholics_spd -= 4/12;
         }
-        if (Q.unemployed_spd_normalized > 15) {
+        if (Q.unemployed_spd_normalized > 20) {
             Q.unemployed_spd -= 6/12;
         }
         Q.pro_republic += 1;
@@ -459,6 +459,11 @@ if (Q.month_actions >= 1) {
     if (Q.ddp_votes < 1) {
         Q.old_middle_ddp += 3/12;
         Q.new_middle_ddp += 3/12;
+    }
+    if (Q.unemployed_spd_normalized < 10) {
+        Q.unemployed_spd += 4/12;
+    } else if (Q.unemployed_spd_normalized < 15) {
+        Q.unemployed_spd += 2/12;
     }
     // soft cap for nsdap workers
     if (Q.workers_nsdap_normalized >= (Q.workers_kpd_normalized - 5) && Q.unemployed >= 15) {
