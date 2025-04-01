@@ -35,6 +35,7 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!  
+    Q.pre_previous_z_last_election_votes = Q.previous_z_last_election_votes;
     var new_party_sum = 0;
     var total_reichstag_without = 0;  // Initialize a variable to accumulate 'reichstag_without_' values
     var total_other_party_sum = 0;    // Initialize a variable to accumulate '_other_party_sum' values
@@ -210,7 +211,7 @@ Q.z_minus_bvp_votes = parseFloat((Q.z_votes - Q.bvp_votes).toFixed(1));
 Q.z_minus_bvp_r = parseFloat((Q.z_r - Q.bvp_r).toFixed(1));
 
 console.log("z_minus_bvp_votes:", Q.z_minus_bvp_votes);
-console.log("previous_z_last_election_votes:", Q.previous_z_last_election_votes);
+console.log("pre_previous_z_last_election_votes:", Q.pre_previous_z_last_election_votes);
 
 Q.str_votes_change_bvp = Q.bvp_votes - Q.previous_bvp_last_election_votes;
 var sign2 = Q.str_votes_change_bvp > 0 
@@ -229,24 +230,22 @@ var sign2 = Q.str_change_bvp > 0
 Q.str_change_bvp = sign2 + Math.abs(Q.str_change_bvp).toFixed(1);
 
 if (Q.bvp_r) {
-    Q.previous_z_last_election_votes -= Q.previous_bvp_last_election_votes;
+    Q.pre_previous_z_last_election_votes -= Q.previous_bvp_last_election_votes;
     Q.old_z_r -= Q.old_bvp_r;
 }
 Q.previous_bvp_last_election_votes = Q.bvp_votes;
 Q.old_bvp_r = Q.bvp_r;
 
 console.log("z_minus_bvp_votes:", Q.z_minus_bvp_votes);
-console.log("previous_z_last_election_votes:", Q.previous_z_last_election_votes);
+console.log("pre_previous_z_last_election_votes:", Q.pre_previous_z_last_election_votes);
 
-Q.str_votes_change_z = Q.z_minus_bvp_votes - Q.previous_z_last_election_votes;
+Q.str_votes_change_z = Q.z_minus_bvp_votes - Q.pre_previous_z_last_election_votes;
 var sign2 = Q.str_votes_change_z > 0 
 ? '<img src="img/arrowup.jpg"> ' 
 : Q.str_votes_change_z < 0 
   ? '<img src="img/arrowdown.jpg"> ' 
   : '<img src="img/steady.jpg"> ';
 Q.str_votes_change_z = sign2 + Math.abs(Q.str_votes_change_z).toFixed(1);
-
-Q.previous_z_last_election_votes = parseFloat(parseFloat(Q.z_last_election_votes).toFixed(1));
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
