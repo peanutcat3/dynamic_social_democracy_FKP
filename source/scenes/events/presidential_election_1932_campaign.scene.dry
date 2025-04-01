@@ -259,7 +259,7 @@ The finances of the Hindenburg campaign are in disarray. Influential industriali
 title: Gunther Gereke has miraculously presented millions of Reichsmarks from an unknown source.
 view-if: bruning_time
 max-visits: 1
-on-arrival: hindenburg_funds += 3; new_middle_kvp += 2; old_middle_kvp += 2; rural_kvp += 4; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_dnvp += 4 if dnvp_ideology == "Moderate"; rural_other += 4 if not kvp_formed; rural_nsdap -= 4; pro_republic += 3; embezzle_1 = 1
+on-arrival: hindenburg_funds += 3; new_middle_kvp += 2; old_middle_kvp += 2; rural_kvp += 4; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_dnvp += 4 if dnvp_ideology == "Moderate"; rural_other += 4 if not kvp_formed; rural_nsdap -= 4 if rural_nsdap_normalized >= 35; pro_republic += 3; embezzle_1 = 1
 go-to: embezzlement_options
 
 Gunther Gereke, [? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?][? if dnvp_ideology == "Radical": <span style="color: #7FCEB1;">**CNBLP**</span>?] member responsible for raising funds for the Hindenburg campaign, has managed to secure and disburse seven million marks to the campaign—though some of these funds have been diverted to his own party. The volume of private and corporate donations alone would have been insufficient to cover the campaign's expenses, making it evident that state financing played a role.
@@ -270,7 +270,7 @@ subtitle: [? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if 
 unavailable-subtitle: The <span style="color: #c00000;">SPD</span> doesn't control Prussia.
 view-if: bruning_time
 choose-if: spd_prussia
-on-arrival: hindenburg_funds += 1; resources += 3; ddp_relation += 5; z_relation += 3; lvp_relation += 3; ddp_left += 1; pro_republic += 3; new_middle_ddp += 2; old_middle_ddp += 2; new_middle_dvp += 2 if dvp_ideology != "Right"; old_middle_dvp += 2 if dvp_ideology != "Right"; new_middle_lvp += 2; old_middle_lvp += 2; new_middle_nsdap -= 2; old_middle_nsdap -= 2; prussian_police_loyalty += 0.05; prussian_police_strength += 20; rb_militancy += 0.05; sa_strength -= 50; embezzle_2 = 1
+on-arrival: hindenburg_funds += 1; resources += 3; ddp_relation += 5; z_relation += 3; lvp_relation += 3; ddp_left += 1; pro_republic += 3; new_middle_ddp += 2; old_middle_ddp += 2; new_middle_dvp += 2 if dvp_ideology != "Right"; old_middle_dvp += 2 if dvp_ideology != "Right"; new_middle_lvp += 2; old_middle_lvp += 2; new_middle_nsdap -= 2 if new_middle_nsdap_normalized >= 40; old_middle_nsdap -= 2 if old_middle_nsdap_normalized >= 40; prussian_police_loyalty += 0.05; prussian_police_strength += 20; rb_militancy += 0.05; sa_strength -= 50; embezzle_2 = 1
 max-visits: 1
 go-to: embezzlement_options
 
@@ -282,7 +282,7 @@ All present agreed that a decisive victory for Hindenburg and a campaign free fr
 title: We will use the state to finance Hindenburg's reelection.
 view-if: spd_in_government and not bruning_time
 max-visits: 1
-on-arrival: hindenburg_funds += 3; new_middle_kvp += 2; old_middle_kvp += 2; rural_kvp += 4; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_dnvp += 4 if dnvp_ideology == "Moderate"; rural_other += 4 if not kvp_formed; rural_nsdap -= 4; pro_republic += 3; embezzle_1 = 1
+on-arrival: hindenburg_funds += 3; new_middle_kvp += 2; old_middle_kvp += 2; rural_kvp += 4; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_dnvp += 4 if dnvp_ideology == "Moderate"; rural_other += 4 if not kvp_formed; rural_nsdap -= 4 if rural_nsdap_normalized >= 35;; pro_republic += 3; embezzle_1 = 1
 go-to: embezzlement_options
 
 We have contacted Gunther Gereke, [? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?][? if dnvp_ideology == "Radical": <span style="color: #7FCEB1;">**CNBLP**</span>?] member responsible for raising funds for the Hindenburg campaign, and provided him with a sizable donation to secure and disburse five million marks to the campaign—though some of these funds have been diverted to his own party. This development has pleased both Schleicher and Hindenburg himself, who never expected us to prioritize state funds for a political campaign over feeding children. Not that the public will ever find out.
@@ -292,7 +292,7 @@ title: Our government in Prussia will distribute funds to pro-Hindenburg organiz
 subtitle: This would involve financing the bourgeois parties.
 view-if: spd_prussia and not bruning_time
 max-visits: 1
-on-arrival: hindenburg_funds += 1; ddp_relation += 5; z_relation += 5; lvp_relation += 5; ddp_left += 1; pro_republic += 3; new_middle_ddp += 3; old_middle_ddp += 3; new_middle_dvp += 3 if dvp_ideology != "Right"; old_middle_dvp += 3 if dvp_ideology != "Right"; new_middle_lvp += 3; old_middle_lvp += 3; new_middle_nsdap -= 3; old_middle_nsdap -= 3; rural_other += 3; rb_militancy += 0.06; sa_strength -= 50; embezzle_2 = 1
+on-arrival: hindenburg_funds += 1; ddp_relation += 5; z_relation += 5; lvp_relation += 5; ddp_left += 1; pro_republic += 3; new_middle_ddp += 3; old_middle_ddp += 3; new_middle_dvp += 3 if dvp_ideology != "Right"; old_middle_dvp += 3 if dvp_ideology != "Right"; new_middle_lvp += 3; old_middle_lvp += 3; new_middle_nsdap -= 3 if new_middle_nsdap_normalized >= 40; old_middle_nsdap -= 3 if new_middle_nsdap_normalized >= 40; rural_other += 3; rb_militancy += 0.06; sa_strength -= 50; embezzle_2 = 1
 go-to: embezzlement_options
 
 We have met with politicians from the [? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?][? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?], the <span style="color: #000000;">Center</span> Party, the Reichsbanner, and even some <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> peasant unions. We have agreed to allocate Prussian state funds to their groups, strengthening the Hindenburg campaign among those excluded from the official committee while also improving our relationship with these factions.
@@ -343,7 +343,7 @@ title: Use our radio stations to broadcast in favor of Hindenburg.
 subtitle: -1 resource
 choose-if: radio >= 2 and resources >= 1
 unavailable-subtitle: [? if radio < 2: We haven't sufficiently built up our radio infrastructure yet. ?] [? if resources < 1: Not enough resources. ?]
-on-arrival: resources -= 1; new_middle_spd += (radio + commercialized_media); old_middle_spd += (radio + commercialized_media); workers_spd += (campaign_media + radio - 2); unemployed_spd += (campaign_media + radio); new_middle_nsdap -= (radio + commercialized_media); old_middle_nsdap -= (radio + commercialized_media); workers_nsdap -= (campaign_media + radio - 2); unemployed_nsdap -= (campaign_media + radio); socialism += 3; nationalism -= 1; nationalism -= 2 if pacifism > 1; pro_republic += (radio + commercialized_media)
+on-arrival: resources -= 1; new_middle_spd += (radio + commercialized_media); old_middle_spd += (radio + commercialized_media); workers_spd += (campaign_media + radio - 2); unemployed_spd += (campaign_media + radio); socialism += 3; nationalism -= 1; nationalism -= 2 if pacifism > 1; pro_republic += (radio + commercialized_media)
 face-image: img/poster_0.jpg
 max-visits: 1
 go-to: campaigning_hindenburg_2
@@ -449,7 +449,7 @@ Despite the antipathy the industrialists have toward [? if not hitler_deported: 
 @religion
 title: The Catholic Church and Lutheran Church have long held political neutrality, perhaps that will change?
 view-if: z_support_spd != 1
-on-arrival: religion_used = 1; catholics_z += 4 if catholics_z_normalized < 50; catholics_nsdap -= 4 if catholics_z_normalized < 50
+on-arrival: religion_used = 1; catholics_z += 4 if catholics_z_normalized < 50; catholics_nsdap -= 4 if catholics_z_normalized < 50 and catholics_nsdap_normalized >= 8;
 max-visits: 1
 go-to: religion_2 if hindenburg_unity >= 3; religion_3 if hindenburg_unity < 3
 
@@ -498,10 +498,9 @@ if (Q.hindenburg_support) {
     Q.rural_other += Q.hindenburg_support / 1.5;
     Q.pro_republic += Q.hindenburg_support; 
     if (!Q.kvp_formed) Q.rural_other += Q.hindenburg_support;
-    Q.new_middle_nsdap -= Q.hindenburg_support;
-    Q.old_nsdap -= Q.hindenburg_support;
-    Q.rural_nsdap -= Q.hindenburg_support;
-}
+    Q.new_middle_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
+    Q.old_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
+    Q.rural_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
 if (Q.rlb_nazi) {
     Q.rlb_hindenburg = 0;
     Q.rural_nsdap += Q.rural_other*0.3;
@@ -509,9 +508,6 @@ if (Q.rlb_nazi) {
     Q.rural_dnvp *= 0.9;
 } else if (!Q.rlb_nazi) {
     Q.rlb_hindenburg = 1;
-    Q.rural_other += 4;
-    Q.rural_kvp += 2;
-    Q.rural_nsdap -= 4;
 }
 !}
 
@@ -605,7 +601,7 @@ The finances of the Hindenburg campaign are in disarray. Influential industriali
 title: Gunther Gereke has miraculously presented millions of Reichsmarks from an unknown source.
 view-if: bruning_time
 max-visits: 1
-on-arrival: hindenburg_funds += 3; new_middle_kvp += 2; old_middle_kvp += 2; rural_kvp += 4; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_dnvp += 4 if dnvp_ideology == "Moderate"; rural_other += 4 if not kvp_formed; rural_nsdap -= 4; pro_republic += 3; embezzle_1_op = 1
+on-arrival: hindenburg_funds += 3; new_middle_kvp += 2; old_middle_kvp += 2; rural_kvp += 4; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_dnvp += 4 if dnvp_ideology == "Moderate"; rural_other += 4 if not kvp_formed; rural_nsdap -= 4 if rural_nsdap_normalized >= 35;; pro_republic += 3; embezzle_1_op = 1
 go-to: embezzlement_options_op
 
 Gunther Gereke, [? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?][? if dnvp_ideology == "Radical": <span style="color: #7FCEB1;">**CNBLP**</span>?] member responsible for raising funds for the Hindenburg campaign, has managed to secure and disburse seven million marks to the campaign—though some of these funds have been diverted to his own party. The volume of private and corporate donations alone would have been insufficient to cover the campaign's expenses, making it evident that state financing, particularly from the Reichswehr, played a role.
@@ -711,7 +707,7 @@ Despite the antipathy the industrialists have toward [? if not hitler_deported: 
 @religion_op
 title: The Catholic Church and Lutheran Church have long held political neutrality, perhaps that will change?
 view-if: z_support_spd != 1
-on-arrival: religion_used = 1; catholics_z += 4 if catholics_z_normalized < 50; catholics_nsdap -= 4 if catholics_z_normalized < 50
+on-arrival: religion_used = 1; catholics_z += 4 if catholics_z_normalized < 50; catholics_nsdap -= 4 if catholics_z_normalized < 50 and catholics_nsdap_normalized >= 8
 max-visits: 1
 go-to: religion_2_op if hindenburg_unity >= 3; religion_3_op if hindenburg_unity < 3
 
@@ -760,10 +756,9 @@ if (Q.hindenburg_support) {
     Q.rural_other += Q.hindenburg_support / 1.5;
     Q.pro_republic += Q.hindenburg_support; 
     if (!Q.kvp_formed && Q.dnvp_ideology == "Radical") Q.rural_other += Q.hindenburg_support;
-    Q.new_middle_nsdap -= Q.hindenburg_support;
-    Q.old_nsdap -= Q.hindenburg_support;
-    Q.rural_nsdap -= Q.hindenburg_support;
-}
+    Q.new_middle_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
+    Q.old_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
+    Q.rural_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
 if (Q.rlb_nazi) {
     Q.rlb_hindenburg = 0;
     Q.rural_nsdap += Q.rural_other*0.3;
@@ -771,9 +766,6 @@ if (Q.rlb_nazi) {
     Q.rural_dnvp *= 0.9;
 } else if (!Q.rlb_nazi) {
     Q.rlb_hindenburg = 1;
-    Q.rural_other += 4;
-    Q.rural_kvp += 2;
-    Q.rural_nsdap -= 4;
 }
 !}
 
