@@ -209,7 +209,7 @@ Q.thalmann_votes_rnd_1 = Q.thalmann_votes.toFixed(1);
 Q.dnvp_presidential_votes_rnd_1 = Q.dnvp_presidential_votes.toFixed(1);
 
 if (Q.thalmann_votes_disp < 14) {
-    Q.workers_kpd *= 0.9;
+    Q.workers_kpd *= 0.85;
     Q.unemployed_kpd *= 0.9;
     Q.unemployed_nsdap += 5;
     Q.workers_nsdap += 3;
