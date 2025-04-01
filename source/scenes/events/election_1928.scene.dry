@@ -239,7 +239,6 @@ var sign2 = Q.str_votes_change_z > 0
   : '<img src="img/steady.jpg"> ';
 Q.str_votes_change_z = sign2 + Math.abs(Q.str_votes_change_z).toFixed(1);
 
-Q.z_last_election_votes = parseFloat(Q.z_votes - Q.bvp_votes).toFixed(1);
 Q.previous_z_last_election_votes = parseFloat(parseFloat(Q.z_last_election_votes).toFixed(1));
 
 // The largest party can only be the NSDAP or the SPD.
