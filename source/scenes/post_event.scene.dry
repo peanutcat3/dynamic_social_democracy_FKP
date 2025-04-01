@@ -1300,9 +1300,9 @@ if (!Q.wtb_adopted && Q.black_thursday_seen) {
         Q.wtb_points_gain += Q.labor_strength/100;
     }
     Q.wtb_points_gain += Q.leipart_advisor + Q.baade_advisor;
-    if (Q.inflation < -2) Q.wtb_points_gain += ((Q.inflation/5)*-1);
-    if (Q.economic_growth < -2) Q.wtb_points_gain += ((Q.economic_growth/10)*-1);
-    Q.wtb_points_gain += Q.unemployed/10;
+    if (Q.inflation < -2) Q.wtb_points_gain += ((Q.inflation/8)*-1);
+    if (Q.economic_growth < -2) Q.wtb_points_gain += ((Q.economic_growth/15)*-1);
+    Q.wtb_points_gain += Q.unemployed/15;
     if (Q.banking_crisis_seen) Q.wtb_points_gain += 2;
     if (Q.nsdap_votes + Q.kpd_votes >= 35) Q.wtb_points += (Q.nsdap_votes + Q.kpd_votes) / 20
     if (Q.unions_independent) Q.wtb_points_gain -= 3;
