@@ -6,11 +6,11 @@ Q.presidential_election_campaigning_seen = 1;
 Q.hindenburg_funds = 0;
 Q.hindenburg_support = 0;
 if (Q.nsdap_candidate_1932 == "Hitler") {
-    Q.workers_nsdap += 2;
-    Q.new_middle_nsdap += 4;
-    Q.old_middle_nsdap += 4;
-    Q.catholics_nsdap += 2;
-    Q.rural_nsdap += 4;
+    Q.workers_nsdap += 4;
+    Q.new_middle_nsdap += 6;
+    Q.old_middle_nsdap += 6;
+    Q.catholics_nsdap += 4;
+    Q.rural_nsdap += 6;
     Q.unemployed_nsdap += 6;
     Q.new_middle_dnvp -= 2;
     Q.old_middle_dnvp -= 2; 
