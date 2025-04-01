@@ -206,9 +206,6 @@ if (Q.stegerwald_path && Q.bvp_r >= 4.4) {
 Q.bvp_r = parseFloat(Q.bvp_r.toFixed(1));
 Q.bvp_votes = parseFloat(Q.bvp_votes.toFixed(1));
 
-Q.z_minus_bvp_votes = parseFloat((Q.z_votes - Q.bvp_votes).toFixed(1));
-Q.z_minus_bvp_r = parseFloat((Q.z_r - Q.bvp_r).toFixed(1));
-
 console.log("z_minus_bvp_votes:", Q.z_minus_bvp_votes);
 console.log("previous_z_last_election_votes:", Q.previous_z_last_election_votes);
 
@@ -228,15 +225,12 @@ var sign2 = Q.str_change_bvp > 0
   : '<img src="img/steady.jpg"> ';
 Q.str_change_bvp = sign2 + Math.abs(Q.str_change_bvp).toFixed(1);
 
+if (Q.bvp_r) {
+    Q.previous_z_last_election_votes -= Q.previous_bvp_last_election_votes;
+    Q.old_z_r -= Q.old_bvp_r;
+}
 Q.previous_bvp_last_election_votes = Q.bvp_votes;
 Q.old_bvp_r = Q.bvp_r;
-if (Q.bvp_r) {
-    Q.previous_z_last_election_votes -= Q.bvp_votes;
-    Q.old_z_r -= Q.bvp_r;
-}
-
-console.log("z_minus_bvp_votes:", Q.z_minus_bvp_votes);
-console.log("previous_z_last_election_votes:", Q.previous_z_last_election_votes);
 
 Q.str_votes_change_z = Q.z_minus_bvp_votes - Q.previous_z_last_election_votes;
 var sign2 = Q.str_votes_change_z > 0 
