@@ -698,7 +698,11 @@ var wurttemberg_adjustment_factors = {
 };
 
 if (!Q.dvp_exist) {
-    Q.wurttemberg_adjustment_factors.dnvp += Q.wurttemberg_adjustment_factors.dvp;
+    Q.wurttemberg_adjustment_factors.dnvp += 0.6;
+}
+
+if (!Q.dvp_exist && Q.dvp_in_cvp) {
+    Q.wurttemberg_adjustment_factors.z += 0.4;
 }
 
 Q.spd_r_wurttemberg = 0;
