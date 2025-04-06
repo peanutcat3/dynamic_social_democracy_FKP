@@ -532,6 +532,7 @@ if ((Q.dvp_relation < (dvp_toleration_threshold + 5) && !Q.lvp_formed) || (Q.lvp
     Q.dvp_toleration_threshold_fail_saxony = 0;
 }
 !}
+
 <hr id="read-marker">
 The bourgeois parties have historically been hostile to us in state politics, particularly after the notorious <span style="color: #c00000;">**SPD**</span>-<span style="color: #700000;">**KPD**</span> United Left government faced a *Reichsexekution* six years ago. The split of our reformist wing into the <span style="color: #fe9e00;">**ASPD**</span> further pushed our state organization toward the left.
 
