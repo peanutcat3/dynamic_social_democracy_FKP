@@ -661,7 +661,7 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(155, 0, 0, 0.2); font-size: 0.85em;">!}[+ catholics_sapd_display +]%[? if n_elections != 1 and demo_change_catholics_sapd_display != 0 : ([+ demo_change_catholics_sapd_display +])?]{!</td>!}
         {!</tr>!}?]
         {!<tr>!}
-            {!<td><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #4B758B;"><b>BVP</b></span></td>!}
+            {!<td><span style="color: #000000;"><b>[+ z_party_name +]</b></span> + <span style="color: #4B758B;"><b>BVP</b></span></td>!}
             {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_z_display +]%[? if n_elections != 1 and demo_change_workers_z_display != 0 : ([+ demo_change_workers_z_display +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_z_display +]%[? if n_elections != 1 and demo_change_new_middle_z_display != 0 : ([+ demo_change_new_middle_z_display +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 0, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_z_display +]%[? if n_elections != 1 and demo_change_old_middle_z_display != 0 : ([+ demo_change_old_middle_z_display +])?]{!</td>!}
