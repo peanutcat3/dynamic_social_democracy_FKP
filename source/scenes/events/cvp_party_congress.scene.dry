@@ -7,7 +7,7 @@ if (Q.in_social_catholic_coalition) Q.cvp_left += 5;
 if (Q.peoples_party) Q.cvp_left += 3;
 if (Q.left_split) Q.cvp_left += 1;
 if (Q.sapd_formed) Q.cvp_left += 2;
-if (Q.reformist_strength >= Q.left_strength + Q.labor_strength + Q.labor_strength) {
+if (Q.reformist_strength >= Q.left_strength + Q.labor_strength + Q.center_strength) {
     Q.cvp_left += 2;
 } else {
     Q.cvp_right += 2;
