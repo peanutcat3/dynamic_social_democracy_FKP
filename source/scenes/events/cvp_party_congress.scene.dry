@@ -45,9 +45,9 @@ if (Q.dnvp_leader == "Lambach") {
     Q.cvp_right += 10;
 }
 
-if (Q.cvp_right > (Q.cvp_left + 5)) {
+if (Q.cvp_right >= (Q.cvp_left + 5)) {
     Q.cvp_ideology = "Right"
-} else if (Q.cvp_left > (Q.cvp_right + 5)) {
+} else if (Q.cvp_left >= (Q.cvp_right + 5)) {
     Q.cvp_ideology = "Left"
 } else {
     Q.cvp_ideology = "Moderate"
