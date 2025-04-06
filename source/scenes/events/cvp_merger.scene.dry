@@ -294,6 +294,7 @@ The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #3
 
 
 @congress
+title: With all differences resolved, the <span style="color: #000000;">**[+ z_party_name +]**</span> is formed! 
 view-if: cvp_reparations and cvp_economy and cvp_coalition and cvp_monarchy
 set-jump: cvp_congress_menu
 face-image: img/cvp.jpg
