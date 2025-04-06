@@ -459,7 +459,7 @@ if (Q.month_actions >= 1) {
         }
         Q.pro_republic += 1;
     }
-    if (Q.other_votes < 4) {
+    if (Q.other_votes < 4 && !Q.stegerwald_path) {
         Q.old_middle_other += 4/12;
         Q.new_middle_other += 4/12;
         Q.rural_other += 2/12;
@@ -3398,6 +3398,14 @@ Q.catholics_nsdap_old = Q.catholics_nsdap;
 
 if (Q.dvp_relation < 0) {
     Q.dvp_relation = 0;
+}
+
+if (Q.lvp_relation < 0) {
+    Q.lvp_relation = 0;
+}
+
+if (Q.z_relation < -20 && Q.cvp_formed) {
+    Q.z_relation = -20;
 }
 
 Q.ddp_r = Math.round((Q.ddp_r) * 10 / 10)

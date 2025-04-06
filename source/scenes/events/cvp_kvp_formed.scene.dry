@@ -1,78 +1,32 @@
 on-arrival: {!
 
-Q.cvp_formed = 1;
+Q.cvp_kvp_formed = 1;
+Q.kvp_formed = 0;
 
-Q.z_party_name = "CVP";
+Q.workers_z += Q.workers_kvp;
 
-Q.workers_z += Q.workers_dnvp;
+Q.new_middle_z += Q.new_middle_kvp;
 
-Q.new_middle_z += Q.new_middle_dnvp;
+Q.old_middle_z += Q.old_middle_kvp;
 
-Q.old_middle_z += Q.old_middle_dnvp;
+Q.rural_z += Q.rural_kvp;
 
-Q.rural_z += Q.rural_dnvp;
+Q.unemployed_z += Q.unemployed_kvp;
 
-Q.unemployed_z += Q.unemployed_dnvp;
+Q.catholics_z += Q.catholics_kvp;
 
-Q.catholics_z += Q.catholics_dnvp;
+Q.bourgeois_parliament_kvp = 0;
 
-Q.workers_other *= 0.2;
-Q.new_middle_other *= 0.4;
-Q.old_middle_other *= 0.4;
-Q.rural_other += 6;
-Q.unemployed_other *= 0.3;
-Q.catholics_other += 4;
-
-Q.new_middle_ddp += (Q.pro_republic / 10);
-Q.old_middle_ddp += (Q.pro_republic / 10);
-Q.rural_ddp += (Q.pro_republic / 20);
-if (Q.dvp_ideology != "Right" || Q.dvp_leader != "Scholz" && Q.dvp_leader != "Dingeldey") {
-    Q.new_middle_dvp += (Q.pro_republic / 10);
-    Q.old_middle_dvp += (Q.pro_republic / 10);
-    Q.rural_dvp += (Q.pro_republic / 10);
-}
-Q.new_middle_z -= (Q.pro_republic / 10);
-Q.old_middle_z -= (Q.pro_republic / 10);
-Q.rural_z -= (Q.pro_republic / 20);
-
-Q.new_middle_z -= 3;
-Q.new_middle_dnf += 5;
-
-Q.old_middle_z -= 3;
-Q.old_middle_dnf += 5;
-
-Q.rural_z -= 4;
-Q.rural_dnf += 6;
-
-Q.catholics_z -= 4;
-Q.catholics_ddp += 2;
-Q.catholics_lvp += 2;
-Q.catholics_spd += 2;
-Q.catholics_dvp += 2;
-
-Q.catholics -= 5;
-
-Q.z_r = Math.round((Q.dnvp_r + Q.z_r - Q.bvp_r) * 10) / 10;
-Q.z_r_prussia = Math.round((Q.dnvp_r_prussia + Q.z_r_prussia) * 10) / 10;
+Q.z_r = Math.round((Q.z_r + Q.kvp_r) * 10) / 10;
+Q.z_r_prussia = Math.round((Q.z_r_prussia + Q.kvp_r_prussia) * 10) / 10;
 Q.z_relation -= 20;
-Q.z_relation += (Q.pro_republic / 10);
 
-Q.ddp_right += 3;
-Q.ddp_relation -= 5;
+Q.kvp_r = 0;
+Q.kvp_r_prussia = 0;
+Q.kvp_votes = 0;
+Q.kvp_normalized = 0;
 
-Q.dvp_right += 3;
-Q.dvp_relation -= 5;
-
-Q.dnvp_r = 0;
-Q.dnvp_r_prussia = 0;
-Q.z_votes += Q.dnvp_votes;
-Q.dnvp_votes = 0;
-Q.dnvp_normalized = 0;
-
-Q.parties = Q.parties.filter(party => party !== 'dnvp');
-
-Q.cvp_ideology = "Moderate";
-Q.cvp_leader = "Stegerwald";
+Q.parties = Q.parties.filter(party => party !== 'kvp');
 
 if (Q.lvp_formed) {
     Q.weimar_coalition = parseFloat((Q.spd_r + Q.lvp_r + Q.z_r - Q.bvp_r).toFixed(1));
@@ -165,24 +119,4 @@ if (Q.lvp_formed) {
 } else {
     Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(1));
 }
-
-const ministries = [
-    "foreign_minister_party",
-    "interior_minister_party",
-    "justice_minister_party",
-    "labor_minister_party",
-    "reichswehr_minister_party",
-    "economic_minister_party",
-    "finance_minister_party",
-    "agriculture_minister_party"
-];
-
-ministries.forEach(ministry => {
-    let partyKey = `${ministry}`;
-    if (Q[partyKey] == "Z" || Q[partyKey] == "DNVP") {
-        Q[partyKey] = "Z";
-    }
-});
-
-
 !}

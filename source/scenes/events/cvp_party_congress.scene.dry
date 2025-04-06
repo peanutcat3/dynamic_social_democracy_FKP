@@ -71,7 +71,7 @@ if (Q.cvp_ideology == "Right") {
 }
 
 if (Q.dnvp_leader == "Lambach" && !Q.lambach_bonus) {
-    Q.labor_right_points += 8;
+    Q.labor_right_points += 6;
     Q.lambach_bonus = 1;
 }
 
@@ -396,7 +396,7 @@ if (Q.democratic_points_lead && Q.tory_democratic_points_lead) {
     Q.lejeune_jung_unlock = 1;
 }
 
-if (!Q.goerdeler_unlock && !Q.bolz_unlock && !Q.westarp_unlock && !Q.lejeune_jung_unlock || Q.z_votes - Q.bvp_votes < 20 || ((Q.year == 1931 && Q.month >= 9) && (Q.year == 1932 && Q.month == 1))) {
+if (!Q.goerdeler_unlock && !Q.bolz_unlock && !Q.westarp_unlock && !Q.lejeune_jung_unlock || Q.z_votes - Q.bvp_votes < 20 || ((Q.year == 1931 && Q.month >= 11) && (Q.year == 1932 && Q.month == 1))) {
     if (!Q.goerdeler_unlock && !Q.bolz_unlock && !Q.westarp_unlock && !Q.lejeune_jung_unlock) {
         Q.vorbeck_deadlock = 1;
     } else if (Q.z_votes - Q.bvp_votes < 20) {
