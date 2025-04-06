@@ -3239,6 +3239,14 @@ if (Q.cvp_formed) {
     } else {
         Q.industrial_z_backing = 3;
     }
+} else {
+    Q.industrial_z_backing = 0;
+}
+
+if (Q.z_party_name == "CVP" && !Q.cvp_formed) {
+    Q.industrial_z_backing = 3;
+} else {
+    Q.industrial_z_backing = 0;
 }
 
 Q.industrial_total_backing = Q.industrial_ddp_backing + Q.industrial_dvp_backing + Q.industrial_lvp_backing + Q.industrial_dnvp_backing + Q.industrial_kvp_backing + Q.industrial_dnf_backing + Q.industrial_z_backing;

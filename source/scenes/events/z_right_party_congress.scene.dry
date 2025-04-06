@@ -22,7 +22,7 @@ subtitle: The <span style="color: #000000;">Center Party</span> is not in govern
 unavailable-subtitle: The <span style="color: #000000;">Center</span> care enough about our mutual relations to obstruct this merger.
 choose-if: z_relation < 40 and not ((in_weimar_coalition or in_grand_coalition or in_popular_front or (spd_prussia and not in_left_front_prussia)))
 on-arrival: z_party_name = "CVP"; workers_z -= 3; workers_spd += 3; unemployed_z -= 3; unemployed_spd += 3
-face-image: img/portraits/cvp.jpg
+face-image: img/cvp.jpg
 go-to: cvp_kvp_formed if kvp_formed; cvp_kvp_lite_formed if not kvp_formed
 
 The <span style="color: #000000;">Center Party</span> has officially absorbed the much smaller <span style="color: #0087DC;">**KVP**</span>, expanding its reach to the right. Unsurprisingly, this has severely strained relations between our two parties, as former <span style="color: #3E88B3;">**DNVP**</span> figures like Westarp remain openly hostile to any cooperation with the <span style="color: #c00000;">**SPD**</span>.
@@ -34,7 +34,7 @@ subtitle: [? if in_weimar_coalition or in_grand_coalition or in_popular_front or
 choose-if: z_relation >= 40 or (in_weimar_coalition or in_grand_coalition or in_popular_front or (spd_prussia and not in_left_front_prussia))
 unavailable-subtitle: [? if not (in_weimar_coalition or in_grand_coalition or in_popular_front or (spd_prussia and not in_left_front_prussia)): We are not in any government with the <span style="color: #000000;">Center Party</span>, leaving them free to do what they want. ?] [? if z_relation < 40 : Our relations are too low for them to care about what we think. ?]
 on-arrival: z_relation += 10; z_party_name = "CVP"; pro_republic += 5; nationalism -= 3; rural_kvp -= 2; rural_other -= 2 if not kvp_formed; rural_z += 2
-face-image: img/portraits/zentrum_2.jpg
+face-image: img/zentrum_2.jpg
 
 The status quo prevails. The <span style="color: #000000;">Center Party</span> and the <span style="color: #0087DC;">**KVP**</span> will remain separate—at least for now. Perhaps this is proof enough that the party still values cooperation with us over chasing after every fragment of the old Right.
 
