@@ -501,6 +501,7 @@ if (Q.hindenburg_support) {
     Q.new_middle_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
     Q.old_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
     Q.rural_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
+}
 if (Q.rlb_nazi) {
     Q.rlb_hindenburg = 0;
     Q.rural_nsdap += Q.rural_other*0.3;
@@ -759,6 +760,7 @@ if (Q.hindenburg_support) {
     Q.new_middle_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
     Q.old_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
     Q.rural_nsdap -= (Q.hindenburg_support*Q.nsdap_votes) / 50;
+}
 if (Q.rlb_nazi) {
     Q.rlb_hindenburg = 0;
     Q.rural_nsdap += Q.rural_other*0.3;

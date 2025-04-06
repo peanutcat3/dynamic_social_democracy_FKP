@@ -40,7 +40,7 @@ if (Q.left_split) Q.cvp_dnvp_balance += 5;
 if (Q.sapd_formed) Q.cvp_dnvp_balance += 5;
 if (Q.reformist_strength >= Q.left_strength + Q.labor_strength + Q.labor_strength) {
     Q.cvp_dnvp_balance += 5;
-} else (Q.left_strength >= Q.reformist_strength) {
+} else if (Q.left_strength >= Q.reformist_strength) {
     Q.cvp_dnvp_balance -= 10;
 }
 if (Q.nsdap_votes >= 35) {
