@@ -1648,7 +1648,7 @@ title: Forfeit our right to the Chancellorship.
 subtitle: This will limit our ability to conduct government policy. [? if budget < 0 : We will be inheriting a deficit, so we will have to implement temporary austerity. ?]
 tags: cvp_demands
 view-if: cvp_chancellor_accepted = 0
-on-arrival: liberal_budget_accepted = 1; cvp_negotiations_points += 10;
+on-arrival: cvp_chancellor_accepted = 1; cvp_negotiations_points += 10;
 go-to: cvp_demands_menu
 
 A demand put forth by their <span style="color: #3E88B3;">nationalist</span> Right-<span style="color: #000000;">Catholic</span>, and <span style="color: #C0A054;">industrial</span> wing, meeting this has secured us substantial progress in negotiations.
