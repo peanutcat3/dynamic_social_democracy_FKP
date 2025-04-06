@@ -3417,6 +3417,7 @@ if (Q.z_relation < -20 && Q.cvp_formed) {
 }
 
 Q.ddp_r = Math.round((Q.ddp_r) * 10 / 10)
+Q.z_r = Math.round((Q.z_r) * 10 / 10)
 Q.other_r = Math.round((Q.other_r) * 10 / 10)
 
 Q.bvp_votes = Q.z_votes*0.2;
