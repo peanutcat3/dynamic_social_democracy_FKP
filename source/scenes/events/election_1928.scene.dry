@@ -1594,6 +1594,13 @@ We have enough votes to form a "<span style="color: #c00000;">Social</span>-<spa
 
 @social_catholic_coalition_cvp_negotiations
 on-arrival: {!
+
+Q.cvp_ministers_accepted = 0;
+Q.cvp_economy_accepted = 0;
+Q.cvp_chancellor_accepted = 0;
+Q.cvp_reichsbanner_accepted = 0;
+Q.cvp_women_accepted = 0;
+
 Q.cvp_negotiations_min = 50;
 if (Q.cvp_ideology == "Left") Q.cvp_negotiations_min -= 10;
 if (Q.z_relation >= 80) Q.cvp_negotiations_min -= 10;
