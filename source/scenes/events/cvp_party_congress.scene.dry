@@ -480,7 +480,7 @@ It goes without saying, this will make cooperation within the party impossible f
 @westarp
 title: Kuno von Westarp, formerly of the <span style="color: #3E88B3;">DNVP</span>, is elected as their new leader.
 subtitle: A long-time <span style="color: #3E88B3;">DNVP</span> stalwart, having prevented Hugenberg's takeover of the party in the past. - <span style="color: #3E88B3;">National Conservative</span> Wing
-unavailable-subtitle: Stegerwald is seen as too friendly toward us, and the party needs a new face. - <span style="color: #3E88B3;">National Conservative</span> Wing
+unavailable-subtitle: Westarp is reluctant, and the party needs a new face. - <span style="color: #3E88B3;">National Conservative</span> Wing
 choose-if: westarp_unlock
 on-arrival: z_relation -= 10; cvp_right += 3; new_middle_z += 4; new_middle_dnf -= 4; old_middle_z += 4; old_middle_dnf -= 4; rural_z += 2; rural_dnf -= 2; catholics_z -= 2; workers_z -= 3; unemployed_z -= 3; cvp_leader = "Westarp"; cvp_ideology = "Right"
 face-image: img/portraits/Kuno_von_Westarp.jpg
