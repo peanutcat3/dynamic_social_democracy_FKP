@@ -38,7 +38,7 @@ if (Q.z_relation >= 20) {
 if (Q.peoples_party) Q.cvp_dnvp_balance += 5;
 if (Q.left_split) Q.cvp_dnvp_balance += 5;
 if (Q.sapd_formed) Q.cvp_dnvp_balance += 5;
-if (Q.reformist_strength >= Q.left_strength + Q.labor_strength + Q.center_strength) {
+if (Q.reformist_strength >= Q.left_strength + Q.center_strength) {
     Q.cvp_dnvp_balance += 5;
 } else if (Q.left_strength >= Q.reformist_strength) {
     Q.cvp_dnvp_balance -= 10;
@@ -307,11 +307,33 @@ The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #3
 @congress
 title: With all differences resolved, the <span style="color: #000000;">**[+ z_party_name +]**</span> is formed! 
 view-if: cvp_reparations and cvp_economy and cvp_coalition and cvp_monarchy
+on-arrival: {!
+Q.cvp_dvp_trigger = 0;
+if (Q.dvp_exist && Q.dvp_votes < 5 && !Q.lvp_formed && !Q.lvp_merger_2_timer && !Q.lvp_timer_2_trigger) Q.cvp_dvp_trigger = 1;
+!}
 face-image: img/cvp.jpg
 call: cvp_formed
 
 The agreement is finalized, and the <i>Christliche Volkspartei</i> (<span style="color: #000000;">Christian People's Party</span>) is born.
 
 The <span style="color: #000000;">**CVP**</span> aims to follow the Essen Program of 1920, transforming the German Right into a party that rallies around <span style="color: #000000;">Christian</span>, <span style="color: #586593;">democratic</span>, <span style="color: #000000;">German</span>, and <span style="color: #c00000;">social</span> principles.
+
+- @cvp_party_congress_go
+
+@cvp_party_congress_go
+title: First <span style="color: #000000;">**[+ z_party_name +]**</span> Congress
+subtitle: The future of this new party will be decided here.
+view-if: not cvp_dvp_trigger
+go-to: cvp_party_congress
+
+@cvp_dvp_merger
+title: The <span style="color: #C0A054;">**DVP**</span> also wants in.
+subtitle: Huh?
+call: cvp_dvp_formed
+view-if: cvp_dvp_trigger
+
+Before the <span style="color: #000000;">Christian People's Party</span> was to be announced to the public, representatives from the beleaguered <span style="color: #C0A054;">**DVP**</span> have shown their interest in joining the arrangement as well.
+
+This leaves the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> as the only liberal party in the political landscape, now flourishing with defections from the <span style="color: #C0A054;">**DVP**</span>'s left wing.
 
 - @cvp_party_congress
