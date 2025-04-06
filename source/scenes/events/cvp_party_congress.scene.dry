@@ -16,14 +16,6 @@ if (Q.nationalization_adopted || Q.economic_democracy) {
     Q.cvp_right += 3;
     Q.cvp_right += Q.economic_democracy*2;
 }
-    
-if (Q.cvp_right > (Q.cvp_left + 5)) {
-    Q.cvp_ideology = "Right"
-} else if (Q.cvp_left > (Q.cvp_right + 5)) {
-    Q.cvp_ideology = "Left"
-} else {
-    Q.cvp_ideology = "Moderate"
-}
 
 Q.labor_right_points = 0;
 Q.conservative_right_points = 0;
@@ -51,6 +43,14 @@ Q.gereke_unlock = 0;
 
 if (Q.dnvp_leader == "Lambach") {
     Q.cvp_right += 10;
+}
+
+if (Q.cvp_right > (Q.cvp_left + 5)) {
+    Q.cvp_ideology = "Right"
+} else if (Q.cvp_left > (Q.cvp_right + 5)) {
+    Q.cvp_ideology = "Left"
+} else {
+    Q.cvp_ideology = "Moderate"
 }
 
 if (Q.cvp_ideology == "Right") {
