@@ -142,10 +142,10 @@ go-to: campaigning_spd
 We are able to broadcast radio addresses urging turnout for Braun, spreading our message to the middle classes in hopes of overcoming their antipathy toward <span style="color: #c00000;">socialism</span>.
 
 @center_glaze
-title: We persuade the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to take a more active role in our campaign efforts.
-subtitle: The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] isn't pulling their weight. -1 resource
+title: We persuade the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to take a more active role in our campaign efforts.
+subtitle: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] isn't pulling their weight. -1 resource
 choose-if: z_support_spd == 1 and ((z_relation >= 60 and z_ideology == "Right") or (z_relation >= 45 and z_ideology == "Left")) and resources >= 1
-unavailable-subtitle: [? if z_support_spd != 1: The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] doesn't support Braun. ?][? if (z_relation < 60 and z_ideology == "Right") or (z_relation < 45 and z_ideology == "Left"): Our relations aren't good enough. ?] [? if resources < 1: Not enough resources. ?]
+unavailable-subtitle: [? if z_support_spd != 1: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] doesn't support Braun. ?][? if (z_relation < 60 and z_ideology == "Right") or (z_relation < 45 and z_ideology == "Left"): Our relations aren't good enough. ?] [? if resources < 1: Not enough resources. ?]
 on-arrival: resources -= 1; pro_republic += 3; z_glaze_spd = 1; catholics_nsdap -= 3; catholics_spd += 3; catholics_z += 2; rural_spd += 1; z_relation += 5; ddp_left += 2; dvp_left += 3; ddp_cohesion += 1; lvp_left += 2
 face-image: img/center_poster.jpg
 max-visits: 1
@@ -165,7 +165,7 @@ go-to: campaigning_spd
 
 Despite our earlier insistence on keeping the <span style="color: #700000;">**Communists**</span>' support low-key, we have now decided that their full backing in the upcoming election is worth the risk of alienating bourgeois <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>. As a result, we are now openly participating in joint rallies in support of Braun.
 
-[? if (z_relation < 60 and z_ideology == "Right") or (z_relation < 50 and z_ideology == "Left"): The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has withdrawn their endorsement of Braun. ?]
+[? if (z_relation < 60 and z_ideology == "Right") or (z_relation < 50 and z_ideology == "Left"): The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has withdrawn their endorsement of Braun. ?]
 
 @campaigning
 title: Accelerate campaign efforts in general.
@@ -295,7 +295,7 @@ max-visits: 1
 on-arrival: hindenburg_funds += 1; ddp_relation += 5; z_relation += 5; lvp_relation += 5; ddp_left += 1; pro_republic += 3; new_middle_ddp += 3; old_middle_ddp += 3; new_middle_dvp += 3 if dvp_ideology != "Right"; old_middle_dvp += 3 if dvp_ideology != "Right"; new_middle_lvp += 3; old_middle_lvp += 3; new_middle_nsdap -= 3 if new_middle_nsdap_normalized >= 40; old_middle_nsdap -= 3 if new_middle_nsdap_normalized >= 40; rural_other += 3; rb_militancy += 0.06; sa_strength -= 50; embezzle_2 = 1
 go-to: embezzlement_options
 
-We have met with politicians from the [? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?][? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?], the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Party, the Reichsbanner, and even some <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> peasant unions. We have agreed to allocate Prussian state funds to their groups, strengthening the Hindenburg campaign among those excluded from the official committee while also improving our relationship with these factions.
+We have met with politicians from the [? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?][? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?], the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Party, the Reichsbanner, and even some <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> peasant unions. We have agreed to allocate Prussian state funds to their groups, strengthening the Hindenburg campaign among those excluded from the official committee while also improving our relationship with these factions.
 
 @campaigning_hindenburg_2
 on-arrival: {!

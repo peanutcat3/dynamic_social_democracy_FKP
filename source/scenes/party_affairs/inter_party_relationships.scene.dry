@@ -77,7 +77,7 @@ go-to: center_op if not spd_in_government and chancellor != "Brüning"; center_c
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
 
-We are currently in opposition to the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]-led government, but that does not preclude the general building of feelings of good will.
+We are currently in opposition to the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]-led government, but that does not preclude the general building of feelings of good will.
 
 @center_coalition
 on-arrival: z_relation += 8*(1 - dissent)

@@ -40,7 +40,7 @@ go-to: new_prussia_election if (in_center_right_coalition_prussia or in_right_co
 The right-wing coalition has fallen. New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
 
 @vonc_no
-title: Support the rump [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]-led government, voting in favor of the government.
+title: Support the rump [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]-led government, voting in favor of the government.
 subtitle: We would essentially provide "toleration" to a bourgeois government.
 view-if: neo_weimar_coalition >= 50
 on-arrival: spd_toleration = 1; in_right_coalition = 0; in_center_right_coalition = 0; left_dissent += 8

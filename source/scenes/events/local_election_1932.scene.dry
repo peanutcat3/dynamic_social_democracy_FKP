@@ -1074,7 +1074,7 @@ go-to: election_menu
 Damn that's crazy. Look dude I don't know what to write for this.
 
 @bourgeois_coalition_wurttemberg
-title: The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] coalitions with the <span style="color: #006400;">**WBWB**</span>, the <span style="color: #FFCC00;">liberals</span>, and other minor bourgeois parties.
+title: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] coalitions with the <span style="color: #006400;">**WBWB**</span>, the <span style="color: #FFCC00;">liberals</span>, and other minor bourgeois parties.
 subtitle: This is the incumbent coalition.
 view-if: bourgeois_coalition_wurttemberg >= 50
 on-arrival: wurttemberg_right = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; rural_other += 4; pro_republic += 2; catholics_nsdap -= 3; catholics_z += 2; catholics_other += 1;
@@ -1095,7 +1095,7 @@ Kurt Schumacher is elected as Minister-President.
 
 @weimar_coalition_wurttemberg
 title: A <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition is formed!
-subtitle: We have somehow convinced the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to let us into government.
+subtitle: We have somehow convinced the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to let us into government.
 unavailable-subtitle: [? if z_relation < 60: We need higher relations with the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. ?][? if (ddp_relation < 40 and not lvp_formed) or (lvp_relation < 40 and lvp_formed): We need higher relations with the [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?]. ?]
 view-if: spd_coalition_wurttemberg >= 50 and not cvp_formed
 choose-if: z_relation >= 60 and ((ddp_relation >= 40 and not lvp_formed) or (lvp_relation >= 40 and lvp_formed))

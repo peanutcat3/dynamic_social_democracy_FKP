@@ -42,9 +42,9 @@ The <span style="color: #3E88B3;">**DNVP**</span> will nominate Franz Seldte, le
 [? if kpd_leader = "Conciliators" : Given the failure of Thälmann's previous runs for president, and his declining stature in the party, the <span style="color: #700000;">**KPD**</span> will be running Willi Münzenberg, a controversial figure sometimes called the "Red millionaire". He is a media magnate who leads a number of <span style="color: #700000;">**Communist**</span> front organizations. ?]
 [? if kpd_leader != "Conciliators" : This will be Ernst Thälmann's third run for president as leader of the <span style="color: #700000;">**KPD**</span>. Despite his previous electoral defeats, he retains the loyalty of the party as well as <span style="color: #8B0000;">Stalin</span>'s <span style="color: #750e0e;">Soviet Union</span>. ?]
 
-Many <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">icans</span> of the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #c00000;">**SPD**</span> float the idea of running Hugo Eckener, a nationally renowed Zeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to <span style="color: #7A3C00;">Nazism</span>.
+Many <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">icans</span> of the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #c00000;">**SPD**</span> float the idea of running Hugo Eckener, a nationally renowed Zeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to <span style="color: #7A3C00;">Nazism</span>.
 
-Barring that, the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> are planning to run separate candidates in the first round if the <span style="color: #c00000;">**SPD**</span> runs its own candidate. The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the <span style="color: #C0A054;">**DVP**</span> and other parties who dislike the <span style="color: #3E88B3;">**DNVP**</span>-<span style="color: #7A3C00;">**NSDAP**</span> front.
+Barring that, the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> are planning to run separate candidates in the first round if the <span style="color: #c00000;">**SPD**</span> runs its own candidate. The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the <span style="color: #C0A054;">**DVP**</span> and other parties who dislike the <span style="color: #3E88B3;">**DNVP**</span>-<span style="color: #7A3C00;">**NSDAP**</span> front.
 
 As for the <span style="color: #c00000;">**SPD**</span>, we could support a joint <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition candidate or run our own.
 [? if braun_campaign : Otto Braun is tired. He ran and failed in the previous two presidential elections, and no longer wishes to run. His wife is ill enough that he wishes to stay by her side. ?][? if braun_campaign = 0 and not spd_prussia: Otto Braun is tired. After being deposed in Prussia, he has largely retired from politics, and is devoting his time to caring for his dying wife. ?][? if braun_campaign = 0 and spd_prussia : Otto Braun is tired. He does not wish to run, but he is willing to be convinced that he is needed at this moment. His wife is terminally ill, and he does not want more responsibilities. ?]
@@ -241,7 +241,7 @@ We implore the [? if not cvp_formed: <span style="color: #000000;">Center Party<
 @convince_z_spd
 title: Convince the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to support [+ spd_candidate +].
 choose-if: spd_votes >= z_votes
-unavailable-subtitle: [? if spd_votes < z_votes: The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] knows that they are more popular than us; they do not see a reason to support our candidate. ?]
+unavailable-subtitle: [? if spd_votes < z_votes: The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] knows that they are more popular than us; they do not see a reason to support our candidate. ?]
 view-if: (spd_candidate = "Braun" or spd_candidate = "Schumacher" or spd_candidate = "Juchacz" or is_cultural_candidate) and z_candidate != spd_candidate
 on-arrival: {!
 Q.z_support_braun = 0;
@@ -279,15 +279,15 @@ go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
 The [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is convinced! They will be supporting [+ spd_candidate +] for the election.
 
-[? if z_relation < 40 : Unfortunately, the <span style="color: #A2D8E0;">**BVP**</span> is breaking with the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] on this election, supporting Seldte of the <span style="color: #3E88B3;">**DNVP**</span> instead. ?]
+[? if z_relation < 40 : Unfortunately, the <span style="color: #A2D8E0;">**BVP**</span> is breaking with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] on this election, supporting Seldte of the <span style="color: #3E88B3;">**DNVP**</span> instead. ?]
 
 @z_partial
 
-The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we front the resources.
+The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we front the resources.
 
 - @pay_z: Give them the resources they need.
-- @r1_menu: Forget about the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
-- @r2_campaigning: Forget about the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+- @r1_menu: Forget about the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+- @r2_campaigning: Forget about the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 
 @pay_z
 choose-if: resources >= 2
@@ -295,9 +295,9 @@ subtitle: -2 resources
 on-arrival: resources -= 2; z_candidate = spd_candidate; Seldte_bonus += 2.5 if z_relation < 40 and dnvp_candidate = "Seldte"
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
-With our resources, the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are convinced to support [+ spd_candidate +]. Konrad Adenauer will drop out of the race.
+With our resources, the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are convinced to support [+ spd_candidate +]. Konrad Adenauer will drop out of the race.
 
-[? if z_relation < 40 and dnvp_candidate = "Seldte" : Unfortunately, the <span style="color: #A2D8E0;">**BVP**</span> is breaking with the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] on this election, supporting Seldte of the <span style="color: #3E88B3;">**DNVP**</span> instead.  ?]
+[? if z_relation < 40 and dnvp_candidate = "Seldte" : Unfortunately, the <span style="color: #A2D8E0;">**BVP**</span> is breaking with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] on this election, supporting Seldte of the <span style="color: #3E88B3;">**DNVP**</span> instead.  ?]
 
 
 @convince_ddp_unity
