@@ -334,6 +334,8 @@ With his control of the colossally sized <span style="color: #000000;">**[+ z_pa
 Despite his democratic leanings, the <span style="color: #000000;">[+ z_party_name +]</span> remains firmly opposed to <span style="color: #9B0000;">Marxism</span>, effectively ruling out any prospects of coalition with us.
 
 @compromise
+title: The vote has been deadlocked!
+subtitle: No candidate is able to gather a sufficient amount of votes.
 view-if: cvp_deadlock
 on-arrival: {!
 if (Q.democratic_points > Q.presidential_points) {
