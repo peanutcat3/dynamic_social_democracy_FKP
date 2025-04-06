@@ -1,8 +1,8 @@
 title: The Right calls a vote of no confidence against the current government!
 subtitle: We have angered our coalition partners too much...
 new-page: true
-on-arrival: tried_supporting_kpd = 0; z_relation -= 5 if not in_so; dvp_relation -= 5 if in_grand_coalition; ddp_relation -= 5 if not in_social_catholic_coalition; lvp_relation -= 5 if in_weimar_coalition and not in_social_catholic_coalition or in_grand_coalition; lvp_right += 2 if in_weimar_coalition or in_grand_coalition; dvp_right += 2 if in_grand_coalition; ddp_right += 1; hindenburg_angry += 20
-view-if: chancellor_party == "SPD" and spd_in_government = 1 and ((in_grand_coalition = 1 or in_popular_front = 1 or in_minority_government = 1) and coalition_dissent >= 3) or (in_weimar_coalition = 1 and coalition_dissent >= 4) and spd_r < 50 and not constructive_vonc
+on-arrival: tried_supporting_kpd = 0; z_relation -= 5 if not in_social_catholic_coalition; dvp_relation -= 5 if in_grand_coalition; ddp_relation -= 5 if not in_social_catholic_coalition; lvp_relation -= 5 if in_weimar_coalition and not in_social_catholic_coalition or in_grand_coalition; lvp_right += 2 if in_weimar_coalition or in_grand_coalition; dvp_right += 2 if in_grand_coalition; ddp_right += 1; hindenburg_angry += 20
+view-if: chancellor_party == "SPD" and spd_in_government = 1 and ((in_grand_coalition = 1 or in_popular_front = 1 or in_minority_government = 1 or (in_social_catholic_coalition and cvp_formed) and coalition_dissent >= 3)) or (in_weimar_coalition = 1 and not (in_social_catholic_coalition and cvp_formed) and coalition_dissent >= 4) and spd_r < 50 and not constructive_vonc
 tags: event
 go-to: vonc_menu
 
@@ -11,7 +11,7 @@ go-to: vonc_menu
 
 = Vote of No Confidence
 
-[? if in_grand_coalition and not lvp_formed: The <span style="color: #C0A054;">**DVP**</span> ?][? if (in_grand_coalition or in_social_liberal_coalition) and lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> ?][? if in_weimar_coalition or in_popular_front or in_minority_government and not in_social_liberal_coalition: The <span style="color: #000000;">Center Party</span>[? if lvp_formed and not in_social_catholic_coalition:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>?]?][? if in_social_liberal_coalition and not lvp_formed: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will likely be an election in a few months.
+[? if in_grand_coalition and not lvp_formed: The <span style="color: #C0A054;">**DVP**</span> ?][? if (in_grand_coalition or in_social_liberal_coalition) and lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> ?][? if in_weimar_coalition or in_popular_front or in_minority_government and not in_social_liberal_coalition: The [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?][? if lvp_formed and not in_social_catholic_coalition:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>?]?][? if in_social_liberal_coalition and not lvp_formed: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?] has called for a vote of no confidence against us, due to our various policies and disagreements. If this succeeds, there will likely be an election in a few months.
 
 @vonc_menu
 
@@ -33,8 +33,8 @@ How do we assuage our partners?
 @dvp_prussia_2
 view-if: year <= 1929 and in_grand_coalition_prussia = 0 and (in_weimar_coalition_prussia or in_minority_weimar_coalition_prussia) and in_grand_coalition = 1 and dvp_was_in_prussia == 0 and not lvp_formed
 choose-if: z_leader != "Kaas"
-unavailable-subtitle: [? if z_leader = "Kaas": Kaas and the <span style="color: #000000;">Center</span> strongly dissents against. ?]
-on-arrival: in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 1; in_minority_grand_coalition_prussia = 0; in_new_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; in_center_right_coalition_prussia = 0; in_far_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0; spd_toleration_prussia = 0; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; in_grand_coalition_prussia = 1; dvp_left += 3; new_middle_dvp += 3
+unavailable-subtitle: [? if z_leader = "Kaas": Kaas and the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] strongly dissents against. ?]
+on-arrival: in_right_coalition_prussia = 0; in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 1; in_minority_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_left_front_prussia = 0; in_spd_majority_prussia = 0; in_center_right_coalition_prussia = 0; in_far_right_coalition_prussia = 0; in_minority_weimar_coalition_prussia = 0; ddp_in_popular_front_prussia = 0; kpd_goals_seen_prussia = 0; spd_toleration_prussia = 0; dvp_relation += 10; z_relation -= 5; ddp_relation += 3; coalition_dissent -= 1; left_dissent += 5; in_grand_coalition_prussia = 1; dvp_left += 3; new_middle_dvp += 3
 
 Letting the <span style="color: #C0A054;">**DVP**</span> into the Prussian government is an offer too good for them to refuse, no matter their leadership. 
 
@@ -47,7 +47,7 @@ on-arrival: coalition_dissent = 1; prussia_leader = "Stegerwald"; prussia_leader
 
 Fine. We no longer control the government of Prussia. The vote has been called off.
 
-The Minister-President position is transferred to the <span style="color: #000000;">Center</span>.
+The Minister-President position is transferred to the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?].
 
 @austerity
 view-if: welfare >= 0 and not secularized

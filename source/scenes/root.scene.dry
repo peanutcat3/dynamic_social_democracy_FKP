@@ -125,6 +125,7 @@ Q.lvp_relation = 0;
 Q.kpd_leader = "Thälmann";
 Q.z_leader = "Marx";
 Q.z_ideology = "Right";
+Q.cvp_ideology = "Moderate";
 Q.stegerwald_path = 0;
 Q.nsdap_leader = "Hitler";
 
@@ -240,6 +241,7 @@ Q.sapd_formed = 0;
 Q.dnf_formed = 0;
 Q.kvp_formed = 0;
 Q.lvp_formed = 0;
+Q.cvp_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -485,7 +487,6 @@ Q.in_social_liberal_coalition = 0;
 Q.in_right_coalition_prussia = 0;
 Q.in_weimar_coalition_prussia = 1;
 Q.in_grand_coalition_prussia = 0;
-Q.in_new_grand_coalition_prussia = 0;
 Q.in_popular_front_prussia = 0;
 Q.in_left_front_prussia = 0;
 Q.in_spd_majority_prussia = 0;
@@ -802,7 +803,9 @@ Q.dnvp_scared_hitler_time = 0;
 Q.international_socialist_support = 0;
 Q.banking_crisis_fallout_time = 0;
 Q.reformist_plan_time = 0;
+Q.cvp_economy_accepted_time = 0;
 
+Q.industrial_z_backing = 0;
 Q.industrial_ddp_backing = 1;
 Q.industrial_dvp_backing = 3;
 Q.industrial_lvp_backing = 4;
@@ -853,6 +856,7 @@ Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
 
 Q.leber_advisor = 0; // Julius Leber (post-1930)
 Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
+Q.wirth_advisor = 0; // troll
 
 // Nonfactional advisors
 Q.hirschfeld_advisor = 0; // Magnus Hirschfeld

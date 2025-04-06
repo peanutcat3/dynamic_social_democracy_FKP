@@ -42,9 +42,9 @@ The <span style="color: #3E88B3;">**DNVP**</span> will nominate Franz Seldte, le
 [? if kpd_leader = "Conciliators" : Given the failure of Thälmann's previous runs for president, and his declining stature in the party, the <span style="color: #700000;">**KPD**</span> will be running Willi Münzenberg, a controversial figure sometimes called the "Red millionaire". He is a media magnate who leads a number of <span style="color: #700000;">**Communist**</span> front organizations. ?]
 [? if kpd_leader != "Conciliators" : This will be Ernst Thälmann's third run for president as leader of the <span style="color: #700000;">**KPD**</span>. Despite his previous electoral defeats, he retains the loyalty of the party as well as <span style="color: #8B0000;">Stalin</span>'s <span style="color: #750e0e;">Soviet Union</span>. ?]
 
-Many <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">icans</span> of the <span style="color: #000000;">Center</span>, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #c00000;">**SPD**</span> float the idea of running Hugo Eckener, a nationally renowed Zeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to <span style="color: #7A3C00;">Nazism</span>.
+Many <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">icans</span> of the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?], <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #c00000;">**SPD**</span> float the idea of running Hugo Eckener, a nationally renowed Zeppelin captain, as a unity candidate. While he has some nationalistic views, he is also ardently opposed to <span style="color: #7A3C00;">Nazism</span>.
 
-Barring that, the <span style="color: #000000;">Center</span> and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> are planning to run separate candidates in the first round if the <span style="color: #c00000;">**SPD**</span> runs its own candidate. The <span style="color: #000000;">Center</span> is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the <span style="color: #C0A054;">**DVP**</span> and other parties who dislike the <span style="color: #3E88B3;">**DNVP**</span>-<span style="color: #7A3C00;">**NSDAP**</span> front.
+Barring that, the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] and <span style="color: #D3C24D;">**[+ ddp_name +]**</span> are planning to run separate candidates in the first round if the <span style="color: #c00000;">**SPD**</span> runs its own candidate. The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] is considering nominating Konrad Adenauer, mayor of Köln and member of the Prussian state legislature. He calls for an alliance of conservative Christian democrats that encompasses both Catholics and Protestants. The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> might nominate Otto Gessler, former defense minister, who has crossover appeal to conservatives in the <span style="color: #C0A054;">**DVP**</span> and other parties who dislike the <span style="color: #3E88B3;">**DNVP**</span>-<span style="color: #7A3C00;">**NSDAP**</span> front.
 
 As for the <span style="color: #c00000;">**SPD**</span>, we could support a joint <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition candidate or run our own.
 [? if braun_campaign : Otto Braun is tired. He ran and failed in the previous two presidential elections, and no longer wishes to run. His wife is ill enough that he wishes to stay by her side. ?][? if braun_campaign = 0 and not spd_prussia: Otto Braun is tired. After being deposed in Prussia, he has largely retired from politics, and is devoting his time to caring for his dying wife. ?][? if braun_campaign = 0 and spd_prussia : Otto Braun is tired. He does not wish to run, but he is willing to be convinced that he is needed at this moment. His wife is terminally ill, and he does not want more responsibilities. ?]
@@ -62,7 +62,7 @@ Kurt Schumacher is an ambitious rising star in the party, and would be all too w
 @candidate_menu
 
 - @eckener_r1: Support Hugo Eckener as a joint <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition candidate.
-- @adenauer_r1: Support Konrad Adenauer of the <span style="color: #000000;">Center Party</span>.
+- @adenauer_r1: Support Konrad Adenauer of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?].
 - @gessler_r1: Support Otto Gessler of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>.
 - @thalmann_r1: Support Ernst Thälmann of the <span style="color: #700000;">**KPD**</span>.
 - @munzenberg_r1: Support Willi Münzenberg of the <span style="color: #700000;">**KPD**</span>.
@@ -85,9 +85,9 @@ We have convinced Hugo Eckener to run on behalf of the <span style="color: #c000
 on-arrival: spd_candidate = "Adenauer"; z_relation += 4; Adenauer_bonus -= 2.5 if z_relation < 40; Seldte_bonus += 2.5 if z_relation < 40; is_unity_candidate = 1
 go-to: r1_menu
 
-We have endorsed Konrad Adenauer of the <span style="color: #000000;">Center Party</span>.
+We have endorsed Konrad Adenauer of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?].
 
-[? if z_relation < 40 : With our support of Adenauer, some of the most conservative parts of the <span style="color: #A2D8E0;">Bavarian People's Party</span> have broken away from the <span style="color: #000000;">Center Party</span>, shifting their support to the <span style="color: #3E88B3;">**Stahlhelm**</span> leader Seldte. Hopefully it doesn't lead to a repeat of the 1925 Presidential election. ?]
+[? if z_relation < 40 : With our support of Adenauer, some of the most conservative parts of the <span style="color: #A2D8E0;">Bavarian People's Party</span> have broken away from the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?], shifting their support to the <span style="color: #3E88B3;">**Stahlhelm**</span> leader Seldte. Hopefully it doesn't lead to a repeat of the 1925 Presidential election. ?]
 
 @gessler_r1
 on-arrival: spd_candidate = "Gessler"; ddp_relation += 4; dvp_candidate = "Seldte" if dvp_relation < 40; is_unity_candidate = 1
@@ -218,7 +218,7 @@ view-if: round = 0
 
 # convincing Z to support a unity candidate
 @convince_z_unity
-title: Convince the <span style="color: #000000;">Center Party</span> to support [+ spd_candidate +].
+title: Convince the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] to support [+ spd_candidate +].
 view-if: (spd_candidate = "Eckener" or spd_candidate = "Gessler") and z_candidate != spd_candidate
 on-arrival: {!
 Q.z_support_braun = 0;
@@ -233,15 +233,15 @@ if (Q.z_relation >= 40 || (Q.z_relation > 20 && Q.z_leader == "Joos")) {
 max-visits: 1
 go-to: z_failed if z_support_braun = 0 or (z_support_braun == 2 and historical_mode); z_success if z_support_braun = 1; z_partial if z_support_braun = 2 and not historical_mode
 
-# use the same supports as the Center Party in 1932
-We implore the <span style="color: #000000;">Center Party</span> to support [+ spd_candidate +] as a unity candidate against <span style="color: #7A3C00;">fascism</span>, arguing that together, the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition can defeat the <span style="color: #7A3C00;">Nazis</span>. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
+# use the same supports as the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] in 1932
+We implore the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] to support [+ spd_candidate +] as a unity candidate against <span style="color: #7A3C00;">fascism</span>, arguing that together, the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition can defeat the <span style="color: #7A3C00;">Nazis</span>. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
 
 
 # convincing Z to support an SPD candidate
 @convince_z_spd
-title: Convince the <span style="color: #000000;">Center Party</span> to support [+ spd_candidate +].
+title: Convince the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] to support [+ spd_candidate +].
 choose-if: spd_votes >= z_votes
-unavailable-subtitle: [? if spd_votes < z_votes: The <span style="color: #000000;">Center</span> knows that they are more popular than us; they do not see a reason to support our candidate. ?]
+unavailable-subtitle: [? if spd_votes < z_votes: The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] knows that they are more popular than us; they do not see a reason to support our candidate. ?]
 view-if: (spd_candidate = "Braun" or spd_candidate = "Schumacher" or spd_candidate = "Juchacz" or is_cultural_candidate) and z_candidate != spd_candidate
 on-arrival: {!
 Q.z_support_braun = 0;
@@ -266,28 +266,28 @@ if (Q.spd_candidate == "Juchacz") {
 max-visits: 1
 go-to: z_failed if z_support_braun = 0 or (z_support_braun == 2 and historical_mode); z_success if z_support_braun = 1; z_partial if z_support_braun = 2 and not historical_mode
 
-We implore the <span style="color: #000000;">Center Party</span> to support [+ spd_candidate +]. We attempt to convince them of the necessity for unity in the face of <span style="color: #7A3C00;">fascism</span>: that if we were divided, we would fall to the <span style="color: #7A3C00;">Nazis</span>. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
+We implore the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] to support [+ spd_candidate +]. We attempt to convince them of the necessity for unity in the face of <span style="color: #7A3C00;">fascism</span>: that if we were divided, we would fall to the <span style="color: #7A3C00;">Nazis</span>. [? if z_relation >= 50 : We also remind them of the history of cooperation between our parties, dating back to 1918. ?]
 
 @z_failed
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
-Unfortunately, the <span style="color: #000000;">Center Party</span> is not convinced. [? if spd_candidate = "Juchacz" : The Catholics are not impressed with Marie Juchacz. This is in part because she is a woman, in part because she had a divorce. ?]
+Unfortunately, the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] is not convinced. [? if spd_candidate = "Juchacz" : The Catholics are not impressed with Marie Juchacz. This is in part because she is a woman, in part because she had a divorce. ?]
 
 @z_success
 on-arrival: z_candidate = spd_candidate; Seldte_bonus += 2.5 if z_relation < 40
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
-The <span style="color: #000000;">Center Party</span> is convinced! They will be supporting [+ spd_candidate +] for the election.
+The [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] is convinced! They will be supporting [+ spd_candidate +] for the election.
 
-[? if z_relation < 40 : Unfortunately, the <span style="color: #A2D8E0;">**BVP**</span> is breaking with the <span style="color: #000000;">Center</span> on this election, supporting Seldte of the <span style="color: #3E88B3;">**DNVP**</span> instead. ?]
+[? if z_relation < 40 : Unfortunately, the <span style="color: #A2D8E0;">**BVP**</span> is breaking with the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] on this election, supporting Seldte of the <span style="color: #3E88B3;">**DNVP**</span> instead. ?]
 
 @z_partial
 
-The <span style="color: #000000;">Center</span> are not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we front the resources.
+The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] are not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we front the resources.
 
 - @pay_z: Give them the resources they need.
-- @r1_menu: Forget about the <span style="color: #000000;">Center</span>.
-- @r2_campaigning: Forget about the <span style="color: #000000;">Center</span>.
+- @r1_menu: Forget about the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?].
+- @r2_campaigning: Forget about the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?].
 
 @pay_z
 choose-if: resources >= 2
@@ -295,9 +295,9 @@ subtitle: -2 resources
 on-arrival: resources -= 2; z_candidate = spd_candidate; Seldte_bonus += 2.5 if z_relation < 40 and dnvp_candidate = "Seldte"
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 
-With our resources, the <span style="color: #000000;">Center</span> are convinced to support [+ spd_candidate +]. Konrad Adenauer will drop out of the race.
+With our resources, the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] are convinced to support [+ spd_candidate +]. Konrad Adenauer will drop out of the race.
 
-[? if z_relation < 40 and dnvp_candidate = "Seldte" : Unfortunately, the <span style="color: #A2D8E0;">**BVP**</span> is breaking with the <span style="color: #000000;">Center</span> on this election, supporting Seldte of the <span style="color: #3E88B3;">**DNVP**</span> instead.  ?]
+[? if z_relation < 40 and dnvp_candidate = "Seldte" : Unfortunately, the <span style="color: #A2D8E0;">**BVP**</span> is breaking with the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] on this election, supporting Seldte of the <span style="color: #3E88B3;">**DNVP**</span> instead.  ?]
 
 
 @convince_ddp_unity
@@ -390,7 +390,7 @@ Hitler: "Adolf Hitler of the NSDAP",
 Goring: "Hermann Göring of the NSDAP",
 Seldte: "Franz Seldte of the Stahlhelm/DNVP",
 Eckener: "the independent republican candidate Hugo Eckener",
-Adenauer: "Konrad Adenauer of the Center Party",
+Adenauer: "Konrad Adenauer of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?]",
 Gessler: "Otto Gessler, independent formerly of the DDP",
 Thalmann: "Ernst Thälmann of the KPD",
 Munzenberg: "Willi Münzenberg of the KPD",
@@ -532,8 +532,8 @@ In the lead is [+ winner_desc +]. There is no majority in the first round. In th
 [? if dnvp_candidate = "Göring" : The <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #7A3C00;">**NSDAP**</span> have consolidated their electoral efforts, with the <span style="color: #3E88B3;">**DNVP**</span> now endorsing Göring for the second round. ?]
 [? if nsdap_candidate = "Seldte" : The <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #7A3C00;">**NSDAP**</span> have consolidated their electoral efforts, with the <span style="color: #7A3C00;">**NSDAP**</span> now endorsing Seldte for the second round. ?]
 
-[? if gessler_drops_out : The liberal candidate Otto Gessler has dropped out in favor of the <span style="color: #000000;">Center Party</span>'s Konrad Adenauer. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
-[? if adenauer_drops_out : The <span style="color: #000000;">Center Party</span> candidate Konrad Adenauer has dropped out in favor of the DStP-DVP candidate Otto Gessler. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
+[? if gessler_drops_out : The liberal candidate Otto Gessler has dropped out in favor of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?]'s Konrad Adenauer. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
+[? if adenauer_drops_out : The [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] candidate Konrad Adenauer has dropped out in favor of the DStP-DVP candidate Otto Gessler. This consolidates the votes of the moderate bürgerblock, and attracts some votes from the right-wing minor parties. ?]
 
 What should we do?
 
@@ -561,7 +561,7 @@ on-arrival: reformist_dissent += 15; center_dissent += 10; labor_dissent += 5; n
 on-departure: z_candidate = "Adenauer" if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz"; ddp_candidate = z_candidate if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz"; dvp_candidate = z_candidate if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz"; spd_candidate = "Thälmann"; 
 max-visits: 1
 
-We have switched our endorsement to Ernst Thälmann of the <span style="color: #700000;">**KPD**</span>. [? if z_candidate = spd_candidate : Our former allies in the <span style="color: #000000;">Center Party</span> see this as a betrayal. ?][? if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz": Now, they will support Konrad Adenauer once again. ?][? if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz": The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> will switch their support to the <span style="color: #000000;">Center Party</span> candidate. ?][? if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz": The <span style="color: #C0A054;">**DVP**</span> will also support the <span style="color: #000000;">Center Party</span> candidate. ?]
+We have switched our endorsement to Ernst Thälmann of the <span style="color: #700000;">**KPD**</span>. [? if z_candidate = spd_candidate : Our former allies in the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] see this as a betrayal. ?][? if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz": Now, they will support Konrad Adenauer once again. ?][? if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz": The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> will switch their support to the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] candidate. ?][? if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz": The <span style="color: #C0A054;">**DVP**</span> will also support the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] candidate. ?]
 
 - @r2_vote: Let the voting begin.
 
@@ -575,20 +575,20 @@ on-arrival: reformist_dissent += 12; center_dissent += 10; labor_dissent += 5; n
 on-departure: z_candidate = "Adenauer" if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz"; ddp_candidate = z_candidate if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz"; dvp_candidate = z_candidate if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz"; spd_candidate = "Münzenberg"; 
 max-visits: 1
 
-We have switched our endorsement to Willi Münzenberg of the <span style="color: #700000;">**KPD**</span>. [? if z_candidate = spd_candidate : Our former allies in the <span style="color: #000000;">Center Party</span> see this as a betrayal. ?][? if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz": Now, they will support Konrad Adenauer once again. ?][? if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz": The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> will switch their support to the <span style="color: #000000;">Center Party</span> candidate. ?][? if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz": The <span style="color: #C0A054;">**DVP**</span> will also support the <span style="color: #000000;">Center Party</span> candidate. ?]
+We have switched our endorsement to Willi Münzenberg of the <span style="color: #700000;">**KPD**</span>. [? if z_candidate = spd_candidate : Our former allies in the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] see this as a betrayal. ?][? if z_candidate = "Braun" or z_candidate = "Schumacher" or z_candidate = "Juchacz": Now, they will support Konrad Adenauer once again. ?][? if ddp_candidate = "Braun" or ddp_candidate = "Schumacher" or ddp_candidate = "Juchacz": The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> will switch their support to the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] candidate. ?][? if dvp_candidate = "Braun" or dvp_candidate = "Schumacher" or dvp_candidate = "Juchacz": The <span style="color: #C0A054;">**DVP**</span> will also support the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] candidate. ?]
 
 - @r2_vote: Let the voting begin.
 
 
 @r2_endorse_adenauer
-title: Switch our support to Konrad Adenauer of the <span style="color: #000000;">Center Party</span>.
+title: Switch our support to Konrad Adenauer of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?].
 view-if: z_candidate = "Adenauer" and spd_candidate != z_candidate
 on-departure: kpd_candidate = "Thälmann" if kpd_candidate == spd_candidate and kpd_leader != "Conciliators"; kpd_candidate = "Münzenberg" if kpd_candidate == spd_candidate and kpd_leader == "Conciliators"; sapd_candidate = kpd_candidate; spd_candidate = "Adenauer"; z_relation += 4; Adenauer_bonus -= 2.5 if z_relation < 40; Seldte_bonus += 2.5 if z_relation < 40; is_unity_candidate = 1
 go-to: r2_campaigning
 
-We have endorsed Konrad Adenauer of the <span style="color: #000000;">Center Party</span>.
+We have endorsed Konrad Adenauer of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?].
 
-[? if z_relation < 40 : With our support of Adenauer, some of the most conservative parts of the <span style="color: #A2D8E0;">Bavarian People's Party</span> have broken away from the <span style="color: #000000;">Center Party</span>, shifting their support to the <span style="color: #3E88B3;">**Stahlhelm**</span> leader Seldte. ?]
+[? if z_relation < 40 : With our support of Adenauer, some of the most conservative parts of the <span style="color: #A2D8E0;">Bavarian People's Party</span> have broken away from the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?], shifting their support to the <span style="color: #3E88B3;">**Stahlhelm**</span> leader Seldte. ?]
 
 [? if kpd_candidate = spd_candidate: The KPD is now breaking from our previous coalition and supporting their own candidate. ?]
 

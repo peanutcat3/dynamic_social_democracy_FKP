@@ -121,7 +121,7 @@ if (Q.kvp_formed && Q.lvp_formed) {
     Q.cordon_sanitaire = parseFloat((Q.spd_r + Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r).toFixed(1));
 }
 
-// Q.hitler_right_coalition = parseFloat((Q.z_r + Q.dnvp_r + Q.nsdap_r).toFixed(1));
+Q.hitler_right_coalition = parseFloat((Q.z_r + + Q.nsdap_r).toFixed(1));
 
 if (Q.lvp_formed) {
     Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + (Q.lvp_r / 3) + Q.sapd_r).toFixed(1));

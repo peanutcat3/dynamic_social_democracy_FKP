@@ -21,7 +21,7 @@ The constant pressure from the <span style="color: #7A3C00;">national</span> <sp
 
 This move may temporarily soothe Hindenburg’s displeasure, but it leaves Brüning’s position substantially weakened and increasingly dependent on the whims of the presidential palace.
 
-We must now decide whether to continue tolerating this more right-leaning Brüning government—now absent of leftist figures such as the <span style="color: #000000;">Center</span>’s Joseph Wirth—or to finally use this as a pretext to break away from it, as Brüning has introduced his third emergency decree, which further reduces salaries, and cuts pensions and welfare benefits to address the deficit caused by the banking crisis.
+We must now decide whether to continue tolerating this more right-leaning Brüning government—now absent of leftist figures such as the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?]’s Joseph Wirth—or to finally use this as a pretext to break away from it, as Brüning has introduced his third emergency decree, which further reduces salaries, and cuts pensions and welfare benefits to address the deficit caused by the banking crisis.
 
 - @vote_yes
 - @vote_no

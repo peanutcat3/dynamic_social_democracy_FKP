@@ -34,12 +34,12 @@ We have a variety of options to choose from.
 title: Request assistance from our coalition partners.
 view-if: spd_prussia and not bourgeois_campaign_landtag
 choose-if: not in_popular_front_prussia and not in_left_front_prussia and z_relation >= 50
-unavailable-subtitle: [? if in_popular_front_prussia or in_left_front_prussia: The <span style="color: #000000;">Center</span> sees no reason to intervene in saving the incumbent government. ?] [? if z_relation < 50: We lack sufficient relations with the <span style="color: #000000;">Center</span>. ?]
+unavailable-subtitle: [? if in_popular_front_prussia or in_left_front_prussia: The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] sees no reason to intervene in saving the incumbent government. ?] [? if z_relation < 50: We lack sufficient relations with the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?]. ?]
 on-arrival: pro_republic += 3; catholics_nsdap -= 4; catholics_z += 3; catholics_spd += 1; z_relation += 3; dvp_relation += 3; ddp_relation += 3; ddp_left += 2; ddp_cohesion += 2; dvp_left += 3; bourgeois_campaign_landtag = 1
 face-image: img/weimar_coalition.jpg
 go-to: do_campaign
 
-The <span style="color: #000000;">Center</span> has joined our efforts with its own propaganda campaign, doing their part in targeting Catholics and urging them to stay home.
+The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] has joined our efforts with its own propaganda campaign, doing their part in targeting Catholics and urging them to stay home.
 
 @communist_prussia
 title: Request assistance from the <span style="color: #700000;">**KPD**</span>.
@@ -53,7 +53,7 @@ go-to: do_campaign
 
 Great news! The <span style="color: #D50000;">Comintern</span> has approved the <span style="color: #700000;">**KPD**</span>'s participation in our propaganda campaign against the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>.
 
-However, this display of left-wing unity has frightened the <span style="color: #000000;">Center</span> and <span style="color: #D3C24D;">liberals</span>, with some even choosing to support the referendum to protest.
+However, this display of left-wing unity has frightened the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] and <span style="color: #D3C24D;">liberals</span>, with some even choosing to support the referendum to protest.
 
 @media
 title: Use Vorwärts and our radio stations to broadcast against the plebiscite.

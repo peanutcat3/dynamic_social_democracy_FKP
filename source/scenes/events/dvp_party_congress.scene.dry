@@ -49,4 +49,4 @@ face-image: img/portraits/luther.jpg
 
 Hans Luther has surprisingly won the vote to succeed Stresemann for the chairmanship. Luther has support among the industrialists and the left of the party, and commands strong influence over the party. Perhaps he's what the <span style="color: #C0A054;">**DVP**</span> needs in order to survive this crisis of German democracy.
 
-Luther is particularly supportive of uniting the liberal parties and even for the creation of a board bourgeois party. [? if in_grand_coalition: He has also voiced support for maintaining the Grand coalition and cooperation between the two parties. ?][? if not in_grand_coalition: He has voiced support for a coalition government involving us and cooperation between the two parties. ?]
+Luther is particularly supportive of uniting the liberal parties and even for the creation of a broad bourgeois party. [? if in_grand_coalition: He has also voiced support for maintaining the Grand coalition and cooperation between the two parties. ?][? if not in_grand_coalition: He has voiced support for a coalition government involving us and cooperation between the two parties. ?]

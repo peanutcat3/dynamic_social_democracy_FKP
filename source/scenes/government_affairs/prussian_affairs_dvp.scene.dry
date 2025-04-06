@@ -9,7 +9,7 @@ card-image: img/braun.jpg
 
 = Prussian Affairs
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the <span style="color: #000000;">Center</span>, [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] and <span style="color: #C0A054;">**People's**</span> parties. It is a stable and democratic state government in Germany, led by the able Otto Braun.
+Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?], [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] and <span style="color: #C0A054;">**People's**</span> parties. It is a stable and democratic state government in Germany, led by [? if prussia_leader == "Braun": the able Otto Braun?][? if prussia_leader == "Brüning": Heinrich Brüning?][? if prussia_leader == "Stegerwald": Adam Stegerwald?].
 
 We can enact policies in Prussia. The inclusion of the <span style="color: #C0A054;">**DVP**</span> will mitigate our effect.
 
@@ -95,7 +95,7 @@ subtitle: The <span style="color: #C0A054;">**DVP**</span> won't like this.
 view-if: (prussian_concordat_progress < 2 and z_leader != "Kaas") or (prussian_concordat_progress < 1 and z_leader = "Kaas")
 on-arrival: prussian_concordat_progress += 1; z_relation += 2*(1-dissent); dvp_relation -= 2; ddp_relation -= 1
 
-We are making progress towards negotiating a concordat between Prussia and the Catholic church. [? if z_leader = "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center</span> Party uses his connections to speed up negotiations. ?]
+We are making progress towards negotiating a concordat between Prussia and the Catholic church. [? if z_leader = "Kaas": Ludwig Kaas of the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] Party uses his connections to speed up negotiations. ?]
 
 @sign_concordat
 subtitle: The <span style="color: #C0A054;">**DVP**</span> won't like this.
@@ -104,4 +104,4 @@ on-arrival: prussian_concordat = 1; z_relation += 5; catholics_spd += 3*(1-disse
 
 We have signed a Concordat between the Free State of Prussia and the Roman Catholic Church, guaranteeing religious freedom for Catholics in Prussia. This sets the stage for the negotiation of a national Concordat covering all of Germany.
 
-[? if dnvp_ideology == "Radical": The Catholic members of the <span style="color: #3E88B3;">**DNVP**</span> in Prussia are in open conflict with their leadership over the vote, with many leaving the party. ?] The <span style="color: #C0A054;">**DVP**</span> has gotten into strong disagreements with the <span style="color: #000000;">Center</span>.
+[? if dnvp_ideology == "Radical": The Catholic members of the <span style="color: #3E88B3;">**DNVP**</span> in Prussia are in open conflict with their leadership over the vote, with many leaving the party. ?] The <span style="color: #C0A054;">**DVP**</span> has gotten into strong disagreements with the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?].

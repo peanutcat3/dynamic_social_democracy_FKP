@@ -72,7 +72,7 @@ go-to: hindenburg
 
 @hindenburg
 view-if: hindenburg_run
-
+face-image: img/portraits/Hindenburg.jpg
 
 President Hindenburg is, of course, running for re-election, and many in our party are prepared to support him as the last bastion of democracy against Hitler and the <span style="color: #7A3C00;">Nazis</span>. The <span class="tooltip-text" title="Following Hindenburg's overseeing of Germany's crushing victory at Tannenberg in WW1, Hindenburg has become the center of a massive personality cult, lauded as the living ideal of German masculinity and patriotism. He is the embodiment of the best virtues of Prussian tradition.">Hindenburg Mythos</span> serves as a powerful rallying point for all parties, as he maintains high personal popularity despite everything Germany has endured. However, the more support he receives from the German left and center, the more Hindenburg views it as a stain on his personal honor. The refusal of August von Mackensen and other high-ranking officers with whom he served during the war to embrace his candidacy proved particularly painful to the Reich president.
 
@@ -85,14 +85,14 @@ go-to: duesterberg
 
 
 @duesterberg
-
+face-image: img/portraits/duesterberg.jpg
 
 The Harzburg Front has fractured, with the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span> nominating a separate candidate than the <span style="color: #7A3C00;">**NSDAP**</span>, who rather run their own candidate. In a deal between the leadership of the <span style="color: #3E88B3;">**Stahlhelm**</span> and Hugenberg, the <span style="color: #3E88B3;">**DNVP**</span> is to support and campaign for whoever the <span style="color: #3E88B3;">**Stahlhelm**</span> nominates, in exchange for the <span style="color: #3E88B3;">**Stahlhelm**</span>'s full support for the <span style="color: #3E88B3;">**DNVP**</span> in the upcoming local elections. The <span style="color: #3E88B3;">**Stahlhelm**</span> have decided to nominate its deputy leader, Theodor Duesterberg.
 
 - @hitler: Who will the <span style="color: #7A3C00;">**NSDAP**</span> run?
 
 @hitler
-
+face-image: img/portraits/hitler2.jpg
 
 The <span style="color: #7A3C00;">**NSDAP**</span> will run Adolf Hitler, who is likely to only receive the backing of his own party. However, there has been some reluctance on Hitler's part to run against President Hindenburg, with his character commanding great respect throughout all corners of Germany. Furthermore, the second most important leader in the <span style="color: #7A3C00;">**NSDAP**</span>, Gregor Strasser, opposes his candidacy as he believes he cannot defeat Hindenburg, but <span style="color: #7A3C00;">Nazi</span> propagandist Joseph Goebbels argues for it. We suspect that the <span style="color: #7A3C00;">Nazis</span> are putting on a show of indecisiveness, and always had Hitler as as candidate in mind.
 
@@ -103,6 +103,7 @@ go-to: thalmann
 
 
 @thalmann
+face-image: img/portraits/ThälmannErnst.jpg
 
 The <span style="color: #700000;">**Communists**</span> will run Ernst Thälmann, their leader and candidate in 1925. If we were to not run a candidate, or to support a right-wing or bourgeois one, Thälmann and the <span style="color: #700000;">**KPD**</span> would greatly capitalize by painting themselves as the only left-wing option in the race. However, if our relations with the <span style="color: #700000;">**KPD**</span> are high enough, we may be able to convince him to drop out in favour of a unity candidate between our two parties.
 
@@ -113,6 +114,7 @@ go-to: braun
 
 
 @braun
+face-image: img/portraits/braun.jpg
 
 Otto Braun has been floated around as a candidate for the presidency once more, after his failed run in 1925. He is personally reluctant, and it would take a lot of convincing to get him to run, but after that, could he even win? It's unlikely for bourgeois parties to outright support a <span style="color: #c00000;">socialist</span> for President, even with his reformist and right-wing leanings within our own party. Carl Severing and other Prussian officials have instead proposed running Hugo Eckener, a nationalist anti-<span style="color: #7A3C00;">Nazi</span> Zeppelin pilot, but this possibility has been extinguished with Hindenburg's decision to run again.
 
@@ -134,7 +136,7 @@ go-to: endorsements_braun
 
 [? if kpd_support_spd == 1: - <span style="color: #700000;">**KPD**</span> ?]
 
-[? if z_support_spd == 1 and spd_campaign: - <span style="color: #000000;">Center Party</span> ?]
+[? if z_support_spd == 1 and spd_campaign: - [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] ?]
 
 [? if ddp_support_spd == 1 and spd_campaign: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
 
@@ -144,7 +146,7 @@ go-to: endorsements_braun
 
 [? if spd_support_hindenburg and reactionary_candidate_1932: - <span style="color: #c00000;">**SPD**</span> ?]
 
-[? if z_support_spd != 1 and reactionary_candidate_1932: - <span style="color: #000000;">Center Party</span> ?]
+[? if z_support_spd != 1 and reactionary_candidate_1932: - [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] ?]
 
 [? if reactionary_candidate_1932: - <span style="color: #A2D8E0;">**BVP**</span> ?]
 
@@ -301,7 +303,7 @@ on-arrival: resources -= 2; spd_campaign = 1; braun_campaign = 1; reformist_diss
 
 It takes effort to run a somewhat unexpected campaign. First, Braun has to be convinced to run. He himself had supported voting for Hindenburg, and it takes a good deal of prodding to convince him of his destiny.
 
-[? if not lvp_formed: The [? if ddp_votes < 2: miniscule remnants of the?] [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic Party**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State Party**</span>?] aren't guaranteed to support us, [? if ddp_relation < 40: with a deterioration in our relationship?][? if ddp_relation >= 40: but are open to it due to their reluctance in supporting Hindenburg?]?][? if lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> aren't exactly the biggest fans of <span style="color: #c00000;">socialism</span>, [? if lvp_relation < 40: with the deterioration in relations making their support a near impossibility.?][? if lvp_relation >= 40: but are at least open to it due to their reluctance in supporting Hindenburg?]?]. Who else will? Can we convince the <span style="color: #000000;">Center</span> to support Braun? What about the <span style="color: #700000;">**Communists**</span>?
+[? if not lvp_formed: The [? if ddp_votes < 2: miniscule remnants of the?] [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic Party**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State Party**</span>?] aren't guaranteed to support us, [? if ddp_relation < 40: with a deterioration in our relationship?][? if ddp_relation >= 40: but are open to it due to their reluctance in supporting Hindenburg?]?][? if lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> aren't exactly the biggest fans of <span style="color: #c00000;">socialism</span>, [? if lvp_relation < 40: with the deterioration in relations making their support a near impossibility.?][? if lvp_relation >= 40: but are at least open to it due to their reluctance in supporting Hindenburg?]?]. Who else will? Can we convince the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] to support Braun? What about the <span style="color: #700000;">**Communists**</span>?
 
 - @endorsements_braun: Scout out potential endorsements. 
 
@@ -330,7 +332,7 @@ Fine. We have thrown our support to Chairman [+ communist_candidate_1932 +] of t
 
 We can't win this election alone, we need support from other parties. [? if spd_votes >= 50: Nevermind. We actually can win this election alone. ?]
 
-- @convince_z: Convince the <span style="color: #000000;">Center Party</span> to back <span style="color: #c00000;">**Braun**</span>.
+- @convince_z: Convince the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #c00000;">**Braun**</span>.
 - @convince_kpd: Convince the <span style="color: #700000;">**Communists**</span> to back <span style="color: #c00000;">**Braun**</span>.
 - @convince_ddp: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #c00000;">**Braun**</span>.
 - @convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">**Braun**</span>.
@@ -381,7 +383,7 @@ Perhaps expectedly, we have failed to persuade the <span style="color: #FFCC00;"
 
 @convince_z
 choose-if: spd_votes >= z_votes
-unavailable-subtitle: The <span style="color: #000000;">Center</span> knows that they are more popular than us; they do not see a reason to support our candidate.
+unavailable-subtitle: The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] knows that they are more popular than us; they do not see a reason to support our candidate.
 on-arrival: {!
 Q.z_support_spd = 0;
 if (!Q.bruning_time) {
@@ -406,33 +408,33 @@ if (Q.bruning_time) {
 go-to: z_failed if z_support_spd = 0 or (z_support_spd == 2 and historical_mode); z_success if z_support_spd = 1; z_partial if z_support_spd = 2 and not historical_mode
 max-visits: 1
 
-We remind the <span style="color: #000000;">Center</span> leaders of <span style="color: #808080;">Hindenburg</span>'s anti-Catholicism, and try to convince them that Hindenburg's path will eventually lead to Hitler. [? if in_weimar_coalition_prussia: We also remind them of the successes they've had as part of our <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition in Prussia with [+ spd_candidate_1932_disp +], and our support for the <span style="color: #000000;">Center</span> candidate Wilhelm Marx in the 1925 presidential election?][? if not in_weimar_coalition_prussia: We also remind them of our support for the <span style="color: #000000;">Center</span> candidate Wilhelm Marx in the 1925 presidential election?]. [? if bruning_time: Unfortunately, Hindenburg's support for Brüning's government has left them with little room to oppose the very president sustaining his cabinet. ?]
+We remind the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] leaders of <span style="color: #808080;">Hindenburg</span>'s anti-Catholicism, and try to convince them that Hindenburg's path will eventually lead to Hitler. [? if in_weimar_coalition_prussia: We also remind them of the successes they've had as part of our <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> coalition in Prussia with [+ spd_candidate_1932_disp +], and our support for the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] candidate Wilhelm Marx in the 1925 presidential election?][? if not in_weimar_coalition_prussia: We also remind them of our support for the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] candidate Wilhelm Marx in the 1925 presidential election?]. [? if bruning_time: Unfortunately, Hindenburg's support for Brüning's government has left them with little room to oppose the very president sustaining his cabinet. ?]
 
 @z_success
 go-to: endorsements_braun
 
-The <span style="color: #000000;">Center</span> is convinced! They will be part of the Braun coalition.
+The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] is convinced! They will be part of the Braun coalition.
 
 @z_partial
 
-The <span style="color: #000000;">Center</span> is not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we concede the Prussian Minister-President position to them, as they are opposed to Braun holding both the President and Minister-President positions.
+The [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] is not satisfied with our arguments, but they are open to being convinced. They are willing to run a joint campaign if we concede the Prussian Minister-President position to them, as they are opposed to Braun holding both the President and Minister-President positions.
 
 - @give_up_prussia: Give up on leadership of Prussia.
-- @endorsements_braun: Forget about the <span style="color: #000000;">Center</span>.
+- @endorsements_braun: Forget about the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?].
 
 @give_up_prussia
 subtitle: Braun will resign.
 on-arrival: z_support_spd = 1; prussia_leader = "Stegerwald"; prussia_leader = "Brüning" if z_leader == "Stegerwald"; reformist_dissent += 10; centrist_dissent += 10; labor_dissent += 10; left_dissent += 5; workers_spd -= 5; new_middle_spd -= 5; rural_spd -= 3; braun_resign = 1
 go-to: endorsements_braun
 
-Ironic, considering that seven years ago, we brokered a deal for Wilhelm Marx to resign in favor of Braun in exchange for our support for him in the presidential elections. Anyhow, the <span style="color: #000000;">Center</span> is now convinced to support Braun over Hindenburg.
+Ironic, considering that seven years ago, we brokered a deal for Wilhelm Marx to resign in favor of Braun in exchange for our support for him in the presidential elections. Anyhow, the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] is now convinced to support Braun over Hindenburg.
 
-The Minister-President position is transferred to the <span style="color: #000000;">Center</span>'s [+ prussia_leader +]. Hopefully, their support will outweigh the loss of popularity and internal dissent caused by the resignation of our most well-known figure.
+The Minister-President position is transferred to the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?]'s [+ prussia_leader +]. Hopefully, their support will outweigh the loss of popularity and internal dissent caused by the resignation of our most well-known figure.
 
 @z_failed
 go-to: endorsements_braun
 
-Unfortunately, we fail to turn the <span style="color: #000000;">Center</span> away from Hindenburg. 
+Unfortunately, we fail to turn the [? if not cvp_formed: <span style="color: #000000;">Center</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] away from Hindenburg. 
 
 @convince_kpd
 choose-if: spd_votes >= kpd_votes

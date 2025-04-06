@@ -13,6 +13,7 @@ Wels is the long-time chairman of the <span style="color: #c00000;">**SPD**</spa
 - @party_discipline
 - @emergency_fundraising
 - @money
+- @cvp
 - @snap_election
 - @root: Return to main
 
@@ -59,6 +60,15 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 on-arrival: resources += 100
 
 We have gained +100 resources.
+
+@cvp
+title: For playtesters
+subtitle: Form the CVP. (Only do after Christdem or Lambach + Stegerwald have been achieved)
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+go-to: cvp_formed
+
+Ok.
 
 @snap_election
 title: Snap Election

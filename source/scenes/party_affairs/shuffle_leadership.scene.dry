@@ -228,6 +228,15 @@ go-to: rm_main
 
 Schumacher has been removed as an advisor. The Neorevisionist faction disapproves.
 
+@remove_wirth
+title: Remove Wirth
+view-if: wirth_advisor = 1
+tags: remove_advisor
+on-arrival: wirth_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
+go-to: rm_main
+
+Wirth has been removed as an advisor. The Neorevisionist faction disapproves.
+
 
 ## nonfactional
 
@@ -583,6 +592,20 @@ go-to: advisor_menu
 tags: neorev_advisor
 
 Julius Leber is now an advisor.
+
+# Nonfactional advisors
+
+@add_wirth
+title: Joseph Wirth
+subtitle: Joseph Wirth is a former member of the <span style="color: #000000;">Center</span>'s left wing and a former chancellor, known for his ardent <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> convictions.
+is-card: true
+card-image: img/portraits/wirth.jpg
+view-if: wirth_advisor = 0 and wirth_spd and n_advisors < 3
+on-arrival: wirth_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
+go-to: advisor_menu
+tags: neorev_advisor
+
+Joseph Wirth is now an advisor.
 
 # Nonfactional advisors
 

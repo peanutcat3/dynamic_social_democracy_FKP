@@ -1,7 +1,7 @@
 title: End of the [+ chancellor +] government
 subtitle: Chancellor [+ chancellor +] proposes a controversial tax bill.
 new-page: true
-view-if: bruning_event_timer = 2 and dnvp_ideology == "Moderate" and spd_toleration_hergt and not bourgeois_coalition >= 50
+view-if: bruning_event_timer = 2 and dnvp_ideology == "Moderate" and spd_toleration_hergt and not bourgeois_coalition >= 50 and not cvp_formed
 on-arrival: bruning_event_seen = 1
 tags: event
 max-visits: 1
