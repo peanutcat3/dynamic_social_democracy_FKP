@@ -122,7 +122,7 @@ title: The "National Questions".
 subtitle: The debate over Germany's lost lands, the fulfillment of reparations, rearmament, and more.
 view-if: not cvp_reparations
 on-arrival: cvp_reparations = 1
-go-to: reparations_right if cvp_dnvp_balance < 60; reparations_moderate if cvp_dnvp_balance >= 60 and cvp_dnvp_balance < 80; reparations_left if cvp_dnvp_balance >= 80
+go-to: reparations_right if cvp_dnvp_balance < 50; reparations_moderate if cvp_dnvp_balance >= 50 and cvp_dnvp_balance < 60; reparations_left if cvp_dnvp_balance >= 60
 
 The reparations issue remains the most contentious point of contention between the two parties, with starkly opposing views on how to handle Germany’s financial obligations. The <span style="color: #3E88B3;">**DNVP**</span>, including Treviranus himself, staunchly opposed the Young Plan and has previously clashed with the <span style="color: #000000;">Center</span> over foreign policy achievements such as the Locarno Treaties in the past.
 
@@ -172,7 +172,7 @@ title: The German Monarchy
 subtitle: The debate over whether the party should be a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> or a <span style="color: #808080;">monarchist</span> one.
 view-if: not cvp_monarchy and cvp_reparations
 on-arrival: cvp_monarchy = 1
-go-to: monarchy_right if cvp_dnvp_balance < 20; monarchy_moderate if cvp_dnvp_balance >= 20 and cvp_dnvp_balance < 40; monarchy_left if cvp_dnvp_balance >= 40
+go-to: monarchy_right if cvp_dnvp_balance < 30; monarchy_moderate if cvp_dnvp_balance >= 30 and cvp_dnvp_balance < 50; monarchy_left if cvp_dnvp_balance >= 50
 
 The issue of the German <span style="color: #808080;">monarchy</span> remains highly divisive, with both parties holding starkly different views. Despite the unfeasibility of a restoration in the current political climate, the <span style="color: #3E88B3;">**DNVP**</span> has never ceased advocating for a return to the days of the <span class="tooltip-text" title="good mod">Kaiserreich</span>. The <span style="color: #000000;">Center Party</span>, on the other hand, has consistently been a staunch <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> force since the birth of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Perhaps the influence of the <span style="color: #0087DC;">People's Conservatives</span> and <span style="color: #6D5298;">Christian Socialists</span> will outweigh the strong objections from the <span style="color: #3E88B3;">**DNVP**</span>'s old guard.
 
@@ -211,7 +211,7 @@ title: Economic Policy
 subtitle: The debate over agriculture, welfare, and the depression.
 view-if: not cvp_economy and cvp_reparations and cvp_monarchy
 on-arrival: cvp_economy = 1
-go-to: economy_right if cvp_dnvp_balance < 20; economy_moderate if cvp_dnvp_balance >= 20 and cvp_dnvp_balance < 40; economy_left if cvp_dnvp_balance >= 40
+go-to: economy_right if cvp_dnvp_balance < 20; economy_moderate if cvp_dnvp_balance >= 20 and cvp_dnvp_balance < 30; economy_left if cvp_dnvp_balance >= 30
 
 A potential big-tent <span style="color: #000000;">Christian People's Party</span> faces the difficult task of addressing the diverse economic concerns of its broad electoral base. This base spans across farmers, aristocrats, landowners, large businesses, small businesses, civil servants, white-collar workers, blue-collar urban workers, and many others from all walks of life.
 
