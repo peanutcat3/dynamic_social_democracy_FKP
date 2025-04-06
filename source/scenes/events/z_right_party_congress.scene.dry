@@ -1,4 +1,4 @@
-title: 1930 [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference 
+title: 1930 [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference 
 subtitle: [+ z_leader +] moves to merge with the anti-Hugenberg Right...
 view-if: year == 1930 and month >= 11 and (z_leader == "Stegerwald" or z_leader == "Adenauer") and dnvp_ideology == "Radical" and not kvp_cnblp_sister
 new-page: true
@@ -6,7 +6,7 @@ max-visits: 1
 tags: event
 face-image: img/center_poster.jpg
 
-= 1930 [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference
+= 1930 [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference
 
 With Hugenberg’s hardliners tightening their grip over the <span style="color: #3E88B3;">**DNVP**</span>, any prospect of a merger with the <span style="color: #000000;">Center Party</span> has evaporated. But a new path to expansion has emerged. The party leadership now turns its attention to the fragmented remains of the anti-Hugenberg right—figures like Westarp and his <span style="color: #0087DC;">**KVP**</span>—as potential candidates for absorption.
 

@@ -15,7 +15,7 @@ The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Be
 - @liberals: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": <span style="color: #D3C24D;">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">German State Party</span>?] and conservative-liberal <span style="color: #C0A054;">German People's Party</span>.
 - @liberals_ddp: Strengthen our bonds with the left-liberal [? if ddp_name == "DDP": <span style="color: #D3C24D;">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">German State Party</span>?].
 - @liberals_lvp: Strengthen our bonds with the <span style="color: #FFCC00;">Liberal People's Party</span>.
-- @center: Strengthen our bonds with the Catholic [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+- @center: Strengthen our bonds with the Catholic [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 - @cvp: Reconcile with the <span style="color: #000000;">Christian People's Party</span>.
 - @kpd: Work towards repairing relationships with the <span style="color: #700000;">Communist Party</span>.
 - @spd_alone: The <span style="color: #c00000;">SPD</span> can stand alone for now.

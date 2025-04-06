@@ -65,7 +65,7 @@ go-to: candidate_selection
 
 [? if kpd_support_spd == 1: - <span style="color: #700000;">**KPD**</span> ?]
 
-[? if z_support_spd == 1 and spd_campaign: - [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] ?]
+[? if z_support_spd == 1 and spd_campaign: - [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] ?]
 
 [? if ddp_support_spd == 1 and spd_campaign: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
 
@@ -75,7 +75,7 @@ go-to: candidate_selection
 
 [? if spd_support_hindenburg and reactionary_candidate_1932: - <span style="color: #c00000;">**SPD**</span> ?]
 
-[? if z_support_spd != 1 and reactionary_candidate_1932: - [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] ?]
+[? if z_support_spd != 1 and reactionary_candidate_1932: - [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] ?]
 
 [? if reactionary_candidate_1932: - <span style="color: #A2D8E0;">**BVP**</span> ?]
 
@@ -151,7 +151,7 @@ face-image: img/center_poster.jpg
 max-visits: 1
 go-to: campaigning_spd
 
-The [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has not been the most enthusiastic supporter of Braun. However, by leveraging our connections with their left wing and trade unions, we push them toward a more active role in the campaign. This should help Braun secure more votes from their base.
+The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has not been the most enthusiastic supporter of Braun. However, by leveraging our connections with their left wing and trade unions, we push them toward a more active role in the campaign. This should help Braun secure more votes from their base.
 
 @communist_glaze
 title: We persuade the <span style="color: #700000;">**Communists**</span> to take a more active role in our campaign efforts.

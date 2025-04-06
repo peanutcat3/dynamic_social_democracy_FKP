@@ -317,7 +317,7 @@ on-departure: hitler_support_hindenburg = 1 if spd_president_votes + z_votes > n
 
 [? if hitler_support_hindenburg : The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]'s opinion is affected by the <span style="color: #7A3C00;">Nazis</span>' support of Hindenburg, and is willing to turn away from him. ?] The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are convinced! They will be part of the Braun coalition.
 
-[? if not hitler_support_hindenburg and ((spd_president_votes + z_votes > nsdap_presidential_votes and lvp_support_spd != 1) or (spd_president_votes + lvp_votes + z_votes > nsdap_presidential_votes and lvp_support_spd == 1)): With the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] supporting Braun, [+ nsdap_candidate_1932 +] has dropped out of the race, and the <span style="color: #7A3C00;">Nazis</span> have endorsed Hindenburg to prevent a <span style="color: #c00000;">socialist</span> from becoming president. ?]
+[? if not hitler_support_hindenburg and ((spd_president_votes + z_votes > nsdap_presidential_votes and lvp_support_spd != 1) or (spd_president_votes + lvp_votes + z_votes > nsdap_presidential_votes and lvp_support_spd == 1)): With the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] supporting Braun, [+ nsdap_candidate_1932 +] has dropped out of the race, and the <span style="color: #7A3C00;">Nazis</span> have endorsed Hindenburg to prevent a <span style="color: #c00000;">socialist</span> from becoming president. ?]
 
 @z_partial
 
@@ -348,7 +348,7 @@ go-to: round2_menu
 
 With our resources, the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are convinced to support Braun over Hindenburg.
 
-[? if not hitler_support_hindenburg and ((spd_president_votes + z_votes > nsdap_presidential_votes and lvp_support_spd != 1) or (spd_president_votes + lvp_votes + z_votes > nsdap_presidential_votes and lvp_support_spd == 1)): With the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] supporting Braun, [+ nsdap_candidate_1932 +] has dropped out of the race, and the <span style="color: #7A3C00;">Nazis</span> have endorsed Hindenburg to prevent a <span style="color: #c00000;">socialist</span> from becoming president. ?]
+[? if not hitler_support_hindenburg and ((spd_president_votes + z_votes > nsdap_presidential_votes and lvp_support_spd != 1) or (spd_president_votes + lvp_votes + z_votes > nsdap_presidential_votes and lvp_support_spd == 1)): With the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] supporting Braun, [+ nsdap_candidate_1932 +] has dropped out of the race, and the <span style="color: #7A3C00;">Nazis</span> have endorsed Hindenburg to prevent a <span style="color: #c00000;">socialist</span> from becoming president. ?]
 
 @z_failed
 go-to: round2_menu
@@ -468,7 +468,7 @@ on-departure: z_support_spd = 0; kpd_support_spd = 0;
 
 Fine. We have thrown our support to Chairman Thälmann of the <span style="color: #700000;">**KPD**</span> to the dismay of our bourgeois allies.
 
-[? if z_support_spd : The [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is confused at our capricious behavior, and have switched their support to Hindenburg. ?]
+[? if z_support_spd : The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is confused at our capricious behavior, and have switched their support to Hindenburg. ?]
 
 - @round2_vote: Second round voting begins next month.
 

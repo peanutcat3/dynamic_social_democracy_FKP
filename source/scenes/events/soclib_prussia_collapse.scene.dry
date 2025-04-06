@@ -62,7 +62,7 @@ A right coalition is formed, albeit with an extremely narrow majority. They will
 
 It won't take long for the government to collapse and for us to take power through new elections. But when it eventually does, we won't have much allies as our former coalition partners are beginning to shift to the right. When the time comes, who will stand with us?
 
-[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is selected to be the Minister-President of Prussia.
+[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is selected to be the Minister-President of Prussia.
 
 @center_right_coalition
 title: A Bürgerblock is formed.
@@ -76,7 +76,7 @@ A center-right coalition is formed featuring an broad array of parties to the ri
 
 It won't take long for the government to collapse and for us to take power through new elections. But when it eventually does, we won't have much allies as our former coalition partners are beginning to shift to the right. When the time comes, who will stand with us?
 
-[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is selected to be the Minister-President of Prussia.
+[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is selected to be the Minister-President of Prussia.
 
 @bourgeois_coalition
 title: A Bürgerblock is formed.
@@ -87,7 +87,7 @@ on-arrival: in_center_right_coalition_prussia = 1; prussia_leader = "Stegerwald"
 
 Letting go the democratic bulwark to the right-wing parties is deeply unpopular among all party members, and provides no discernible benefit. 
 
-[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is selected to be the Minister-President of Prussia.
+[? if z_leader != "Stegerwald": Adam Stegerwald?][? if z_leader == "Stegerwald": Heinrich Brüning?] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is selected to be the Minister-President of Prussia.
 
 @left_coalition
 title: Is a United Left coalition possible?

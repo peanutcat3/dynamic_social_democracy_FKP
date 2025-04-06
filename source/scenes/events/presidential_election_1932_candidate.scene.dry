@@ -136,7 +136,7 @@ go-to: endorsements_braun
 
 [? if kpd_support_spd == 1: - <span style="color: #700000;">**KPD**</span> ?]
 
-[? if z_support_spd == 1 and spd_campaign: - [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] ?]
+[? if z_support_spd == 1 and spd_campaign: - [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] ?]
 
 [? if ddp_support_spd == 1 and spd_campaign: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
 
@@ -146,7 +146,7 @@ go-to: endorsements_braun
 
 [? if spd_support_hindenburg and reactionary_candidate_1932: - <span style="color: #c00000;">**SPD**</span> ?]
 
-[? if z_support_spd != 1 and reactionary_candidate_1932: - [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] ?]
+[? if z_support_spd != 1 and reactionary_candidate_1932: - [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] ?]
 
 [? if reactionary_candidate_1932: - <span style="color: #A2D8E0;">**BVP**</span> ?]
 
@@ -332,7 +332,7 @@ Fine. We have thrown our support to Chairman [+ communist_candidate_1932 +] of t
 
 We can't win this election alone, we need support from other parties. [? if spd_votes >= 50: Nevermind. We actually can win this election alone. ?]
 
-- @convince_z: Convince the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #c00000;">**Braun**</span>.
+- @convince_z: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #c00000;">**Braun**</span>.
 - @convince_kpd: Convince the <span style="color: #700000;">**Communists**</span> to back <span style="color: #c00000;">**Braun**</span>.
 - @convince_ddp: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #c00000;">**Braun**</span>.
 - @convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">**Braun**</span>.

@@ -45,6 +45,6 @@ As a people's party, we represent women of all classes.
 title: Campaign among political Catholics.
 on-arrival: catholics_spd += 5*(1-dissent);
 
-Catholics have historically been tied to the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], but there is no reason why our party cannot appeal to them. The Prussian Concordat in particular is a sign of our friendship with Catholicism.
+Catholics have historically been tied to the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], but there is no reason why our party cannot appeal to them. The Prussian Concordat in particular is a sign of our friendship with Catholicism.
 
 

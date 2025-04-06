@@ -1,4 +1,4 @@
-title: 1930 [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference 
+title: 1930 [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference 
 subtitle: The party seeks to oust Jakob Kaiser...
 view-if: year == 1930 and month >= 11 and z_leader == "Kaiser"
 new-page: true
@@ -7,14 +7,14 @@ max-visits: 1
 tags: event
 face-image: img/center_poster.jpg
 
-= 1930 [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference
+= 1930 [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference
 
-The election of Jakob Kaiser to the leadership of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has stalled any progress toward transforming the party into a true <span style="color: #000000;">Christian People's Party</span>. His left-leaning stances have alienated potential voters on the Protestant Right, leaving the party adrift—uncertain of its identity. Is it to remain a predominantly Catholic, left-leaning party of labor and social reform, or evolve into a broader, right-of-center *Volkspartei*?
+The election of Jakob Kaiser to the leadership of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has stalled any progress toward transforming the party into a true <span style="color: #000000;">Christian People's Party</span>. His left-leaning stances have alienated potential voters on the Protestant Right, leaving the party adrift—uncertain of its identity. Is it to remain a predominantly Catholic, left-leaning party of labor and social reform, or evolve into a broader, right-of-center *Volkspartei*?
 
 Despite Kaiser himself supporting Stegerwald’s original vision of Christian unity, he has paradoxically become the chief obstacle in the eyes of the party’s right wing—figures like Stegerwald and Adenauer now seek to remove him, hoping to steer the party back toward its previous course. However, we retain significant influence within the party’s <span style="color: #FF7F00;">Christian Left</span> faction and its affiliated trade unions—leverage that could tip the scales back in Kaiser’s favor, should we choose to intervene.
 
-- @adenauer: The [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] elects Konrad Adenauer as the party chair, ousting Kaiser.
-- @kaiser: Influence the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to select Jakob Kaiser as the party chair.
+- @adenauer: The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] elects Konrad Adenauer as the party chair, ousting Kaiser.
+- @kaiser: Influence the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to select Jakob Kaiser as the party chair.
 - @kaiser_campaign: We will hold a campaign in support of Jakob Kaiser as party chair.
 
 @adenauer
@@ -36,7 +36,7 @@ unavailable-subtitle: [? if z_relation < 80 : Our relations are not high enough.
 on-arrival: z_relation += 5; z_ideology = "Left"; z_leader = "Kaiser"; liberal_cooperation += 2; workers_z += 4; unemployed_z += 4; workers_nsdap -= 2; unemployed_nsdap -= 4; rural_z -= 4; old_middle_z -= 6; rural_dnvp += 4 if dnvp_ideology == "Moderate"; old_middle_dnvp += 6 if dnvp_ideology == "Moderate"; rural_kvp += 4 if kvp_formed; old_middle_kvp += 6 if kvp_formed; rural_other += 4 if not kvp_formed and dnvp_ideology == "Radical"; old_middle_other += 6 if not kvp_formed and dnvp_ideology == "Radical"; catholics_z += 4; catholics_spd -= 4; z_party_name = "CVP"
 face-image: img/portraits/kaiser.jpg
 
-Through our grassroots connections and sheer determination, we have somehow managed to secure the reelection of Jakob Kaiser as chairman of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. His removal had once seemed all but inevitable—yet, by some miracle, the present conditions have convinced a majority of the party to rally behind him once more.
+Through our grassroots connections and sheer determination, we have somehow managed to secure the reelection of Jakob Kaiser as chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. His removal had once seemed all but inevitable—yet, by some miracle, the present conditions have convinced a majority of the party to rally behind him once more.
 
 As a gesture of compromise, however, Kaiser has agreed to officially rename the party to the <i>Christliche Volkspartei</i> (<span style="color: #000000;">Christian People's Party</span>). Beyond this cosmetic change—given the historic Catholic association with the '<span style="color: #000000;">Center</span>' label—the party's platform remains largely unchanged.
 
@@ -50,7 +50,7 @@ unavailable-subtitle: [? if z_relation < 70 : Our relations are not high enough.
 on-arrival: resources -= 3; z_relation += 5; z_ideology = "Left"; z_leader = "Kaiser"; liberal_cooperation += 2; workers_z += 4; unemployed_z += 4; workers_nsdap -= 2; unemployed_nsdap -= 4; rural_z -= 4; old_middle_z -= 6; rural_dnvp += 4 if dnvp_ideology == "Moderate"; old_middle_dnvp += 6 if dnvp_ideology == "Moderate"; rural_kvp += 4 if kvp_formed; old_middle_kvp += 6 if kvp_formed; rural_other += 4 if not kvp_formed and dnvp_ideology == "Radical"; old_middle_other += 6 if not kvp_formed and dnvp_ideology == "Radical"; catholics_z += 4; catholics_spd -= 4; z_party_name = "CVP"
 face-image: img/portraits/kaiser.jpg
 
-Through our grassroots connections, and an official campaign, we have somehow managed to secure the reelection of Jakob Kaiser as chairman of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. His removal had once seemed all but inevitable—yet, by some miracle, the present conditions have convinced a majority of the party to rally behind him once more.
+Through our grassroots connections, and an official campaign, we have somehow managed to secure the reelection of Jakob Kaiser as chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. His removal had once seemed all but inevitable—yet, by some miracle, the present conditions have convinced a majority of the party to rally behind him once more.
 
 As a gesture of compromise, however, Kaiser has agreed to officially rename the party to the <i>Christliche Volkspartei</i> (<span style="color: #000000;">Christian People's Party</span>). Beyond this cosmetic change—given the historic Catholic association with the '<span style="color: #000000;">Center</span>' label—the party's platform remains largely unchanged.
 
