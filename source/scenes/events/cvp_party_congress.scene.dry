@@ -144,7 +144,7 @@ if (Q.labor_points) {
     Q.labor_left_points *= 0.5;
 }
 Q.labor_points = Q.labor_right_points + Q.labor_left_points;
-Q.z_points = Q.labor_left + Q.catholic_center_points;
+Q.z_points = Q.labor_left_points + Q.catholic_center_points;
 Q.democratic_points = Q.labor_left_points + Q.catholic_center_points + Q.tory_democratic_points;
 Q.presidential_points = Q.labor_right_points + Q.conservative_right_points + Q.agrarian_right_points;
 Q.dnvp_points = Q.conservative_right_points + Q.agrarian_right_points + Q.tory_democratic_points + Q.labor_right_points;
