@@ -30,10 +30,10 @@ Q.catholics_dnvp -= 4;
 Q.catholics_other -= 2;
 Q.catholics_z += 4
 
-Q.kvp_r = Math.round((Q.dnvp_r / 2) * 10) / 10 + 1;
-Q.dnvp_r = Math.round((Q.dnvp_r - Q.kvp_r) * 10) / 10 - 1;
-Q.kvp_r = Math.round((Q.kvp_r) * 10 / 10)
-Q.dnvp_r = Math.round((Q.dnvp_r) * 10 / 10)
+Q.kvp_r = Math.round((Q.dnvp_r / 2 + 1) * 10) / 10;
+Q.dnvp_r = Math.round((Q.dnvp_r - Q.kvp_r) * 10) / 10;
+Q.kvp_r_prussia = Math.round((Q.dnvp_r_prussia / 2 + 2) * 10) / 10;
+Q.dnvp_r_prussia = Math.round((Q.dnvp_r_prussia - Q.kvp_r_prussia) * 10) / 10;
 Q.kvp_relation = 15;
 
 Q.old_workers_kvp_display = 0;
