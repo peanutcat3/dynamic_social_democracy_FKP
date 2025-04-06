@@ -246,11 +246,11 @@ var bavaria_adjustment_factors = {
 };
 
 if (!Q.dvp_exist) {
-    Q.bavaria_adjustment_factors.dnvp += 0.4;
+    bavaria_adjustment_factors.dnvp += 0.4;
 }
 
 if (Q.dvp_in_cvp) {
-    Q.bavaria_adjustment_factors.z += 0.4;
+    bavaria_adjustment_factors.z += 0.4;
 }
 
 Q.spd_r_bavaria = 0;
@@ -698,11 +698,11 @@ var wurttemberg_adjustment_factors = {
 };
 
 if (!Q.dvp_exist) {
-    Q.wurttemberg_adjustment_factors.dnvp += 0.6;
+    wurttemberg_adjustment_factors.dnvp += 0.6;
 }
 
 if (!Q.dvp_exist && Q.dvp_in_cvp) {
-    Q.wurttemberg_adjustment_factors.z += 0.4;
+    wurttemberg_adjustment_factors.z += 0.4;
 }
 
 Q.spd_r_wurttemberg = 0;
