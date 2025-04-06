@@ -253,7 +253,7 @@ The reorganized factions are as follows:
 <hr id="read-marker">
 <span style="color: #0087DC;">People's Conservatives</span> (<span style="color: #3E88B3;">**DNVP**</span>) - Treviranus - [? if cvp_ideology == "Left" and democratic_points_lead: Dominant?][? if ((cvp_ideology == "Left" and not democratic_points_lead) or (democratic_points_lead and cvp_ideology != "Left")): Influential?][? if cvp_ideology != "Left" and not democratic_points_lead: Relevant?]
 
-<span style="color: #000099;">Catholic Right</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>) - Treviranus - [? if cvp_ideology == "Left" and democratic_points_lead: Influential?][? if ((cvp_ideology == "Left" and not democratic_points_lead) or (democratic_points_lead and cvp_ideology != "Left")): Relevant?][? if cvp_ideology == "Right" and not democratic_points_lead: Limited?]
+<span style="color: #000099;">Catholic Right</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>) - Treviranus - [? if cvp_ideology == "Left" and democratic_points_lead: Influential?][? if ((cvp_ideology == "Left" and not democratic_points_lead) or (democratic_points_lead and cvp_ideology != "Left")): Relevant?][? if cvp_ideology != "Left" and not democratic_points_lead: Limited?]
 <hr id="read-marker">
 <span style="color: #000000;">Catholic Center</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>) - Adenauer - [? if cvp_ideology == "Left" and democratic_points_lead: Powerful?][? if ((cvp_ideology == "Left" and not democratic_points_lead) or (democratic_points_lead and cvp_ideology != "Left")): Influential?][? if cvp_ideology != "Left" and not democratic_points_lead: Relevant?]
 
