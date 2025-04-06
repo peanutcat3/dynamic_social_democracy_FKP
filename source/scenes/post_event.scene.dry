@@ -3239,11 +3239,7 @@ if (Q.cvp_formed) {
     } else {
         Q.industrial_z_backing = 3;
     }
-} else {
-    Q.industrial_z_backing = 0;
-}
-
-if (Q.z_party_name == "CVP" && !Q.cvp_formed) {
+} else if (Q.z_party_name == "CVP") {
     Q.industrial_z_backing = 3;
 } else {
     Q.industrial_z_backing = 0;
