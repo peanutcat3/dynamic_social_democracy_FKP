@@ -19,6 +19,7 @@ A vote is now before them: merge with the <span style="color: #0087DC;">**KVP**<
 
 @cvp_kvp_merger
 subtitle: The <span style="color: #000000;">Center Party</span> is not in government with us, and our strained relations have nudged them toward this option.
+choose-if: z_relation < 40 and not ((in_weimar_coalition or in_grand_coalition or in_popular_front or (spd_prussia and not in_left_front_prussia)))
 on-arrival: z_party_name = "CVP"; workers_z -= 3; workers_spd += 3; unemployed_z -= 3; unemployed_spd += 3
 face-image: img/portraits/cvp.jpg
 go-to: cvp_kvp_formed if kvp_formed; cvp_kvp_lite_formed if not kvp_formed
