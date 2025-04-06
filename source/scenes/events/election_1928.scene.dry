@@ -2146,8 +2146,8 @@ go-to: ministries
 
 @z_chancellor_cvp
 title: Let the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] have their chancellor.
-subtitle: Our coalition agreement stipulates thet the chancellor must be from the <span style="color: #000000;">**[+ z_party_name +]**</span>, with Heinrich Brüning likely being their choice.
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1
+subtitle: [? if cvp_chancellor_accepted: Our coalition agreement stipulates that the chancellor must be from the <span style="color: #000000;">**[+ z_party_name +]**</span>, with Heinrich Brüning likely being their choice. ?][? if not cvp_chancellor_accepted: The <span style="color: #000000;">**[+ z_party_name +]**</span> would be happy with one of their own as chancellor, with Heinrich Brüning likely being their choice. ?]
+on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; z_relation += 5 if not cvp_chancellor_accepted; coalition_dissent = -1 if cvp_chancellor_accepted
 go-to: ministries
 
 Heinrich Brüning of the [? if not cvp_formed: <span style="color: #000000;">Center Party</span>?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] has been appointed chancellor. He is approved by most factions of his party.
