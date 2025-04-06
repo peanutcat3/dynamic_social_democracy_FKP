@@ -619,7 +619,7 @@ go-to: coalition_menu
 
 [? if kvp_formed and not cvp_kvp_formed: {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_votes +]% {!</td><td>!} [+ str_votes_change_dnvp +] {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
+[? if not cvp_formed: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_votes +]% {!</td><td>!} [+ str_votes_change_dnvp +] {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}?]
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_votes +]% {!</td><td>!} [+ str_votes_change_dnf +] {!</td><td>!} [+ dnf_r +]% {!</td><td>!} [+ str_change_dnf +] {!</td></tr>!} ?]
 
@@ -780,7 +780,7 @@ go-to: coalition_menu
 
 [? if cvp_formed and far_right_coalition >= 25: Hitler-Right Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ hitler_right_coalition +]% ?]
 
-[? if dnvp_ideology == "Radical" and far_right_coalition >= 35: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
+[? if dnvp_ideology == "Radical" and far_right_coalition >= 35 and not cvp_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
 [? if dnvp_ideology == "Moderate" and far_right_coalition >= 30: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition (<span style="color: #003755;">**DNF**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
