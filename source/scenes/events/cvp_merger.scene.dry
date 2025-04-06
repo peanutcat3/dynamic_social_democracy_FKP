@@ -307,14 +307,11 @@ The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #3
 @congress
 title: With all differences resolved, the <span style="color: #000000;">**[+ z_party_name +]**</span> is formed! 
 view-if: cvp_reparations and cvp_economy and cvp_coalition and cvp_monarchy
-set-jump: cvp_congress_menu
 face-image: img/cvp.jpg
-go-to: cvp_formed
+call: cvp_formed
 
 The agreement is finalized, and the <i>Christliche Volkspartei</i> (<span style="color: #000000;">Christian People's Party</span>) is born.
 
 The <span style="color: #000000;">**CVP**</span> aims to follow the Essen Program of 1920, transforming the German Right into a party that rallies around <span style="color: #000000;">Christian</span>, <span style="color: #586593;">democratic</span>, <span style="color: #000000;">German</span>, and <span style="color: #c00000;">social</span> principles.
-
-@cvp_congress_menu
 
 - @cvp_party_congress
