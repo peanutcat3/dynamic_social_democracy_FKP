@@ -68,6 +68,7 @@ After the events of Blütmai, reconciling with the <span style="color: #700000;"
 
 @center
 subtitle: -1 resources
+view-if: not cvp_formed
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 2 if z_ideology == "Left"
@@ -90,6 +91,7 @@ The Brüning semi-<span style="color: #808080;">autocratic</span> regime makes b
 
 @cvp
 subtitle: -1 resources
+view-if: cvp_formed
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 5*(1 - dissent); cvp_left += 1
