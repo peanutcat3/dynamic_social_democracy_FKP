@@ -76,6 +76,11 @@ if (Q.z_leader == "Stegerwald" && !Q.stegerwald_bonus) {
     Q.stegerwald_bonus = 1;
 }
 
+if (Q.z_leader == "Adenauer" && !Q.adenauer_bonus) {
+    Q.catholic_center_points += 6;
+    Q.adenauer_bonus = 1;
+}
+
 if (Q.welfare <= 0) {
     Q.labor_left_points += 3;
     Q.labor_right_points += 3;

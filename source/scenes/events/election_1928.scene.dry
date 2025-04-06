@@ -1606,6 +1606,11 @@ Q.cvp_reichsbanner_accepted = 0;
 Q.cvp_women_accepted = 0;
 
 Q.cvp_negotiations_min = 50;
+
+if (Q.z_votes >= Q.spd_votes) {
+    Q.cvp_negotiations_min += (Q.z_votes - Q.spd_votes)*2;
+}
+
 if (Q.cvp_ideology == "Left") Q.cvp_negotiations_min -= 10;
 if (Q.z_relation >= 80) Q.cvp_negotiations_min -= 10;
 if (Q.nsdap_votes >= 30) Q.cvp_negotiations_min -= 10;
