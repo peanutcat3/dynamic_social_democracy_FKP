@@ -38,13 +38,13 @@ on-arrival: support_kpd_grand = 1
 
 - @election_1928.popular_front_coalition: Form a "Popular Front" coalition?
 - @election_1928.left_coalition
-- @try_assuage: Never mind. We must deal with this some other way.
+- @let_it_happen: Never mind. Let the vote happen.
 
 @support_kpd_weimar
 on-arrival: support_kpd_weimar = 1
 
 - @election_1928.left_coalition
-- @try_assuage: Never mind. We must deal with this some other way.
+- @let_it_happen: Never mind. Let the vote happen.
 
 
 @let_it_happen
