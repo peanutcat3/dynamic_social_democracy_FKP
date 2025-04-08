@@ -67,7 +67,7 @@ if (Q.cvp_ideology == "Right") {
 } else if (Q.cvp_ideology == "Left") {
     Q.catholic_center_points += 5;
     Q.tory_democratic_points += 3;
-    Q.labor_left_points += 3;
+    Q.labor_left_points += 5;
 }
 
 if (Q.dnvp_dvp_formed || Q.cvp_dvp_formed) {
