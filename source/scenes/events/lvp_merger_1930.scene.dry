@@ -1,6 +1,6 @@
 title: <span style="color: #C0A054;">**DVP**</span> & <span style="color: #D3C24D;">**[+ ddp_name +]**</span> Congress
 subtitle: The future of the liberal movement will be decided here.
-view-if: lvp_merger_2_timer == 0 and lvp_timer_2_trigger
+view-if: lvp_merger_2_timer == 1 and lvp_timer_2_trigger
 on-arrival: {!
 Q.lvp_formation_points = 0;
 if (Q.dvp_relation >= 35) {

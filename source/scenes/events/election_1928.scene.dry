@@ -1131,7 +1131,7 @@ In response to the <span style="color: #700000;">**KPD**</span>'s entrance into 
 
 @right_coalition
 title: Refuse to form a government, so that a right-wing coalition may be formed.
-subtitle: <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>[? if not lvp_formed and dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + **Others** ([+ right_coalition +]%)
+subtitle: <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>[? if not lvp_formed and dvp_exist:&nbsp;+ <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?] ([+ right_coalition +]%)
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> is not interested in a coalition with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 view-if: right_coalition >= 50
 choose-if: (dnvp_ideology == "Moderate" or dnvp_westarp) and not (year = 1929 and month >= 7)
@@ -1617,10 +1617,14 @@ if (Q.pro_republic >= 75) Q.cvp_negotiations_min -= 10;
 if (Q.peoples_party) Q.cvp_negotiations_min -= 5;
 if (Q.left_split) Q.cvp_negotiations_min -= 5;
 if (Q.sapd_formed) Q.cvp_negotiations_min -= 5;
-if (Q.reformist_strength >= Q.left_strength + Q.labor_strength + Q.center_strength) Q.cvp_negotiations_min -= 5;
+if (Q.reformist_strength >= Q.left_strength + Q.center_strength) Q.cvp_negotiations_min -= 5;
 
 if (Q.nationalization_progress) Q.cvp_negotiations_min += 15;
 if (Q.economic_democracy) Q.cvp_negotiations_min += 15;
+
+if (Q.cvp_negotiations_min > 55) {
+    Q.cvp_negotiations_min = 55;
+}
 
 Q.cvp_negotiations_points = 0;
 !}
@@ -1827,7 +1831,7 @@ go-to: ministries
 
 Normally, the <span style="color: #c00000;">**SPD**</span> takes the lead in forming such a coalition, however, the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], under Stegerwald, has become a significant force in German politics. This development has led President Hindenburg to ask the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to take the lead role in forming government.
 
-The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] chancellor is likely to be Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?][? if chancellor = "Brüning" : &nbsp;again?]. He is known for his conservatism and sympathy for monarchism, being on the right wing of the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and Stegerwald's protege. 
+The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] chancellor is likely to be Heinrich Brüning of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?][? if chancellor = "Brüning" : &nbsp;again?]. He is known for his conservatism and sympathy for monarchism, being on the [? if not cvp_formed: right wing?][? if cvp_formed: left wing?] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and Stegerwald's protege. 
 
 @breitscheid_coalition_chancellor
 title: Rudolf Breitscheid for Chancellor

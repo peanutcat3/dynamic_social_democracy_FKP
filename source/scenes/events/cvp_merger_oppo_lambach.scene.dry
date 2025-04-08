@@ -1,6 +1,6 @@
 title: The <span style="color: #000000;">Center</span> merges with the <span style="color: #3E88B3;">**DNVP**</span>!
 subtitle: A behemoth of the German Right is formed...
-view-if: year >= 1931 and (z_relation < 30 or (z_relation < 40 and (spd_votes >= 30 or pro_republic >= 80))) and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and (bruning_time >= 12 and (in_center_right_coalition or in_right_coalition)) and (not spd_prussia or in_left_front_prussia or in_spd_majority_prussia) and dnvp_leader == "Lambach"
+view-if: year >= 1931 and (100 - z_relation) >= spd_votes and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and (((in_spd_majority or in_left_front) and (not spd_prussia or in_left_front_prussia or in_spd_majority_prussia)) or (spd_votes + pro_republic + left_strength >= 150)) and dnvp_leader == "Lambach"
 max-visits: 1
 tags: event
 priority: 3
@@ -20,9 +20,11 @@ new-page: true
 
 = The <span style="color: #000000;">Center</span> merges with the <span style="color: #3E88B3;">**DNVP**</span>
 
-The <span style="color: #000000;">Center Party</span>, having undergone a major transformation into a center-right <span style="color: #000000;">Christian People's Party</span> under [+ z_leader +], has been flirting with the idea of merging with [+ dnvp_leader +]'s <span style="color: #3E88B3;">**DNVP**</span> for the past few months. Their mutual participation in the currently governing right-wing coalition, newfound ideological closeness, and shared fears of both the <span style="color: #7A3C00;">Nazis</span> and <span style="color: #c00000;">socialists</span>—coupled with their electoral decline at the hands of the former—have pushed them toward closer cooperation.
+The <span style="color: #000000;">Center Party</span>, having undergone a major transformation into a center-right <span style="color: #000000;">Christian People's Party</span> under [+ z_leader +], has been flirting with the idea of merging with [+ dnvp_leader +]'s <span style="color: #3E88B3;">**DNVP**</span> for the past few months. [? if spd_votes + pro_republic < 120 or ((in_spd_majority or in_left_front) and (not spd_prussia or in_left_front_prussia or in_spd_majority_prussia)): Their mutual opposition in the current governing coalition, newfound ideological closeness, and shared fears of both the <span style="color: #7A3C00;">Nazis</span> and <span style="color: #c00000;">socialists</span>—coupled with their electoral decline at the hands of the former—have pushed them toward closer cooperation. ?][? if spd_votes + pro_republic >= 120 and not ((in_spd_majority or in_left_front) and (not spd_prussia or in_left_front_prussia or in_spd_majority_prussia)): Their growing ideological alignment, shared commitment to the Republic, and mutual anxiety over the <span style="color: #c00000;">socialists</span>—whose monumental electoral gains threaten to overturn Germany’s conservative order—have pushed them toward closer cooperation. ?]
 
-Following our fallout with the <span style="color: #000000;">Center Party</span> over their new direction, our remaining allies within their ranks have been sidelined, leaving them powerless to oppose the proposed merger. This shift has enabled the party’s leadership, alongside newly integrated right-wing Protestant politicians, to open negotiations with the <span style="color: #3E88B3;">**DNVP**</span> on a possible unification. However, resistance remains: the <span style="color: #3E88B3;">**DNVP**</span>’s old guard, led by figures like Westarp and Schiele, remain deeply skeptical of the merger, citing fundamental disagreements over key "national questions," such as reparations. Lambach himself is in favor, aligning with [+ z_leader +] in supporting the call for a *Volksgemeinschaft*.
+We have suffered a falling out with the <span style="color: #000000;">Center Party</span>, which now seeks to sever its remaining ties to us in order to clear the path for a merger with the <span style="color: #3E88B3;">**DNVP**</span>. Our few remaining allies within their ranks have been sidelined—left powerless to obstruct the party’s rightward drift. This shift has enabled the party’s leadership, alongside newly integrated right-wing Protestant politicians, to open negotiations with the <span style="color: #3E88B3;">**DNVP**</span> on a possible unification. 
+
+However, resistance remains: the <span style="color: #3E88B3;">**DNVP**</span>’s old guard, led by figures like Westarp and Schiele, remain deeply skeptical of the merger, citing fundamental disagreements over key "national questions," such as reparations. Lambach himself is in favor, aligning with [+ z_leader +] in supporting the call for a *Volksgemeinschaft*.
 
 - @cvp_dnvp: Negotiations between the two parties have begun.
 
@@ -197,7 +199,7 @@ Monarchy - No official party position on monarchism.
 Democracy - Supports a presidential government, otherwise maintain the status quo
 
 @monarchy_left
-on-arrival: cvp_dnvp_balance += 15; cvp_left += 4; z_relation += 15; pro_republic += 15; rural_z -= 6; rural_dnf += 4; rural_other += 2; old_middle_z -= 6; old_middle_dnf += 4; old_middle_other += 2; new_middle_z -= 4; new_middle_dnf += 2; new_middle_other += 2; workers_z += 5; workers_spd -= 3; unemployed_z += 3; unemployed_spd -= 3
+on-arrival: cvp_dnvp_balance += 15; cvp_left += 4; z_relation += 15; pro_republic += 15; rural_z -= 6; rural_dnf += 4; rural_other += 2; old_middle_z -= 6; old_middle_dnf += 4; old_middle_other += 2; new_middle_z -= 4; new_middle_dnf += 2; new_middle_other += 2; workers_z += 5; workers_spd -= 3; unemployed_z += 4; unemployed_spd -= 3
 go-to: cvp_dnvp_menu
 
 The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #385A38;">agrarians</span> attempted to insert their long-standing support for monarchism into the party platform, but were decisively outvoted by the staunchly <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> <span style="color: #000000;">Center</span>, along with support from Lambach himself, having been the writer of the Lambach article years prior.
@@ -260,7 +262,7 @@ title: Inter-Party Relations
 subtitle: The debate over whether we should be considered as a coalition partner.
 view-if: cvp_reparations and cvp_economy and cvp_monarchy and not cvp_coalition
 on-arrival: cvp_coalition = 1
-go-to: coalition_right if cvp_dnvp_balance < 60; coalition_moderate if cvp_dnvp_balance >= 60 and cvp_dnvp_balance < 80; coalition_left if cvp_dnvp_balance >= 80
+go-to: coalition_right if cvp_dnvp_balance < 70; coalition_moderate if cvp_dnvp_balance >= 70 and cvp_dnvp_balance < 85; coalition_left if cvp_dnvp_balance >= 85
 
 The integration of the staunchly anti-<span style="color: #9B0000;">Marxist</span> <span style="color: #3E88B3;">**DNVP**</span> into the <span style="color: #000000;">Center Party</span> will likely rule out any future cooperation with them. However, a vocal minority of progressives still exists within the <span style="color: #000000;">Center</span>, who may argue in our favor. Despite the name, the <span style="color: #6D5298;">Christian Socialists</span> are not friendly at all.
 
@@ -313,6 +315,8 @@ view-if: cvp_reparations and cvp_economy and cvp_coalition and cvp_monarchy
 on-arrival: {!
 Q.cvp_dvp_trigger = 0;
 if (Q.dvp_exist && Q.dvp_votes < 5 && !Q.lvp_formed && !Q.lvp_merger_2_timer && !Q.lvp_timer_2_trigger) Q.cvp_dvp_trigger = 1;
+if (Q.spd_prussia && !Q.in_spd_majority_prussia && !Q.in_left_front_prussia) Q.prussia_coalition_trigger = 1;
+if (Q.in_weimar_coalition && !Q.in_social_liberal_coalition || Q.in_grand_coalition || Q.in_popular_front) Q.federal_coalition_trigger = Q.time;
 !}
 face-image: img/cvp.jpg
 call: cvp_formed

@@ -1,6 +1,6 @@
 title: The <span style="color: #000000;">Center</span> merges with the <span style="color: #3E88B3;">**DNVP**</span>!
 subtitle: A behemoth of the German Right is formed...
-view-if: year >= 1931 and (z_relation < 30 or (z_relation < 40 and (spd_votes >= 30 or pro_republic >= 80))) and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and (bruning_time >= 12 and (in_center_right_coalition or in_right_coalition)) and (not spd_prussia or in_left_front_prussia or in_spd_majority_prussia) and dnvp_leader == "Lambach"
+view-if: year >= 1931 and (100 - z_relation) >= spd_votes and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and (((in_spd_majority or in_left_front) and (not spd_prussia or in_left_front_prussia or in_spd_majority_prussia)) or (spd_votes + pro_republic + left_strength >= 150)) and dnvp_leader == "Treviranus"
 max-visits: 1
 tags: event
 priority: 3
@@ -20,9 +20,11 @@ new-page: true
 
 = The <span style="color: #000000;">Center</span> merges with the <span style="color: #3E88B3;">**DNVP**</span>
 
-The <span style="color: #000000;">Center Party</span>, having undergone a major transformation into a center-right <span style="color: #000000;">Christian People's Party</span> under [+ z_leader +], has been flirting with the idea of merging with [+ dnvp_leader +]'s <span style="color: #3E88B3;">**DNVP**</span> for the past few months. Their mutual participation in the currently governing right-wing coalition, newfound ideological closeness, and shared fears of both the <span style="color: #7A3C00;">Nazis</span> and <span style="color: #c00000;">socialists</span>—coupled with their electoral decline at the hands of the former—have pushed them toward closer cooperation.
+The <span style="color: #000000;">Center Party</span>, having undergone a major transformation into a center-right <span style="color: #000000;">Christian People's Party</span> under [+ z_leader +], has been flirting with the idea of merging with [+ dnvp_leader +]'s <span style="color: #3E88B3;">**DNVP**</span> for the past few months. [? if spd_votes + pro_republic < 120 or ((in_spd_majority or in_left_front) and (not spd_prussia or in_left_front_prussia or in_spd_majority_prussia)): Their mutual opposition in the current governing coalition, newfound ideological closeness, and shared fears of both the <span style="color: #7A3C00;">Nazis</span> and <span style="color: #c00000;">socialists</span>—coupled with their electoral decline at the hands of the former—have pushed them toward closer cooperation. ?][? if spd_votes + pro_republic >= 120 and not ((in_spd_majority or in_left_front) and (not spd_prussia or in_left_front_prussia or in_spd_majority_prussia)): Their growing ideological alignment, shared commitment to the Republic, and mutual anxiety over the <span style="color: #c00000;">socialists</span>—whose monumental electoral gains threaten to overturn Germany’s conservative order—have pushed them toward closer cooperation. ?]
 
-Following our fallout with the <span style="color: #000000;">Center Party</span> over their new direction, our remaining allies within their ranks have been sidelined, leaving them powerless to oppose the proposed merger. This shift has enabled the party’s leadership, alongside newly integrated right-wing Protestant politicians, to open negotiations with the <span style="color: #3E88B3;">**DNVP**</span> on a possible unification. However, resistance remains: the <span style="color: #3E88B3;">**DNVP**</span>’s old guard, led by figures like Westarp and Schiele, remain deeply skeptical of the merger, citing fundamental disagreements over key "national questions," such as reparations. Lambach himself is in favor, aligning with [+ z_leader +] in supporting the call for a *Volksgemeinschaft*.
+We have suffered a falling out with the <span style="color: #000000;">Center Party</span>, which now seeks to sever its remaining ties to us in order to clear the path for a merger with the <span style="color: #3E88B3;">**DNVP**</span>. Our few remaining allies within their ranks have been sidelined—left powerless to obstruct the party’s rightward drift. This shift has enabled the party’s leadership, alongside newly integrated right-wing Protestant politicians, to open negotiations with the <span style="color: #3E88B3;">**DNVP**</span> on a possible unification. 
+
+However, resistance remains: the <span style="color: #3E88B3;">**DNVP**</span>’s old guard, led by figures like Westarp and Schiele, remain deeply skeptical of the merger, citing fundamental disagreements over key "national questions," such as reparations.
 
 - @cvp_dnvp: Negotiations between the two parties have begun.
 
@@ -42,9 +44,6 @@ if (Q.reformist_strength >= Q.left_strength + Q.center_strength) {
     Q.cvp_dnvp_balance += 5;
 } else if (Q.left_strength >= Q.reformist_strength) {
     Q.cvp_dnvp_balance -= 10;
-}
-if (Q.z_leader == "Adenauer") {
-    Q.cvp_dnvp_balance += 15;
 }
 if (Q.nsdap_votes >= 35) {
   Q.cvp_dnvp_balance = Q.cvp_dnvp_balance + ((50 - Q.cvp_dnvp_balance) * 0.6);
@@ -67,6 +66,8 @@ if (Q.nationalism < 45) {
 } else {
     Q.cvp_dnvp_balance -= 20;
 }
+
+Q.cvp_dnvp_balance -= (Q.spd_votes / 4);
 
 if (Q.bruning_coalition_dissent < 1) Q.cvp_dnvp_balance += 10;
 if (Q.reparations <= -2) Q.cvp_dnvp_balance += 15;
@@ -122,15 +123,15 @@ title: The "National Questions".
 subtitle: The debate over Germany's lost lands, the fulfillment of reparations, rearmament, and more.
 view-if: not cvp_reparations
 on-arrival: cvp_reparations = 1
-go-to: reparations_right if cvp_dnvp_balance < 50; reparations_moderate if cvp_dnvp_balance >= 50 and cvp_dnvp_balance < 60; reparations_left if cvp_dnvp_balance >= 60
+go-to: reparations_right if cvp_dnvp_balance < 45; reparations_moderate if cvp_dnvp_balance >= 45 and cvp_dnvp_balance < 55; reparations_left if cvp_dnvp_balance >= 55
 
 The reparations issue remains the most contentious point of contention between the two parties, with starkly opposing views on how to handle Germany’s financial obligations. The <span style="color: #3E88B3;">**DNVP**</span>, including Treviranus himself, staunchly opposed the Young Plan and has previously clashed with the <span style="color: #000000;">Center</span> over foreign policy achievements such as the Locarno Treaties in the past.
 
 @reparations_right
-on-arrival: cvp_dnvp_balance += 20; cvp_right += 5; nationalism += 10; pro_republic -= 5; west_relation -= 1; east_relation -= 2; z_relation -= 5; old_middle_z += 4; old_middle_dnf -= 4; new_middle_z -= 4; new_middle_dvp += 4; new_middle_lvp += 4; rural_dnf -= 2; rural_z += 2
+on-arrival: cvp_dnvp_balance += 10; cvp_right += 5; nationalism += 10; pro_republic -= 5; west_relation -= 1; east_relation -= 2; z_relation -= 5; old_middle_z += 4; old_middle_dnf -= 4; new_middle_z -= 4; new_middle_dvp += 4; new_middle_lvp += 4; rural_dnf -= 2; rural_z += 2
 go-to: cvp_dnvp_menu
 
-The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #6D5298;">Christian Socialists</span> have used their leverage to edit in their most important goals to the party program.
+The <span style="color: #3E88B3;">nationalists</span> have used their leverage to edit in their most important goals to the party program.
 
 Reparations - Germany must push for the complete abolition of reparations and the revocation of the "war guilt" clause, but will continue payments in the meantime
 
@@ -154,7 +155,7 @@ The Western Policy - Closer ties between Austria and the Reich, referendum for E
 The Reichswehr - Continue the secret rearmament and refitting of the army
 
 @reparations_left
-on-arrival: cvp_dnvp_balance -= 20; cvp_left += 5; nationalism -= 10; pro_republic += 5; west_relation += 1; east_relation += 1; z_relation += 5; old_middle_z -= 8; old_middle_dnf += 8; rural_z -= 4; rural_dnf += 4; new_middle_z += 6; new_middle_dvp -= 2; new_middle_ddp -= 2; new_middle_lvp -= 4; new_middle_spd -= 2
+on-arrival: cvp_dnvp_balance -= 10; cvp_left += 5; nationalism -= 10; pro_republic += 5; west_relation += 1; east_relation += 1; z_relation += 5; old_middle_z -= 8; old_middle_dnf += 8; rural_z -= 4; rural_dnf += 4; new_middle_z += 6; new_middle_dvp -= 2; new_middle_ddp -= 2; new_middle_lvp -= 4; new_middle_spd -= 2
 go-to: cvp_dnvp_menu
 
 The <span style="color: #000000;">Christians</span> have used their influence to push for a more restrained and diplomatic foreign policy, aligning with the legacy of Stresemann.
@@ -172,12 +173,12 @@ title: The German Monarchy
 subtitle: The debate over whether the party should be a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> or a <span style="color: #808080;">monarchist</span> one.
 view-if: not cvp_monarchy and cvp_reparations
 on-arrival: cvp_monarchy = 1
-go-to: monarchy_right if cvp_dnvp_balance < 30; monarchy_moderate if cvp_dnvp_balance >= 30 and cvp_dnvp_balance < 50; monarchy_left if cvp_dnvp_balance >= 50
+go-to: monarchy_right if cvp_dnvp_balance < 45; monarchy_moderate if cvp_dnvp_balance >= 45 and cvp_dnvp_balance < 55; monarchy_left if cvp_dnvp_balance >= 55
 
-The issue of the German <span style="color: #808080;">monarchy</span> remains highly divisive, with both parties holding starkly different views. Despite the unfeasibility of a restoration in the current political climate, the <span style="color: #3E88B3;">**DNVP**</span> has never ceased advocating for a return to the days of the <span class="tooltip-text" title="good mod">Kaiserreich</span>. The <span style="color: #000000;">Center Party</span>, on the other hand, has consistently been a staunch <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> force since the birth of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Perhaps the influence of the <span style="color: #0087DC;">People's Conservatives</span> and <span style="color: #6D5298;">Christian Socialists</span> will outweigh the strong objections from the <span style="color: #3E88B3;">**DNVP**</span>'s old guard.
+The issue of the German <span style="color: #808080;">monarchy</span> remains highly divisive, with both parties holding starkly different views. Despite the unfeasibility of a restoration in the current political climate, the <span style="color: #3E88B3;">**DNVP**</span> has never ceased advocating for a return to the days of the <span class="tooltip-text" title="good mod">Kaiserreich</span>. The <span style="color: #000000;">Center Party</span>, on the other hand, has consistently been a staunch <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> force since the birth of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic. Perhaps the influence of the <span style="color: #0087DC;">People's Conservatives</span> will outweigh the strong objections from the <span style="color: #3E88B3;">**DNVP**</span>'s old guard.
 
 @monarchy_right
-on-arrival: cvp_dnvp_balance -= 15; cvp_right += 4; z_relation -= 5; pro_republic -= 5; rural_z += 4; rural_dnf -= 2; rural_other -= 2; old_middle_z += 6; old_middle_dnf -= 4; old_middle_other -= 2; new_middle_z += 2; new_middle_dnf -= 2; workers_z -= 5; workers_spd += 3; workers_ddp += 3; workers_lvp += 3; unemployed_z -= 3; unemployed_spd += 3; unemployed_ddp += 2; unemployed_lvp += 2; catholics_z -= 4; catholics_spd += 4; catholics_ddp += 2; catholics_lvp += 2
+on-arrival: cvp_dnvp_balance -= 10; cvp_right += 4; z_relation -= 5; pro_republic -= 5; rural_z += 4; rural_dnf -= 2; rural_other -= 2; old_middle_z += 6; old_middle_dnf -= 4; old_middle_other -= 2; new_middle_z += 2; new_middle_dnf -= 2; workers_z -= 5; workers_spd += 3; workers_ddp += 3; workers_lvp += 3; unemployed_z -= 3; unemployed_spd += 3; unemployed_ddp += 2; unemployed_lvp += 2; catholics_z -= 4; catholics_spd += 4; catholics_ddp += 2; catholics_lvp += 2
 go-to: cvp_dnvp_menu
 
 The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #385A38;">agrarians</span> have successfully pushed for the inclusion of support for a constitutional monarchy in the party platform. However, it is no longer a central pillar of the party's ideology.
@@ -197,10 +198,10 @@ Monarchy - No official party position on monarchism.
 Democracy - Supports a presidential government, otherwise maintain the status quo
 
 @monarchy_left
-on-arrival: cvp_dnvp_balance += 15; cvp_left += 4; z_relation += 15; pro_republic += 15; rural_z -= 6; rural_dnf += 4; rural_other += 2; old_middle_z -= 6; old_middle_dnf += 4; old_middle_other += 2; new_middle_z -= 4; new_middle_dnf += 2; new_middle_other += 2; workers_z += 5; workers_spd -= 3; unemployed_z += 3; unemployed_spd -= 3
+on-arrival: cvp_dnvp_balance += 10; cvp_left += 4; z_relation += 15; pro_republic += 15; rural_z -= 6; rural_dnf += 4; rural_other += 2; old_middle_z -= 6; old_middle_dnf += 4; old_middle_other += 2; new_middle_z -= 4; new_middle_dnf += 2; new_middle_other += 2; workers_z += 5; workers_spd -= 3; unemployed_z += 4; unemployed_spd -= 3
 go-to: cvp_dnvp_menu
 
-The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #385A38;">agrarians</span> attempted to insert their long-standing support for monarchism into the party platform, but were decisively outvoted by the staunchly <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> <span style="color: #000000;">Center</span>, along with support from Lambach himself, having been the writer of the Lambach article years prior.
+The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #385A38;">agrarians</span> attempted to insert their long-standing support for monarchism into the party platform, but were decisively outvoted by the staunchly <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> <span style="color: #000000;">Center</span>, along with support from some <span style="color: #0087DC;">People's Conservatives</span>.
 
 Monarchy – Official endorsement of the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system
 
@@ -211,7 +212,7 @@ title: Economic Policy
 subtitle: The debate over agriculture, welfare, and the depression.
 view-if: not cvp_economy and cvp_reparations and cvp_monarchy
 on-arrival: cvp_economy = 1
-go-to: economy_right if cvp_dnvp_balance < 20; economy_moderate if cvp_dnvp_balance >= 20 and cvp_dnvp_balance < 30; economy_left if cvp_dnvp_balance >= 30
+go-to: economy_right if cvp_dnvp_balance < 30; economy_moderate if cvp_dnvp_balance >= 30 and cvp_dnvp_balance < 40; economy_left if cvp_dnvp_balance >= 40
 
 A potential big-tent <span style="color: #000000;">Christian People's Party</span> faces the difficult task of addressing the diverse economic concerns of its broad electoral base. This base spans across farmers, aristocrats, landowners, large businesses, small businesses, civil servants, white-collar workers, blue-collar urban workers, and many others from all walks of life.
 
@@ -247,7 +248,7 @@ Great Depression - Experiment with a public works plan, combined with an increas
 on-arrival: cvp_dnvp_balance -= 10; cvp_left += 5; rural_z -= 4; rural_dnf += 2; rural_dvp += 2; rural_lvp += 2; old_middle_z -= 6; old_middle_dnf += 2; old_middle_dvp += 4; old_middle_lvp += 4; new_middle_z += 4; new_middle_dnf -= 2; new_middle_ddp -= 2; workers_z += 8; workers_spd -= 5; workers_kpd -= 3; unemployed_z += 8; unemployed_spd -= 5; unemployed_nsdap -= 3
 go-to: cvp_dnvp_menu
 
-The <span style="color: #000000;">Christians</span> and <span style="color: #6D5298;">Christian Socialists</span> have used their influence to advocate for a pro-worker and more ambitious economic policy, as a middle ground between capitalism and <span style="color: #c00000;">socialism</span>.
+The <span style="color: #000000;">Christians</span> and <span style="color: #6D5298;">Christian Socialists</span> have used their influence to advocate for a pro-worker and more ambitious economic policy, recognizing that workers are a key part of the *Volksgemeinschaft*.
 
 Taxation - Implement more progressive taxes and regulations, to ensure a fair Germany
 
@@ -260,9 +261,9 @@ title: Inter-Party Relations
 subtitle: The debate over whether we should be considered as a coalition partner.
 view-if: cvp_reparations and cvp_economy and cvp_monarchy and not cvp_coalition
 on-arrival: cvp_coalition = 1
-go-to: coalition_right if cvp_dnvp_balance < 60; coalition_moderate if cvp_dnvp_balance >= 60 and cvp_dnvp_balance < 80; coalition_left if cvp_dnvp_balance >= 80
+go-to: coalition_right if cvp_dnvp_balance < 65; coalition_moderate if cvp_dnvp_balance >= 65 and cvp_dnvp_balance < 75; coalition_left if cvp_dnvp_balance >= 75
 
-The integration of the staunchly anti-<span style="color: #9B0000;">Marxist</span> <span style="color: #3E88B3;">**DNVP**</span> into the <span style="color: #000000;">Center Party</span> will likely rule out any future cooperation with them. However, a vocal minority of progressives still exists within the <span style="color: #000000;">Center</span>, who may argue in our favor. Despite the name, the <span style="color: #6D5298;">Christian Socialists</span> are not friendly at all.
+The integration of the staunchly anti-<span style="color: #9B0000;">Marxist</span> <span style="color: #3E88B3;">**DNVP**</span> into the <span style="color: #000000;">Center Party</span> will likely rule out any future cooperation with them. However, a vocal minority of progressives still exists within the <span style="color: #000000;">Center</span>, who may argue in our favor.
 
 @coalition_right
 on-arrival: cvp_dnvp_balance += 10; cvp_right += 5; z_relation -= 10; rural_z += 6; rural_dnf -= 2; rural_other -= 2; rural_nsdap -= 2; old_middle_z += 10; old_middle_dnf -= 4; old_middle_dvp -= 2; old_middle_lvp -= 2; old_middle_other -= 4; new_middle_z += 6; new_middle_dnf -= 2; new_middle_other -= 4; workers_z -= 3; workers_spd += 3; workers_ddp += 2; workers_lvp += 2; unemployed_z -= 3; unemployed_spd += 3; unemployed_ddp += 2; unemployed_lvp += 2
@@ -313,6 +314,8 @@ view-if: cvp_reparations and cvp_economy and cvp_coalition and cvp_monarchy
 on-arrival: {!
 Q.cvp_dvp_trigger = 0;
 if (Q.dvp_exist && Q.dvp_votes < 5 && !Q.lvp_formed && !Q.lvp_merger_2_timer && !Q.lvp_timer_2_trigger) Q.cvp_dvp_trigger = 1;
+if (Q.spd_prussia && !Q.in_spd_majority_prussia && !Q.in_left_front_prussia) Q.prussia_coalition_trigger = 1;
+if (Q.in_weimar_coalition && !Q.in_social_liberal_coalition || Q.in_grand_coalition || Q.in_popular_front) Q.federal_coalition_trigger = Q.time;
 !}
 face-image: img/cvp.jpg
 call: cvp_formed

@@ -1,6 +1,6 @@
 title: The <span style="color: #000000;">Center</span> merges with the <span style="color: #3E88B3;">**DNVP**</span>!
 subtitle: A behemoth of the German Right is formed...
-view-if: year >= 1931 and z_relation < 30 and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and (bruning_time >= 12 and (in_center_right_coalition or in_right_coalition or spd_toleration_right)) and (not spd_prussia or in_left_front_prussia) and dnvp_leader == "Treviranus" and true_christian_democracy
+view-if: year >= 1931 and (z_relation < 30 or (z_relation < 40 and (spd_votes >= 30 or pro_republic >= 80))) and z_ideology == "Right" and (z_leader == "Stegerwald" or z_leader == "Adenauer") and (bruning_time >= 12 and (in_center_right_coalition or in_right_coalition or spd_toleration_right)) and (not spd_prussia or in_left_front_prussia or in_spd_majority_prussia) and dnvp_leader == "Treviranus" and true_christian_democracy
 max-visits: 1
 tags: event
 priority: 3
@@ -81,11 +81,11 @@ A great deal of concessions are required to bring both sides to a comprehensive 
 
 Pro-merger factions:
 
-<span style="color: #000000;">Far-Right</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)
+<span style="color: #000000;">Far-Right</span> (<span style="color: #000000;">**Z**</span>)
 
-<span style="color: #000000;">Labor Right</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)
+<span style="color: #000000;">Labor Right</span> (<span style="color: #000000;">**Z**</span>)
 
-<span style="color: #000000;">Protestant Right</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)
+<span style="color: #000000;">Protestant Right</span> (<span style="color: #000000;">**Z**</span>)
 
 <span style="color: #6D5298;">Christian Socialists</span> (<span style="color: #3E88B3;">**DNVP**</span>)
 
@@ -93,13 +93,13 @@ Pro-merger factions:
 
 Skeptical factions:
 
-<span style="color: #000000;">Catholic Center</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)
+<span style="color: #000000;">Catholic Center</span> (<span style="color: #000000;">**Z**</span>)
 
 <span style="color: #3E88B3;">National Conservatives</span> (<span style="color: #3E88B3;">**DNVP**</span>)
 
 Opposed factions:
 
-<span style="color: #FF7F00;">Christian Left</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)
+<span style="color: #FF7F00;">Christian Left</span> (<span style="color: #000000;">**Z**</span>)
 
 <span style="color: #385A38;">Agrarians</span> (<span style="color: #3E88B3;">**DNVP**</span>)
 
@@ -151,7 +151,7 @@ The Western Policy - Closer ties between Austria and the Reich, referendum for E
 The Reichswehr - Continue the secret rearmament and refitting of the army
 
 @reparations_left
-on-arrival: cvp_dnvp_balance -= 10; cvp_left += 5; nationalism -= 10; pro_republic += 5; west_relation += 1; east_relation += 1; z_relation += 5; old_middle_z -= 8; old_middle_dnf += 8; rural_z -= 4; rural_dnf += 4; new_middle_z += 6; new_middle_dvp -= 2; new_middle_ddp -= 2; new_middle_lvp -= 4; new_middle_spd -= 2
+on-arrival: cvp_dnvp_balance -= 10; cvp_left += 5; nationalism -= 10; pro_republic += 5; west_relation += 1; east_relation += 1; z_relation += 5; old_middle_z -= 8; old_middle_dnf += 8; rural_z -= 4; rural_dnf += 4; new_middle_z += 6; new_middle_dvp -= 2; new_middle_ddp -= 2; new_middle_lvp -= 4; new_middle_spd -= 2; cvp_reparations_left = 1
 go-to: cvp_dnvp_menu
 
 The <span style="color: #000000;">Christians</span> have used their influence to push for a more restrained and diplomatic foreign policy, aligning with the legacy of Stresemann.
@@ -194,7 +194,7 @@ Monarchy - No official party position on monarchism.
 Democracy - Supports a presidential government, otherwise maintain the status quo
 
 @monarchy_left
-on-arrival: cvp_dnvp_balance += 10; cvp_left += 4; z_relation += 15; pro_republic += 15; rural_z -= 6; rural_dnf += 4; rural_other += 2; old_middle_z -= 6; old_middle_dnf += 4; old_middle_other += 2; new_middle_z -= 4; new_middle_dnf += 2; new_middle_other += 2; workers_z += 5; workers_spd -= 3; unemployed_z += 5; unemployed_spd -= 3
+on-arrival: cvp_dnvp_balance += 10; cvp_left += 4; z_relation += 15; pro_republic += 15; rural_z -= 6; rural_dnf += 4; rural_other += 2; old_middle_z -= 6; old_middle_dnf += 4; old_middle_other += 2; new_middle_z -= 4; new_middle_dnf += 2; new_middle_other += 2; workers_z += 5; workers_spd -= 3; unemployed_z += 4; unemployed_spd -= 3
 go-to: cvp_dnvp_menu
 
 The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #385A38;">agrarians</span> attempted to insert their long-standing support for monarchism into the party platform, but were decisively outvoted by the staunchly <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> <span style="color: #000000;">Center</span>, along with support from some <span style="color: #0087DC;">People's Conservatives</span>.
@@ -305,7 +305,7 @@ The <span style="color: #3E88B3;">nationalists</span> and <span style="color: #3
 
 
 @congress
-title: With all differences resolved, the <span style="color: #000000;">**[+ z_party_name +]**</span> is formed! 
+title: With all differences resolved, the <span style="color: #000000;">**CVP**</span> is formed! 
 view-if: cvp_reparations and cvp_economy and cvp_coalition and cvp_monarchy
 on-arrival: {!
 Q.cvp_dvp_trigger = 0;
