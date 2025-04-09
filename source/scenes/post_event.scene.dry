@@ -169,10 +169,10 @@ if (Q.far_right_force >= Q.democracy_force) {
     Q.democracy_paramilitary = 1;
 }
 
-Q.dnf_r = Math.round(Q.dnf_r * 10) / 10
-Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10
-Q.kvp_r = Math.round(Q.kvp_r * 10) / 10
-Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10
+Q.dnf_r = Math.round(Q.dnf_r * 10) / 10;
+Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10;
+Q.kvp_r = Math.round(Q.kvp_r * 10) / 10;
+Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10;
 
 // 1. update dates
 if (Q.month_actions >= 1) {
@@ -3455,9 +3455,9 @@ if (Q.z_relation < -20 && Q.cvp_formed) {
     Q.z_relation = -20;
 }
 
-Q.ddp_r = Math.round((Q.ddp_r) * 10 / 10)
-Q.z_r = Math.round((Q.z_r) * 10 / 10)
-Q.other_r = Math.round((Q.other_r) * 10 / 10)
+Q.ddp_r = Math.round(Q.ddp_r * 10) / 10;    
+Q.z_r = Math.round(Q.z_r * 10) / 10;    
+Q.other_r = Math.round(Q.other_r * 10) / 10;    
 
 Q.bvp_votes = Q.z_votes*0.2;
 if (Q.stegerwald_path && Q.bvp_votes >= 4) {
