@@ -4,7 +4,7 @@ view-if: year >= 1930 and z_leader = "Joos" and ((z_relation < 40 or spd_break_t
 on-arrival: {!
 Q.z_relation -= 10;
 
-if ((spd_in_government_time >= 36 and (not reichskonkordat_progress and in_weimar_coalition and foreign_minister_party == "SPD")) or (spd_prussia_time >= 30 and not prussian_concordat_progress)) {
+if ((Q.spd_in_government_time >= 36 && (!Q.reichskonkordat_progress && Q.in_weimar_coalition && Q.foreign_minister_party == "SPD")) || (Q.spd_prussia_time >= 30 && !Q.prussian_concordat_progress)) {
     Q.concordat_explode = 1;
 }
 
