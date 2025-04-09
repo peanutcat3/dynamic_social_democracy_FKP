@@ -466,6 +466,8 @@ Q.dnvp_in_government = 1;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
 
+Q.spd_prussia_time = 0;
+
 Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
 Q.in_weimar_coalition = 0;
@@ -651,7 +653,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
     'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger',
     'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath',
-    'bourgeois_negotiations_elections_1930', 'nazi_decay'];
+    'bourgeois_negotiations_elections_1930', 'nazi_decay', 'stegerwald_transformation'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -670,6 +672,7 @@ Q.shuffle_leadership_timer = 0;
 Q.streetfighting_timer = 0;
 Q.peoples_party_timer = 0;
 Q.bruning_event_timer = 0;
+Q.stegerwald_transformation_timer = 0;
 // n_elections is the number of elections that have happened since the start of the game.
 Q.n_elections = 0;
 Q.n_elections_prussia = 0;

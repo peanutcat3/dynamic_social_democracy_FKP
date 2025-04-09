@@ -1075,6 +1075,43 @@ if (Q.dnf_decay_timer > 0) {
     Q.old_middle_dnf -= 0.4;
     Q.old_middle_dnvp += 0.4;
 }
+
+if (Q.dnvp_ideology == "Radical" && Q.z_leader == "Stegerwald" && Q.stegerwald_transformation_timer > 0) {
+    Q.new_middle_z += 3/12;
+    Q.old_middle_z += 3/12;
+    Q.rural_z += 3/12;
+    Q.rural_dnvp -= 3/12;
+    Q.new_middle_dnvp -= 3/12;
+    Q.old_middle_dnvp -= 3/12;
+} 
+
+if (Q.z_leader == "Stegerwald" && Q.stegerwald_transformation_timer > 0) {
+    Q.catholics -= 5/12;
+    Q.workers_spd -= 7/12;
+    Q.workers_z += 9/12;
+    Q.new_middle_z += 8/12;
+    Q.old_middle_z += 5/12;
+    Q.rural_z += 5/12;
+    Q.catholics_z -= 4/12;
+    Q.catholics_spd += 4/12;
+    Q.unemployed_z += 3/12;
+    Q.workers_other -= 2/12;
+    Q.new_middle_other -= 5/12;
+    Q.old_middle_other -= 5/12;
+    Q.rural_other -= 3/12;
+    Q.unemployed_other -= 3/12;
+    Q.new_middle_dvp -= 3/12;
+    Q.new_middle_ddp -= 3/12;
+    Q.new_middle_lvp -= 3/12;
+    Q.old_middle_dvp -= 3/12;
+    Q.old_middle_ddp -= 3/12;
+    Q.old_middle_lvp -= 3/12;
+    Q.rural_dvp -= 4/12;
+    Q.rural_lvp -= 4/12;
+    Q.rural_dnvp -= 6/12;
+    Q.rural_dnf -= 2/12;
+}
+
 if (Q.reichsbank_policy_time >= Q.time) {
     Q.unemployed *= 0.997;
     if (Q.economic_growth < -2) Q.economic_growth *= 0.995;
@@ -2454,6 +2491,12 @@ Q['lvp_ideology_' + Q.month] = Q.lvp_ideology
 Q['lvp_relation_' + Q.month] = Q.lvp_relation
 
 Q.combined_cooperation = Q.liberal_cooperation + Q.bourgeois_cooperation
+
+if (Q.spd_prussia) {
+    Q.spd_prussia_time += 1;
+} else {
+    Q.spd_prussia_time = 0;
+}
 
 if (Q.spd_in_government) {
     Q.spd_in_government_time += 1;
