@@ -1,6 +1,6 @@
 title: 1930 [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] Conference 
 subtitle: The party seeks to oust Jakob Kaiser...
-view-if: (year == 1930 and month >= 11) or kaiser_time == time
+view-if: ((year == 1930 and month >= 11) or kaiser_time == time) and z_leader == "Kaiser"
 new-page: true
 on-arrival: pro_republic += 3
 max-visits: 1
