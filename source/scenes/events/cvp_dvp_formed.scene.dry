@@ -22,7 +22,7 @@ Q.old_middle_z -= 6;
 Q.rural_z -= 4;
 Q.rural_ddp += 4;
 
-Q.z_r = Math.round((Q.dnvp_r + Q.dvp_r) * 10) / 10;
+Q.z_r = Math.round((Q.z_r + Q.dvp_r) * 10) / 10;
 Q.z_r_prussia = Math.round((Q.z_r_prussia + Q.dvp_r_prussia) * 10) / 10;
 Q.cvp_relation += 5;
 
