@@ -157,7 +157,7 @@ var thuringia_adjustment_r_factors = {
     dnvp: 0.95,
     nsdap: 1.1,
     other: 1.0,
-    kvp: 0.6,
+    kvp: 1.0,
     dnf: 0.3
 };
 

@@ -169,7 +169,7 @@ var saxony_adjustment_r_factors = {
     dnvp: 1.0,
     nsdap: 1.0,
     other: 1.0,
-    kvp: 0.9,
+    kvp: 1.0,
     dnf: 0.3
 };
 
