@@ -2988,7 +2988,7 @@ if (Q.bruning_time > 1) {
 }
 
 if (!Q.nazi_peak_triggered) {
-    Q.nazi_peak_base = 25;
+    Q.nazi_peak_base = 20;
     Q.nazi_peak = Q.nazi_peak_base;
     Q.nazi_peak += (Q.unemployed / 3);
     Q.nazi_peak += (100 - Q.pro_republic) / 10;
@@ -3094,6 +3094,13 @@ if (Q.year == 1930 && Q.month == 8) {
     Q.brunswick_election_seen = 1;
     if (Q.dnvp_votes + Q.nsdap_votes + Q.other_votes + Q.dvp_votes + Q.dnf_votes + Q.kvp_votes + Q.lvp_votes >= (Q.spd_votes*1.6)) {
         Q.brunswick_hitler = 1;
+    }
+}
+
+if (!Q.peoples_party && Q.year >= 1930) {
+    Q.new_middle_spd -= 2/12;
+    if (Q.new_middle_spd_normalized >= 15) {
+        Q.new_middle_spd -= 4/12;
     }
 }
 
