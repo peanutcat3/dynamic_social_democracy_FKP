@@ -2988,7 +2988,7 @@ if (Q.bruning_time > 1) {
 }
 
 if (!Q.nazi_peak_triggered) {
-    Q.nazi_peak_base = 20;
+    Q.nazi_peak_base = 24;
     Q.nazi_peak = Q.nazi_peak_base;
     Q.nazi_peak += (Q.unemployed / 3);
     Q.nazi_peak += (100 - Q.pro_republic) / 10;
