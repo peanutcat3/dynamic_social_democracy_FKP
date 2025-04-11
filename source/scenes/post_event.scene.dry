@@ -3161,7 +3161,7 @@ if (!Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
             Q.workers_nsdap -= 1/12;
         }
     }
-    if (Q.new_middle_nsdap_normalized >= Q.new_middle_nsdap_pre + 3) {
+    if (Q.new_middle_nsdap >= Q.new_middle_nsdap_pre + 3) {
         if (Q.new_middle_nsdap_normalized >= 40) {
             Q.new_middle_nsdap -= 2/12;
         }
@@ -3175,7 +3175,7 @@ if (!Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
             Q.new_middle_nsdap -= 4/12;
         }
     }
-    if (Q.old_middle_nsdap_normalized >= Q.old_middle_nsdap_pre + 3) {
+    if (Q.old_middle_nsdap >= Q.old_middle_nsdap_pre + 3) {
         if (Q.old_middle_nsdap_normalized >= 40) {
             Q.old_middle_nsdap -= 2/12;
         }
@@ -3189,7 +3189,7 @@ if (!Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
             Q.old_middle_nsdap -= 4/12;
         }
     }
-    if (Q.rural_nsdap_normalized >= Q.rural_nsdap_pre + 2) {
+    if (Q.rural_nsdap >= Q.rural_nsdap_pre + 2) {
         if (Q.rural_nsdap_normalized >= 40) {
             Q.rural_nsdap -= 2/12;
         }
