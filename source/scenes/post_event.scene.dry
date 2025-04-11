@@ -757,7 +757,7 @@ if (Q.month_actions >= 1) {
             }
         }
         Q.old_sa_strength = Q.sa_strength;
-        Q.sa_strength += (125*(100 - Q.pro_republic) / 100) /12;
+        Q.sa_strength += (150*(100 - Q.pro_republic) / 100) /12;
         if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
             Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
         }
@@ -816,7 +816,7 @@ if (Q.month_actions >= 1) {
             Q.new_middle_nsdap += 5/12;
             Q.old_middle_nsdap += 5/12;
             Q.old_sa_strength = Q.sa_strength;
-            Q.sa_strength += (175*(100 - Q.pro_republic) / 100) /12;
+            Q.sa_strength += (200*(100 - Q.pro_republic) / 100) /12;
             if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
                 Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
             }
@@ -872,7 +872,7 @@ if (Q.month_actions >= 1) {
         Q.rural_nsdap += 3/12;
         Q.unemployed_nsdap += 3/12;
         Q.old_sa_strength = Q.sa_strength;
-        Q.sa_strength += (175*(100 - Q.pro_republic) / 100) /12;
+        Q.sa_strength += (200*(100 - Q.pro_republic) / 100) /12;
         if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
             Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
         }
@@ -913,7 +913,7 @@ if (Q.month_actions >= 1) {
             Q.unemployed_nsdap += 4/12;
             Q.unemployed_kpd += 2/12;
             Q.old_sa_strength = Q.sa_strength;
-            Q.sa_strength += (175*(100 - Q.pro_republic) / 100) /12;
+            Q.sa_strength += (200*(100 - Q.pro_republic) / 100) /12;
             if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
                 Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
             }
@@ -943,7 +943,7 @@ if (Q.month_actions >= 1) {
             Q.old_middle_nsdap += 5/12;
             Q.new_middle_nsdap += 4/12;
             Q.old_sa_strength = Q.sa_strength;
-            Q.sa_strength += (125*(100 - Q.pro_republic) / 100) /12;
+            Q.sa_strength += (150*(100 - Q.pro_republic) / 100) /12;
             if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
                 Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
             }
@@ -3163,44 +3163,44 @@ if (!Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
     }
     if (Q.new_middle_nsdap >= Q.new_middle_nsdap_pre + 3) {
         if (Q.new_middle_nsdap_normalized >= 40) {
-            Q.new_middle_nsdap -= 2/12;
+            Q.new_middle_nsdap -= 4/12;
         }
         if (Q.new_middle_nsdap_normalized >= 50) {
-            Q.new_middle_nsdap -= 2/12;
+            Q.new_middle_nsdap -= 4/12;
         }
         if (Q.new_middle_nsdap_normalized >= 60) {
-            Q.new_middle_nsdap -= 2/12;
+            Q.new_middle_nsdap -= 4/12;
         }
         if (Q.new_middle_nsdap_normalized >= 75) {
-            Q.new_middle_nsdap -= 4/12;
+            Q.new_middle_nsdap -= 8/12;
         }
     }
     if (Q.old_middle_nsdap >= Q.old_middle_nsdap_pre + 3) {
         if (Q.old_middle_nsdap_normalized >= 40) {
-            Q.old_middle_nsdap -= 2/12;
+            Q.old_middle_nsdap -= 4/12;
         }
         if (Q.old_middle_nsdap_normalized >= 50) {
-            Q.old_middle_nsdap -= 2/12;
+            Q.old_middle_nsdap -= 4/12;
         }
         if (Q.old_middle_nsdap_normalized >= 60) {
-            Q.old_middle_nsdap -= 2/12;
+            Q.old_middle_nsdap -= 4/12;
         }
         if (Q.old_middle_nsdap_normalized >= 75) {
-            Q.old_middle_nsdap -= 4/12;
+            Q.old_middle_nsdap -= 8/12;
         }
     }
     if (Q.rural_nsdap >= Q.rural_nsdap_pre + 2) {
         if (Q.rural_nsdap_normalized >= 40) {
-            Q.rural_nsdap -= 2/12;
+            Q.rural_nsdap -= 4/12;
         }
         if (Q.rural_nsdap_normalized >= 50) {
-            Q.rural_nsdap -= 2/12;
+            Q.rural_nsdap -= 4/12;
         }
         if (Q.rural_nsdap_normalized >= 60) {
-            Q.rural_nsdap -= 2/12;
+            Q.rural_nsdap -= 4/12;
         }
         if (Q.rural_nsdap_normalized >= 70) {
-            Q.rural_nsdap -= 4/12;
+            Q.rural_nsdap -= 8/12;
         }
     }
 }
