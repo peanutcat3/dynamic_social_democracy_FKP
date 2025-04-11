@@ -756,7 +756,11 @@ if (Q.month_actions >= 1) {
                 Q.inflation -= 1/12;
             }
         }
+        Q.old_sa_strength = Q.sa_strength;
         Q.sa_strength += (125*(100 - Q.pro_republic) / 100) /12;
+        if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
+            Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
+        }
         Q.new_middle_nsdap += 4/12;
         Q.old_middle_nsdap += 6/12;
         Q.rural_other -= 2/12;
@@ -811,7 +815,11 @@ if (Q.month_actions >= 1) {
             }
             Q.new_middle_nsdap += 5/12;
             Q.old_middle_nsdap += 5/12;
-            Q.sa_strength += (175*(100 - Q.pro_republic) / 100 )/12;
+            Q.old_sa_strength = Q.sa_strength;
+            Q.sa_strength += (175*(100 - Q.pro_republic) / 100) /12;
+            if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
+                Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
+            }
             Q.sh_militancy += 0.05/12;
             Q.sa_militancy += 0.1/12;
             Q.rfb_strength += 25/12;
@@ -863,7 +871,11 @@ if (Q.month_actions >= 1) {
         Q.old_middle_nsdap += 3/12;
         Q.rural_nsdap += 3/12;
         Q.unemployed_nsdap += 3/12;
-        Q.sa_strength += (175*(100 - Q.pro_republic) / 100)/12;
+        Q.old_sa_strength = Q.sa_strength;
+        Q.sa_strength += (175*(100 - Q.pro_republic) / 100) /12;
+        if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
+            Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
+        }
         if (Q.bruning_time) {
             if (Q.reparations > -2) {
                 Q.unemployed += 2/12;
@@ -900,7 +912,11 @@ if (Q.month_actions >= 1) {
             Q.old_middle_nsdap += 6/12;
             Q.unemployed_nsdap += 4/12;
             Q.unemployed_kpd += 2/12;
-            Q.sa_strength += (175*(100 - Q.pro_republic) / 100)/12;
+            Q.old_sa_strength = Q.sa_strength;
+            Q.sa_strength += (175*(100 - Q.pro_republic) / 100) /12;
+            if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
+                Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
+            }
             Q.rfb_strength += 25/12;
             Q.sa_militancy += 0.05/12;
             Q.new_middle_dnvp += 4/12;
@@ -926,7 +942,11 @@ if (Q.month_actions >= 1) {
             Q.unemployed_nsdap += 5/12;
             Q.old_middle_nsdap += 5/12;
             Q.new_middle_nsdap += 4/12;
-            Q.sa_strength += (125*(100 - Q.pro_republic) / 100)/12;
+            Q.old_sa_strength = Q.sa_strength;
+            Q.sa_strength += (125*(100 - Q.pro_republic) / 100) /12;
+            if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
+                Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
+            }
             if (Q.dnf_formed) {
                 Q.workers_dnf += 2/12;
                 Q.rural_dnf += 4/12;
@@ -944,7 +964,11 @@ if (Q.month_actions >= 1) {
             Q.unemployed_nsdap += 3/12;
             Q.old_middle_nsdap += 3/12;
             Q.new_middle_nsdap += 2/12;
-            Q.sa_strength += (125*(100 - Q.pro_republic) / 100)/12;
+            Q.old_sa_strength = Q.sa_strength;
+            Q.sa_strength += (100*(100 - Q.pro_republic) / 100) /12;
+            if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
+                Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
+            }
             if (Q.dnf_formed) {
                 Q.workers_dnf += 1/12;
                 Q.rural_dnf += 2/12;
