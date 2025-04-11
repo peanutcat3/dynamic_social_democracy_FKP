@@ -738,10 +738,10 @@ if (Q.month_actions >= 1) {
         Q.old_middle_ddp -= 1/12;
         Q.new_middle_ddp -= 1/12;
         if (Q.bruning_time) {
-            Q.old_middle_ddp -= 4/12;
-            Q.new_middle_ddp -= 4/12;
-            if (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") Q.old_middle_dvp -= 2/12;
-            if (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") Q.new_middle_dvp -= 2/12;
+            Q.old_middle_ddp -= 3/12;
+            Q.new_middle_ddp -= 3/12;
+            if (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") Q.old_middle_dvp -= 1/12;
+            if (Q.dvp_leader == "Scholz" || Q.dvp_leader == "Dingeldey") Q.new_middle_dvp -= 1/12;
             Q.old_middle_dvp -= 2/12;
             Q.new_middle_dvp -= 2/12;
             if (Q.lvp_leader == "Dingeldey") Q.new_middle_lvp -= 3/12;
@@ -777,10 +777,10 @@ if (Q.month_actions >= 1) {
             Q.workers_other -= 4/12;
             Q.unemployed_other -= 2/12;
             Q.catholics_other -= 2/12;
-            Q.old_middle_dvp -= 6/12;
-            Q.new_middle_dvp -= 6/12;
-            Q.new_middle_ddp -= 2/12;
-            Q.old_middle_ddp -= 2/12;
+            Q.old_middle_dvp -= 5/12;
+            Q.new_middle_dvp -= 5/12;
+            Q.new_middle_ddp -= 1/12;
+            Q.old_middle_ddp -= 1/12;
             Q.rural_dvp -= 4/12;
             Q.old_middle_lvp -= 6/12;
             Q.new_middle_lvp -= 6/12;
