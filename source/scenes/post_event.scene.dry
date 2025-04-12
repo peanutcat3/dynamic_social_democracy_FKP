@@ -1412,7 +1412,6 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
             Q.old_middle_nsdap = Q.old_middle_nsdap_para_pre;
         }
     }
-}
 } else if (Q.democracy_paramilitary && Q.year >= 1930) {
     if (Q.democracy_paramilitary_highest) {
         Q.workers_spd += 4/12;
