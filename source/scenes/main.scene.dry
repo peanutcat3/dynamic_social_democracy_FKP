@@ -580,11 +580,11 @@ max-cards: 3
 
 {!<p class="other">!}[? if year = 1928 and month = 12 : The Chinese Nationalists of the <span style="color: #000099;">**KMT**</span> have reunited China, ending the warlord period. Japan remains as an imperialist force in the region however. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1929 and month = 1: Leon Trotsky has been exiled from the <span style="color: #750e0e;">Soviet Union</span> after losing his power struggle with <span style="color: #8B0000;">Stalin</span>. ?]{!</p>!}
-
 {!<p class="other">!}[? if year = 1929 and month = 1 and z_leader == "Stegerwald": The election of Stegerwald as chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has triggered significant fallout, with mass defections among the party's middle-class and Catholic voters. The once stagnant party is transforming into a <span class="tooltip-text" title="good mod">dynamic</span> force, no longer held together by the cohesiveness of shared faith. Stegerwald is pushing ahead with his vision of an interconfessional party, and is [? if dnvp_ideology == "Moderate":establishing friendly relations with Protestant labor leaders within the <span style="color: #3E88B3;">**DNVP**</span>?][? if dnvp_ideology == "Radical":opening up branches in non-Catholic states?], but the process will be a long and arduous one. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1929 and month = 1 and reichswehr_minister_party != "SPD": The Ministry of Defense has created a new position, the office for ministerial affairs, responsible for coordinating and implementing the Reichswehr’s strategy for dealing with the cabinet, the Reichstag, the various political parties, and, perhaps most importantly, the office of the Reich President. Recently promoted General Kurt von Schleicher, is appointed to this position by Wilhelm Groener. ?]{!</p>!}
+
+{!<p class="other">!}[? if year = 1929 and month = 1: Leon Trotsky has been exiled from the <span style="color: #750e0e;">Soviet Union</span> after losing his power struggle with <span style="color: #8B0000;">Stalin</span>. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1929 and month = 1: King Alexander I of Yugoslavia has established a <span style="color: #808080;">royal dictatorship</span> under the pretext of domestic political turmoil. ?]{!</p>!}
 
@@ -1671,11 +1671,11 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1928 and month = 12 : The Chinese Nationalists of the <span style="color: #000099;">**KMT**</span> have reunited China, ending the warlord period. Japan remains as an imperialist force in the region however. ?]{!</p>!}
 
-{!<p class="other">!}[? if year = 1929 and month = 1: Leon Trotsky has been exiled from the <span style="color: #750e0e;">Soviet Union</span> after losing his power struggle with <span style="color: #8B0000;">Stalin</span>. ?]{!</p>!}
-
 {!<p class="other">!}[? if year = 1929 and month = 1 and z_leader == "Stegerwald": The election of Stegerwald as chairman of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has triggered significant fallout, with mass defections among the party's middle-class and Catholic voters. The once stagnant party is transforming into a <span class="tooltip-text" title="good mod">dynamic</span> force, no longer held together by the cohesiveness of shared faith. Stegerwald is pushing ahead with his vision of an interconfessional party, and is [? if dnvp_ideology == "Moderate":establishing friendly relations with Protestant labor leaders within the <span style="color: #3E88B3;">**DNVP**</span>?][? if dnvp_ideology == "Radical":opening up branches in non-Catholic states?], but the process will be a long and arduous one. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1929 and month = 1 and reichswehr_minister_party != "SPD": The Ministry of Defense has created a new position, the office for ministerial affairs, responsible for coordinating and implementing the Reichswehr’s strategy for dealing with the cabinet, the Reichstag, the various political parties, and, perhaps most importantly, the office of the Reich President. Recently promoted General Kurt von Schleicher, is appointed to this position by Wilhelm Groener. ?]{!</p>!}
+
+{!<p class="other">!}[? if year = 1929 and month = 1: Leon Trotsky has been exiled from the <span style="color: #750e0e;">Soviet Union</span> after losing his power struggle with <span style="color: #8B0000;">Stalin</span>. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1929 and month = 1: King Alexander I of Yugoslavia has established a <span style="color: #808080;">royal dictatorship</span> under the pretext of domestic political turmoil. ?]{!</p>!}
 

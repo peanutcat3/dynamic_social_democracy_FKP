@@ -342,10 +342,10 @@ if (Q.month_actions >= 1) {
     }
 
     /////////////////////////////// update opinions based on economy
-    if (Q.unemployed > 15 && Q.pro_republic > 40) {
+    if (Q.unemployed > 15 && Q.pro_republic > 50) {
         Q.pro_republic -= 1;
     }
-    if (Q.unemployed > 25 && Q.pro_republic > 20) {
+    if (Q.unemployed > 30 && Q.pro_republic > 35) {
         Q.pro_republic -= 1;
     }
     if (Q.inflation >= 8 && Q.pro_republic > 40) {
@@ -767,15 +767,15 @@ if (Q.month_actions >= 1) {
             Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
         }
         Q.new_middle_nsdap += 4/12;
-        Q.old_middle_nsdap += 6/12;
+        Q.old_middle_nsdap += 4/12;
         Q.rural_other -= 2/12;
-        Q.rural_nsdap += 8/12;
+        Q.rural_nsdap += 6/12;
         Q.catholics_dvp -= 2/12;
         Q.catholics_lvp -= 2/12;
-        Q.workers_z += 1/12;
+        Q.workers_z += 2/12;
         Q.old_middle_z += 2/12;
         Q.new_middle_z += 2/12;
-        Q.rural_z += 1/12;
+        Q.rural_z += 2/12;
         Q.catholics_kvp -= 2/12;
         if (!Q.works_program) { 
             Q.workers_kpd += 2/12;
@@ -793,8 +793,8 @@ if (Q.month_actions >= 1) {
             Q.workers -= 4/12;
             Q.unemployed_nsdap += 8/12;
             Q.workers_nsdap += 2/12;
-            Q.rural_other -= 3/12;
-            Q.rural_nsdap += 3/12;
+            Q.rural_other -= 2/12;
+            Q.rural_nsdap += 2/12;
             if (Q.cvp_formed) {
                 Q.workers_z -= 2/12;
                 Q.new_middle_z -= 3/12;
@@ -805,8 +805,8 @@ if (Q.month_actions >= 1) {
             if (Q.bruning_time) {
                 Q.rural_other -= 2/12;
                 Q.rural_nsdap += 2/12;
-                Q.new_middle_other -= 3/12;
-                Q.old_middle_other -= 3/12;
+                Q.new_middle_other -= 2/12;
+                Q.old_middle_other -= 2/12;
                 Q.new_middle_nsdap += 2/12;
                 Q.old_middle_nsdap += 2/12;
                 Q.catholics_nsdap += 2/12;
@@ -817,8 +817,8 @@ if (Q.month_actions >= 1) {
                     Q.old_middle_nsdap += 3/12;
                 }
             }
-            Q.new_middle_nsdap += 5/12;
-            Q.old_middle_nsdap += 5/12;
+            Q.new_middle_nsdap += 4/12;
+            Q.old_middle_nsdap += 4/12;
             Q.old_sa_strength = Q.sa_strength;
             Q.sa_strength += (200*(100 - Q.pro_republic) / 100) /12;
             if (Q.sa_banned && Q.sa_strength > Q.old_sa_strength) {
@@ -852,7 +852,7 @@ if (Q.month_actions >= 1) {
             Q.unemployed_nsdap += 6/12;
             Q.old_middle_nsdap += 4/12;
             Q.new_middle_nsdap += 4/12;
-            Q.rural_nsdap += 4/12;
+            Q.rural_nsdap += 3/12;
             if (Q.dnf_formed) {
                 Q.rural_dnf += 3/12;
                 Q.old_middle_dnf += 4/12;
@@ -910,9 +910,9 @@ if (Q.month_actions >= 1) {
             Q.new_middle_other -= 2/12;
             Q.old_middle_other -= 2/12;
             Q.rural_other -= 2/12;
-            Q.rural_nsdap += 8/12;
-            Q.new_middle_nsdap += 6/12;
-            Q.old_middle_nsdap += 6/12;
+            Q.rural_nsdap += 4/12;
+            Q.new_middle_nsdap += 4/12;
+            Q.old_middle_nsdap += 4/12;
             Q.unemployed_nsdap += 4/12;
             Q.unemployed_kpd += 2/12;
             Q.old_sa_strength = Q.sa_strength;
@@ -941,9 +941,9 @@ if (Q.month_actions >= 1) {
             Q.old_middle_lvp -= 4/12;
             Q.rural_lvp -= 2/12;
         } else if (Q.unemployed > 25) {
-            Q.rural_nsdap += 5/12;
-            Q.unemployed_nsdap += 5/12;
-            Q.old_middle_nsdap += 5/12;
+            Q.rural_nsdap += 4/12;
+            Q.unemployed_nsdap += 4/12;
+            Q.old_middle_nsdap += 4/12;
             Q.new_middle_nsdap += 4/12;
             Q.old_sa_strength = Q.sa_strength;
             Q.sa_strength += (150*(100 - Q.pro_republic) / 100) /12;
@@ -3108,47 +3108,21 @@ if (!Q.peoples_party && Q.year >= 1930) {
 }
 
 if ((!Q.works_program || Q.unemployed_spd_normalized >= 35) && Q.black_thursday_seen && Q.unemployed >= 15) {
-    if (Q.unemployed >= 40 && Q.unemployed_spd_normalized >= 10) {
+    if (Q.unemployed >= 35 && Q.unemployed_spd_normalized >= 12) {
         Q.unemployed_spd -= 5/12;
-        Q.unemployed_kpd -= 3/12;
-        Q.unemployed_nsdap += 8/12;
-    } else if (Q.unemployed >= 35 && Q.unemployed_spd_normalized >= 12) {
-        Q.unemployed_spd -= 5/12;
-        Q.unemployed_kpd -= 2/12;
-        Q.unemployed_nsdap += 7/12;
+        Q.unemployed_nsdap += 5/12;
     } else if (Q.unemployed >= 30 && Q.unemployed_spd_normalized >= 15) {
         Q.unemployed_spd -= 4/12;
-        Q.unemployed_kpd -= 2/12;
-        Q.unemployed_nsdap += 6/12;
+        Q.unemployed_nsdap += 4/12;
     } else if (Q.unemployed >= 25 && Q.unemployed_spd_normalized >= 20) {
         Q.unemployed_spd -= 3/12;
-        Q.unemployed_kpd -= 1/12;
-        Q.unemployed_nsdap += 4/12;
-    } else if (Q.unemployed >= 20 && Q.unemployed_spd_normalized >= 30) {
-        Q.unemployed_spd -= 3/12;
         Q.unemployed_nsdap += 3/12;
-    } else if (Q.unemployed >= 15 && Q.black_thursday_seen) {
+    } else if (Q.unemployed >= 20 && Q.unemployed_spd_normalized >= 30) {
         Q.unemployed_spd -= 2/12;
         Q.unemployed_nsdap += 2/12;
-    }
-}
-
-if ((!Q.works_program || Q.workers_spd_normalized >= 50) && Q.black_thursday_seen && Q.unemployed >= 15) {
-    if (Q.unemployed >= 40 && Q.workers_spd_normalized >= 40) {
-        Q.workers_spd -= 6/12;
-        Q.workers_nsdap += 6/12;
-    } else if (Q.unemployed >= 35 && Q.workers_spd_normalized >= 45) {
-        Q.workers_spd -= 5/12;
-        Q.workers_nsdap += 5/12;
-    } else if (Q.unemployed >= 30 && Q.workers_spd_normalized >= 50) {
-        Q.workers_spd -= 4/12;
-        Q.workers_nsdap += 4/12;
-    } else if (Q.unemployed >= 25 && Q.workers_spd_normalized >= 55) {
-        Q.workers_spd -= 3/12;
-        Q.workers_nsdap += 3/12;
-    } else if (Q.unemployed >= 20 && Q.workers_spd_normalized >= 60) {
-        Q.workers_spd -= 2/12;
-        Q.workers_nsdap += 2/12;
+    } else if (Q.unemployed >= 15 && Q.black_thursday_seen) {
+        Q.unemployed_spd -= 1/12;
+        Q.unemployed_nsdap += 1/12;
     }
 }
 
