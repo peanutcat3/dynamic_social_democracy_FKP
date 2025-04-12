@@ -275,7 +275,22 @@ There is no majority in this round. In the second round, any candidate who wins 
 - @round2_convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to switch their support to us.
 - @round2_hindenburg: Switch our support to Hindenburg.
 - @round2_thalmann: Switch our support to <span style="color: #700000;">**Thälmann**</span> of the <span style="color: #700000;">**KPD**</span>.
+- @round2_organizational_endorsement: 
 - @round2_vote: We've done enough, second round voting begins next month.
+
+@round2_organizational_endorsement
+title: What about the endorsements of the non-partisan organizations?
+subtitle: With [+ dnvp_candidate_1932 +] out of the running, it's a choice between [+ reactionary_candidate_1932 +] and [+ nsdap_candidate_1932 +].
+on-arrival: {!
+if (Q.rlb_nazi) {
+    Q.rlb_hindenburg = 0;
+    Q.rural_nsdap += Q.rural_other*0.1;
+    Q.rural_other *= 0.9;
+    Q.rural_dnvp *= 0.95;
+} else if (!Q.rlb_nazi) {
+    Q.rlb_hindenburg = 1;
+}
+!}
 
 
 @round2_convince_z

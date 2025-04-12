@@ -761,9 +761,9 @@ if (Q.hindenburg_support) {
 }
 if (Q.rlb_nazi) {
     Q.rlb_hindenburg = 0;
-    Q.rural_nsdap += Q.rural_other*0.3;
-    Q.rural_other *= 0.8;
-    Q.rural_dnvp *= 0.9;
+    Q.rural_nsdap += Q.rural_other*0.1;
+    Q.rural_other *= 0.9;
+    Q.rural_dnvp *= 0.95;
 } else if (!Q.rlb_nazi) {
     Q.rlb_hindenburg = 1;
 }

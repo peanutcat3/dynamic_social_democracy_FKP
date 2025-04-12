@@ -419,7 +419,7 @@ if (Q.month_actions >= 1) {
     if (Q.year < 1930) {
         Q.kpd_target = 13;
     } else if (Q.year >= 1930) {
-        Q.kpd_target = 15;
+        Q.kpd_target = 14;
     }
     if (Q.kpd_votes >= Q.kpd_target && !Q.works_program && !Q.in_popular_front && !Q.in_left_front && !Q.in_spd_majority && Q.chancellor != "Papen" && Q.chancellor != "Schleicher") {
         Q.workers_kpd *= 0.99;
@@ -451,10 +451,10 @@ if (Q.month_actions >= 1) {
         if (Q.workers_spd_normalized > 40) {
             Q.workers_spd -= 4/12;
         }
-        if (Q.catholics_spd > 10) {
+        if (Q.catholics_spd > 15) {
             Q.catholics_spd -= 4/12;
         }
-        if (Q.unemployed_spd_normalized > 20) {
+        if (Q.unemployed_spd_normalized > 15) {
             Q.unemployed_spd -= 6/12;
         }
         Q.pro_republic += 1;
@@ -739,8 +739,6 @@ if (Q.month_actions >= 1) {
             Q.rural_dvp -= 4/12;
         }
         Q.rural_lvp -= 4/12;
-        Q.workers_other -= 1/12;
-        Q.workers_nsdap += 1/12;
         Q.old_middle_ddp -= 1/12;
         Q.new_middle_ddp -= 1/12;
         if (Q.bruning_time) {
@@ -1989,7 +1987,6 @@ if (Q.year >= 1930 && Q.total_bruning_time >= 11 && !Q.eastern_aid) {
 
 // total rural death cuz nation shifts right, cnblp voters defect as well
 if (Q.cnblp_defect_pt2_time == Q.time && Q.cnblp_defect == 1) {
-    Q.rural_nsdap += Q.rural_other*0.2;
     Q.rural_other *= 0.65;
     Q.nsdap_r += Q.other_r*0.05;
     Q.other_r *= 0.95;
@@ -1999,14 +1996,12 @@ if (Q.cnblp_defect_pt2_time == Q.time && Q.cnblp_defect == 1) {
 
 if (Q.total_bruning_time >= 7 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && !Q.bourgeois_parliament_no_liberals && !Q.spd_toleration_right && Q.year >= 1930 && !Q.kvp_cnblp_sister && Q.dnvp_ideology == "Radical" && Q.chancellor == "Brüning") {
     Q.rlb_nazi = 1;
-    Q.rural_nsdap += Q.rural_other*0.1;
     Q.rural_other *= 0.85;
 }
 
 if (Q.year >= 1930 && Q.ddp_factionless) {
     Q.ddp_factionless_time += 1;
     if (Q.ddp_factionless_time == 2) {
-        Q.rural_nsdap += Q.rural_other*0.1;
         Q.rural_other *= 0.85;
     }
 }
@@ -3186,56 +3181,56 @@ if (!Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
     }
     if (Q.new_middle_nsdap >= Q.new_middle_nsdap_pre + 3) {
         if (Q.new_middle_nsdap_normalized >= 40) {
-            Q.new_middle_nsdap -= 1;
+            Q.new_middle_nsdap -= 2;
         }
         if (Q.new_middle_nsdap_normalized >= 50) {
-            Q.new_middle_nsdap -= 1;
+            Q.new_middle_nsdap -= 2;
         }
         if (Q.new_middle_nsdap_normalized >= 60) {
-            Q.new_middle_nsdap -= 1;
+            Q.new_middle_nsdap -= 2;
         }
         if (Q.new_middle_nsdap_normalized >= 75) {
-            Q.new_middle_nsdap -= 2;
+            Q.new_middle_nsdap -= 3;
         }
     }
     if (Q.old_middle_nsdap >= Q.old_middle_nsdap_pre + 3) {
         if (Q.old_middle_nsdap_normalized >= 40) {
-            Q.old_middle_nsdap -= 1;
+            Q.old_middle_nsdap -= 2;
         }
         if (Q.old_middle_nsdap_normalized >= 50) {
-            Q.old_middle_nsdap -= 1;
+            Q.old_middle_nsdap -= 2;
         }
         if (Q.old_middle_nsdap_normalized >= 60) {
-            Q.old_middle_nsdap -= 1;
+            Q.old_middle_nsdap -= 2;
         }
         if (Q.old_middle_nsdap_normalized >= 75) {
-            Q.old_middle_nsdap -= 2;
+            Q.old_middle_nsdap -= 3;
         }
     }
     if (Q.rural_nsdap >= Q.rural_nsdap_pre + 2) {
         if (Q.rural_nsdap_normalized >= 40) {
-            Q.rural_nsdap -= 1;
+            Q.rural_nsdap -= 2;
         }
         if (Q.rural_nsdap_normalized >= 50) {
-            Q.rural_nsdap -= 1;
+            Q.rural_nsdap -= 2;
         }
         if (Q.rural_nsdap_normalized >= 60) {
-            Q.rural_nsdap -= 1;
+            Q.rural_nsdap -= 2;
         }
         if (Q.rural_nsdap_normalized >= 70) {
-            Q.rural_nsdap -= 2;
+            Q.rural_nsdap -= 3;
         }
     }
 }
 
 if (Q.new_middle_nsdap > 100) {
-    Q.new_middle_nsdap = 100;
+    Q.new_middle_nsdap -= 2;
 }
 if (Q.old_middle_nsdap > 100) {
-    Q.old_middle_nsdap = 100;
+    Q.old_middle_nsdap -= 2;
 }
 if (Q.rural_nsdap > 100) {
-    Q.rural_nsdap = 100;
+    Q.rural_nsdap -= 2;
 }
 
 if (Q.cvp_formed && Q.nsdap_votes >= 20) {
@@ -3358,9 +3353,6 @@ if (Q.cvp_formed) {
 Q.industrial_total_backing = Q.industrial_ddp_backing + Q.industrial_dvp_backing + Q.industrial_lvp_backing + Q.industrial_dnvp_backing + Q.industrial_kvp_backing + Q.industrial_dnf_backing + Q.industrial_z_backing;
 
 if (Q.industrial_total_backing < 6 && Q.nsdap_r >= 17) {
-    Q.new_middle_nsdap += 6 - Q.industrial_total_backing/3;
-    Q.old_middle_nsdap += 6 - Q.industrial_total_backing/3;
-    Q.rural_nsdap += 6 - Q.industrial_total_backing/5;
     Q.nsdap_industrial_backing = 1;
 } else {
     Q.nsdap_industrial_backing = 0;
