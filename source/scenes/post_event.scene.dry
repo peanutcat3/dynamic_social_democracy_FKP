@@ -3177,85 +3177,85 @@ if ((!Q.works_program || Q.unemployed_spd_normalized >= 35) && Q.black_thursday_
 if (!Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
     if (Q.workers_nsdap >= Q.workers_nsdap_pre + 2) {
         if (Q.workers_nsdap_normalized >= 5) {
-            Q.workers_nsdap -= 2/12;
+            Q.workers_nsdap -= 4/12;
         }
         if (Q.workers_nsdap_normalized >= 10) {
-            Q.workers_nsdap -= 2/12;
+            Q.workers_nsdap -= 4/12;
         }
         if (Q.workers_nsdap_normalized >= 15) {
-            Q.workers_nsdap -= 2/12;
+            Q.workers_nsdap -= 4/12;
         }
     }
     if (Q.new_middle_nsdap >= Q.new_middle_nsdap_pre + 3) {
         if (Q.new_middle_nsdap_normalized >= 40) {
-            Q.new_middle_nsdap -= 6/12;
+            Q.new_middle_nsdap -= 1;
         }
         if (Q.new_middle_nsdap_normalized >= 50) {
-            Q.new_middle_nsdap -= 6/12;
+            Q.new_middle_nsdap -= 1;
         }
         if (Q.new_middle_nsdap_normalized >= 60) {
-            Q.new_middle_nsdap -= 6/12;
+            Q.new_middle_nsdap -= 1;
         }
         if (Q.new_middle_nsdap_normalized >= 75) {
-            Q.new_middle_nsdap -= 10/12;
+            Q.new_middle_nsdap -= 2;
         }
     }
     if (Q.old_middle_nsdap >= Q.old_middle_nsdap_pre + 3) {
         if (Q.old_middle_nsdap_normalized >= 40) {
-            Q.old_middle_nsdap -= 6/12;
+            Q.old_middle_nsdap -= 1;
         }
         if (Q.old_middle_nsdap_normalized >= 50) {
-            Q.old_middle_nsdap -= 6/12;
+            Q.old_middle_nsdap -= 1;
         }
         if (Q.old_middle_nsdap_normalized >= 60) {
-            Q.old_middle_nsdap -= 6/12;
+            Q.old_middle_nsdap -= 1;
         }
         if (Q.old_middle_nsdap_normalized >= 75) {
-            Q.old_middle_nsdap -= 10/12;
+            Q.old_middle_nsdap -= 2;
         }
     }
     if (Q.rural_nsdap >= Q.rural_nsdap_pre + 2) {
         if (Q.rural_nsdap_normalized >= 40) {
-            Q.rural_nsdap -= 6/12;
+            Q.rural_nsdap -= 1;
         }
         if (Q.rural_nsdap_normalized >= 50) {
-            Q.rural_nsdap -= 6/12;
+            Q.rural_nsdap -= 1;
         }
         if (Q.rural_nsdap_normalized >= 60) {
-            Q.rural_nsdap -= 6/12;
+            Q.rural_nsdap -= 1;
         }
         if (Q.rural_nsdap_normalized >= 70) {
-            Q.rural_nsdap -= 10/12;
+            Q.rural_nsdap -= 2;
         }
     }
 }
 
 if (Q.new_middle_nsdap >= 100) {
-    Q.new_middle_nsdap -= 6/12;
+    Q.new_middle_nsdap -= 1;
 }
 if (Q.new_middle_nsdap >= 120) {
-    Q.new_middle_nsdap -= 6/12;
+    Q.new_middle_nsdap -= 1;
 }
 if (Q.new_middle_nsdap >= 130) {
-    Q.new_middle_nsdap -= 6/12;
+    Q.new_middle_nsdap -= 1;
 }
 if (Q.old_middle_nsdap >= 100) {
-    Q.old_middle_nsdap -= 6/12;
+    Q.old_middle_nsdap -= 1;
 }
 if (Q.old_middle_nsdap >= 120) {
-    Q.old_middle_nsdap -= 6/12;
+    Q.old_middle_nsdap -= 1;
 }
 if (Q.old_middle_nsdap >= 130) {
-    Q.old_middle_nsdap -= 6/12;
+    Q.old_middle_nsdap -= 1;
 }
-if (Q.rural_nsdap >= 130) {
-    Q.rural_nsdap -= 6/12;
+if (Q.rural_nsdap >= 100) {
+    Q.rural_nsdap -= 1;
 }
 if (Q.rural_nsdap >= 120) {
-    Q.rural_nsdap -= 6/12;
+    Q.rural_nsdap -= 1;
 }
 if (Q.rural_nsdap >= 130) {
-    Q.rural_nsdap -= 6/12;
+    Q.rural_nsdap -= 1;
 }
 
 if (Q.cvp_formed && Q.nsdap_votes >= 20) {
