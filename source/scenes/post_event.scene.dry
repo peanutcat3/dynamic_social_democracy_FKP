@@ -2412,11 +2412,11 @@ if (Q.bourgeois_negotiations_1930_done && (Q.bourgeois_parliament || Q.liberal_p
     Q.bourgeois_negotiations_1930_aftermath_timer_trigger = 1;
 }
 
-if ((Q.lvp_formed && Q.lvp_timer_2_trigger) || (Q.lvp_formed && Q.lvp_votes < 6) && Q.nsdap_votes >= 16) {
-    Q.new_middle_lvp += 4/12;
-    Q.old_middle_lvp += 4/12;
-    Q.new_middle_nsdap -= 4/12;
-    Q.old_middle_nsdap -= 4/12;
+if ((Q.lvp_formed && Q.lvp_timer_2_trigger) || (Q.lvp_formed && Q.lvp_votes < 8) && Q.nsdap_votes >= 16) {
+    Q.new_middle_lvp += 6/12;
+    Q.old_middle_lvp += 6/12;
+    Q.new_middle_nsdap -= 6/12;
+    Q.old_middle_nsdap -= 6/12;
     Q.rural_lvp += 2/12;
     Q.rural_nsdap -= 2/12;
     Q.catholics_lvp += 2/12;

@@ -232,6 +232,7 @@ if (!Q.treviranus_unlock && !Q.adenauer_unlock && !Q.gereke_unlock && !Q.lambach
 
 
 !}
+on-departure: old_middle_z = 30 if old_middle_z < 30; rural_z = 30 if rural_z < 30
 max-visits: 1
 tags: event
 face-image: img/cvp.jpg
