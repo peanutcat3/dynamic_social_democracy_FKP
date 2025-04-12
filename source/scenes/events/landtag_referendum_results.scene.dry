@@ -65,12 +65,12 @@ if (Q.landtag_ref_votes >= 35 && Q.landtag_ref_votes < 42) {
     Q.workers_spd -= 2;
     Q.workers_nsdap += 2;
     if (Q.landtag_ref_kpd) Q.workers_kpd += 2;
-    Q.new_middle_spd -= 3;
-    Q.new_middle_nsdap += 3;
-    Q.old_middle_spd -= 3;
-    Q.old_middle_nsdap += 3;
-    Q.unemployed_spd -= 3;
-    Q.unemployed_nsdap += 3;
+    Q.new_middle_spd -= 2;
+    Q.new_middle_nsdap += 2;
+    Q.old_middle_spd -= 2;
+    Q.old_middle_nsdap += 2;
+    Q.unemployed_spd -= 2;
+    Q.unemployed_nsdap += 2;
     if (Q.landtag_ref_kpd) Q.unemployed_kpd += 3;
 }
 

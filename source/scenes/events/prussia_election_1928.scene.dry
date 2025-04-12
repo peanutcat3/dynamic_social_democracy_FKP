@@ -28,6 +28,17 @@ face-image: img/prussia.png
 The Prussian Landtag elections are to be held now.
 
 - @new_elections: May we do our best...
+- @defensive_democracy
+
+@defensive_democracy
+title: Wait, can we alter the rules so Braun stays in power?
+subtitle: Require an absolute majority of the Landtag to be needed to elect a successor to Braun.
+view-if: nsdap_votes + kpd_votes + dnf_votes + dnvp_votes + kvp_votes >= 50
+on-arrival: constructive_prussia = 1
+
+Words.
+
+- @new_elections: May we do our best...
 
 @new_elections
 on-arrival: {!  
