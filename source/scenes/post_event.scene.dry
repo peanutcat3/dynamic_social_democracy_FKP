@@ -711,7 +711,7 @@ if (Q.month_actions >= 1) {
             Q.old_middle_nsdap += 4/12;
             Q.workers_nsdap += 2/12;
             Q.sh_militancy += 0.05/12;
-            Q.sa_militancy += 0.05/12;
+            Q.sa_militancy += 0.1/12;
             if (Q.dnf_formed) {
                 Q.rural_dnf += 3/12;
                 Q.old_middle_dnf += 4/12;
@@ -1307,10 +1307,10 @@ if (Q.reformist_plan_time >= Q.time) {
     }
 }
 
-Q.max_workers_para = 15;
-Q.max_unemployed_para = 15; 
-Q.max_new_middle_para = 8;
-Q.max_old_middle_para = 6;
+Q.max_workers_para = 10;
+Q.max_unemployed_para = 10; 
+Q.max_new_middle_para = 5;
+Q.max_old_middle_para = 3;
 
 if (Q.year >= 1930 && !Q.nsdap_check) {
     Q.workers_nsdap_para = 0;
