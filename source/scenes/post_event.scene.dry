@@ -479,7 +479,7 @@ if (Q.month_actions >= 1) {
         Q.unemployed_spd += 2/12;
     }
     // soft cap for nsdap workers
-    if (Q.workers_nsdap_normalized >= (Q.workers_kpd_normalized - 5) && Q.unemployed >= 15) {
+    if (Q.workers_nsdap_normalized >= (Q.workers_kpd_normalized - 10) && Q.unemployed >= 15) {
         Q.workers_nsdap -= 4/12;
     }
 
@@ -693,7 +693,7 @@ if (Q.month_actions >= 1) {
         Q.new_middle_z += 2/12;
         Q.rural_z += 2/12;
         Q.catholics_z += 2/12;
-        Q.catholics_nsdap += 2/12;
+        Q.catholics_nsdap += 1/12;
         Q.catholics_other -= 3/12;
         Q.rural_other -= 1/12;
         Q.new_middle_other -= 2/12;
@@ -807,7 +807,6 @@ if (Q.month_actions >= 1) {
                 Q.old_middle_other -= 2/12;
                 Q.new_middle_nsdap += 2/12;
                 Q.old_middle_nsdap += 2/12;
-                Q.catholics_nsdap += 2/12;
                 if (Q.cvp_formed) {
                     Q.new_middle_z -= 3/12;
                     Q.old_middle_z -= 3/12;
@@ -3352,7 +3351,7 @@ if (Q.cvp_formed) {
 
 Q.industrial_total_backing = Q.industrial_ddp_backing + Q.industrial_dvp_backing + Q.industrial_lvp_backing + Q.industrial_dnvp_backing + Q.industrial_kvp_backing + Q.industrial_dnf_backing + Q.industrial_z_backing;
 
-if (Q.industrial_total_backing < 6 && Q.nsdap_r >= 17) {
+if (Q.industrial_total_backing < 6 && Q.nsdap_votes >= 17) {
     Q.nsdap_industrial_backing = 1;
 } else {
     Q.nsdap_industrial_backing = 0;
