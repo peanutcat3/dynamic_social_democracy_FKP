@@ -502,11 +502,17 @@ if (Q.hindenburg_support) {
 }
 if (Q.rlb_nazi) {
     Q.rlb_hindenburg = 0;
-    Q.rural_nsdap += Q.rural_other*0.3;
-    Q.rural_other *= 0.8;
+    Q.rural_nsdap += Q.rural_other*0.1;
+    Q.rural_other *= 0.9;
     Q.rural_dnvp *= 0.9;
 } else if (!Q.rlb_nazi) {
     Q.rlb_hindenburg = 1;
+    Q.rural_other += 4;
+    if (Q.dnvp_ideology == "Moderate") {
+        Q.rural_dnvp += 2;
+    } else {
+        Q.rural_kvp += 2;
+    }
 }
 !}
 
@@ -763,9 +769,15 @@ if (Q.rlb_nazi) {
     Q.rlb_hindenburg = 0;
     Q.rural_nsdap += Q.rural_other*0.1;
     Q.rural_other *= 0.9;
-    Q.rural_dnvp *= 0.95;
+    Q.rural_dnvp *= 0.9;
 } else if (!Q.rlb_nazi) {
     Q.rlb_hindenburg = 1;
+    Q.rural_other += 4;
+    if (Q.dnvp_ideology == "Moderate") {
+        Q.rural_dnvp += 2;
+    } else {
+        Q.rural_kvp += 2;
+    }
 }
 !}
 

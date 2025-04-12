@@ -45,12 +45,12 @@ Q.vrp_presidential_votes = 0;
 // initial phase:
 Q.nsdap_presidential_votes += Q.nsdap_normalized;
 
-Q.hindenburg_votes += Q.other_normalized;
+Q.hindenburg_votes += Q.other_normalized / 2;
 if (Q.kvp_formed) Q.hindenburg_votes += Q.kvp_normalized;
 Q.hindenburg_votes += (Q.dnvp_normalized*0.2);
 
 Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.8);
-Q.dnvp_presidential_votes += ((Q.other_normalized*((100-Q.pro_republic)/100))*0.5);
+Q.dnvp_presidential_votes += Q.other_normalized / 2;
 
 if (Q.spd_campaign) {
     Q.spd_president_votes += Q.spd_normalized;
@@ -218,11 +218,12 @@ Q.thalmann_votes_rnd_1 = Q.thalmann_votes.toFixed(1);
 Q.dnvp_presidential_votes_rnd_1 = Q.dnvp_presidential_votes.toFixed(1);
 Q.vrp_presidential_votes_rnd_1 = Q.vrp_presidential_votes.toFixed(1);
 
-if (Q.thalmann_votes_disp < 14) {
+if (Q.thalmann_votes_disp < 15) {
     Q.workers_kpd *= 0.85;
     Q.unemployed_kpd *= 0.85;
     Q.unemployed_nsdap += 5;
     Q.workers_nsdap += 3;
+    Q.thalmann_joever = 1;
 }
 if (Q.hindenburg_votes_disp >= 45 && Q.nsdap_presidential_votes_disp < 36 && Q.spd_president_votes_disp < 36) {
     Q.new_middle_nsdap += 4;
@@ -259,11 +260,13 @@ go-to: round2_menu
 
 There is no majority in this round. In the second round, any candidate who wins a plurality will win overall. What should we do?
 
-[? if dnvp_candidate_1932 == "Duesterberg": Due to [+ dnvp_candidate_1932 +]'s poor performance, he has withdrawn from the race and personally endorsed Hindenburg—despite widespread dislike of him among Duesterberg's supporters. Meanwhile, Hugenberg has urged his followers to abstain from the second round, drawing intense criticism from within his own party. How this will impact the runoff remains uncertain, but [+ nsdap_candidate_1932 +] is likely to capture a sizable share of these voters. ?]
+[? if dnvp_candidate_1932 == "Duesterberg": Due to [+ dnvp_candidate_1932 +]'s poor performance, he has withdrawn from the race and personally endorsed Hindenburg—despite widespread dislike of him among his supporters. Meanwhile, Hugenberg has urged his followers to abstain from the second round, drawing intense criticism from within his own party. How this will impact the runoff remains uncertain, but [+ nsdap_candidate_1932 +] is likely to capture a sizable share of these voters. ?]
 
 [? if hindenburg_confidence: Hindenburg has narrowly missed securing the required majority for a first-round victory, making his success in the runoff highly probable. With state and local elections just a month away, the industrialists and parties backing him have redirected their remaining campaign funds to those contests, confident that his victory is all but assured. This, however, presents a valuable opportunity for [+ nsdap_candidate_1932 +] to gain support among [+ dnvp_candidate_1932 +] voters and leverage their dominance in the presidential campaign to coincide with their local efforts. ?]
 
-[? if thalmann_votes_disp < 14: The <span style="color: #700000;">**Communists**</span> have suffered a demoralizing defeat, leaving many of their supporters disillusioned about the prospects of revolution—a future they once saw as inevitable given Germany’s current state. In the second round, many will abstain from voting altogether, while others may even cast their ballots for [+ nsdap_candidate_1932 +] in an effort to make their vote count. ?]
+[? if thalmann_votes_disp < 15: The <span style="color: #700000;">**Communists**</span> have suffered a demoralizing defeat, leaving many of their supporters disillusioned about the prospects of revolution—a future they once saw as inevitable given Germany’s current state. In the second round, many will abstain from voting altogether, while others may even cast their ballots for [+ nsdap_candidate_1932 +] in an effort to make their vote count. ?]
+
+[? if dnvp_candidate_1932: There had been discussions of Crown Prince Wilhelm running as a Harzburg unity candidate, a prospect the <span style="color: #7A3C00;">**NSDAP**</span> showed interest in supporting. However, the <span style="color: #3E88B3;">**DNVP**</span> and the <span style="color: #3E88B3;">**Stahlhelm**</span> rejected the idea due to their hostility toward an accommodation with the <span style="color: #7A3C00;">**NSDAP**</span>. The nail in the coffin was that his own father threatened to disinherit him if he stood for the "<span style="color: #c00000;">red</span> <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">ican</span> presidential seat of an Ebert". He has since endorsed [+ nsdap_candidate_1932 +]. ?]
 
 [? if spd_plurality or thalmann_plurality : In order to consolidate the vote for the <span style="color: #808080;">right</span>, and to prevent a <span style="color: #c00000;">socialist</span> from becoming president, <span style="color: #7A3C00;">[+ nsdap_candidate_1932 +]</span> is no longer running in the second round, and has switched his endorsement to <span style="color: #808080;">Hindenburg</span>. ?]
 
@@ -275,7 +278,7 @@ There is no majority in this round. In the second round, any candidate who wins 
 - @round2_convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to switch their support to us.
 - @round2_hindenburg: Switch our support to Hindenburg.
 - @round2_thalmann: Switch our support to <span style="color: #700000;">**Thälmann**</span> of the <span style="color: #700000;">**KPD**</span>.
-- @round2_organizational_endorsement: 
+- @round2_organizational_endorsement
 - @round2_vote: We've done enough, second round voting begins next month.
 
 @round2_organizational_endorsement
@@ -284,14 +287,41 @@ subtitle: With [+ dnvp_candidate_1932 +] out of the running, it's a choice betwe
 on-arrival: {!
 if (Q.rlb_nazi) {
     Q.rlb_hindenburg = 0;
-    Q.rural_nsdap += Q.rural_other*0.1;
     Q.rural_other *= 0.9;
-    Q.rural_dnvp *= 0.95;
 } else if (!Q.rlb_nazi) {
     Q.rlb_hindenburg = 1;
+    Q.rural_other += 4;
+    if (Q.dnvp_ideology == "Moderate") {
+        Q.rural_dnvp += 2;
+    } else {
+        Q.rural_kvp += 2;
+    }
 }
+
+Q.new_middle_nsdap += 2;
+Q.new_middle_other -= 2;
+Q.old_middle_nsdap += 4;
+Q.old_middle_dnvp -= 4;
+
 !}
 
+National Rural League (RLB) - [? if rlb_hindenburg: <span style="color: #808080;">**[+ reactionary_candidate_1932_disp +]**</span> ?][? if not rlb_hindenburg: <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span> ?]
+
+Stahlhelm - Abstention
+
+German National Association of Commercial Employees (DHV) - <span style="color: #808080;">**[+ reactionary_candidate_1932_disp +]**</span>
+
+Pan-German League (ADV) - <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span>
+
+United Patriotic Leagues (VVVD) - <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span>
+
+Kyffhäuser League - <span style="color: #808080;">**[+ reactionary_candidate_1932_disp +]**</span>
+
+Many <span style="color: #3E88B3;">**Stahlhelm**</span> members defied orders by voting for [+ nsdap_candidate_1932 +], while others remain firmly opposed to formal cooperation with the <span style="color: #3E88B3;">**DNVP**</span>. The disappointing performance of [+ dnvp_candidate_1932 +] has led the <span style="color: #3E88B3;">**Stahlhelm**</span> to abandon its alliance with the <span style="color: #3E88B3;">**DNVP**</span> and return to a stance of non-partisanship, blaming the party's lackluster support for their candidate for the poor showing.
+
+The shift of many right-wing organizations toward [+ nsdap_candidate_1932 +]’s candidacy will cripple the parties caught between the <span style="color: #000000;">Center</span> and the extremes, polarizing the electorate between the <span style="color: #7A3C00;">Nazis</span> and the <span style="color: #9B0000;">Marxists</span>—a strategy once championed by Hugenberg, now turned against him by his former ally.
+
+[? if not rlb_hindenburg: The RLB’s decision to endorse <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span> rather than abstain has triggered a sharp break with the organization’s moderate affiliates. Their Württemberg branch, the <span style="color: #006400;">**WBWB**</span>, has been especially vocal, campaigning hard against the endorsement and in favor of [+ reactionary_candidate_1932 +]. Neither this backlash nor Hugenberg’s push for abstention has convinced the RLB to reverse course, and millions of rural voters are now expected to turn out for [+ nsdap_candidate_1932 +] in the next election. ?]
 
 @round2_convince_z
 view-if: braun_campaign > 0 and z_support_spd != 1 
@@ -498,7 +528,7 @@ We have switched our support to Hindenburg. [? if bruning_time: Hindenburg is re
 @round2_vote
 on-arrival: presidential_election_r2_trigger = 1
 
-Hopefully Germany makes the right choice.
+Hopefully Germany makes the right choice. [? if hindenburg_confidence: With Hindenburg’s campaign losing strength now that his victory seems assured, [+ nsdap_candidate_1932 +]’s effort remains in full swing. The lack of activity from Hindenburg’s camp is likely to fuel a resurgence for the <span style="color: #7A3C00;">Nazis</span>. ?]
 
 @hindenburg_wins
 on-arrival: president = "Hindenburg"

@@ -127,13 +127,18 @@ if (Q.spd_campaign) {
     Q.hindenburg_votes += Q.dvp_normalized;
     Q.hindenburg_votes += Q.lvp_normalized;
 } else {
-    if (!Q.hindenburg_democracy_bonus) Q.hindenburg_votes += Q.spd_normalized*0.95;
-    if (Q.hindenburg_democracy_bonus) Q.hindenburg_votes += Q.spd_normalized;
+    if (!Q.hindenburg_democracy_bonus && !Q.spd_abstain_1932) Q.hindenburg_votes += Q.spd_normalized*0.9;
+    if (Q.hindenburg_democracy_bonus && !Q.spd_abstain_1932) Q.hindenburg_votes += Q.spd_normalized;
     Q.hindenburg_votes += Q.z_normalized;
     Q.hindenburg_votes += Q.ddp_normalized;
     Q.hindenburg_votes += Q.dvp_normalized;
     Q.hindenburg_votes += Q.lvp_normalized;
     Q.thalmann_votes += Q.kpd_normalized;
+    if (Q.thalmann_joever) Q.thalmann_votes -= Q.kpd_normalized*0.1;
+    if (!Q.hindenburg_democracy_bonus) Q.thalmann_votes += Q.spd_normalized*0.05;
+    if (Q.spd_abstain_1932) Q.thalmann_votes += Q.spd_normalized*0.3;
+    if (Q.spd_abstain_1932) Q.hindenburg_votes += Q.spd_normalized*0.5;
+}
 }
 if (Q.hitler_support_hindenburg) {
     Q.nsdap_presidential_votes -= Q.nsdap_normalized;
