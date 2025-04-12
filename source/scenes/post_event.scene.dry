@@ -783,8 +783,8 @@ if (Q.month_actions >= 1) {
             Q.catholics_other -= 2/12;
             Q.old_middle_dvp -= 5/12;
             Q.new_middle_dvp -= 5/12;
-            Q.new_middle_ddp -= 1/12;
-            Q.old_middle_ddp -= 1/12;
+            Q.new_middle_ddp -= 2/12;
+            Q.old_middle_ddp -= 2/12;
             Q.rural_dvp -= 4/12;
             Q.old_middle_lvp -= 6/12;
             Q.new_middle_lvp -= 6/12;
@@ -3031,7 +3031,7 @@ if (Q.bruning_time > 1) {
 }
 
 if (!Q.nazi_peak_triggered) {
-    Q.nazi_peak_base = 24;
+    Q.nazi_peak_base = 25;
     Q.nazi_peak = Q.nazi_peak_base;
     Q.nazi_peak += (Q.unemployed / 3);
     Q.nazi_peak += (100 - Q.pro_republic) / 10;
@@ -3180,41 +3180,41 @@ if (!Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
     }
     if (Q.new_middle_nsdap >= Q.new_middle_nsdap_pre + 3) {
         if (Q.new_middle_nsdap_normalized >= 40) {
-            Q.new_middle_nsdap -= 2;
+            Q.new_middle_nsdap -= 1;
         }
         if (Q.new_middle_nsdap_normalized >= 50) {
-            Q.new_middle_nsdap -= 2;
+            Q.new_middle_nsdap -= 1;
         }
         if (Q.new_middle_nsdap_normalized >= 60) {
-            Q.new_middle_nsdap -= 2;
+            Q.new_middle_nsdap -= 1;
         }
-        if (Q.new_middle_nsdap_normalized >= 75) {
+        if (Q.new_middle_nsdap_normalized >= 70) {
             Q.new_middle_nsdap -= 3;
         }
     }
     if (Q.old_middle_nsdap >= Q.old_middle_nsdap_pre + 3) {
         if (Q.old_middle_nsdap_normalized >= 40) {
-            Q.old_middle_nsdap -= 2;
+            Q.old_middle_nsdap -= 1;
         }
         if (Q.old_middle_nsdap_normalized >= 50) {
-            Q.old_middle_nsdap -= 2;
+            Q.old_middle_nsdap -= 1;
         }
         if (Q.old_middle_nsdap_normalized >= 60) {
-            Q.old_middle_nsdap -= 2;
+            Q.old_middle_nsdap -= 1;
         }
-        if (Q.old_middle_nsdap_normalized >= 75) {
+        if (Q.old_middle_nsdap_normalized >= 70) {
             Q.old_middle_nsdap -= 3;
         }
     }
     if (Q.rural_nsdap >= Q.rural_nsdap_pre + 2) {
         if (Q.rural_nsdap_normalized >= 40) {
-            Q.rural_nsdap -= 2;
+            Q.rural_nsdap -= 1;
         }
         if (Q.rural_nsdap_normalized >= 50) {
-            Q.rural_nsdap -= 2;
+            Q.rural_nsdap -= 1;
         }
         if (Q.rural_nsdap_normalized >= 60) {
-            Q.rural_nsdap -= 2;
+            Q.rural_nsdap -= 1;
         }
         if (Q.rural_nsdap_normalized >= 70) {
             Q.rural_nsdap -= 3;
@@ -3222,13 +3222,13 @@ if (!Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
     }
 }
 
-if (Q.new_middle_nsdap > 100) {
+if (Q.new_middle_nsdap > 110) {
     Q.new_middle_nsdap -= 2;
 }
-if (Q.old_middle_nsdap > 100) {
+if (Q.old_middle_nsdap > 110) {
     Q.old_middle_nsdap -= 2;
 }
-if (Q.rural_nsdap > 100) {
+if (Q.rural_nsdap > 110) {
     Q.rural_nsdap -= 2;
 }
 
