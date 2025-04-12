@@ -3233,6 +3233,9 @@ if (!Q.nazi_peak_triggered && Q.nsdap_votes >= 20) {
 if (Q.new_middle_nsdap >= 100) {
     Q.new_middle_nsdap -= 1;
 }
+if (Q.new_middle_nsdap >= 110) {
+    Q.new_middle_nsdap -= 1;
+}
 if (Q.new_middle_nsdap >= 120) {
     Q.new_middle_nsdap -= 1;
 }
@@ -3242,6 +3245,9 @@ if (Q.new_middle_nsdap >= 130) {
 if (Q.old_middle_nsdap >= 100) {
     Q.old_middle_nsdap -= 1;
 }
+if (Q.old_middle_nsdap >= 110) {
+    Q.old_middle_nsdap -= 1;
+}
 if (Q.old_middle_nsdap >= 120) {
     Q.old_middle_nsdap -= 1;
 }
@@ -3249,6 +3255,9 @@ if (Q.old_middle_nsdap >= 130) {
     Q.old_middle_nsdap -= 1;
 }
 if (Q.rural_nsdap >= 100) {
+    Q.rural_nsdap -= 1;
+}
+if (Q.rural_nsdap >= 110) {
     Q.rural_nsdap -= 1;
 }
 if (Q.rural_nsdap >= 120) {
