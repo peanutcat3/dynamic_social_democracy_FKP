@@ -44,9 +44,9 @@ Even so, this outcome has enraged the party’s right wing. Many of its Protesta
 
 @kaiser_campaign
 view-if: z_relation < 80
-choose-if: z_relation >= 70 and pro_republic >= 80 and resources >= 3
+choose-if: z_relation >= 70 and pro_republic >= 80 and resources >= 3 and in_weimar_coalition and in_weimar_coalition_prussia
 subtitle: -3 resources.
-unavailable-subtitle: [? if z_relation < 70 : Our relations are not high enough. ?] [? if pro_republic < 80 : The party isn't left-wing enough for someone like him. ?] [? if resources < 3 : We do not have enough resources. ?]
+unavailable-subtitle: [? if z_relation < 70 : Our relations are not high enough. ?] [? if pro_republic < 80 : The party isn't left-wing enough for someone like him. ?] [? if not in_weimar_coalition : Our cooperation must be further strengthened in a federal <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. ?] [? if not in_weimar_coalition_prussia : Our cooperation must be further strengthened in a Prussian <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. ?] [? if resources < 3 : We do not have enough resources. ?]
 on-arrival: resources -= 3; z_relation += 5; z_ideology = "Left"; z_leader = "Kaiser"; liberal_cooperation += 2; workers_z += 4; unemployed_z += 4; workers_nsdap -= 2; unemployed_nsdap -= 4; rural_z -= 4; old_middle_z -= 6; rural_dnvp += 4 if dnvp_ideology == "Moderate"; old_middle_dnvp += 6 if dnvp_ideology == "Moderate"; rural_kvp += 4 if kvp_formed; old_middle_kvp += 6 if kvp_formed; rural_other += 4 if not kvp_formed and dnvp_ideology == "Radical"; old_middle_other += 6 if not kvp_formed and dnvp_ideology == "Radical"; catholics_z += 4; catholics_spd -= 4; z_party_name = "CVP"
 face-image: img/portraits/kaiser.jpg
 
