@@ -307,17 +307,17 @@ Q.old_middle_dnvp -= 4;
 
 !}
 
-National Rural League (RLB) - [? if rlb_hindenburg: <span style="color: #808080;">**[+ reactionary_candidate_1932_disp +]**</span> ?][? if not rlb_hindenburg: <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span> ?]
+National Rural League (RLB) - [? if rlb_hindenburg: <span style="color: #808080;">**[+ reactionary_candidate_1932 +]**</span> ?][? if not rlb_hindenburg: <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span> ?]
 
 Stahlhelm - Abstention
 
-German National Association of Commercial Employees (DHV) - <span style="color: #808080;">**[+ reactionary_candidate_1932_disp +]**</span>
+German National Association of Commercial Employees (DHV) - <span style="color: #808080;">**[+ reactionary_candidate_1932 +]**</span>
 
 Pan-German League (ADV) - <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span>
 
 United Patriotic Leagues (VVVD) - <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span>
 
-Kyffhäuser League - <span style="color: #808080;">**[+ reactionary_candidate_1932_disp +]**</span>
+Kyffhäuser League - <span style="color: #808080;">**[+ reactionary_candidate_1932 +]**</span>
 
 Many <span style="color: #3E88B3;">**Stahlhelm**</span> members defied orders by voting for [+ nsdap_candidate_1932 +], while others remain firmly opposed to formal cooperation with the <span style="color: #3E88B3;">**DNVP**</span>. The disappointing performance of [+ dnvp_candidate_1932 +] has led the <span style="color: #3E88B3;">**Stahlhelm**</span> to abandon its alliance with the <span style="color: #3E88B3;">**DNVP**</span> and return to a stance of non-partisanship, blaming the party's lackluster support for their candidate for the poor showing.
 
