@@ -282,7 +282,7 @@ if (Q.hindenburg_support) {
 if (Q.rlb_nazi) {
     Q.rlb_hindenburg = 0;
     Q.rural_nsdap += Q.rural_other*0.3;
-    Q.rural_other *= 0.7;
+    Q.rural_other *= 0.8;
     Q.rural_dnvp *= 0.9;
 } else if (!Q.rlb_nazi) {
     Q.rlb_hindenburg = 1;
