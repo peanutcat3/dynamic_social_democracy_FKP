@@ -190,12 +190,12 @@ Q.rural_spd -= 2;
 // campaign activities...
 
 if (Q.nsdap_candidate_1932 == "Hitler") {
-    Q.workers_nsdap += 4;
-    Q.new_middle_nsdap += 6;
-    Q.old_middle_nsdap += 6;
+    Q.workers_nsdap += 2;
+    Q.new_middle_nsdap += 4;
+    Q.old_middle_nsdap += 4;
     Q.catholics_nsdap += 2;
-    Q.rural_nsdap += 6;
-    Q.unemployed_nsdap += 8;
+    Q.rural_nsdap += 4;
+    Q.unemployed_nsdap += 6;
     Q.new_middle_dnvp -= 3;
     Q.old_middle_dnvp -= 3; 
     Q.rural_other -= 3; 

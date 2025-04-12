@@ -693,7 +693,7 @@ if (Q.month_actions >= 1) {
         Q.new_middle_z += 2/12;
         Q.rural_z += 2/12;
         Q.catholics_z += 2/12;
-        Q.catholics_nsdap += 3/12;
+        Q.catholics_nsdap += 2/12;
         Q.catholics_other -= 3/12;
         Q.rural_other -= 1/12;
         Q.new_middle_other -= 2/12;
@@ -830,7 +830,7 @@ if (Q.month_actions >= 1) {
             Q.sa_militancy += 0.1/12;
             Q.rfb_strength += 25/12;
             Q.catholics_nsdap += 2/12;
-            Q.catholics_other -= 2/12;
+            Q.catholics_other -= 3/12;
             if (Q.kvp_formed) {
                 Q.rural_kvp -= 3/12;
                 Q.rural_dnvp += 3/12;
@@ -909,7 +909,7 @@ if (Q.month_actions >= 1) {
             Q.old_middle_dnf += 4/12;
             Q.new_middle_dnf += 2/12;
             }
-            Q.catholics_nsdap += 3/12;
+            Q.catholics_nsdap += 2/12;
             Q.catholics_other -= 3/12;
             Q.new_middle_other -= 2/12;
             Q.old_middle_other -= 2/12;

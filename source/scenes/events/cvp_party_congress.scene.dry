@@ -118,9 +118,9 @@ if (Q.rural_z_normalized) {
     Q.agrarian_right_points += Q.rural_z_normalized * ((100 - Q.pro_republic) / 200);
 }
 
-if (Q.catholic_z_normalized) {
-    Q.catholic_center_points += Q.catholic_z_normalized * (Q.pro_republic / 400);
-    Q.conservative_right_points += Q.catholic_z_normalized * ((100 - Q.pro_republic) / 400);
+if (Q.catholics_z_normalized) {
+    Q.catholic_center_points += Q.catholics_z_normalized * (Q.pro_republic / 400);
+    Q.conservative_right_points += Q.catholics_z_normalized * ((100 - Q.pro_republic) / 400);
 }
 
 if (Q.z_relation >= 20) {
