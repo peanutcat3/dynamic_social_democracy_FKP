@@ -509,8 +509,8 @@ if (!document.getElementById('news_tab')) {
         }
     });
 const boxes = document.querySelectorAll('.scrollable-box');
-if (boxes.length > 1) {
-    boxes[0].remove();
+if (boxes.length >= 2) {
+    boxes[1].remove(); // Remove the second one (index 1)
 }
 }
 !}
@@ -1580,7 +1580,7 @@ Q.last_time_updated = Q.time;
 if (Q.week) Q.last_week_updated = Q.week;
 !}
 on-display: {!
-if (!document.getElementById('news_tab')) {
+if (!document.getElementById(   'news_tab')) {
     var button = document.createElement('button');
     button.style.backgroundColor = '#dddddd';
     button.className = 'tab_button';
@@ -1610,8 +1610,8 @@ if (!document.getElementById('news_tab')) {
     });
 }
 const boxes = document.querySelectorAll('.scrollable-box');
-if (boxes.length > 1) {
-    boxes[0].remove();
+if (boxes.length >= 2) {
+    boxes[1].remove(); // Remove the second one (index 1)
 }
 !}
 max-cards: 3
