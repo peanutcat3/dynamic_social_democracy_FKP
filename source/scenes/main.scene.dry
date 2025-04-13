@@ -508,6 +508,10 @@ if (!document.getElementById('news_tab')) {
             p.remove();
         }
     });
+const boxes = document.querySelectorAll('.scrollable-box');
+if (boxes.length > 1) {
+    boxes[0].remove();
+}
 }
 !}
 max-cards: 3
@@ -1604,6 +1608,10 @@ if (!document.getElementById('news_tab')) {
             p.remove();
         }
     });
+}
+const boxes = document.querySelectorAll('.scrollable-box');
+if (boxes.length > 1) {
+    boxes[0].remove();
 }
 !}
 max-cards: 3
