@@ -18,6 +18,7 @@ on-display: {!
     contentDiv.appendChild(cardEl);
 !}
 on-arrival: bruning_skibidi_time = time + 3
+set-bg: img/map_2.jpg
 
 = Public Works Mobilization Act
 

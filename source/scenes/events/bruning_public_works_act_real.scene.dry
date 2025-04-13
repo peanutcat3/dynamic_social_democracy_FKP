@@ -17,6 +17,7 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
+set-bg: img/map_2.jpg
 
 = Expansion of Public Works
 
