@@ -306,6 +306,7 @@ Q.old_middle_nsdap += 4;
 Q.old_middle_dnvp -= 4;
 
 !}
+go-to: round2_menu
 
 National Rural League (RLB) - [? if rlb_hindenburg: <span style="color: #808080;">**[+ reactionary_candidate_1932 +]**</span> ?][? if not rlb_hindenburg: <span style="color: #7A3C00;">**[+ nsdap_candidate_1932 +]**</span> ?]
 
