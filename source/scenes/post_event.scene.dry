@@ -1935,10 +1935,8 @@ if (Q.ddp_factionless && Q.ddp_r + Q.wp_r < 3.6 && !Q.bourgeois_parliament_ddp &
 
 // total middle class death cuz bruning cut salaries n stuff
 if (Q.total_bruning_time >= 12 && !Q.in_center_right_coalition && !Q.in_right_coalition && !Q.bourgeois_parliament && Q.year >= 1930 && !Q.bruning_austerity_seen) {
-    Q.new_middle_nsdap += Q.new_middle_ddp*0.2
-    Q.new_middle_nsdap += Q.new_middle_dvp*0.2
-    Q.new_middle_ddp *= 0.8;
-    Q.new_middle_dvp *= 0.8;
+    Q.new_middle_ddp *= 0.75;
+    Q.new_middle_dvp *= 0.75;
     Q.bruning_austerity_seen = 1;
     Q.pro_republic -= Q.unemployed / 5;
 } else if (Q.total_bruning_time >= 12 && (Q.in_center_right_coalition || Q.in_right_coalition || Q.bourgeois_parliament) && Q.year >= 1930 && !Q.bruning_austerity_seen) {
@@ -1946,7 +1944,7 @@ if (Q.total_bruning_time >= 12 && !Q.in_center_right_coalition && !Q.in_right_co
     Q.new_middle_dvp *= 1.1;
     Q.new_middle_nsdap -= Q.new_middle_ddp*0.1;
     Q.new_middle_nsdap -= Q.new_middle_dvp*0.1;
-    Q.unemployed -= 0.5;
+    Q.unemployed -= 1;
     Q.economic_growth += 0.5;
     Q.bruning_austerity_seen = 1;
 }
