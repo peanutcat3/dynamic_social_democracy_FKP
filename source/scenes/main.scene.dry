@@ -507,6 +507,7 @@ document.querySelectorAll('p').forEach(p => {
 });
 !}
 max-cards: 3
+go-to: bg if rubicon
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
@@ -1598,6 +1599,7 @@ document.querySelectorAll('p').forEach(p => {
 });
 !}
 max-cards: 4
+go-to: bg if rubicon
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
@@ -2148,6 +2150,12 @@ max-cards: 4
 
 {!<p class="other">!}[? if year = 1932 and month = 5 : The Austrian government has resigned due to the significant gains of the Austrian <span style="color: #7A3C00;">**NSDAP**</span> in recent local elections, leading to Engelbert Dollfuß being appointed chancellor by the President. Dollfuß now rules in a coalition with the <span style="color: #ABDDA4;">Heimwehr</span>. ?]{!</p>!}
 
+{!<p class="other">!}[? if papen_time == 1 and z_leader == "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center Party</span> has announced his intention to resign as party chairman, citing ill health and proposing Heinrich Brüning as his successor. However, he has been persuaded to remain in office—on the condition that his deputy chairman, Joseph Joos, and Brüning handle most of the party’s day-to-day affairs. Kaas has since departed for an extended convalescent leave in South Tyrol. ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 2: Joseph Goebbels, the <span style="color: #7A3C00;">Nazi</span>'s propaganda mastermind has concluded after a few days of Papen's chancellorship, that the party must break with it in order to maintain popularity. The party can't support a government irreconcilably opposed by up to 90% of the German people. ?]{!</p>!}
+
+{!<p class="other">!}[? if year = 1932 and month = 8 : Perhaps the global recovery is finally on the horizon. Many economists now believe the slump has bottomed out, with the Frankfurt stock exchange climbing steadily—share and bond values have risen by over 30% since spring. But this resurgence remains abstract to the millions of unemployed Germans still trapped in poverty. ?]{!</p>!}
+
 {!<p class="other">!}[? if year = 1932 and month = 8 : Austria has obtained a League of Nations loan that is tied to a 20-year ban on Anschluss, but opposition from the <span style="color: #C8102E;">Social Democrats</span> and <span style="color: #0E428E;">Greater German Party</span> has stalled the law, before it finally is passed by a single vote. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 9 : General elections were held in Sweden, resulting in a great victory for Per Albin Hansson and his <span style="color: #D70926;">Social Democrats</span>, who now govern in a minority government. The <span style="color: #D70926;">Swedish Social Democrats</span> have embraced the concept of a 'people's home', a form of reformist socialism aimed at reducing class divides while working in the capitalist framework. Perhaps we should consider following their 'nordic' model? ?]{!</p>!}
@@ -2195,3 +2203,6 @@ card-image: img/portraits/SchmidtRobert.jpg
 is-deck: true
 
 - @economic_policy
+
+@bg
+set-bg: img/street.jpg
