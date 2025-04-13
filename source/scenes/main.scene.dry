@@ -475,7 +475,9 @@ if (Q.total_bruning_time >= 21 && !Q.in_center_right_coalition && !Q.in_right_co
         Q.flavour_59_trigger_shown = 1;
     }
 }
+if (Q.week !== Q.last_week_updated && Q.week) Q.bg_change = 0;
 Q.last_time_updated = Q.time;
+if (Q.week) Q.last_week_updated = Q.week;
 !}
 on-display: {!
 var button = document.createElement('button');
@@ -507,7 +509,7 @@ document.querySelectorAll('p').forEach(p => {
 });
 !}
 max-cards: 3
-go-to: bg if rubicon
+go-to: bg if rubicon and not bg_change
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
@@ -1567,7 +1569,9 @@ if (Q.total_bruning_time >= 21 && !Q.in_center_right_coalition && !Q.in_right_co
         Q.flavour_59_trigger_shown = 1;
     }
 }
+if (Q.week !== Q.last_week_updated && Q.week) Q.bg_change = 0;
 Q.last_time_updated = Q.time;
+if (Q.week) Q.last_week_updated = Q.week;
 !}
 on-display: {!
 var button = document.createElement('button');
@@ -1599,7 +1603,7 @@ document.querySelectorAll('p').forEach(p => {
 });
 !}
 max-cards: 4
-go-to: bg if rubicon
+go-to: bg if rubicon and not bg_change
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
 
@@ -2205,5 +2209,6 @@ is-deck: true
 - @economic_policy
 
 @bg
+on-arrival: bg_change = 1
 set-bg: img/street.jpg
 go-to: main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0
