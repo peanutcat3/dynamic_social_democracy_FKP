@@ -686,7 +686,7 @@ var wurttemberg_adjustment_factors = {
     spd: 0.8,
     sapd: 0.0,
     kpd: 0.7,
-    ddp: 4.0,
+    ddp: 3.0,
     lvp: 2.2,
     z: 1.45,
     dvp: 1.0,

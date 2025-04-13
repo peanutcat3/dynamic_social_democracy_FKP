@@ -13,7 +13,7 @@ Q.dvp_defect = 1;
 Q.bruning_coalition = Q.neo_weimar_coalition;
 Q.bruning_coalition_loss += (Q.dvp_r*0.7);
 Q.bruning_coalition = Math.round((Q.bruning_coalition - Q.bruning_coalition_loss) * 10) / 10;
-Q.new_middle_dvp -= 1;
+Q.new_middle_dvp -= 2;
 Q.new_middle_ddp -= 1;
 !}
 tags: event
