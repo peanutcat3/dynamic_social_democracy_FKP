@@ -508,10 +508,10 @@ if (!document.getElementById('news_tab')) {
             p.remove();
         }
     });
+}
 const boxes = document.querySelectorAll('.scrollable-box');
 if (boxes.length >= 2) {
-    boxes[1].remove(); // Remove the second one (index 1)
-}
+    boxes[1].remove();
 }
 !}
 max-cards: 3
@@ -1611,7 +1611,7 @@ if (!document.getElementById(   'news_tab')) {
 }
 const boxes = document.querySelectorAll('.scrollable-box');
 if (boxes.length >= 2) {
-    boxes[1].remove(); // Remove the second one (index 1)
+    boxes[1].remove();
 }
 !}
 max-cards: 3
