@@ -3,7 +3,7 @@ new-page: true
 tags: event
 priority: -1
 view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
-on-departure: in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; last_election_time = time
+on-departure: in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; last_election_time = time; hindenburg_angry = hindenburg_angry_old
 set-jump: post_election_1928
 set-bg: img/map_2.jpg
 #face-image: img/Rothe_Wahlen_1903.jpg
@@ -378,6 +378,8 @@ Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
 Q.coalition_dissent = 0;
 Q.kpd_coalition_dissent = 0;
+if (!Q.spd_in_government) Q.hindenburg_angry = 0;
+if (Q.spd_in_government) Q.hindenburg_angry_old = Q.hindenburg_angry;
 Q.spd_in_government = 0;
 Q.in_weimar_coalition = 0;
 Q.in_grand_coalition = 0;
@@ -391,7 +393,6 @@ Q.in_unity_government = 0;
 Q.spd_toleration = 0;
 Q.spd_toleration_right = 0;
 Q.spd_caretaker = 0;
-Q.hindenburg_angry = 0;
 if (Q.lvp_formed) Q.foreign_minister_party = 'LVP'; 
 if (!Q.lvp_formed) Q.foreign_minister_party = 'DVP';
 Q.interior_minister_party = 'Z';
@@ -2268,7 +2269,7 @@ Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appo
 @justice
 title: Justice Ministry
 subtitle: The Justice Ministry controls the courts.
-unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Reichswehr Ministry. ?]
+unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Justice Ministry. ?]
 tags: mins_1928
 choose-if: leverage >= 10 and not cvp_ministers_accepted
 view-if: justice_minister_party != "SPD"
@@ -2293,7 +2294,7 @@ Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been 
 @agriculture
 title: Agricultural Ministry
 subtitle: This is not our usual domain.
-unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Reichswehr Ministry. ?]
+unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Agricultural Ministry. ?]
 choose-if: leverage >= 10 and not cvp_ministers_accepted
 view-if: agriculture_minister_party != "SPD"
 on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"

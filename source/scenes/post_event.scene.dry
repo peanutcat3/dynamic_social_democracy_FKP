@@ -1147,12 +1147,15 @@ if (Q.reichsbank_policy_time >= Q.time) {
     } else if (Q.soviet_relation >= 3) {
         Q.unemployed *= (0.957);
     }
+    Q.workers_nsdap -= 4/12;
+    Q.unemployed_nsdap -= 4/12;
 }
 
 if (Q.lautenbach_adopted && Q.lautenbach_plan_time >= Q.time && !Q.spd_in_government) {
     if (Q.unemployed >= 20) Q.unemployed *= 0.988;
     if (Q.economic_growth < 0) Q.economic_growth *= 0.985;
-    if (Q.inflation < 0) Q.inflation *= 0.985;
+    if (Q.inflation < 0 && !Q.bruning_sigma_time && !Q.bruning_skibidi_time) Q.inflation *= 0.985;
+    if (Q.inflation < 0 && (Q.bruning_sigma_time || Q.bruning_skibidi_time)) Q.inflation *= 0.99;
     if (Q.stegerwald_path || Q.cvp_formed) {
         Q.workers_z += 8/12;
         Q.new_middle_z += 8/12;

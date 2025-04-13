@@ -1,8 +1,8 @@
 title: Lausanne Conference
 subtitle: On the question of reparations...
-view-if: year = 1932 and month >= 6 and hoover_moratorium_seen and reparations > -2
+view-if: year = 1932 and month >= 7 and hoover_moratorium_seen and foreign_minister_party != "SPD" and not reparations_resolved
 on-arrival: {!
-Q.reparations -= 2;
+Q.reparations = -2;
 Q.budget += 1;
 Q.pro_republic += 8;
 Q.hindenburg_angry -= 30;
@@ -13,7 +13,7 @@ Q.dvp_left += 3;
 Q.lvp_left += 3;
 Q.ddp_left += 2;
 Q.ddp_cohesion += 2;
-Q.coalition_dissent -= 2
+Q.coalition_dissent -= 2;
 
 if (Q.spd_in_government) {
     if (foreign_minister_party === "DVP") {
@@ -40,12 +40,6 @@ if (Q.spd_in_government) {
             Q.unemployed_z += 3;
             Q.catholics_z += 5;
         }
-    } else if (foreign_minister_party === "SPD") {
-        Q.workers_spd += 3;
-        Q.new_middle_spd += 3;
-        Q.old_middle_spd += 5;
-        Q.rural_spd += 5;
-        Q.unemployed_spd += 3;
     }
 }
 
@@ -70,9 +64,9 @@ if (Q.bruning_time) {
         Q.rural_dnvp -= 5;
         if (!Q.kvp_formed) {
             Q.workers_other += 3;
-            Q.new_middle_kvp += 5;
-            Q.old_middle_kvp += 5;
-            Q.rural_kvp += 5;
+            Q.new_middle_other += 6;
+            Q.old_middle_other += 6;
+            Q.rural_other += 6;
             Q.unemployed_other += 3;
             Q.catholics_other += 3;
         }
@@ -125,7 +119,7 @@ tags: event
 
 = Lausanne Conference
 
-At the Lausanne Conference, the Allies have met with Germany's representatives in order to deal with the issue of war reparations once and for all. In light of the current economic crisis, the Allies believe that Germany is unable to make the reparation payments.
+At the Lausanne Conference, the Allies met with German representatives to resolve the issue of war reparations once and for all. Given the ongoing economic crisis, they concluded that Germany would be unable to resume payments after the moratorium ends.
 
 Therefore, our reparations have been reduced by 90%! In the end, Germany is required to make only a final payment of three billion marks, effectively ending future reparation obligations. This has greatly boosted investor confidence and sparked a new wave of capital inflows to Germany. This should reduce the strain on our budget. [? if spd_in_government and foreign_minister_party == "SPD": Even though this is not our accomplishment, our foreign ministry is eager to take credit for this accomplishment. ?][? if not spd_in_government and foreign_minister_party != "SPD": Even though this is not the work of the foreign ministry, it is eager to take credit for this accomplishment. ?]
 

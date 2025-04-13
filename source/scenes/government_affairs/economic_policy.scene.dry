@@ -14,7 +14,7 @@ We have already formulated an economic plan. Now we have to implement it. [? if 
 
 @economic_plan_dilemma
 
-The Lautenbach Plan was already implemented by the Brüning cabinet before us. Should we continue with the plan and potentially expand its scope, or should we pursue our own chosen economic strategy?
+The [+ public_works_name +] Plan was already implemented by the Brüning cabinet before us. Should we continue with the plan and potentially expand its scope, or should we pursue our own chosen economic strategy?
 
 - @lautenbach_continuation
 - @lautenbach_wtb
@@ -22,7 +22,7 @@ The Lautenbach Plan was already implemented by the Brüning cabinet before us. S
 - @nationalize_2
 
 @lautenbach_continuation
-title: We will continue the implementation of the Lautenbach plan.
+title: We will continue the implementation of the [+ public_works_name +] plan.
 choose-if: unemployed >= 10
 unavailable-subtitle: [? if unemployed < 10: Unemployment is low enough that job creation is not necessary. ?] [? if inflation >= 5: The threat of inflation forces the Reichsbank to pause implementation of the plan. ?] 
 on-arrival: lautenbach_plan_time = time + 12 if time >= lautenbach_plan_time; lautenbach_plan_time += 12 if lautenbach_plan_time >= time; works_program += 1; workers_spd += 3*(1-dissent); unemployed_spd += 4*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 2*(1-dissent); rural_spd += 2*(1-dissent); workers_spd += 3*(1-dissent) if lautenbach_wtb; unemployed_spd += 4*(1-dissent) if lautenbach_wtb; new_middle_spd += 3*(1-dissent) if lautenbach_wtb; old_middle_spd += 2*(1-dissent) if lautenbach_wtb; rural_spd += 2*(1-dissent) if lautenbach_wtb; workers_nsdap -= 4 if lautenbach_wtb; workers_nsdap -= 2; z_relation += 5; ddp_relation += 5; dvp_relation += 5; lvp_relation += 5; coalition_dissent -= 1 if coalition_dissent >= 1; capital_strike_progress -= 1 if capital_strike_progress >= 0; dvp_left += 2; ddp_left += 4; ddp_cohesion += 2; lvp_left += 3; pro_republic += 3; economic_plan_goal_spd += 1; unemployed -= 2 if unemployed >= 25; unemployed -= 1; inflation += 1; economic_growth += 1.6; economy_goal_spd_peoples += 1; kpd_relation -= 8 if in_popular_front or in_left_front; kpd_coalition_dissent += 1
@@ -34,7 +34,7 @@ The economy is finally showing signs of improvement. The bourgeois parties are p
 [? if in_popular_front or in_left_front: The <span style="color: #700000;">**KPD**</span> opposes the economic plan, seeing it as a rescue of capitalism rather than a step towards real <span style="color: #9b0000;">socialism</span>. ?]
 
 @lautenbach_wtb
-title: Infuse the WTB Plan with the Lautenbach plan, with a considerable expansion of public works and wages.
+title: Infuse the WTB Plan with the [+ public_works_name +] plan, with a considerable expansion of public works and wages.
 subtitle: -2 budget.
 unavailable-subtitle: -2 budget. [? if budget < 2 : We do not have the necessary budget. ?] [? if unemployed < 8 : Unemployment is low enough that job creation is not necessary. ?] [? if inflation >= 5: The threat of inflation forces the Reichsbank to pause implementation of the plan. ?] 
 view-if: wtb_adopted
