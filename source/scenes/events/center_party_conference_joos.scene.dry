@@ -1,6 +1,6 @@
 title: <span style="color: #000000;">Center Party</span> Conference
 subtitle: Joseph Joos has been forced to resign...
-view-if: year >= 1930 and z_leader = "Joos" and not kaas_explode_seen and ((z_relation < 40 or spd_break_toleration) or ((spd_in_government_time >= 36 and (not reichskonkordat_progress and in_weimar_coalition and foreign_minister_party == "SPD")) or (spd_prussia_time >= 30 and not prussian_concordat_progress and not prussian_concordat)) or secularized or abortion_rights or homosexual_rights)
+view-if: year >= 1930 and z_leader = "Joos" and not kaas_explode_seen and ((z_relation < 40 or spd_break_toleration) or ((spd_in_government_time >= 36 and (not reichskonkordat_progress and in_weimar_coalition and foreign_minister_party == "SPD")) or (spd_prussia_time >= 30 and not prussian_concordat_progress and not prussian_concordat)) or secularized_a or abortion_rights or homosexual_rights)
 on-arrival: {!
 Q.z_relation -= 10;
 
@@ -22,7 +22,7 @@ face-image: img/portraits/Joseph_Joos.jpg
 
 [? if concordat_explode and not spd_break_toleration and z_relation >= 40: Due to our lack of progress toward an agreement with the Vatican, the clerical wing of the <span style="color: #000000;">Center Party</span> has forced Joos's resignation for his unwillingness to force the <span style="color: #c00000;">**SPD**</span> to take action. ?]
 
-[? if secularized or abortion_rights or homosexual_rights and not concordat_explode and not spd_break_toleration and z_relation >= 40: Due to our progress on rights for women and <span style="color: red;">Ho</span><span style="color: orange;">m</span><span style="color: yellow;">ox</span><span style="color: green;">se</span><span style="color: blue;">ua</span><span style="color: purple;">ls</span>, the clerical wing of the <span style="color: #000000;">Center Party</span> has forced Joos from the chairmanship, citing his unwillingness to obstruct these changes. ?]
+[? if secularized_a or abortion_rights or homosexual_rights and not concordat_explode and not spd_break_toleration and z_relation >= 40: Due to our progress on rights for women and <span style="color: red;">Ho</span><span style="color: orange;">m</span><span style="color: yellow;">ox</span><span style="color: green;">se</span><span style="color: blue;">ua</span><span style="color: purple;">ls</span>, the clerical wing of the <span style="color: #000000;">Center Party</span> has forced Joos from the chairmanship, citing his unwillingness to obstruct these changes. ?]
 
 Ludwig Kaas, a devoted Catholic priest is expected to succeed him, but Adam Stegerwald is once again running for the party's leadership. 
 
