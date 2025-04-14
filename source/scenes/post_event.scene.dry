@@ -2,9 +2,6 @@ title: Post Event
 new-page: true
 on-arrival: {!
 if (Q.rubicon) {
-Q.rubicon = 1; 
-Q.week = 1;
-
 const contentElement = document.getElementById('content');
 contentElement.style.backgroundColor = '#645E51';
 
