@@ -247,7 +247,7 @@ Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10;
 Q.kvp_r = Math.round(Q.kvp_r * 10) / 10;
 Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10;
 
-if (Q.rubicon && Q.month_actions >= 1 && Q.week != Q.week_checked) {
+if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_checked) {
     Q.week += 1;
     if (Q.week >= 5) {
         Q.week = 1;
@@ -258,7 +258,7 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.week != Q.week_checked) {
     }
 }
 
-Q.week_checked = Q.week;
+Q.month_actions_checked = Q.month_actions;
 
 // 1. update dates
 if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon)) {
