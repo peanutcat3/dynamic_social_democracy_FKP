@@ -252,6 +252,9 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
     if (Q.chancellor == "Papen") {
         Q.papen_time += 1;
     }
+    if (Q.week >= 5) {
+        Q.week = 1;
+    }
 }
 
 Q.month_actions_checked = Q.month_actions;
@@ -261,18 +264,12 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     Q.time += 1;
     Q.month_actions = 0;
     Q.month += 1;
-    if (Q.week >= 5) {
-        Q.week = 1;
-    }
     if (Q.month >= 13) {
         Q.month = 1;
         Q.year += 1;
         if (Q.historical_mode) {
             Q.resources += 2;
         }
-    }
-    if (Q.chancellor == "Papen") {
-        Q.papen_time += 1;
     }
     // decrement timers
     for (timer of Q.timers) {
