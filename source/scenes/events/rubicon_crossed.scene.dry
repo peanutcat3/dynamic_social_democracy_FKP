@@ -8,7 +8,6 @@ max-visits: 1
 on-arrival: {!
 Q.rubicon = 1; 
 Q.week = 1;
-
 const contentElement = document.getElementById('content');
 contentElement.style.backgroundColor = '#645E51';
 
@@ -32,13 +31,12 @@ if (qualitiesH1) {
 }
 
 const emergencyTab = document.getElementById('emergency_tab');
-if (emergencyTab) {
-    emergencyTab.style.display = 'block';
-}
+emergencyTab.style.display = '';
+emergencyTab.style.width = '100%';
 
 const allLinks = document.querySelectorAll('a');
 allLinks.forEach(link => {
-    link.style.color = '#f3f3f3';
+    link.style.setProperty('color', '#f3f3f3', 'important');
 });
 
 const headerLinks = document.querySelectorAll('#header-links a');

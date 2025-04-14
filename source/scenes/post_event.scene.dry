@@ -30,7 +30,7 @@ emergencyTab.style.width = '100%';
 
 const allLinks = document.querySelectorAll('a');
 allLinks.forEach(link => {
-    link.style.color = '#f3f3f3';
+    link.style.setProperty('color', '#f3f3f3', 'important');
 });
 
 const headerLinks = document.querySelectorAll('#header-links a');
