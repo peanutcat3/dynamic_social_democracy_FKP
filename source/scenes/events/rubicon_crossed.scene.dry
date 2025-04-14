@@ -22,7 +22,7 @@ toolsElements.forEach(tool => {
     tool.style.padding = '0.6em';
     tool.style.width = '20rem';
     tool.style.color = '#000';
-    tool.style.backgroundColor = '#0077FF';
+    tool.style.backgroundColor = '#645E51';
     tool.style.boxShadow = '4px 4px 16px rgba(255, 255, 255, 0.4)';
 });
 
@@ -33,7 +33,7 @@ if (qualitiesH1) {
 
 const emergencyTab = document.getElementById('emergency_tab');
 if (emergencyTab) {
-    emergencyTab.style.display = '';
+    emergencyTab.style.display = 'block';
     emergencyTab.style.width = '100%';
 }
 
