@@ -12,7 +12,7 @@ is-special: true
 
 <p style="text-align: center;margin-bottom: 5px;">Hitler chancellorship: strongly opposed</p>
 
-= The Camarilla
+<h1>The Camarilla</h1>
 
 <div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
 <img src="img/portraits/PapenFranz.jpg" alt="Franz von Papen" style="width: 50%;">

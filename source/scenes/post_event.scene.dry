@@ -239,6 +239,17 @@ Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10;
 Q.kvp_r = Math.round(Q.kvp_r * 10) / 10;
 Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10;
 
+if (Q.rubicon && Q.month_actions >= 1) {
+    Q.week += 1;
+    if (Q.week >= 5) {
+        Q.week = 1;
+        Q.month += 1;
+    }
+    if (Q.chancellor == "Papen") {
+        Q.papen_time += 1;
+    }
+}
+
 // 1. update dates
 if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon)) {
     Q.time += 1;
@@ -1166,17 +1177,6 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
             }
         }
     }
-
-if (Q.rubicon && Q.month_actions >= 1) {
-    Q.week += 1;
-    if (Q.week >= 5) {
-        Q.week = 1;
-        Q.month += 1;
-    }
-    if (Q.chancellor == "Papen") {
-        Q.papen_time += 1;
-    }
-}
 
 if (Q.dnf_decay_timer > 0) {
     Q.new_middle_dnf -= 0.25;

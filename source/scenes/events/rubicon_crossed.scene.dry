@@ -32,10 +32,7 @@ if (qualitiesH1) {
 }
 
 const emergencyTab = document.getElementById('emergency_tab');
-if (emergencyTab) {
-    emergencyTab.style.display = 'block';
-    emergencyTab.style.width = '100%';
-}
+emergencyTab.style.setProperty("display", "block", "important");
 
 const tabContainer = document.querySelector('.tab_container');
 if (tabContainer) {
