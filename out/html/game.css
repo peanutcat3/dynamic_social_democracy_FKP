@@ -320,6 +320,10 @@ blockquote+blockquote.attribution {
   background-color: #ececec;
 }
 
+#emergency_tab {
+  width: 100%;
+}
+
 #scheming_tab {
   display: none;
 }
