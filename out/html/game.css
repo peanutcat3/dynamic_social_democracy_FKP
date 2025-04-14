@@ -245,6 +245,7 @@ blockquote+blockquote.attribution {
 .tools.right {
   float: right;
   right: 0.4em;
+  display: none;
 }
 
 #qualities {
