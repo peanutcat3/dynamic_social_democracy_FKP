@@ -2,7 +2,7 @@ title: Papen's First Emergency Decree
 subtitle: A virtual abolishment of unemployment insurance!
 view-if: chancellor = "Papen" and papen_time == 2
 new-page: true
-#tags: event
+tags: event
 max-visits: 1
 on-display: {!  
     var cardEl = document.createElement('div');  

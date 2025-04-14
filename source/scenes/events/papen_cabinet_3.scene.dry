@@ -2,7 +2,7 @@ title: Papen Lifts the Ban on the <span style="color: #7A3C00;">**SA**</span>!
 subtitle: Political violence has made a resurgence...
 view-if: chancellor = "Papen" and papen_time == 2 and sa_nationwide_ban
 new-page: true
-#tags: event
+tags: event
 max-visits: 1
 on-display: {!  
     var cardEl = document.createElement('div');  

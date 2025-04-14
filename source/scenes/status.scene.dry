@@ -114,10 +114,6 @@ Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_
 
 <div style="text-align: center;">President: Paul von Hindenburg (<span style="color: #808080;">I</span>)</div>
 
-<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
-  <img src="img/portraits/PapenFranz.jpg" alt="Franz von Papen" style="width: 50%;"><img src="img/placeholder.jpg" alt="Placeholder" style="width: 50%;">
-</div>
-
 <img src="img/portraits/hindenburger.jpg" alt="Paul von Hindenburg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;">
 
 <p style="text-align: center;margin-bottom: 0;">Favorite: Franz von Papen</p>
@@ -146,7 +142,7 @@ Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_
 
 <div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
 <img src="img/portraits/Meissner.jpg" alt="Otto Meissner" style="width: 50%;">
-<img src="img/portraits/oskar.jpg" alt="Oskar von hindenburg" style="width: 50%;">
+<img src="img/portraits/oskar.jpg" alt="Oskar von Hindenburg" style="width: 50%;">
 </div>
 
 <div style="display: flex; justify-content: space-between; gap: 30px; margin-bottom: 5px;">

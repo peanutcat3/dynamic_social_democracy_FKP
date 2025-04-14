@@ -2,70 +2,68 @@ title: Post Event
 new-page: true
 on-arrival: {!
 if (Q.rubicon) {
-    const contentElement = document.getElementById('content');
-    contentElement.style.backgroundColor = '#645E51';
+Q.rubicon = 1; 
+Q.week = 1;
 
-    const header = document.querySelector('header');
-    const content = document.getElementById('content');
+const contentElement = document.getElementById('content');
+contentElement.style.backgroundColor = '#645E51';
 
-    header.style.color = '#0077FF';
+const header = document.querySelector('header');
+header.style.color = '#0077FF';
+contentElement.style.color = '#000';
 
-    content.style.color = '#000';
+const toolsElements = document.querySelectorAll('.tools');
+toolsElements.forEach(tool => {
+    tool.style.marginLeft = '-6em';
+    tool.style.padding = '0.6em';
+    tool.style.width = '20rem';
+    tool.style.color = '#000';
+    tool.style.backgroundColor = '#0077FF';
+    tool.style.boxShadow = '4px 4px 16px rgba(255, 255, 255, 0.4)';
+});
 
-    const toolsElements = document.querySelectorAll('.tools');
+const qualitiesH1 = document.querySelector('#qualities h1');
+if (qualitiesH1) {
+    qualitiesH1.style.color = 'white';
+}
 
-    toolsElements.forEach(tool => {
-        tool.style.marginLeft = '-6em';
-        tool.style.padding = '0.6em';
-        tool.style.width = '20rem';
-        tool.style.color = '#000';
-        tool.style.backgroundColor = '#0077FF';
-        tool.style.boxShadow = '4px 4px 16px rgba(255, 255, 255, 0.4)';
-    });
-
-    const qualitiesH1 = document.querySelector('#qualities h1');
-
-    if (qualitiesH1) {
-        qualitiesH1.style.color = 'white';
-    }
-
-    const emergencyTab = document.getElementById('emergency_tab');
-
+const emergencyTab = document.getElementById('emergency_tab');
+if (emergencyTab) {
     emergencyTab.style.display = '';
     emergencyTab.style.width = '100%';
+}
 
-    const tabContainer = document.querySelector('.tab_container');
+const tabContainer = document.querySelector('.tab_container');
+if (tabContainer) {
     tabContainer.style.backgroundColor = '#c3b8a0';
+}
 
-    const tabButtons_skibidi = document.querySelectorAll('.tab_button');
-    tabButtons_skibidi.forEach((button) => {
-        button.style.backgroundColor = '#c3b8a0';
+const tabButtons = document.querySelectorAll('.tab_button');
+tabButtons.forEach((button) => {
+    button.style.backgroundColor = '#c3b8a0';
+});
+
+const activeTabButton = document.querySelector('.tab_button.active');
+if (activeTabButton) {
+    activeTabButton.style.backgroundColor = '#f3f3f3';
+}
+
+tabButtons.forEach(button => {
+    const originalBackground = button.style.backgroundColor;
+    button.addEventListener('mouseenter', () => {
+        button.style.backgroundColor = '#a89f8b';
     });
-
-
-    const activeTabButton = document.querySelector('.tab_button.active');
-    if (activeTabButton) {
-        activeTabButton.style.backgroundColor = '#f3f3f3'; // Modify the background color for the active tab
-    }
-
-    tabButtons_skibidi.forEach(button => {
-        // Mouse enter (hover effect)
-        button.addEventListener('mouseenter', () => {
-            button.style.backgroundColor = '#a89f8b'; // Change background on hover
-        });
-
-        // Mouse leave (remove hover effect)
-        button.addEventListener('mouseleave', () => {
-            if (!button.classList.contains('active')) {
-                button.style.backgroundColor = ''; // Reset to original background when not active
-            }
-        });
+    button.addEventListener('mouseleave', () => {
+        if (!button.classList.contains('active')) {
+            button.style.backgroundColor = originalBackground;
+        }
     });
+});
 
-    const rightTools = document.querySelector('.tools.right');
-    if (rightTools) {
-        rightTools.style.display = 'block';
-    }
+const rightTools = document.querySelector('.tools.right');
+if (rightTools) {
+    rightTools.style.display = 'block';
+}
 }
 
 Q.last_advisor_action = 0;
