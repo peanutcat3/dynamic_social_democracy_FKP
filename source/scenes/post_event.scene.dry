@@ -48,10 +48,6 @@ if (Q.rubicon) {
         activeTabButton.style.backgroundColor = '#f3f3f3'; // Modify the background color for the active tab
     }
 
-
-    const tabButtons_skibidi = document.querySelectorAll('.tab_button');
-
-
     tabButtons_skibidi.forEach(button => {
         // Mouse enter (hover effect)
         button.addEventListener('mouseenter', () => {

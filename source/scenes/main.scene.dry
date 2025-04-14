@@ -1614,7 +1614,7 @@ if (boxes.length >= 2) {
     boxes[1].remove();
 }
 !}
-max-cards: 3
+max-cards: 4
 go-to: bg if rubicon and bg_change; bg_2 if not rubicon and bg_change
 
 #Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.

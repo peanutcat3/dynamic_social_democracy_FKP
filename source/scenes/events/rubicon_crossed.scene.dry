@@ -44,8 +44,8 @@ Q.week = 1
     const tabContainer = document.querySelector('.tab_container');
     tabContainer.style.backgroundColor = '#c3b8a0';
 
-    const tabButtons = document.querySelectorAll('.tab_button');
-    tabButtons.forEach((button) => {
+    const tabButtons_skibidi = document.querySelectorAll('.tab_button');
+    tabButtons_skibidi.forEach((button) => {
         button.style.backgroundColor = '#c3b8a0';
     });
 
@@ -55,11 +55,7 @@ Q.week = 1
         activeTabButton.style.backgroundColor = '#f3f3f3'; // Modify the background color for the active tab
     }
 
-
-    const tabButtons = document.querySelectorAll('.tab_button');
-
-
-    tabButtons.forEach(button => {
+    tabButtons_skibidi.forEach(button => {
         // Mouse enter (hover effect)
         button.addEventListener('mouseenter', () => {
             button.style.backgroundColor = '#a89f8b'; // Change background on hover
