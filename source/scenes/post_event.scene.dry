@@ -54,7 +54,8 @@ if (activeTabButton) {
 }
 
 tabButtons.forEach(button => {
-    const originalBackground = button.style.backgroundColor;
+    const computedStyle = window.getComputedStyle(button);
+    const originalBackground = computedStyle.backgroundColor;
     button.addEventListener('mouseenter', () => {
         button.style.backgroundColor = '#a89f8b';
     });
