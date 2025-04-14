@@ -15,13 +15,13 @@ is-special: true
 <div style="display: flex; justify-content: space-between; gap: 15px; margin-bottom: 5px;">
 <div style="flex: 1;">
   <p style="font-weight: bold;margin-bottom: 2px;">Franz von Papen</p>
-  <p style="margin-bottom: 2px;">Influence: Growing</p>
-  <p style="margin-bottom: 2px;">Goal: Nazi backing for his cabinet</p>
+  <p style="margin-bottom: 2px;">Influence: [+ papen_strength : camarilla_strength +]</p>
+  <p style="margin-bottom: 2px;">Goal: [+ papen_goal +] </p>
 </div>
 <div style="flex: 1;margin-right: -8px;">
   <p style="white-space: nowrap;text-align: center;font-weight: bold;margin-bottom: 0px;">Kurt von Schleicher</p>
-  <p style="margin-bottom: 2px;">Influence: Paramount</p>
-  <p style="margin-bottom: 2px;">Goal: Control Papen from the sidelines</p>
+  <p style="margin-bottom: 2px;">Influence: [+ schleicher_strength : camarilla_strength +]</p>
+  <p style="margin-bottom: 2px;">Goal: [+ schleicher_goal +]</p>
 </div>
 </div>
 <div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
@@ -31,12 +31,12 @@ is-special: true
 <div style="display: flex; justify-content: space-between; gap: 30px; margin-bottom: 5px;">
 <div style="flex: 1;">
   <p style="font-weight: bold;">Otto Meissner</p>
-  <p style="margin-bottom: 2px;">Influence: Notable</p>
-  <p style="margin-bottom: 2px;">Goal: Become acquainted with the new chancellor</p>
+  <p style="margin-bottom: 2px;">Influence: [+ meissner_strength : camarilla_strength +]</p>
+  <p style="margin-bottom: 2px;">Goal: [+ meissner_goal +]</p>
 </div>
 <div style="flex: 1;">
   <p style="font-weight: bold; margin-bottom: 0px;">Oskar von Hindenburg</p>
-  <p style="margin-bottom: 2px;">Influence: Relevant</p>
-  <p style="margin-bottom: 2px;">Goal: Support the new chancellor</p>
+  <p style="margin-bottom: 2px;">Influence: [+ oskar_strength : camarilla_strength +]</p>
+  <p style="margin-bottom: 2px;">Goal: [+ oskar_goal +]</p>
 </div>
 </div>
