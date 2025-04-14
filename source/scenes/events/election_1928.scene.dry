@@ -2,7 +2,7 @@ title: Reichstag Elections
 new-page: true
 tags: event
 priority: -1
-view-if: (year = next_election_year and month >= next_election_month) or (year > next_election_year)
+view-if: (year = next_election_year and month >= next_election_month and (next_election_week == week or not rubicon)) or (year > next_election_year)
 on-departure: in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; last_election_time = time; hindenburg_angry = hindenburg_angry_old
 set-jump: post_election_1928
 set-bg: img/map_2.jpg

@@ -1,0 +1,32 @@
+title: Papen Lifts the Ban on the <span style="color: #7A3C00;">**SA**</span>!
+subtitle: Political violence has made a resurgence...
+view-if: chancellor = "Papen" and papen_time == 2 and sa_nationwide_ban
+new-page: true
+#tags: event
+max-visits: 1
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/sa_rally.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+
+= <span style="color: #7A3C00;">**SA**</span> Ban Lifted
+
+The ban on the <span style="color: #7A3C00;">**SA**</span>, instituted by the previous cabinet, has been lifted in an emergency decree. This is doubtlessly apart of the conditions the [+ nsdap_leader +] attached for the <span style="color: #7A3C00;">**NSDAP**</span>'s support of the cabinet, as its paramilitary plays a large role in disrupting political meetings and creating an oppressive atmosphere on the streets.
+
+This is met with an instant increase in political violence, with the lifting of the ban being opposed by everyone except the <span style="color: #7A3C00;">Nazis</span>. This also eliminates the last rationale for continued <span style="color: #7A3C00;">Nazi</span> support for the unpopular Papen.
+
+- @papen
+
+@papen
+title: The decree is signed by President Hindenburg.
+on-arrival: unemployed += 3; economic_growth -= 1; inflation -= 1; unemployed_kpd += 6; workers_kpd += 6; workers_spd += 4; unemployed_spd += 4; workers_dnvp -= 2; workers_dnf -= 2; workers_nsdap -= 4; unemployed_nsdap -= 4; new_middle_nsdap -= 2; new_middle_kpd += 2; pro_republic -= 5
+
+The decree confirms the overtly anti-social character of the so-called “cabinet of barons,” and has ignited fury across the working class. With nearly two-thirds of the country now irrevocably hostile to the chancellor, it is politically suicidal for any party outside the <span style="color: #808080;">reactionary</span> right to support him without suffering severe electoral consequences.

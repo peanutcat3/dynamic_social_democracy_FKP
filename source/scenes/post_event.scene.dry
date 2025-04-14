@@ -1,6 +1,77 @@
 title: Post Event
 new-page: true
 on-arrival: {!
+if (Q.rubicon) {
+    const contentElement = document.getElementById('content');
+    contentElement.style.backgroundColor = '#645E51';
+
+    const header = document.querySelector('header');
+    const content = document.getElementById('content');
+
+    header.style.color = '#0077FF';
+
+    content.style.color = '#000';
+
+    const toolsElements = document.querySelectorAll('.tools');
+
+    toolsElements.forEach(tool => {
+        tool.style.marginLeft = '-6em';
+        tool.style.padding = '0.6em';
+        tool.style.width = '20rem';
+        tool.style.color = '#000';
+        tool.style.backgroundColor = '#0077FF';
+        tool.style.boxShadow = '4px 4px 16px rgba(255, 255, 255, 0.4)';
+    });
+
+    const qualitiesH1 = document.querySelector('#qualities h1');
+
+    if (qualitiesH1) {
+        qualitiesH1.style.color = 'white';
+    }
+
+    const emergencyTab = document.getElementById('emergency_tab');
+
+    emergencyTab.style.display = '';
+    emergencyTab.style.width = '100%';
+
+    const tabContainer = document.querySelector('.tab_container');
+    tabContainer.style.backgroundColor = '#c3b8a0';
+
+    const tabButtons = document.querySelectorAll('.tab_button');
+    tabButtons.forEach((button) => {
+        button.style.backgroundColor = '#c3b8a0';
+    });
+
+
+    const activeTabButton = document.querySelector('.tab_button.active');
+    if (activeTabButton) {
+        activeTabButton.style.backgroundColor = '#f3f3f3'; // Modify the background color for the active tab
+    }
+
+
+    const tabButtons = document.querySelectorAll('.tab_button');
+
+
+    tabButtons.forEach(button => {
+        // Mouse enter (hover effect)
+        button.addEventListener('mouseenter', () => {
+            button.style.backgroundColor = '#a89f8b'; // Change background on hover
+        });
+
+        // Mouse leave (remove hover effect)
+        button.addEventListener('mouseleave', () => {
+            if (!button.classList.contains('active')) {
+                button.style.backgroundColor = ''; // Reset to original background when not active
+            }
+        });
+    });
+
+    const rightTools = document.querySelector('.tools.right');
+    if (rightTools) {
+        rightTools.style.display = 'block';
+    }
+}
+
 Q.last_advisor_action = 0;
 // make sure no stat is below 0.
 for (var c of Q.classes) {
@@ -175,16 +246,24 @@ Q.kvp_r = Math.round(Q.kvp_r * 10) / 10;
 Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10;
 
 // 1. update dates
-if (Q.month_actions >= 1) {
+if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon)) {
     Q.time += 1;
     Q.month_actions = 0;
     Q.month += 1;
+    if (Q.week >= 5) {
+        Q.week = 1;
+        Q.month += 1;
+    }
     if (Q.month >= 13) {
         Q.month = 1;
         Q.year += 1;
         if (Q.historical_mode) {
             Q.resources += 2;
         }
+    }
+    if (Q.rubicon) Q.week += 1;
+    if (Q.chancellor == "Papen") {
+        Q.papen_time += 1;
     }
     // decrement timers
     for (timer of Q.timers) {
@@ -1093,6 +1172,18 @@ if (Q.month_actions >= 1) {
             }
         }
     }
+
+if (Q.rubicon && Q.month_actions >= 1) {
+    Q.week += 1;
+    if (Q.week >= 5) {
+        Q.week = 1;
+        Q.month += 1;
+    }
+    if (Q.chancellor == "Papen") {
+        Q.papen_time += 1;
+    }
+}
+
 if (Q.dnf_decay_timer > 0) {
     Q.new_middle_dnf -= 0.25;
     Q.new_middle_dnvp += 0.3;
@@ -1388,6 +1479,17 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
         Q.catholics_spd -= 1/12;
         Q.pro_republic -= 0.25;
     }
+    if (Q.rfb_force >= Q.far_right_force) {
+        Q.workers_kpd += 4/12;
+        Q.workers_nsdap -= 4/12;
+        Q.unemployed_kpd += 6/12;
+        Q.unemployed_nsdap -= 6/12;
+        Q.new_middle_kpd += 1/12;
+        Q.new_middle_nsdap -= 1/12;
+        Q.catholics_kpd += 1/12;
+        Q.catholics_nsdap -= 1/12;
+        Q.pro_republic -= 0.5;
+    }
     if (Q.workers_nsdap >= Q.workers_nsdap_para_pre) {
         Q.workers_nsdap_para += Q.workers_nsdap - Q.workers_nsdap_para_pre;
         if (Q.workers_nsdap_para >= Q.max_workers_para) {
@@ -1456,7 +1558,7 @@ if (Q.far_right_paramilitary && Q.year >= 1930) {
         Q.unemployed_spd += 2/12;
         if (Q.pro_republic < 50) Q.pro_republic += Q.strife / 12;
     }
-    if (Q.rfb_force >= Q.rb_force) {
+    if (Q.rfb_force >= Q.democracy_force) {
         Q.workers_kpd += 4/12;
         Q.workers_spd -= 4/12;
         Q.unemployed_kpd += 6/12;
@@ -3037,6 +3139,7 @@ if (!Q.nazi_peak_triggered) {
     Q.nazi_peak += (Q.unemployed / 3);
     Q.nazi_peak += (100 - Q.pro_republic) / 10;
     Q.nazi_peak += (Q.sa_force / 10)
+    if (Q.nsdap_presidential_votes_disp >= 30) Q.nazi_peak += 5;
     if (Q.year >= 1932 && Q.month >= 4) {
         Q.nazi_peak -= (Q.other_votes + Q.dvp_votes + Q.ddp_votes + Q.dnvp_votes + Q.dnf_votes + Q.lvp_votes) / 2
     }
@@ -3674,7 +3777,7 @@ if (typeof window !== "undefined" && window.generateBar) {
 !}
 go-to: events_choice if has_event = 1; main if has_event = 0 and difficulty >= 0; main.main_easy if has_event = 0 and difficulty < 0
 
-= [+ month : month +] [+ year +]
+= [+ month : month +] [+ year +][? if rubicon:, Week [+ week +]?]
 
 @events_choice
 
