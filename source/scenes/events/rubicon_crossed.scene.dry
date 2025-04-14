@@ -32,7 +32,20 @@ if (qualitiesH1) {
 }
 
 const emergencyTab = document.getElementById('emergency_tab');
-emergencyTab.style.setProperty("display", "block", "important");
+if (emergencyTab) {
+    emergencyTab.style.display = '';
+    emergencyTab.style.width = '100%';
+}
+
+const allLinks = document.querySelectorAll('a');
+allLinks.forEach(link => {
+    link.style.color = '#f3f3f3';
+});
+
+const headerLinks = document.querySelectorAll('#header-links a');
+headerLinks.forEach(link => {
+    link.style.color = 'black';
+});
 
 const tabContainer = document.querySelector('.tab_container');
 if (tabContainer) {

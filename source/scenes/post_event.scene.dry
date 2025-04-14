@@ -33,6 +33,16 @@ if (emergencyTab) {
     emergencyTab.style.width = '100%';
 }
 
+const allLinks = document.querySelectorAll('a');
+allLinks.forEach(link => {
+    link.style.color = '#f3f3f3';
+});
+
+const headerLinks = document.querySelectorAll('#header-links a');
+headerLinks.forEach(link => {
+    link.style.color = 'black';
+});
+
 const tabContainer = document.querySelector('.tab_container');
 if (tabContainer) {
     tabContainer.style.backgroundColor = '#c3b8a0';
@@ -239,7 +249,7 @@ Q.dnvp_r = Math.round(Q.dnvp_r * 10) / 10;
 Q.kvp_r = Math.round(Q.kvp_r * 10) / 10;
 Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10;
 
-if (Q.rubicon && Q.month_actions >= 1) {
+if (Q.rubicon && Q.month_actions >= 1 && Q.week != Q.week_checked) {
     Q.week += 1;
     if (Q.week >= 5) {
         Q.week = 1;
@@ -249,6 +259,8 @@ if (Q.rubicon && Q.month_actions >= 1) {
         Q.papen_time += 1;
     }
 }
+
+Q.week_checked = Q.week;
 
 // 1. update dates
 if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon)) {

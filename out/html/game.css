@@ -609,6 +609,7 @@ img {
     display: none;
     float: none;
     right: 0;
+    margin-right: -6em;
   }
 
   #mid_panel {
