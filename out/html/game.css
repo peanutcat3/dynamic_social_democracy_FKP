@@ -246,7 +246,7 @@ blockquote+blockquote.attribution {
   float: right;
   right: 0.4em;
   display: none;
-  margin-left: -6em;
+  margin-right: -6em;
 }
 
 #qualities {
@@ -318,10 +318,6 @@ blockquote+blockquote.attribution {
 
 .tab_button:hover {
   background-color: #ececec;
-}
-
-#emergency_tab {
-  display: none;
 }
 
 #scheming_tab {

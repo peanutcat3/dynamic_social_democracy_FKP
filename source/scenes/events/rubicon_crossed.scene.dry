@@ -32,8 +32,9 @@ if (qualitiesH1) {
 }
 
 const emergencyTab = document.getElementById('emergency_tab');
-emergencyTab.style.display = '';
-emergencyTab.style.width = '100%';
+if (emergencyTab) {
+    emergencyTab.style.display = 'block';
+}
 
 const allLinks = document.querySelectorAll('a');
 allLinks.forEach(link => {
