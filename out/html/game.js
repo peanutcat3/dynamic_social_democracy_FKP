@@ -307,4 +307,71 @@
     window.updateSidebarRight();
   };
 
+  BrowserUserInterface.prototype.displayChoices = function(choices) {
+    var $ul = $('<ul>').addClass('choices');
+    for (var i = 0; i < choices.length; ++i) {
+        var choice = choices[i];
+        var title = contentToHTML.convertLine(choice.title);
+        var subtitle = "";
+        if (choice.subtitle !== undefined) {
+            subtitle = contentToHTML.convertLine(choice.subtitle);
+        }
+
+        var $li = $('<li>');
+        var $titleHolder = $li;
+        if (choice.canChoose) {
+            if (dendryUI.dendryEngine.state.qualities.rubicon) {
+                $titleHolder = $('<a>').attr({
+                    'href': '#',
+                    'data-choice': i,
+                    style: 'color: #E0E0E0;'
+                });
+            } else {
+                $titleHolder = $('<a>').attr({
+                    'href': '#',
+                    'data-choice': i,
+                });
+            }
+            $li.html($titleHolder);
+        } else {
+            $titleHolder.addClass('unavailable');
+        }
+
+        $titleHolder.html(title);
+
+        if (choice.checkQuality && choice.difficulty && choice.successProb !== undefined) {
+            if (subtitle) {
+                subtitle += '<br>';
+            }
+            subtitle += 'Check: ' + choice.checkQuality + '<br>';
+            subtitle += 'Difficulty: ' + choice.difficulty + ' (' + Math.floor(choice.successProb * 100) + '%)';
+        }
+
+        if (subtitle) {
+            $li.append($('<div>').addClass('subtitle').html(subtitle));
+        }
+
+        $ul.append($li);
+    }
+
+    // Update the UI with the new choices
+    if (this.animate) {
+        $ul.fadeIn(this.fade_time);
+        this.$content.append($ul);
+    } else {
+        this.$content.append($ul);
+    }
+
+    $ul.focus();
+
+    // Trigger onNewPage if it's set
+    if (this.onNewPage) {
+        this.onNewPage = false;
+        if (window && window.onNewPage) {
+            window.onNewPage();
+        }
+    }
+};
+  
+
 }());
