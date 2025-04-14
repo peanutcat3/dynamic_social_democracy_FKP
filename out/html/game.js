@@ -200,8 +200,8 @@
   };
 
   window.onDisplayContent = function() {
-      window.updateSidebarRight();
       window.updateSidebar();
+      window.updateSidebarRight();
   };
 
   window.toggleDem = function toggleDemographicTable() {

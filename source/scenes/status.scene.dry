@@ -110,56 +110,6 @@ Next election: [+ next_election_month : month +] [+ next_election_year +], Week 
 
 Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen": postponed indefinitely ?]
 
-@scheming
-
-<div style="text-align: center;">President: Paul von Hindenburg (<span style="color: #808080;">I</span>)</div>
-
-<img src="img/portraits/hindenburger.jpg" alt="Paul von Hindenburg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;">
-
-<p style="text-align: center;margin-bottom: 0;">Favorite: Franz von Papen</p>
-
-<p style="text-align: center;margin-bottom: 5px;">Hitler chancellorship: strongly opposed</p>
-
-= The Camarilla
-
-<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
-<img src="img/portraits/PapenFranz.jpg" alt="Franz von Papen" style="width: 50%;">
-<img src="img/portraits/SchleicherKurt.jpg" alt="Kurt von Schleicher" style="width: 50%;"></div>
-
-<div style="display: flex; justify-content: space-between; gap: 30px; margin-bottom: 5px;">
-<div style="flex: 1;">
-  <p style="font-weight: bold;margin-bottom: 2px;margin-top: 5px;">Franz von Papen</p>
-  <p style="margin-top: 20px;margin-bottom: 2px;">Influence: Great</p>
-  <p style="margin-bottom: 2px;">Goal: Nazi backing for his cabinet</p>
-</div>
-
-<div style="flex: 1;">
-  <p style="font-weight: bold; margin-bottom: 2px;">Kurt von Schleicher</p>
-  <p style="margin-bottom: 2px;">Influence: Fading</p>
-  <p style="margin-bottom: 2px;">Goal: Control Papen from the sidelines</p>
-</div>
-</div>
-
-<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
-<img src="img/portraits/Meissner.jpg" alt="Otto Meissner" style="width: 50%;">
-<img src="img/portraits/oskar.jpg" alt="Oskar von Hindenburg" style="width: 50%;">
-</div>
-
-<div style="display: flex; justify-content: space-between; gap: 30px; margin-bottom: 5px;">
-
-<div style="flex: 1;">
-  <p style="font-weight: bold;margin-bottom: 13px;margin-top: 10px;">Otto Meissner</p>
-  <p style="margin-bottom: 2px;">Influence: Notable</p>
-  <p style="margin-bottom: 2px;">Goal: Support the new chancellor</p>
-</div>
-
-<div style="flex: 1;">
-  <p style="font-weight: bold; margin-bottom: 2px;">Oskar von Hindenburg</p>
-  <p style="margin-bottom: 2px;">Influence: Sizable</p>
-  <p style="margin-bottom: 2px;">Goal: Become acquainted with the new chancellor</p>
-</div>
-</div>
-
 @politics
 
 = Inter-party Relations
