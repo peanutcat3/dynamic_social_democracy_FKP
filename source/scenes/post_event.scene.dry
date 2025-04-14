@@ -3241,17 +3241,17 @@ if (!Q.peoples_party && Q.year >= 1930) {
 
 if ((!Q.works_program || Q.unemployed_spd_normalized >= 35) && Q.black_thursday_seen && Q.unemployed >= 15) {
     if (Q.unemployed >= 35 && Q.unemployed_spd_normalized >= 12) {
+        Q.unemployed_spd -= 9/12;
+        Q.unemployed_nsdap += 9/12;
+    } else if (Q.unemployed >= 30 && Q.unemployed_spd_normalized >= 15) {
+        Q.unemployed_spd -= 7/12;
+        Q.unemployed_nsdap += 7/12;
+    } else if (Q.unemployed >= 25 && Q.unemployed_spd_normalized >= 20) {
         Q.unemployed_spd -= 5/12;
         Q.unemployed_nsdap += 5/12;
-    } else if (Q.unemployed >= 30 && Q.unemployed_spd_normalized >= 15) {
-        Q.unemployed_spd -= 4/12;
-        Q.unemployed_nsdap += 4/12;
-    } else if (Q.unemployed >= 25 && Q.unemployed_spd_normalized >= 20) {
+    } else if (Q.unemployed >= 20 && Q.unemployed_spd_normalized >= 30) {
         Q.unemployed_spd -= 3/12;
         Q.unemployed_nsdap += 3/12;
-    } else if (Q.unemployed >= 20 && Q.unemployed_spd_normalized >= 30) {
-        Q.unemployed_spd -= 2/12;
-        Q.unemployed_nsdap += 2/12;
     } else if (Q.unemployed >= 15 && Q.black_thursday_seen) {
         Q.unemployed_spd -= 1/12;
         Q.unemployed_nsdap += 1/12;
