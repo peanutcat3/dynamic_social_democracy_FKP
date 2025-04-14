@@ -241,10 +241,10 @@ Q.french_parties = ['sfio', 'pcf', 'pup', 'prs', 'rad', 'pdp', 'ad', 'fr'];
 for (var party of Q.french_parties) {
     Q['change_' + party + '_r_france'] = Q[party + '_r_france'] - Q['old_' + party + '_r_france'];
     var sign = Q['change_' + party + '_r_france'] > 0 
-               ? '<img src="img/arrowup.jpg"> ' 
+               ? '<img src="img/arrowup.png"> ' 
                : Q['change_' + party + '_r_france'] < 0 
-                 ? '<img src="img/arrowdown.jpg"> ' 
-                 : '<img src="img/steady.jpg"> ';
+                 ? '<img src="img/arrowdown.png"> ' 
+                 : '<img src="img/steady.png"> ';
     Q['change_' + party + '_r_france'] = Math.abs(Q['change_' + party + '_r_france']);
     Q['str_change_' + party + '_france'] = sign + parseFloat(Q['change_' + party + '_r_france']).toFixed(1);
 
@@ -255,75 +255,75 @@ for (var party of Q.french_parties) {
     }
 
     var sign2 = Q['change_' + party + '_votes_france'] > 0 
-                ? '<img src="img/arrowup.jpg"> ' 
+                ? '<img src="img/arrowup.png"> ' 
                 : Q['change_' + party + '_votes_france'] < 0 
-                  ? '<img src="img/arrowdown.jpg"> ' 
-                  : '<img src="img/steady.jpg"> ';
+                  ? '<img src="img/arrowdown.png"> ' 
+                  : '<img src="img/steady.png"> ';
     Q['str_votes_change_' + party + '_france'] = sign2 + Math.abs(Q['change_' + party + '_votes_france']).toFixed(1);
 }
 
 Q.change_rad_votes_france = Q.disp_rad_votes_france - 17.8;
 var sign2 = Q.change_rad_votes_france > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.change_rad_votes_france < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_votes_change_rad_france = sign2 + Math.abs(Q.change_rad_votes_france).toFixed(1);
 
 Q.change_rad_r_france = Q.disp_rad_r_france - 20.0;
 var sign2 = Q.change_rad_r_france > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.change_rad_r_france < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_change_rad_france = sign2 + Math.abs(Q.change_rad_r_france).toFixed(1);
 
 Q.change_rad2_votes_france = Q.disp_ind_rad_votes_france - 10.0;
 var sign2 = Q.change_rad2_votes_france > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.change_rad2_votes_france < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_votes_change_rad2_france = sign2 + Math.abs(Q.change_rad2_votes_france).toFixed(1);
 
 Q.change_rad2_r_france = Q.disp_ind_rad_r_france - 8.6;
 var sign2 = Q.change_rad2_r_france > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.change_rad2_r_france < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_change_rad2_france = sign2 + Math.abs(Q.change_rad2_r_france).toFixed(1);
 
 Q.change_fr_votes_france = Q.disp_fr_votes_france - 22.0;
 var sign2 = Q.change_fr_votes_france > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.change_fr_votes_france < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_votes_change_fr_france = sign2 + Math.abs(Q.change_fr_votes_france).toFixed(1);
 
 Q.change_fr_r_france = Q.disp_fr_r_france - 30.2;
 var sign2 = Q.change_fr_r_france > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.change_fr_r_france < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_change_fr_france = sign2 + Math.abs(Q.change_fr_r_france).toFixed(1);
 
 Q.change_fr2_votes_france = Q.disp_ind_fr_votes_france - 2.3;
 var sign2 = Q.change_fr2_votes_france > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.change_fr2_votes_france < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_votes_change_fr2_france = sign2 + Math.abs(Q.change_fr2_votes_france).toFixed(1);
 
 Q.change_fr2_r_france = Q.disp_ind_fr_r_france - 4.3;
 var sign2 = Q.change_fr2_r_france > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.change_fr2_r_france < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_change_fr2_france = sign2 + Math.abs(Q.change_fr2_r_france).toFixed(1);
 
 Q.sfio_france_elections_vote = (Q.sfio_france_elections_vote != undefined ? parseFloat(Q.sfio_france_elections_vote.toFixed(1)) : 0);

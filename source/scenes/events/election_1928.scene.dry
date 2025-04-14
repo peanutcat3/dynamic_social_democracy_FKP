@@ -155,10 +155,10 @@ if (new_party_sum > 0) {
     for (var party of Q.parties) {
         Q['change_' + party + '_r'] = Q[party + '_r'] - Q['old_' + party + '_r'];
         var sign = Q['change_' + party + '_r'] > 0 
-                   ? '<img src="img/arrowup.jpg"> ' 
+                   ? '<img src="img/arrowup.png"> ' 
                    : Q['change_' + party + '_r'] < 0 
-                     ? '<img src="img/arrowdown.jpg"> ' 
-                     : '<img src="img/steady.jpg"> ';
+                     ? '<img src="img/arrowdown.png"> ' 
+                     : '<img src="img/steady.png"> ';
         Q['change_' + party + '_r'] = Math.abs(Q['change_' + party + '_r']);
         Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_r']).toFixed(1);
     
@@ -169,10 +169,10 @@ if (new_party_sum > 0) {
         }
     
         var sign2 = Q['change_' + party + '_votes'] > 0 
-                    ? '<img src="img/arrowup.jpg"> ' 
+                    ? '<img src="img/arrowup.png"> ' 
                     : Q['change_' + party + '_votes'] < 0 
-                      ? '<img src="img/arrowdown.jpg"> ' 
-                      : '<img src="img/steady.jpg"> ';
+                      ? '<img src="img/arrowdown.png"> ' 
+                      : '<img src="img/steady.png"> ';
         Q['str_votes_change_' + party] = sign2 + Math.abs(Q['change_' + party + '_votes']).toFixed(1);
     }
     
@@ -217,18 +217,18 @@ console.log("pre_previous_z_last_election_votes:", Q.pre_previous_z_last_electio
 
 Q.str_votes_change_bvp = Q.bvp_votes - Q.previous_bvp_last_election_votes;
 var sign2 = Q.str_votes_change_bvp > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.str_votes_change_bvp < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_votes_change_bvp = sign2 + Math.abs(Q.str_votes_change_bvp).toFixed(1);
 
 Q.str_change_bvp = Q.bvp_r - Q.old_bvp_r;
 var sign2 = Q.str_change_bvp > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.str_change_bvp < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_change_bvp = sign2 + Math.abs(Q.str_change_bvp).toFixed(1);
 
 if (Q.bvp_r) {
@@ -243,10 +243,10 @@ console.log("pre_previous_z_last_election_votes:", Q.pre_previous_z_last_electio
 
 Q.str_votes_change_z = Q.z_minus_bvp_votes - Q.pre_previous_z_last_election_votes;
 var sign2 = Q.str_votes_change_z > 0 
-? '<img src="img/arrowup.jpg"> ' 
+? '<img src="img/arrowup.png"> ' 
 : Q.str_votes_change_z < 0 
-  ? '<img src="img/arrowdown.jpg"> ' 
-  : '<img src="img/steady.jpg"> ';
+  ? '<img src="img/arrowdown.png"> ' 
+  : '<img src="img/steady.png"> ';
 Q.str_votes_change_z = sign2 + Math.abs(Q.str_votes_change_z).toFixed(1);
 
 // The largest party can only be the NSDAP or the SPD.

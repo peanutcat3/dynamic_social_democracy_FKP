@@ -249,10 +249,10 @@ if (new_party_sum_prussia > 0) {
 for (var party of Q.parties) {
     Q['change_' + party + '_r_prussia'] = Q[party + '_r_prussia'] - Q['old_' + party + '_r_prussia'];
     var sign_prussia = Q['change_' + party + '_r_prussia'] > 0 ?
-        '<img src="img/arrowup.jpg"> ' :
+        '<img src="img/arrowup.png"> ' :
         Q['change_' + party + '_r_prussia'] < 0 ?
-        '<img src="img/arrowdown.jpg"> ' :
-        '<img src="img/steady.jpg"> ';
+        '<img src="img/arrowdown.png"> ' :
+        '<img src="img/steady.png"> ';
     Q['change_' + party + '_r_prussia'] = Math.abs(Q['change_' + party + '_r_prussia']);
     Q['str_change_' + party + '_prussia'] = sign_prussia + parseFloat(Q['change_' + party + '_r_prussia']).toFixed(1);
 
@@ -263,10 +263,10 @@ for (var party of Q.parties) {
     }
 
     var sign2_prussia = Q['change_' + party + '_votes_prussia'] > 0 ?
-        '<img src="img/arrowup.jpg"> ' :
+        '<img src="img/arrowup.png"> ' :
         Q['change_' + party + '_votes_prussia'] < 0 ?
-        '<img src="img/arrowdown.jpg"> ' :
-        '<img src="img/steady.jpg"> ';
+        '<img src="img/arrowdown.png"> ' :
+        '<img src="img/steady.png"> ';
     Q['str_votes_change_' + party + '_prussia'] = sign2_prussia + Math.abs(Q['change_' + party + '_votes_prussia']).toFixed(1);
 }
 
