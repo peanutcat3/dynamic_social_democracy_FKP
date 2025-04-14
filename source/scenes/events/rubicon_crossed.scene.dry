@@ -13,14 +13,14 @@ contentElement.style.backgroundColor = '#645E51';
 
 const header = document.querySelector('header');
 header.style.color = '#0077FF';
-contentElement.style.color = '#000';
+contentElement.style.color = '#FFFFFF';
 
 const toolsElements = document.querySelectorAll('.tools');
 toolsElements.forEach(tool => {
     tool.style.marginLeft = '-6em';
     tool.style.padding = '0.6em';
     tool.style.width = '20rem';
-    tool.style.color = '#000';
+    tool.style.color = '#FFFFFF';
     tool.style.backgroundColor = '#645E51';
     tool.style.boxShadow = '4px 4px 16px rgba(255, 255, 255, 0.4)';
 });
@@ -33,11 +33,6 @@ if (qualitiesH1) {
 const emergencyTab = document.getElementById('emergency_tab');
 emergencyTab.style.display = '';
 emergencyTab.style.width = '100%';
-
-const allLinks = document.querySelectorAll('a');
-allLinks.forEach(link => {
-    link.style.setProperty('color', '#f3f3f3', 'important');
-});
 
 const headerLinks = document.querySelectorAll('#header-links a');
 headerLinks.forEach(link => {
