@@ -32,10 +32,8 @@ if (qualitiesH1) {
 }
 
 const emergencyTab = document.getElementById('emergency_tab');
-if (emergencyTab) {
-    emergencyTab.style.display = '';
-    emergencyTab.style.width = '100%';
-}
+emergencyTab.style.display = '';
+emergencyTab.style.width = '100%';
 
 const allLinks = document.querySelectorAll('a');
 allLinks.forEach(link => {

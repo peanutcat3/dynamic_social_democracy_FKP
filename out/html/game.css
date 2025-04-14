@@ -246,6 +246,7 @@ blockquote+blockquote.attribution {
   float: right;
   right: 0.4em;
   display: none;
+  margin-left: -6em;
 }
 
 #qualities {
@@ -609,7 +610,7 @@ img {
     display: none;
     float: none;
     right: 0;
-    margin-right: -6em;
+    marginRight: -6em;
   }
 
   #mid_panel {
