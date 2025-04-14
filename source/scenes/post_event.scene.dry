@@ -37,8 +37,8 @@ if (Q.rubicon) {
     const tabContainer = document.querySelector('.tab_container');
     tabContainer.style.backgroundColor = '#c3b8a0';
 
-    const tabButtons = document.querySelectorAll('.tab_button');
-    tabButtons.forEach((button) => {
+    const tabButtons_skibidi = document.querySelectorAll('.tab_button');
+    tabButtons_skibidi.forEach((button) => {
         button.style.backgroundColor = '#c3b8a0';
     });
 
@@ -49,10 +49,10 @@ if (Q.rubicon) {
     }
 
 
-    const tabButtons = document.querySelectorAll('.tab_button');
+    const tabButtons_skibidi = document.querySelectorAll('.tab_button');
 
 
-    tabButtons.forEach(button => {
+    tabButtons_skibidi.forEach(button => {
         // Mouse enter (hover effect)
         button.addEventListener('mouseenter', () => {
             button.style.backgroundColor = '#a89f8b'; // Change background on hover
