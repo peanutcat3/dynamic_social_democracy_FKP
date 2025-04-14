@@ -91,6 +91,7 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
+set-bg: img/street.jpg
 
 = The Rubicon is Crossed
 
