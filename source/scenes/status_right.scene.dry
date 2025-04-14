@@ -6,9 +6,9 @@ is-special: true
 
 <div style="text-align: center;">President: Paul von Hindenburg (<span style="color: #808080;">I</span>)</div>
 
-<img src="img/portraits/hindenburger.jpg" alt="Paul von Hindenburg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;">
+<div><img src="img/portraits/hindenburger.jpg" alt="Paul von Hindenburg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
 
-<p style="text-align: center;margin-bottom: 0;">Favorite: Franz von Papen</p>
+<p style="text-align: center;margin-bottom: 0;">Favorite: Kurt von Schleicher</p>
 
 <p style="text-align: center;margin-bottom: 5px;">Hitler chancellorship: strongly opposed</p>
 
@@ -18,16 +18,16 @@ is-special: true
 <img src="img/portraits/PapenFranz.jpg" alt="Franz von Papen" style="width: 50%;">
 <img src="img/portraits/SchleicherKurt.jpg" alt="Kurt von Schleicher" style="width: 50%;"></div>
 
-<div style="display: flex; justify-content: space-between; gap: 30px; margin-bottom: 5px;">
+<div style="display: flex; justify-content: space-between; gap: 15px; margin-bottom: 5px;">
 <div style="flex: 1;">
-  <p style="font-weight: bold;margin-bottom: 2px;margin-top: 5px;">Franz von Papen</p>
-  <p style="margin-top: 20px;margin-bottom: 2px;">Influence: Great</p>
+  <p style="font-weight: bold;margin-bottom: 2px;">Franz von Papen</p>
+  <p style="margin-bottom: 2px;">Influence: Growing</p>
   <p style="margin-bottom: 2px;">Goal: Nazi backing for his cabinet</p>
 </div>
 
-<div style="flex: 1;">
-  <p style="font-weight: bold; margin-bottom: 2px;">Kurt von Schleicher</p>
-  <p style="margin-bottom: 2px;">Influence: Fading</p>
+<div style="flex: 1;margin-right: -8px;">
+  <p style="white-space: nowrap;text-align: center;font-weight: bold;margin-bottom: 0px;">Kurt von Schleicher</p>
+  <p style="margin-bottom: 2px;">Influence: Paramount</p>
   <p style="margin-bottom: 2px;">Goal: Control Papen from the sidelines</p>
 </div>
 </div>
@@ -40,14 +40,14 @@ is-special: true
 <div style="display: flex; justify-content: space-between; gap: 30px; margin-bottom: 5px;">
 
 <div style="flex: 1;">
-  <p style="font-weight: bold;margin-bottom: 13px;margin-top: 10px;">Otto Meissner</p>
+  <p style="font-weight: bold;">Otto Meissner</p>
   <p style="margin-bottom: 2px;">Influence: Notable</p>
-  <p style="margin-bottom: 2px;">Goal: Support the new chancellor</p>
+  <p style="margin-bottom: 2px;">Goal: Become acquainted with the new chancellor</p>
 </div>
 
 <div style="flex: 1;">
-  <p style="font-weight: bold; margin-bottom: 2px;">Oskar von Hindenburg</p>
-  <p style="margin-bottom: 2px;">Influence: Sizable</p>
-  <p style="margin-bottom: 2px;">Goal: Become acquainted with the new chancellor</p>
+  <p style="font-weight: bold; margin-bottom: 0px;">Oskar von Hindenburg</p>
+  <p style="margin-bottom: 2px;">Influence: Relevant</p>
+  <p style="margin-bottom: 2px;">Goal: Support the new chancellor</p>
 </div>
 </div>
