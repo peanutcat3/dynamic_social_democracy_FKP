@@ -103,7 +103,9 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if chancellor == "Schleicher": Public Works: being formulated?]
 Reichstag: dissolved
+
 Next election: [+ next_election_month : month +] [+ next_election_year +], Week [+ next_election_week +]
+
 Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen": postponed indefinitely ?]
 
 @politics
