@@ -1,6 +1,5 @@
-
-(..1) marginal
-(1..2) notable
-(2..3) substantial
-(3..4) powerful
-(5..) paramount
+(..1) <span style="color: #B0B0B0;">marginal</span>
+(1..2) <span style="color: #D6A86C;">notable</span>
+(2..3) <span style="color: #E1A045;">substantial</span>
+(3..4) <span style="color: #E87B34;">powerful</span>
+(5..) <span style="color: #E6492D;">paramount</span>

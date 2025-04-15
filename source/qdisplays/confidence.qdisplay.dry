@@ -1,6 +1,5 @@
-
-(..1) lost
-(1..2) waning
-(2..3) uncertain
-(3..4) trusting
-(5..) unwavering
+(..1) <span style="color: #E89A9A;">lost</span>
+(1..2) <span style="color: #F4A984;">waning</span>
+(2..3) <span style="color: #F7C27D;">uncertain</span>
+(3..4) <span style="color: #EBD97D;">trusting</span>
+(5..) <span style="color: #A8D5BA;">unwavering</span>
