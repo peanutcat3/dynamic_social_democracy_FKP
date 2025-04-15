@@ -27,6 +27,6 @@ This is met with an instant increase in political violence, with the lifting of 
 
 @papen
 title: The decree is signed by President Hindenburg.
-on-arrival: unemployed += 3; economic_growth -= 1; inflation -= 1; unemployed_kpd += 6; workers_kpd += 6; workers_spd += 4; unemployed_spd += 4; workers_dnvp -= 2; workers_dnf -= 2; workers_nsdap -= 4; unemployed_nsdap -= 4; new_middle_nsdap -= 2; new_middle_kpd += 2; pro_republic -= 5
+on-arrival: sa_strength *= 2; sa_militancy += 0.1; coup_progress += 2; pro_republic -= 5
 
-The decree confirms the overtly anti-social character of the so-called “cabinet of barons,” and has ignited fury across the working class. With nearly two-thirds of the country now irrevocably hostile to the chancellor, it is politically suicidal for any party outside the <span style="color: #808080;">reactionary</span> right to support him without suffering severe electoral consequences.
+The <span style="color: #7A3C00;">**SA**</span> immediately returns to mass recruiting and arming. This is too much for the Prussian police to handle.

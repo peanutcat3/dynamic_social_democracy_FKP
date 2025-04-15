@@ -816,6 +816,11 @@ Q.cvp_economy_accepted_time = 0;
 Q.public_works_name = "Lautenbach";
 
 // rubicon
+Q.hindenburg_schleicher_r = 5;
+Q.hindenburg_papen_r = 5;
+
+Q.schleicher_papen_r = 5;
+
 Q.schleicher_strength = 5;
 Q.papen_strength = 1;
 Q.meissner_strength = 2;

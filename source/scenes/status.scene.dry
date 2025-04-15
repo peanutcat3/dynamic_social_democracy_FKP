@@ -99,6 +99,10 @@ Economic growth: [+ economic_growth_2 +]%
 <div style="text-align: center;">Prussian Minister-President: [? if prussia_leader = "Braun" and not chancellor == "Hitler": <span style="color: #c00000;">Braun</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and not sapd_formed and not chancellor == "Hitler": <span style="color: #c00000;">Rosenfeld</span> (<span style="color: #c00000;">**SPD**</span>)?][? if prussia_leader = "Rosenfeld" and sapd_formed and not chancellor == "Hitler": <span style="color: #9B0000;">Rosenfeld</span> (<span style="color: #9B0000;">**SAPD**</span>)?][? if prussia_leader = "Stegerwald" and not chancellor == "Hitler": <span style="color: #000000;">Stegerwald</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)?][? if prussia_leader = "Brüning" and not chancellor == "Hitler": <span style="color: #000000;">Brüning</span> (<span style="color: #000000;">**[+ z_party_name +]**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler" and not lvp_formed and dvp_exist: <span style="color: #C0A054;">Luther</span> (<span style="color: #C0A054;">**DVP**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler" and not lvp_formed and not dvp_exist: <span style="color: #D3C24D;">Luther</span> (<span style="color: #D3C24D;">**DVP**</span>)?][? if prussia_leader = "Luther" and not chancellor == "Hitler" and lvp_formed: <span style="color: #FFCC00;">Luther</span> (<span style="color: #FFCC00;">**LVP**</span>)?][? if prussia_leader = "Goring": <span style="color: #7A3C00;">Göring</span> (<span style="color: #7A3C00;">**NSDAP**</span>)?][? if (prussia_leader = "Papen" and chancellor == "Papen") or chancellor == "Hitler" and not prussia_leader == "Goring": <span style="color: #808080;">Papen</span> (<span style="color: #808080;">I</span>)?][? if (prussia_leader = "Papen" and chancellor == "Schleicher") and not chancellor == "Hitler": <span style="color: #808080;">Schleicher</span> (<span style="color: #808080;">I</span>)?]</div>
 <div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;"><img src="img/portraits/PapenFranz.jpg" alt="Franz von Papen" style="width: 50%;"><img src="img/placeholder.jpg" alt="Vacant" style="width: 50%;"></div>
 
+Hindenburg's confidence: [? chancellor == "Papen": [+ hindenburg_papen_r : confidence +]?][? chancellor == "Schleicher": [+ hindenburg_schleicher_r : confidence +]?]
+
+[? if chancellor == "Papen": Schleicher's confidence: [+ schleicher_papen_r : confidence +]?]
+
 = Government
 
 [? if chancellor == "Schleicher": Public Works: being formulated?]
@@ -220,7 +224,7 @@ if (Q.sa_strength) {
 
 [? if year >= 1930: <h1>Distribution of Power</h1> ?]
 
-[? if year >= 1930: <h4>[? if not rfb_truce: <span style="color: #000000;">Dem</span><span style="color: #DD0000;">ocra</span><span style="color: #FFCC00;">tic</span>?][? if rfb_truce: Anti-<span style="color: #7A3C00;">Fascist</span>?] strength: [+ democracy_force +]%</h4>?]
+[? if year >= 1930: <h4>[? if not kpd_truce: <span style="color: #000000;">Dem</span><span style="color: #DD0000;">ocra</span><span style="color: #FFCC00;">tic</span>?][? if kpd_truce: Anti-<span style="color: #7A3C00;">Fascist</span>?] strength: [+ democracy_force +]%</h4>?]
 
 [? if year >= 1930: <span style="color: #c00000;">**Reichsbanner**</span>: [+ rb_force +]%?]
 

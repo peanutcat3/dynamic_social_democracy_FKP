@@ -1,6 +1,6 @@
 title: Lausanne Conference
 subtitle: On the question of reparations...
-view-if: year = 1932 and month >= 7 and hoover_moratorium_seen and foreign_minister_party != "SPD" and not reparations_resolved
+view-if: year = 1932 and month >= 7 and hoover_moratorium_seen and foreign_minister_party != "SPD" and not reparations_resolved and chancellor != "Papen"
 on-arrival: {!
 Q.reparations = -2;
 Q.budget += 1;
