@@ -12,7 +12,6 @@ Wels is the long-time chairman of the <span style="color: #c00000;">**SPD**</spa
 - @clear_agenda
 - @party_discipline
 - @emergency_fundraising
-- @money
 - @snap_election
 - @root: Return to main
 
@@ -44,21 +43,12 @@ We have enforced party discipline to reduce dissent across all factions.
 @emergency_fundraising
 title: Emergency Fundraising
 view-if: difficulty < 1
-subtitle: An emergency infusion of resources.
+subtitle: An emergency infusion of resources. Usable once per two years.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; resources += dues
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if emergency_fundraising_timer > 0 : [+ emergency_fundraising_timer +] months before next emergency fundraising. ?]
+on-arrival: advisor_action_timer = 6; resources += 2; emergency_fundraising_timer = 16
 
-We have gained +[+ dues +] resources.
-
-@money
-title: For playtesters
-subtitle: Print a SPDillion resources.
-choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: resources += 100
-
-We have gained +100 resources.
+We have gained +2 resources.
 
 @snap_election
 title: Snap Election

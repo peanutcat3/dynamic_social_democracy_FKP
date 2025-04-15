@@ -51,7 +51,7 @@ Q.use_decimals = 0;
 // party resources
 Q.resources = 2;
 // party dues
-Q.dues = 2;
+Q.dues = 5;
 
 // the state of the party
 // overall dissent reduces every increase in party support.
@@ -655,11 +655,12 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
     'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger',
     'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath',
-    'bourgeois_negotiations_elections_1930', 'nazi_decay', 'stegerwald_transformation'];
+    'bourgeois_negotiations_elections_1930', 'nazi_decay', 'stegerwald_transformation', 'emergency_fundraising'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
 Q.crisis_program_timer = 0;
+Q.emergency_fundraising_timer = 0;
 Q.fundraising_timer = 0;
 Q.ideology_timer = 0;
 Q.inter_party_relationships_timer = 0;
@@ -907,11 +908,11 @@ For more information on the politics and government of the German Republic, see 
 - @1928_historical: Begin (<span style="color: #611813;">historical</span> mode)
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; base_dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; ddp_relation = 65; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 6; base_dues = 6; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; ddp_relation = 65; budget = 5;
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; base_dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; ddp_relation = 50; budget = 3
+on-arrival: difficulty = 1; resources = 0; dues = 4; base_dues = 4; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; ddp_relation = 50; budget = 3
 go-to: 1928_main
 
 @1928_historical
@@ -920,8 +921,8 @@ on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
-Q.dues = 1;
-Q.base_dues = 1;
+Q.dues = 3;
+Q.base_dues = 3;
 Q.rb_strength = 2000;
 Q.reformist_dissent = 25;
 Q.left_dissent = 30;
@@ -941,8 +942,8 @@ subtitle: Intended way of experiencing this mod.
 on-arrival: {!
 Q.difficulty = -1;
 Q.resources = 3;
-Q.dues = 2;
-Q.base_dues = 2;
+Q.dues = 4;
+Q.base_dues = 4;
 Q.rb_strength = 2000;
 Q.z_relation = 46;
 Q.kpd_relation = 21;
