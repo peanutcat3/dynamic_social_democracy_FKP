@@ -58,7 +58,7 @@ Even when Hindenburg was reduced to tears, a strategy that had worked on Brünin
 @papen
 title: Franz von Papen?
 subtitle: An relatively unknown Catholic Conservative from the <span style="color: #000000;">Center Party</span>. Schleicher's preferred candidate.
-on-arrival: spd_toleration = 0; spd_toleration_right = 0; chancellor = "Papen"; chancellor_party = "I"
+on-arrival: spd_toleration = 0; spd_toleration_right = 0; chancellor = "Papen"; chancellor_party = "I"; schleicher_papen_r -= 1
 view-if: westarp_seen and goerdeler_seen
 face-image: img/portraits/PapenFranz.jpg
 
@@ -68,6 +68,4 @@ Papen's decision to take the chancellorship, despite [+ z_leader +]'s urging and
 
 It's unknown of the exact reasons why Schleicher would choose a man like Papen as Brüning's successor, but we can assume he was trying to secure the support of the <span style="color: #000000;">Center Party</span> and <span style="color: #7A3C00;">Nazis</span>, as he's a far-right member of the former, and that Papen would be an easy person to control.
 
-The Rubicon has been crossed, and the fate of Germany may be decided by whoever has the most influence over the dying, aging, old man that is Paul von Hindenburg. Time will tell if the <span style="color: #7A3C00;">**NSDAP**</span> will honor its promises to Schleicher, which they'd purposefully refused to write on paper.
-
-(UNFINISHED FROM NOW ON)
+Time will tell if the <span style="color: #7A3C00;">**NSDAP**</span> will honor its promises to Schleicher, which they'd purposefully refused to write on paper.
