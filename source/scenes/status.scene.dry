@@ -103,11 +103,12 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if chancellor == "Schleicher": Hindenburg's confidence: [+ hindenburg_schleicher_r : confidence +] ?]
 
-[? if chancellor == "Papen": Schleicher's confidence: [+ schleicher_papen_r : confidence +]?]
+[? if chancellor == "Papen": Schleicher's confidence: [+ schleicher_papen_r : confidence +] ?]
 
 = Government
 
-[? if chancellor == "Schleicher": Public Works: being formulated?]
+[? if chancellor == "Schleicher": Public Works: being formulated ?]
+
 Reichstag: dissolved
 
 Next election: [+ next_election_month : month +] [+ next_election_year +], Week [+ next_election_week +]

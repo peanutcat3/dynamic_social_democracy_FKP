@@ -474,6 +474,10 @@ if (Q.total_bruning_time >= 21 && !Q.in_center_right_coalition && !Q.in_right_co
         Q.flavour_59_trigger_shown = 1;
     }
 }
+const boxes = document.querySelectorAll('.scrollable-box');
+if (boxes.length >= 2) {
+    boxes[1].remove();
+}
 if (Q.week !== Q.last_week_updated && Q.week) Q.bg_change = 1;
 if (!Q.rubicon && Q.last_time_updated !== Q.time) Q.bg_change = 1;
 Q.last_time_updated = Q.time;
@@ -1571,6 +1575,10 @@ if (Q.total_bruning_time >= 21 && !Q.in_center_right_coalition && !Q.in_right_co
         Q.flavour_59_trigger_shown = 1;
     }
 }
+const boxes = document.querySelectorAll('.scrollable-box');
+if (boxes.length >= 2) {
+    boxes[1].remove();
+}
 if (Q.week !== Q.last_week_updated && Q.week) Q.bg_change = 1;
 if (!Q.rubicon && Q.last_time_updated !== Q.time) Q.bg_change = 1;
 Q.last_time_updated = Q.time;
@@ -2162,7 +2170,13 @@ go-to: bg if rubicon and bg_change; bg_2 if not rubicon and bg_change
 
 {!<p class="other">!}[? if papen_time == 1 and z_leader == "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center Party</span> has announced his intention to resign as party chairman, citing ill health and proposing Heinrich Brüning as his successor. However, he has been persuaded to remain in office—on the condition that his deputy chairman, Joseph Joos, and Brüning handle most of the party’s day-to-day affairs. Kaas has since departed for an extended convalescent leave in South Tyrol. ?]{!</p>!}
 
-{!<p class="other">!}[? if papen_time == 2: Joseph Goebbels, the <span style="color: #7A3C00;">Nazi</span>'s propaganda mastermind has concluded after a few days of Papen's chancellorship, that the party must break with it in order to maintain popularity. The party can't support a government irreconcilably opposed by up to 90% of the German people. ?]{!</p>!}
+{!<p class="other">!}[? if papen_time == 2: Joseph Goebbels, the <span style="color: #7A3C00;">Nazi</span>'s propaganda mastermind has concluded after a few days of Papen's chancellorship, that the party must break with it in order to maintain popularity. The party can't support a government irreconcilably opposed by up to 90% of the German people. Their decision remains secret for now, and Papen continues his efforts to court their support. ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 3 and nsdap_r_prussia >= 25 and not in_far_right_coalition_prussia: Negotiations between the <span style="color: #000000;">Center Party</span> and the <span style="color: #7A3C00;">**NSDAP**</span> in Prussia have collapsed, driven by the former’s hostility toward its ex-member and current Chancellor Papen. ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 6 and nsdap_r_prussia >= 25 and not in_far_right_coalition_prussia and spd_prussia and not presidential_powers and not prussian_reichsexekution: Rumors suggest Chancellor Papen has secured the support of his cabinet and President Hindenburg for a decree authorizing a *Reichsexekution* against Prussia, justifying it with a fabricated claim of a merger between the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>—a lie apparently convincing enough to sway Hindenburg. It seems all it takes is a pretext for him to present the already signed decree. ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 8 and prussia_leader == "Papen": The new right-wing and non-partisan Prussian cabinet assembled by *Reichskommissar* Papen has launched a large-scale purge of <span style="color: #c00000;">socialist</span> and <span style="color: #D3C24D;">democratic</span> officials from the civil service, forcing them into early retirement. Most of their replacements are conservatives—many of them <span style="color: #3E88B3;">nationalists</span>. The purge is particularly aimed at <span style="color: #c00000;">socialist</span> provincial presidents and police officials. An estimated 69 <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> officials have been stripped of their power. Safe to say, the democratic bulwark has been dismantled. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 8 : Perhaps the global recovery is finally on the horizon. Many economists now believe the slump has bottomed out, with the Frankfurt stock exchange climbing steadily—share and bond values have risen by over 30% since spring. But this resurgence remains abstract to the millions of unemployed Germans still trapped in poverty. ?]{!</p>!}
 

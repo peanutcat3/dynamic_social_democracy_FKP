@@ -248,6 +248,13 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
     if (Q.week >= 5) {
         Q.week = 1;
     }
+    if (Q.prussia_leader == "Papen" || Q.prussia_leader == "Schleicher") {
+        Q.new_middle_spd -= 4/12;
+        Q.new_middle_ddp -= 2/12;
+        Q.new_middle_dnvp += 2/12;
+        Q.new_middle_dnf += 2/12;
+        Q.new_middle_nsdap += 2/12;
+    }
 }
 
 Q.month_actions_checked = Q.month_actions;
@@ -467,6 +474,18 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     }
     if (Q.rfb_strength < 0) {
         Q.rfb_strength = 0;
+    }
+    if (Q.rb_militancy < 0) {
+        Q.rb_militancy = 0;
+    }
+    if (Q.sh_militancy < 0) {
+        Q.sh_militancy = 0;
+    }
+    if (Q.sa_militancy < 0) {
+        Q.sa_militancy = 0;
+    }
+    if (Q.rfb_militancy < 0) {
+        Q.rfb_militancy = 0;
     }
     if (Q.sapd_formed == 1 && Q.centrists_resign == 1) {
         Q.labor_dissent += 5/12;
