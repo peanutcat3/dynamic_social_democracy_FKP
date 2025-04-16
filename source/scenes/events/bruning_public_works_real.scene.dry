@@ -1,6 +1,6 @@
 title: Fifth Emergency Decree for Economy and Finance
 subtitle: The public works program is presented.
-view-if: bruning_toleration_time >= 6 and ((year == 1932 and month >= 5) or year >= 1933) and unemployed >= 30 and time >= bruning_sigma_time and bruning_sigma_time
+view-if: bruning_toleration_time >= 6 and ((year == 1932 and month >= 5) or year >= 1933) and unemployed >= 30 and time >= bruning_sigma_time and bruning_sigma_time and not works_program
 max-visits: 1
 tags: event
 new-page: true
@@ -23,7 +23,7 @@ set-bg: img/map_2.jpg
 
 With the abolishment of reparation payments and Brüning's government surviving the intrigues of [? if president == "Hindenburg": Hindenburg's inner circle?][? if president != "Hindenburg": his supporting parties?] for the time being, Dietrich's public works program has officially been granted its full billion-dollar funding!
 
-This marks a real turning point, and the <span style="color: #7A3C00;">Nazis</span> are now set to fade into irrelevance as millions of Germans will return to work in the coming months.
+This marks a real turning point, and along with the abolishment of reparations, the radicalizing effects of sky-high unemployment and the Versailles Treaty are diminished. The set of conditions that have enabled their meteoric rise begins to unravel, depriving them of the fuel that once drove their ascent.
 
 - @public_works
 

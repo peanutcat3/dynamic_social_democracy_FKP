@@ -1,6 +1,6 @@
 title: Expansion of Public Works
 subtitle: The Brüning cabinet announces a job creation program.
-view-if: bruning_time >= 6 and ((year == 1932 and month >= 5) or year >= 1933) and unemployed >= 30 and (in_center_right_coalition or in_right_coalition) and time >= bruning_skibidi_time and bruning_skibidi_time
+view-if: bruning_time >= 6 and ((year == 1932 and month >= 5) or year >= 1933) and unemployed >= 30 and (in_center_right_coalition or in_right_coalition) and time >= bruning_skibidi_time and bruning_skibidi_time and not works_program
 max-visits: 1
 tags: event
 new-page: true
@@ -23,7 +23,7 @@ set-bg: img/map_2.jpg
 
 With the abolishment of reparations at Lausanne, the Brüning cabinet finally feels comfortable to expand funding for its recently enacted public works program. A billion dollars in bonds released by the government is used to fund the program, and money begins to flow in the economy again.
 
-This marks a real turning point, and the <span style="color: #7A3C00;">Nazis</span> are now set to fade into irrelevance as millions of Germans will return to work in the coming months.
+This marks a real turning point, and along with the abolishment of reparations, the radicalizing effects of sky-high unemployment and the Versailles Treaty are diminished. The set of conditions that have enabled their meteoric rise begins to unravel, depriving them of the fuel that once drove their ascent.
 
 - @public_works
 
