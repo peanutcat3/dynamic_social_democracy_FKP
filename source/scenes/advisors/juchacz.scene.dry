@@ -18,7 +18,7 @@ Juchacz is the founder of the Worker's Welfare, our mutual aid organization; her
 title: Emergency Fundraising
 subtitle: An emergency infusion of resources. Usable once every 16 months.
 view-if: difficulty < 1
-choose-if: advisor_action_timer = 0
+choose-if: advisor_action_timer = 0 and emergency_fundraising_timer == 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if emergency_fundraising_timer > 0 : [+ emergency_fundraising_timer +] months before next emergency fundraising. ?]
 on-arrival: advisor_action_timer = 6; resources += 2; emergency_fundraising_timer = 16
 
