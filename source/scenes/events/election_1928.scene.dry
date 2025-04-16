@@ -784,7 +784,7 @@ go-to: coalition_menu
 
 [? if dnvp_ideology == "Radical" or lvp_formed and not cvp_formed: Right-wing Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ right_coalition +]% ?]
 
-[? if cvp_formed and far_right_coalition >= 25: Hitler-Right Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ hitler_right_coalition +]% ?]
+[? if (cvp_formed and far_right_coalition >= 25) or (hitler_right_coalition >= 50 and rubicon): Black-Brown Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ hitler_right_coalition +]% ?]
 
 [? if dnvp_ideology == "Radical" and far_right_coalition >= 35 and not cvp_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
@@ -795,6 +795,8 @@ go-to: coalition_menu
 [? if anti_democratic_coalition >= 50 and dnvp_ideology == "Radical": Together, the anti-democratic <span style="color: #700000;">**KPD**</span>, <span style="color: #3E88B3;">**DNVP**</span>, and <span style="color: #7A3C00;">**NSDAP**</span> have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
 [? if anti_democratic_coalition >= 50 and dnvp_ideology == "Moderate": Together, the anti-democratic <span style="color: #700000;">**KPD**</span>, <span style="color: #003755;">**DNF**</span>, and <span style="color: #7A3C00;">**NSDAP**</span> have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
+
+[? if hitler_right_coalition >= 50 and rubicon: The <span style="color: #000000;">Center Party</span> and its <span style="color: #A2D8E0;">Bavarian</span> counterpart, together with the <span style="color: #7A3C00;">**NSDAP**</span>, constitute a majority in the Reichstag. This has sparked rumors of a potential parliamentary-backed Black-Brown coalition that could unseat [+ chancellor +]—rumors with no real chance of materializing, sparked by the <span style="color: #7A3C00;">Nazis</span> to pressure the chancellor and buy time. ?]
 
 There are some potential coalition arrangements.
 
@@ -1291,12 +1293,38 @@ We have supported a minority government led by the [? if z_party_name != "CVP": 
 
 
 @no_majority_papen
-on-arrival: pro_republic -= 5; next_election_time = time+3; next_election_month = month + 3; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; old_middle_nsdap -= 4; new_middle_nsdap -= 4; rural_nsdap -= 6; old_middle_dnvp += 4; new_middle_dnvp += 4; rural_dnvp += 6; no_majority_papen_elections += 1; workers_spd -= 3 if pro_republic < 40; workers_nsdap += 3 if pro_republic < 40;
+on-arrival: {!
+Q.pro_republic -= 5;
+Q.papen_post = 1;
+Q.no_majority_papen_elections += 1;
 
-After the elections, Papen is still deeply unpopular, without any hint of coalition support, and there is a vote of no confidence called against him almost immediately. No matter how we vote, the measure would pass. The Reichstag is dissolved once more.
+Q.next_reichstag_time = Q.time + 6;
+Q.next_reichstag_week = Q.week + 6;
+Q.next_reichstag_month = Q.month;
+Q.next_reichstag_year = Q.year;
 
-New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
+if (Q.next_reichstag_week > 4) {
+  Q.next_reichstag_week -= 4;
+  Q.next_reichstag_month += 1;
+}
 
+if (Q.next_reichstag_week > 4) {
+  Q.next_reichstag_week -= 4;
+  Q.next_reichstag_month += 1;
+}
+
+if (Q.next_reichstag_month > 12) {
+  Q.next_reichstag_month -= 12;
+  Q.next_reichstag_year += 1;
+}
+!}
+go-to: no_majority_papen_plus
+
+With the <span style="color: #7A3C00;">**NSDAP**</span> commanding a strong position in parliament, it can decide the fate of the independent Papen cabinet, as only the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #C0A054;">**DVP**</span> are the only other parties willing to tie themselves to the unpopular chancellor. 
+# TODO
+@no_majority_papen_plus
+
+However, it's likely that even a coalition of all parties to the right won't receive a majority, not without the support of the antagonistic <span style="color: #000000;">Center Party</span>. The new Reichstag will convene on [+ reichstag_month +] [+ reichstag_year +], Week [+ reichstag_week +].
 
 @no_majority_papen_2
 on-arrival: chancellor = "Schleicher"; pro_republic -= 5; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; old_middle_nsdap += 5; new_middle_nsdap += 5; rural_nsdap += 10; workers_spd -= 4 if pro_republic < 40; workers_nsdap += 4 if pro_republic < 40; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I"; schleicher_chancellor_timer = 3

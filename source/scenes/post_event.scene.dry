@@ -241,6 +241,7 @@ Q.kvp_r = Math.round(Q.kvp_r * 10) / 10;
 Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10;
 
 if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_checked) {
+    Q.rubicon_time += 1;
     Q.week += 1;
     if (Q.chancellor == "Papen") {
         Q.papen_time += 1;
@@ -3153,6 +3154,8 @@ if (!Q.nazi_peak_triggered) {
     Q.nazi_peak += (100 - Q.pro_republic) / 10;
     Q.nazi_peak += (Q.sa_force / 10)
     if (Q.nsdap_presidential_votes_disp >= 30) Q.nazi_peak += 5;
+    if (Q.reparations_resolved && Q.chancellor == "Brüning") Q.nazi_peak -= 5;
+    if (Q.lautenbach_adopted && Q.chancellor == "Brüning") Q.nazi_peak -= 5;
     if (Q.year >= 1932 && Q.month >= 4) {
         Q.nazi_peak -= (Q.other_votes + Q.dvp_votes + Q.ddp_votes + Q.dnvp_votes + Q.dnf_votes + Q.lvp_votes) / 2
     }

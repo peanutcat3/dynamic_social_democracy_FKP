@@ -109,7 +109,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if chancellor == "Schleicher": Public Works: being formulated ?]
 
-Reichstag: dissolved
+Reichstag: [? if reichstag_rubicon: in session ?][? if not reichstag_rubicon: dissolved ?][? if next_reichstag_time < rubicon_time and not reichstag_rubicon:, reconvenes on [+ reichstag_month +] [+ reichstag_year +], Week [+ reichstag_week +]. ?]
 
 Next election: [+ next_election_month : month +] [+ next_election_year +], Week [+ next_election_week +]
 
