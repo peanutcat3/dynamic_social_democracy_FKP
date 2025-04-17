@@ -1,6 +1,6 @@
 title: Relations with the Red General
-on-arrival: month_actions += 1; schleicher_spd_timer += 4 if not schleicher_spd_adopted; schleicher_spd_timer += 6 if schleicher_spd_adopted
-view-if: rubicon and red_general_unlock and schleicher_spd_timer <= 0
+on-arrival: month_actions += 1; red_general_timer += 4 if not schleicher_spd_adopted; red_general_timer += 6 if schleicher_spd_adopted
+view-if: rubicon and red_general_unlock and red_general_timer <= 0
 card-image: img/portraits/schleicher.jpg
 is-card: true
 new-page: true

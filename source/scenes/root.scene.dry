@@ -656,7 +656,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
     'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger',
     'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath',
-    'bourgeois_negotiations_elections_1930', 'nazi_decay', 'stegerwald_transformation', 'emergency_fundraising', 'schleicher_spd'];
+    'bourgeois_negotiations_elections_1930', 'nazi_decay', 'stegerwald_transformation', 'emergency_fundraising', 'red_general_timer'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -732,7 +732,7 @@ Q.high_inflation_timer = 0;
 Q.papen_chancellor_timer = 0;
 Q.schleicher_chancellor_timer = 0;
 Q.nazi_decay_timer = 0;
-Q.schleicher_spd_timer = 0;
+Q.red_general_timer = 0;
 Q.z_party_name = "Z";
 Q.dnvp_leader = "Westarp";
 Q.dnvp_ideology = "Radical";
