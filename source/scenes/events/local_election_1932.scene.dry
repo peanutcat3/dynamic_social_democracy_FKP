@@ -70,7 +70,7 @@ if (Q.nsdap_local_elections_vote >= 20) {
     Q.old_middle_nsdap += 3;
     Q.rural_nsdap += 3;
     Q.pro_republic -= 3;
-    Q.hindenburg_angry_bruning += 10;
+    Q.hindenburg_angry_bruning += 30;
     Q.z_relation -= 5;
 }
 if (Q.nsdap_bavaria_elections_vote >= 25) {
@@ -82,7 +82,7 @@ if (Q.nsdap_wurttemberg_elections_vote >= 15) {
 if (Q.nsdap_local_elections_vote >= 34) {
     Q.workers_nsdap += 3;
     Q.unemployed_nsdap += 3;
-    Q.hindenburg_angry_bruning += 30;
+    Q.hindenburg_angry_bruning += 50;
     Q.pro_republic -= 3;
     Q.z_relation -= 3;
 }

@@ -1075,13 +1075,23 @@ go-to: bg if rubicon and bg_change; bg_2 if not rubicon and bg_change
 
 {!<p class="other">!}[? if papen_time == 6 and nsdap_r_prussia >= 25 and not in_far_right_coalition_prussia and spd_prussia and not presidential_powers and not prussian_reichsexekution: Rumors suggest Chancellor Papen has secured the support of his cabinet and President Hindenburg for a decree authorizing a *Reichsexekution* against Prussia, justifying it with a fabricated claim of a merger between the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>—a lie apparently convincing enough to sway Hindenburg. It seems all it takes is a pretext for him to present the already signed decree. ?]{!</p>!}
 
+{!<p class="other">!}[? if papen_time == 7 and prussia_leader == "Papen": An immediate legal challenge has been launched against Papen's seizure of the Prussian government, with <span style="color: #c00000;">**SPD**</span> and <span style="color: #000000;">Center Party</span> officials requesting an interim injunction to block Papen and his appointed commissioners from assuming control. The <span style="color: #808080;">reactionary</span> court has rejected the injunction, and the main proceedings are scheduled to begin only after a three-month delay. ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 7: Chancellor Papen has ordered the German delegation to walk out of the Geneva Disarmament Conference after <span style="color: #002654;">France</span> issued a strong objection to Germany’s demand for equal armament rights. Papen declared that Germany will not return to the conference unless the other powers agree to his terms. ?]{!</p>!}
+
 {!<p class="other">!}[? if papen_time == 8 and prussia_leader == "Papen": The new right-wing and non-partisan Prussian cabinet assembled by *Reichskommissar* Papen has launched a large-scale purge of <span style="color: #c00000;">socialist</span> and <span style="color: #D3C24D;">democratic</span> officials from the civil service, forcing them into early retirement. Most of their replacements are conservatives—many of them <span style="color: #3E88B3;">nationalists</span>. The purge is particularly aimed at <span style="color: #c00000;">socialist</span> provincial presidents and police officials. An estimated 69 <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> officials have been stripped of their power. Safe to say, the democratic bulwark has been dismantled. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 8 and (week == 1 or not rubicon) and unemployed >= 25 : Perhaps the global recovery is finally on the horizon. Many economists now believe the slump has bottomed out, with the Frankfurt stock exchange climbing steadily—share and bond values have risen by over 30% since spring. But this resurgence remains abstract to the millions of unemployed Germans still trapped in poverty. ?]{!</p>!}
 
+{!<p class="other">!}[? if papen_time == 9 and hitler_right_coalition >= 50: The aftermath of the Reichstag elections and the emergence of a Black-Brown majority has initiated negotiations between the <span style="color: #7A3C00;">**NSDAP**</span> and the <span style="color: #000000;">Center Party</span>. The latter hopes to restrain the <span style="color: #7A3C00;">Nazis</span> by compelling a potential Chancellor [+ nsdap_chancellor +] to govern through parliament rather than by decree. In doing so, he would be forced to consult a more conservative and dependable non-<span style="color: #7A3C00;">Nazi</span> cabinet—where real power would reside. ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 9: General Schleicher has presented an enticing proposal to [+ nsdap_chancellor +], suggesting the formation of a presidential cabinet that would rule by decree. In this arrangement, Gregor Strasser would serve as Interior Minister of both Prussia and the Reich, while Schleicher believes he can control the <span style="color: #7A3C00;">Nazis</span> by taking the role of Defense Minister. However, the <span style="color: #7A3C00;">Nazi</span> leadership's enthusiasm quickly fades when President Hindenburg refuses to appoint [+ nsdap_chancellor +] as Chancellor. Papen, deeply offended by Schleicher's apparent willingness to abandon him, has used his growing rapport with Hindenburg to undermine Schleicher’s influence over the President. ?]{!</p>!}
+
 {!<p class="other">!}[? if year = 1932 and month = 8 and (week == 3 or not rubicon): Austria has obtained a League of Nations loan that is tied to a 20-year ban on Anschluss, but opposition from the <span style="color: #C8102E;">Social Democrats</span> and <span style="color: #0E428E;">Greater German Party</span> has stalled the law, before it finally is passed by a single vote. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 9 and (week == 3 or not rubicon) : General elections were held in Sweden, resulting in a great victory for Per Albin Hansson and his <span style="color: #D70926;">Social Democrats</span>, who now govern in a minority government. The <span style="color: #D70926;">Swedish Social Democrats</span> have embraced the concept of a 'people's home', a form of reformist socialism aimed at reducing class divides while working in the capitalist framework. Perhaps we should consider following their 'nordic' model? ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 17 and prussia_leader == "Papen": The main proceedings in the case against Papen’s unconstitutional *Reichsexekution* of the Prussian government have begun, with a verdict expected in the coming weeks. Yet, the historically <span style="color: #808080;">reactionary</span> leanings of the judiciary place us at a clear disadvantage—despite support from the state governments of Bavaria and Baden, who have joined us in challenging the decree’s legality. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 10 and (week == 1 or not rubicon) : Chancellor of Austria Engelbert Dollfuß has used the "War Economy Enabling Act", a law passed during the days of the Austro-Hungarian Empire, which allowed him to restructure the Creditanstalt without parliamentary approval. While the <span style="color: #C8102E;">Austrian Social Democrats</span> have protested, Dollfuß' actions are technically legal. ?]{!</p>!}
 
@@ -1100,6 +1110,7 @@ go-to: bg if rubicon and bg_change; bg_2 if not rubicon and bg_change
 - @party
 - @govt
 - @eco
+- @time
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -2187,13 +2198,23 @@ go-to: bg if rubicon and bg_change; bg_2 if not rubicon and bg_change
 
 {!<p class="other">!}[? if papen_time == 6 and nsdap_r_prussia >= 25 and not in_far_right_coalition_prussia and spd_prussia and not presidential_powers and not prussian_reichsexekution: Rumors suggest Chancellor Papen has secured the support of his cabinet and President Hindenburg for a decree authorizing a *Reichsexekution* against Prussia, justifying it with a fabricated claim of a merger between the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>—a lie apparently convincing enough to sway Hindenburg. It seems all it takes is a pretext for him to present the already signed decree. ?]{!</p>!}
 
+{!<p class="other">!}[? if papen_time == 7 and prussia_leader == "Papen": An immediate legal challenge has been launched against Papen's seizure of the Prussian government, with <span style="color: #c00000;">**SPD**</span> and <span style="color: #000000;">Center Party</span> officials requesting an interim injunction to block Papen and his appointed commissioners from assuming control. The <span style="color: #808080;">reactionary</span> court has rejected the injunction, and the main proceedings are scheduled to begin only after a three-month delay. ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 7: Chancellor Papen has ordered the German delegation to walk out of the Geneva Disarmament Conference after <span style="color: #002654;">France</span> issued a strong objection to Germany’s demand for equal armament rights. Papen declared that Germany will not return to the conference unless the other powers agree to his terms. ?]{!</p>!}
+
 {!<p class="other">!}[? if papen_time == 8 and prussia_leader == "Papen": The new right-wing and non-partisan Prussian cabinet assembled by *Reichskommissar* Papen has launched a large-scale purge of <span style="color: #c00000;">socialist</span> and <span style="color: #D3C24D;">democratic</span> officials from the civil service, forcing them into early retirement. Most of their replacements are conservatives—many of them <span style="color: #3E88B3;">nationalists</span>. The purge is particularly aimed at <span style="color: #c00000;">socialist</span> provincial presidents and police officials. An estimated 69 <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> officials have been stripped of their power. Safe to say, the democratic bulwark has been dismantled. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 8 and (week == 1 or not rubicon) and unemployed >= 25 : Perhaps the global recovery is finally on the horizon. Many economists now believe the slump has bottomed out, with the Frankfurt stock exchange climbing steadily—share and bond values have risen by over 30% since spring. But this resurgence remains abstract to the millions of unemployed Germans still trapped in poverty. ?]{!</p>!}
 
+{!<p class="other">!}[? if papen_time == 9 and hitler_right_coalition >= 50: The aftermath of the Reichstag elections and the emergence of a Black-Brown majority has initiated negotiations between the <span style="color: #7A3C00;">**NSDAP**</span> and the <span style="color: #000000;">Center Party</span>. The latter hopes to restrain the <span style="color: #7A3C00;">Nazis</span> by compelling a potential Chancellor [+ nsdap_chancellor +] to govern through parliament rather than by decree. In doing so, he would be forced to consult a more conservative and dependable non-<span style="color: #7A3C00;">Nazi</span> cabinet—where real power would reside. ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 9: General Schleicher has presented an enticing proposal to [+ nsdap_chancellor +], suggesting the formation of a presidential cabinet that would rule by decree. In this arrangement, Gregor Strasser would serve as Interior Minister of both Prussia and the Reich, while Schleicher believes he can control the <span style="color: #7A3C00;">Nazis</span> by taking the role of Defense Minister. However, the <span style="color: #7A3C00;">Nazi</span> leadership's enthusiasm quickly fades when President Hindenburg refuses to appoint [+ nsdap_chancellor +] as Chancellor. Papen, deeply offended by Schleicher's apparent willingness to abandon him, has used his growing rapport with Hindenburg to undermine Schleicher’s influence over the President. ?]{!</p>!}
+
 {!<p class="other">!}[? if year = 1932 and month = 8 and (week == 3 or not rubicon): Austria has obtained a League of Nations loan that is tied to a 20-year ban on Anschluss, but opposition from the <span style="color: #C8102E;">Social Democrats</span> and <span style="color: #0E428E;">Greater German Party</span> has stalled the law, before it finally is passed by a single vote. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 9 and (week == 3 or not rubicon) : General elections were held in Sweden, resulting in a great victory for Per Albin Hansson and his <span style="color: #D70926;">Social Democrats</span>, who now govern in a minority government. The <span style="color: #D70926;">Swedish Social Democrats</span> have embraced the concept of a 'people's home', a form of reformist socialism aimed at reducing class divides while working in the capitalist framework. Perhaps we should consider following their 'nordic' model? ?]{!</p>!}
+
+{!<p class="other">!}[? if papen_time == 17 and prussia_leader == "Papen": The main proceedings in the case against Papen’s unconstitutional *Reichsexekution* of the Prussian government have begun, with a verdict expected in the coming weeks. Yet, the historically <span style="color: #808080;">reactionary</span> leanings of the judiciary place us at a clear disadvantage—despite support from the state governments of Bavaria and Baden, who have joined us in challenging the decree’s legality. ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 10 and (week == 1 or not rubicon) : Chancellor of Austria Engelbert Dollfuß has used the "War Economy Enabling Act", a law passed during the days of the Austro-Hungarian Empire, which allowed him to restructure the Creditanstalt without parliamentary approval. While the <span style="color: #C8102E;">Austrian Social Democrats</span> have protested, Dollfuß' actions are technically legal. ?]{!</p>!}
 
@@ -2212,6 +2233,7 @@ go-to: bg if rubicon and bg_change; bg_2 if not rubicon and bg_change
 - @party
 - @govt
 - @eco
+- @time
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -2224,12 +2246,20 @@ is-deck: true
 - #party_affairs
 
 @govt
-title: Government Affairs
+title: [? if spd_in_government or spd_prussia: Government?][? if not spd_in_government and not spd_prussia: Opposition?] Affairs
 view-if: time >= 6
 card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
+
+@time
+title: Bide our Time
+view-if: rubicon
+card-image: img/placeholder.jpg
+is-deck: true
+
+- @rubicon_filler
 
 @eco
 title: Economic Policy

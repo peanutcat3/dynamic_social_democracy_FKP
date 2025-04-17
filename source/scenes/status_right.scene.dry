@@ -6,8 +6,8 @@ is-special: true
 
 <div style="text-align: center;">President: Paul von Hindenburg (<span style="color: #808080;">I</span>)</div>
 <div><img src="img/portraits/hindenburger.jpg" alt="Paul von Hindenburg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
-<p style="text-align: center;margin-bottom: 0;">Favorite: Kurt von Schleicher</p>
-<p style="text-align: center;margin-bottom: 5px;">Hitler chancellorship: strongly opposed</p>
+<p style="text-align: center;margin-bottom: 0;">Favorite: [? if schleicher_strength < papen_strength: Kurt von Schleicher?][? if papen_strength >= schleicher_strength: Franz von Papen?]</p>
+<p style="text-align: center;margin-bottom: 5px;">Hitler chancellorship: [+ hindenburg_hitler_r : hindenburg_hitler +]</p>
 <h1>The Camarilla</h1>
 <div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
 <img src="img/portraits/PapenFranz.jpg" alt="Franz von Papen" style="width: 50%;">

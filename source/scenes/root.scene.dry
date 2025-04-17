@@ -130,6 +130,7 @@ Q.z_ideology = "Right";
 Q.cvp_ideology = "Moderate";
 Q.stegerwald_path = 0;
 Q.nsdap_leader = "Hitler";
+Q.nsdap_chancellor = "Hitler";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
@@ -655,7 +656,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
     'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger',
     'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath',
-    'bourgeois_negotiations_elections_1930', 'nazi_decay', 'stegerwald_transformation', 'emergency_fundraising'];
+    'bourgeois_negotiations_elections_1930', 'nazi_decay', 'stegerwald_transformation', 'emergency_fundraising', 'schleicher_spd'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -731,6 +732,7 @@ Q.high_inflation_timer = 0;
 Q.papen_chancellor_timer = 0;
 Q.schleicher_chancellor_timer = 0;
 Q.nazi_decay_timer = 0;
+Q.schleicher_spd_timer = 0;
 Q.z_party_name = "Z";
 Q.dnvp_leader = "Westarp";
 Q.dnvp_ideology = "Radical";
@@ -821,8 +823,11 @@ Q.public_works_name = "Lautenbach";
 // rubicon
 Q.hindenburg_schleicher_r = 5;
 Q.hindenburg_papen_r = 5;
+Q.hindenburg_hitler_r = 1;
 
 Q.schleicher_papen_r = 5;
+Q.schleicher_spd_r = 2;
+Q.schleicher_spd_support = 0;
 
 Q.schleicher_strength = 5;
 Q.papen_strength = 1;

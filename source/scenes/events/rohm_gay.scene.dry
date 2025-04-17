@@ -44,7 +44,7 @@ It would be in poor taste for a party advocating for <span style="color: red;">h
 @persecute_rohm
 unavailable-subtitle: Despite the widespread distaste for <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">xu</span><span style="color: purple;">al</span>, the judiciary is too reactionary to be able to convict a top <span style="color: #7A3C00;">Nazi</span>.
 choose-if: judicial_reform >= 3
-on-arrival: new_middle_nsdap -= 2; old_middle_nsdap -= 4; rural_nsdap -= 2; catholics_nsdap -= 4; left_dissent += 3; sa_strength *= 0.9; hindenburg_angry_bruning -= 10
+on-arrival: rohm_explode = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 4; rural_nsdap -= 2; catholics_nsdap -= 4; left_dissent += 3; sa_strength *= 0.9; hindenburg_angry_bruning -= 10
 
 With definitive proof of Röhm violating Paragraph 175, the law criminalizing <span style="color: red;">ho</span><span style="color: orange;">m</span><span style="color: yellow;">o</span><span style="color: green;">se</span><span style="color: blue;">xu</span><span style="color: purple;">al</span> acts, we have been able to initiate legal action against him once more. Röhm is unable to deny the authenticity of the letters, and many have taken that as confirmation of their legitimacy.
 

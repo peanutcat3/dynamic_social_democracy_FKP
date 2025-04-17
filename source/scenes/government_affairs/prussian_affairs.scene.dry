@@ -1,7 +1,7 @@
 title: The Prussian Bulwark
 new-page: true
 is-card: true
-view-if: prussia_leader = "Braun" and (in_weimar_coalition_prussia or in_social_liberal_coalition_prussia or in_social_catholic_coalition_prussia) and prussian_affairs_timer <= 0
+view-if: prussia_leader = "Braun" and (in_weimar_coalition_prussia or in_social_liberal_coalition_prussia or in_social_catholic_coalition_prussia) and (prussian_affairs_timer <= 0 or (prussian_affairs_timer <= 3 and rubicon))
 on-arrival: prussian_affairs_timer += 6; month_actions += 1
 tags: govt_affairs
 card-image: img/braun.jpg
@@ -9,7 +9,7 @@ card-image: img/braun.jpg
 
 = Prussian Affairs
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the [? if not in_social_liberal_coalition_prussia: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>??][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if not in_social_catholic_coalition_prussia: and [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] parties?]. It is the most stable and democratic state government in Germany, led by [? if prussia_leader == "Braun": the able Otto Braun?][? if prussia_leader == "Brüning": Heinrich Brüning?][? if prussia_leader == "Stegerwald": Adam Stegerwald?].
+Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the [? if not in_social_liberal_coalition_prussia: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if not in_social_catholic_coalition_prussia: and [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] parties?]. It is the most stable and democratic state government in Germany, led by [? if prussia_leader == "Braun": the able Otto Braun?][? if prussia_leader == "Brüning": Heinrich Brüning?][? if prussia_leader == "Stegerwald": Adam Stegerwald?].
 
 We can enact policies in Prussia.
 
@@ -17,6 +17,7 @@ We can enact policies in Prussia.
 - @police_strength: Recruit additional police.
 - @bureaucracy: Purge the bureaucracy of <span style="color: #808080;">reactionary</span> elements.
 - @ban_sa: Ban the <span style="color: #7A3C00;">**SA**</span>, the <span style="color: #7A3C00;">Nazi</span> paramilitary group.
+- @prosecute_sa: Target the <span style="color: #7A3C00;">**SA**</span>, and minimize their disruptions.
 - @unban_sa: Reverse the <span style="color: #7A3C00;">**SA**</span> ban.
 - @ban_rfb: Ban the <span style="color: #8B0000;">**RFB**</span>, the <span style="color: #700000;">Communist</span> paramilitary.
 - @unban_rfb: Reverse the <span style="color: #8B0000;">**RFB**</span> ban.
@@ -48,11 +49,19 @@ The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and 
 
 @ban_sa
 view-if: nazi_urgency >= 3 and sa_banned == 0
+choose-if: not sa_ban_repealed and (prussia_coup_win or not otl_prussian_coup_seen)
+unavailable-subtitle: Papen has threatened a *Reichsexekution*, if we don't follow the orders of his decree.
 on-arrival: sa_strength *= 0.9; sa_strength *= 0.75 if prussian_police_loyalty >= 0.75; sa_banned_pro = 1 if prussian_police_loyalty >= 0.75; sa_banned_pro = 0 if prussian_police_loyalty < 0.75; sa_banned = 1; dvp_relation -= 3; prussian_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6; coup_progress -= 2 if coup_progress >= 6
 
 As it turns out, the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has many allies in the police and bureaucracy. Our relationship with the police weakens, and the <span style="color: #7A3C00;">**SA**</span> can still organize illegally, right under the police's noses. [? if sa_banned_pro : Nevertheless, the <span style="color: #7A3C00;">**SA**</span> is substantially weakened by our ban. ?] 
 
 [? if coup_progress >= 6: There are reports of an imminent coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have disrupted some of these plans, but the threat is still present. ?]
+
+@prosecute_sa
+view-if: nazi_urgency >= 3 and not sa_banned and chancellor == "Papen"
+on-arrival: sa_strength *= 0.9; sa_strength *= 0.75 if prussian_police_loyalty >= 0.75; sa_banned_pro = 1 if prussian_police_loyalty >= 0.75; sa_banned_pro = 0 if prussian_police_loyalty < 0.75; sa_banned = 1; dvp_relation -= 3; prussian_police_loyalty -= 0.05; sa_militancy -= 0.05; sa_ban_timer = 6; coup_progress -= 2 if coup_progress >= 6
+
+While an outright ban on the <span style="color: #7A3C00;">**SA**</span> may be out of reach, we can make life as difficult as possible for the <span style="color: #7A3C00;">Storm Troopers</span>. The most reckless among them can be prosecuted on charges of murder and related crimes, and we can ensure legal public demonstrations and meetings are protected from their unlawful disruptions.
 
 @unban_sa
 view-if: sa_banned = 1

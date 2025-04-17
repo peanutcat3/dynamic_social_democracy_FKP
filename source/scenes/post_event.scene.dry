@@ -249,12 +249,34 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
     if (Q.week >= 5) {
         Q.week = 1;
     }
+    if (Q.papen_time == 9) {
+        Q.hindenburg_schleicher_r -= 1;
+        Q.schleicher_strength -= 1;
+        Q.papen_strength += 1;
+    }
+    if (Q.papen_economy_time >= Q.rubicon_time) {
+        Q.unemployed -= 2/12;
+        Q.economic_growth += 2/12;
+        Q.inflation += 1/12;
+    }
+    if (Q.month_actions == 2) {
+        for (timer of Q.timers) {
+            if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
+                Q[timer+'_timer'] -= 1;
+            }
+        }
+    }
     if (Q.prussia_leader == "Papen" || Q.prussia_leader == "Schleicher") {
         Q.new_middle_spd -= 4/12;
         Q.new_middle_ddp -= 2/12;
         Q.new_middle_dnvp += 2/12;
         Q.new_middle_dnf += 2/12;
         Q.new_middle_nsdap += 2/12;
+    }
+    if (Q.papen_time == 9 && Q.hitler_right_coalition >= 50) {
+        Q.new_middle_z -= 2;
+        Q.old_middle_z -= 2;
+        Q.rural_z -= 2;
     }
 }
 
@@ -875,10 +897,10 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         Q.rural_nsdap += 6/12;
         Q.catholics_dvp -= 2/12;
         Q.catholics_lvp -= 2/12;
-        Q.workers_z += 2/12;
-        Q.old_middle_z += 2/12;
-        Q.new_middle_z += 2/12;
-        Q.rural_z += 2/12;
+        Q.workers_z += 1/12;
+        Q.old_middle_z += 1/12;
+        Q.new_middle_z += 1/12;
+        Q.rural_z += 1/12;
         Q.catholics_kvp -= 2/12;
         if (!Q.works_program) { 
             Q.workers_kpd += 2/12;
@@ -998,7 +1020,6 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
             Q.unemployed += 3/12; 
             Q.inflation -= 2/12;
             Q.economic_growth -= 1/12;
-            Q.catholics_z += 2/12;
             if (Q.z_leader == "Kaas") {
                 Q.catholics_z += 5/12;
             }
@@ -3269,20 +3290,20 @@ if (!Q.peoples_party && Q.year >= 1930) {
 
 if ((!Q.works_program || Q.unemployed_spd_normalized >= 35) && Q.black_thursday_seen && Q.unemployed >= 15) {
     if (Q.unemployed >= 35 && Q.unemployed_spd_normalized >= 12) {
-        Q.unemployed_spd -= 9/12;
-        Q.unemployed_nsdap += 9/12;
+        Q.unemployed_spd -= 10/12;
+        Q.unemployed_nsdap += 10/12;
     } else if (Q.unemployed >= 30 && Q.unemployed_spd_normalized >= 15) {
-        Q.unemployed_spd -= 7/12;
-        Q.unemployed_nsdap += 7/12;
+        Q.unemployed_spd -= 8/12;
+        Q.unemployed_nsdap += 8/12;
     } else if (Q.unemployed >= 25 && Q.unemployed_spd_normalized >= 20) {
-        Q.unemployed_spd -= 5/12;
-        Q.unemployed_nsdap += 5/12;
+        Q.unemployed_spd -= 6/12;
+        Q.unemployed_nsdap += 6/12;
     } else if (Q.unemployed >= 20 && Q.unemployed_spd_normalized >= 30) {
-        Q.unemployed_spd -= 3/12;
-        Q.unemployed_nsdap += 3/12;
+        Q.unemployed_spd -= 4/12;
+        Q.unemployed_nsdap += 4/12;
     } else if (Q.unemployed >= 15 && Q.black_thursday_seen) {
-        Q.unemployed_spd -= 1/12;
-        Q.unemployed_nsdap += 1/12;
+        Q.unemployed_spd -= 2/12;
+        Q.unemployed_nsdap += 2/12;
     }
 }
 
@@ -3580,27 +3601,6 @@ if (Q.dues > Q.base_dues) {
     }
     if (Q.catholics_spd_difference > 0) {
         Q.catholics_spd -= Q.catholics_spd_difference*((Q.dues-Q.base_dues) / 10);
-    }
-}
-
-if (Q.hitler_deported) {
-    if (Q.workers_nsdap_difference > 0) {
-        Q.workers_nsdap -= Q.workers_nsdap_difference / 3;
-    }
-    if (Q.new_middle_nsdap_difference > 0) {
-        Q.new_middle_nsdap -= Q.new_middle_nsdap_difference / 3;
-    }
-    if (Q.old_middle_nsdap_difference > 0) {
-        Q.old_middle_nsdap -= Q.old_middle_nsdap_difference / 3;
-    }
-    if (Q.rural_nsdap_difference > 0) {
-        Q.rural_nsdap -= Q.rural_nsdap_difference / 3;
-    }
-    if (Q.unemployed_nsdap_difference > 0) { 
-        Q.unemployed_nsdap -= Q.unemployed_nsdap_difference / 3;
-    }
-    if (Q.catholics_nsdap_difference > 0) {
-        Q.catholics_nsdap -= Q.catholics_nsdap_difference / 3;
     }
 }
 

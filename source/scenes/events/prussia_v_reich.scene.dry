@@ -1,0 +1,36 @@
+title: *Prussia v. Reich*
+subtitle: Oral proceedings begin in the legal challenge against Papen’s *Reichsexekution*.
+view-if: chancellor = "Papen" and prussia_leader == "Papen" and papen_time == 20 and otl_prussian_coup_seen
+new-page: true
+tags: event
+max-visits: 1
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/prussia_v_reich.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+
+= Prussia v. Reich
+
+The time has finally come for us, along with the <span style="color: #000000;">Center Party</span>, and the state governments of Bavaria and Baden, to argue for the unconstitutionality of the Prussian *Reichsexekution*. However, the leader of the state court, and president of the supreme court, is Erwin Bumke, a known <span style="color: #808080;">reactionary</span> and former <span style="color: #3E88B3;">**DNVP**</span> member before taking his job. 
+
+The main conditions under examination are whether the Prussian government failed to fulfill its constitutional obligations in maintaining public order and security, and whether the federal government had the constitutional right to intervene and appoint a Reich Commissioner to take over governance in Prussia indefinitely.
+
+# TODO
+
+- @papen
+
+@papen
+title: We await the final verdict.
+on-arrival: pro_republic -= 3
+
+The State Court has ruled that the Prussian government did not fail in its duties, meaning the use of force against a state refusing to follow the constitution was unlawful and the application of the *Reichsexekution* was unjustified. However, the court did affirm that the government could still appoint a Reich Commissioner and temporarily assume control of Prussia due to a perceived threat to public safety and order.
+
+Additionally, the court declared that the dismissal of the Prussian government was illegal and that Prussia’s representation in the Reichsrat must be restored. While acknowledging that the Prussian government remains legally intact, the judicial system’s <span style="color: #808080;">reactionary</span> nature meant that no practical change was enforced. The court’s ruling did not explicitly demand the reinstatement of the Prussian government, and the [+ chancellor +] government has ignored the decision. Holding the government accountable for this violation would require accusing President Hindenburg of breaching the law by signing the decree—an action the conservative judges find politically unacceptable.
