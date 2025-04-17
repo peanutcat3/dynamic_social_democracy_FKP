@@ -17,6 +17,7 @@ We can enact policies in Prussia. The inclusion of the <span style="color: #C0A0
 - @police_strength: Recruit additional police.
 - @bureaucracy: Purge the bureaucracy of <span style="color: #808080;">reactionary</span> elements.
 - @ban_sa: Ban the <span style="color: #7A3C00;">**SA**</span>, the <span style="color: #7A3C00;">Nazi</span> paramilitary group.
+- @prosecute_sa: Target the <span style="color: #7A3C00;">**SA**</span>, and minimize their disruptions.
 - @unban_sa: Reverse the <span style="color: #7A3C00;">**SA**</span> ban.
 - @ban_rfb: Ban the <span style="color: #8B0000;">**RFB**</span>, the <span style="color: #700000;">Communist</span> paramilitary.
 - @unban_rfb: Reverse the <span style="color: #8B0000;">**RFB**</span> ban.
@@ -57,6 +58,12 @@ on-arrival: sa_strength *= 0.92; sa_strength *= 0.8 if prussian_police_loyalty >
 As it turns out, the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> has many allies in the police and bureaucracy, such as in the <span style="color: #C0A054;">**DVP**</span>. Our relationship with the police weakens, and the <span style="color: #7A3C00;">**SA**</span> can still organize illegally, right under the police's noses. [? if sa_banned_pro : Nevertheless, the <span style="color: #7A3C00;">**SA**</span> is substantially weakened by our ban. ?] 
 
 [? if coup_progress >= 6: There are reports of an imminent coup by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>. We have disrupted some of these plans, but the threat is still present. ?]
+
+@prosecute_sa
+view-if: nazi_urgency >= 3 and not sa_banned and chancellor == "Papen"
+on-arrival: sa_strength *= 0.97; sa_militancy -= 0.02; prussian_police_loyalty -= 0.02; sa_strength *= 0.98 if prussian_police_loyalty >= 0.75
+
+While an outright ban on the <span style="color: #7A3C00;">**SA**</span> may be out of reach, we can make life as difficult as possible for the <span style="color: #7A3C00;">Storm Troopers</span>. The most reckless among them can be prosecuted on charges of murder and related crimes, and we can ensure legal public demonstrations and meetings are protected from their unlawful disruptions.
 
 @unban_sa
 view-if: sa_banned = 1
