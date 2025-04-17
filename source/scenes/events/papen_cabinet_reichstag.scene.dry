@@ -1,6 +1,6 @@
 title: The Reichstag Reconvenes
 subtitle: Papen's first test of strength with parliament.
-view-if: chancellor = "Papen" and next_reichstag_time == rubicon_time
+view-if: chancellor = "Papen" and papen_time and next_reichstag_time == rubicon_time
 on-arrival: reichstag_rubicon = 1
 new-page: true
 tags: event
