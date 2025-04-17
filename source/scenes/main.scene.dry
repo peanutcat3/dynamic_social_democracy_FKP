@@ -2246,7 +2246,7 @@ is-deck: true
 - #party_affairs
 
 @govt
-title: [? if spd_in_government or spd_prussia: Government?][? if not spd_in_government and not spd_prussia: Opposition?] Affairs
+title: Government Affairs
 view-if: time >= 6
 card-image: img/reichstag_2.jpg
 is-deck: true
