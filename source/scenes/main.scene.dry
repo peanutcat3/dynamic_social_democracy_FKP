@@ -1,12 +1,22 @@
 title: Next month
 is-hand: true
 on-arrival: {!
-if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
-} else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+if (!Q.rubicon) {
+    if (Q.advisor_action_timer <= 0) {
+        Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    } else if (Q.advisor_action_timer == 1) {
+        Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    } else {
+        Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    }
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    if (Q.advisor_action_timer <= 0) {
+        Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    } else if (Q.advisor_action_timer == 2) {
+        Q.pinnedCardsDescription = 'Advisors - next action available in 2 weeks.';
+    } else {
+        Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' weeks.';
+    }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 5 && Q.nsdap_leader == "Hitler" && Q.time !== Q.last_time_updated) {
     Q.flavour_1_trigger += 1;
@@ -1117,12 +1127,22 @@ go-to: bg if rubicon and bg_change; bg_2 if not rubicon and bg_change
 @main_easy
 is-hand: true
 on-arrival: {!
-if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
-} else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+if (!Q.rubicon) {
+    if (Q.advisor_action_timer <= 0) {
+        Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    } else if (Q.advisor_action_timer == 1) {
+        Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    } else {
+        Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    }
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    if (Q.advisor_action_timer <= 0) {
+        Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    } else if (Q.advisor_action_timer == 2) {
+        Q.pinnedCardsDescription = 'Advisors - next action available in 2 weeks.';
+    } else {
+        Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' weeks.';
+    }
 }
 if (Q.year >= 1930 && Q.year < 1933 && Q.next_election_time - Q.time < 4 && Q.dnvp_ideology == "Radical" && Q.time !== Q.last_time_updated) {
     Q.flavour_0_trigger += 1;
