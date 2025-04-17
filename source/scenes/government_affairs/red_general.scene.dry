@@ -47,7 +47,7 @@ Slowly but surely, the ADGB leadership is beginning to warm to the idea of const
 subtitle: The consensus view within the <span style="color: #c00000;">**SPD**</span>. We are a democratic party after all.
 on-arrival: schleicher_spd_support -= 1; schleicher_spd_r -= 1 if schleicher_spd_r >= 1; workers_spd += 2; workers_kpd -= 1; left_dissent -= 5; center_dissent -= 5
 
-We continue to argue for a united opposition of the democratic parties against the unpopular [+ chairmanship +] government, and win support among the people for doing so. 
+We continue to argue for a united opposition of the democratic parties against the unpopular [+ chancellor +] government, and win support among the people for doing so. 
 
 @schleicher_spd_established
 
