@@ -744,7 +744,6 @@ Q.ddp_full_name = "German Democratic Party";
 Q.ddp_leader = "Koch-Weser";
 Q.ddp_ideology = "Moderate"
 Q.ddp_cohesion = 15;
-Q.vice_chancellor = "Hergt";
 Q.young_plan_signatures = 0;
 Q.young_plan_votes = 0;
 Q.weimar_ref_signatures = 0;
