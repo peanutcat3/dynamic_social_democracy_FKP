@@ -1324,7 +1324,7 @@ With the <span style="color: #7A3C00;">**NSDAP**</span> commanding a strong posi
 # TODO
 @no_majority_papen_plus
 
-However, it's likely that even a coalition of all parties to the right won't receive a majority, not without the support of the antagonistic <span style="color: #000000;">Center Party</span>. The new Reichstag will convene on [+ next_reichstag_month +] [+ next_reichstag_year +], Week [+ next_reichstag_week +].
+However, it's likely that even a coalition of all parties to the right won't receive a majority, not without the support of the antagonistic <span style="color: #000000;">Center Party</span>. The new Reichstag will convene on [+ next_reichstag_month : month +] [+ next_reichstag_year +], Week [+ next_reichstag_week +].
 
 @no_majority_papen_2
 on-arrival: chancellor = "Schleicher"; pro_republic -= 5; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; old_middle_nsdap += 5; new_middle_nsdap += 5; rural_nsdap += 10; workers_spd -= 4 if pro_republic < 40; workers_nsdap += 4 if pro_republic < 40; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I"; schleicher_chancellor_timer = 3
