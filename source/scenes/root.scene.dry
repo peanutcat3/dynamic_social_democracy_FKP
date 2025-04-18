@@ -682,6 +682,7 @@ Q.n_elections = 0;
 Q.n_elections_prussia = 0;
 // number of elections without a clear majority.
 Q.no_majority_elections = 0;
+Q.no_majority_papen_elections = 0;
 Q.no_majority_elections_prussia = 0;
 Q.prussian_reichsexekution_timer = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.

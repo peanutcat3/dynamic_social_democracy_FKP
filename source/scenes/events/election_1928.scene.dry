@@ -1318,6 +1318,7 @@ if (Q.next_reichstag_month > 12) {
   Q.next_reichstag_year += 1;
 }
 !}
+face-image: img/portraits/PapenFranz.jpg
 go-to: no_majority_papen_plus
 
 With the <span style="color: #7A3C00;">**NSDAP**</span> commanding a strong position in parliament, it can decide the fate of the independent Papen cabinet, as only the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #C0A054;">**DVP**</span> are the only other parties willing to tie themselves to the unpopular chancellor. 
@@ -1325,6 +1326,15 @@ With the <span style="color: #7A3C00;">**NSDAP**</span> commanding a strong posi
 @no_majority_papen_plus
 
 However, it's likely that even a coalition of all parties to the right won't receive a majority, not without the support of the antagonistic <span style="color: #000000;">Center Party</span>. The new Reichstag will convene on [+ next_reichstag_month : month +] [+ next_reichstag_year +], Week [+ next_reichstag_week +].
+
+@no_majority_papen_2
+on-arrival: {!
+Q.pro_republic -= 5;
+Q.no_majority_papen_elections += 1;
+!}
+face-image: img/portraits/PapenFranz.jpg
+
+There is once again no path to a majority government. 
 
 @no_majority_papen_2
 on-arrival: chancellor = "Schleicher"; pro_republic -= 5; next_election_time = time+5; next_election_month = month + 5; next_election_year = year; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; old_middle_nsdap += 5; new_middle_nsdap += 5; rural_nsdap += 10; workers_spd -= 4 if pro_republic < 40; workers_nsdap += 4 if pro_republic < 40; finance_minister_party = "I"; interior_minister_party = "I"; economic_minister_party = "I"; labor_minister_party = "I"; foreign_minister_party = "I"; agriculture_minister_party = "I"; reichswehr_minister = "I"; schleicher_chancellor_timer = 3
