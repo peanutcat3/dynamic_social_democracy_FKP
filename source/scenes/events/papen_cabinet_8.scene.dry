@@ -25,6 +25,6 @@ In a bid to win <span style="color: #7A3C00;">Nazi</span> support for his govern
 
 @papen
 title: Shameful.
-on-arrival: pro_republic -= 3; unemployed_nsdap += 2; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; sa_militancy += 0.02; sa_strength += 50
+on-arrival: pro_republic -= 3; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; sa_militancy += 0.02; sa_strength += 50
 
 Yet another disgraceful capitulation to the <span style="color: #7A3C00;">Nazis</span>. Still, their shameless defense of convicted murderers may alienate voters and cost them dearly at the next election.

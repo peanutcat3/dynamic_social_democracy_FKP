@@ -3292,9 +3292,9 @@ if (Q.year == 1930 && Q.month == 8) {
 }
 
 if (!Q.peoples_party && Q.year >= 1930) {
-    Q.new_middle_spd -= 2/12;
+    Q.new_middle_spd -= 4/12;
     if (Q.new_middle_spd_normalized >= 15) {
-        Q.new_middle_spd -= 4/12;
+        Q.new_middle_spd -= 6/12;
     }
 }
 
