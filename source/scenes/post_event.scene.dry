@@ -916,6 +916,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
             Q.new_middle_ddp -= 2/12;
             Q.old_middle_ddp -= 2/12;
             Q.rural_dvp -= 4/12;
+            Q.rural_ddp -= 2/12;
             Q.old_middle_lvp -= 6/12;
             Q.new_middle_lvp -= 6/12;
             Q.rural_lvp -= 3/12;
