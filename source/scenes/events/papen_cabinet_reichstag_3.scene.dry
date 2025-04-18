@@ -33,13 +33,27 @@ title: The Reichstag goes into session.
 on-arrival: {!
 Q.papen_votes = Q.dnvp_r + Q.dvp_r;
 Q.anti_papen_votes = 100 - Q.dnvp_r - Q.dvp_r;
+
+Q.new_middle_nsdap -= 3;
+Q.new_middle_dvp += 2;
+Q.new_middle_dnvp += 4;
+
+Q.old_middle_nsdap -= 4;
+Q.old_middle_dnvp += 6;
+
+Q.rural_nsdap -= 3;
+Q.rural_dnvp += 4;
+
+Q.catholics_nsdap -= 5;
+Q.catholics_dnvp += 4;
+Q.catholics_dvp += 1;
 !}
 
 As expected, the <span style="color: #700000;">**Communists**</span> have secured unanimous approval for a change in the order of business to allow an immediate vote on a motion of no confidence against Papen, and not even the <span style="color: #3E88B3;">**DNVP**</span> was willing to lift a finger to prevent this. 
 
 With no objection, the vote was to begin just as Chancellor von Papen has arrived inside the Reichstag to present his emergency decree to the chamber, disrupting his plans to present both decrees at once. He had placed the folder on Reichstag President Hermann Göring's desk, and demanded him to read it to the floor. However, Göring has trick up his sleeve: he could pretend he didn't see it and proceed with the no confidence motion anyway.
 
-In the end, Papen is defeated by a humiliating margin with [+ anti_papen_votes +]% of the Reichstag voting against him, only supported by the <span style="color: #3E88B3;">**DNVP**</span>[? if dvp_exist and not lvp_formed:&nbsp;and <span style="color: #C0A054;">**DVP**</span>?].
+In the end, Papen is defeated by a humiliating margin with [+ anti_papen_votes +]% of the Reichstag voting against him, only supported by the <span style="color: #3E88B3;">**DNVP**</span>[? if dvp_exist and not lvp_formed:&nbsp;and <span style="color: #C0A054;">**DVP**</span>?]. These two parties are expected to benefit from disillusioned conservative <span style="color: #7A3C00;">Nazi</span> voters, who had backed them under the impression they would support the Papen cabinet.
 
 - @reichstag_2
 

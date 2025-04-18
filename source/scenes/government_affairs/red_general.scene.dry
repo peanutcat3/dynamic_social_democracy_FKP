@@ -41,8 +41,6 @@ Slowly but surely, the ADGB leadership is beginning to warm to the idea of const
 
 [? if otl_prussian_coup_seen: Furthermore, his role in the coup against our Prussian government has only deepened the animosity toward both him and the <span style="color: #c00000;">**SPD**</span>. ?] Rumours about our cooperation has damaged our standing among the working class.
 
-Support for this policy: [+ schleicher_spd_support : schleicher_spd_2 +]
-
 @united_front
 subtitle: The consensus view within the <span style="color: #c00000;">**SPD**</span>. We are a democratic party after all.
 on-arrival: schleicher_spd_support -= 1; schleicher_spd_r -= 1 if schleicher_spd_r >= 1; workers_spd += 2; workers_kpd -= 1; left_dissent -= 5; center_dissent -= 5

@@ -12,8 +12,8 @@ if (!Q.rubicon) {
 } else {
     if (Q.advisor_action_timer <= 0) {
         Q.pinnedCardsDescription = 'Advisors - an action is available.';
-    } else if (Q.advisor_action_timer == 2) {
-        Q.pinnedCardsDescription = 'Advisors - next action available in 2 weeks.';
+    } else if (Q.advisor_action_timer == 1) {
+        Q.pinnedCardsDescription = 'Advisors - next action available in 1 week.';
     } else {
         Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' weeks.';
     }
@@ -1150,8 +1150,8 @@ if (!Q.rubicon) {
 } else {
     if (Q.advisor_action_timer <= 0) {
         Q.pinnedCardsDescription = 'Advisors - an action is available.';
-    } else if (Q.advisor_action_timer == 2) {
-        Q.pinnedCardsDescription = 'Advisors - next action available in 2 weeks.';
+    } else if (Q.advisor_action_timer == 1) {
+        Q.pinnedCardsDescription = 'Advisors - next action available in 1 week.';
     } else {
         Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' weeks.';
     }

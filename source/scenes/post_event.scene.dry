@@ -259,11 +259,9 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
         Q.economic_growth += 2/12;
         Q.inflation += 1/12;
     }
-    if (Q.month_actions == 2) {
-        for (timer of Q.timers) {
-            if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
-                Q[timer+'_timer'] -= 1;
-            }
+    for (timer of Q.timers) {
+        if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
+            Q[timer+'_timer'] -= 1;
         }
     }
     if (Q.prussia_leader == "Papen" || Q.prussia_leader == "Schleicher") {
@@ -305,9 +303,11 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         Q.papen_time += 1;
     }
     // decrement timers
-    for (timer of Q.timers) {
-        if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
-            Q[timer+'_timer'] -= 1;
+    if (!Q.rubicon) {
+        for (timer of Q.timers) {
+            if (Q[timer+'_timer'] && Q[timer+'_timer'] > 0) {
+                Q[timer+'_timer'] -= 1;
+            }
         }
     }
     if (Q.lvp_existence_timer >= 0 && Q.lvp_timer_2_trigger && Q.lvp_formed) {
