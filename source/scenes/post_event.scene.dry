@@ -243,7 +243,7 @@ Q.nsdap_r = Math.round(Q.nsdap_r * 10) / 10;
 if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_checked) {
     Q.rubicon_time += 1;
     Q.week += 1;
-    if (Q.chancellor == "Papen" && !Q.papen_time) {
+    if (Q.chancellor == "Papen" && Q.papen_time) {
         Q.papen_time += 1;
     }
     if (Q.week >= 5) {
@@ -277,6 +277,10 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
         Q.new_middle_z -= 2;
         Q.old_middle_z -= 2;
         Q.rural_z -= 2;
+    } else if (Q.papen_time == 15 && Q.hitler_right_coalition >= 50) {
+        Q.workers_z -= 2;
+        Q.new_middle_z -= 1;
+        Q.rb_strength += 50;
     }
 }
 
@@ -297,7 +301,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
             Q.resources -= 1;
         }
     }
-    if (Q.chancellor == "Papen") {
+    if (Q.chancellor == "Papen" && !Q.papen_time) {
         Q.papen_time += 1;
     }
     // decrement timers
@@ -905,7 +909,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         if (!Q.works_program) { 
             Q.workers_kpd += 2/12;
             Q.workers_other -= 4/12;
-            Q.unemployed_other -= 2/12;
+            Q.unemployed_other -= 4/12;
             Q.catholics_other -= 2/12;
             Q.old_middle_dvp -= 5/12;
             Q.new_middle_dvp -= 5/12;
@@ -1016,7 +1020,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         }
         if (!Q.works_program) {
             Q.workers_other -= 3/12;
-            Q.unemployed_other -= 2/12;
+            Q.unemployed_other -= 3/12;
             Q.unemployed += 3/12; 
             Q.inflation -= 2/12;
             Q.economic_growth -= 1/12;

@@ -24,7 +24,8 @@ We maintain our current dues.
 
 @reduce
 subtitle: We will gain [+ dues - 1 +] resources per year. -1 resource
-choose-if: dues > 1
+unavailable-subtitle: We lack resources.
+choose-if: dues > 1 and resources >= 1
 on-arrival: dues -= 1; resources -= 1; left_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; labor_dissent -= 8; resources += 1 if dissent_percent < 5; resources -= 1 if dissent_percent > 30; month_actions += 1
 
 Our current members appreciate this, but no one decides to join a party because of the low dues.

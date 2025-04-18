@@ -1298,8 +1298,8 @@ Q.pro_republic -= 5;
 Q.papen_post = 1;
 Q.no_majority_papen_elections += 1;
 
-Q.next_reichstag_time = Q.rubicon_time + 6;
-Q.next_reichstag_week = Q.week + 6;
+Q.next_reichstag_time = Q.rubicon_time + 4;
+Q.next_reichstag_week = Q.week + 4;
 Q.next_reichstag_month = Q.month;
 Q.next_reichstag_year = Q.year;
 
