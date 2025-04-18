@@ -1,6 +1,6 @@
 title: Emergency Decree to Suspend Parliament?
 subtitle: Rumours of a President authorized unconstitutional decree...
-view-if: chancellor = "Papen" and papen_time and next_reichstag_time  == rubicon_time and next_reichstag_time > 0 and reichstag_pres_rubicon
+view-if: chancellor = "Papen" and papen_time and next_reichstag_time == rubicon_time and next_reichstag_time > 0 and reichstag_pres_rubicon
 on-arrival: reichstag_decree_rubicon = 1
 new-page: true
 tags: event
