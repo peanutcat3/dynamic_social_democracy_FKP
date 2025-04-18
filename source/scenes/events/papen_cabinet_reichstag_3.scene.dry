@@ -47,7 +47,7 @@ In the end, Papen is defeated by a humiliating margin with [+ anti_papen_votes +
 title: The Reichstag is dissolved for new elections.
 subtitle: The cabinet can still sign the decree though...
 on-arrival: {!
-Q.next_election_week = Q.week + 7;
+Q.next_election_week = Q.week + 6;
 Q.next_election_month = Q.month;
 Q.next_election_year = Q.year;
 Q.next_election_time = Q.time;

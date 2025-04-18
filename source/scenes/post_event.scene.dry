@@ -590,9 +590,9 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         Q.pro_republic += 1;
     }
     if (Q.other_votes < 4 && !Q.stegerwald_path) {
-        Q.old_middle_other += 4/12;
-        Q.new_middle_other += 4/12;
-        Q.rural_other += 2/12;
+        Q.old_middle_other += 6/12;
+        Q.new_middle_other += 6/12;
+        Q.rural_other += 4/12;
     }
     if (Q.ddp_votes < 1) {
         Q.old_middle_ddp += 3/12;
@@ -909,7 +909,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         if (!Q.works_program) { 
             Q.workers_kpd += 2/12;
             Q.workers_other -= 4/12;
-            Q.unemployed_other -= 4/12;
+            Q.unemployed_other -= 3/12;
             Q.catholics_other -= 2/12;
             Q.old_middle_dvp -= 5/12;
             Q.new_middle_dvp -= 5/12;
@@ -1020,7 +1020,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         }
         if (!Q.works_program) {
             Q.workers_other -= 3/12;
-            Q.unemployed_other -= 3/12;
+            Q.unemployed_other -= 2/12;
             Q.unemployed += 3/12; 
             Q.inflation -= 2/12;
             Q.economic_growth -= 1/12;
