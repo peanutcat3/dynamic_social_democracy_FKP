@@ -29,6 +29,6 @@ We have reduced dissent across all factions.
 
 @campaign
 subtitle: We must defend our creation.
-on-arrival: pro_republic += 4
+on-arrival: pro_republic += 3
 
 In a few years time, the German people will thank us.

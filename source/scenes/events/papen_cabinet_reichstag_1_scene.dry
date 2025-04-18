@@ -1,6 +1,6 @@
 title: The Reichstag Reconvenes
 subtitle: A new President of the Reichstag must be elected.
-view-if: chancellor = "Papen" and papen_time and next_reichstag_time == rubicon_time and next_reichstag_time > 0
+view-if: chancellor == "Papen" and (next_reichstag_time == rubicon_time and next_reichstag_time > 0)
 on-arrival: reichstag_pres_rubicon = 1
 new-page: true
 tags: event

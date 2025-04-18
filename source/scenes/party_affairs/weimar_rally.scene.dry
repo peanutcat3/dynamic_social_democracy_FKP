@@ -29,8 +29,7 @@ on-arrival: workers_spd += (pro_republic / 15); new_middle_spd += (pro_republic 
 We rally alongside politicians from the <span style="color: #000000;">Center</span> and [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], united in our commitment to the Republic.
 
 @republic
-on-arrival: nazi_urgency -= 1; left_dissent += 5; neorevisionist_dissent += 15
-view-if: mierendorff_advisor = 0 and leber_advisor = 0 and schumacher_advisor = 0
+on-arrival: pro_republic += 6
 
 The <span style="color: #7A3C00;">Nazi</span> and <span style="color: #700000;">Communist</span> propaganda machines have poisoned the public’s view of the Republic. Our goal is to counter their narrative with propaganda of our own.
 
