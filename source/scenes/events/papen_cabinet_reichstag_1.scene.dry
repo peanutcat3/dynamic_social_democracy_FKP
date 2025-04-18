@@ -29,7 +29,7 @@ By long-standing custom, the role is granted to the largest parliamentary delega
 - @reichstag_calculations
 
 @reichstag_calculations
-title: The votes of tallied...
+title: The votes are tallied...
 go-to: goring if largest_party == "NSDAP" and z_relation < 55 and hitler_right_coalition >= 50; todo if largest_party != "NSDAP" or z_relation >= 55 or hitler_right_coalition < 50
 
 
