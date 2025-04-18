@@ -1041,6 +1041,10 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
             Q.old_middle_other -= 2/12;
             Q.rural_other -= 2/12;
             Q.rural_nsdap += 4/12;
+            Q.new_middle_dvp -= 2/12;
+            Q.old_middle_dvp -= 2/12;
+            Q.rural_dvp -= 2/12;
+            Q.catholics_dvp -= 1/12;
             Q.new_middle_nsdap += 4/12;
             Q.old_middle_nsdap += 4/12;
             Q.unemployed_nsdap += 4/12;
