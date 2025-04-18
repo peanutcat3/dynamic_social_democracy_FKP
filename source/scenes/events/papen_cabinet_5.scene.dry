@@ -1,32 +1,49 @@
-title: The 'Potempa Five' Stand Trial for Murder
-subtitle: The <span style="color: #7A3C00;">Nazis</span> are to exploit their conviction as a propaganda tool.
-view-if: chancellor = "Papen" and papen_time == 11
+title: Constitution Day
+subtitle: The <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic has reached its thirteenth birthday.
+view-if: chancellor = "Papen" and papen_time and year == 1932 and month == 8 and week == 2
 new-page: true
 tags: event
 max-visits: 1
+on-arrival: pro_republic -= 3
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
 
     var image = new Image();  
     image.className = "face-img";  
-    image.src = "img/potempa5.jpg";  
+    image.src = "img/weimar_flag.png";  
 
     cardEl.appendChild(image);  
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
 
-= The 'Potempa Five' Stand Trial for Murder
+= Constitution Day
 
-The so-called "Potempa Five"—the <span style="color: #7A3C00;">**SA**</span> men who broke into the home of a <span style="color: #700000;">**Communist**</span> miner and brutally beat him to death—are set to stand trial in Papen’s newly established special courts, designed to fast-track death penalty cases. The <span style="color: #7A3C00;">Nazis</span> have wasted no time in slandering the victim, referring to him as subhuman for being both <span style="color: #700000;">**Communist**</span> and Polish, in a vile attempt to sway public opinion in favor of the murderers.
+It has been thirteen years since the adoption of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Constitution in 1919—a date still marked as a public holiday in its commemoration.
+
+However, Papen has chosen this occasion to unveil his plan for a so-called “New State”: an authoritarian constitution that would merge the offices of chancellor and Prussian minister president, free the chancellor from reliance on Reichstag confidence, and establish an aristocratic upper house of parliament appointed by the president. In practice, this would transform Germany into a dictatorship run by elites.
 
 - @papen
+- @papen_2
 
 @papen
-title: The verdict goes down...
-on-arrival: sa_militancy += 0.05; rfb_strength += 25; rfb_militancy += 0.02; new_middle_nsdap -= 4; new_middle_dvp += 4; new_middle_lvp += 4; old_middle_nsdap -= 6; old_middle_dnvp += 6 if dnvp_ideology == "Radical"; old_middle_dnf += 4; rural_nsdap -= 4; rural_dnvp += 4 if dnvp_ideology == "Radical"; rural_dnf += 4; pro_republic -= 3; unemployed_nsdap += 2; hindenburg_hitler_r -= 1; potempa_five_convicted = 1
+title: Use the holiday to rally support for the republic—and against Papen's ambitions.
+on-arrival: pro_republic += 3
 
-Convicted! The five <span style="color: #7A3C00;">**SA**</span> men have been sentenced to death for their atrocious crime. Yet the <span style="color: #7A3C00;">Nazis</span> have only intensified their propaganda, portraying the killers as national heroes and the murder as a patriotic act. This grotesque campaign has emboldened the <span style="color: #7A3C00;">**SA**</span>, leading to a surge in politically motivated violence as they seek revenge for the verdict.
+Papen’s plan bears obvious similarities to the former <span class="tooltip-text" title="good mod">*Kaiserreich*</span>, and given his <span style="color: #808080;">monarchist</span> sympathies, it’s clear that restoring the monarchy remains his ultimate goal.
 
-Rumors have arisen that Papen’s government may commute the sentences to win <span style="color: #7A3C00;">Nazi</span> support when the Reichstag reconvenes. But this has dealt a serious blow to [+ nsdap_chancellor +]’s so-called “oath of legality.” Public revulsion at the Potempa murders—and the <span style="color: #7A3C00;">Nazis</span>’ open approval—has triggered a backlash among their former supporters. Many religious and conservative voters are horrified, and even President Hindenburg is reportedly sickened by the affair.
+[? if largest_party == "NSDAP": Surprisingly, the <span style="color: #7A3C00;">**NSDAP**</span> have also criticized the planned “New State”—ironically invoking democratic principles to argue that the largest party in parliament should be the one to form a government. ?]
+
+@papen_2
+title: Launch an official campaign to rekindle public support for the <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system.
+subtitle: -1 resource
+unavailable-subtitle: Not enough resources.
+choose-if: resources >= 1
+on-arrival: resources -= 1; weimar_rally = 1 if (z_relation >= 50 and (ddp_relation >= 50 or lvp_relation >= 50)); pro_republic += 5; pro_republic += 3 if weimar_rally; workers_spd += 1; new_middle_ddp += 1; new_middle_dvp += 1 if dvp_leader != "Dingeldey"; new_middle_lvp += 2; new_middle_spd += 2; new_middle_nsdap -= 4; new_middle_ddp += 2 if weimar_rally; new_middle_z += 2 if weimar_rally; old_middle_ddp += 2 if weimar_rally; old_middle_z += 2 if weimar_rally; rural_ddp += 1 if weimar_rally; new_middle_lvp += 3 if weimar_rally; old_middle_lvp += 3 if weimar_rally; rural_lvp += 2 if weimar_rally; ddp_left += 2 if weimar_rally; lvp_left += 2 if weimar_rally
+
+We have launched a propaganda campaign aimed at shifting public opinion back in favor of the system. But as always, you can’t effectively preach to hungry people. [? if z_relation >= 50 and (ddp_relation >= 50 or lvp_relation >= 50): We’ve managed to coordinate this campaign with the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition parties, countering the belief that <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> patriotism belongs solely to the <span style="color: #c00000;">socialists</span>. ?] 
+
+Papen’s plan bears obvious similarities to the former <span class="tooltip-text" title="good mod">*Kaiserreich*</span>, and given his <span style="color: #808080;">monarchist</span> sympathies, it’s clear that restoring the monarchy remains his ultimate goal.
+
+[? if largest_party == "NSDAP": Surprisingly, the <span style="color: #7A3C00;">**NSDAP**</span> have also criticized the planned “New State”—ironically invoking democratic principles to argue that the largest party in parliament should be the one to form a government. ?]
