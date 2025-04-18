@@ -25,11 +25,11 @@ Schleicher has begun talks with <span style="color: #c00000;">socialist</span> y
 
 Reichsbanner Chairman Karl Höltermann has put forward the most compelling argument in favor: without military training—especially for its officers—the Reichsbanner cannot hope to defend itself effectively against the <span style="color: #7A3C00;">**SA**</span>.
 
-- @schleicher
-- @schleicher_2
-- @schleicher_3
+- @yay
+- @wait
+- @nay
 
-@schleicher
+@yay
 title: Approve the participation of the Reichsbanner and our youth organizations in the *Reichskuratorium*.
 unavailable-subtitle: The party is too distrustful of Schleicher to allow this.
 choose-if: schleicher_spd_support >= 4
@@ -39,13 +39,13 @@ The Reichsbanner is now officially participating in the Reich Institute to Promo
 
 This program has strengthened the Reichsbanner and improved our relations with von Schleicher. However, our collaboration with an initiative authorized by the deeply unpopular [+ chancellor +] government has cost us support—many have defected to the <span style="color: #700000;">**Communists**</span>.
 
-@schleicher_2
+@wait
 title: Persuade the Reichsbanner to remain non-committal for now, at before until the next election.
 on-arrival: schleicher_spd_support += 1; rb_strength += 50; rb_militancy += 0.02
 
 We have secured a commitment from the Reichsbanner leadership not to make any official decision regarding participation in the *Reichskuratorium* before the upcoming elections—a compromise between the party factions. However, some local members may still choose to enroll in the training programs on their own initiative.
 
-@schleicher_3
+@nay
 title: Force the Reichsbanner to reject this offer, and persuade them to cut off communications with the general.
 on-arrival: schleicher_spd_r -= 1; schleicher_spd_support -= 2; labor_dissent += 10; neorevisionist_dissent += 10
 
