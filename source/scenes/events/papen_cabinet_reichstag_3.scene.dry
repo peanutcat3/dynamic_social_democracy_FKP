@@ -68,6 +68,7 @@ on-arrival: {!
 Q.papen_explode = 1;
 Q.papen_goal = "Rule in a presidential government";
 Q.hindenburg_papen_r -= 1;
+Q.reichstag_rubicon = 0;
 
 Q.next_election_week = Q.week + 6;
 Q.next_election_month = Q.month;
