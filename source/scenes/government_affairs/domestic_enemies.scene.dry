@@ -86,6 +86,6 @@ The <span style="color: #700000;">Communist</span> <span style="color: #8B0000;"
 @persecute_rfb
 title: Further persecute the <span style="color: #8B0000;">**RFB**</span>.
 view-if: rfb_banned = 1 and in_popular_front_prussia == 0 and in_left_front_prussia == 0
-on-arrival: rfb_strength *= 0.7; rfb_militancy -= 0.05; kpd_relation -= 10; kpd_coalition_dissent += 1; z_relation += 3; dvp_relation += 3; lvp_relation += 3; prussian_police_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if coalition_dissent > 0 and n_rfb_persecuted = 0; n_rfb_persecuted += 1; hindenburg_angry -= 5
+on-arrival: rfb_strength *= 0.7; rfb_militancy -= 0.05; kpd_relation -= 10; kpd_coalition_dissent += 1; z_relation += 2; dvp_relation += 2; lvp_relation += 2; prussian_police_loyalty += 0.1; interior_police_loyalty += 0.1; coalition_dissent -= 1 if coalition_dissent > 0 and n_rfb_persecuted = 0; n_rfb_persecuted += 1; hindenburg_angry -= 5
 
 We have arrested more of the <span style="color: #8B0000;">**RFB**</span>'s leaders and confiscated their weapons.
