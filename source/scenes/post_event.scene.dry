@@ -41,6 +41,15 @@ if (tabContainer) {
 const tabButtons = document.querySelectorAll('.tab_button');
 tabButtons.forEach((button) => {
     button.style.backgroundColor = '#c3b8a0';
+    if (button.id !== 'emergency_tab') {
+        button.style.paddingRight = '59px';
+    }
+    if (button.id == 'main_tab') {
+        button.style.marginLeft = '2px';
+    }
+    if (button.id == 'poll_tab') {
+        button.style.display = 'none';
+    }
 });
 
 const activeTabButton = document.querySelector('.tab_button.active');
