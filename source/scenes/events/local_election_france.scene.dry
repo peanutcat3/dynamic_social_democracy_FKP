@@ -551,6 +551,7 @@ subtitle: The economically right-wing <span style="color: #E0B0FF;">**PRRRS**</s
 unavailable-subtitle: The <span style="color: #E0B0FF;">**PRRRS**</span> would rather work with their electoral allies.
 choose-if: left_coalition_france < republican_coalition_france
 on-arrival: west_relation += 2; reparations_negotiation += 1
+set-bg: img/map_2.jpg
 
 While not the best outcome, the return of the <span style="color: #E0B0FF;">Radical</span> Édouard Herriot to the Prime Minister position is excellent news for our relations with <span style="color: #002654;">France</span>, as he is much more open to renegotiating Germany's reparation payments compared to the previous government.
 
@@ -560,6 +561,7 @@ subtitle: The strong electoral results of the <span style="color: #F0001C;">**SF
 unavailable-subtitle: The <span style="color: #E0B0FF;">**PRRRS**</span> would rather work pursue an agreement with the <span style="color: #FFBF00;">**AD**</span>.
 choose-if: left_coalition_france >= republican_coalition_france
 on-arrival: west_relation += 3; reparations_negotiation += 2; eu_progress += 1; left_cartel_france = 1
+set-bg: img/map_2.jpg
 
 Surprisingly, the <span style="color: #E0B0FF;">**PRRRS**</span> have decided to enter government with the <span style="color: #F0001C;">**SFIO**</span>, despite their concerns over economic matters. <span style="color: #E0B0FF;">Radical</span> Édouard Herriot has been appointed as the new Prime Minister.
 
