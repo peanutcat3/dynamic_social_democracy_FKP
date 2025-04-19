@@ -102,6 +102,7 @@ Q.economic_growth_2 = '0';
 if (Q.economic_growth) {
     Q.economic_growth_2 = Q.economic_growth.toFixed(1);
 }
+Q.pro_republic_disp = Math.round(Q.pro_republic);
 !}
 
 = Emergency Status
@@ -133,6 +134,8 @@ Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_
 = Party
 
 Resources available: [+ resources +]
+
+Support for the Republic: [+ pro_republic_disp +]%
 
 [? if red_general_unlock: <span style="color: #c00000;">**SPD**</span> stance on Schleicher: [+ schleicher_spd_support : schleicher_spd_2 +] ?]
 
