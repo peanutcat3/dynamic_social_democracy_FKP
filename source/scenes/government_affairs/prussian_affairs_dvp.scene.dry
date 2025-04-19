@@ -1,7 +1,7 @@
 title: The Prussian Bulwark
 new-page: true
 is-card: true
-view-if: prussia_leader = "Braun" and in_grand_coalition_prussia = 1 and prussian_affairs_timer <= 0
+view-if: in_grand_coalition_prussia = 1 and prussian_affairs_timer <= 0
 on-arrival: prussian_affairs_timer += 6; prussian_affairs_timer += 6 if prussia_leader != "Braun"; month_actions += 1
 tags: govt_affairs
 card-image: img/braun.jpg
@@ -9,7 +9,7 @@ card-image: img/braun.jpg
 
 = Prussian Affairs
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] and <span style="color: #C0A054;">**People's**</span> parties. It is a stable and democratic state government in Germany, led by [? if prussia_leader == "Braun": the able Otto Braun?][? if prussia_leader == "Brüning": Heinrich Brüning?][? if prussia_leader == "Stegerwald": Adam Stegerwald?].
+Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?], [? if ddp_name == "DDP": <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP": <span style="color: #D3C24D;">**State**</span>?] and <span style="color: #C0A054;">**People's**</span> parties. It is a stable and democratic state government in Germany, led by [? if prussia_leader == "Braun": the able Otto Braun?][? if prussia_leader == "Brüning": Heinrich Brüning?][? if prussia_leader == "Stegerwald": Adam Stegerwald?]. [? if prussia_leader != "Braun": Without Braun at the helm in Prussia, our pace of action has noticeably slowed. ?]
 
 We can enact policies in Prussia. The inclusion of the <span style="color: #C0A054;">**DVP**</span> will mitigate our effect.
 
