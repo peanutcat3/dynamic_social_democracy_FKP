@@ -1,7 +1,7 @@
 title: Emergency Decree to Suspend Parliament?
 subtitle: Rumours of a President authorized unconstitutional decree...
 view-if: chancellor = "Papen" and papen_time and (next_reichstag_time - 1) == rubicon_time and next_reichstag_time > 0 and reichstag_pres_rubicon
-on-arrival: reichstag_decree_rubicon = 1
+on-arrival: reichstag_decree_rubicon = 1; papen_strength += 1; papen_goal = "Postpone elections indefinitely""
 new-page: true
 tags: event
 max-visits: 1

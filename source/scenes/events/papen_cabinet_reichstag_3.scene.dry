@@ -34,6 +34,10 @@ on-arrival: {!
 Q.papen_votes = Q.dnvp_r + Q.dvp_r;
 Q.anti_papen_votes = 100 - Q.dnvp_r - Q.dvp_r;
 
+Q.workers_kpd += 4;
+Q.unemployed_kpd += 4;
+Q.new_middle_kpd += 2;
+
 Q.new_middle_nsdap -= 3;
 Q.new_middle_dvp += 1;
 Q.new_middle_dnvp += 4;
@@ -62,6 +66,8 @@ title: The Reichstag is dissolved for new elections.
 subtitle: The cabinet can still sign the decree though...
 on-arrival: {!
 Q.papen_explode = 1;
+Q.papen_goal = "Rule in a presidential government";
+Q.hindenburg_papen_r -= 1;
 
 Q.next_election_week = Q.week + 6;
 Q.next_election_month = Q.month;
@@ -84,4 +90,4 @@ With the vulnerability and widespread opposition to the Papen cabinet now fully 
 
 The time is not yet right for the government to openly violate the constitution, and doing so could spark a civil war. The Reichswehr would not be able to withstand the opposition of 90% of the nation.
 
-New Reichstag elections are set for [+ next_election_month : month +] [+ next_election_year +], Week [+ next_election_week +].
+A minor constitutional crisis erupts when Reichstag President Göring disputes the validity of Papen's dissolution decree. Göring argues that the Reichstag remains in session, contending that the decree is invalid as it was countersigned by a government that had just been overthrown by a vote of no confidence. Göring ultimately concedes the issue before the courts were to decide, and new Reichstag elections are scheduled for [+ next_election_month : month +] [+ next_election_year +], Week [+ next_election_week +].

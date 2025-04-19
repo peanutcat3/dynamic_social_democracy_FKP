@@ -12,6 +12,7 @@ The reality is, there is not much we can do. We cannot simply do nothing either.
 - @money: Raise funds.
 - @dissent: Reduce party dissent.
 - @campaign: Restore faith in the Republic.
+- @protest: Protest against the government.
 - @easy_discard
 
 @money
@@ -32,3 +33,10 @@ subtitle: We must defend our creation.
 on-arrival: pro_republic += 3
 
 In a few years time, the German people will thank us.
+
+@protest
+subtitle: The [+ chancellor +] cabinet must not be allowed to stand.
+view-if: papen_post_2
+on-arrival: pro_republic -= 3; workers_spd += 1; new_middle_spd += 1; unemployed_spd += 1
+
+Labor has taken to the streets.
