@@ -244,6 +244,8 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
     Q.rubicon_time += 1;
     Q.week += 1;
     Q.pro_republic -= 1;
+    Q.workers_spd *= 0.98;
+    Q.unemployed_spd *= 0.98;
     if (Q.chancellor == "Papen" && Q.papen_time) {
         Q.papen_time += 1;
     }
