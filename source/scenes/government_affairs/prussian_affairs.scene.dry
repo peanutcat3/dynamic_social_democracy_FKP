@@ -2,14 +2,14 @@ title: The Prussian Bulwark
 new-page: true
 is-card: true
 view-if: prussia_leader = "Braun" and (in_weimar_coalition_prussia or in_social_liberal_coalition_prussia or in_social_catholic_coalition_prussia) and (prussian_affairs_timer <= 0 or (prussian_affairs_timer <= 3 and rubicon))
-on-arrival: prussian_affairs_timer += 6; month_actions += 1
+on-arrival: prussian_affairs_timer += 6; prussian_affairs_timer += 6 if prussia_leader != "Braun"; month_actions += 1
 tags: govt_affairs
 card-image: img/braun.jpg
 #subtitle: The state government of Prussia is a bulwark of democracy...
 
 = Prussian Affairs
 
-Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the [? if not in_social_liberal_coalition_prussia: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if not in_social_catholic_coalition_prussia:&nbsp;and [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] parties?]. It is the most stable and democratic state government in Germany, led by [? if prussia_leader == "Braun": the able Otto Braun?][? if prussia_leader == "Brüning": Heinrich Brüning?][? if prussia_leader == "Stegerwald": Adam Stegerwald?].
+Prussia, by far the largest and most important state in Germany, is governed by our party, in a coalition with the [? if not in_social_liberal_coalition_prussia: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if not in_social_catholic_coalition_prussia:&nbsp;and [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] parties?]. It is the most stable and democratic state government in Germany, led by [? if prussia_leader == "Braun": the able Otto Braun?][? if prussia_leader == "Brüning": Heinrich Brüning?][? if prussia_leader == "Stegerwald": Adam Stegerwald?]. [? if prussia_leader != "Braun": Without Braun at the helm in Prussia, our pace of action has noticeably slowed. ?]
 
 We can enact policies in Prussia.
 
@@ -43,7 +43,7 @@ on-arrival: prussian_police_strength += 20
 We have increased the size of the Prussian police.
 
 @bureaucracy
-on-arrival: prussian_police_loyalty += 0.05; nationalism -= 3; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_spd += 2*(1-dissent) if democratization >= 4; coup_progress += 0.5; dvp_left += 1; ddp_left += 0.5; lvp_left += 1
+on-arrival: prussian_police_loyalty += 0.05; nationalism -= 3; pacifism += 1; democratization += 1; pro_republic += 3*(1-dissent); new_middle_spd += 2*(1-dissent) if democratization >= 3; new_middle_z += 0.5; new_middle_ddp += 1; new_middle_lvp += 2; coup_progress += 0.5; dvp_left += 0.5; ddp_left += 0.25; lvp_left += 0.5
 
 The bureaucracy is deeply <span style="color: #808080;">reactionary</span>, and many abuse their power to favor the <span style="color: #3E88B3;">political right</span>. By removing the <span style="color: #3E88B3;">pro-monarchy</span> and <span style="color: #7A3C00;">pro-dictatorship</span> elements, we can democratize it. Some of our opponents claim that we are infringing on individual freedoms, but perhaps the security of the republic requires it.
 

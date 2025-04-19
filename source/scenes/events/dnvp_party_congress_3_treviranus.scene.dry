@@ -9,7 +9,7 @@ if (Q.land_reform >= 1 || Q.rural_spd_normalized >= 30 || (Q.rural_nsdap_normali
     Q.schiele_trigger = 1;
 }
 
-if (((Q.pro_republic >= ((Q.nsdap_votes + Q.dnf_votes + Q.kpd_votes)*2)) && Q.true_christian_democracy) || !Q.true_christian_democracy) {
+if (((Q.pro_republic >= ((Q.nsdap_votes + Q.dnf_votes + Q.kpd_votes + 3)*2)) && Q.true_christian_democracy) || !Q.true_christian_democracy) {
     Q.treviranus_trigger = 1;
 }
 

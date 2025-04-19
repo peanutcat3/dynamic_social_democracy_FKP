@@ -140,7 +140,11 @@ view-if: spd_toleration
 on-arrival: {!
 Q.left_dissent += 10;
 Q.new_middle_spd -= 2;
-Q.old_middle_spd -= 2;
+Q.new_middle_nsdap += 2;
+Q.workers_spd -= 2;
+Q.workers_kpd += 2;
+Q.unemployed_spd -= 2;
+Q.unemployed_kpd += 2;
 Q.kpd_relation -= 3;
 Q.budget += 1;
 Q.inflation -= 1.5;
