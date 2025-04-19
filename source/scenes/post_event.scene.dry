@@ -259,8 +259,11 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
         if (Q.workers_spd_normalized >= 45) Q.workers_spd *= 0.99;
         if (Q.unemployed_spd_normalized >= 15) Q.unemployed_spd *= 0.99;
     }
-    if (Q.chancellor == "Papen" && Q.papen_time) {
+    if (Q.chancellor == "Papen") {
         Q.papen_time += 1;
+    }
+    if (Q.chancellor == "Schleicher") {
+        Q.schleicher_time += 1;
     }
     if (Q.week >= 5) {
         Q.week = 1;
@@ -269,6 +272,8 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
         Q.hindenburg_schleicher_r -= 1;
         Q.schleicher_strength -= 1;
         Q.papen_strength += 1;
+        Q.meissner_goal = "Convince Hindenburg to continue supporting Papen";
+        Q.oskar_goal = "Convince Hindenburg to continue supporting Papen"
     }
     if (Q.papen_economy_time >= Q.rubicon_time) {
         Q.unemployed -= 2/12;
@@ -316,6 +321,9 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         }
     }
     if (Q.chancellor == "Papen" && !Q.papen_time) {
+        Q.papen_time += 1;
+    }
+    if (Q.chancellor == "Schleicher" && !Q.schleicher_time) {
         Q.papen_time += 1;
     }
     // decrement timers
