@@ -4,11 +4,12 @@ Q.sapd_formed = 1;
 Q.parties.push('sapd');
 
 Q.workers_sapd = 10;
-Q.workers_spd -= 3;
+Q.workers_spd -= 6;
 Q.new_middle_sapd = 1;
 Q.old_middle_sapd = 0;
 Q.rural_sapd = 0;
-Q.unemployed_sapd = 2;
+Q.unemployed_sapd = 6;
+Q.unemployed_spd -= 6;
 Q.catholics_sapd = 0;
 
 Q.workers_other -= 5;
@@ -23,6 +24,8 @@ Q.old_old_middle_sapd_display = 0
 Q.old_rural_sapd_display = 0
 Q.old_unemployed_sapd_display = 0
 Q.old_catholics_sapd_display = 0
+
+Q.kvp_relation = 56;
 
 // update all records
 Q.sapd_r = 0;
