@@ -248,7 +248,7 @@ Q.cvp_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 60;
+Q.workers_spd = 56;
 Q.workers_kpd = 22;
 Q.workers_z = 5;
 Q.workers_ddp = 2;
@@ -284,7 +284,7 @@ Q.rural_dnvp = 42;
 Q.rural_nsdap = 3;
 Q.rural_other = 15;
 
-Q.unemployed_spd = 25;
+Q.unemployed_spd = 23;
 Q.unemployed_kpd = 55;
 Q.unemployed_z = 1;
 Q.unemployed_ddp = 0;
