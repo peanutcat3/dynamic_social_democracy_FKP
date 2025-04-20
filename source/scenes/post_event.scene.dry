@@ -3931,21 +3931,32 @@ if (Q.in_social_catholic_coalition_prussia || Q.in_social_liberal_coalition_prus
     Q.spd_prussia = 0;
 }
 
-for (var party of Q.parties) {
-    if (class_votes >= 100) {
-        Q[c+'_'+party] *= 0.99;
-            if (class_votes >= 150) {
-                Q[c+'_'+party] *= 0.98;
-                if (class_votes >= 200) {
-                    Q[c+'_'+party] *= 0.97;
-                    if (class_votes >= 250) {
-                        Q[c+'_'+party] *= 0.96;
-                    }
-                }
-            }
-        if (Q.year >= 1934) {
-            Q[c+'_'+party] *= 0.98;
+for (var c of Q.classes) {
+    var class_votes = 0;
+    for (var party of Q.parties) {
+        if (Q[c + '_' + party] < 0) {
+            Q[c + '_' + party] = 0;
         }
+        class_votes += Q[c + '_' + party];
+    }
+    let multiplier = 1.0;
+    if (class_votes >= 100) {
+        multiplier *= 0.99;
+        if (class_votes >= 150) multiplier *= 0.98;
+        if (class_votes >= 200) multiplier *= 0.97;
+        if (class_votes >= 250) multiplier *= 0.96;
+        if (Q.year >= 1934) multiplier *= 0.98;
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party] *= multiplier;
+    }
+    let new_total = 0;
+    for (var party of Q.parties) {
+        new_total += Q[c + '_' + party];
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_normalized'] = 100 * Q[c + '_' + party] / new_total;
+        Q[c + '_' + party + '_display'] = Math.round(Q[c + '_' + party + '_normalized']);
     }
 }
 
