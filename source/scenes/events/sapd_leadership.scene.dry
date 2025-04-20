@@ -1,6 +1,6 @@
 title: <span style="color: #9B0000;">**SAPD**</span> Congress
 subtitle: The Marxists shape their new party.
-view-if: sapd_election_trigger == time
+view-if: Q.sapd_election_trigger == time
 on-arrival: {!
 var breitscheid_support = 0;
 var rosenfeld_support = 0;
