@@ -21,7 +21,7 @@ if (Q.rubicon) {
     Q.nazi_funds = 5;
     if (Q.presidential_election_seen) Q.nazi_funds -= 1;
     if (Q.presidential_election_r2_trigger) Q.nazi_funds -= 1;
-    if (Q.1932_elections) Q.nazi_funds -= Q.1932_elections;
+    if (Q.elections_1932) Q.nazi_funds -= Q.elections_1932;
 }
 !}
 priority: -2

@@ -374,7 +374,7 @@ if (Q.dvp_defect) Q.bruning_coalition_loss += (Q.dvp_r*0.7);
 if (Q.lvp_defect) Q.bruning_coalition_loss += (Q.lvp_r*0.4);
 Q.bruning_coalition = Q.bruning_coalition - Q.bruning_coalition_loss;
 Q.dnvp_angry = 0;
-if (Q.year >= 1932) Q.1932_elections += 1;
+if (Q.year >= 1932) Q.elections_1932 += 1;
 
 Q.grand_coalition_failed = 0;
 // Reset government and ministers... Based on Brüning's 1930 govt
