@@ -62,7 +62,7 @@ A leadership election is held to decide who will lead the party, and shape the p
 title: Paul Levi is elected!
 subtitle: Test
 unavailable-subtitle: hes dead? lmao
-choose-if: Q.winner == "levi"
+choose-if: winner == "levi"
 on-arrival: sapd_leader = "Levi";
 face-image: img/portraits/levi.jpg
 
@@ -70,7 +70,7 @@ MR LEVI WON LETS GOOO (remember to add something real here)
 
 @rosenfeld
 title: Kurt Rosenfeld maintains his position as leader.
-choose-if: Q.winner == "rosenfeld"
+choose-if: winner == "rosenfeld"
 subtitle: test
 unavailable-subtitle: test (gay)
 on-arrival: sapd_leader = "Rosenfeld";
@@ -80,7 +80,7 @@ Mr rosie sticks around (based)
 
 @breitscheid
 title: Rudolf Breitscheid is elected!
-choose-if: Q.winner == "breitscheid"
+choose-if: winner == "breitscheid"
 subtitle: test
 unavailable-subtitle: test (gay)
 on-arrival: sapd_leader = "Breitscheid";
@@ -90,7 +90,7 @@ MR FOREIGN POLCY MAN TAKES THE DUB
 
 @frolich
 title: Paul Frölich is elected!
-choose-if: Q.winner == "frolich"
+choose-if: winner == "frolich"
 subtitle: test
 unavailable-subtitle: test (gay)
 on-arrival: sapd_leader = "Frolich"; sapd_idealogy = "Left Marxism"
