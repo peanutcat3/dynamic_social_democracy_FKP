@@ -679,15 +679,15 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
     if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + Q.lvp_votes + Q.z_votes - Q.bvp_votes)) {
-        if (Q.new_middle_spd > 4) {
+        if (Q.new_middle_spd > 2) {
             Q.new_middle_spd -= 6/12;
             Q.new_middle_nsdap += 2/12;
         }
-        if (Q.old_middle_spd > 4) {
+        if (Q.old_middle_spd > 2) {
             Q.old_middle_spd -= 6/12;
             Q.old_middle_nsdap += 2/12;
         }
-        if (Q.rural_spd > 4) {
+        if (Q.rural_spd > 2) {
             Q.rural_spd -= 6/12;
             Q.rural_nsdap += 2/12;
         }
@@ -697,10 +697,10 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         if (Q.catholics_spd > 15) {
             Q.catholics_spd -= 4/12;
         }
-        if (Q.unemployed_spd_normalized > 14) {
+        if (Q.unemployed_spd_normalized > 10) {
             Q.unemployed_spd -= 6/12;
         }
-        Q.pro_republic += 1.5;
+        Q.pro_republic += 1;
     }
     if (Q.other_votes < 4 && !Q.stegerwald_path) {
         Q.old_middle_other += 6/12;
