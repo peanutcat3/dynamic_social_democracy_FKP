@@ -119,7 +119,7 @@ for (var c of Q.classes) {
             maxParty = party;
         }
     }
-    if (class_votes > 100 && maxParty !== null) {
+    if (class_votes > 100 && maxParty !== null && Q[c + '_' + maxParty + '_normalized'] > 50) {
         Q[c + '_' + maxParty] = Q[c + '_' + maxParty + '_normalized'];
     }
 }
