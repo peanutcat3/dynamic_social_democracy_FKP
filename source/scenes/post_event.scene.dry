@@ -122,6 +122,10 @@ for (var c of Q.classes) {
     if (class_votes > 100 && maxParty !== null && Q[c + '_' + maxParty + '_normalized'] > 50) {
         Q[c + '_' + maxParty] = Q[c + '_' + maxParty + '_normalized'];
     }
+    for (var party of Q.parties) {
+        Q[c + '_' + party + '_normalized'] = 100 * Q[c + '_' + party] / class_votes;
+        Q[c + '_' + party + '_display'] = Math.round(100 * Q[c + '_' + party] / class_votes);
+    }
 }
 // calculate support for each of the parties
 var total_support = 0; 
