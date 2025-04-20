@@ -3,8 +3,8 @@ on-arrival: {!
 Q.sapd_formed = 1;
 Q.parties.push('sapd');
 
-var sapd_leader = "Rosenfeld";
-var sapd_idealogy = "Central Marxism";
+var Q.sapd_leader = "Rosenfeld";
+var Q.sapd_idealogy = "Central Marxism";
 
 Q.workers_sapd = 10;
 Q.workers_spd -= 6;
@@ -33,7 +33,7 @@ Q.old_catholics_sapd_display = 0
 
 Q.sapd_relation = Q.left_dissent - 100;
 
-var sapd_election_trigger = time + 3;
+var Q.sapd_election_trigger = time + 3;
 
 // update all records
 Q.sapd_r = 0;
