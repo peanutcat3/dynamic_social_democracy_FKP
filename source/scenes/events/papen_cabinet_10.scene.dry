@@ -1,6 +1,6 @@
 title: The Papen Cabinet Resigns!
 subtitle: Symbolic if anything, he remains as a caretaker.
-view-if: chancellor = "Papen" and papen_time == 24 and papen_post_2
+view-if: chancellor = "Papen" and papen_time == 23 and papen_post_2
 new-page: true
 tags: event
 max-visits: 1
