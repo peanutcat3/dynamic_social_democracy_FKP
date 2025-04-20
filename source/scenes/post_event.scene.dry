@@ -100,17 +100,30 @@ if (Q.pro_republic >= 100) {
 for (var c of Q.classes) {
     var class_votes = 0;
     for (var party of Q.parties) {
-        if (Q[c+'_'+party] < 0) {
-            Q[c+'_'+party] = 0;
+        if (Q[c + '_' + party] < 0) {
+            Q[c + '_' + party] = 0;
         }
-        class_votes += Q[c+'_'+party];
+        class_votes += Q[c + '_' + party];
     }
     for (var party of Q.parties) {
-        Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
-        Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
+        Q[c + '_' + party + '_normalized'] = 100 * Q[c + '_' + party] / class_votes;
+        Q[c + '_' + party + '_display'] = Math.round(100 * Q[c + '_' + party] / class_votes);
     }
-    for (var party of Q.parties) {
-        Q[c + '_' + party] = Q[c + '_' + party + '_normalized']
+    for (var c of Q.classes) {
+        let maxParty = null;
+        let maxValue = -Infinity;
+
+        for (var party of Q.parties) {
+            const value = Q[c + '_' + party];
+            if (value > maxValue) {
+                maxValue = value;
+                maxParty = party;
+            }
+        }
+
+        if (maxParty !== null) {
+            Q[c + '_' + maxParty] = Q[c + '_' + maxParty + '_normalized'];
+        }
     }
 }
 // calculate support for each of the parties
