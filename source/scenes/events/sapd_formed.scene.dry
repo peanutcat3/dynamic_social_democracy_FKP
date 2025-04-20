@@ -21,12 +21,12 @@ if (Q.kpd_leader = "Thälmann") {
  Q.workers_kpd -= 5;
  Q.workers_sapd += 5;
 }
-Q.old_workers_sapd_display = 0;
-Q.old_new_middle_sapd_display = 0;
-Q.old_old_middle_sapd_display = 0;
-Q.old_rural_sapd_display = 0;
-Q.old_unemployed_sapd_display = 0;
-Q.old_catholics_sapd_display = 0;
+Q.old_workers_sapd_display = 0
+Q.old_new_middle_sapd_display = 0
+Q.old_old_middle_sapd_display = 0
+Q.old_rural_sapd_display = 0
+Q.old_unemployed_sapd_display = 0
+Q.old_catholics_sapd_display = 0
 
 Q.sapd_relation = (Q.left_dissent-100);
 
