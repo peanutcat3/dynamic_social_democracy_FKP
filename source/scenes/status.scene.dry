@@ -78,7 +78,7 @@ Reichstag composition:
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen": postponed indefinitely ?]
+Next Prussian election: [? if prussia_leader != "Papen" and prussia_leader != "Schleicher": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen" or prussia_leader == "Schleicher": postponed indefinitely ?]
 
 = Economics
 
