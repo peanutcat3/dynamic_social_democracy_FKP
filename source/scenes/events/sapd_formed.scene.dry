@@ -3,6 +3,9 @@ on-arrival: {!
 Q.sapd_formed = 1;
 Q.parties.push('sapd');
 
+var sapd_leader = Rosenfeld;
+var sapd_idealogy = Central Marxism;
+
 Q.workers_sapd = 10;
 Q.workers_spd -= 6;
 Q.new_middle_sapd = 1;
