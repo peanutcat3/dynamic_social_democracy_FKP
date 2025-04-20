@@ -49,7 +49,7 @@ new-page: true
 
 The <span style="color: #9B0000;">**Socialist Workers' Party of Germany**</span> is meeting to decide the future of the party.
 
-With the arrival of many important Center Marxists from the SPD, the <span style="color: #9B0000;">**SAPD**</span> must find a position to define itself.
+With the arrival of many important Center Marxists from the <span style="color: #c00000;">**SPD**</span>, the <span style="color: #9B0000;">**SAPD**</span> must find a position to define itself.
 
 A leadership election is held to decide who will lead the party, and shape the policies of the new Socialist party. 
 
@@ -66,11 +66,12 @@ choose-if: winner == "levi"
 on-arrival: sapd_leader = "Levi";
 face-image: img/portraits/LeviPaul.jpg
 
-Paul Levi, coming from the left wing of the SPD after the split, is elected as the new leader of the SAPD. 
+Paul Levi, coming from the left wing of the <span style="color: #c00000;">**SPD**</span> after the split, is elected as the new leader of the <span style="color: #9B0000;">**SAPD**</span>. 
 
-Levi had led the KPD in the aftermath of the Spartacist Uprising, attempting to steer it away from Putchist ideals, and helped facilitate its tranformation into a mass party. He was expelled from the party in 1921, for his criticism of the revolutionary attitude of his parties' left wing. 
-Following this, his politics shifted right, and he joined the USPD, where he served until it merged back into the SPD. His election is a good sign for us, as he is willing to cooperate with us parliamentarily, to a degree. 
-His prior connections with the KPD may be useful in repairing relations with them.  
+Levi had led the <span style="color: #700000;">**KPD**</span> in the aftermath of the Spartacist Uprising, attempting to steer it away from Putchist ideals, and helped facilitate its tranformation into a mass party. He was expelled from the party in 1921, for his criticism of the revolutionary attitude of his parties' left wing. 
+
+Following this, his politics shifted right, and he joined the <span style="color: #D47B9B;">**USPD**</span>, where he served until it merged back into the <span style="color: #c00000;">**SPD**</span>. His election is a good sign for us, as he is willing to cooperate with us parliamentarily, to a degree. 
+His prior connections with the <span style="color: #700000;">**KPD**</span> may be useful in repairing relations with them.  
 
 @rosenfeld
 title: Kurt Rosenfeld, the current leader, and prominent USPD member.
@@ -80,11 +81,11 @@ unavailable-subtitle: test (gay)
 on-arrival: sapd_leader = "Rosenfeld";
 face-image: img/portraits/RosenfeldKurt.jpg
 
-Due to the tensions between the left and right wings of the newly enlarged SAPD, Kurt Rosenfeld, current leader of the SAPD, and former USPD member, has secured re-election as the leader of the SAPD.
+Due to the tensions between the left and right wings of the newly enlarged <span style="color: #9B0000;">**SAPD**</span>, Kurt Rosenfeld, current leader of the <span style="color: #9B0000;">**SAPD**</span>, and former <span style="color: #D47B9B;">**USPD**</span> member, has secured re-election as party leader.
 He is chosen as a compromise candidate, to ensure that both wings of the party remain loyal and committed. 
 
-He is the one who led the first members of the SAPD away from the SPD, as he disagreed with our policy of cooperation with the more right wing members of the bourgiousie. 
-Thankfully, he is open to cooperation with us, against the threat that is Nazism. He has plans to create a United Front of the 3 parties on the left.
+He led the first members of the <span style="color: #9B0000;">**SAPD**</span> away from the SPD, as he disagreed with our policy of cooperation with the more right wing members of the bourgiousie. 
+Thankfully, he is open to cooperation with us, against the threat that is the right. He has plans to create a United Front of the parties, organizations, and workers on the left wing of the political spectrum.
 
 @breitscheid
 title: Rudolf Breitscheid is elected!
