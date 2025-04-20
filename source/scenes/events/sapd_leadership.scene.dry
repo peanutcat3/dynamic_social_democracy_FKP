@@ -2,6 +2,38 @@ title: <span style="color: #9B0000;">**SAPD**</span> Congress
 subtitle: The Marxists shape their new party.
 view-if: sapd_election_trigger == time
 on-arrival: {!
+var breitscheid_support = 0;
+var rosenfeld_support = 0;
+var levi_support = 0;
+var frolich_support = 0;
+var winner = 0'
+levi_support = 1000 if year <= 1930 and month < 2 if year == 1930;
+frolich_support += 100 - Q.sapd_relation;
+breitscheid_support = Q.sapd_relation;
+if (Q.pro_republic >= 65) {
+frolich_support -= 20;
+breitscheid_support += 20;
+}
+if (Q.pro_republic >= 35) {
+frolich_support += 20;
+breitscheid_support -= 20;
+}
+if (frolich_support - breitscheid_support <= |10|) {
+rosenfeld_support += 300
+}
+if (levi_support = 1000) {
+    winner = levi
+} else {
+    if (rosenfeld_support = 3000) {
+        winner = rosenfeld
+    } else { 
+        if (frolich_support > breitscheid_support) {
+            winner = frolich
+        } else {
+            winner = breitscheid
+        }
+    }
+}
 !}
 max-visits: 1
 tags: event
@@ -16,5 +48,7 @@ With the arrival of many important Center Marxists from the SPD, the <span style
 
 A leadership election is held to decide who will lead the party, and shape the policies of the new Socialist party. 
 
-
+- @levi: The party votes...
+- @rosenfeld: The party votes...
+- @breitscheid
 
