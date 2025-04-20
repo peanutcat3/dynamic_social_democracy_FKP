@@ -1,6 +1,6 @@
 title: Schleicher and the Trade Unions
 subtitle: The General meets with the ADGB once more.
-view-if: chancellor == "Papen" and papen_time == 20 and papen_post_2 and red_general_unlock
+view-if: chancellor == "Papen" and papen_time == 24 and papen_post_2 and red_general_unlock
 new-page: true
 tags: event
 max-visits: 1
