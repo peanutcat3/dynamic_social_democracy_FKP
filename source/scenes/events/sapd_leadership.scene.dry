@@ -42,7 +42,7 @@ if (levi_support == 1000) {
 !}
 max-visits: 1
 tags: event
-face-image: img/sapd.jpg
+face-image: img/SAPD_logo.png
 new-page: true
 
 = Second <span style="color: #9B0000;">**SAPD**</span> Party Congress
@@ -64,7 +64,7 @@ subtitle: Test
 unavailable-subtitle: hes dead? lmao
 choose-if: winner == "levi"
 on-arrival: sapd_leader = "Levi";
-face-image: img/portraits/levi.jpg
+face-image: img/portraits/LeviPaul.jpg
 
 MR LEVI WON LETS GOOO (remember to add something real here)
 
@@ -74,7 +74,7 @@ choose-if: winner == "rosenfeld"
 subtitle: test
 unavailable-subtitle: test (gay)
 on-arrival: sapd_leader = "Rosenfeld";
-face-image: img/portraits/rosenfeld.jpg
+face-image: img/portraits/RosenfeldKurt.jpg
 
 Mr rosie sticks around (based)
 
@@ -84,7 +84,7 @@ choose-if: winner == "breitscheid"
 subtitle: test
 unavailable-subtitle: test (gay)
 on-arrival: sapd_leader = "Breitscheid";
-face-image: img/portraits/breitscheid.jpg
+face-image: img/portraits/BreitscheidRudolf.jpg
 
 MR FOREIGN POLCY MAN TAKES THE DUB
 
