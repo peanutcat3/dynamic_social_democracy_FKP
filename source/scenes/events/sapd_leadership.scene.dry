@@ -7,12 +7,14 @@ var rosenfeld_support = 0;
 var levi_support = 0;
 var frolich_support = 0;
 var winner = 0;
+/*
 if ((year <= 1930) and (month < 2 if year == 1930)) {
 levi_support = 1000;
 }
+*/
 frolich_support += 100 - Q.sapd_relation;
-breitscheid_support = Q.sapd_relation;
-/*
+breitscheid_support += Q.sapd_relation;
+
 if (Q.pro_republic >= 65) {
 frolich_support -= 20;
 breitscheid_support += 20;
@@ -36,7 +38,7 @@ if (levi_support = 1000) {
         } else {
             winner = "breitscheid";
         }
-*/
+
 !}
 max-visits: 1
 tags: event
