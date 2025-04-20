@@ -23,17 +23,13 @@ rosenfeld_support += 300
 }
 if (levi_support = 1000) {
     winner = "levi"
-} else {
-    if (rosenfeld_support = 3000) {
+    } else if (rosenfeld_support = 3000) {
         winner = "rosenfeld"
-    } else { 
-        if (frolich_support > breitscheid_support) {
+    } else if (frolich_support > breitscheid_support) {
             winner = "frolich"
         } else {
             winner = "breitscheid"
         }
-    }
-}
 !}
 max-visits: 1
 tags: event
