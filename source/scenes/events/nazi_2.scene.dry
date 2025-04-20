@@ -67,7 +67,7 @@ Only 84% of the workforce participates in the vote, and of those that vote, 79% 
 
 @strike_yeah
 title: The strike has begun.
-on-arrival: pro_republic -= 5; workers_spd -= 4; unemployed_spd -= 2; workers_kpd += 4; unemployed_kpd += 2; labor_dissent += 5; left_dissent += 5; reformist_dissent -= 5; reformist_strength += 5
+on-arrival: pro_republic -= 5; workers_kpd += 2; unemployed_kpd += 2; labor_dissent += 5; left_dissent += 5; reformist_dissent -= 5; reformist_strength += 5
 
 Three days before the election, the strike brings all public transport in Berlin to a halt, garnering significant sympathy among the city's working class. The <span style="color: #700000;">**KPD**</span> and <span style="color: #7A3C00;">**NSDAP**</span> are quick to throw their propaganda weight behind the strikers, each hoping for a breakthrough among working-class voters. We have urged workers to abstain from participating in the illegal strike—pointing out that it never actually met the required three-fourths quorum, and that BVG workers remain better off than most in Germany.
 
