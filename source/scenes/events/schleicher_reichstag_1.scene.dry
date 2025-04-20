@@ -18,7 +18,7 @@ Nonetheless, despite the <span style="color: #7A3C00;">**NSDAP**</span>’s unco
 
 @reichstag
 title: The <span style="color: #700000;">**Communists**</span> put forth a motion of no confidence.
-on-arrival: reichstag_break = 1; pro_republic += 5
+on-arrival: pro_republic += 5
 
 The motion is defeated! In a surprise to the public, the <span style="color: #700000;">**Communist**</span> proposal to prioritize a no-confidence vote is voted down—thanks to support from the <span style="color: #7A3C00;">Nazis</span>. But this is no act of reconciliation; it’s certainly not the toleration Schleicher deludes himself into believing stems from his connections with Strasser.
 
@@ -28,6 +28,6 @@ In any case, after clearing a few remaining bills, the chamber agrees to a holid
 
 @reichstag_2
 title: Papen's decree on wages is repealed!
-on-arrival: workers_kpd -= 4; unemployed_kpd -= 4; workers_z += 2; workers_spd += 2; unemployed_spd += 4; pro_republic += 3; reichstag_rubicon = 0
+on-arrival: workers_kpd -= 4; unemployed_kpd -= 4; workers_z += 2; workers_spd += 2; unemployed_spd += 4; pro_republic += 3; reichstag_break = 1; reichstag_rubicon = 0
 
 Schleicher has given his consent for the Reichstag to repeal one of Papen's more egregious decrees that had particulary offended the labor unions, as part of his prior promise and to calm their fury against the government. 
