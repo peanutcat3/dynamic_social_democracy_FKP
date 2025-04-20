@@ -125,7 +125,7 @@ for (var c of Q.classes) {
     }
     for (var party of Q.parties) {
         if (party !== maxParty && class_votes > 100) {
-            Q[c + '_' + party] *= 0.99;
+            Q[c + '_' + party] *= 0.97;
         }
     }
     for (var party of Q.parties) {
