@@ -82,5 +82,6 @@ MR FOREIGN POLCY MAN TAKES THE DUB
 @frolich
 view-if: winner == "frolich"
 on-arrival: sapd_leader = "Frolich"; sapd_idealogy = "Left Marxism"
+face-image: img/Frölich.jpg
 
 Left man wins BIG
