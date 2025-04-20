@@ -111,7 +111,6 @@ for (var c of Q.classes) {
     }
     for (var party of Q.parties) {
         Q[c + '_' + party] = Q[c + '_' + party + '_normalized']
-        }
     }
 }
 // calculate support for each of the parties
