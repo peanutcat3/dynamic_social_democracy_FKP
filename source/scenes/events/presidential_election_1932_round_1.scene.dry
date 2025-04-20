@@ -10,9 +10,11 @@ Q.presidential_election_seen = 1;
 if (!Q.hitler_deported && Q.hitler_citizen) {
     Q.nsdap_candidate_1932 = "Hitler";
     Q.nsdap_candidate_1932_disp = "Adolf Hitler";
+    Q.nazi_funds -= 1;
 } else {
     Q.nsdap_candidate_1932 = "Göring";
     Q.nsdap_candidate_1932_disp = "Hermann Göring";
+    Q.nazi_funds -= 1;
 }
 !}
 tags: event

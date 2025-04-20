@@ -13,7 +13,7 @@ if (((Q.pro_republic >= ((Q.nsdap_votes + Q.dnf_votes + Q.kpd_votes + 3)*2)) && 
     Q.treviranus_trigger = 1;
 }
 
-if (Q.pro_republic < ((Q.nsdap_votes + Q.dnf_votes + Q.kpd_votes)*2) && Q.true_christian_democracy) {
+if (Q.pro_republic < ((Q.nsdap_votes + Q.dnf_votes + Q.kpd_votes + 3)*2) && Q.true_christian_democracy) {
     Q.westarp_trigger = 1;
 }
 

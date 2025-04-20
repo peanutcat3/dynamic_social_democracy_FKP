@@ -78,7 +78,7 @@ Reichstag composition:
 
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
-Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen": postponed indefinitely ?]
+Next Prussian election: [? if prussia_leader != "Papen" and prussia_leader != "Schleicher": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen" or prussia_leader == "Schleicher": postponed indefinitely ?]
 
 = Economics
 
@@ -120,7 +120,7 @@ Q.pro_republic_disp = Math.round(Q.pro_republic);
 = Government
 
 [? if chancellor == "Schleicher": Public Works: being formulated <br>?]
-Reichstag: [? if reichstag_rubicon: in session?][? if not reichstag_rubicon: dissolved?][? if next_reichstag_time > rubicon_time and next_reichstag_time and not reichstag_rubicon and next_election_time - time > 2:, reconvenes on [+ next_reichstag_month : month +] [+ next_reichstag_year +], Week [+ next_reichstag_week +]. ?]<br>
+Reichstag: [? if reichstag_rubicon: in session?][? if not reichstag_rubicon and not reichstag_break: dissolved?][? if next_reichstag_time > rubicon_time and next_reichstag_time and not reichstag_rubicon and next_election_time - time > 2:, reconvenes on [+ next_reichstag_month : month +] [+ next_reichstag_year +], Week [+ next_reichstag_week +]. ?][? if reichstag_break: indefinitely adjourned ?]<br>
 Next election: [+ next_election_month : month +] [+ next_election_year +], Week [+ next_election_week +]<br>
 Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +]?][? if prussia_leader == "Papen": postponed indefinitely ?]
 
@@ -129,8 +129,9 @@ Next Prussian election: [? if prussia_leader != "Papen": [+ next_election_month_
 Resources available: [+ resources +]<br>
 Support for the Republic: [+ pro_republic_disp +]%<br>
 [? if red_general_unlock: <span style="color: #c00000;">**SPD**</span> stance on Schleicher: [+ schleicher_spd_support : schleicher_spd_2 +] ?]
-Currently, the streets are [? if far_right_paramilitary and rfb_force < far_right_force:[? if far_right_paramilitary_highest: fully controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_high: dominated by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_med: controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_low: in the slight control of the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if sa_paramilitary:, mainly by the violent <span style="color: #7A3C00;">**SA**</span>?][? if rfb_force >= far_right_force: controlled by the <span style="color: #700000;">**RFB**</span>?]?][? if democracy_paramilitary and rfb_force < democracy_force:[? if democracy_paramilitary_highest: fully controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_high: dominated by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_med: controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_low: in the slight control of the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?]?][? if rfb_force >= democracy_force: controlled by the <span style="color: #700000;">**RFB**</span>?].
-
+Currently, the streets are [? if far_right_paramilitary and rfb_force < far_right_force:[? if far_right_paramilitary_highest: fully controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_high: dominated by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_med: controlled by the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if far_right_paramilitary_low: in the slight control of the <span style="color: #7A3C00;">far</span>-<span style="color: #3E88B3;">right</span>?][? if sa_paramilitary:, mainly by the violent <span style="color: #7A3C00;">**SA**</span>?][? if rfb_force >= far_right_force: controlled by the <span style="color: #700000;">**RFB**</span>?]?][? if democracy_paramilitary and rfb_force < democracy_force:[? if democracy_paramilitary_highest: fully controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_high: dominated by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_med: controlled by the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?][? if democracy_paramilitary_low: in the slight control of the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span>?]?][? if rfb_force >= democracy_force: controlled by the <span style="color: #700000;">**RFB**</span>?].<br>
+<span style="color: #7A3C00;">**NSDAP**</span> financial situation: [+ nazi_funds : nazi_funds +]
+# if above reaches 0, its mega joever
 = Economics
 
 Inflation: [+ inflation_2 +]%<br>
