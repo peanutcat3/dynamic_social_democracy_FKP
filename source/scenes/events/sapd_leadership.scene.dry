@@ -31,7 +31,7 @@ rosenfeld_support += 300;
 
 if (levi_support == 1000) {
     winner = "levi";
-    } else if (rosenfeld_support == 3000) {
+    } else if (rosenfeld_support == 300) {
         winner = "rosenfeld";
     } else if (frolich_support > breitscheid_support) {
             winner = "frolich";
@@ -53,12 +53,14 @@ With the arrival of many important Center Marxists from the SPD, the <span style
 
 A leadership election is held to decide who will lead the party, and shape the policies of the new Socialist party. 
 
-- @levi: The party votes...
-- @rosenfeld: The party votes...
-- @breitscheid: The party votes...
-- @frolich: The party votes...
+- @levi
+- @rosenfeld
+- @breitscheid
+- @frolich
 
 @levi
+title: Paul Levi is elected!
+subtitle: Test
 view-if: winner == "levi"
 on-arrival: sapd_leader = "Levi";
 face-image: img/portraits/levi.jpg
@@ -66,21 +68,30 @@ face-image: img/portraits/levi.jpg
 MR LEVI WON LETS GOOO (remember to add something real here)
 
 @rosenfeld
-view-if: winner == "rosenfeld"
+title: Kurt Rosenfeld maintains his position as leader.
+choose-if: winner == "rosenfeld"
+subtitle: test
+unavailable-subtitle: test (gay)
 on-arrival: sapd_leader = "Rosenfeld";
 face-image: img/portraits/rosenfeld.jpg
 
 Mr rosie sticks around (based)
 
 @breitscheid
-view-if: winner == "breitscheid"
+title: Rudolf Breitscheid is elected!
+choose-if: winner == "breitscheid"
+subtitle: test
+unavailable-subtitle: test (gay)
 on-arrival: sapd_leader = "Breitscheid";
 face-image: img/portraits/breitscheid.jpg
 
 MR FOREIGN POLCY MAN TAKES THE DUB
 
 @frolich
-view-if: winner == "frolich"
+title: Paul Frölich is elected!
+choose-if: winner == "frolich"
+subtitle: test
+unavailable-subtitle: test (gay)
 on-arrival: sapd_leader = "Frolich"; sapd_idealogy = "Left Marxism"
 face-image: img/Frölich.jpg
 
