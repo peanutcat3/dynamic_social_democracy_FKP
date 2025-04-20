@@ -7,7 +7,9 @@ var rosenfeld_support = 0;
 var levi_support = 0;
 var frolich_support = 0;
 var winner = 0;
-levi_support = 1000 if year <= 1930 and month < 2 if year == 1930;
+if ((year <= 1930) and (month < 2 if year == 1930)) {
+levi_support = 1000;
+}
 frolich_support += 100 - Q.sapd_relation;
 breitscheid_support = Q.sapd_relation;
 
@@ -21,7 +23,7 @@ frolich_support += 20;
 breitscheid_support -= 20;
 }
 
-if (frolich_support - breitscheid_support <= |10|) {
+if ((frolich_support - breitscheid_support) <= |10|) {
 rosenfeld_support += 300;
 }
 
