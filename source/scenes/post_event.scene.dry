@@ -100,37 +100,14 @@ if (Q.pro_republic >= 100) {
 for (var c of Q.classes) {
     var class_votes = 0;
     for (var party of Q.parties) {
-        if (Q[c + '_' + party] < 0) {
-            Q[c + '_' + party] = 0;
+        if (Q[c+'_'+party] < 0) {
+            Q[c+'_'+party] = 0;
         }
-        class_votes += Q[c + '_' + party];
+        class_votes += Q[c+'_'+party];
     }
     for (var party of Q.parties) {
-        Q[c + '_' + party + '_normalized'] = 100 * Q[c + '_' + party] / class_votes;
-        Q[c + '_' + party + '_display'] = Math.round(100 * Q[c + '_' + party] / class_votes);
-    }
-    let maxParty = null;
-    let maxValue = -Infinity;
-
-    for (var party of Q.parties) {
-        const value = Q[c + '_' + party];
-        if (value > maxValue) {
-            maxValue = value;
-            maxParty = party;
-        }
-    }
-    if (class_votes > 100 && maxParty !== null && Q[c + '_' + maxParty + '_normalized'] > 50) {
-        const difference = Q[c + '_' + maxParty] - Q[c + '_' + maxParty + '_normalized'];
-        Q[c + '_' + maxParty] -= difference / 2;
-    }
-    for (var party of Q.parties) {
-        if (party !== maxParty && class_votes > 100) {
-            Q[c + '_' + party] *= 0.97;
-        }
-    }
-    for (var party of Q.parties) {
-        Q[c + '_' + party + '_normalized'] = 100 * Q[c + '_' + party] / class_votes;
-        Q[c + '_' + party + '_display'] = Math.round(100 * Q[c + '_' + party] / class_votes);
+        Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
+        Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
     }
 }
 // calculate support for each of the parties
@@ -3952,6 +3929,24 @@ if (Q.in_social_catholic_coalition_prussia || Q.in_social_liberal_coalition_prus
 } else if (Q.in_right_coalition_prussia == 1 || Q.in_center_right_coalition_prussia == 1 || Q.prussia_leader == "Papen" || Q.prussia_leader == "Goring" || Q.in_far_right_coalition_prussia == 1) {
     Q.right_prussia = 1;
     Q.spd_prussia = 0;
+}
+
+for (var party of Q.parties) {
+    if (class_votes >= 100) {
+        Q[c+'_'+party] *= 0.99;
+            if (class_votes >= 150) {
+                Q[c+'_'+party] *= 0.98;
+                if (class_votes >= 200) {
+                    Q[c+'_'+party] *= 0.97;
+                    if (class_votes >= 250) {
+                        Q[c+'_'+party] *= 0.96;
+                    }
+                }
+            }
+        if (Q.year >= 1934) {
+            Q[c+'_'+party] *= 0.98;
+        }
+    }
 }
 
 if (Q.stolper_program_adopted != undefined) {
