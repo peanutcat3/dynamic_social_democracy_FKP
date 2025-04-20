@@ -106,15 +106,12 @@ for (var c of Q.classes) {
         class_votes += Q[c+'_'+party];
     }
     for (var party of Q.parties) {
-        if (class_votes === 0) {
-            Q[c + '_' + party] = 100 / Q.parties.length;
-        } else {
-            Q[c + '_' + party] = 100 * Q[c + '_' + party] / class_votes;
-        }
-    }
-    for (var party of Q.parties) {
         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
+    }
+    for (var party of Q.parties) {
+        Q[c + '_' + party] = Q[c + '_' + party + '_normalized']
+        }
     }
 }
 // calculate support for each of the parties
