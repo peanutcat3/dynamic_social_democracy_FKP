@@ -2,7 +2,7 @@ on-arrival: {!
 // set up the infrastructure
 Q.sapd_formed = 1;
 Q.parties.push('sapd');
-Q.sapd leadership ele
+
 Q.workers_sapd = 10;
 Q.workers_spd -= 6;
 Q.new_middle_sapd = 1;
