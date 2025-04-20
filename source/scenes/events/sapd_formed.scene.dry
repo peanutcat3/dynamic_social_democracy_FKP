@@ -30,7 +30,7 @@ Q.old_catholics_sapd_display = 0
 
 Q.sapd_relation = Q.left_dissent - 100;
 
-var Q.sapd_election_trigger = time + 3;
+var sapd_election_trigger = time + 3;
 
 // update all records
 Q.sapd_r = 0;
