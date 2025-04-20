@@ -106,6 +106,13 @@ for (var c of Q.classes) {
         class_votes += Q[c+'_'+party];
     }
     for (var party of Q.parties) {
+        if (class_votes === 0) {
+            Q[c + '_' + party] = 100 / Q.parties.length;
+        } else {
+            Q[c + '_' + party] = 100 * Q[c + '_' + party] / class_votes;
+        }
+    }
+    for (var party of Q.parties) {
         Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
         Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
     }
@@ -3929,23 +3936,6 @@ if (Q.in_social_catholic_coalition_prussia || Q.in_social_liberal_coalition_prus
 } else if (Q.in_right_coalition_prussia == 1 || Q.in_center_right_coalition_prussia == 1 || Q.prussia_leader == "Papen" || Q.prussia_leader == "Goring" || Q.in_far_right_coalition_prussia == 1) {
     Q.right_prussia = 1;
     Q.spd_prussia = 0;
-}
-
-for (var party of Q.parties) {
-    if (class_votes >= 100) {
-        if (class_votes >= 150) {
-            Q[c+'_'+party] *= 0.99;
-            if (class_votes >= 200) {
-                Q[c+'_'+party] *= 0.98;
-                if (class_votes >= 250) {
-                    Q[c+'_'+party] *= 0.96;
-                }
-            }
-        }
-        if (Q.year >= 1934) {
-            Q[c+'_'+party] *= 0.98;
-        }
-    }
 }
 
 if (Q.stolper_program_adopted != undefined) {
