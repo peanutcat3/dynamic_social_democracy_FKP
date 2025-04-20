@@ -1,0 +1,22 @@
+title: <span style="color: #9B0000;">**SAPD**</span> Congress
+subtitle: The Marxists shape their new party.
+view-if: sapd_election_trigger == time
+on-arrival: {!
+Q.levi_points = 0;
+Q.breitscheid_points = 0;
+Q.rosenfeld_points = 0;
+
+!}
+max-visits: 1
+tags: event
+face-image: img/sapd.jpg
+new-page: true
+
+= Second <span style="color: #9B0000;">**SAPD**</span> Party Congress
+
+The <span style="color: #9B0000;">**Socialist Workers' Party of Germany**</span> is meeting to decide the future of the party.
+
+With the arrival of many important Center Marxists from the SPD, the <span style="color: #9B0000;">**SAPD**</span> must find a position to define itself.
+
+A leadership election is held to decide who will lead the party, and shape the policies of the new Socialist party. 
+
