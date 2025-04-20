@@ -61,7 +61,6 @@ A leadership election is held to decide who will lead the party, and shape the p
 @levi
 title: Paul Levi is elected!
 subtitle: Test
-// view-if: winner == "levi"
 choose-if: winner == "levi"
 on-arrival: sapd_leader = "Levi";
 face-image: img/portraits/levi.jpg
