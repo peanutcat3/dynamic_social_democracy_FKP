@@ -679,37 +679,37 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
     if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + Q.lvp_votes + Q.z_votes - Q.bvp_votes)) {
-        if (Q.new_middle_spd > 2) {
-            Q.new_middle_spd -= 6/12;
-            Q.new_middle_nsdap += 2/12;
+        if (Q.new_middle_spd > 4) {
+            Q.new_middle_spd -= 10/12;
+            Q.new_middle_nsdap += 4/12;
         }
         if (Q.old_middle_spd > 2) {
-            Q.old_middle_spd -= 6/12;
-            Q.old_middle_nsdap += 2/12;
+            Q.old_middle_spd -= 10/12;
+            Q.old_middle_nsdap += 4/12;
         }
         if (Q.rural_spd > 2) {
-            Q.rural_spd -= 6/12;
-            Q.rural_nsdap += 2/12;
+            Q.rural_spd -= 10/12;
+            Q.rural_nsdap += 4/12;
         }
         if (Q.workers_spd_normalized > 40) {
-            Q.workers_spd -= 4/12;
+            Q.workers_spd -= 6/12;
         }
         if (Q.catholics_spd > 15) {
-            Q.catholics_spd -= 4/12;
+            Q.catholics_spd -= 6/12;
         }
         if (Q.unemployed_spd_normalized > 10) {
-            Q.unemployed_spd -= 6/12;
+            Q.unemployed_spd -= 8/12;
         }
         Q.pro_republic += 1;
     }
     if (Q.other_votes < 4 && !Q.stegerwald_path) {
         Q.old_middle_other += 6/12;
         Q.new_middle_other += 6/12;
-        Q.rural_other += 4/12;
+        Q.rural_other += 6/12;
     }
     if (Q.ddp_votes < 1) {
-        Q.old_middle_ddp += 3/12;
-        Q.new_middle_ddp += 3/12;
+        Q.old_middle_ddp += 6/12;
+        Q.new_middle_ddp += 4/12;
     }
     if (Q.dnvp_votes < 6 && Q.dnvp_ideology == "Radical" && Q.year >= 1931 && Q.nsdap_votes >= 25) {
         Q.new_middle_dnvp += 4/12;
