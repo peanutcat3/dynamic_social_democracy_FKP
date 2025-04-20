@@ -1,7 +1,7 @@
 title: Biding our Time
 on-arrival: month_actions += 1
 view-if: rubicon
-card-image: img/black.jpg
+card-image: img/hourglass.jpg
 is-card: true
 new-page: true
 

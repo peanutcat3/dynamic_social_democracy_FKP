@@ -2272,7 +2272,7 @@ max-cards: 4
 
 {!<p class="other">!}[? if papen_time == 23 and papen_post_2: President Hindenburg has commissioned [+ z_leader +] to make one final attempt at forming a majority coalition. Reporting back the next day, [+ z_leader +] confirmed that no such majority could be assembled. His recommendation was blunt: the only way forward is for the President to dismiss Papen, as the Reichstag will never accept him as chancellor. ?]{!</p>!}
 
-{!<p class="other">!}[? if (papen_time or chancellor == "Schleicher") and year == 1932 and month == 12: Two days before the Reichstag convenes, the <span style="color: #7A3C00;">**NSDAP**</span> has suffered yet another crushing setback—this time in the local elections in Thuringia. The results show the party lost nearly a quarter of its vote share compared to the previous state election. While low turnout may be a factor, this and three other recent local elections have only reinforced the growing sense that the <span style="color: #7A3C00;">Nazis</span> have peaked and are rapidly losing support. ?]{!</p>!}
+{!<p class="other">!}[? if (papen_time or chancellor == "Schleicher") and year == 1932 and month == 12 and week == 1: The <span style="color: #7A3C00;">**NSDAP**</span> has suffered yet another crushing setback—this time in the local elections in Thuringia. The results show the party lost nearly a quarter of its vote share compared to the previous state election. While low turnout may be a factor, this and three other recent local elections have only reinforced the growing sense that the <span style="color: #7A3C00;">Nazis</span> have peaked and are rapidly losing support. ?]{!</p>!}
 
 # TODO dynamic version of above
 
@@ -2312,7 +2312,7 @@ is-deck: true
 @time
 title: Bide our Time
 view-if: rubicon
-card-image: img/black.jpg
+card-image: img/hourglass.jpg
 is-deck: true
 
 - @rubicon_filler
