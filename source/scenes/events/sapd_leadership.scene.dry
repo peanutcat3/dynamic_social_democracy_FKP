@@ -30,7 +30,7 @@ rosenfeld_support += 300;
 }
 
 if (levi_support == 1000) {
-    winner = "levi";
+    Q.winner = "levi";
     } else if (rosenfeld_support == 300) {
         Q.winner = "rosenfeld";
     } else if (frolich_support > breitscheid_support) {
