@@ -8,7 +8,7 @@ var levi_support = 0;
 var frolich_support = 0;
 var winner = 0;
 
-if (year < 1930 || (year == 1930 && month == 1)) {
+if (Q.year < 1930 || (Q.year == 1930 && Q.month == 1)) {
 levi_support = 1000;
 }
 
