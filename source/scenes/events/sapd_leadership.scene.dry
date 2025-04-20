@@ -25,7 +25,7 @@ frolich_support += 20;
 breitscheid_support -= 20;
 }
 
-if (frolich_support - breitscheid_support <= 10) {
+if (math.abs(frolich_support - breitscheid_support) <= 10) {
 rosenfeld_support += 300;
 }
 
