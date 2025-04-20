@@ -144,6 +144,7 @@ if (Q.hitler_support_hindenburg) {
     Q.nsdap_presidential_votes -= (Q.dnvp_normalized*0.4);
     Q.hindenburg_votes += Q.nsdap_normalized;
     Q.hindenburg_votes += (Q.dnvp_normalized*0.4);
+    Q.nsdap_presidential_votes = 0;
 }
 
 if (Q.hindenburg_to_spd_bonus) {
@@ -154,6 +155,8 @@ if (Q.thalmann_to_spd_bonus) {
     Q.thalmann_votes -= Q.thalmann_to_spd_bonus;
     Q.spd_president_votes += Q.thalmann_to_spd_bonus;
 }
+
+if (Q.nsdap_presidential_votes) Q.nazi_funds -= 1;
 
 console.log(Q.hindenburg_votes)
 console.log(Q.nsdap_presidential_votes)

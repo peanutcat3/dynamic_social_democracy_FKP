@@ -669,7 +669,7 @@ Q.international_relations_timer = 0;
 Q.iron_front_timer = 0;
 Q.media_timer = 0;
 Q.enemies_timer = 0;
-Q.party_organizations_timer =  0;
+Q.party_organizations_timer = 0;
 Q.rally_timer = 0;
 Q.reichsbanner_timer = 0;
 Q.shuffle_leadership_timer = 0;
@@ -825,6 +825,7 @@ Q.public_works_name = "Lautenbach";
 Q.hitler_right_coalition_time = 0;
 Q.papen_post = 0;
 Q.papen_post_2 = 0;
+Q.nazi_funds = 5;
 
 // rubicon
 Q.hindenburg_schleicher_r = 5;

@@ -16,14 +16,6 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
-on-arrival: {!
-if (Q.rubicon) {
-    Q.nazi_funds = 5;
-    if (Q.presidential_election_seen) Q.nazi_funds -= 1;
-    if (Q.presidential_election_r2_trigger) Q.nazi_funds -= 1;
-    if (Q.elections_1932) Q.nazi_funds -= Q.elections_1932;
-}
-!}
 priority: -2
 
 = The <span style="color: #7A3C00;">Nazis</span> Have Peaked!
