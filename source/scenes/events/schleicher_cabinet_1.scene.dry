@@ -5,7 +5,7 @@ new-page: true
 tags: event
 max-visits: 1
 priority: 3
-on-arrival: pro_republic += 5; 
+on-arrival: pro_republic += 5; schleicher_spd_support += 2; schleicher_spd_r += 1
 face-image: img/portraits/schleicher_chancellor.jpg
 
 = Von Schleicher Cabinet
