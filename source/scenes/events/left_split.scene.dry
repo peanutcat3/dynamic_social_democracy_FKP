@@ -6,7 +6,7 @@ view-if: left_dissent >= 60
 on-arrival: left_split = 1; left_strength = left_strength/2; workers_spd -= 4; unemployed_spd -= 4; workers_other += 4; workers_kpd += 1; kpd_r += 1; spd_r -= 1; n_advisors -= 1 if levi_advisor == 1; levi_advisor = 0; rb_strength -= 300; kpd_relation -= 5; rb_militancy -= 0.05 if rb_militancy >= 0.1; n_advisors -= 1 if seydewitz_advisor == 1; seydewitz_advisor = 0; n_advisors -= 1 if rosenfeld_advisor == 1; rosenfeld_advisor = 0; n_advisors -= 1 if siemsen_advisor == 1; siemsen_advisor = 0
 go-to: sapd_formed if centrists_resign = 1 and not sapd_formed
 max-visits: 1
-
+Q.center_dissent += 15;
 = Left-wing members split
 
 Our policy choices have greatly offended the left, and many of their leaders have split to form a new party, the <span style="color: #9B0000;">**SAPD**</span>, or <span style="color: #9B0000;">Socialist Worker's Party</span>. They do not count a huge section of our membership, so this should be survivable.
