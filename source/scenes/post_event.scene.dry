@@ -120,7 +120,13 @@ for (var c of Q.classes) {
         }
     }
     if (class_votes > 100 && maxParty !== null && Q[c + '_' + maxParty + '_normalized'] > 50) {
-        Q[c + '_' + maxParty] = Q[c + '_' + maxParty + '_normalized'];
+        const difference = Q[c + '_' + maxParty] - Q[c + '_' + maxParty + '_normalized'];
+        Q[c + '_' + maxParty] -= difference / 2;
+    }
+    for (var party of Q.parties) {
+        if (party !== maxParty && class_votes > 100) {
+            Q[c + '_' + party] *= 0.99;
+        }
     }
     for (var party of Q.parties) {
         Q[c + '_' + party + '_normalized'] = 100 * Q[c + '_' + party] / class_votes;
