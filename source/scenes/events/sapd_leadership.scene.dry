@@ -12,7 +12,7 @@ levi_support = 1000;
 }
 frolich_support += 100 - Q.sapd_relation;
 breitscheid_support = Q.sapd_relation;
-
+/*
 if (Q.pro_republic >= 65) {
 frolich_support -= 20;
 breitscheid_support += 20;
@@ -26,7 +26,7 @@ breitscheid_support -= 20;
 if (frolich_support - breitscheid_support <= 10) {
 rosenfeld_support += 300;
 }
-
+*/
 if (levi_support = 1000) {
     winner = "levi";
     } else if (rosenfeld_support = 3000) {
