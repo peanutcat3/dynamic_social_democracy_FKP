@@ -28,7 +28,7 @@ Q.old_rural_sapd_display = 0
 Q.old_unemployed_sapd_display = 0
 Q.old_catholics_sapd_display = 0
 
-Q.sapd_relation = (Q.left_dissent-100);
+Q.sapd_relation = Q.left_dissent - 100;
 
 var Q.sapd_election_trigger = time + 3;
 
