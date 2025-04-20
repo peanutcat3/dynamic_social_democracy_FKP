@@ -14,7 +14,7 @@ if (Q.pro_republic >= 65) {
 frolich_support -= 20;
 breitscheid_support += 20;
 }
-if (Q.pro_republic >= 35) {
+if (Q.pro_republic <= 35) {
 frolich_support += 20;
 breitscheid_support -= 20;
 }
