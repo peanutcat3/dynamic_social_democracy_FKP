@@ -5,45 +5,15 @@ new-page: true
 tags: event
 max-visits: 1
 priority: 3
+on-arrival: pro_republic += 5; 
 face-image: img/schleicher_chancellor.jpg
 
 = Von Schleicher Cabinet
 
-Papen has continued to assert his independence against Schleicher's advice and is still planning to declare martial law, dissolve the Reichstag, and cancel elections indefinitely when the Reichstag convenes this week, as he announced to the cabinet. With an increasing amount of Labor protests on the streets, and uncompromising hostility from every corner of German society, Schleicher simply cannot support his former friend anymore, and his quest to commit political suicide with the approval of President Hindenburg.
+Chancellor Schleicher has unveiled his new cabinet—retaining all but two of Papen’s ministers. His top priority, he claims, is putting people back to work. To that end, he has appointed Günther Gereke, President of the Rural Municipal Congress and a reformist economic theorist, as *Reichskommissar* for Employment, with a full seat in the cabinet.
 
-Schleicher has also been distancing himself from Papen and his unpopular policies in preparation for his chancellorship, through conversations with our trade unions and a wide variety of political leaders like Gregor Strasser.
+For now, Schleicher is enjoying a political honeymoon. The relief at Papen’s fall has been widespread, and his public disavowal of any plans to alter the constitution has calmed both the national mood and the <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span> who had bitterly opposed his predecessor.
 
-One thing is clear: Papen must go for German democracy to survive.
+The <span style="color: #000000;">Christian</span> trade unions and their affiliated parties have adopted a conciliatory stance, while the ADGB and <span style="color: #c00000;">**SPD**</span> leaderships, viewing Schleicher as the lesser evil, have responded positively to his public works proposals.
 
-@papen
-title: The cabinet meets.
-
-In a cabinet meeting convened to discuss plans for imposing martial law, Schleicher turned the tables against the chancellor by revealing the results of Reichswehr war games simulating conflict with the <span style="color: #7A3C00;">**SA**</span>, <span style="color: #700000;">**RFB**</span>, and the Reichsbanner. The exercises concluded that the army would be unable to cope with a civil war against all three groups.
-
-With his last hope for salvaging power extinguished and even his own cabinet turning against him, Papen is left with no viable path forward—resign now, or be crushed by the Reichstag later in the week.
-
-@papen_2
-title: Papen resigns his position!
-subtitle: Who will succeed him?
-
-An embittered Papen—convinced that Schleicher orchestrated his downfall and vowing never to forgive the betrayal—has officially submitted his resignation to Hindenburg, who, with reluctance, has accepted it.
-
-@papen_3
-title: General Kurt von Schleicher is appointed chancellor!
-on-arrival: {!
-Q.chancellor = "Schleicher";
-if (Q.prussia_leader == "Papen") Q.prussia_leader = "Schleicher"
-Q.schleicher_time = 0
-
-Q.pro_republic += 5;
-Q.reichswehr_militancy += 0.5;
-
-Q.papen_goal = "Cry over spilt milk";
-Q.schleicher_goal = "Scavenge for parliamentary backing";
-Q.oskar_goal = "Be buddies with Schleicher";
-Q.meissner_goal = "Become acquainted with the new chancellor";
-!}
-
-His successor is Schleicher himself—having orchestrated Papen's fall through rigged war games, he has now been appointed chancellor with the full support of the president. His appointment is a breath of fresh air compared to Papen, and his more moderate and social leanings are more acceptable to the <span style="color: #c00000;">**SPD**</span>.
-
-However, many still view Schleicher as little better than his predecessor. After all, he was responsible for the[? if otl_prussian_coup_seen:&nbsp;Prussian coup and the?] disastrous policies of the Papen government. At the end of the day, he's just another <span style="color: #808080;">reactionary</span>.
+But the real issue isn’t popular unrest—it’s whether Schleicher can survive the no-confidence vote looming in the Reichstag later this week.

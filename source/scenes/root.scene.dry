@@ -684,6 +684,7 @@ Q.n_elections_prussia = 0;
 Q.no_majority_elections = 0;
 Q.no_majority_papen_elections = 0;
 Q.no_majority_elections_prussia = 0;
+Q.1932_elections = 0;
 Q.prussian_reichsexekution_timer = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
@@ -920,11 +921,11 @@ For more information on the politics and government of the German Republic, see 
 - @1928_historical: Begin (<span style="color: #611813;">historical</span> mode)
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 6; base_dues = 6; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; ddp_relation = 65; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 5; base_dues = 5; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; ddp_relation = 65; budget = 5;
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 4; base_dues = 4; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; ddp_relation = 50; budget = 3
+on-arrival: difficulty = 1; resources = 0; dues = 3; base_dues = 3; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; ddp_relation = 50; budget = 3
 go-to: 1928_main
 
 @1928_historical
@@ -933,8 +934,8 @@ on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
 Q.resources = 2;
-Q.dues = 3;
-Q.base_dues = 3;
+Q.dues = 2;
+Q.base_dues = 2;
 Q.rb_strength = 2000;
 Q.reformist_dissent = 25;
 Q.left_dissent = 30;
@@ -954,8 +955,8 @@ subtitle: Intended way of experiencing this mod.
 on-arrival: {!
 Q.difficulty = -1;
 Q.resources = 3;
-Q.dues = 4;
-Q.base_dues = 4;
+Q.dues = 3;
+Q.base_dues = 3;
 Q.rb_strength = 2000;
 Q.z_relation = 41;
 Q.kpd_relation = 21;

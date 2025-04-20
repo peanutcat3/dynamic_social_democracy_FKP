@@ -41,7 +41,7 @@ This program has strengthened the Reichsbanner and improved our relations with v
 
 @wait
 title: Persuade the Reichsbanner to remain non-committal for now, at before until the next election.
-on-arrival: schleicher_spd_support += 1; rb_strength += 50; rb_militancy += 0.02
+on-arrival: schleicher_spd_support += 1; schleicher_reichsbanner_wait = 1; rb_strength += 50; rb_militancy += 0.02
 
 We have secured a commitment from the Reichsbanner leadership not to make any official decision regarding participation in the *Reichskuratorium* before the upcoming elections—a compromise between the party factions. However, some local members may still choose to enroll in the training programs on their own initiative.
 
