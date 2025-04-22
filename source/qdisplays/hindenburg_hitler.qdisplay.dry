@@ -1,6 +1,6 @@
 
-(..1) <span style="color: #A8D5BA;">hostile</span>
-(1..2) <span style="color: #EBD97D;">averse</span>
-(2..3) <span style="color: #F7C27D;">opposed</span>
-(3..4) <span style="color: #F4A984;">unsympathetic</span>
-(5..) <span style="color: #d42f2f;">hesitant</span>
+(..0) <span style="color: #A8D5BA;">hostile</span>
+(0..1) <span style="color: #EBD97D;">averse</span>
+(1..2) <span style="color: #F7C27D;">opposed</span>
+(2..3) <span style="color: #F4A984;">unsympathetic</span>
+(4..) <span style="color: #d42f2f;">hesitant</span>
