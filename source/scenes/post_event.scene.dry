@@ -1597,10 +1597,10 @@ if (Q.reformist_plan_time >= Q.time) {
 }
 
 Q.strife_size = 0;
-Q.strife_size += Q.sa_militancy;
+Q.strife_size += Q.sa_militancy*0.8;
 Q.strife_size += Q.sh_militancy/2;
 Q.strife_size += Q.strife / 50;
-if (Q.year == 1930) Q.strife_size / 2;
+if (Q.year == 1930) Q.strife_size = Q.strife_size / 2;
 
 Q.max_workers_para = 10;
 Q.max_unemployed_para = 10; 
