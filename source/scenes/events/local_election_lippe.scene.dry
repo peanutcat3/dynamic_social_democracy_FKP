@@ -70,7 +70,7 @@ Q.dnf_lippe_elections_vote = 0;
 
 if (Q.new_middle_spd_normalized + Q.old_middle_spd_normalized >= 30) lippe_adjustment_factors.spd += 0.05;
 if (Q.rural_spd_normalized >= 20) lippe_adjustment_factors.spd += 0.15;
-if (Q.spd_lippe) lippe_adjustment_factors.spd *= spd_lippe;
+if (Q.spd_lippe) lippe_adjustment_factors.spd *= Q.spd_lippe;
 Q.spd_lippe_elections_vote = Q.spd_votes*lippe_adjustment_factors.spd;
 Q.sapd_lippe_elections_vote = Q.sapd_votes*lippe_adjustment_factors.sapd;
 Q.kpd_lippe_elections_vote = Q.kpd_votes*lippe_adjustment_factors.kpd;
@@ -85,7 +85,7 @@ if (Q.dvp_votes >= 5) lippe_adjustment_factors.dvp -= 0.2;
 Q.dvp_lippe_elections_vote = Q.dvp_votes*lippe_adjustment_factors.dvp;
 if (Q.dnvp_ideology == "Moderate") lippe_adjustment_factors.dnvp += 0.4;
 Q.dnvp_lippe_elections_vote = Q.dnvp_votes*lippe_adjustment_factors.dnvp;
-if (Q.nsdap_lippe) lippe_adjustment_factors.nsdap *= nsdap_lippe;
+if (Q.nsdap_lippe) lippe_adjustment_factors.nsdap *= Q.nsdap_lippe;
 Q.nsdap_lippe_elections_vote = Q.nsdap_votes*lippe_adjustment_factors.nsdap;
 if (Q.dnvp_ideology == "Moderate") lippe_adjustment_factors.other -= 1.0;
 if (Q.kvp_formed) lippe_adjustment_factors.other -= 0.6;
