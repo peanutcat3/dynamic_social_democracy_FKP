@@ -16,8 +16,6 @@ In response, the <span style="color: #700000;">**Communists**</span> table a mot
 
 The question is, how should our representatives vote?
 
-The reason for the Nazis’ lack of eagerness to reconvene the Reichstag seemed obvious to observers outside the party. An early meeting of the parliament would predictably result in no-confidence motions. Given the Nazis’ denunciations of the Schleicher cabinet, they would have to support those motions or lose all credibility. If, as all signs indicated would be the case, the chancellor then responded by dissolving the Reichstag elected in November, the Nazis would face the daunting prospect of further losses in a new election. Anx¬ ious to stave off that possibility, the party’s spokesmen on the agenda committee therefore withheld their votes from the motions of the Communists and Social Democrats, both of which failed. The issue was finally resolved when the spokesmen of the two leftist parties backed a Catholic Center Party motion to reconvene the parliament on January 24, with the proviso that the agenda committee meet again to review the matter on January 20.
-
 # TODO
 
 - @reichstag_1
@@ -93,7 +91,7 @@ Eventually, the <span style="color: #000000;">Center Party</span> steps in with 
 All parties accept this arrangement.
 
 @reichstag_3
-title: Vote for the compromise proposal (reconvene in three weeks, subject to review).
+title: Push for a compromise proposal (reconvene in three weeks, subject to review).
 on-arrival: {!
 Q.reichstag_schleicher = 1;
 Q.reichstag_break = 0;
