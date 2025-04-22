@@ -489,7 +489,8 @@ go-to: lippe_coalition_menu
 **Lippe results:**
 
 {!<svg id="lippe_landtag" style="width: 500px; height: 250px;"> </svg>!}
-Vote % changes are compared to the last *Reichstag* election. Seat % changes are compared to the last *Landtag* election.
+Vote % changes are compared to the last *Reichstag* election.
+Seat % changes are compared to the last *Landtag* election.
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Landtag Seats</td><td>% Change</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_lippe_elections_vote +]%** {!</td><td>!} **[+ str_votes_change_spd_lippe +]** {!</td><td>!} **[+ spd_r_lippe +]%** {!</td><td>!} **[+ str_change_spd_lippe +]** {!</td></tr>!}
