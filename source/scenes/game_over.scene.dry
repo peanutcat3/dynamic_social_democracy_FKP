@@ -38,7 +38,7 @@ if (Q.year >= 1932  && Q.unemployed < 8.6 && Q.budget > 0 && Q.inflation < 5) {
 if (Q.republic_victory && Q.resist_coup) {
     this.achieve('bollwerk_der_demokratie');
 }
-// Der österreichische Gefreiter - deport hitler
+// Der österreichische Gefreite - deport hitler
 // Volkspartei - form a people's party
 // Hirschfeld - legalize 2 of homosexual rights and trans rights.
 if (Q.homosexual_rights >= 2) {
@@ -82,10 +82,10 @@ if (Q.rural_spd_normalized && Q.rural_spd_normalized >= 50) {
 if (Q.catholics_spd_normalized && Q.catholics_spd_normalized >= 50) {
     this.achieve('katholischer_sozialismus');
 }
-if (Q.workers_spd_normalized >= 80 && Q.new_middle_spd_normalized <= 20 && Q.old_middle_spd_normalized <= 20 && Q.rural_spd <= 20) {
+if (Q.workers_spd_normalized >= 80 && Q.new_middle_spd_normalized <= 20 && Q.old_middle_spd_normalized <= 20 && Q.rural_spd_normalized <= 20) {
     this.achieve('klassenkampf');
 }
-if (Q.workers_spd_normalized >= 40 && Q.new_middle_spd_normalized >= 40 && Q.old_middle_spd_normalized >= 40 && Q.rural_spd >= 40) {
+if (Q.workers_spd_normalized >= 40 && Q.new_middle_spd_normalized >= 40 && Q.old_middle_spd_normalized >= 40 && Q.rural_spd_normalized >= 40) {
     this.achieve('grosse_volkspartei');
 }
 // Räterepublik - begin the transformation to a socialist economy.
@@ -377,7 +377,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #700000;">**KPD**</span>. ?]
 
-[? if game_achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #7A3C00;">Hitler</span> ?]
+[? if game_achievement_deport_hitler : **Der österreichische Gefreite** - deported <span style="color: #7A3C00;">Hitler</span> ?]
 
 [? if game_achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -393,7 +393,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
 
-[? if game_achievement_bruder_zur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect Otto Braun president, and deport Hitler in one playthrough on at least normal difficulty. ?]
+[? if game_achievement_bruder_zur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an <span style="color: #c00000;">**SPD**</span> president, and deport Hitler in one playthrough on at least normal difficulty. ?]
 
 [? if game_achievement_die_rote_fahne: **Die Rote Fahne** - join the <span style="color: #700000;">**KPD**</span> in their May Day march. ?]
 
@@ -484,7 +484,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #700000;">**KPD**</span>. ?]
 
-[? if achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #7A3C00;">Hitler</span> ?]
+[? if achievement_deport_hitler : **Der österreichische Gefreite** - deported <span style="color: #7A3C00;">Hitler</span> ?]
 
 [? if achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -500,7 +500,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
 
-[? if achievement_bruder_zur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect Otto Braun president, and deport Hitler in one playthrough on at least normal difficulty. ?]
+[? if achievement_bruder_zur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an <span style="color: #c00000;">**SPD**</span> president, and deport Hitler in one playthrough on at least normal difficulty. ?]
 
 [? if achievement_die_rote_fahne: **Die Rote Fahne** - join the <span style="color: #700000;">**KPD**</span> in their May Day march. ?]
 
@@ -589,7 +589,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_versohnler: **Versöhnler** - the Conciliators lead the <span style="color: #700000;">**KPD**</span>. ?]
 
-[? if not achievement_deport_hitler : **Der österreichische Gefreiter** - deported <span style="color: #7A3C00;">Hitler</span> ?]
+[? if not achievement_deport_hitler : **Der österreichische Gefreite** - deported <span style="color: #7A3C00;">Hitler</span> ?]
 
 [? if not achievement_wirtschaftspolitik: **Wirtschaftspolitik** - enact an economic plan. ?]
 
@@ -605,7 +605,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_women_reichsbanner: **Mädchen in Uniform** - a woman's place is in the Reichsbanner. ?]
 
-[? if not achievement_bruder_zur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect Otto Braun president, and deport Hitler in one playthrough on at least normal difficulty. ?]
+[? if not achievement_bruder_zur_sonne: **Brüder, zur Sonne, zur Freiheit** - reduce unemployment, pause reparations, increase women's rights, elect an <span style="color: #c00000;">**SPD**</span> president, and deport Hitler in one playthrough on at least normal difficulty. ?]
 
 [? if not achievement_die_rote_fahne: **Die Rote Fahne** - join the <span style="color: #700000;">**KPD**</span> in their May Day march. ?]
 

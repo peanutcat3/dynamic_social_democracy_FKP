@@ -456,6 +456,34 @@ if (Q.hitler_right_coalition >= 50 && Q.rubicon) {
     if (!Q.hitler_right_coalition_time) Q.hitler_right_coalition_time = Q.time;
 }
 
+var lippe_adjustment_factors = {
+    spd: 1.32,
+    sapd: 0.4,
+    kpd: 0.91,
+    ddp: 0.62,
+    lvp: 1.15,
+    z: 0.17,
+    dvp: 2.0,
+    dnvp: 1.19,
+    nsdap: 1.05,
+    other: 1.7,
+    kvp: 1.35,
+    dnf: 0.5
+};
+
+Q.old_spd_lippe_elections_vote = Q.spd_votes * lippe_adjustment_factors.spd;
+Q.old_sapd_lippe_elections_vote = Q.sapd_votes * lippe_adjustment_factors.sapd;
+Q.old_kpd_lippe_elections_vote = Q.kpd_votes * lippe_adjustment_factors.kpd;
+Q.old_ddp_lippe_elections_vote = Q.ddp_votes * lippe_adjustment_factors.ddp;
+Q.old_lvp_lippe_elections_vote = Q.lvp_votes * lippe_adjustment_factors.lvp;
+Q.old_z_lippe_elections_vote = Q.z_votes * lippe_adjustment_factors.z;
+Q.old_dvp_lippe_elections_vote = Q.dvp_votes * lippe_adjustment_factors.dvp;
+Q.old_dnvp_lippe_elections_vote = Q.dnvp_votes * lippe_adjustment_factors.dnvp;
+Q.old_nsdap_lippe_elections_vote = Q.nsdap_votes * lippe_adjustment_factors.nsdap;
+Q.old_other_lippe_elections_vote = Q.other_votes * lippe_adjustment_factors.other;
+Q.old_kvp_lippe_elections_vote = Q.kvp_votes * lippe_adjustment_factors.kvp;
+Q.old_dnf_lippe_elections_vote = Q.dnf_votes * lippe_adjustment_factors.dnf;
+
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties) {
     election_result[party] = Q[party + '_r'];

@@ -1,0 +1,23 @@
+title: Strasser and Hindenburg
+subtitle: A rumoured meeting between the two men?
+view-if: chancellor = "Schleicher" and schleicher_time == 4
+on-arrival: nazi_explode += 1
+new-page: true
+tags: event
+priority: -2
+max-visits: 1
+face-image: img/strasser.jpg
+
+= Strasser and Hindenburg
+
+With Strasser’s return from vacation, many of his loyalists—and [+ nsdap_leader +] himself—believe his prolonged silence signals quiet scheming. Frustration is beginning to boil over among his supporters, who have grown impatient with his inaction and are now starting to voice their dissent publicly, criticizing the party's all-or-nothing strategy. [+ nsdap_leader +]'s suspicions seem confirmed when news leaks of a private meeting between Strasser and President Hindenburg.
+
+Most of Strasser’s followers aren’t agitating for a party split—they hope for his reconciliation instead. They blame Goebbels and Göring, his chief enemies within the party, for steering Hitler down a disastrous path.
+
+Nonetheless, the specter of rebellion looms. The <span style="color: #7A3C00;">**NSDAP**</span> needs a victory—and it needs one fast.
+
+> *"Strasser is plotting. He was with Hindenburg... That’s what I call a traitor. I always saw through him."*
+
+ - Joseph Goebbels, to his diary, [+ year +]
+
+ 

@@ -1,7 +1,7 @@
 title: Foreign Policy
 new-page: true
 is-card: true
-tags: govt_affairs
+tags: govt_affairs, cabinet
 on-arrival: month_actions += 1; foreign_policy_timer += 8
 view-if: spd_in_government = 1 and foreign_minister_party = "SPD" and  foreign_policy_timer <= 0
 card-image: img/portraits/BreitscheidRudolf.jpg
@@ -71,7 +71,7 @@ The <span style="color: #940000;">Soviets</span> are asking for economic and dev
 @soviet_economic_aid_yes_mil
 choose-if: budget >= 1
 subtitle: -1 budget
-on-arrival: budget -= 1; soviet_relation += 1; reichswehr_strength += 20; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
+on-arrival: budget -= 1; soviet_relation += 1; reichswehr_militancy += 0.2; reichswehr_loyalty += 0.05; foreign_goal_completed += 1
 
 The <span style="color: #940000;">Soviets</span> are pleased that we have sent them aid, and have agreed to help train our military. The Reichswehr appreciates our support.
 

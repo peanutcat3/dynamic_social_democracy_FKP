@@ -230,6 +230,9 @@ Q.inflation = 2.9;
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
 Q.economic_growth = 4.4;
 
+// economic expansion timer
+Q.economic_expansion = 0;
+
 // quality of life (as % of 1928 - currently unused - should be welfare-adjusted.)
 Q.workers_qol = 100;
 Q.rural_qol = 100;
@@ -655,8 +658,32 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'high_inflation', 'banking_crisis', 'understanding_enemy',
     'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
     'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger',
-    'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath',
-    'bourgeois_negotiations_elections_1930', 'nazi_decay', 'stegerwald_transformation', 'emergency_fundraising', 'red_general', 'weimar_rally'];
+    'bourgeois_negotiations_1930', 'bourgeois_negotiations_1930_aftermath', 'schleichers_schemes',
+    'bourgeois_negotiations_elections_1930', 'nazi_decay', 'stegerwald_transformation', 'emergency_fundraising', 'red_general', 'weimar_rally', 'nazi_funds'];
+Q.rubicon_timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
+    'fundraising', 'ideology',
+    'inter_party_relationships', 'international_relations',
+    'iron_front', 'media', 'enemies',
+    'party_organizations', 'rally', 'reichsbanner',
+    'shuffle_leadership', 'streetfighting', 'peoples_party',
+    'party_disunity',
+    // govt
+    'agricultural_policy', 'domestic_enemies', 'fiscal_policy',
+    'foreign_policy', 'judiciary', 'labor_affairs', 'military_policy',
+    'police', 'prussian_affairs', 'shuffle_cabinet', 'social_welfare',
+    'homosexual_rights', 'economic_policy', 'coalition_affairs',
+    'war_guilt', 'womens_rights', 'economic_democracy',
+    'dealing_with_toleration',
+    'constitutional_reform', 'labor_rights', 'spd_government_burden',
+    'education_science', 'curriculum',
+    // events
+    'emergency_cuts', 'unemployment_insurance',
+    'sa_ban', 'sh_ban', 'papen_chancellor', 'schleicher_chancellor',
+    'kpd_policy', 'kpd_ultimatum', 'kpd_ultimatum_prussia', 'popular_front_dispute',
+    'high_inflation', 'banking_crisis', 'understanding_enemy',
+    'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
+    'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger', 'schleichers_schemes',
+    'bourgeois_negotiations_elections_1930', 'emergency_fundraising', 'red_general', 'weimar_rally', 'nazi_funds'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -826,6 +853,9 @@ Q.hitler_right_coalition_time = 0;
 Q.papen_post = 0;
 Q.papen_post_2 = 0;
 Q.nazi_funds = 5;
+Q.spd_lippe = 1;
+Q.nsdap_lippe = 1;
+Q.nazi_explode = 0;
 
 // rubicon
 Q.hindenburg_schleicher_r = 5;
@@ -968,7 +998,7 @@ Q.budget = 2;
 go-to: 1928_main
 
 @1928_main
-audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3
+audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SozialistenMarsch.mp3
 new-page: true
 go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
 

@@ -15,6 +15,7 @@ Q.workers_other -= 5;
 
 if (Q.unions_independent) {
     Q.workers_sapd += 8;
+    Q.unemployed_sapd += 4;
 }
 
 Q.old_workers_sapd_display = 0

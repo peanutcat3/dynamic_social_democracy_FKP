@@ -18,7 +18,7 @@ A Great War veteran and a neorevisionist leader, Kurt Schumacher argues for a st
 title: Emergency Fundraising
 subtitle: An emergency infusion of resources. Usable once per sixteen months.
 choose-if: advisor_action_timer = 0 and emergency_fundraising_timer == 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if emergency_fundraising_timer > 0 : [+ emergency_fundraising_timer +] months before next emergency fundraising. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if emergency_fundraising_timer > 0 and not rubicon : [+ emergency_fundraising_timer +] months before next emergency fundraising. ?][? if emergency_fundraising_timer > 0 and rubicon : [+ emergency_fundraising_timer +] weeks before next emergency fundraising. ?]
 on-arrival: advisor_action_timer = 6; resources += 2; emergency_fundraising_timer = 16
 #view-if: difficulty < 1
 
