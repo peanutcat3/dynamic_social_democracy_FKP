@@ -979,7 +979,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
                 Q.old_middle_dnvp += 3/12;
             }
         }
-        Q.sa_strength += 100/12;
+        Q.sa_strength += 75/12;
         Q.rfb_strength += 25/12;
     } else if (Q.year == 1931) {
         Q.unemployed += 5/12;
@@ -1108,6 +1108,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
             Q.old_middle_nsdap += 4/12;
             Q.new_middle_nsdap += 4/12;
             Q.rural_nsdap += 3/12;
+            Q.sa_militancy += 0.1/12;
             if (Q.dnf_formed) {
                 Q.rural_dnf += 3/12;
                 Q.old_middle_dnf += 4/12;
