@@ -683,7 +683,8 @@ Q.rubicon_timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'high_inflation', 'banking_crisis', 'understanding_enemy',
     'dnf_decay', 'march_on_berlin', 'prussian_reichsexekution',
     'bruning_event', 'lvp_merger', 'lvp_merger_1', 'lvp_merger_2', 'bourgeois_merger', 'schleichers_schemes',
-    'bourgeois_negotiations_elections_1930', 'emergency_fundraising', 'red_general', 'weimar_rally', 'nazi_funds'];
+    'bourgeois_negotiations_elections_1930', 'emergency_fundraising', 'red_general', 'weimar_rally', 'nazi_funds',
+    'campaigning'];
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
@@ -723,6 +724,7 @@ Q.next_election_year = 1928;
 Q.next_election_month = 12;
 Q.next_election_time = 12;
 // government affairs timers
+Q.campaigning_timer = 0;
 Q.spd_government_burden_timer = 0;
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
