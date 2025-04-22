@@ -1227,7 +1227,7 @@ if (Q.dstp_formed && Q.next_election_time - Q.time == 1 && Q.time !== Q.last_tim
         Q.flavour_9_trigger_shown = 1;
     }
 }
-if (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.dvp_exist && Q.time !== Q.last_time_updated) {
     Q.flavour_10_trigger += 1;
     if (Q.flavour_10_trigger && !Q.flavour_10_trigger_shown) {
         Q.flavour_10_trigger_time = Q.time;
@@ -1235,7 +1235,7 @@ if (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp 
         Q.flavour_10_effect_trigger = 1;
     }
 }
-if (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.ddp_factionless && !Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.dvp_exist && Q.time !== Q.last_time_updated) {
     Q.flavour_11_trigger += 1;
     if (Q.flavour_11_trigger && !Q.flavour_11_trigger_shown) {
         Q.flavour_11_trigger_time = Q.time;
@@ -1403,7 +1403,7 @@ if (Q.flavour_29_trigger && Q.flavour_20_trigger && Q.time == Q.flavour_20_trigg
         Q.flavour_31_trigger_shown = 1;
     }
 }
-if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r >= 3 && !Q.lvp_formed && Q.dvp_exist && Q.time !== Q.last_time_updated) {
     Q.flavour_32_trigger += 1;
     if (Q.flavour_32_trigger && !Q.flavour_32_trigger_shown) {
         Q.flavour_32_trigger_time = Q.time;
@@ -1411,7 +1411,7 @@ if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp &
         Q.flavour_32_effect_trigger = 1;
     }
 }
-if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.time !== Q.last_time_updated) {
+if (Q.ddp_factionless && Q.bourgeois_parliament && !Q.bourgeois_parliament_ddp && !Q.liberal_parliament && Q.ddp_r < 3 && !Q.lvp_formed && Q.dvp_exist && Q.time !== Q.last_time_updated) {
     Q.flavour_33_trigger += 1;
     if (Q.flavour_33_trigger && !Q.flavour_33_trigger_shown) {
         Q.flavour_33_trigger_time = Q.time;
