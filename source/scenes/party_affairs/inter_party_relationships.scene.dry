@@ -71,12 +71,17 @@ view-if: not cvp_formed
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; z_relation += 2 if z_ideology == "Left"
-go-to: center_op if not spd_in_government and chancellor != "Brüning"; center_coalition if spd_in_government; center_bruning if chancellor = "Brüning" and not spd_in_government
+go-to: center_op if not spd_in_government and chancellor != "Brüning" and chancellor != "Papen" and chancellor != "Schleicher"; center_op_2 if not spd_in_government and (chancellor == "Papen" or chancellor == "Schleicher"); center_coalition if spd_in_government; center_bruning if chancellor = "Brüning" and not spd_in_government
 
 @center_op
 on-arrival: z_relation += 5*(1 - dissent)
 
 We are currently in opposition to the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]-led government, but that does not preclude the general building of feelings of good will.
+
+@center_op_2
+on-arrival: z_relation += 6*(1 - dissent)
+
+Together with the <span style="color: #000000;">Center</span>, we share a common opposition to the incumbent cabinet, making improving relations easier.
 
 @center_coalition
 on-arrival: z_relation += 8*(1 - dissent)
