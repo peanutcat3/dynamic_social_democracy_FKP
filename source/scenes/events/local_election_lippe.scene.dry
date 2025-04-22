@@ -4,6 +4,7 @@ view-if: rubicon and chancellor == "Schleicher" and year == 1933 and month == 1 
 new-page: true
 tags: event
 on-arrival: lippe_election_seen = 1
+max-visits: 1
 priority: 3
 on-display: {!  
     var cardEl = document.createElement('div');  
