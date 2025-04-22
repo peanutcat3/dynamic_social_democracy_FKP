@@ -331,6 +331,7 @@ Q.farm_r_lippe = (Q.farm_r_lippe != undefined ? parseFloat(Q.farm_r_lippe.toFixe
 Q.csvd_r_lippe = (Q.csvd_r_lippe != undefined ? parseFloat(Q.csvd_r_lippe.toFixed(1)) : 0);
 Q.wp_r_lippe = (Q.wp_r_lippe != undefined ? parseFloat(Q.wp_r_lippe.toFixed(1)) : 0);
 
+Q.change_nsdap_votes_lippe = (Q.change_nsdap_votes_lippe != undefined ? parseFloat(Q.change_nsdap_votes_lippe.toFixed(1)) : 0);
 
 !}
 on-display: {!
