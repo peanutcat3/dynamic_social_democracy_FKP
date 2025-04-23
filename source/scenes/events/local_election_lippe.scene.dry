@@ -540,7 +540,7 @@ Who cares what coalition forms here?
 @nsdap_big_win
 title: The <span style="color: #7A3C00;">**NSDAP**</span> score a crushing victory.
 view-if: change_nsdap_votes_lippe >= 7
-on-arrival: lippe_big_win = 1; hindenburg_hitler_r += 2; workers_nsdap += 2; unemployed_nsdap += 2; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4; nazi_funds += 1;
+on-arrival: lippe_big_win = 1; hindenburg_hitler_r += 2; workers_nsdap += 2; unemployed_nsdap += 2; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4; nazi_funds += 1; lippe_good = 1
 
 Unexpectedly, the <span style="color: #7A3C00;">**NSDAP**</span> matched their peak electoral performance—proof that the movement isn’t dying, but growing.
 
@@ -549,7 +549,7 @@ This is a major propaganda win for the <span style="color: #7A3C00;">**NSDAP**</
 @nsdap_moderate_win
 title: The <span style="color: #7A3C00;">**NSDAP**</span> score a dubious triumph.
 view-if: change_nsdap_votes_lippe >= 3 and change_nsdap_votes_lippe < 7
-on-arrival: hindenburg_hitler_r += 1; new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 2
+on-arrival: hindenburg_hitler_r += 1; new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 2; lippe_good = 1
 
 The <span style="color: #7A3C00;">Nazis</span> fell short of their peak results—but still gained votes compared to the last election. To the casual observer, the <span style="color: #7A3C00;">**NSDAP**</span> looks like it’s back on the rise, and they’ve seized on the outcome as a cheap propaganda boost to reenergize their disillusioned base.
 
@@ -562,7 +562,7 @@ Still, pressure to bring [+ nsdap_chancellor +] into government is once again ri
 @nothing_ever_happens
 title: The <span style="color: #7A3C00;">**NSDAP**</span> fails to make a breakthrough.
 view-if: change_nsdap_votes_lippe >= 0 and change_nsdap_votes_lippe < 3
-on-arrival: new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2
+on-arrival: new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; lippe_good = 1
 
 The <span style="color: #7A3C00;">**NSDAP**</span>, despite going all-out on this campaign, only managed to achieve gains of [+ change_nsdap_votes_lippe +]%. This serves as evidence that the movement is in decline, though slowly.
 

@@ -1,6 +1,6 @@
 title: The End of Gregor Strasser
 subtitle: The once influential man retires from politics.
-view-if: chancellor = "Schleicher" and lippe_election_seen
+view-if: chancellor = "Schleicher" and schleicher_time == 6
 new-page: true
 tags: event
 priority: 2
