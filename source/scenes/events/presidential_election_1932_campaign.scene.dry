@@ -190,7 +190,7 @@ Since it's election season, we are able to accelerate campaigning efforts. Buy o
 
 @workers
 view-if: campaigning_count < 2
-on-arrival: workers_spd += 4*(1 - dissent); campaigning_count += 1
+on-arrival: workers_spd += 3*(1 - dissent); campaigning_count += 1
 go-to: campaign_menu
 
 
@@ -208,13 +208,13 @@ go-to: campaign_menu
 
 @unemployed
 view-if: campaigning_count < 2
-on-arrival: unemployed_spd += 4*(1 - dissent); campaigning_count += 1
+on-arrival: unemployed_spd += 3*(1 - dissent); campaigning_count += 1
 go-to: campaign_menu
 
 
 @catholics
 view-if: campaigning_count < 2 and peoples_party
-on-arrival: catholics_spd += 4*(1 - dissent); campaigning_count += 1
+on-arrival: catholics_spd += 3*(1 - dissent); campaigning_count += 1
 go-to: campaign_menu
 
 
@@ -387,7 +387,7 @@ if (Q.spd_campaign || Q.spd_support_thalmann || Q.kpd_support_spd) Q.hindenburg_
 !}
 go-to: bourgeois_campaign_menu
 
-The United Hindenburg Committees have set to work improving the perception of moderate right-wing German voters toward President Hindenburg, whose reputation as the Hero of Tannenberg has been tarnished by his support for the hated <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> system. Despite this, the <span class="tooltip-text" title="Following Hindenburg's overseeing of Germany's crushing victory at Tannenberg in WW1, Hindenburg has become the center of a massive personality cult, lauded as the living ideal of German masculinity and patriotism. He is the embodiment of the best virtues of Prussian tradition.">Hindenburg Mythos</span> remains intact[? if nsdap_candidate_1932 == "Hitler":, and may be the only thing that rivals Hitler's charisma?].
+The United Hindenburg Committees have set to work improving the perception of moderate right-wing German voters toward President Hindenburg, whose reputation as the Hero of Tannenberg has been tarnished by his support for the hated <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> system. Despite this, the <span class="tooltip-text" title="Following Hindenburg's overseeing of Germany's crushing victory at Tannenberg in the Great War, Hindenburg has become the center of a massive personality cult, lauded as the living ideal of German masculinity and patriotism. He is the embodiment of the best virtues of Prussian tradition.">Hindenburg Mythos</span> remains intact[? if nsdap_candidate_1932 == "Hitler":, and may be the only thing that rivals Hitler's charisma?].
 
 It's their turn to campaign.
 
@@ -652,7 +652,7 @@ if (Q.spd_campaign || Q.spd_support_thalmann || Q.kpd_support_spd) Q.hindenburg_
 view-if: hindenburg_funds > hindenburg_funds_old
 go-to: bourgeois_campaign_menu_op
 
-The United Hindenburg Committees have set to work improving the perception of moderate right-wing German voters toward President Hindenburg, whose reputation as the Hero of Tannenberg has been tarnished by his support for the hated <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> system. Despite this, the <span class="tooltip-text" title="Following Hindenburg's overseeing of Germany's crushing victory at Tannenberg in WW1, Hindenburg has become the center of a massive personality cult, lauded as the living ideal of German masculinity and patriotism. He is the embodiment of the best virtues of Prussian tradition.">Hindenburg Mythos</span> remains intact[? if nsdap_candidate_1932 == "Hitler":, and may be the only thing that rivals Hitler's charisma?].
+The United Hindenburg Committees have set to work improving the perception of moderate right-wing German voters toward President Hindenburg, whose reputation as the Hero of Tannenberg has been tarnished by his support for the hated <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> system. Despite this, the <span class="tooltip-text" title="Following Hindenburg's overseeing of Germany's crushing victory at Tannenberg in the Great War, Hindenburg has become the center of a massive personality cult, lauded as the living ideal of German masculinity and patriotism. He is the embodiment of the best virtues of Prussian tradition.">Hindenburg Mythos</span> remains intact[? if nsdap_candidate_1932 == "Hitler":, and may be the only thing that rivals Hitler's charisma?].
 
 It's their turn to campaign.
 
