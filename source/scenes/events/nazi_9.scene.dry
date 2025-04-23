@@ -1,6 +1,20 @@
 title: [+ nsdap_leader +] and Papen
-subtitle: The Harzburg Front is dead, but perhaps the spirit isn't?
+subtitle: The two men meet once more.
 view-if: chancellor = "Schleicher" and hindenburg_hitler_r >= 1 and lippe_good
+on-arrival: {!
+Q.hugenberg_hitler_r = 0;
+
+if (Q.dnvp_r < 6 && !Q.hugenberg_dvp) Q.hugenberg_hitler_r += 1;
+if (Q.dnvp_r < 8 && !Q.hugenberg_dvp) Q.hugenberg_hitler_r += 1;
+if (Q.dnvp_r >= 8 && !Q.hugenberg_dvp) Q.hugenberg_hitler_r -= 1;
+if (Q.dnvp_r >= 10 && !Q.hugenberg_dvp) Q.hugenberg_hitler_r -= 1;
+
+if (Q.dnvp_r + Q.dvp_r < 8 && Q.hugenberg_dvp) Q.hugenberg_hitler_r += 1;
+if (Q.dnvp_r + Q.dvp_r < 10 && Q.hugenberg_dvp) Q.hugenberg_hitler_r += 1;
+if (Q.dnvp_r + Q.dvp_r >= 10 && Q.hugenberg_dvp) Q.hugenberg_hitler_r -= 1;
+if (Q.dnvp_r + Q.dvp_r >= 12 && Q.hugenberg_dvp) Q.hugenberg_hitler_r -= 1;
+
+!}
 new-page: true
 tags: event
 priority: 1
