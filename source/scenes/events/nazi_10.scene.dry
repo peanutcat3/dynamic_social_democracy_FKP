@@ -3,7 +3,7 @@ subtitle: The Stegmann dispute escalates once again...
 view-if: chancellor = "Schleicher" and schleicher_time == 6 and nazi_funds <= 3 and not lippe_big_win
 new-page: true
 tags: event
-priority: 3
+priority: 4
 max-visits: 1
 on-display: {!  
     var cardEl = document.createElement('div');  

@@ -1,7 +1,6 @@
 title: The Reichstag Agenda Committee Discusses a Reconvocation
 subtitle: The chancellor is surprisingly eager to reopen the chamber.
 view-if: chancellor = "Schleicher" and schleicher_time == 4
-on-arrival: reichstag_rubicon = 1; reichstag_schleicher_seen = 1
 new-page: true
 tags: event
 max-visits: 1
