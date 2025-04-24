@@ -1,0 +1,32 @@
+title: [+ nsdap_leader +] and Papen
+subtitle: The two men meet once more.
+view-if: chancellor = "Schleicher" and hindenburg_hitler_r >= 1 and lippe_good
+on-arrival: {!
+Q.hugenberg_hitler_r = 0;
+
+if (Q.dnvp_r < 6 && !Q.hugenberg_dvp) Q.hugenberg_hitler_r += 1;
+if (Q.dnvp_r < 8 && !Q.hugenberg_dvp) Q.hugenberg_hitler_r += 1;
+if (Q.dnvp_r >= 8 && !Q.hugenberg_dvp) Q.hugenberg_hitler_r -= 1;
+if (Q.dnvp_r >= 10 && !Q.hugenberg_dvp) Q.hugenberg_hitler_r -= 1;
+
+if (Q.dnvp_r + Q.dvp_r < 8 && Q.hugenberg_dvp) Q.hugenberg_hitler_r += 1;
+if (Q.dnvp_r + Q.dvp_r < 10 && Q.hugenberg_dvp) Q.hugenberg_hitler_r += 1;
+if (Q.dnvp_r + Q.dvp_r >= 10 && Q.hugenberg_dvp) Q.hugenberg_hitler_r -= 1;
+if (Q.dnvp_r + Q.dvp_r >= 12 && Q.hugenberg_dvp) Q.hugenberg_hitler_r -= 1;
+
+!}
+new-page: true
+tags: event
+priority: 1
+max-visits: 1
+face-image: img/papen_hitler.jpg
+
+= [+ nsdap_leader +] and Papen
+
+In [+ nsdap_leader +]'s pursuit of power, a certain champagne salesman by the name of Joachim von Ribbentrop has offered to act as an intermediary to former Chancellor von Papen, whom he met during the Great War. [? if lippe_election_seen: With the Lippe campaign now over, ?][+ nsdap_leader +] finally has time to resume talks with Papen—who is more than eager himself.
+
+Accompanied by Heinrich Himmler and [? if not rohm_explode: Ernst Röhm?][? if rohm_explode: the leader of the <span style="color: #7A3C00;">**SA**</span>?], [+ nsdap_leader +] joined Papen for lunch at Ribbentrop’s villa, reiterating his demand for the chancellorship. He claimed that the <span style="color: #7A3C00;">Nazi</span> movement was still very much alive, and could not accept a subordinate role in any Papen-led cabinet.
+
+Papen pushed back, insisting that President Hindenburg’s opposition to appointing [+ nsdap_chancellor +] as Chancellor remained firm—and that even he could not change the old man's mind. The meeting ended without resolution, and with no plans to meet again. Despite increased secrecy, some of the details still leaked to the press.
+
+- @root: [+ nsdap_chancellor +] remains far from the chancellorship!

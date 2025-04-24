@@ -64,10 +64,9 @@ if (Q.bruning_time) {
         Q.rural_dnvp -= 5;
         if (!Q.kvp_formed) {
             Q.workers_other += 3;
-            Q.new_middle_other += 6;
-            Q.old_middle_other += 6;
-            Q.rural_other += 6;
-            Q.unemployed_other += 3;
+            Q.new_middle_other += 5;
+            Q.old_middle_other += 5;
+            Q.rural_other += 5;
             Q.catholics_other += 3;
         }
     }
@@ -85,30 +84,23 @@ if (Q.bruning_time) {
         Q.unemployed_z += 3;
         Q.catholics_z += 5;
     }
-    Q.new_middle_ddp += 2;
-    Q.old_middle_ddp += 2;
-    Q.new_middle_dvp += 3;
-    Q.old_middle_dvp += 3;
+    Q.new_middle_ddp += 3;
+    Q.old_middle_ddp += 3;
+    Q.new_middle_dvp += 4;
+    Q.old_middle_dvp += 4;
     Q.rural_dvp += 3;
     
-    Q.new_middle_lvp += 5;
-    Q.old_middle_lvp += 5;
-    Q.rural_lvp += 3;
+    Q.new_middle_lvp += 6;
+    Q.old_middle_lvp += 6;
+    Q.rural_lvp += 4;
 
-    Q.workers_nsdap *= 0.85;
-    Q.new_middle_nsdap *= 0.85;
-    Q.old_middle_nsdap *= 0.85;
-    Q.rural_nsdap *= 0.85;
-    Q.unemployed_nsdap *= 0.85;
-    Q.catholics_nsdap *= 0.85;
+    Q.workers_nsdap *= 0.9;
+    Q.new_middle_nsdap *= 0.9;
+    Q.old_middle_nsdap *= 0.9;
+    Q.rural_nsdap *= 0.9;
+    Q.unemployed_nsdap *= 0.9;
+    Q.catholics_nsdap *= 0.9;
 }
-
-Q.workers_nsdap -= 3;
-Q.new_middle_nsdap -= 3;
-Q.old_middle_nsdap -= 3;
-Q.rural_nsdap -= 3;
-Q.unemployed_nsdap -= 3;
-Q.catholics_nsdap -= 3;
 
 Q.bruning_coalition_dissent -= 3;
 Q.dnvp_angry -= 4;

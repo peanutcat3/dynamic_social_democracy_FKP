@@ -19,6 +19,7 @@ Q.workers_other -= 5;
 
 if (Q.unions_independent) {
     Q.workers_sapd += 8;
+    Q.unemployed_sapd += 4;
 }
 if (Q.kpd_leader = "Thälmann") {
  Q.workers_kpd -= 5;

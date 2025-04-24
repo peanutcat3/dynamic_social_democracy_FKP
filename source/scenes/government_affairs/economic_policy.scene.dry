@@ -1,7 +1,7 @@
 title: Economic Policy
 new-page: true
 is-card: true
-tags: govt_affairs
+tags: govt_affairs, cabinet
 on-arrival: economic_policy_timer += 12; month_actions += 1; nationalize_budget = 4; nationalize_budget -= 1 if works_councils >= 2; nationalize_budget -= 1 if works_councils >= 3; nationalize_budget -= 1 if socializations + nationalization_progress >= 2; wtb_budget = 4; wtb_budget -= 1 if works_councils >= 2 or socializations >= 1 or pro_labor >= 2
 view-if: spd_in_government = 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and economic_policy_timer <= 0 and economic_plan > 0
 card-image: img/portraits/SchmidtRobert.jpg
@@ -20,6 +20,7 @@ The [+ public_works_name +] Plan was already implemented by the Brüning cabinet
 - @lautenbach_wtb
 - @nationalize_1
 - @nationalize_2
+- @cancel_advisor_action
 
 @lautenbach_continuation
 title: We will continue the implementation of the [+ public_works_name +] plan.
@@ -62,7 +63,7 @@ Our spending on public works has reduced the need for unemployment insurance and
 - @austerity
 - @root: Do not implement the economic plan.
 - @easy_discard
-
+- @cancel_advisor_action
 
 @austerity
 title: Look into potential austerity measures.
@@ -100,7 +101,7 @@ subtitle: -3 budget
 unavailable-subtitle: Unemployment is low enough that the time for the WTB-Plan has passed.
 view-if: wtb_implemented > 2 and budget >= 3 
 choose-if: unemployed > 8
-on-arrival: wtb_enactment_2_finish = time + 10; works_program += 1; budget -= 3; workers_spd += 5*(1-dissent); unemployed_spd += 7*(1-dissent); workers_spd -= 2*(1-dissent) if schleicher_spd; unemployed_spd -= 3*(1-dissent) if schleicher_spd; reichswehr_strength += 35 if schleicher_spd; reichswehr_loyalty += 0.1 if reichswehr_spd; reichswehr_militancy += 0.5 if reichswehr_spd; workers_nsdap -= 3; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 2; inflation -= 1 if schleicher_spd; dvp_left += 1; ddp_left += 3; ddp_cohesion += 1; lvp_left += 2; pro_republic += 3; economic_plan_goal_spd += 1; wtb_rally -= 1
+on-arrival: wtb_enactment_2_finish = time + 10; works_program += 1; budget -= 3; workers_spd += 5*(1-dissent); workers += 1 if works_program <= 4; unemployed_spd += 7*(1-dissent); workers_spd -= 2*(1-dissent) if schleicher_spd; unemployed_spd -= 3*(1-dissent) if schleicher_spd; reichswehr_strength += 35 if schleicher_spd; reichswehr_loyalty += 0.1 if reichswehr_spd; reichswehr_militancy += 0.5 if reichswehr_spd; workers_nsdap -= 3; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 2; inflation -= 1 if schleicher_spd; dvp_left += 1; ddp_left += 3; ddp_cohesion += 1; lvp_left += 2; pro_republic += 3; economic_plan_goal_spd += 1; wtb_rally -= 1
 
 [? if works_program == 4 : We have commenced Phase 2 of the WTB-Plan. ?][? if works_program > 4 :  We have continued our implementation of the WTB-Plan. ?] In addition to public works, we are now focusing on rebuilding our industries.
 
@@ -111,7 +112,7 @@ subtitle: -3 budget - we will enter a deficit.
 unavailable-subtitle: Unemployment is low enough that we should not do deficit spending.
 view-if: wtb_implemented > 2 and budget < 3 and budget >= -3
 choose-if: unemployed > 10
-on-arrival: works_program += 1; budget -= 3; workers_spd += 4*(1-dissent); unemployed_spd += 6*(1-dissent); workers_spd -= 2*(1-dissent) if schleicher_spd; unemployed_spd -= 3*(1-dissent) if schleicher_spd; reichswehr_strength += 35 if schleicher_spd; reichswehr_loyalty += 0.1 if reichswehr_spd; reichswehr_militancy += 0.5 if reichswehr_spd; workers_nsdap -= 2; coalition_dissent += 1; coalition_dissent -= 1 if z_leader == "Kaiser"; capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; inflation -= 1 if schleicher_spd; dvp_right += 1; ddp_right += 1; ddp_cohesion -= 1; lvp_right += 1; economic_plan_goal_spd += 1; wtb_rally -= 1
+on-arrival: works_program += 1; budget -= 3; workers_spd += 4*(1-dissent); unemployed_spd += 6*(1-dissent); workers += 1 if works_program <= 4; workers_spd -= 2*(1-dissent) if schleicher_spd; unemployed_spd -= 3*(1-dissent) if schleicher_spd; reichswehr_strength += 35 if schleicher_spd; reichswehr_loyalty += 0.1 if reichswehr_spd; reichswehr_militancy += 0.5 if reichswehr_spd; workers_nsdap -= 2; coalition_dissent += 1; coalition_dissent -= 1 if z_leader == "Kaiser"; capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; inflation -= 1 if schleicher_spd; dvp_right += 1; ddp_right += 1; ddp_cohesion -= 1; lvp_right += 1; economic_plan_goal_spd += 1; wtb_rally -= 1
 
 We have continued our implementation of the WTB-Plan, despite the continued deficit spending. In addition to public works, we are now focusing on rebuilding our industries.
 
@@ -119,7 +120,7 @@ We have continued our implementation of the WTB-Plan, despite the continued defi
 @wtb_continuation
 title: Look back on our results, and continue our implementation...
 view-if: wtb_implemented >= 1 and wtb_implemented <= 2
-on-arrival: wtb_enactment_continuation_finish = time + 6 if wtb_implemented == 1; wtb_enactment_continuation_finish = wtb_enactment_continuation_finish + 6 if wtb_implemented == 2 and wtb_enactment_continuation_finish > time; wtb_enactment_continuation_finish = time + 6 if wtb_implemented == 2 and wtb_enactment_continuation_finish < time; budget += 1 if works_program <= 2; workers_spd += 5*(1-dissent); unemployed_spd += 8*(1-dissent); workers_spd -= 2.5*(1-dissent) if schleicher_spd; unemployed_spd -= 4*(1-dissent) if schleicher_spd; reichswehr_strength += 20 if schleicher_spd; reichswehr_loyalty += 0.05 if reichswehr_spd; reichswehr_militancy += 0.25 if reichswehr_spd; workers_nsdap -= 2; works_program += 1; z_relation += 3; dvp_relation += 3; lvp_relation += 3; coalition_dissent -= 1 if coalition_dissent >= 1; wtb_implemented += 1; capital_strike_progress -= 1 if capital_strike_progress >= 3; dvp_left += 1; ddp_relation += 5; ddp_left += 3; ddp_cohesion += 2; lvp_left += 2; pro_republic += 5; economic_plan_goal_spd += 1; wtb_rally -= 1
+on-arrival: wtb_enactment_continuation_finish = time + 6 if wtb_implemented == 1; wtb_enactment_continuation_finish = wtb_enactment_continuation_finish + 6 if wtb_implemented == 2 and wtb_enactment_continuation_finish > time; wtb_enactment_continuation_finish = time + 6 if wtb_implemented == 2 and wtb_enactment_continuation_finish < time; budget += 1 if works_program <= 2; workers_spd += 5*(1-dissent); workers += 2 if works_program <= 2 else workers += 1; unemployed_spd += 8*(1-dissent); workers_spd -= 2.5*(1-dissent) if schleicher_spd; unemployed_spd -= 4*(1-dissent) if schleicher_spd; reichswehr_strength += 20 if schleicher_spd; reichswehr_loyalty += 0.05 if reichswehr_spd; reichswehr_militancy += 0.25 if reichswehr_spd; workers_nsdap -= 2; works_program += 1; z_relation += 3; dvp_relation += 3; lvp_relation += 3; coalition_dissent -= 1 if coalition_dissent >= 1; wtb_implemented += 1; capital_strike_progress -= 1 if capital_strike_progress >= 3; dvp_left += 1; ddp_relation += 5; ddp_left += 3; ddp_cohesion += 2; lvp_left += 2; pro_republic += 5; economic_plan_goal_spd += 1; wtb_rally -= 1
 
 Our spending on public works has resulted in a lower need for unemployment insurance and welfare, and increased tax receipts through the multiplier effect as the new money courses through the economy, recuperating some of our spending. We continue to invest most of the new revenue into the program.
 
@@ -146,7 +147,7 @@ subtitle: -[+ wtb_budget +] budget - we will enter deficit spending. [? if wtb_b
 unavailable-subtitle: [? if unemployed < 8: Unemployment is low enough that the time for the WTB-Plan has passed.?] [? if in_grand_coalition and (finance_minister_party == "DVP" or economic_minister_party == "DVP") and not lvp_formed: The <span style="color: #C0A054;">**DVP**</span> will obstruct us using their position in the [? if finance_minister_party == "DVP": Finance Ministry?][? if economic_minister_party == "DVP" and finance_minister_party == "DVP":&nbsp;and?][? if economic_minister_party == "DVP": Economic Ministry?]. ?][? if (in_grand_coalition or in_weimar_coalition) and (finance_minister_party == "LVP" or economic_minister_party == "LVP") and lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> will obstruct us using their position in the [? if finance_minister_party == "LVP": Finance Ministry?][? if economic_minister_party == "LVP" and finance_minister_party == "LVP":&nbsp;and?][? if economic_minister_party == "LVP": Economic Ministry?]. ?] [? if in_grand_coalition and dvp_ideology != "Left" and not lvp_formed: The <span style="color: #C0A054;">**DVP**</span> will call a preemptive vote of no confidence. ?][? if (in_grand_coalition or in_weimar_coalition) and lvp_ideology != "Left" and lvp_formed: The <span style="color: #FFCC00;">**LVP**</span> will call a preemptive vote of no confidence. ?]
 view-if: budget < wtb_budget and wtb_implemented == 0 and wtb_adopted == 1
 choose-if: unemployed > 8 and (((economic_minister_party != "DVP" and finance_minister_party != "DVP" and (dvp_ideology == "Left" and in_grand_coalition) or not in_grand_coalition) and not lvp_formed) or ((economic_minister_party != "LVP" and finance_minister_party != "LVP" and (lvp_ideology == "Left" and (in_grand_coalition or in_weimar_coalition)) or (not in_grand_coalition and not in_weimar_coalition)) and lvp_formed))
-on-arrival: coalition_dissent += 2; coalition_dissent += 1 if in_minority_government; coalition_dissent += 1 if chancellor == "Brüning"; coalition_dissent -= 1 if z_leader == "Kaiser"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 3; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); workers_spd -= 4*(1-dissent) if schleicher_spd; unemployed_spd -= 4*(1-dissent) if schleicher_spd; reichswehr_strength += 20 if schleicher_spd; reichswehr_loyalty += 0.05 if reichswehr_spd; reichswehr_militancy += 0.5 if reichswehr_spd; capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; dvp_right += 3; ddp_right += 1; ddp_cohesion -= 1; dvp_relation -= 10; ddp_relation -= 5; z_relation -= 5; lvp_relation -= 8; lvp_right += 2; pro_republic += 3*(1-dissent); economic_growth += 3; economic_growth -= 1 if schleicher_spd; economic_plan_goal_spd += 1; wtb_rally = 0
+on-arrival: coalition_dissent += 2; coalition_dissent += 1 if in_minority_government; coalition_dissent += 1 if chancellor == "Brüning"; coalition_dissent -= 1 if z_leader == "Kaiser"; works_program += 1; budget -= wtb_budget; unemployed -= 4; workers += 2; workers_spd += 8*(1-dissent); unemployed_spd += 8*(1-dissent); workers_spd -= 4*(1-dissent) if schleicher_spd; unemployed_spd -= 4*(1-dissent) if schleicher_spd; reichswehr_strength += 20 if schleicher_spd; reichswehr_loyalty += 0.05 if reichswehr_spd; reichswehr_militancy += 0.5 if reichswehr_spd; capital_strike_progress += 1; wtb_implemented += 1; kpd_coalition_dissent += 1; kpd_relation -= 5 if in_popular_front or in_left_front; inflation += 3; dvp_right += 3; ddp_right += 1; ddp_cohesion -= 1; dvp_relation -= 10; ddp_relation -= 5; z_relation -= 5; lvp_relation -= 8; lvp_right += 2; pro_republic += 3*(1-dissent); economic_growth += 3; economic_growth -= 1 if schleicher_spd; economic_plan_goal_spd += 1; wtb_rally = 0
 achievement: wirtschaftspolitik
 
 We have entered the realm of deficit spending. Our coalition partners are disgusted, but the works plan is enacted anyway. Money is beginning to flow through the economy via investments in large-scale public works.
@@ -166,7 +167,7 @@ go-to: nationalize_deficit if budget < nationalize_budget; nationalize_no_defici
 
 
 @nationalize_no_deficit
-on-arrival: nationalization_progress += 1; capital_strike_progress += 2; unemployed -= 3.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; workers += 2.5; budget -= nationalize_budget; works_program += 1; workers_spd += 8*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 1; dvp_relation -= 4; lvp_relation -= 4; left_dissent -= 5; new_middle_spd -= 2; old_middle_spd -= 3; economy_goal_completed += 1; economic_plan_goal_spd += 1; inflation += 2; dvp_right += 2; ddp_relation -= 4; ddp_right += 3; ddp_cohesion -= 2; lvp_right += 2; goal_spd_cancel_peoples += 1; economic_growth += 1.7 if economic_growth < 5;
+on-arrival: nationalization_progress += 1; capital_strike_progress += 2; unemployed -= 3.5 if unemployed >= 6; unemployed -= 1.2 if works_councils >= 3; workers += 2 if nationalization_progress < 2; budget -= nationalize_budget; works_program += 1; workers_spd += 8*(1-dissent); unemployed_spd += 5*(1-dissent); coalition_dissent += 1; dvp_relation -= 4; lvp_relation -= 4; left_dissent -= 5; new_middle_spd -= 2; old_middle_spd -= 3; economy_goal_completed += 1; economic_plan_goal_spd += 1; inflation += 2; dvp_right += 2; ddp_relation -= 4; ddp_right += 3; ddp_cohesion -= 2; lvp_right += 2; goal_spd_cancel_peoples += 1; economic_growth += 1.7 if economic_growth < 5;
 achievement: wirtschaftspolitik
 
 [? if nationalization_progress == 1 : We have begun purchasing idling enterprises from the capitalists[? if works_councils >= 1: , and running them in coordination with empowered works councils ?]. By keeping production going, we can stave off the rising unemployment. ?]
