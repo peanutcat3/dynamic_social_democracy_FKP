@@ -45,6 +45,7 @@ Schleicher now argues that circumstances have changed. His outreach to the labor
 
 @schleicher_3
 title: The moment of truth.
+on-arrival: schleicher_strength -= 1; schleicher_goal = "Concede defeat";
 
 Schleicher requests for a decree dissolving the Reichstag, pointing out the chamber in all likelihood approve a no-confidence motion at the end in the next reconvocation. Also predicting that a new election wouldn't alter the Reichstag in his favor much, he also asks for a decree postponing the planned election. 
 

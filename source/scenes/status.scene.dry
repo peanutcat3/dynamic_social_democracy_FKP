@@ -128,6 +128,7 @@ Next Prussian election: [? if prussia_leader != "Papen" and prussia_leader != "S
 = Party
 
 Resources available: [+ resources +]<br>
+Internal dissent: [+ dissent_percent : dissent +]<br>
 Support for the Republic: [+ pro_republic_disp +]%<br>
 [? if red_general_unlock: <span style="color: #c00000;">**SPD**</span> stance on Schleicher: [+ schleicher_spd_support : schleicher_spd_2 +]<br> ?]
 <span style="color: #7A3C00;">**NSDAP**</span> financial situation: [+ nazi_funds : nazi_funds +]<br>
