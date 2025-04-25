@@ -722,7 +722,7 @@ if (d3 && window) {
     //document.getElementById('election_history').innerHTML = svg.outerHTML;
 
     // party support records should not have so many ticks
-    if (!Q.historical_mode || Q.game_over) {
+    if (Q.game_over || (!Q.historical_mode && !Q.rubicon)) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties,
             {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00'},
@@ -783,7 +783,7 @@ if (d3 && window) {
 
 = Party support history
 
-[? if historical_mode: Not available in historical mode. ?]
+[? if historical_mode: Not available in historical mode. ?][? if rubicon and not historical_mode: Not available after crossing the Rubicon. ?]
 
 {!<svg id="party_support_history" style="width: 500px; height: 400px;"> </svg>!}
 

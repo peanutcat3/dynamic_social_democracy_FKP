@@ -227,7 +227,7 @@ Relations have improved compared to Dietrich’s tenure, as Stolper's strained t
 @baumer
 title: Gertrud Bäumer is elected!
 subtitle: Leader of the <span style="color: #FFCC00;">**LVP**</span>'s women's wing, and a moderate feminist. Has questionable views on the "national questions".
-unavailable-subtitle: The <span style="color: #FFCC00;">LVP</span> will never accept a women as their leader.
+unavailable-subtitle: The <span style="color: #FFCC00;">LVP</span> will never accept a woman as their leader.
 choose-if: baumer_lvp_unlock
 on-arrival: lvp_leader = "Bäumer"; lvp_relation += 5; nationalism += lvp_votes; workers_lvp += 6; workers_other -= 2; workers_spd -= 4; new_middle_lvp += 20; new_middle_spd -= 15; new_middle_kpd -= 5; old_middle_lvp -= 20; old_middle_dnvp += 5; old_middle_dnvp += 10 if dnvp_ideology == "Moderate"; old_middle_nsdap += 5; old_middle_kvp += 10; old_middle_other += 5; rural_lvp *= 0.5; rural_nsdap += 5; rural_dnvp += 5 if not kvp_formed; rural_kvp += 5; pro_republic -= 5
 face-image: img/portraits/baumer.jpg

@@ -1069,7 +1069,7 @@ Under the stable leadership of <span style="color: #000000;">Eugen Bolz</span> a
 title: The incumbent [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] government has fallen short of a majority, but continue to rule in caretaker capacity.
 subtitle: Electing a new Minister-President—or dissolving the Landtag—requires an absolute majority. Deep antagonism between the opposition parties has made clearing that hurdle all but impossible.
 view-if: bourgeois_coalition_wurttemberg < 50
-on-arrival: wurttemberg_right = 1; pro_republic -= 1; catholics_nsdap -= 1
+on-arrival: wurttemberg_right = 1; wurttemberg_vonc = 1; pro_republic -= 1; catholics_nsdap -= 1
 go-to: election_menu
 
 Despite the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and its Protestant conservative partners falling short of a majority, they continue to rule as a caretaker government. This outcome mirrors the one of the 1928 elections, so perhaps this outcome is to be expected.
