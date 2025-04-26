@@ -1,5 +1,6 @@
 title: Schleicher and [+ nsdap_leader +]
 subtitle: Schleicher offers his support to the <span style="color: #7A3C00;">Nazi</span> leader.
+view-if: started
 new-page: true
 priority: -1
 max-visits: 1
