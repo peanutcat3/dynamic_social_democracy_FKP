@@ -54,6 +54,7 @@ subtitle: We have failed.
 on-arrival: {!
 Q.chancellor = Q.nsdap_chancellor;
 Q.chancellor_party = "NSDAP";
+Q.vice_chancellor = "Papen";
 if (Q.prussia_leader == "Schleicher") {
     Q.in_right_coalition_prussia = 0;
     Q.in_weimar_coalition_prussia = 0;
@@ -114,6 +115,11 @@ What are we to do now?
 title: Bide our time, wait until [+ nsdap_chancellor +] makes an unconstitutional move first, then strike.
 
 What is our hope here?
+
+- @nothing_1
+- @nothing_2
+- @nothing_3
+- @nothing_4
 
 @nothing_1
 title: Papen and the conservatives will control [+ nsdap_chancellor +].
