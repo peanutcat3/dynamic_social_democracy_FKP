@@ -1,5 +1,5 @@
 title: Strasser and Hindenburg
-subtitle: A rumoured meeting between the two men?
+subtitle: A rumored meeting between the two men?
 view-if: chancellor = "Schleicher" and schleicher_time == 4
 on-arrival: nazi_explode += 1; schleicher_goal = "Pray that Strasser does something";
 new-page: true

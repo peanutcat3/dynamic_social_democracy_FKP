@@ -1,7 +1,7 @@
 title: Post Event
 new-page: true
 on-arrival: {!
-if (Q.rubicon) {
+if (Q.rubicon && Q.chancellor != Q.nsdap_chancellor) {
 const contentElement = document.getElementById('content');
 contentElement.style.backgroundColor = '#645E51';
 
@@ -3492,17 +3492,10 @@ if (Q.year == 1930 && Q.month == 8) {
     }
 }
 
-if (!Q.peoples_party && Q.year >= 1930) {
-    Q.new_middle_spd -= 4/12;
-    if (Q.new_middle_spd_normalized >= 15) {
-        Q.new_middle_spd -= 6/12;
-    }
-}
-
-if (Q.unemployed >= 16 || (Q.year < 1930 && !Q.spd_government_burden_peoples)) {
-    if (Q.new_middle_spd_normalized >= 10) Q.new_middle_spd -= (Q.unemployed / 2)/12;
-    if (Q.old_middle_spd_normalized >= 6) Q.old_middle_spd -= (Q.unemployed / 2)/12;
-    if (Q.rural_spd_normalized >= 8) Q.rural_spd -= (Q.unemployed / 2)/12;
+if (Q.unemployed >= 20 || (Q.year < 1930 && !Q.spd_government_burden_peoples)) {
+    if (Q.new_middle_spd_normalized >= 16) Q.new_middle_spd -= (Q.unemployed / 3)/12;
+    if (Q.old_middle_spd_normalized >= 10) Q.old_middle_spd -= (Q.unemployed / 3)/12;
+    if (Q.rural_spd_normalized >= 14) Q.rural_spd -= (Q.unemployed / 3)/12;
 }
 
 if ((!Q.works_program || Q.unemployed_spd_normalized >= 35) && Q.black_thursday_seen && Q.unemployed >= 15) {
