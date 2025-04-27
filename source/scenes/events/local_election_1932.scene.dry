@@ -523,6 +523,7 @@ if (window && d3) {
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
     d3.select("#bavaria_landtag").datum(data).call(parliament);
+}
 !}
 go-to: bavaria_coalition_menu
 
