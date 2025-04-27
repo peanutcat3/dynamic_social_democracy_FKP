@@ -66,7 +66,7 @@ subtitle: His relative popularity across the party secures his candidacy.
 unavailable-subtitle: hes dead? lmao
 view-if: winner == "levi"
 choose-if: winner == "levi"
-on-arrival: sapd_leader = "Levi"; Q.workers_sapd += 5; Q.pro_republic += 8; Q.unemployed_sapd += 3;
+on-arrival: sapd_leader = "Levi"; workers_sapd += 5; pro_republic += 8; unemployed_sapd += 3;
 face-image: img/portraits/LeviPaul.jpg
 
 Paul Levi, fomer leader of the <span style="color: #700000;">**KPD**</span>, coming from the left wing of the <span style="color: #c00000;">**SPD**</span>, is elected as the new leader of the <span style="color: #9B0000;">**SAPD**</span>. 
@@ -79,7 +79,7 @@ title: Kurt Rosenfeld, the current leader, and prominent USPD member.
 choose-if: winner == "rosenfeld"
 subtitle: No candidate reaches a majority!
 unavailable-subtitle: His lack of a powerful base and connection to the workers leaves him out of the spotlight.
-on-arrival: sapd_leader = "Rosenfeld"; Q.workers_sapd += 6; Q.pro_republic += 5;
+on-arrival: sapd_leader = "Rosenfeld"; workers_sapd += 6; pro_republic += 5;
 face-image: img/portraits/RosenfeldKurt.jpg
 
 Due to the tensions between the left and right wings of the newly enlarged <span style="color: #9B0000;">**SAPD**</span>, Kurt Rosenfeld, current leader of the <span style="color: #9B0000;">**SAPD**</span>, and former <span style="color: #D47B9B;">**USPD**</span> member, has secured re-election as party leader.
@@ -94,7 +94,7 @@ title: Rudolf Breitscheid is elected!
 choose-if: winner == "breitscheid"
 subtitle: He is a foreign expert, and seeks cooperation with us.
 unavailable-subtitle: The party feels that he is too close to the SPD.
-on-arrival: sapd_leader = "Breitscheid"; Q.workers_sapd +=3; Q.pro_republic +=10; Q.new_middle_sapd +=3;
+on-arrival: sapd_leader = "Breitscheid"; workers_sapd +=3; pro_republic +=10; new_middle_sapd +=3;
 face-image: img/portraits/BreitscheidRudolf.jpg
 
 Our fairly amicable split with our more Marxist wings has led Rudolf Breitscheid to be elected as leader of the Our fairly amicable split with our more Marxist wings has led Rudolf Breitscheid to be elected as leader of the <span style="color: #9B0000;">**SAPD**</span>. 
@@ -106,7 +106,7 @@ title: Paul Frölich is elected!
 choose-if: winner == "frolich"
 subtitle: Hailing from the <span style="color: #C43988;">**KPD(O)**</span>, he is supported by the former communists.
 unavailable-subtitle: The party would rather not elect a Communist.
-on-arrival: sapd_leader = "Frolich"; sapd_idealogy = "Left Marxism" Q.workers_sapd -= 3; Q.workers_spd += 3; Q.unemployed_sapd += 10; Q.pro_republic -=5;
+on-arrival: sapd_leader = "Frolich"; sapd_idealogy = "Left Marxism" workers_sapd -= 3; workers_spd += 3; unemployed_sapd += 10; pro_republic -=5;
 face-image: img/Frölich.jpg
 
 Paul Frölich has been elected as leader of the <span style="color: #9B0000;">**SAPD**</span>. This is very bad news. (Its so over babes)
