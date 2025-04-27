@@ -501,7 +501,7 @@ Q.old_kvp_lippe_elections_vote = Q.kvp_votes * lippe_adjustment_factors.kvp;
 Q.old_dnf_lippe_elections_vote = Q.dnf_votes * lippe_adjustment_factors.dnf;
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
-for (var party of Q.election_records) {
+for (var party of Q.parties_graph) {
     election_result[party] = Q[party + '_r'];
 }
 Q.election_records.push(election_result);
