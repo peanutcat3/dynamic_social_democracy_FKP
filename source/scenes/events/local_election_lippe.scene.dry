@@ -464,25 +464,6 @@ if (window && d3) {
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
     d3.select("#lippe_landtag").datum(data).call(parliament);
-
-    var lines = d3.linegraph(false, false,
-            Q.parties,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP'});
-    lines.width(width).height(400);
-    //var svg = lines(Q.election_records);
-    d3.select("#election_history").datum(Q.election_records).call(lines);
-    //document.getElementById('election_history').innerHTML = svg.outerHTML;
-
-    // party support records should not have so many ticks
-    if (!Q.historical_mode) {
-        var lines_2 = d3.linegraph(true, true,
-            Q.parties,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP'});
-        lines_2.width(width).height(400);
-        d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
-    }
 }
 !}
 go-to: lippe_coalition_menu
@@ -525,7 +506,7 @@ Vote % changes are compared to the last *Reichstag* election. <br> Seat % change
 <hr id="read-marker">
 Lippe has been governed for the past four years by a coalition of the <span style="color: #c00000;">**SPD**</span>, [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], and <span style="color: #0075EB;">**VRP**</span>, with the local <span style="color: #c00000;">**SPD**</span> maintaining a more moderate image.
 <hr id="read-marker">
-But the real question isn’t the future of Lippe—it’s what the election says about the nation. A <span style="color: #7A3C00;">Nazi</span> victory could prove the party still has life. But a defeat, even after throwing everything into their campaign, would be a crushing blow.
+But the real question isn’t the future of Lippe—it’s what the election says about the nation. A <span style="color: #7A3C00;">Nazi</span> victory could prove the party still has life. But a defeat, even after throwing everything into their campaign, would be a crushing blow. With no local elections until the fall, the <span style="color: #7A3C00;">Nazis</span> won’t get another moment like this to remotivate their party.
 
 Who cares what coalition forms here?
 
@@ -540,7 +521,7 @@ Who cares what coalition forms here?
 @nsdap_big_win
 title: The <span style="color: #7A3C00;">**NSDAP**</span> score a crushing victory.
 view-if: change_nsdap_votes_lippe >= 7
-on-arrival: lippe_big_win = 1; hindenburg_hitler_r += 2; workers_nsdap += 2; unemployed_nsdap += 2; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4; nazi_funds += 1; lippe_good = 1
+on-arrival: lippe_big_win = 1; hindenburg_hitler_r += 2;  hindenburg_schleicher_r -= 2; workers_nsdap += 2; unemployed_nsdap += 2; new_middle_nsdap += 4; old_middle_nsdap += 4; rural_nsdap += 4; nazi_funds += 1; lippe_good = 1
 
 Unexpectedly, the <span style="color: #7A3C00;">**NSDAP**</span> matched their peak electoral performance—proof that the movement isn’t dying, but growing.
 
@@ -549,7 +530,7 @@ This is a major propaganda win for the <span style="color: #7A3C00;">**NSDAP**</
 @nsdap_moderate_win
 title: The <span style="color: #7A3C00;">**NSDAP**</span> score a dubious triumph.
 view-if: change_nsdap_votes_lippe >= 3 and change_nsdap_votes_lippe < 7
-on-arrival: hindenburg_hitler_r += 1; new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 2; lippe_good = 1
+on-arrival: hindenburg_hitler_r += 1; hindenburg_schleicher_r -= 1; new_middle_nsdap += 2; old_middle_nsdap += 2; rural_nsdap += 2; lippe_good = 1
 
 The <span style="color: #7A3C00;">Nazis</span> fell short of their peak results—but still gained votes compared to the last election. To the casual observer, the <span style="color: #7A3C00;">**NSDAP**</span> looks like it’s back on the rise, and they’ve seized on the outcome as a cheap propaganda boost to reenergize their disillusioned base.
 

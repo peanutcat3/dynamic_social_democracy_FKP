@@ -508,7 +508,7 @@ With our resources, the <span style="color: #FFCC00;">**LVP**</span> are convinc
 [? if not hitler_support_hindenburg and ((spd_president_votes + lvp_votes > nsdap_presidential_votes and z_support_spd != 1) or spd_president_votes + lvp_votes > nsdap_presidential_votes and z_support_spd == 1): With the <span style="color: #FFCC00;">liberals</span> supporting Braun, [+ nsdap_candidate_1932 +] has dropped out of the race, and the <span style="color: #7A3C00;">Nazis</span> have endorsed Hindenburg to prevent a <span style="color: #c00000;">socialist</span> from becoming president. ?]
 
 @round2_thalmann
-view-if: spd_support_thalmann == 0 and kpd_support_spd == 0
+view-if: spd_support_thalmann == 0 and kpd_support_spd == 0 and organizational_endorsements_seen
 choose-if: kpd_relation >= 50 and left_strength > reformist_strength 
 unavailable-subtitle: [? if kpd_relation < 50 : We do not have good enough relations with the <span style="color: #700000;">Communists</span>, so they are not even willing to accept our support. ?] [? if reformist_strength >= left_strength : The reformist faction is able to dissuade the party from supporting this bizarre arrangement. ?]
 max-visits: 1
@@ -529,7 +529,7 @@ Fine. We have thrown our support to Chairman Thälmann of the <span style="color
 - @round2_vote: Second round voting begins next month.
 
 @round2_hindenburg
-view-if: spd_campaign > 0 or spd_support_thalmann > 0
+view-if: (spd_campaign > 0 or spd_support_thalmann > 0) and organizational_endorsements_seen
 on-arrival: spd_campaign = 0; spd_support_thalmann = 0; spd_support_hindenburg = 1; left_dissent += 10; hindenburg_angry_bruning += 25; hindenburg_angry -= 40; workers_spd -= 3; workers_kpd += 3; unemployed_spd -= 3; unemployed_kpd += 3
 
 We have switched our support to Hindenburg. [? if bruning_time: Hindenburg is reportedly dissatisfied with having been elected with the support of <span style="color: #c00000;">socialists</span>, blaming Brüning and his unpopular cabinet for this outcome. ?]
