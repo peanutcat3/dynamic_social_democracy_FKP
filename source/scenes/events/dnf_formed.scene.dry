@@ -2,6 +2,7 @@ on-arrival: {!
 
 Q.dnf_formed = 1;
 Q.parties.push('dnf');
+Q.parties_graph.push('dnf');
 
 Q.workers_dnf = 1;
 

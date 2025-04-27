@@ -74,17 +74,31 @@ on-arrival: {!
     }
     if (Q.cvp_formed) Q.adjustmentFactors_other = 0.6;
     Q.adjustmentFactors_ddp = 1.0;
-    if (Q.ddp_votes < 1 && Q.year >= 1930) {
-        Q.adjustmentFactors_ddp = 0.3;
-    } else if (Q.ddp_votes < 1.5 && Q.year >= 1930) {
-        Q.adjustmentFactors_ddp = 0.65;
-    } else if (Q.ddp_votes < 3 && Q.year >= 1930) {
-        Q.adjustmentFactors_ddp = 0.75;
-    } else if (Q.ddp_votes < 4 && Q.year >= 1930) {
-        Q.adjustmentFactors_ddp = 0.85;
+    if (!Q.bourgeois_list_ddp) {
+        if (Q.ddp_votes < 1 && Q.year >= 1930) {
+            Q.adjustmentFactors_ddp = 0.3;
+        } else if (Q.ddp_votes < 1.5 && Q.year >= 1930) {
+            Q.adjustmentFactors_ddp = 0.65;
+        } else if (Q.ddp_votes < 3 && Q.year >= 1930) {
+            Q.adjustmentFactors_ddp = 0.75;
+        } else if (Q.ddp_votes < 4 && Q.year >= 1930) {
+            Q.adjustmentFactors_ddp = 0.85;
+        }
     }
     if (Q.ddp_alliance) Q.adjustmentFactors_ddp = 0.8;
     if (Q.ddp_alliance_glaze) Q.adjustmentFactors_ddp = 1.1;
+    if (!Q.hugenberg_dvp && !Q.bourgeois_list) {
+        if (Q.dvp_votes < 1.5) {
+            Q.adjustmentFactors_dvp = 0.25;
+        } else if (Q.dvp_votes < 2) {
+            Q.adjustmentFactors_dvp = 0.4;
+        } else if (Q.dvp_votes < 2.5) {
+            Q.adjustmentFactors_dvp = 0.6;            
+        } else if (Q.dvp_votes < 3) {
+            Q.adjustmentFactors_dvp = 0.8;   
+        }
+    }
+    if (Q.hugenberg_dvp) Q.adjustmentFactors_dvp = 1.0;
     // Step 1: Calculate adjusted values and the sum for redistribution
     for (var party of Q.parties) {
         let factor = Q['adjustmentFactors_' + party] || 1.0; // Default to 1.0 if not set
@@ -315,6 +329,8 @@ if (Q.dnvp_ideology === "Moderate") {
 } else {
     Q.far_right_coalition = parseFloat((Q.dnvp_r + Q.nsdap_r).toFixed(1));
 }
+
+if (Q.hugenberg_dvp) Q.far_right_coalition = parseFloat((Q.far_right_coalition + Q.dvp_r).toFixed(1));
 
 Q.left_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.sapd_r).toFixed(1));
 
@@ -822,9 +838,9 @@ go-to: coalition_menu
 
 [? if (cvp_formed and far_right_coalition >= 25) or (hitler_right_coalition >= 50 and rubicon): Black-Brown Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ hitler_right_coalition +]% ?]
 
-[? if dnvp_ideology == "Radical" and far_right_coalition >= 35 and not cvp_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
+[? if dnvp_ideology == "Radical" and far_right_coalition >= 35 and not cvp_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition ([?  if hugenberg_dvp: <span style="color: #C0A054;">**DVP**</span> + ?]<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
-[? if dnvp_ideology == "Moderate" and far_right_coalition >= 30: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition (<span style="color: #003755;">**DNF**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
+[? if dnvp_ideology == "Moderate" and far_right_coalition >= 30: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition ([?  if hugenberg_dvp: <span style="color: #C0A054;">**DVP**</span> + ?]<span style="color: #003755;">**DNF**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
 [? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in <span style="color: #7A3C00;">**NSDAP**</span> votes is extremely worrying. Many had believed that the party was <span style="color: #ff0000;">moribund</span>; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 

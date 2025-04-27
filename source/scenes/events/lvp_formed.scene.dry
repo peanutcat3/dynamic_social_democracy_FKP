@@ -2,6 +2,7 @@ on-arrival: {!
 
 Q.lvp_formed = 1;
 Q.parties.push('lvp');
+Q.parties_graph.push('lvp');
 
 Q.workers_lvp = Q.workers_ddp + Q.workers_dvp
 

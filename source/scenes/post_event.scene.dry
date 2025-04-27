@@ -255,7 +255,7 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
     Q.pro_republic -= 1;
     if (Q.workers_spd_normalized >= 45) Q.workers_spd *= 0.99;
     if (Q.unemployed_spd_normalized >= 15) Q.unemployed_spd *= 0.99;
-    if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + Q.lvp_votes + Q.z_votes - Q.bvp_votes)) {
+    if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + (Q.lvp_votes / 2) + Q.z_votes - Q.bvp_votes)) {
         if (Q.workers_spd_normalized >= 45) Q.workers_spd *= 0.99;
         if (Q.unemployed_spd_normalized >= 15) Q.unemployed_spd *= 0.99;
     }
@@ -438,7 +438,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     }   
     // append to historical party support records
     var party_support_results = {'date': new Date(Q.year, Q.month - 1)};
-    for (var party of Q.parties) {
+    for (var party of Q.parties_graph) {
         party_support_results[party] = Q[party + '_normalized']*100;
     }
     Q.party_support_records.push(party_support_results);
@@ -691,27 +691,27 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
 
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
-    if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + Q.lvp_votes + Q.z_votes - Q.bvp_votes)) {
-        if (Q.new_middle_spd > 4) {
-            Q.new_middle_spd -= 10/12;
-            Q.new_middle_nsdap += 4/12;
+    if ((Q.pro_republic < (Q.spd_votes + Q.ddp_votes + (Q.lvp_votes / 2) + Q.z_votes - Q.bvp_votes) && !Q.cvp_formed) || (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + (Q.lvp_votes / 2) + (Q.z_votes / 2.5) - Q.bvp_votes) && Q.cvp_formed)) {
+        if (Q.new_middle_spd > 6) {
+            Q.new_middle_spd -= 6/12;
+            Q.new_middle_nsdap += 2/12;
         }
-        if (Q.old_middle_spd > 2) {
-            Q.old_middle_spd -= 10/12;
-            Q.old_middle_nsdap += 4/12;
+        if (Q.old_middle_spd > 4) {
+            Q.old_middle_spd -= 6/12;
+            Q.old_middle_nsdap += 2/12;
         }
-        if (Q.rural_spd > 2) {
-            Q.rural_spd -= 10/12;
-            Q.rural_nsdap += 4/12;
+        if (Q.rural_spd > 4) {
+            Q.rural_spd -= 6/12;
+            Q.rural_nsdap += 2/12;
         }
         if (Q.workers_spd_normalized > 40) {
-            Q.workers_spd -= 6/12;
+            Q.workers_spd -= 4/12;
         }
         if (Q.catholics_spd > 15) {
-            Q.catholics_spd -= 6/12;
+            Q.catholics_spd -= 4/12;
         }
         if (Q.unemployed_spd_normalized > 10) {
-            Q.unemployed_spd -= 8/12;
+            Q.unemployed_spd -= 6/12;
         }
         Q.pro_republic += 1;
     }
@@ -2462,12 +2462,12 @@ if (Q.dvp_conflict_time_trigger) {
 }
 
 if (Q.dvp_leader == "Dingeldey" && !Q.lvp_formed && Q.dnvp_ideology == "Radical" && Q.dvp_conflict_time == 4) {
-    if (Q.bruning_time) Q.new_middle_dvp *= 0.6;
-    if (Q.bruning_time) Q.old_middle_dvp *= 0.6;
-    if (Q.bruning_time) Q.rural_dvp *= 0.6;
-    if (!Q.bruning_time) Q.new_middle_dvp *= 0.7;
-    if (!Q.bruning_time) Q.old_middle_dvp *= 0.7;
-    if (!Q.bruning_time) Q.rural_dvp *= 0.7;
+    if (Q.bruning_time) Q.new_middle_dvp *= 0.7;
+    if (Q.bruning_time) Q.old_middle_dvp *= 0.7;
+    if (Q.bruning_time) Q.rural_dvp *= 0.7;
+    if (!Q.bruning_time) Q.new_middle_dvp *= 0.8;
+    if (!Q.bruning_time) Q.old_middle_dvp *= 0.8;
+    if (!Q.bruning_time) Q.rural_dvp *= 0.8;
 }
 
 // historical route, ddp is right-wing and doesn't care about socialist cooperation as much, bourgeois parliament with ddp
@@ -2591,7 +2591,8 @@ if (Q.bourgeois_negotiations_1930_aftermath_timer == 1 && !Q.liberal_parliament 
 if (Q.bourgeois_merger_kvp_trigger) {
     Q.kvp_formed = 1;
     Q.parties.push('kvp');
-    
+    Q.parties_graph.push('kvp');
+
     Q.workers_kvp = 0;
     
     Q.new_middle_kvp = 15;
@@ -2784,7 +2785,7 @@ if (Q.bourgeois_negotiations_1930_timer == 3 && !Q.lvp_formed || Q.bourgeois_neg
     Q.bourgeois_negotiations_1930_done = 1;
 }
 
-if (Q.year == 1930 && Q.bourgeois_negotiations >= 1 && (Q.bourgeois_negotiations_1930_timer < 3 || (Q.bourgeois_negotiations_elections_1930_timer < 3 && Q.bourgeois_negotiations_1_election)) && Q.liberal_cooperation >= 10 && (Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Right" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Moderate" && Q.ddp_relation < 40) && !Q.dstp_formed && !Q.in_weimar_coalition && (!Q.in_popular_front || Q.in_popular_front && Q.liberal_parliament == 1) && Q.lvp_merger_2_timer == 0 && !Q.lvp_timer_2_trigger && !Q.lvp_formed && Q.dvp_exist && !Q.cvp_formed) {
+if (Q.year == 1930 && Q.bourgeois_negotiations >= 1 && (Q.bourgeois_negotiations_1930_timer < 3 || (Q.bourgeois_negotiations_elections_1930_timer < 3 && Q.bourgeois_negotiations_1_election)) && Q.liberal_cooperation >= 10 && (Q.dvp_ideology != "Right" && Q.ddp_ideology != "Left" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Right" || Q.dvp_ideology == "Right" && Q.ddp_ideology == "Moderate" && Q.ddp_relation < 40) && !Q.dstp_formed && !Q.in_weimar_coalition && (!Q.in_popular_front || Q.in_popular_front && Q.liberal_parliament == 1) && Q.lvp_merger_2_timer == 0 && !Q.lvp_timer_2_trigger && !Q.lvp_formed && Q.dvp_exist && !Q.hugenberg_dvp && !Q.dvp_in_cvp) {
     Q.lvp_timer_2_trigger = 1;
     Q.lvp_merger_2_timer = 4;
 }
@@ -2825,7 +2826,8 @@ if (Q.year == 1930 && Q.month == 1 && Q.dnvp_historical_1929 && (Q.peoples_party
     Q.kvp_formed = 1;
     Q.schleicher_kvp = 1;
     Q.parties.push('kvp');
-    
+    Q.parties_graph.push('kvp');
+
     Q.workers_kvp = 5;
     Q.workers_dnvp -= 1;
     Q.workers_other -= 3;
