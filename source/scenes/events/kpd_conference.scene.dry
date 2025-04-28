@@ -18,7 +18,7 @@ After our discussion with the <span style="color: #940000;">Soviets</span>, we a
 
 @conciliator_success
 title: The Conciliators are the new leadership of the <span style="color: #700000;">**KPD**</span>.
-view-if: (kpd_relation >= 50) 
+view-if: (kpd_relation >= 40) 
 on-arrival: communist_coalition += 3; kpd_relation += 10*(1-dissent); left_strength += 5; left_dissent -= 8; pro_republic += (kpd_votes / 2); kpd_leader = "Meyer"; kpd_idealogy = "Concilatory Stalinism"
 face-image: img/portraits/Ernst_Meyer_1921.jpg
 achievement: versohnler
@@ -28,6 +28,6 @@ For now, Ernst Meyer has been elected leader of the <span style="color: #700000;
 
 @conciliator_fail
 title: Thälmann retains his leadership position.
-view-if: (kpd_relation <= 50) 
+view-if: (kpd_relation < 40) 
 
 Unfortunately, we could not influence the <span style="color: #700000;">**KPD**</span> leadership election against the hardliners. Thälmann quickly moves to consolidate absolute leadership, expelling or exiling his opponents.
