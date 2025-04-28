@@ -16,6 +16,8 @@ Q.unemployed_sapd = 6;
 Q.unemployed_spd -= 6;
 Q.catholics_sapd = 0;
 
+Q.sapd_relation = Q.old_sapd_relation;
+
 Q.workers_other -= 5;
 
 if (Q.unions_independent) {
