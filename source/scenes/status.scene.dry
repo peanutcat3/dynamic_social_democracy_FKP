@@ -180,7 +180,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if sapd_formed : <span class="tooltip-text" title="Socialist Workers' Party of Germany" style="color: #9B0000;">**SAPD**</span>: [+ sapd_idealogy +] ([+ sapd_leader +])?]
 
-[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": Luxemburgism?][? if kpd_leader = "Thälmann": Stalinism?] ([+ kpd_leader +])?]
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_idealogy +] ([+ kpd_leader +])?]
 
 [? if kvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: Christian conservatism ([+ kvp_leader +])?]
 
