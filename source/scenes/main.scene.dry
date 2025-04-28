@@ -500,7 +500,7 @@ if (Q.ddp_r < 1 && !Q.lvp_formed && !Q.bourgeois_list_ddp && !Q.ddp_alliance && 
         Q.flavour_60_trigger_shown = 1;
     }
 }
-if (Q.ddp_r < 0.5 && Q.time - Q.flavour_60_trigger_time > 3 && !Q.lvp_formed && !Q.bourgeois_list_ddp && !Q.ddp_alliance && !Q.electoral_threshold) {
+if (Q.ddp_r < 0.5 && ((Q.time - Q.flavour_60_trigger_time > 3 && !Q.rubicon) || (Q.rubicon_time - Q.flavour_60_trigger_time > 12 && Q.rubicon)) && !Q.lvp_formed && !Q.bourgeois_list_ddp && !Q.ddp_alliance && !Q.electoral_threshold) {
     Q.flavour_61_trigger += 1;
     if (Q.flavour_61_trigger && !Q.flavour_61_trigger_shown) {
         Q.flavour_61_trigger_time = Q.time;
@@ -1735,7 +1735,7 @@ if (Q.ddp_r < 1 && !Q.lvp_formed && !Q.bourgeois_list_ddp && !Q.ddp_alliance && 
         Q.flavour_60_trigger_shown = 1;
     }
 }
-if (Q.ddp_r < 0.5 && Q.time - Q.flavour_60_trigger_time > 3 && !Q.lvp_formed && !Q.bourgeois_list_ddp && !Q.ddp_alliance && !Q.electoral_threshold) {
+if (Q.ddp_r < 0.5 && ((Q.time - Q.flavour_60_trigger_time > 3 && !Q.rubicon) || (Q.rubicon_time - Q.flavour_60_trigger_time > 12 && Q.rubicon)) && !Q.lvp_formed && !Q.bourgeois_list_ddp && !Q.ddp_alliance && !Q.electoral_threshold) {
     Q.flavour_61_trigger += 1;
     if (Q.flavour_61_trigger && !Q.flavour_61_trigger_shown) {
         Q.flavour_61_trigger_time = Q.time;
