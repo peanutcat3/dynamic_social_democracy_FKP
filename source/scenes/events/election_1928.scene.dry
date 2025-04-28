@@ -276,7 +276,7 @@ if (Q.nsdap_split) {
             '<img src="img/steady.png"> ';
         Q.str_votes_change_dsu = sign2 + Math.abs(Q.str_votes_change_dsu).toFixed(1);
 
-        Q.str_change_dsu = Q.dsu - Q.old_dsu_r;
+        Q.str_change_dsu = Q.dsu_r - Q.old_dsu_r;
         var sign2 = Q.str_change_dsu > 0 ?
             '<img src="img/arrowup.png"> ' :
             Q.str_change_dsu < 0 ?
@@ -299,7 +299,7 @@ if (Q.nsdap_split) {
             '<img src="img/steady.png"> ';
         Q.str_votes_change_nvf = sign2 + Math.abs(Q.str_votes_change_nvf).toFixed(1);
 
-        Q.str_change_nvf = Q.nvf - Q.old_nvf_r;
+        Q.str_change_nvf = Q.nvf_r - Q.old_nvf_r;
         var sign2 = Q.str_change_nvf > 0 ?
             '<img src="img/arrowup.png"> ' :
             Q.str_change_nvf < 0 ?
@@ -325,7 +325,7 @@ if (Q.nsdap_split) {
             '<img src="img/steady.png"> ';
         Q.str_votes_change_nsdap_hitler = sign2 + Math.abs(Q.str_votes_change_nsdap_hitler).toFixed(1);
 
-        Q.str_change_nsdap_hitler = Q.nsdap_hitler - Q.old_nsdap_hitler_r;
+        Q.str_change_nsdap_hitler = Q.nsdap_hitler_r - Q.old_nsdap_hitler_r;
         var sign2 = Q.str_change_nsdap_hitler > 0 ?
             '<img src="img/arrowup.png"> ' :
             Q.str_change_nsdap_hitler < 0 ?
