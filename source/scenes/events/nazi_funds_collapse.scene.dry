@@ -5,7 +5,18 @@ new-page: true
 tags: event
 priority: 2
 max-visits: 1
-face-image: img/no_money.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/no_money.jpg";  
+
+    cardEl.appendChild(image);
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 
 = The <span style="color: #7A3C00;">Nazi</span>'s Funding Crisis
 
