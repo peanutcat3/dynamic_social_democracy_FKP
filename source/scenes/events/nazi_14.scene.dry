@@ -1,6 +1,6 @@
 title: The Camarilla Decides Germany's Fate
 subtitle: Papen will lead the plunge into the abyss.
-view-if: chancellor = "Schleicher" and schleicher_time == 7
+view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode
 on-arrival: oskar_goal = "Advocate for a Hitler chancellorship"
 new-page: true
 tags: event

@@ -1,6 +1,6 @@
 title: The Camarilla Joins the Conspiracy
 subtitle: Oskar von Hindenburg and Otto Meissner meet with [+ nsdap_leader +] and Papen.
-view-if: chancellor = "Schleicher" and schleicher_time == 7
+view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode
 new-page: true
 tags: event
 priority: 4

@@ -307,8 +307,13 @@ go-to: menu
 [? if dnf_formed: <span style="color: #003755;">**DNF**</span>: [+ dnf_votes +]% ?]
 
 # 1928: 3, 1930: 18
-<span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_votes +]%
+[? if dsu_exist: <span style="color: #6A1E1E;">**DSU**</span>: [+ dsu_votes +]% ?]
 
+[? if not nsdap_split: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_votes +]% ?]
+
+[? if nsdap_split: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_hitler_votes +]% ?]
+
+[? if nvf_exist: <span style="color: #142e20;">**NVF**</span>: [+ nvf_votes +]% ?]
 # 1928: 9, 1930: 10
 **Others**: [+ other_votes +]%
 
@@ -415,7 +420,7 @@ go-to: menu
             <td style="background-color: rgba(0, 31, 48, 0.2);">[+ unemployed_dnf_display +]%</td>
             <td style="background-color: rgba(0, 31, 48, 0.2);">[+ catholics_dnf_display +]%</td>
         {!</tr>!} ?]
-        <tr>
+        [? if not nsdap_split: {!<tr>!}
             <td><span style="color: #7A3C00;">**NSDAP**</span></td>
             <td style="background-color: rgba(122, 60, 0, 0.2); padding: 10px;">[+ workers_nsdap_display +]%</td>
             <td style="background-color: rgba(122, 60, 0, 0.2);">[+ new_middle_nsdap_display +]%</td>
@@ -423,7 +428,16 @@ go-to: menu
             <td style="background-color: rgba(122, 60, 0, 0.2);">[+ rural_nsdap_display +]%</td>
             <td style="background-color: rgba(122, 60, 0, 0.2);">[+ unemployed_nsdap_display +]%</td>
             <td style="background-color: rgba(122, 60, 0, 0.2);">[+ catholics_nsdap_display +]%</td>
-        </tr>
+        {!</tr>!} ?]
+        [? if nsdap_split: {!<tr>!}
+            <td><span style="color: #7A3C00;">**NSDAP**</span></td>
+            <td style="background-color: rgba(106, 30, 30, 0.2); padding: 10px;">[+ workers_nsdap_display +]%</td>
+            <td style="background-color: rgba(106, 30, 30, 0.2);">[+ new_middle_nsdap_display +]%</td>
+            <td style="background-color: rgba(122, 60, 0, 0.2);">[+ old_middle_nsdap_display +]%</td>
+            <td style="background-color: rgba(122, 60, 0, 0.2);">[+ rural_nsdap_display +]%</td>
+            <td style="background-color: rgba(20, 46, 32, 0.2);">[+ unemployed_nsdap_display +]%</td>
+            <td style="background-color: rgba(122, 60, 0, 0.2);">[+ catholics_nsdap_display +]%</td>
+        {!</tr>!} ?]
         <tr>
             <td>**Others**</td>
             <td style="background-color: rgba(153, 153, 153, 0.1); padding: 10px;">[+ workers_other_display +]%</td>
@@ -688,12 +702,42 @@ if (Q.dnf_formed && Q.dnf_r) {
         "seats": Math.round(Q.dnf_r * 5),
     });
 }
-data = data.concat([{
-    "id": "nsdap",
-    "legend": "NSDAP",
-    "name": "NSDAP",
-    "seats": Math.round(Q.nsdap_r * 5),
-}, ]);
+
+if (Q.dsu_exist && Q.dsu_r) {
+    data.push({
+        "id": "dsu",
+        "legend": "DSU",
+        "name": "DSU",
+        "seats": Math.round(Q.dsu_r * 5),
+    });
+}
+
+if (Q.nsdap_split && Q.nsdap_hitler_r) {
+    data.push({
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_hitler_r * 5),
+    });
+}
+
+if (!Q.nsdap_split && Q.nsdap_r) {
+    data.push({
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_r * 5),
+    });
+}
+
+if (Q.nvf_exist && Q.nvf_r) {
+    data.push({
+        "id": "nvf",
+        "legend": "NVF",
+        "name": "NVF",
+        "seats": Math.round(Q.nvf_r * 5),
+    });
+}
 if (d3 && window) {
     // get screen width
     var width = 500;
@@ -772,7 +816,13 @@ if (d3 && window) {
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div></td><td>!} DNF: {!</td><td>!} [+ dnf_r +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div></td><td>!} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!}
+[? if dsu_exist: {!<tr><td><div class="box" style='background-color:#6A1E1E'> </div></td><td>!} DSU: {!</td><td>!} [+ dsu_r +]% {!</td></tr>!} ?]
+
+[? if nsdap_split: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div></td><td>!} NSDAP: {!</td><td>!} [+ nsdap_hitler_r +]% {!</td></tr>!} ?]
+
+[? if not nsdap_split: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div></td><td>!} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td></tr>!} ?]
+
+[? if nvf_exist: {!<tr><td><div class="box" style='background-color:#142e20'> </div></td><td>!} NVF: {!</td><td>!} [+ nvf_r +]% {!</td></tr>!} ?]
 {!</table>!}
 
 = Election history

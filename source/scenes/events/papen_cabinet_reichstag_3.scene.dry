@@ -31,8 +31,8 @@ Yet, von Papen holds a card up his sleeve. Hindenburg has already secured a decr
 @reichstag
 title: The Reichstag goes into session.
 on-arrival: {!
-Q.papen_votes = Q.dnvp_r + Q.dvp_r;
-Q.anti_papen_votes = 100 - Q.dnvp_r - Q.dvp_r;
+Q.papen_votes = Math.round((Q.dnvp_r + Q.dvp_r) * 10) / 10;
+Q.anti_papen_votes = Math.round((100 - Q.dnvp_r - Q.dvp_r) * 10) / 10;
 
 Q.new_middle_nsdap -= 3;
 Q.new_middle_dvp += 1;

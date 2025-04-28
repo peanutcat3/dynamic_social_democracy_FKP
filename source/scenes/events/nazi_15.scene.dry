@@ -1,6 +1,6 @@
 title: Hindenburg's Resistance Crumbles...
 subtitle: The pressure begins to mount on the President.
-view-if: chancellor = "Schleicher" and schleicher_time == 7
+view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode
 new-page: true
 tags: event
 priority: -4
