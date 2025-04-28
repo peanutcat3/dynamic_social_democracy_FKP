@@ -283,9 +283,6 @@ if (Q.nsdap_split) {
             '<img src="img/arrowdown.png"> ' :
             '<img src="img/steady.png"> ';
         Q.str_change_dsu = sign2 + Math.abs(Q.str_change_dsu).toFixed(1);
-
-        Q.previous_dsu_last_election_votes = Q.dsu_votes;
-        Q.old_dsu_r = Q.dsu_r;
     }
     if (Q.nvf_exist) {
         Q.nvf_r = parseFloat(Q.nvf_votes.toFixed(1));
@@ -306,9 +303,6 @@ if (Q.nsdap_split) {
             '<img src="img/arrowdown.png"> ' :
             '<img src="img/steady.png"> ';
         Q.str_change_nvf = sign2 + Math.abs(Q.str_change_nvf).toFixed(1);
-
-        Q.previous_nvf_last_election_votes = Q.nvf_votes;
-        Q.old_nvf_r = Q.nvf_r;
     }
     if (Q.nvf_exist || Q.dsu_exist) {
         Q.nsdap_hitler_r = parseFloat(Q.nsdap_hitler_votes.toFixed(1));
@@ -332,26 +326,29 @@ if (Q.nsdap_split) {
             '<img src="img/arrowdown.png"> ' :
             '<img src="img/steady.png"> ';
         Q.str_change_nsdap_hitler = sign2 + Math.abs(Q.str_change_nsdap_hitler).toFixed(1);
-
-        Q.previous_nsdap_hitler_last_election_votes = Q.nsdap_hitler_votes;
-        Q.old_nsdap_hitler_r = Q.nsdap_hitler_r;
     }
     if ((Q.dsu_votes + Q.nvf_votes + Q.nsdap_hitler_votes) !== Q.nsdap_votes) {
         let total = Q.dsu_votes + Q.nvf_votes + Q.nsdap_hitler_votes;
         let factor = Q.nsdap_votes / total;
-    
-        Q.dsu_votes *= factor;
-        Q.nvf_votes *= factor;
-        Q.nsdap_hitler_votes *= factor;
+
+        Q.dsu_votes = parseFloat((Q.dsu_votes * factor).toFixed(1));
+        Q.nvf_votes = parseFloat((Q.nvf_votes * factor).toFixed(1));
+        Q.nsdap_hitler_votes = parseFloat((Q.nsdap_hitler_votes * factor).toFixed(1));
     }
     if ((Q.dsu_r + Q.nvf_r + Q.nsdap_hitler_r) !== Q.nsdap_r) {
         let total = Q.dsu_r + Q.nvf_r + Q.nsdap_hitler_r;
         let factor = Q.nsdap_r / total;
-    
-        Q.dsu_r *= factor;
-        Q.nvf_r *= factor;
-        Q.nsdap_hitler_r *= factor;
+
+        Q.dsu_r = parseFloat((Q.dsu_r * factor).toFixed(1));
+        Q.nvf_r = parseFloat((Q.nvf_r * factor).toFixed(1));
+        Q.nsdap_hitler_r = parseFloat((Q.nsdap_hitler_r * factor).toFixed(1));
     }
+    Q.previous_dsu_last_election_votes = Q.dsu_votes;
+    Q.old_dsu_r = Q.dsu_r;
+    Q.previous_nvf_last_election_votes = Q.nvf_votes;
+    Q.old_nvf_r = Q.nvf_r;
+    Q.previous_nsdap_hitler_last_election_votes = Q.nsdap_hitler_votes;
+    Q.old_nsdap_hitler_r = Q.nsdap_hitler_r;
 }
 
 // The largest party can only be the NSDAP or the SPD.
