@@ -16,7 +16,7 @@ Q.unemployed_sapd = 6;
 Q.unemployed_spd -= 6;
 Q.catholics_sapd = 0;
 
-Q.sapd_relation = 70;
+Q.sapd_relation = 100 - Q.left_dissent;
 
 Q.workers_other -= 5;
 
