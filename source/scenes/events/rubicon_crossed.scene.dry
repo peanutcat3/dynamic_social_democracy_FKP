@@ -21,16 +21,16 @@ const toolsElements = document.querySelectorAll('.tools');
 
 toolsElements.forEach(tool => {
     if (isMobile) {
-        tool.style.marginLeft = '-6em';
+        tool.style.marginLeft = '';
         tool.style.padding = '0.6em';
-        tool.style.width = '20rem';
+        tool.style.width = '';
         tool.style.color = '#FFFFFF';
         tool.style.backgroundColor = '#645E51';
         tool.style.boxShadow = '4px 4px 16px rgba(255, 255, 255, 0.4)';
     } else {
-        tool.style.marginLeft = '';
+        tool.style.marginLeft = '-6em';
         tool.style.padding = '0.6em';
-        tool.style.width = '';
+        tool.style.width = '20rem';
         tool.style.color = '#FFFFFF';
         tool.style.backgroundColor = '#645E51';
         tool.style.boxShadow = '4px 4px 16px rgba(255, 255, 255, 0.4)';

@@ -1,6 +1,6 @@
 title: The Decision 2010
 subtitle: The fate of Germany rests in Hindenburg.
-view-if: chancellor = "Schleicher" and schleicher_time == 7
+view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode
 new-page: true
 tags: event
 priority: -5

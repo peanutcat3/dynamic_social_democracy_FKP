@@ -351,6 +351,14 @@ Q.previous_nsdap_last_election_votes = 3;
 Q.previous_other_last_election_votes = 7.8;
 Q.previous_bvp_last_election_votes = 3.7;
 
+Q.old_dsu_r = 0;
+Q.old_nsdap_hitler_r = 0;
+Q.old_nvf_r = 0;
+
+Q.previous_dsu_last_election_votes = 0.0;
+Q.previous_nsdap_hitler_last_election_votes = 0.0;
+Q.previous_nvf_last_election_votes = 0.0;
+
 // prussian gov right now
 Q.spd_r_prussia = 25.3;
 Q.kpd_r_prussia = 9.8;
@@ -860,6 +868,8 @@ Q.nazi_funds = 5;
 Q.spd_lippe = 1;
 Q.nsdap_lippe = 1;
 Q.nazi_explode = 0;
+Q.schleicher_explode = 0;
+Q.schleicher_victory = 0;
 
 // rubicon
 Q.hindenburg_schleicher_r = 5;

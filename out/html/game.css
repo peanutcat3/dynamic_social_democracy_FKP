@@ -707,6 +707,14 @@ th {
   fill: #7A3C00;
 }
 
+.seat.dsu {
+  fill: #6A1E1E;
+}
+
+.seat.nvf {
+  fill: #142e20;
+}
+
 .seat.sapd {
   fill: #9B0000;
 }

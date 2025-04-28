@@ -1,6 +1,6 @@
 title: Papen Proposes his Plan to Hindenburg
 subtitle: The old man will never appoint [+ nsdap_chancellor +]! This will go nowhere.
-view-if: chancellor = "Schleicher" and schleicher_time == 7
+view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode
 new-page: true
 tags: event
 priority: 3

@@ -1,6 +1,6 @@
 title: [+ nsdap_chancellor +] appointed Chancellor!
 subtitle: The beginning of the end...
-view-if: chancellor = "Schleicher" and schleicher_time == 7
+view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode
 new-page: true
 tags: event
 priority: -6
@@ -109,7 +109,7 @@ This astonishing turnabout in [+ nsdap_leader +]'s fortunes confirmed his belief
 What are we to do now?
 
 - @bide_time
-- @civil_war
+- @civil_war_pre
 
 @bide_time
 title: Bide our time, wait until [+ nsdap_chancellor +] makes an unconstitutional move first, then strike.
@@ -154,7 +154,7 @@ The Reichstag is burned, ostensibly by a foreign <span style="color: #700000;">c
 title: [+ nsdap_chancellor +] attempts to pass an enabling act.
 on-arrival: {!
 const contentElement = document.getElementById('content');
-contentElement.style.backgroundColor = '#211102';
+contentElement.style.backgroundColor = '#634620';
 
 const toolsWrapper = document.getElementById('tools_wrapper');
 if (toolsWrapper) {
@@ -204,7 +204,7 @@ choose-if: super_secret_mode
 
 Yeah.
 
-@civil_war
+@civil_war_pre
 title: We must not allow [+ nsdap_chancellor +] to consolidate! We will fight on the streets to prevent [+ nsdap_chancellor +] from retaining power.
 
 Unfortunately, not many <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">cans</span> are willing to take up arms against the newly appointed [+ nsdap_chancellor +].
