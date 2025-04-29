@@ -36,7 +36,7 @@ if (Maslow_Fisher == Brandler and Maslow_Fisher < Thalmann) {
 const winvalues = [Maslow_Fisher, Meyer-Levine, Thalmann, Brandler];
 winvalues.sort((a, b) => b - a);
 if (Maslow_Fisher == winvalues(0)) {
-    KPD_winner = "Maslow_Fisher"
+    KPD_winner = "Maslow_Fischer"
 }
 if (Meyer-Levine == winvalues(0) {
     KPD_winner = "Meyer-Levine"
@@ -51,9 +51,38 @@ if (Brandler == winvalues(0) {
 = 1930 Emergency <span style="color: #700000;">**KPD**</span> Party Congress
 
 The <span style="color: #700000;">**KPD**</span> Central Committee is meeting to decide who will lead the Party, following the death of Ernst Meyer. Meyer's short tenure as the leader of the <span style="color: #700000;">**KPD**</span> has created new opportunities for dissent to flourish, and this committee is more diverse than ever before.
-However, a Comintern representative maintains a watchful eye to make sure that the interests of the Soviets are maintained. We can be sure they will have a hand in choosing who suceeds Meyer. 
+However, a Comintern representative maintains a watchful eye to make sure that the interests of the Soviets are maintained. We can be sure they will have a hand in choosing who suceeds Meyer, and ensuring they continue to obey the party line.
+
+- @Thalmann
+- @Meyer-Levine
+- @Brandler
+- @Maslow_Fischer
 
 @Thalmann
+choose-if: KPD_winner == "Thalmann"
+on-arrival: kpd_leader = "Thälmann"; kpd_idealogy = "Stalinism"
+face-image: img/portraits/luther.jpg
+
+LIL BRO IS BACK
+
 @Meyer-Levine
+choose-if: KPD_winner == "Meyer-Levine"
+on-arrival: kpd_leader = "Meyer-Leviné"; kpd_idealogy = "Concilatory Leninism"
+face-image: img/portraits/luther.jpg
+
+his wife is elected
+
 @Brandler
+choose-if: KPD_winner == "Brandler"
+on-arrival: kpd_leader = "Brandler"; kpd_idealogy = "Bukharinism"
+face-image: img/portraits/luther.jpg
+
+right wing man wins
+
 @Maslow_Fischer
+choose-if: KPD_winner == "Maslow_Fischer"
+on-arrival: kpd_leader = "Maslow/Fischer"; kpd_idealogy = "Trotskyism"
+face-image: img/portraits/luther.jpg
+
+the trotskyists are back baby
+
