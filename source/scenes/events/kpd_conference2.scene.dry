@@ -1,7 +1,7 @@
 title: The <span style="color: #700000;">**KPD**</span> meets to decide a new leader.
 subtitle: The Commitee has Convened
 new-page: true
-view-if: year == 1930 and month == 4 and kpd_leader = "Eberlin"
+view-if: year == 1930 and month == 4 and kpd_leader == "Eberlin"
 max-visits: 1
 tags: event
 face-image: 
