@@ -80,7 +80,7 @@ Her election will likely ensure that our relationship with the <span style="colo
 However, her actions are watched heavily from Moscow, so any radical changes are out of the question.
 
 @Brandler
-title: brandler
+title: Heinrich Brandler is elected!
 choose-if: KPD_winner == "Brandler"
 on-arrival: kpd_leader = "Brandler"; kpd_idealogy = "Bukharinism"
 face-image: img/portraits/brandler.jpg
@@ -89,7 +89,7 @@ Heinrich Brandler has been elected as the leader of the <span style="color: #700
 His position on the <span style="color: #700000;">**KPD**</span> of the KPD is good news for us, as we believe that our relations with the <span style="color: #700000;">**KPD**</span> will only improve.
 
 @Maslow_Fischer
-title: masqulow fishy
+title: Arkadi Maslow and Ruth Fisher return to power.
 choose-if: KPD_winner == "Maslow_Fischer"
 on-arrival: kpd_leader = "Maslow/Fischer"; kpd_idealogy = "Trotskyism"
 face-image: img/portraits/Fischer-Ruth-1924-Bain.jpg
