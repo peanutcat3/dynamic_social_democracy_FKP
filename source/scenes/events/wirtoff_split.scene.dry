@@ -21,7 +21,7 @@ title: We will support the dissendents, hoping that they can cause the KPD to lo
 subtitle: -2 resources.
 unavailable-subtitle: [? if resources < 2: We do not have enough resources. ?]
 choose-if: resources >= 2
-on-arrival: kpd_workers -= 2; other_workers += 2; kpd_unemployed -= 4; other_unemployed += 4; kpd_relation -= 6; var kpo_formation = 1
+on-arrival: workers_kpd -= 2; workers_other += 2; unemployed_kpd -= 4; unemployed_others += 4; kpd_relation -= 6; var kpo_formation = 1
 
 Many memberss of the Right and Concilator faction of the KPD have left the party! We will see what happens in the coming months as a result of this.
 
