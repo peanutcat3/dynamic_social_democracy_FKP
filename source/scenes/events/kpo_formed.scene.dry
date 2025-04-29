@@ -1,4 +1,4 @@
-view-if: year == 1929 and month == 3 and kpo_formed == 1
+view-if: year = 1929 and month = 5 and kpo_formed == 1
 on-arrival: {!
 // set up the infrastructure
 Q.parties.push('kpo');
