@@ -314,7 +314,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 <span style="color: #700000;">**KPD**</span>: [+ kpd_votes +]%
 
-[? if kpo_formed: <span style="color: #C43988;">**KPO(O)**</span>: [+ kpo_votes +]% ?]
+[? if kpo_formed: <span style="color: #C43988;">**KPD(O)**</span>: [+ kpo_votes +]% ?]
 
 [? if not lvp_formed: [? if not ddp_name: <span style="color: #D3C24D;">**DDP**</span>?][? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]% ?]
 
