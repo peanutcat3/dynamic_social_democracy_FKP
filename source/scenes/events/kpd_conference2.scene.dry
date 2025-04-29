@@ -20,7 +20,7 @@ if (Q.sapd_formed == 1) {
     right_KPD = Q.left_strength / 30;
 }
 var left_KPD = Q.unemployed / 27;
-var stalin_KPD = 2 - (Q.kpd_relations / 47);
+var stalin_KPD = 2 - (Q.kpd_relation / 47);
 // all add up to 4
 Maslow_Fisher = (radicalism_KPD * 1.2) + (right_KPD * 0.8) + (left_KPD * 1.5) + (stalin_KPD * 0.5);
 Meyer_Levine = (radicalism_KPD * 1) + (right_KPD * 0.8) + (left_KPD * 0.8) + ((2 - stalin_KPD) * 1.4);
