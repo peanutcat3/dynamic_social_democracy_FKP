@@ -1,6 +1,6 @@
 title: Disaster at <span style="color: #700000;">**KPD**</span> Party Conference
 subtitle: At a meeting of the <span style="color: #700000;">**KPD**</span> central committee, the Party fractures over the Wirtoff Affair
-view-if: wittorf_soviet_union = 0 and year = 1929 and month = 4 and pro_republic >= 65 and left_dissent <= 30
+view-if: wittorf_soviet_union = 0 and year = 1929 and month = 3 and pro_republic >= 65 and left_dissent <= 30 and wirtoff_blowback == 1
 max-visits: 1
 on-arrival: kpd_party_conference_seen = 1
 tags: event
@@ -9,4 +9,22 @@ tags: event
 
 Due to the controversy surrounding the Wirtoff affair, and Thalmann's defense of Wirtoff, the central committee of the KPD had decided to expel him from his leadership position. However, Stalin and the Comintern dissaproved of their decision. Following this, they forcibly reinstated Thalmann as leader of the KPD. 
 
-This action inflamed the members of the central committee, who have been growing increasingly frusturated with Stalin and Thalmann's 
+This action inflamed the members of the central committee, who have been growing increasingly frusturated with Stalin and Thalmann's policy of focusing propoganda against the SPD. Said members are preparing a split, however they lack resources to create a new party.
+
+Using our funds, we are able to give the dissendents some assistance in starting their fledgling party, to draw support away from the KPD. 
+
+- @help
+- @ignore
+
+@help
+title: We will support the dissendents, hoping that they can cause the KPD to lose support.
+subtitle: -2 resources.
+unavailable-subtitle: [? if resources < 2: We do not have enough resources. ?]
+choose-if: resources >= 2
+on-arrival: kpd_workers -= 2; other_workers += 2; kpd_unemployed -= 4, other_enemployed += 4; kpd_relations -= 6; var kpo_formation = 1
+
+Many memberss of the Right and Concilator faction of the KPD have left the party! We will see what happens in the coming months as a result of this.
+
+@ignore
+title: The internal affairs of the KPD are none of our concern. 
+on-arrival: kpd_relations += 4; left_dissent += 3
