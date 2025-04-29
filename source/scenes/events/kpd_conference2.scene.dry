@@ -14,7 +14,7 @@ var radicalism_KPD = 2 - (Q.pro_republic / 50);
 var right_KPD = 0;
 var KPD_winner = 0;
 if (Q.sapd_formed == 1) {
-    right_KPD = Q.sapd_votes / 5;
+    right_KPD = Q.sapd_r / 5;
 } else {
     right_KPD = Q.left_strength / 30;
 }
