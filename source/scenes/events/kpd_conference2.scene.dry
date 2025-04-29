@@ -1,0 +1,39 @@
+title: The <span style="color: #700000;">**KPD**</span> meets to decide a new leader.
+subtitle: The Commitee has Convened
+new-page: true
+view-if: year == 1930 and month == 4 and kpd_leader = "Eberlin"
+max-visits: 1
+tags: event
+face-image: 
+on-arrival: {!
+var Maslow_Fisher;
+var Meyer-Levine;
+var Thalmann;
+var Brandler;
+var radicalism_KPD = 2 - (Q.pro_republic / 50);
+var right_KPD = 0;
+if (Q.sapd_formed == 1) {
+    right_KPD = Q.sapd_votes / 5;
+} else {
+    right_KPD = Q.left_strength / 30;
+}
+var left_KPD = Q.unemployed / 27;
+var stalin_KPD = 2 - (Q.kpd_relations / 47);
+// all add up to 4
+Maslow_Fisher = (radicalism_KPD * 1.2) + (right_KPD * 0.8) + (left_KPD * 1.5) + (stalin_KPD * 0.5);
+Meyer-Levine = (radicalism_KPD * 1) + (right_KPD * 0.8) + (left_KPD * 0.8) + ((2 - stalin_KPD) * 1.4);
+Thalmann = (radicalism_KPD * 1.2) + (right_KPD * 0.7) + (left_KPD * 0.7) + (stalin_KPD * 1.4);
+
+
+
+
+!}
+= 1930 Emergency <span style="color: #700000;">**KPD**</span> Party Congress
+
+The <span style="color: #700000;">**KPD**</span> Central Committee is meeting to decide who will lead the Party, following the death of Ernst Meyer. Meyer's short tenure as the leader of the <span style="color: #700000;">**KPD**</span> has created new opportunities for dissent to flourish, and this committee is more diverse than ever before.
+However, a Comintern representative maintains a watchful eye to make sure that the interests of the Soviets are maintained. We can be sure they will have a hand in choosing who suceeds Meyer. 
+
+@Thalmann
+@Meyer-Levine
+@Brandler
+@Maslow_Fischer
