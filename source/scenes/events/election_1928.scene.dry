@@ -606,6 +606,15 @@ data = [{
     "seats": Math.round(Q.kpd_r * 5),
 }];
 
+if (Q.kpo_formed && Q.kpo_r) {
+    data.push({
+        "id": "kpo",
+        "legend": "KPD(O)",
+        "name": "KPD(O)",
+        "seats": Math.round(Q.kpo_r * 5),
+    });
+}
+
 if (Q.sapd_formed && Q.sapd_r) {
     data.push({
         "id": "sapd",
@@ -752,8 +761,8 @@ if (window && d3) {
 
     var lines = d3.linegraph(false, false,
             Q.parties_graph,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP'});
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'kpo': '#C43988'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'kpo': 'KPD(O)'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     d3.select("#election_history").datum(Q.election_records).call(lines);
@@ -763,8 +772,8 @@ if (window && d3) {
     if (!Q.historical_mode) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties_graph,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP'});
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'kpo': '#C43988'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'kpo': 'KPD(O)'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -781,6 +790,8 @@ go-to: coalition_menu
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_votes +]%** {!</td><td>!} **[+ str_votes_change_spd +]** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_votes +]% {!</td><td>!} [+ str_votes_change_sapd +] {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
+
+[? if kpo_formed : {!<tr><td><div class="box" style='background-color:#C43988'> </div> !}KPD(O): {!</td><td>!} [+ kpo_votes +]% {!</td><td>!} [+ str_votes_change_kpo +] {!</td><td>!} [+ kpo_r +]% {!</td><td>!} [+ str_change_kpo +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_votes +]% {!</td><td>!} [+ str_votes_change_kpd +] {!</td><td>!} [+ kpd_r +]% {!</td><td>!} [+ str_change_kpd +] {!</td></tr>!}
 
@@ -863,6 +874,15 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(112, 0, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_kpd_display +]%[? if n_elections != 1 and demo_change_unemployed_kpd_display != 0 : ([+ demo_change_unemployed_kpd_display +])?]{!</td>!}
             {!<td style="background-color: rgba(112, 0, 0, 0.2); font-size: 0.85em;">!}[+ catholics_kpd_display +]%[? if n_elections != 1 and demo_change_catholics_kpd_display != 0 : ([+ demo_change_catholics_kpd_display +])?]{!</td>!}
         {!</tr>!}
+        [? if kpo_formed: {!<tr>!}
+            {!<td><span style="color: #9B0000;">!}**KPD(O)**{!</span></td>!}
+            {!<td style="background-color: rgba(196, 57, 136, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_kpo_display +]%[? if n_elections != 1 and demo_change_workers_kpo_display != 0 : ([+ demo_change_workers_kpo_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(196, 57, 136, 0.2); font-size: 0.85em;">!}[+ new_middle_kpo_display +]%[? if n_elections != 1 and demo_change_new_middle_kpo_display != 0 : ([+ demo_change_new_middle_kpo_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(196, 57, 136, 0.2); font-size: 0.85em;">!}[+ old_middle_kpo_display +]%[? if n_elections != 1 and demo_change_old_middle_kpo_display != 0 : ([+ demo_change_old_middle_kpo_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(196, 57, 136, 0.2); font-size: 0.85em;">!}[+ rural_kpo_display +]%[? if n_elections != 1 and demo_change_rural_kpo_display != 0 : ([+ demo_change_rural_kpo_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(196, 57, 136, 0.2); font-size: 0.85em;">!}[+ unemployed_kpo_display +]%[? if n_elections != 1 and demo_change_unemployed_kpo_display != 0 : ([+ demo_change_unemployed_kpo_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(196, 57, 136, 0.2); font-size: 0.85em;">!}[+ catholics_kpo_display +]%[? if n_elections != 1 and demo_change_catholics_kpo_display != 0 : ([+ demo_change_catholics_kpo_display +])?]{!</td>!}
+        {!</tr>!}?]
         [? if not lvp_formed: {!<tr>!}
             {!<td>!}<span style="color: #D3C24D;">**[+ ddp_name +]**</span>{!</td>!}
             {!<td style="background-color: rgba(211, 194, 77, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_ddp_display +]%[? if n_elections != 1 and demo_change_workers_ddp_display != 0 : ([+ demo_change_workers_ddp_display +])?]{!</td>!}
