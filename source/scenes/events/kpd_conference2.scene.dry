@@ -38,16 +38,17 @@ winvalues.sort((a, b) => b - a);
 if (Maslow_Fisher == winvalues(0)) {
     KPD_winner = "Maslow_Fischer"
 }
-if (Meyer-Levine == winvalues(0) {
+if (Meyer-Levine == winvalues(0)) {
     KPD_winner = "Meyer-Levine"
 }
-if (Thalmann == winvalues(0) {
+if (Thalmann == winvalues(0)) {
     KPD_winner = "Thalmann"
 }
-if (Brandler == winvalues(0) {
+if (Brandler == winvalues(0)) {
     KPD_winner = "Brandler"
 }
 !}
+
 = 1930 Emergency <span style="color: #700000;">**KPD**</span> Party Congress
 
 The <span style="color: #700000;">**KPD**</span> Central Committee is meeting to decide who will lead the Party, following the death of Ernst Meyer. Meyer's short tenure as the leader of the <span style="color: #700000;">**KPD**</span> has created new opportunities for dissent to flourish, and this committee is more diverse than ever before.
