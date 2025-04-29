@@ -402,6 +402,12 @@ Q.other_votes = 14.5;
 Q.bvp_votes = 0;
 
 // sapd isn't formed yet, but it may be formed
+Q.kpo_r = 0;
+Q.old_kpo_r = 0;
+Q.kpo_r_prussia = 0;
+Q.old_kpo_r_prussia = 0;
+Q.kpo_votes = 0;
+
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 Q.sapd_r_prussia = 0;
@@ -437,6 +443,7 @@ Q.cvp_left = 0;
 
 Q.adjustmentFactors_spd = 1.0;
 Q.adjustmentFactors_sapd = 1.0;
+Q.adjustmentFactors_kpo = 1.0;
 Q.adjustmentFactors_kpd = 1.0;
 Q.adjustmentFactors_z = 1.0;
 Q.adjustmentFactors_ddp = 1.0;
@@ -451,6 +458,7 @@ Q.adjustmentFactors_other = 0.75;
 Q.adjustmentFactors_spd_prussia = 1.0;
 Q.adjustmentFactors_sapd_prussia = 1.0;
 Q.adjustmentFactors_kpd_prussia = 1.0;
+Q.adjustmentFactors_kpo_prussia = 1.0;
 Q.adjustmentFactors_z_prussia = 1.0;
 Q.adjustmentFactors_ddp_prussia = 1.0;
 Q.adjustmentFactors_dvp_prussia = 1.0;
