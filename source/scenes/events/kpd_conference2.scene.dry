@@ -61,34 +61,38 @@ However, a Comintern representative maintains a watchful eye to make sure that t
 - @Maslow_Fischer
 
 @Thalmann
-title: thalmanyy
+title: Thälmann has been re-elected, following an executive decision from Comintern Leadership.
 choose-if: KPD_winner == "Thalmann"
 on-arrival: kpd_leader = "Thälmann"; kpd_idealogy = "Stalinism"
-face-image: img/portraits/luther.jpg
+face-image: img/portraits/ThälmannErnst.jpg
 
-LIL BRO IS BACK
+Ernst Thälmann has been re-elected as the leader of the <span style="color: #700000;">**KPD**</span>, as the Central Committee was under the pressure of the Comintern to undo the reforms of Meyer, as they believed that they had gone too far. 
+This spells bad news for our relationship with the <span style="color: #700000;">**KPD**</span>, and relations are likely to sour. 
 
 @Meyer-Levine
-title: meyer lemon
+title: Rosa Meyer-Leviné has secured the support of the Committee.
 choose-if: KPD_winner == "Meyer-Levine"
 on-arrival: kpd_leader = "Meyer-Leviné"; kpd_idealogy = "Concilatory Leninism"
-face-image: img/portraits/luther.jpg
+face-image: img/portraits/GERmeyer3.jpg
 
-his wife is elected
+Rosa Meyer-Leviné, the parter of the late Ernst Meyer, has been elected to the position of party leader. She has gained notoriety during her husband's time as leader of the KPD, and the Committee desires the continuation of his Concilatory policies. 
+Her election will likely ensure that our relationship with the <span style="color: #700000;">**KPD**</span> remains stable and amicable.
+However, her actions are watched heavily from Moscow, so any radical changes are out of the question.
 
 @Brandler
 title: brandler
 choose-if: KPD_winner == "Brandler"
 on-arrival: kpd_leader = "Brandler"; kpd_idealogy = "Bukharinism"
-face-image: img/portraits/luther.jpg
+face-image: img/portraits/brandler.jpg
 
-right wing man wins
+Heinrich Brandler has been elected as the leader of the <span style="color: #700000;">**KPD**</span>. A member of the Right Opposition, he has come under flak in the past for often diverging from the party line. His election likely means that the <span style="color: #700000;">**KPD**</span> will shift towards the right.
+His position on the <span style="color: #700000;">**KPD**</span> of the KPD is good news for us, as we believe that our relations with the <span style="color: #700000;">**KPD**</span> will only improve.
 
 @Maslow_Fischer
 title: masqulow fishy
 choose-if: KPD_winner == "Maslow_Fischer"
 on-arrival: kpd_leader = "Maslow/Fischer"; kpd_idealogy = "Trotskyism"
-face-image: img/portraits/luther.jpg
+face-image: img/portraits/Fischer-Ruth-1924-Bain.jpg
 
-the trotskyists are back baby
+sss
 
