@@ -1,0 +1,12 @@
+title: Disaster at <span style="color: #700000;">**KPD**</span> Party Conference
+subtitle: At a meeting of the <span style="color: #700000;">**KPD**</span> central committee, the Party fractures over the Wirtoff Affair
+view-if: wittorf_soviet_union = 0 and year = 1929 and month = 4 and pro_republic >= 65 and left_dissent <= 30
+max-visits: 1
+on-arrival: kpd_party_conference_seen = 1
+tags: event
+
+= Crisis in the <span style="color: #700000;">**KPD**</span>. 
+
+Due to the controversy surrounding the Wirtoff affair, and Thalmann's defense of Wirtoff, the central committee of the KPD had decided to expel him from his leadership position. However, Stalin and the Comintern dissaproved of their decision. Following this, they forcibly reinstated Thalmann as leader of the KPD. 
+
+This action inflamed the members of the central committee, who have been growing increasingly frusturated with Stalin and Thalmann's 
