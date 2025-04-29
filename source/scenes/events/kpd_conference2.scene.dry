@@ -36,16 +36,16 @@ if (Maslow_Fisher == Brandler && Maslow_Fisher < Thalmann) {
 
 let winvalues = [Maslow_Fisher, Meyer_Levine, Thalmann, Brandler];
 winvalues.sort((a, b) => b - a);
-if (Maslow_Fisher == winvalues(0)) {
+if (Maslow_Fisher == winvalues[0]) {
     Q.KPD_winner = "Maslow_Fischer";
 }
-if (Meyer_Levine == winvalues(0)) {
+if (Meyer_Levine == winvalues[0]) {
     Q.KPD_winner = "Meyer-Levine";
 }
-if (Thalmann == winvalues(0)) {
+if (Thalmann == winvalues[0]) {
     Q.KPD_winner = "Thalmann";
 }
-if (Brandler == winvalues(0)) {
+if (Brandler == winvalues[0]) {
     Q.KPD_winner = "Brandler";
 }
 !}
