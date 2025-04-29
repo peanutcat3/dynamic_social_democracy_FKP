@@ -26,7 +26,7 @@ Maslow_Fisher = (radicalism_KPD * 1.2) + (right_KPD * 0.8) + (left_KPD * 1.5) + 
 Meyer_Levine = (radicalism_KPD * 1) + (right_KPD * 0.8) + (left_KPD * 0.8) + ((2 - stalin_KPD) * 1.4);
 Thalmann = (radicalism_KPD * 1.2) + (right_KPD * 0.7) + (left_KPD * 0.7) + (stalin_KPD * 1.4);
 Brandler = (radicalism_KPD * 0.8) + (right_KPD * 1.5) + (left_KPD * 0.8) + ((2 - stalin_KPD) * 0.9);
-Q.KPD_winner = "Maslow_Fischer";
+
 if (Maslow_Fisher == Brandler && Maslow_Fisher >= Thalmann) {
     Q.KPD_winner = "Meyer_Levine";
 }
