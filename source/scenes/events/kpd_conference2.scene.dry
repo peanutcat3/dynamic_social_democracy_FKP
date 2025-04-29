@@ -7,7 +7,7 @@ tags: event
 face-image: 
 on-arrival: {!
 var Maslow_Fisher;
-var Meyer-Levine;
+var Meyer_Levine;
 var Thalmann;
 var Brandler;
 var radicalism_KPD = 2 - (Q.pro_republic / 50);
@@ -22,23 +22,23 @@ var left_KPD = Q.unemployed / 27;
 var stalin_KPD = 2 - (Q.kpd_relations / 47);
 // all add up to 4
 Maslow_Fisher = (radicalism_KPD * 1.2) + (right_KPD * 0.8) + (left_KPD * 1.5) + (stalin_KPD * 0.5);
-Meyer-Levine = (radicalism_KPD * 1) + (right_KPD * 0.8) + (left_KPD * 0.8) + ((2 - stalin_KPD) * 1.4);
+Meyer_Levine = (radicalism_KPD * 1) + (right_KPD * 0.8) + (left_KPD * 0.8) + ((2 - stalin_KPD) * 1.4);
 Thalmann = (radicalism_KPD * 1.2) + (right_KPD * 0.7) + (left_KPD * 0.7) + (stalin_KPD * 1.4);
 Brandler = (radicalism_KPD * 0.8) + (right_KPD * 1.5) + (left_KPD * 0.8) + ((2 - stalin_KPD) * 0.9);
 
 if (Maslow_Fisher == Brandler and Maslow_Fisher >= Thalmann) {
-    KPD_winner = "Meyer-Levine"
+    KPD_winner = "Meyer_Levine"
 }
 if (Maslow_Fisher == Brandler and Maslow_Fisher < Thalmann) {
     KPD_winner = "Thalmann"
 } 
 
-const winvalues = [Maslow_Fisher, Meyer-Levine, Thalmann, Brandler];
+const winvalues = [Maslow_Fisher, Meyer_Levine, Thalmann, Brandler];
 winvalues.sort((a, b) => b - a);
 if (Maslow_Fisher == winvalues(0)) {
     KPD_winner = "Maslow_Fischer"
 }
-if (Meyer-Levine == winvalues(0)) {
+if (Meyer_Levine == winvalues(0)) {
     KPD_winner = "Meyer-Levine"
 }
 if (Thalmann == winvalues(0)) {
