@@ -875,7 +875,7 @@ go-to: coalition_menu
             {!<td style="background-color: rgba(112, 0, 0, 0.2); font-size: 0.85em;">!}[+ catholics_kpd_display +]%[? if n_elections != 1 and demo_change_catholics_kpd_display != 0 : ([+ demo_change_catholics_kpd_display +])?]{!</td>!}
         {!</tr>!}
         [? if kpo_formed: {!<tr>!}
-            {!<td><span style="color: #9B0000;">!}**KPD(O)**{!</span></td>!}
+            {!<td><span style="color: #C43988;">!}**KPD(O)**{!</span></td>!}
             {!<td style="background-color: rgba(196, 57, 136, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_kpo_display +]%[? if n_elections != 1 and demo_change_workers_kpo_display != 0 : ([+ demo_change_workers_kpo_display +])?]{!</td>!}
             {!<td style="background-color: rgba(196, 57, 136, 0.2); font-size: 0.85em;">!}[+ new_middle_kpo_display +]%[? if n_elections != 1 and demo_change_new_middle_kpo_display != 0 : ([+ demo_change_new_middle_kpo_display +])?]{!</td>!}
             {!<td style="background-color: rgba(196, 57, 136, 0.2); font-size: 0.85em;">!}[+ old_middle_kpo_display +]%[? if n_elections != 1 and demo_change_old_middle_kpo_display != 0 : ([+ demo_change_old_middle_kpo_display +])?]{!</td>!}
