@@ -212,12 +212,16 @@ Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_other * 10) / 10;
 
 if (!Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.2;
 if (Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.1;
-if (Q.bvp_votes >= 3.5) {
+if (Q.bvp_votes >= 3.5 and not Q.cvp_formed) {
     Q.bvp_votes = 3.5;
+} else if (Q.bvp_votes >= 3.7 and Q.cvp_formed) {
+    Q.bvp_votes = 3.7;
 }
 Q.bvp_r = Q.bvp_votes*1.05;
-if (Q.bvp_r >= 3.6) {
+if (Q.bvp_r >= 3.6 and not Q.cvp_formed) {
     Q.bvp_r = 3.6;
+} else if (Q.bvp_r >= 3.9 and Q.cvp_formed) {
+    Q.bvp_r = 3.9;
 }
 
 Q.bvp_r = parseFloat(Q.bvp_r.toFixed(1));
