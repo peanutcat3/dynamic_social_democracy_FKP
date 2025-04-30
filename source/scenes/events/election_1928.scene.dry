@@ -212,12 +212,12 @@ Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_other * 10) / 10;
 
 if (!Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.2;
 if (Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.1;
-if (Q.stegerwald_path && Q.bvp_votes >= 4) {
-    Q.bvp_votes = 4;
+if (Q.bvp_votes >= 3.5) {
+    Q.bvp_votes = 3.5;
 }
 Q.bvp_r = Q.bvp_votes*1.05;
-if (Q.stegerwald_path && Q.bvp_r >= 4.4) {
-    Q.bvp_r = 4.4;
+if (Q.bvp_r >= 3.6) {
+    Q.bvp_r = 3.6;
 }
 
 Q.bvp_r = parseFloat(Q.bvp_r.toFixed(1));
