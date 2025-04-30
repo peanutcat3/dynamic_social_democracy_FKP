@@ -185,11 +185,11 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: Authoritarian conservatism (Hugenberg) ?]
 
-[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0 and dsu_exist: <span class="tooltip-text" title="German Social Union" style="color: #6A1E1E;">**DSU**</span>: ??? (Strasser)?]
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0 and dsu_exist: <span class="tooltip-text" title="German Social Union" style="color: #6A1E1E;">**DSU**</span>: [? if not dsu_alt: Strasserism?][? if dsu_alt: Center Nazism ?] (Strasser)?]
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: Nazism ([+ nsdap_leader +])?]
 
-[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0 and nvf_exist: <span class="tooltip-text" title="National People's Front" style="color: #142e20;">**NVF**</span>: ??? (Röhm)?]
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0 and nvf_exist: <span class="tooltip-text" title="National People's Front" style="color: #142e20;">**NVF**</span>: Revolutionary Nazism (Röhm)?]
 
 = Industrial Backing
 
