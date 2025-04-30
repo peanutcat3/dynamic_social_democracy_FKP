@@ -46,6 +46,7 @@ go-to: goring if largest_party == "NSDAP" and z_relation < 55 and hitler_right_c
 on-arrival: {!
 Q.pro_republic -= 3;
 Q.reichstag_goring = 1;
+Q.reichstag_president = "Göring";
 
 Q.next_reichstag_time = Q.rubicon_time + 2;
 Q.next_reichstag_week = Q.week + 2;
@@ -76,6 +77,8 @@ In line with a promise made to the <span style="color: #000000;">Center Party</s
 on-arrival: {!
 Q.pro_republic += 3;
 Q.reichstag_goring = 0;
+Q.reichstag_president = "Löbe";
+if (!(Q.largest_party != "NSDAP" && ((Q>weimar_coalition >= 40) || (Q.popular_front_coalition >= 50 && Q.kpd_relation >= 50)))) Q.reichstag_president = "Eßer";
 
 Q.next_reichstag_time = Q.rubicon_time + 2;
 Q.next_reichstag_week = Q.week + 2;
