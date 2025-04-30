@@ -57,7 +57,7 @@ title: We know Papen's intentions, we must not allow him to consolidate! We must
 
 Do we realize that this means civil war, against the full force of the state?
 
-- @civil_war_papen: Yes.
+- @papen_civil_war: Yes.
 - @reichstag_3: We are not ready for war. We must bide our time.
 
 @reichstag_3
@@ -67,12 +67,12 @@ on-arrival: workers_spd -= 5; new_middle_spd -= 5; unemployed_spd -= 5; pro_repu
 The <span style="color: #c00000;">**SPD**</span> is shocked at our decision! How can we allow such a blatant violation of the constitution go like that? Many radicalized Reichsbanner and party officials defeat to the <span style="color: #700000;">**Communists**</span> and the <span style="color: #700000;">**RFB**</span>, vowing to fight against Papen regardless of our instructions.
 
 - @reichstag_4
-- @civil_war_papen_2
+- @papen_civil_war_2
 
-@civil_war_papen_2
+@papen_civil_war_2
 title: The government cannot adequately suppress unrest, civil war is inevitable.
 subtitle: We will fight, whether we choose to or not.
-go-to: civil_war_papen
+go-to: papen_civil_war
 
 @reichstag_4
 title: Martial law is declared. The Reichswehr quells pockets of unrest.
