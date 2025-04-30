@@ -560,7 +560,7 @@ Q.goal_spd_total_peoples = 0;
 Q.coalition_dissent = 0;
 // dissent from the KPD, in a popular front or left front government
 Q.kpd_coalition_dissent = 0;
-
+Q.left_coalition_dissent = 0;
 // does the SPD tolerate the government even if it is not a participant?
 Q.spd_toleration = 0;
 Q.spd_toleration_right = 0;
@@ -842,6 +842,7 @@ Q.dnvp_split_2 = 0
 Q.bourgeois_merger_trigger = 0;
 Q.bourgeois_list = 0;
 Q.hindenburg_angry_bruning = 0;
+Q.soviet_relations = 0;
 Q.bruning_time = 0;
 Q.bruning_toleration_time = 0;
 Q.total_bruning_time = 0;
