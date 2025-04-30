@@ -28,7 +28,7 @@ A furious [+ nsdap_leader +] has rejected Papen’s call for a meeting between h
 
 @nazi_2
 title: The chancellor is safe, for now.
-on-arrival: papen_goal = "Push for his own reappointment"; meissner_goal = "Reconcile Schleicher and Hindenburg"; oskar_goal = "Push for Papen's reappointment"; papen_strength -= 1; hindenburg_schleicher_r += 1
+on-arrival: papen_goal = "Push for his own reappointment"; meissner_goal = "Reconcile Schleicher and Hindenburg"; oskar_goal = "Push for Papen's reappointment"
 
 Papen's constant nagging remains a thorn in Schleicher's side, especially given that the former chancellor lives just meters from the President's residence—and with Oskar von Hindenburg continuing to influence his father.
 
