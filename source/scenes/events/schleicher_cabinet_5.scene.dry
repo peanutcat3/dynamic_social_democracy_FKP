@@ -1,6 +1,6 @@
 title: Schleicher Concedes
 subtitle: The chancellor has all but given up attempts to stay in power.
-view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode
+view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode and not constructive_schleicher
 new-page: true
 tags: event
 priority: -1
