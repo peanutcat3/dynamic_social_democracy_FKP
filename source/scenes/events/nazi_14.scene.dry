@@ -56,12 +56,21 @@ view-if: prussia_leader == "Schleicher"
 title: TODO...
 view-if: prussia_leader != "Schleicher"
 
-# TODO, no schleicher prussia
+[+ nsdap_leader +], though personally irritated by the concessions he has been forced to make, agrees—under the influence of Göring and Ribbentrop—to meet with Papen once again in the morning.
+
+- @nazi_5_alt
 
 @nazi_5
 title: Papen sets out to break Hugenberg's resistance.
 
 The <span style="color: #7A3C00;">Nazis</span> have repeated their demand for both interior ministries, stalling progress with Hugenberg. Seeking compromise, Papen expresses support for Hugenberg's request to control the ministries of economics and agriculture in both the Reich and Prussia. Although troubled by the prospect of a <span style="color: #7A3C00;">Nazi</span>-controlled Prussian police force, Hugenberg is not yet ready to walk away from his first real chance at power.
+
+- @nazi_6
+
+@nazi_5_alt
+title: Papen sets out to break Hugenberg's resistance.
+
+The <span style="color: #7A3C00;">Nazis</span> have repeated their demand for the interior ministry, stalling progress with Hugenberg. In an effort to break the impasse, Papen voices support for Hugenberg’s claim to the Ministries of Economics and Agriculture—granting him significant influence over national economic policy. Though deeply uneasy about the prospect of a <span style="color: #7A3C00;">Nazi</span>-dominated police force, Hugenberg is not yet willing to abandon his first real shot at power, and reluctantly agrees to continue negotiations.
 
 - @nazi_6
 

@@ -1,6 +1,6 @@
 title: The Decision 2010
 subtitle: The fate of Germany rests in Hindenburg.
-view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode
+view-if: chancellor = "Schleicher" and schleicher_time == 7 and schleicher_explode and not schleicher_coup
 new-page: true
 tags: event
 priority: -5
@@ -17,12 +17,13 @@ on-display: {!
     var contentDiv = document.querySelector("#page #mid_panel #content");
     contentDiv.appendChild(cardEl);
 !}
+on-arrival: nazi_16_triggered = 1
 
 = Negotiations, Pt. 3
 
 The details of a cabinet headed by [+ nsdap_chancellor +] have begun to take final shape, and Hindenburg took a major step in that direction by summoning General Werner von Blomberg to Berlin to be available to succeed Schleicher as Defense Minister. Hindenburg believed that he had selected an apolitical, professional officer, but he had instead chosen a man highly susceptible to the allures of <span style="color: #7A3C00;">Nazism</span>.
 
-Meanwhile, [+ nsdap_chancellor +] gave in to Hindenburg's insistence that Papen become both the Minister-President of Prussia and the Vice Chancellor, leading to Papen approving Wilhelm Frick's appointment to the national Interior Ministry, and Göring to the Prussian one. [+ nsdap_leader +] then introduced a new demand: the dissolution of the Reichstag so a new election could be held. And as Chancellor, he would also require the passage of an "enabling act", centralizing authority in the cabinet.
+Meanwhile, [+ nsdap_chancellor +] gave in to Hindenburg's insistence that Papen become [? if prussia_leader == "Schleicher": both the Minister-President of Prussia and?] the Vice Chancellor, leading to Papen approving Wilhelm Frick's appointment to the national Interior Ministry, and Göring to the Prussian one. [+ nsdap_leader +] then introduced a new demand: the dissolution of the Reichstag so a new election could be held. And as Chancellor, he would also require the passage of an "enabling act", centralizing authority in the cabinet.
 
 Papen raised no objections to this new demand, although Hugenberg may raise his concerns in an upcoming meeting to secure his participation in the cabinet.
 
@@ -52,3 +53,14 @@ Hindenburg has approved the ministers proposed, but Papen, knowing that Hindenbu
 By leaving the Justice Ministry vacant on the list of cabinet members, Papen sought to create the impression that it was being reserved for a <span style="color: #000000;">Center Party</span> member, and that its appointment was pending final negotiations. This simple act of deception has convinced Hindenburg that he is appointing a parliamentary chancellor, with the [? if not stegerwald_path: Catholic?][? if stegerwald_path: Christian?] party’s earlier overtures lending credence to the scheme.
 
 - @root: We await tomorrow.
+
+@nazi_4
+on-arrival: hindenburg_hitler_r += 1
+
+= Negotiations, Pt. 4
+
+That evening, Papen once again asked Hindenburg to appoint [+ nsdap_chancellor +] as Chancellor—preferably before Schleicher faces an embarrassing defeat in the Reichstag. However, Hindenburg feels no urgency to remove Schleicher so soon.
+
+Hindenburg has since approved the proposed ministers, but Papen, fully aware that the President would never accept [+ nsdap_chancellor +] as the head of a presidential cabinet, deliberately withholds that detail—though he knows Hindenburg will realize it soon enough.
+
+By leaving the Justice Ministry vacant on the cabinet list, Papen creates the illusion that the post is being reserved for a <span style="color: #000000;">Center Party</span> member and that final negotiations are still ongoing. This simple act of deception convinces Hindenburg that he is appointing a parliamentary Chancellor, with the [? if not stegerwald_path: Catholic?][? if stegerwald_path: Christian?] party’s earlier overtures lending credibility to the ruse.
