@@ -540,7 +540,7 @@ Despite the unsavory qualities of the <span style="color: #fe9e00;">**ASPD**</sp
 title: The incumbent Heldt III cabinet will continue.
 subtitle: They are able to retain their majority. Surprising.
 view-if: true_bourgeois_coalition_saxony >= 50
-on-arrival: saxony_right = 1; pro_republic += 1; rural_nsdap -= 2; old_middle_nsdap -= 2; rural_other += 2 if dnvp_ideology == "Radical"; old_middle_other += 2 if dnvp_ideology == "Radical"; rural_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"
+on-arrival: saxony_right = 1; saxony_leader = "Heldt"; pro_republic += 1; rural_nsdap -= 2; old_middle_nsdap -= 2; rural_other += 2 if dnvp_ideology == "Radical"; old_middle_other += 2 if dnvp_ideology == "Radical"; rural_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"
 
 The surprisingly good results for the incumbent coalition[? if aspd_saxony_elections_vote >= 4:&nbsp;and <span style="color: #fe9e00;">**ASPD**</span>?] have allowed them and Heldt to continue governing. The <span style="color: #7A3C00;">**NSDAP**</span> is discouraged by this defeat, as they had hoped to use their gains to influence the government.
 
@@ -548,7 +548,7 @@ The surprisingly good results for the incumbent coalition[? if aspd_saxony_elect
 title: A bourgeois coalition is formed.
 subtitle: The incumbent coalition, which will survive on toleration from the <span style="color: #7A3C00;">**NSDAP**</span>.
 view-if: bourgeois_coalition_saxony >= 50 and true_bourgeois_coalition_saxony < 50
-on-arrival: saxony_right = 1; saxony_irl = 1
+on-arrival: saxony_right = 1; saxony_leader = "Bünger"; saxony_irl = 1
 
 The incumbent coalition has failed to win a majority, and toleration from the <span style="color: #7A3C00;">**NSDAP**</span> is required. They've demanded the exclusion of the <span style="color: #fe9e00;">**ASPD**</span>[? if not lvp_formed:&nbsp;and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?] from the cabinet, and the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]'s new Minister-President Wilhelm Bünger has no choice but to agree. However, this decision was soon reverted and the <span style="color: #fe9e00;">**ASPD**</span> is granted the Ministry of Work and Welfare. 
 
