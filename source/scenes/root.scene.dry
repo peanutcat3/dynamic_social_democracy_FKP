@@ -870,6 +870,8 @@ Q.nsdap_lippe = 1;
 Q.nazi_explode = 0;
 Q.schleicher_explode = 0;
 Q.schleicher_victory = 0;
+Q.old_prussia_leader = " ";
+Q.schleicher_post = 0;
 
 // rubicon
 Q.hindenburg_schleicher_r = 5;
@@ -879,6 +881,7 @@ Q.hindenburg_hitler_r = 1;
 Q.schleicher_papen_r = 5;
 Q.schleicher_spd_r = 2;
 Q.schleicher_spd_support = 0;
+Q.schleicher_spd_influence = 0;
 
 Q.schleicher_strength = 5;
 Q.papen_strength = 1;

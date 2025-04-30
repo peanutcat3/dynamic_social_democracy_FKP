@@ -28,7 +28,7 @@ The result is a formal split within the <span style="color: #7A3C00;">**NSDAP**<
 - @nazi_2: Without funds and without support. 
 
 @nazi_2
-on-arrival: nsdap_split = 1; dsu_exist = 1; dsu_alt = 1; nvf_exist = 0; dsu_r = nsdap_r*0.4; nsdap_hitler_r = nsdap_r - dsu_r
+on-arrival: nsdap_split = 1; dsu_exist = 1; dsu_leader = "Triumvirate"; dsu_alt = 1; nvf_exist = 0; dsu_r = nsdap_r*0.4; nsdap_hitler_r = nsdap_r - dsu_r
 
 The two parties are doomed to eternal infighting and, eventually, irrelevance. However, the polarization caused by this, coupled with the potential for participationist <span style="color: #7A3C00;">Nazis</span> entering the government, may still have far-reaching consequences.
 
