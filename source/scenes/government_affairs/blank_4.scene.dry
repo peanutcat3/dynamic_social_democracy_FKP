@@ -1,4 +1,4 @@
-title:      
+title: Missing Report
 on-arrival: month_actions += 1
 view-if: chancellor == "Schleicher" and schleicher_time and schleicher_spd_influence >= 8
 card-image: img/black.jpg
@@ -9,7 +9,7 @@ frequency: 600
 
 = &nbsp;
 
-&nbsp;
+schleicher...
 
 - @help: &nbsp;
 
