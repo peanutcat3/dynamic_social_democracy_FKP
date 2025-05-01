@@ -59,7 +59,7 @@ The <span style="color: #8B0000;">Stalinists</span> of the <span style="color: #
 
 @stalin
 subtitle: -3 resources; Maybe we can discuss the Wittoff affair with them?
-view-if: comintern_seen == 2 and wittorf_secret = 1;
+view-if: comintern_seen == 2 and wittorf_secret == 1;
 choose-if: resources >= 3
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 3; wittorf_soviet_union = 1
