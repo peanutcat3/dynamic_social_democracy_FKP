@@ -1588,6 +1588,10 @@ Q.next_reichstag_week = Q.week + 4;
 Q.next_reichstag_month = Q.month;
 Q.next_reichstag_year = Q.year;
 
+Q.schleicher_spd_support -= 4;
+Q.schleicher_spd_r -= 2;
+Q.schleicher_spd_influence -= 1;
+
 if (Q.next_reichstag_week > 4) {
   Q.next_reichstag_week -= 4;
   Q.next_reichstag_month += 1;
