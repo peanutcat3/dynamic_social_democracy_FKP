@@ -4,6 +4,7 @@ view-if: rubicon
 card-image: img/hourglass.jpg
 is-card: true
 new-page: true
+go-to: blank if schleicher_spd_influence >= 6
 
 = Biding our Time
 

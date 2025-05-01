@@ -212,12 +212,16 @@ Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_other * 10) / 10;
 
 if (!Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.2;
 if (Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.1;
-if (Q.stegerwald_path && Q.bvp_votes >= 4) {
-    Q.bvp_votes = 4;
+if (Q.bvp_votes > 3.6 && !Q.cvp_formed) {
+    Q.bvp_votes = 3.6;
+} else if (Q.bvp_votes > 3.6 && Q.cvp_formed) {
+    Q.bvp_votes = 3.9;
 }
 Q.bvp_r = Q.bvp_votes*1.05;
-if (Q.stegerwald_path && Q.bvp_r >= 4.4) {
-    Q.bvp_r = 4.4;
+if (Q.bvp_r > 3.7 && !Q.cvp_formed) {
+    Q.bvp_r = 3.7;
+} else if (Q.bvp_r > 4.0 && Q.cvp_formed) {
+    Q.bvp_r = 4.0;
 }
 
 Q.bvp_r = parseFloat(Q.bvp_r.toFixed(1));
@@ -1571,9 +1575,153 @@ There is, once again, no clear path to a majority government. Nevertheless, Hind
 Negotiations with [+ nsdap_chancellor +] will resume in the coming weeks. However, Schleicher has begun to lose faith in Papen’s ability to reach an understanding with the <span style="color: #7A3C00;">Nazis</span>—and if these talks fail, it may be the final straw that turns the schemer against yet another of his old friends.
 
 @no_majority_schleicher
-go-to: hitler_chancellor
+on-arrival: hindenburg_schleicher_r -= 1; schleicher_strength -= 1; hindenburg_hitler_r += 1
 
+Predictably, there is no clear path to a majority government, even with the fracturing of the <span style="color: #7A3C00;">**NSDAP**</span>. Hindenburg is tired of the constant elections and presidential governments, but there is simply no way out. 
 
+The prospect of negotiations with the <span style="color: #7A3C00;">Nazi</span> movement remains unobtainable, even with their electoral defeat causing even more defections and the shattering of their party morale. 
+
+- @schleicher_dsu
+
+@schleicher_dsu
+title: Schleicher invites the <span style="color: #6A1E1E;">**DSU**</span> into cabinet?
+
+Despite their addition barely doing much to grant Schleicher a majority, it signals a major step toward Schleicher's goal of integrating "favorable" <span style="color: #7A3C00;">Nazis</span> into the state—as he acknowledges that this is how much he's going to get. Their poor electoral performance will grant them few cabinet posts, but there remains substantial risks in letting the <span style="color: #7A3C00;">Nazis</span> govern.
+
+We could attempt to use our relations with the chancellor to prevent this, but he'll demand much concessions in return.
+
+- @schleicher_dsu_yay
+- @schleicher_dsu_nay
+
+@schleicher_dsu_yay
+title: Let it happen.
+subtitle: Schleicher will moderate their excesses, it's still a presidential government after all.
+on-arrival: {!
+Q.dsu_in_gov = 1;
+Q.schleicher_post = 1;
+Q.old_prussia_leader = Q.prussia_leader;
+Q.prussia_leader = "Strasser";
+Q.vice_chancellor = "Strasser";
+Q.workers_nsdap += 3;
+Q.new_middle_nsdap += 3;
+Q.unemployed_nsdap += 3;
+
+Q.next_reichstag_time = Q.rubicon_time + 4;
+Q.next_reichstag_week = Q.week + 4;
+Q.next_reichstag_month = Q.month;
+Q.next_reichstag_year = Q.year;
+
+Q.schleicher_spd_support -= 4;
+Q.schleicher_spd_r -= 2;
+Q.schleicher_spd_influence -= 1;
+
+if (Q.next_reichstag_week > 4) {
+  Q.next_reichstag_week -= 4;
+  Q.next_reichstag_month += 1;
+}
+
+if (Q.next_reichstag_week > 4) {
+  Q.next_reichstag_week -= 4;
+  Q.next_reichstag_month += 1;
+}
+
+if (Q.next_reichstag_month > 12) {
+  Q.next_reichstag_month -= 12;
+  Q.next_reichstag_year += 1;
+}
+!}
+
+Wilhelm Frick is nominated to the Interior Ministry[? if old_prussia_leader == "Schleicher": in both the Reich and Prussia, with the latter now under the control of [+ prussia_leader +], appointed as commissioner?]. Gregor Strasser takes the vice-chancellorship—a title without power.
+
+At the <span style="color: #7A3C00;">Nazis’</span> insistence, Hjalmar Schacht is named to the economic ministry as an independent. Hans Kerrl, a <span style="color: #7A3C00;">Nazi</span> parliamentarian, receives the post of Minister without Portfolio.
+
+Schleicher blocks <span style="color: #7A3C00;">Nazi</span> claims to the Labor Ministry, unwilling to provoke organized labor and still hoping to bring Adam Stegerwald—and the <span style="color: #000000;">Center Party</span>—into his coalition.
+
+@schleicher_dsu_nay
+title: Strike a deal with Schleicher.
+subtitle: This is a point of no return.
+unavailable-subtitle: [? if schleicher_spd_r < 5: Our relations with Schleicher are too low. ?][? if schleicher_spd_support < 8: Our party won't support compromising our independence. ?]
+choose-if: schleicher_spd_r >= 5 and schleicher_spd_support >= 8
+
+Exploiting our unusually good relations with the chancellor, we have moved to strike a deal with him to block <span style="color: #7A3C00;">Nazi</span> entry into the cabinet. We have threatened mass action by organized labor and the withdrawal of the Reichsbanner from his plans. Yet Schleicher sees greater advantage in aligning with the <span style="color: #7A3C00;">Nazis</span> regardless, and we are negotiating from a position of weakness.
+
+What shall we give up?
+
+- @schleicher_soul
+- @schleicher_labor
+- @schleicher_reichsbanner
+
+@schleicher_soul
+title: Schleicher strengthens his grip over the <span style="color: #c00000;">**SPD**</span> leadership.
+subtitle: Our autonomy will be undermined.
+on-arrival: schleicher_spd_party = 1; schleicher_spd_influence += 4; dues -= 2 if dues > 1; workers_spd -= 4; workers_kpd += 2; new_middle_spd -= 4; new_middle_kpd += 4; left_dissent += 70; center_dissent += 50; reformist_strength += 20; labor_strength += 10; neorevisionist_strength -= 10; left_strength -= 20; center_strength -= 20; reformist_dissent += 20; neorevisionist_dissent += 40; labor_dissent += 40; nationalism += 20; pro_republic -= 10
+
+Schleicher demands that his "supporters" be installed in leadership positions within the <span style="color: #c00000;">**SPD**</span>, and that those already aligned with him, such as Braun, be elevated further within the party hierarchy.
+
+Furthermore, our commitments to pacifism, internationalism, and anti-militarism are being stripped out—not without backlash from our core interest groups.
+
+- @schleicher_dsu_nay_2
+
+@schleicher_labor
+title: The ADGB falls under state influence.
+subtitle: Class collaborationism will undermine the workers' power.
+on-arrival: schleicher_spd_labor = 1; schleicher_spd_influence += 3; workers_kpd += workers_spd*0.2; workers_spd *= 0.8; unemployed_kpd += unemployed_spd*0.2; unemployed_spd *= 0.8; dues -= 1 if dues > 1; labor_dissent += 40; labor_strength += 10; center_dissent += 40; left_dissent += 60; neorevisionist_dissent += 10; reformist_dissent += 10; pro_republic -= 10
+
+We have convinced the ADGB to appoint some sketchy pro-Schleicher unionists to many top positions in the organization. Only time will tell what Schleicher will instruct his followers to do, but we can guess it has something to do with class solidarity for the goal of Germany's rearmament.
+
+The working class is not entirely won over to the chancellor yet, and we stand to lose significant numbers of them to the <span style="color: #700000;">**KPD**</span>.
+
+- @schleicher_dsu_nay_2
+
+@schleicher_reichsbanner
+title: The Reichsbanner is integrated into the state.
+subtitle: We will be defenseless.
+on-arrival: schleicher_spd_para = 1; schleicher_spd_influence += 2; reichswehr_strength += 75; reichswehr_militancy -= (1 - rb_militancy); rb_militancy = 0.02; rb_strength = 300; sa_strength += 50; rfb_strength += 200; prussian_police_militancy = 1.5; prussian_police_strength += 15; workers_spd -= 4; unemployed_spd -= 6; new_middle_spd -= 2; workers_kpd += 2; unemployed_kpd += 4; neorevisionist_dissent += 60; neorevisionist_strength -= 10; labor_dissent += 30; center_dissent += 20; left_dissent += 50; reformist_dissent += 10; dues -= 1 if dues > 1; pro_republic -= 10
+
+The Reichsbanner has been largely disarmed, with Schleicher promising increased funding for the police to maintain order in the streets.
+
+The <span style="color: #c00000;">**SPD**</span> is demoralized, as many Reichsbanner members defect to the <span style="color: #700000;">**KPD**</span> and their <span style="color: #700000;">**RFB**</span>. We are now compelled to back the Reichswehr's auxiliaries in their campaigns against the <span style="color: #700000;">**Communists**</span>.
+
+- @schleicher_dsu_nay_2
+
+@schleicher_dsu_nay_2
+title: The <span style="color: #6A1E1E;">**DSU**</span> is kept away from government!
+subtitle: The <span style="color: #000000;">Center Party</span> has been flirting with a return to governance.
+on-arrival: {!
+Q.z_in_gov = 1;
+Q.schleicher_post = 1;
+Q.old_prussia_leader = Q.prussia_leader;
+Q.prussia_leader = "Goerdeler";
+Q.vice_chancellor = "Stegerwald";
+Q.workers_z += 2;
+Q.pro_republic += 5;
+
+Q.next_reichstag_time = Q.rubicon_time + 4;
+Q.next_reichstag_week = Q.week + 4;
+Q.next_reichstag_month = Q.month;
+Q.next_reichstag_year = Q.year;
+
+if (Q.next_reichstag_week > 4) {
+  Q.next_reichstag_week -= 4;
+  Q.next_reichstag_month += 1;
+}
+
+if (Q.next_reichstag_week > 4) {
+  Q.next_reichstag_week -= 4;
+  Q.next_reichstag_month += 1;
+}
+
+if (Q.next_reichstag_month > 12) {
+  Q.next_reichstag_month -= 12;
+  Q.next_reichstag_year += 1;
+}
+!}
+
+Schleicher has suspended talks with the <span style="color: #6A1E1E;">**DSU**</span> by deliberately creating an impasse over control of the Interior Ministry. In the meantime, the absence of <span style="color: #7A3C00;">Nazis</span> in the cabinet has made it tolerable for the <span style="color: #000000;">Center Party</span> to return to government, with Adam Stegerwald securing the Labor Ministry and the nominal Vice Chancellorship, alongside other members claiming the Transport and Justice portfolios.
+
+[? if old_prussia_leader == "Schleicher": The Prussian *Reichskommissar* post is also handed from Schleicher to Goerdeler—a signal that Schleicher has genuinely abandoned Papen's scheme for state centralization, and gestures toward an eventual return to democratic governance once stability is restored. Braun is overjoyed at this, and argues that only a break with Schleicher would change his mind. ?]
+
+The <span style="color: #FFCC00;">liberals</span> and minor bourgeois parties have also rallied behind Schleicher once again. As part of our arrangement, he acknowledges the <span style="color: #c00000;">**SPD**</span>'s need to remain in opposition—a necessary measure, as a <span style="color: #700000;">**Communist**</span> surge is an outcome neither of us desires.
 
 @hitler_chancellor
 on-arrival: chancellor = "Hitler"; chancellor_party = "NSDAP"

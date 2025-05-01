@@ -1,6 +1,6 @@
 title: Schleicher Faces a Vote of No Confidence!
 subtitle: Without a decree at the ready, the chancellor is doomed.
-view-if: chancellor = "Schleicher" and schleicher_time and next_reichstag_time == rubicon_time and next_reichstag_time > 0 
+view-if: chancellor = "Schleicher" and schleicher_time and next_reichstag_time == rubicon_time and next_reichstag_time > 0 and not schleicher_post
 on-arrival: reichstag_rubicon = 1
 new-page: true
 tags: event

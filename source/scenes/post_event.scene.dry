@@ -353,10 +353,11 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
         Q.schleicher_public_works_fast = 1;
     }
     if (Q.schleicher_time == 5 && Q.hugenberg_dvp) Q.hugenberg_dvp = 0;
+    if (Q.schleicher_time == 8) Q.schleicher_goal = "Regain public confidence";
     if (Q.schleicher_economy_time >= Q.rubicon_time) {
-        Q.unemployed -= 6/12;
-        Q.economic_growth += 3/12;
-        Q.inflation += 3/12;
+        Q.unemployed -= 3.5/12;
+        Q.economic_growth += 1.5/12;
+        Q.inflation += 1.5/12;
     }
     if (!Q.nazi_peak_triggered) {
         Q.nazi_peak_base = 25;
