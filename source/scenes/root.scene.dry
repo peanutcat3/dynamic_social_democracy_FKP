@@ -893,6 +893,7 @@ Q.schleicher_papen_r = 5;
 Q.schleicher_spd_r = 2;
 Q.schleicher_spd_support = 0;
 Q.schleicher_spd_influence = 0;
+Q.schleicher_approval = 2;
 
 Q.schleicher_strength = 5;
 Q.papen_strength = 1;

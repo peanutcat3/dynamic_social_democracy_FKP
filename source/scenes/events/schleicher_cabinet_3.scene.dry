@@ -1,7 +1,7 @@
 title: Schleicher's Backup Plan
 subtitle: With [+ nsdap_leader +] immovable, Schleicher seeks to unconstitutionally postpone elections.
 view-if: chancellor = "Schleicher" and schleicher_time == 6
-on-arrival: schleicher_spd_support -= 2; schleicher_spd_r -= 1
+on-arrival: schleicher_spd_support -= 2; schleicher_spd_r -= 1; schleicher_approval -= 2
 new-page: true
 tags: event
 priority: 2

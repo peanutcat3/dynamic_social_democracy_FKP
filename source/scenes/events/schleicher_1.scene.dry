@@ -1,6 +1,6 @@
 title: A Meeting Between the Reichswehr and <span style="color: #7A3C00;">**NSDAP**</span>
 subtitle: <span style="color: #c00000;">**SPD**</span> intelligence has obtained knowledge of a secret meeting...
-view-if: chancellor = "Papen" and papen_time == 8 and prussia_coup_lose
+view-if: chancellor = "Papen" and papen_time == 8
 on-arrival: red_general_unlock = 1
 new-page: true
 tags: event
@@ -23,8 +23,6 @@ on-display: {!
 Through our intelligence work, the <span style="color: #c00000;">**SPD**</span> has received a copy of minutes of a meeting between <span style="color: #7A3C00;">Nazi</span> leaders Gregor Strasser, Hermann Göring, and [? if not rohm_explode: Ernst Röhm?][? if rohm_explode: the leader of the <span style="color: #7A3C00;">**SA**</span>?], with former General Edwin von Stülpnagel, a close ally of Schleicher.
 
 The topic of the conference was about possible joint action between the Reichswehr and the <span style="color: #7A3C00;">**SA**</span>, if the leftists were to make a move following the elections.
-
-# TODO, prussia win version of schleichering
 
 - @schleicher
 

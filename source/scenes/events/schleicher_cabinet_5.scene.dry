@@ -57,7 +57,7 @@ At this stage, the options have narrowed to two: a return of Papen, or the ascen
 
 @schleicher_4
 title: The cabinet's last order of business.
-on-arrival: unemployed -= 2; economic_growth += 1; inflation += 2
+on-arrival: unemployed -= 2; economic_growth += 1; inflation += 2; schleicher_approval += 1
 
 After weeks of delay, Gereke finally presents his public works program to the cabinet. Though too late to save Schleicher’s tenure, it is approved by the chancellor and signed by Hindenburg without objection. The plan allocates half a billion marks to infrastructure projects across the Reich.
 
