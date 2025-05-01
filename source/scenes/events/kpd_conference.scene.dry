@@ -29,7 +29,6 @@ For now, Ernst Meyer has been elected leader of the <span style="color: #700000;
 
 @conciliator_fail
 title: Thälmann retains his leadership position.
-
 view-if: (kpd_relation < 39) 
 
 Unfortunately, we could not influence the <span style="color: #700000;">**KPD**</span> leadership election against the hardliners. Thälmann quickly moves to consolidate absolute leadership, expelling or exiling his opponents.
