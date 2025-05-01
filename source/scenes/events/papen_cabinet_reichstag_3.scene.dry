@@ -31,29 +31,81 @@ Yet, von Papen holds a card up his sleeve. Hindenburg has already secured a decr
 @reichstag
 title: The Reichstag goes into session.
 on-arrival: {!
-Q.papen_votes = Math.round((Q.dnvp_r + Q.dvp_r) * 10) / 10;
-Q.anti_papen_votes = Math.round((100 - Q.dnvp_r - Q.dvp_r) * 10) / 10;
+Q.papen_votes = 0;
+Q.anti_papen_votes = 0;
+
+if (Q.hugenberg_dvp) {
+    Q.papen_votes += Q.dvp_r;
+}
+if (Q.dnvp_ideology == "Radical") Q.papen_votes += Q.dnvp_r;
+if (Q.dnvp_ideology == "Moderate" && (Q.dnvp_leader == "Schiele" || Q.dnvp_leader == "Westarp" || Q.dnvp_leader == "Hergt")) {
+    Q.papen_votes += Q.dnvp_r;
+    Q.dnvp_papen = 1;
+}
+if (Q.dnvp_ideology == "Moderate") Q.papen_votes += Q.dnf_r;
+if (Q.kvp_formed && Q.schleicher_kvp) {
+    Q.papen_votes += Q.kvp_r;
+    Q.kvp_papen = 1;
+}
+Q.papen_votes = Math.round(Q.papen_votes * 10) / 10;
+Q.anti_papen_votes = Math.round((100 - Q.papen_votes) * 10) / 10;
 
 Q.new_middle_nsdap -= 3;
-Q.new_middle_dvp += 1;
-Q.new_middle_dnvp += 4;
+if (Q.hugenberg_dvp) Q.new_middle_dvp += 1;
+if (Q.dnvp_ideology == "Radical") Q.new_middle_dnvp += 4;
+if (Q.kvp_papen) {
+    Q.new_middle_kvp += 2;
+    Q.new_middle_dnvp -= 2;
+}
+Q.new_middle_dnf += 4;
+if (Q.dnvp_papen) {
+    Q.new_middle_dnvp += 3;
+    Q.new_middle_dnf -= 3;
+}
 
 Q.old_middle_nsdap -= 4;
-Q.old_middle_dnvp += 6;
+if (Q.dnvp_ideology == "Radical") Q.old_middle_dnvp += 6;
+if (Q.kvp_papen) {
+    Q.old_middle_kvp += 1;
+    Q.old_middle_dnvp -= 1;
+}
+Q.old_middle_dnf += 6;
+if (Q.dnvp_papen) {
+    Q.old_middle_dnvp += 2;
+    Q.old_middle_dnf -= 2;
+}
 
 Q.rural_nsdap -= 3;
-Q.rural_dnvp += 4;
+if (Q.dnvp_ideology == "Radical") Q.rural_dnvp += 4;
+if (Q.kvp_papen) {
+    Q.rural_kvp += 1;
+    Q.rural_dnvp -= 1;
+}
+Q.rural_dnf += 4;
+if (Q.dnvp_papen) {
+    Q.rural_dnvp += 2;
+    Q.rural_dnf -= 2;
+}
 
 Q.catholics_nsdap -= 5;
-Q.catholics_dnvp += 4;
-Q.catholics_dvp += 1;
+if (Q.hugenberg_dvp) Q.catholics_dvp += 1;
+if (Q.dnvp_ideology == "Radical") Q.catholics_dnvp += 4;
+if (Q.kvp_papen) {
+    Q.catholics_kvp += 3;
+    Q.catholics_dnvp -= 3;
+}
+Q.catholics_dnf += 5;
+if (Q.dnvp_papen) {
+    Q.catholics_dnvp += 4;
+    Q.catholics_dnf -= 4;
+}
 !}
 
 As expected, the <span style="color: #700000;">**Communists**</span> have secured unanimous approval for a change in the order of business to allow an immediate vote on a motion of no confidence against Papen, and not even the <span style="color: #3E88B3;">**DNVP**</span> was willing to lift a finger to prevent this. 
 
 With no objection, the vote was to begin just as Chancellor von Papen has arrived inside the Reichstag to present his emergency decree to the chamber, disrupting his plans to present both decrees at once. He had placed the folder on Reichstag President [? if reichstag_president == "Göring": Hermann Göring?][? if reichstag_president == "Löbe": Paul Löbe?][? if reichstag_president == "Eßer": Thomas Eßer?]'s desk, and demanded him to read it to the floor. However, [+ reichstag_president +] has trick up his sleeve: he could pretend he didn't see it and proceed with the no confidence motion anyway.
 
-In the end, Papen is defeated by a humiliating margin with [+ anti_papen_votes +]% of the Reichstag voting against him, only supported by the <span style="color: #3E88B3;">**DNVP**</span>[? if dvp_exist and not lvp_formed:&nbsp;and <span style="color: #C0A054;">**DVP**</span>?]. These two parties are expected to benefit from disillusioned conservative <span style="color: #7A3C00;">Nazi</span> voters, who had backed them under the impression they would support the Papen cabinet.
+In the end, Papen is defeated by a humiliating margin with [+ anti_papen_votes +]% of the Reichstag voting against him, only supported by the [? if dnvp_papen or dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span>?][? if (dnvp_ideology == "Moderate" and dnvp_papen) or kvp_papen:, ?][? if dnvp_ideology == "Moderate":<span style="color: #003755;">**DNF**</span>?][? if kvp_papen: <span style="color: #0087DC;">**KVP**</span>?][? if hugenberg_dvp:&nbsp;and <span style="color: #C0A054;">**DVP**</span>?]. These parties are expected to benefit from disillusioned conservative <span style="color: #7A3C00;">Nazi</span> voters, who had backed them under the impression they would support the Papen cabinet.
 
 - @reichstag_2
 

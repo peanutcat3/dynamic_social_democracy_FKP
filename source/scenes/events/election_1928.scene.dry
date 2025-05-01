@@ -1576,8 +1576,10 @@ subtitle: Schleicher will moderate their excesses, it's still a presidential gov
 on-arrival: {!
 Q.dsu_in_gov = 1;
 Q.schleicher_post = 1;
-Q.old_prussia_leader = Q.prussia_leader;
-Q.prussia_leader = "Strasser";
+if (Q.prussia_leader == "Schleicher") {
+    Q.old_prussia_leader = Q.prussia_leader;
+    Q.prussia_leader = "Strasser";
+}
 Q.vice_chancellor = "Strasser";
 Q.workers_nsdap += 3;
 Q.new_middle_nsdap += 3;
@@ -1667,8 +1669,10 @@ subtitle: The <span style="color: #000000;">Center Party</span> has been flirtin
 on-arrival: {!
 Q.z_in_gov = 1;
 Q.schleicher_post = 1;
-Q.old_prussia_leader = Q.prussia_leader;
-Q.prussia_leader = "Goerdeler";
+if (Q.prussia_leader == "Schleicher") {
+    Q.old_prussia_leader = Q.prussia_leader;
+    Q.prussia_leader = "Goerdeler";
+}
 Q.vice_chancellor = "Stegerwald";
 Q.workers_z += 2;
 Q.pro_republic += 5;
