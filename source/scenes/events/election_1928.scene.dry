@@ -214,7 +214,7 @@ if (!Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.2;
 if (Q.bavaria_spd) Q.bvp_votes = Q.z_votes*0.1;
 if (Q.bvp_votes > 3.6 && !Q.cvp_formed) {
     Q.bvp_votes = 3.6;
-} else if (Q.bvp_votes > 3.6 && Q.cvp_formed) {
+} else if (Q.bvp_votes > 3.9 && Q.cvp_formed) {
     Q.bvp_votes = 3.9;
 }
 Q.bvp_r = Q.bvp_votes*1.05;
