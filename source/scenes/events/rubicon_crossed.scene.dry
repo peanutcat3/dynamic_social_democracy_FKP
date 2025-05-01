@@ -107,7 +107,7 @@ on-display: {!
     contentDiv.appendChild(cardEl);
 !}
 set-bg: img/street.jpg
-audio: shuffle music/1930_1933/Backroom_Deal.ogg music/1930_1933/Ugly_American.mp3
+audio: music/1930_1933/Backroom_Deal.ogg music/1930_1933/Ugly_American.mp3
 
 = The Rubicon is Crossed
 
