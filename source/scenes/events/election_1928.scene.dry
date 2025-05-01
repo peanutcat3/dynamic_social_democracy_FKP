@@ -1093,7 +1093,7 @@ Surprisingly, the [? if z_party_name != "CVP": <span style="color: #000000;">Cen
 
 The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
 
-[? if president == "Hindenburg": Hindenburg might object to this coalition, and may perform a *Reichsexekution* on our Prussian government, if we were to become too radical in our actions.?]
+[? if president == "Hindenburg": Hindenburg might object to this coalition, and may perform a <i>Reichsexekution</i> on our Prussian government, if we were to become too radical in our actions.?]
 
 - @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
@@ -1108,7 +1108,7 @@ We have kicked out the <span style="color: #C0A054;">**DVP**</span> from the gov
 
 The right will be more active in resisting our rule considering we are going to rule with the <span style="color: #700000;">**KPD**</span> on both levels of government. The <span style="color: #700000;">**KPD**</span> has provided a list of objectives for us to complete in parallel to our federal policies.
 
-[? if president == "Hindenburg": Hindenburg might object to this coalition, and may perform a *Reichsexekution* on our Prussian government, if we were to become too radical in our actions.?]
+[? if president == "Hindenburg": Hindenburg might object to this coalition, and may perform a <i>Reichsexekution</i> on our Prussian government, if we were to become too radical in our actions.?]
 
 - @prussia_election_1928.kpd_goals_prussia: The <span style="color: #700000;">**KPD**</span> presents us with a list of demands.
 
@@ -1247,7 +1247,7 @@ go-to: left_coalition_success if in_popular_front_prussia or in_left_front_pruss
 
 @left_front_prussia
 
-The coalition negotiations were going relatively smoothly until the <span style="color: #700000;">**KPD**</span> bought up the topic of a reorganization of the Prussian government to include themselves. Previous United Left governments at the state level have faced *Reichsexekution* before, [? if president == "Hindenburg": and President Hindenburg will almost certainly do so again if we were to form one.?][? if president == "Braun": but it's unlikely Braun will repeat Ebert's mistakes.?] Despite this, the <span style="color: #700000;">**KPD**</span> are firm about their demands to be included.
+The coalition negotiations were going relatively smoothly until the <span style="color: #700000;">**KPD**</span> bought up the topic of a reorganization of the Prussian government to include themselves. Previous United Left governments at the state level have faced <i>Reichsexekution</i> before, [? if president == "Hindenburg": and President Hindenburg will almost certainly do so again if we were to form one.?][? if president == "Braun": but it's unlikely Braun will repeat Ebert's mistakes.?] Despite this, the <span style="color: #700000;">**KPD**</span> are firm about their demands to be included.
 
 *Something* must be done to restore balance, again.
 
@@ -1274,7 +1274,7 @@ go-to: left_coalition_success
 @left_front_prussia_weimar
 view-if: in_weimar_coalition_prussia
 title: Accept the <span style="color: #700000;">**KPD**</span>'s demands.
-unavailable-subtitle: [? if reformist_strength >= left_strength: Our party reformists rule out this option. ?] [? if president != "Braun": Hindenburg will perform a *Reichsexekution* upon our government. ?]
+unavailable-subtitle: [? if reformist_strength >= left_strength: Our party reformists rule out this option. ?] [? if president != "Braun": Hindenburg will perform a <i>Reichsexekution</i> upon our government. ?]
 choose-if: left_strength >= reformist_strength and president == "Braun"
 on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; in_left_front_prussia = 1; prussia_leader = "Rosenfeld"; reichswehr_loyalty -= 0.05; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 10; z_relation -= 5; ddp_relation -= 5; lvp_relation -= 7; dvp_relation -= 8; dvp_right += 5; ddp_right += 3; ddp_cohesion -= 3; lvp_right += 5; prussian_police_loyalty -= 0.1; rfb_militancy += 0.1; rfb_strength += 50; coup_progress += 1; capital_strike_progress += 1; reformist_dissent += 25; reformist_strength -= 10; left_dissent -= 10; left_strength += 10; prussia_negotiations_kpd_left_trigger = 1;
 
@@ -1287,7 +1287,7 @@ The right will be more active in resisting our rule considering we are going to 
 @left_front_prussia_groko
 view-if: in_grand_coalition_prussia
 title: Accept the <span style="color: #700000;">**KPD**</span>'s demands.
-unavailable-subtitle: [? if reformist_strength >= left_strength: Our party reformists rule out this option. ?] [? if president != "Braun": Hindenburg will perform a *Reichsexekution* upon our government. ?]
+unavailable-subtitle: [? if reformist_strength >= left_strength: Our party reformists rule out this option. ?] [? if president != "Braun": Hindenburg will perform a <i>Reichsexekution</i> upon our government. ?]
 choose-if: left_strength >= reformist_strength and president == "Braun"
 on-arrival: in_weimar_coalition_prussia = 0; in_grand_coalition_prussia = 0; in_minority_grand_coalition_prussia = 0; in_popular_front_prussia = 0; in_spd_majority_prussia = 0; in_minority_weimar_coalition_prussia = 0; in_left_front_prussia = 1; prussia_leader = "Rosenfeld"; reichswehr_loyalty -= 0.05; spd_prussia = 1; right_prussia = 0; kpd_goals_seen_prussia = 0; leverage += 5; kpd_relation += 10; z_relation -= 15; ddp_relation -= 15; dvp_relation -= 20; lvp_relation -= 20; reformist_dissent += 25; dvp_right += 8; ddp_right += 5; ddp_cohesion -= 5; lvp_right += 5; prussian_police_loyalty -= 0.1; rfb_militancy += 0.1; rfb_strength += 50; coup_progress += 1; capital_strike_progress += 1; reformist_strength -= 10; left_dissent -= 10; left_strength += 10; prussia_negotiations_kpd_left_trigger = 1;
 
