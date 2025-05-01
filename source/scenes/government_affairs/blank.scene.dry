@@ -1,4 +1,4 @@
-title: &nbsp;
+title:      
 on-arrival: month_actions += 1
 view-if: chancellor == "Schleicher" and schleicher_time and schleicher_spd_influence >= 2
 card-image: img/black.jpg
