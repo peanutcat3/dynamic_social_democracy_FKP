@@ -16,7 +16,7 @@ The <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA
 @ban_march
 choose-if: judicial_reform >= 2
 unavailable-subtitle: The judiciary would not allow us to ban the protest, because of free speech.
-on-arrival: sa_strength -= 10; altona_banned = 1
+on-arrival: sa_strength -= 10; altona_good = 1
 
 We have banned the planned protest. The <span style="color: #7A3C00;">Nazis</span> appeal the ban in the courts in the name of freedom of speech. Thankfully, the judiciary agrees with us that the <span style="color: #7A3C00;">Nazis</span>' argument is specious.
 
@@ -32,7 +32,7 @@ When the march arrives in Altona, they are immediately confronted by an angry cr
 This incident has been called "Altona Bloody Sunday" in the media. The <span style="color: #700000;">Communists</span> assail the incompetence of the police, who are supposedly under our command.
 
 @allow_police_no_violence
-on-arrival: sa_strength += 10
+on-arrival: altona_good = 1; sa_strength += 10
 
 When the march arrives in Altona, they are immediately confronted by an angry crowd of <span style="color: #700000;">communists</span> and <span style="color: #c00000;">socialists</span>, who throw objects at the <span style="color: #7A3C00;">Nazis</span>. The police attempt to separate the two groups, to no avail. Gunshots are heard, reportedly from rooftop snipers. The police manage to keep their cool, the shots stop, and the march disperses without further violence.
 
