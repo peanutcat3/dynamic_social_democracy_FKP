@@ -4,7 +4,7 @@ view-if: year >= 1930 and president = "Hindenburg" and spd_in_government and not
 on-arrival: schleicher_wtb_proposal_seen = 1
 new-page: true
 max-visits: 1
-tags: event
+#tags: event
 face-image: img/portraits/SchleicherKurt.jpg
 
 = Schleicher's Proposal

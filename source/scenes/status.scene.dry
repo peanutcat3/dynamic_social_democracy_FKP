@@ -115,6 +115,7 @@ Q.pro_republic_disp = Math.round(Q.pro_republic);
 Method of governing: Presidential decrees
 [? if chancellor == "Papen": Hindenburg's confidence: [+ hindenburg_papen_r : confidence +] ?]
 [? if chancellor == "Schleicher": Hindenburg's confidence: [+ hindenburg_schleicher_r : confidence +] ?]
+[? if chancellor == "Schleicher": Schleicher's public popularity: [+ hindenburg_schleicher_r : schleicher_popularity +] ?]
 [? if chancellor == "Papen": Schleicher's confidence: [+ schleicher_papen_r : confidence +] ?]<br>
 [? if red_general_unlock: Schleicher-<span style="color: #c00000;">**SPD**</span> relations: [+ schleicher_spd_r : schleicher_spd +] ?]
 [? if reichswehr_strength > 100 and chancellor == "Schleicher": Reichswehr: 100 thousand troops. <br> ?]
