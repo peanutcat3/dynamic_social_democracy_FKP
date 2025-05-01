@@ -30,7 +30,7 @@ Brandler = (radicalism_KPD * 0.8) + (right_KPD * 1.5) + (left_KPD * 0.8) + ((2 -
 if (Schulte == Brandler && Schulte >= Thalmann) {
     Q.KPD_winner = "Meyer_Levine";
 }
-if (Maslow_Fisher == Brandler && Schulte < Thalmann) {
+if (Schulte == Brandler && Schulte < Thalmann) {
     Q.KPD_winner = "Thalmann";
 } 
 
