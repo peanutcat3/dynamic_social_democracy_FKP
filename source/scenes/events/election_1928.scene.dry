@@ -564,6 +564,20 @@ if (Q.hitler_right_coalition >= 50 && Q.rubicon) {
     if (!Q.hitler_right_coalition_time) Q.hitler_right_coalition_time = Q.time;
 }
 
+if (Q.change_nsdap_votes < -2 && Q.rubicon) {
+    if (!Q.nsdap_decline_time) Q.nsdap_decline_time = Q.time;
+}
+
+if ((Q.spd_votes < 20 && Q.schleicher_spd_r >= 3) || (Q.spd_votes < 25 && Q.spd_votes > 20 && Q.schleicher_spd_r >= 4)) {
+    Q.schleicher_r_spd -= 2;
+    if (Q.schleicher_spd_r >= 6) Q.schleicher_r_spd -= 2;
+    Q.schleicher_spd_support -= 4;
+    Q.schleicher_spd_influence -= 1;
+    Q.center_dissent += 5;
+    Q.left_dissent += 5;
+    Q.neorevisionist_dissent += 5;
+}
+
 var lippe_adjustment_factors = {
     spd: 1.32,
     sapd: 0.4,
@@ -987,7 +1001,9 @@ go-to: coalition_menu
 
 [? if hitler_right_coalition >= 50 and rubicon and hitler_right_coalition_time == time: The <span style="color: #000000;">Center Party</span> and its <span style="color: #A2D8E0;">Bavarian</span> counterpart, together with the <span style="color: #7A3C00;">**NSDAP**</span>, constitute a majority in the Reichstag. This has sparked rumors of a potential parliamentary-backed Black-Brown coalition that could unseat [+ chancellor +]—rumors that are unlikely to materialize, as the ideological gulf between the <span style="color: #7A3C00;">Nazis</span> and the constitutionalist <span style="color: #000000;">Center Party</span> remains vast. ?]
 
-[? if change_nsdap_votes < -2 and rubicon: The <span style="color: #7A3C00;">Nazis</span> have finally declined. Many who once backed the movement as a protest vote never actually wanted them in power, while others have simply stayed home. Disillusioned conservatives and religious voters have drifted back to the conservative and middle parties to their left. Perhaps the <span style="color: #7A3C00;">Nazis</span> have peaked—they cannot win new voters without alienating their existing base. ?]
+[? if change_nsdap_votes < -2 and rubicon and nsdap_decline_time == time: The <span style="color: #7A3C00;">Nazis</span> have finally declined. Many who once backed the movement as a protest vote never actually wanted them in power, while others have simply stayed home. Disillusioned conservatives and religious voters have drifted back to the conservative and middle parties to their left. Perhaps the <span style="color: #7A3C00;">Nazis</span> have peaked—they cannot win new voters without alienating their existing base. ?]
+
+[? if spd_votes < 20 and schleicher_spd_r >= 3: Our poor electoral results have led Schleicher to question the wisdom of collaborating with a party on the brink, one that can’t even secure a fifth of the vote. Many within our own party now blame our ties with the <span style="color: #808080;">reactionary</span> general as a major factor behind our disappointing electoral results. ?][? if spd_votes < 25 and spd_votes > 20 and schleicher_spd_r >= 5: Our poor electoral results have led Schleicher to question the wisdom of collaborating with a party on the brink, one that can’t even secure a quarter of the vote. Many within our own party now blame our ties with the <span style="color: #808080;">reactionary</span> general as a major factor behind our disappointing electoral results. ?]
 
 There are some potential coalition arrangements.
 
@@ -1585,6 +1601,10 @@ Q.workers_nsdap += 3;
 Q.new_middle_nsdap += 3;
 Q.unemployed_nsdap += 3;
 
+Q.schleicher_approval += (Q.nsdap_votes / 10);
+Q.schleicher_approval -= (Q.spd_votes / 10);
+Q.schleicher_approval = Math.round(Q.schleicher_approval);
+
 Q.next_reichstag_time = Q.rubicon_time + 4;
 Q.next_reichstag_week = Q.week + 4;
 Q.next_reichstag_month = Q.month;
@@ -1677,6 +1697,10 @@ Q.vice_chancellor = "Stegerwald";
 Q.workers_z += 2;
 Q.pro_republic += 5;
 
+Q.schleicher_approval += ((Q.z_votes + Q.spd_votes) / 10);
+Q.schleicher_approval -= (Q.nsdap_votes / 10);
+Q.schleicher_approval = Math.round(Q.schleicher_approval);
+
 Q.next_reichstag_time = Q.rubicon_time + 4;
 Q.next_reichstag_week = Q.week + 4;
 Q.next_reichstag_month = Q.month;
@@ -1700,7 +1724,7 @@ if (Q.next_reichstag_month > 12) {
 
 Schleicher has suspended talks with the <span style="color: #6A1E1E;">**DSU**</span> by deliberately creating an impasse over control of the Interior Ministry. In the meantime, the absence of <span style="color: #7A3C00;">Nazis</span> in the cabinet has made it tolerable for the <span style="color: #000000;">Center Party</span> to return to government, with Adam Stegerwald securing the Labor Ministry and the nominal Vice Chancellorship, alongside other members claiming the Transport and Justice portfolios.
 
-[? if old_prussia_leader == "Schleicher": The Prussian *Reichskommissar* post is also handed from Schleicher to Goerdeler—a signal that Schleicher has genuinely abandoned Papen's scheme for state centralization, and gestures toward an eventual return to democratic governance once stability is restored. Braun is overjoyed at this, and argues that only a break with Schleicher would change his mind. ?]
+[? if old_prussia_leader == "Schleicher": The Prussian <i>Reichskommissar</i> post is also handed from Schleicher to Goerdeler—a signal that Schleicher has genuinely abandoned Papen's scheme for state centralization, and gestures toward an eventual return to democratic governance once stability is restored. Braun is overjoyed at this, and argues that only a break with Schleicher would change his mind. ?]
 
 The <span style="color: #FFCC00;">liberals</span> and minor bourgeois parties have also rallied behind Schleicher once again. As part of our arrangement, he acknowledges the <span style="color: #c00000;">**SPD**</span>'s need to remain in opposition—a necessary measure, as a <span style="color: #700000;">**Communist**</span> surge is an outcome neither of us desires.
 
