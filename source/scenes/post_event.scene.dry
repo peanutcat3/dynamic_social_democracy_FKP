@@ -309,6 +309,7 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
     }
     if (Q.chancellor == "Papen") {
         Q.papen_time += 1;
+        if (Q.marburg_trigger) Q.marburg_time += 1;
     }
     if (Q.chancellor == "Schleicher") {
         Q.schleicher_time += 1;

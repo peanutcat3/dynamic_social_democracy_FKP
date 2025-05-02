@@ -887,6 +887,8 @@ Q.schleicher_post = 0;
 Q.schleicher_spd_concession = 0;
 Q.dsu_interior = 0;
 Q.mefo_bills = 0;
+Q.marburg_time = 0;
+Q.marburg_trigger = 0;
 
 // rubicon
 Q.hindenburg_schleicher_r = 5;
