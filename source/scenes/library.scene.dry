@@ -822,7 +822,7 @@ if (d3 && window) {
 {!<table>!}
 [? if not dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div></td><td>!} **SPD:** {!</td><td>!} **[+ spd_r +]%** {!</td></tr>!} ?][? if dnef_formed: {!<tr><td><div class="box" style='background-color:#5C1C67; outline: 2px; outline-style: solid;'> </div></td><td> !} **DNEF:** {!</td><td>!} **[+ dnef_r +]%** {!</td></tr>!} ?]
 
-[? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div> !} SPD: {!</td><td>!} [+ spd_votes +]% {!</td><td>!} [+ str_votes_change_spd +] {!</td><td>!} [+ spd_r +]% {!</td><td>!} [+ str_change_spd +] {!</td></tr>!} ?]
+[? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div></td><td>!} SPD: {!</td><td>!} [+ spd_r +] {!</td></tr>!} ?]
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div></td> <td> !}SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
