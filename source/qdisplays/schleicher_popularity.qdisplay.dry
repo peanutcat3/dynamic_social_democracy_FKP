@@ -5,3 +5,5 @@
 (6..8) <span style="color: #EBD97D;">favorable</span>
 (8..10) <span style="color: #A8D5BA;">strong</span>
 (10..) <span style="color: #A2DBAD;">very strong</span>
+
+#TODO, fix ts not working, and schleicher name colour
