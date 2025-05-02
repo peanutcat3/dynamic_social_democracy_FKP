@@ -15,7 +15,7 @@ The <span style="color: #808080;">reactionary</span> right will never win over t
 
 In the past, Schleicher flirted with the idea of building a new "presidential party"—a direct vehicle for rallying public support behind his cabinet. Until now, he had taken no concrete steps. But with new ties to the working class and the moderate forces on the German Right, he now has an opportunity to bring such a party to life with the elections coming up.
 
-- @schleicher_2: The <i>Deutschnationale Einheitsfront</i> (<span style="color: #5C1C67;">German National Unity Front</span>, <span style="color: #5C1C67;">**DNEF**</span>) is formed!
+- @schleicher_2: The <i>Deutschnationale Einheitsfront</i> (<span style="color: #BFC8CC;">German National Unity Front</span>, <span style="color: #BFC8CC;">**DNEF**</span>) is formed!
 
 @schleicher_2
 on-arrival: dnef_formed = 1; chancellor_party = "DNEF"
