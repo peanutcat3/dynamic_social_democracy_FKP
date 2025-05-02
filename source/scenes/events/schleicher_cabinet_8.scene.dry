@@ -83,3 +83,13 @@ Q.mefo_bills = 1;
 Despite Hjalmar Schacht not being a Keynesian, he understands that large scale public works and state funded projected are the way out of Germany's slump, and for Germany to retake its great power status on the international stage. He believes that, since <span style="color: #002654;">France</span> and <span style="color: #C8102E;">Britain</span> are preoccupied with their own economic woes, the time is right for a mass industrialization and rearmament program.
 
 The construction of the "Autobahn", a new nationwide highway system, by poorly paid workers has begun, as an expansion of Schleicher's public works plans. A new innovative method for disguising rearmament has also been devised, a "MEFO bill", a system of promissory notes issued through a dummy company to secretly fund arms production while keeping the spending off the official government budget. However, he insists that a revival of Germany's economy should take precedent over rearmament.
+
+- @reichsbank
+
+@reichsbank
+title: What will the Reichsbank say?
+subtitle: Reichsbank President - [? if luther_reichsbank: Hans Luther?][? if not luther_reichsbank: Friedrich Dreyse?]
+
+The Reichsbank, long known for its strict fiscal conservatism and obsessive anti-inflation stance, had already slashed Schleicher's initial public works decree by 15%. So, it was no surprise when news of even greater government spending met with their disapproval.
+
+However, the endorsement of the campaign by Hjalmar Schacht—a respected banker and former Reichsbank President credited with ending hyperinflation—has done much to calm the business community. Under government pressure, the Reichsbank is ultimately coerced into backing the plan.
