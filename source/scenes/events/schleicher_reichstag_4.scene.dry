@@ -34,7 +34,7 @@ title: The Reichstag goes into session.
 on-arrival: {!
 Q.schleicher_votes += Q.dvp_r;
 Q.schleicher_votes += Q.other_r;
-if (Q.dnvp_ideology == "Moderate) Q.schleicher_votes += Q.dnvp_r;
+if (Q.dnvp_ideology == "Moderate") Q.schleicher_votes += Q.dnvp_r;
 Q.schleicher_votes += Q.kvp_r;
 if (Q.dsu_exist && Q.dsu_r) Q.schleicher_votes += Q.dsu_r;
 
