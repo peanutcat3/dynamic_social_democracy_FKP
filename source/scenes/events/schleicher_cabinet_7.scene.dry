@@ -20,6 +20,7 @@ Q.schleicher_approval += 2;
 new-page: true
 priority: -1
 max-visits: 1
+tags: event
 face-image: img/Reichswehr.jpg
 
 = Reichswehr Militia Deployed!

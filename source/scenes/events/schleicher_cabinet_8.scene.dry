@@ -7,6 +7,7 @@ Q.dsu_policy_timer += 6;
 max-visits: 4
 new-page: true
 priority: -1
+tags: event
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
