@@ -731,6 +731,10 @@ th {
   fill: #FFCC00;
 }
 
+.seat.dnef {
+  fill: #5C1C67;
+}
+
 .seat.farm {
   fill: #38C538;
 }

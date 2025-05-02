@@ -464,6 +464,11 @@ if (Q.lvp_formed) {
     Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.ddp_r + Q.sapd_r).toFixed(1));
 }
 
+if (Q.dnef_formed) {
+    Q.schleicher_right_coalition = parseFloat((Q.dnef_r + Q.lvp_r + Q.dvp_r + Q.ddp_r + Q.z_r + Q.other_r + Q.kvp_r + Q.dnvp_r + Q.dnf_r + Q.dsu_r).toFixed(1));
+    Q.schleicher_left_coalition = parseFloat((Q.dnef_r + Q.spd_r + Q.lvp_r + Q.dvp_r + Q.ddp_r + Q.z_r).toFixed(1));
+}
+
 if (Q.kpd_relation >= 30 && Q.sapd_formed == 1) {
     Q.weimar_coalition += Q.sapd_r;
 }
@@ -678,6 +683,15 @@ if (Q.dvp_r && !Q.lvp_formed && Q.dvp_exist) {
     });
 }
 
+if (Q.dnef_r && Q.dnef_formed) {
+    data.push({
+        "id": "dnef",
+        "legend": "DNEF",
+        "name": "DNEF",
+        "seats": Math.round(Q.dnef_r * 5),
+    });
+}
+
 if (Q.other_r) {
     data.push({
         "id": "other",
@@ -767,8 +781,8 @@ if (window && d3) {
 
     var lines = d3.linegraph(false, false,
             Q.parties_graph,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP'});
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#5C1C67'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     d3.select("#election_history").datum(Q.election_records).call(lines);
@@ -778,8 +792,8 @@ if (window && d3) {
     if (!Q.historical_mode) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties_graph,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP'});
+            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#5C1C67'},
+            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -793,7 +807,9 @@ go-to: coalition_menu
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Reichstag Seats</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_votes +]%** {!</td><td>!} **[+ str_votes_change_spd +]** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!}
+[? if not dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_votes +]%** {!</td><td>!} **[+ str_votes_change_spd +]** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!} ?][? if dnef_formed: {!<tr><td><div class="box" style='background-color:#5C1C67; outline: 2px; outline-style: solid;'> </div> !} **DNEF:** {!</td><td>!} **[+ dnef_votes +]%** {!</td><td>!} **[+ str_votes_change_dnef +]** {!</td><td>!} **[+ dnef_r +]%** {!</td><td>!} **[+ str_change_dnef +]** {!</td></tr>!} ?]
+
+[? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div> !} SPD: {!</td><td>!} [+ spd_votes +]% {!</td><td>!} [+ str_votes_change_spd +] {!</td><td>!} [+ spd_r +]% {!</td><td>!} [+ str_change_spd +] {!</td></tr>!} ?]
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_votes +]% {!</td><td>!} [+ str_votes_change_sapd +] {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
@@ -842,6 +858,15 @@ go-to: coalition_menu
             {!<th>Unemployed</th>!}
             {!<th>Catholics</th>!}
         {!</tr>!}
+        [? if dnef_formed: {!<tr>!}
+            {!<td><span style="color: #5C1C67;">!}**DNEF**{!</span></td>!}
+            {!<td style="background-color: rgba(92, 28, 103, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_dnef_display +]%[? if n_elections != 1 and demo_change_workers_dnef_display != 0 : ([+ demo_change_workers_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ new_middle_dnef_display +]%[? if n_elections != 1 and demo_change_new_middle_dnef_display != 0 : ([+ demo_change_new_middle_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ old_middle_dnef_display +]%[? if n_elections != 1 and demo_change_old_middle_dnef_display != 0 : ([+ demo_change_old_middle_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ rural_dnef_display +]%[? if n_elections != 1 and demo_change_rural_dnef_display != 0 : ([+ demo_change_rural_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ unemployed_dnef_display +]%[? if n_elections != 1 and demo_change_unemployed_dnef_display != 0 : ([+ demo_change_unemployed_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ catholics_dnef_display +]%[? if n_elections != 1 and demo_change_catholics_dnef_display != 0 : ([+ demo_change_catholics_dnef_display +])?]{!</td>!}
+        {!</tr>!}?]
         {!<tr>!}
             {!<td><span style="color: #c00000;"><b>SPD</b></span></td>!}
             {!<td style="background-color: rgba(192, 0, 0, 0.1); font-size: 0.85em; padding: 10px">!}[+ workers_spd_display +]%[? if n_elections != 1 and demo_change_workers_spd_display != 0 : ([+ demo_change_workers_spd_display +])?]{!</td>!}
@@ -988,6 +1013,10 @@ go-to: coalition_menu
 [? if dnvp_ideology == "Radical" or lvp_formed and not cvp_formed: Right-wing Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others**[? if not cvp_formed:&nbsp;+ <span style="color: #3E88B3;">**DNVP**</span>?]): [+ right_coalition +]% ?]
 
 [? if (cvp_formed and far_right_coalition >= 25) or (hitler_right_coalition >= 50 and rubicon): Black-Brown Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ hitler_right_coalition +]% ?]
+
+[? if dnef_formed: Schleicher Right Coalition (<span style="color: #5C1C67;">**DNEF**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?] + **Others** + [? if kvp_formed: <span style="color: #0087DC;">**KVP**</span> + ?]<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #003755;">**DNF**</span>[? if dsu_exist:&nbsp;+ <span style="color: #6A1E1E;">**DSU**</span>?]): [+ schleicher_right_coalition +]% ?]
+
+[? if dnef_formed: Schleicher Left Coalition (<span style="color: #5C1C67;">**DNEF**</span> + <span style="color: #c00000;">**SPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span> + [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]): [+ schleicher_left_coalition +]% ?]
 
 [? if dnvp_ideology == "Radical" and far_right_coalition >= 35 and not cvp_formed: <span style="color: #7A3C00;">Far</span>-<span style="color: #3E88B3;">right</span> Coalition ([?  if hugenberg_dvp: <span style="color: #C0A054;">**DVP**</span> + ?]<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ far_right_coalition +]% ?]
 
