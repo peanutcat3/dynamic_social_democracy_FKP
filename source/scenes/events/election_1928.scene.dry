@@ -613,6 +613,8 @@ if ((Q.spd_votes < 20 && Q.schleicher_spd_r >= 3) || (Q.spd_votes < 25 && Q.spd_
     Q.neorevisionist_dissent += 5;
 }
 
+if (Q.dnef_formed) Q.hindenburg_schleicher_r += Math.round((Q.dnef_votes / 10) * 10) / 10;
+
 var lippe_adjustment_factors = {
     spd: 1.32,
     sapd: 0.4,
@@ -843,9 +845,7 @@ go-to: coalition_menu
 
 [? if kvp_formed and not cvp_kvp_formed and kvp_dnef: {!<tr><td><div class="box" style='background-color:#0072C0'> </div> !}KVP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
 
-[? if dnef_formed: <hr id="read-marker"> ?]
-
-[? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div> !} SPD: {!</td><td>!} [+ spd_votes +]% {!</td><td>!} [+ str_votes_change_spd +] {!</td><td>!} [+ spd_r +]% {!</td><td>!} [+ str_change_spd +] {!</td></tr>!} ?]
+[? if dnef_formed: {!<hr id="read-marker">!} {!<tr><td><div class="box" style='background-color:#E3000F;'> </div> !} SPD: {!</td><td>!} [+ spd_votes +]% {!</td><td>!} [+ str_votes_change_spd +] {!</td><td>!} [+ spd_r +]% {!</td><td>!} [+ str_change_spd +] {!</td></tr>!} ?]
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_votes +]% {!</td><td>!} [+ str_votes_change_sapd +] {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
