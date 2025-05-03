@@ -36,6 +36,23 @@ Let us hope this does not backfire.
 
 @post_election_1928
 on-arrival: {!  
+    if (Q.dstp_dnef) {
+        Q.workers_ddp = 0;
+        Q.new_middle_ddp = 0;
+        Q.old_middle_ddp = 0;
+        Q.rural_ddp = 0;
+        Q.unemployed_ddp = 0;
+        Q.catholics_ddp = 0;
+
+        Q.ddp_votes = 0;
+
+        Q.ddp_relation = Q.dnef_relation;
+
+        if (Q.ddp_r) {
+            Q.dnef_r += Q.ddp_r;
+            Q.ddp_r = 0;
+        }
+    }
     Q.pre_previous_z_last_election_votes = Q.previous_z_last_election_votes;
     var new_party_sum = 0;
     var total_reichstag_without = 0;  // Initialize a variable to accumulate 'reichstag_without_' values
@@ -817,10 +834,16 @@ go-to: coalition_menu
 = Election results
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
-
+[? if dstp_dnef or kvp_dnef: Votes for other parties in the <span style="color: #BFC8CC;">German National Unity Front</span> organization are counted toward the party itself for simplicity's sake. ?]
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Reichstag Seats</td><td>% Change</td></tr>!}
 [? if not dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_votes +]%** {!</td><td>!} **[+ str_votes_change_spd +]** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!} ?][? if dnef_formed: {!<tr><td><div class="box" style='background-color:#BFC8CC; outline: 2px; outline-style: solid;'> </div> !} **DNEF:** {!</td><td>!} **[+ dnef_votes +]%** {!</td><td>!} **[+ str_votes_change_dnef +]** {!</td><td>!} **[+ dnef_r +]%** {!</td><td>!} **[+ str_change_dnef +]** {!</td></tr>!} ?]
+
+[? if not lvp_formed and dstp_dnef: {!<tr><td><div class="box" style='background-color:#A79A3F'> </div> !} [+ ddp_name +]: {!</td><td>!} 0% {!</td><td>!} [+ str_votes_change_ddp +] {!</td><td>!} 0% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!} ?]
+
+[? if kvp_formed and not cvp_kvp_formed and kvp_dnef: {!<tr><td><div class="box" style='background-color:#0072C0'> </div> !}KVP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
+
+[? if dnef_formed: <hr id="read-marker"> ?]
 
 [? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div> !} SPD: {!</td><td>!} [+ spd_votes +]% {!</td><td>!} [+ str_votes_change_spd +] {!</td><td>!} [+ spd_r +]% {!</td><td>!} [+ str_change_spd +] {!</td></tr>!} ?]
 
@@ -828,7 +851,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_votes +]% {!</td><td>!} [+ str_votes_change_kpd +] {!</td><td>!} [+ kpd_r +]% {!</td><td>!} [+ str_change_kpd +] {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_votes +]% {!</td><td>!} [+ str_votes_change_ddp +] {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!} ?]
+[? if not lvp_formed and not dstp_dnef: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_votes +]% {!</td><td>!} [+ str_votes_change_ddp +] {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!} ?]
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_votes +]% {!</td><td>!} [+ str_votes_change_lvp +] {!</td><td>!} [+ lvp_r +]% {!</td><td>!} [+ str_change_lvp +] {!</td></tr>!} ?]
 
@@ -840,7 +863,7 @@ go-to: coalition_menu
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
-[? if kvp_formed and not cvp_kvp_formed: {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
+[? if kvp_formed and not cvp_kvp_formed and not kvp_dnef: {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
 
 [? if not cvp_formed: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_votes +]% {!</td><td>!} [+ str_votes_change_dnvp +] {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}?]
 
