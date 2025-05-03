@@ -53,6 +53,36 @@ on-arrival: {!
             Q.ddp_r = 0;
         }
     }
+    if (Q.kvp_dnef) {
+        Q.workers_kvp = 0;
+        Q.new_middle_kvp = 0;
+        Q.old_middle_kvp = 0;
+        Q.rural_kvp = 0;
+        Q.unemployed_kvp = 0;
+        Q.catholics_kvp = 0;
+
+        Q.kvp_votes = 0;
+
+        if (Q.kvp_r) {
+            Q.dnef_r += Q.kvp_r;
+            Q.kvp_r = 0;
+        }
+    }
+    if (Q.dvp_dnef) {
+        Q.workers_dvp = 0;
+        Q.new_middle_dvp = 0;
+        Q.old_middle_dvp = 0;
+        Q.rural_dvp = 0;
+        Q.unemployed_dvp = 0;
+        Q.catholics_dvp = 0;
+
+        Q.dvp_votes = 0;
+
+        if (Q.dvp_r) {
+            Q.dnef_r += Q.dvp_r;
+            Q.dvp_r = 0;
+        }
+    }
     Q.pre_previous_z_last_election_votes = Q.previous_z_last_election_votes;
     var new_party_sum = 0;
     var total_reichstag_without = 0;  // Initialize a variable to accumulate 'reichstag_without_' values
@@ -841,7 +871,9 @@ go-to: coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Reichstag Seats</td><td>% Change</td></tr>!}
 [? if not dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_votes +]%** {!</td><td>!} **[+ str_votes_change_spd +]** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!} ?][? if dnef_formed: {!<tr><td><div class="box" style='background-color:#BFC8CC; outline: 2px; outline-style: solid;'> </div> !} **DNEF:** {!</td><td>!} **[+ dnef_votes +]%** {!</td><td>!} **[+ str_votes_change_dnef +]** {!</td><td>!} **[+ dnef_r +]%** {!</td><td>!} **[+ str_change_dnef +]** {!</td></tr>!} ?]
 
-[? if not lvp_formed and dstp_dnef: {!<tr><td><div class="box" style='background-color:#A79A3F'> </div> !} [+ ddp_name +]: {!</td><td>!} 0% {!</td><td>!} [+ str_votes_change_ddp +] {!</td><td>!} 0% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!} ?]
+[? if not lvp_formed and dstp_dnef: {!<tr><td><div class="box" style='background-color:#A79A3F'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_votes +]% {!</td><td>!} [+ str_votes_change_ddp +] {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!} ?]
+
+[? if not lvp_formed and dvp_exist and dvp_dnef: {!<tr><td><div class="box" style='background-color:#AA861F'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
 
 [? if kvp_formed and not cvp_kvp_formed and kvp_dnef: {!<tr><td><div class="box" style='background-color:#0072C0'> </div> !}KVP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
 
@@ -861,7 +893,7 @@ go-to: coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#A2D8E0'> </div> !} BVP: {!</td><td>!} [+ bvp_votes +]% {!</td><td>!} [+ str_votes_change_bvp +] {!</td><td>!} [+ bvp_r +]% {!</td><td>!} [+ str_change_bvp +] {!</td></tr>!}
 
-[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
+[? if not lvp_formed and dvp_exist and not dvp_dnef: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
@@ -898,12 +930,12 @@ go-to: coalition_menu
         {!</tr>!}
         [? if dnef_formed: {!<tr>!}
             {!<td><span style="color: #BFC8CC;">!}**DNEF**{!</span></td>!}
-            {!<td style="background-color: rgba(92, 28, 103, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_dnef_display +]%[? if n_elections != 1 and demo_change_workers_dnef_display != 0 : ([+ demo_change_workers_dnef_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ new_middle_dnef_display +]%[? if n_elections != 1 and demo_change_new_middle_dnef_display != 0 : ([+ demo_change_new_middle_dnef_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ old_middle_dnef_display +]%[? if n_elections != 1 and demo_change_old_middle_dnef_display != 0 : ([+ demo_change_old_middle_dnef_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ rural_dnef_display +]%[? if n_elections != 1 and demo_change_rural_dnef_display != 0 : ([+ demo_change_rural_dnef_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ unemployed_dnef_display +]%[? if n_elections != 1 and demo_change_unemployed_dnef_display != 0 : ([+ demo_change_unemployed_dnef_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(92, 28, 103, 0.2); font-size: 0.85em;">!}[+ catholics_dnef_display +]%[? if n_elections != 1 and demo_change_catholics_dnef_display != 0 : ([+ demo_change_catholics_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(191, 200, 204, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_dnef_display +]%[? if n_elections != 1 and demo_change_workers_dnef_display != 0 : ([+ demo_change_workers_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(191, 200, 204, 0.2); font-size: 0.85em;">!}[+ new_middle_dnef_display +]%[? if n_elections != 1 and demo_change_new_middle_dnef_display != 0 : ([+ demo_change_new_middle_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(191, 200, 204, 0.2); font-size: 0.85em;">!}[+ old_middle_dnef_display +]%[? if n_elections != 1 and demo_change_old_middle_dnef_display != 0 : ([+ demo_change_old_middle_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(191, 200, 204, 0.2); font-size: 0.85em;">!}[+ rural_dnef_display +]%[? if n_elections != 1 and demo_change_rural_dnef_display != 0 : ([+ demo_change_rural_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(191, 200, 204, 0.2); font-size: 0.85em;">!}[+ unemployed_dnef_display +]%[? if n_elections != 1 and demo_change_unemployed_dnef_display != 0 : ([+ demo_change_unemployed_dnef_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(191, 200, 204, 0.2); font-size: 0.85em;">!}[+ catholics_dnef_display +]%[? if n_elections != 1 and demo_change_catholics_dnef_display != 0 : ([+ demo_change_catholics_dnef_display +])?]{!</td>!}
         {!</tr>!}?]
         {!<tr>!}
             {!<td><span style="color: #c00000;"><b>SPD</b></span></td>!}

@@ -338,12 +338,12 @@ go-to: menu
         </tr>
         [? if dnef_formed: {!<tr>!}
             <td><span style="color: #BFC8CC;">**DNEF**</span></td>
-            <td style="background-color: rgba(92, 28, 103, 0.2); padding: 10px;">[+ workers_dnef_display +]%</td>
-            <td style="background-color: rgba(92, 28, 103, 0.2);">[+ new_middle_dnef_display +]%</td>
-            <td style="background-color: rgba(92, 28, 103, 0.2);">[+ old_middle_dnef_display +]%</td>
-            <td style="background-color: rgba(92, 28, 103, 0.2);">[+ rural_dnef_display +]%</td>
-            <td style="background-color: rgba(92, 28, 103, 0.2);">[+ unemployed_dnef_display +]%</td>
-            <td style="background-color: rgba(92, 28, 103, 0.2);">[+ catholics_dnef_display +]%</td>
+            <td style="background-color: rgba(191, 200, 204, 0.2); padding: 10px;">[+ workers_dnef_display +]%</td>
+            <td style="background-color: rgba(191, 200, 204, 0.2);">[+ new_middle_dnef_display +]%</td>
+            <td style="background-color: rgba(191, 200, 204, 0.2);">[+ old_middle_dnef_display +]%</td>
+            <td style="background-color: rgba(191, 200, 204, 0.2);">[+ rural_dnef_display +]%</td>
+            <td style="background-color: rgba(191, 200, 204, 0.2);">[+ unemployed_dnef_display +]%</td>
+            <td style="background-color: rgba(191, 200, 204, 0.2);">[+ catholics_dnef_display +]%</td>
         {!</tr>!}?]
         <tr>
             <td><span style="color: #c00000;">**SPD**</span></td>
