@@ -360,6 +360,15 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
         Q.economic_growth += 1.5/12;
         Q.inflation += 1.5/12;
     }
+    if (Q.dnef_formed && Q.chancellor == "Schleicher") {
+        Q.workers_dnef += 2/12;
+        Q.new_middle_dnef += 4/12;
+        Q.old_middle_dnef += 4/12;
+        Q.rural_dnef += 2/12;
+        Q.unemployed_dnef += 2/12;
+        Q.catholics_dnef += 2/12;
+        Q.pro_republic -= 0.5;
+    }
     if (!Q.nazi_peak_triggered) {
         Q.nazi_peak_base = 25;
         Q.nazi_peak = Q.nazi_peak_base;

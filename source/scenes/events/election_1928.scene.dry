@@ -99,6 +99,19 @@ on-arrival: {!
         }
     }
     if (Q.hugenberg_dvp) Q.adjustmentFactors_dvp = 1.0;
+
+    let total_adjusted_votes = 0;
+    for (var party of Q.parties) {
+        let factor = Q['adjustmentFactors_votes_' + party] || 1.0;
+        Q['original_' + party + '_votes'] = Q[party + '_votes'];
+        Q[party + '_votes'] = Q[party + '_votes'] * factor;
+        total_adjusted_votes += Q[party + '_votes'];
+    }
+
+    let normalization_factor = 100 / total_adjusted_votes;
+    for (var party of Q.parties) {
+        Q[party + '_votes'] = Math.round(Q[party + '_votes'] * normalization_factor * 10) / 10;  // Round only after normalization
+    }
     // Step 1: Calculate adjusted values and the sum for redistribution
     for (var party of Q.parties) {
         let factor = Q['adjustmentFactors_' + party] || 1.0; // Default to 1.0 if not set
