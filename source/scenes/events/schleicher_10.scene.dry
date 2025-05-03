@@ -18,7 +18,38 @@ face-image: img/portraits/schleicher.jpg
 - @schleicher_2: The <span style="color: #BFC8CC;">German National Unity Front</span> welcomes its new member.
 
 @schleicher_2
-on-arrival: dvp_dnef = 1;
+on-arrival: {!
+Q.dvp_dnef = 1
+
+Q.workers_dnef += Q.workers_dvp;
+
+Q.new_middle_dnef += Q.new_middle_dvp;
+
+Q.old_middle_dnef += Q.old_middle_dvp;
+
+Q.rural_dnef += Q.rural_dvp;
+
+Q.unemployed_dnef += Q.unemployed_dvp;
+
+Q.catholics_dnef += Q.catholics_dvp;
+
+Q.pro_republic -= Q.dvp_votes;
+
+Q.workers_dvp = 0;
+Q.new_middle_dvp = 0;
+Q.old_middle_dvp = 0;
+Q.rural_dvp = 0;
+Q.unemployed_dvp = 0;
+Q.catholics_dvp = 0;
+
+Q.dvp_votes = 0;
+
+Q.dvp_relation = (Q.dnef_relation - 20);
+
+Q.dnef_r += Q.dvp_r;
+Q.dvp_r = 0;
+!}
+
 
 Current composition of the <span style="color: #BFC8CC;">German National Unity Front</span>:
 
