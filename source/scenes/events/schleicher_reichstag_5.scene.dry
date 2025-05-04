@@ -1,11 +1,23 @@
 title: The Reichstag Reconvenes
 subtitle: The Reichstag hesitates to confront Schleicher and trigger yet another round of elections.
 view-if: chancellor = "Schleicher" and schleicher_time and schleicher_post and next_reichstag_time == rubicon_time and next_reichstag_time > 0
+on-arrival: reichstag_rubicon = 1
 new-page: true
 tags: event
 max-visits: 1
 priority: 2
-face-image: img/reichstag.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/reichstag.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 
 = Reichstag Reconvenes
 
@@ -19,6 +31,9 @@ Meanwhile, Schleicher shows little concern over the threat of a no-confidence vo
 title: The <span style="color: #700000;">**Communists**</span> put forth a motion of no confidence.
 on-arrival: {!
 Q.pro_republic += 5;
+
+Q.reichstag_rubicon = 0;
+Q.schleicher_post_reichstag = 1;
 
 Q.next_reichstag_time = Q.rubicon_time + 4;
 Q.next_reichstag_week = Q.week + 4;

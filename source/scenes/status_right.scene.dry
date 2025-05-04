@@ -1,8 +1,8 @@
-title: Scheming
+title: [? if not dnef_formed: Scheming?][? if dnef_formed: The Chancellery?]
 new-page: true
 is-special: true
 
-= Scheming
+= [? if not dnef_formed: Scheming?][? if dnef_formed: The Chancellery?]
 
 <div style="text-align: center;">President: Paul von Hindenburg (<span style="color: #808080;">I</span>)</div>
 <div><img src="img/portraits/hindenburger.jpg" alt="Paul von Hindenburg" style="width: 60%;display: block;margin: auto;margin-bottom: 5px;"></div>
@@ -39,4 +39,75 @@ is-special: true
   <p style="margin-bottom: 2px;">Influence: [+ oskar_strength : camarilla_strength +]</p>
   <p style="margin-bottom: 2px;">Goal: [+ oskar_goal +]</p>
 </div>
+</div>
+
+@house_of_cards
+view-if: dnef_formed
+
+= The House of Cards
+
+<div style="display: flex; justify-content: space-between; width: 100%;">
+  <div style="text-align: left; flex: 1;">Paul von Hindenburg</div>
+  <div style="text-align: right; flex: 1;">Kurt von Schleicher</div>
+</div>
+
+<div style="display: flex;gap: 5px;margin-bottom: 5px;margin-left: -3px;">
+<img src="img/portraits/hindenburger.jpg" alt="Paul von Hindenburg" style="width: 50%;">
+<img src="img/portraits/SchleicherKurt.jpg" alt="Kurt von Schleicher" style="width: 50%;">
+</div>
+<p style="text-align: center;margin-bottom: 5px;">Hindenburg's confidence: [+ hindenburg_schleicher_r : confidence +]</p>
+<p style="text-align: center;margin-bottom: 5px;">Schleicher's public popularity: [+ schleicher_approval : schleicher_popularity +]</p>
+
+= The House of Cards
+
+<div style="position: relative; width: 100%; max-width: 600px; margin: auto;">
+
+  <div style="display: flex; gap: 5px; margin-bottom: 5px; margin-left: -3px;">
+    <img src="img/beauty_of_labor.jpg" alt="Workers and Trade Unions" style="width: 50%;">
+    <img src="img/capitalism.jpg" alt="Big Business and Industrialists" style="width: 50%;">
+  </div>
+
+  <div style="display: flex; gap: 5px; margin-bottom: 5px; margin-left: -3px;">
+    <img src="img/weimar_coalition_3.jpg" alt="Republicans and Constitutionalists" style="width: 50%;">
+    <img src="img/dnvp_monarchy.jpg" alt="Nationalists and Conservatives" style="width: 50%;">
+  </div>
+
+  <img src="img/shitty_logo.jpg" alt="Center Symbol" style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    border: 2px solid black;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  ">
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 0px; margin-bottom: 5px;">
+  <div style="flex: 1;">
+    <p style="font-weight: bold;margin-bottom: 2px;">Workers</p>
+    <p style="white-space: nowrap;margin-bottom: 2px;">Influence: Dominant</p>
+    <p style="margin-bottom: 2px;">Loyalty:</p>
+    <div style="background-color: white; border: 1px solid #000; height: 10px; width: 100%; border-radius: 5px; overflow: hidden; margin-top: 2px;">
+    <div id="workersLoyaltyBar" style="background-color: #c00000; height: 100%; width: 0%;"></div>
+  </div>
+  </div>
+  <div style="flex: 1; margin-right: -8px;">
+    <p style="white-space: nowrap;text-align: center;font-weight: bold;margin-bottom: 0px;">Industrialists</p>
+    <p style="margin-bottom: 2px;">Influence: Powerful</p>
+    <p style="margin-bottom: 2px;">Loyalty: <span style="color: #BFC8CC;">**DNEF**</span></p>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 0px; margin-bottom: 5px;">
+  <div style="flex: 1;">
+    <p style="font-weight: bold;margin-bottom: 2px;">Republicans</p>  
+    <p style="margin-bottom: 2px;">Influence: Sizable</p>
+    <p style="margin-bottom: 2px;">Loyalty: <span style="color: #c00000;">**SPD**</span></p>
+  </div>
+  <div style="flex: 1;">
+    <p style="font-weight: bold; margin-bottom: 0px;">Nationalists</p>
+    <p style="margin-bottom: 2px;">Influence: Modest</p>
+    <p style="margin-bottom: 2px;">Loyalty: <span style="color: #3E88B3;">**DNVP**</span></p>
+  </div>
 </div>

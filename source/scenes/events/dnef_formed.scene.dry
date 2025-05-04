@@ -25,6 +25,7 @@ Q.new_middle_dnf -= 2;
 Q.new_middle_dnef += Q.reformist_dissent / 10;
 Q.new_middle_z -= 2;
 Q.new_middle_spd -= Q.reformist_dissent / 10;
+Q.new_middle_dnef += Q.new_middle_dnef_bonus;
 
 Q.old_middle_dnef = 25;
 Q.old_middle_dnvp -= 14;
