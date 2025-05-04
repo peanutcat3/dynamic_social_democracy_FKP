@@ -2,8 +2,6 @@ title: [? if not dnef_formed: Scheming?][? if dnef_formed: The House of Cards?]
 new-page: true
 is-special: true
 
-@scheming
-
 = [? if not dnef_formed: Scheming?][? if dnef_formed: The House of Cards?]
 
 [? if not dnef_formed: <div style="text-align: center;">President: Paul von Hindenburg (<span style="color: #808080;">I</span>)</div> ?]
