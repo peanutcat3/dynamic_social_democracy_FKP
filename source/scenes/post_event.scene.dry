@@ -319,6 +319,13 @@ if (Q.z_dnef) {
     }
 }
 
+if (Q.other_dnef) {
+    if (Q.z_r) {
+        Q.dnef_r += Q.other_r;
+        Q.other_r = 0;
+    }
+}
+
 if (Q.dnef_formed) {
     Q.dnef_total_votes = Q.dnef_votes;
     if (Q.dstp_dnef) {
@@ -332,6 +339,9 @@ if (Q.dnef_formed) {
     }
     if (Q.z_dnef) {
         Q.dnef_total_votes += Q.z_votes;
+    }
+    if (Q.other_dnef) {
+        Q.dnef_total_votes += Q.other_votes;
     }
 }
 

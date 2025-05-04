@@ -96,8 +96,6 @@ if (Q.dstp_maintained) {
 
     Q.pro_republic -= Q.ddp_votes;
 
-    Q.ddp_votes = 0;
-
     Q.ddp_relation = Q.dnef_relation;
 
     Q.dnef_r += Q.ddp_r;
@@ -109,13 +107,18 @@ if (Q.kvp_formed && Q.schleicher_kvp) {
 
     Q.pro_republic -= Q.kvp_votes;
 
-    Q.kvp_votes = 0;
-
     Q.kvp_relation = (Q.dnef_relation/2);
 
     Q.dnef_r += Q.kvp_r;
     Q.kvp_r = 0;
 }
+
+Q.other_dnef = 1;
+
+Q.pro_republic -= Q.other_votes;
+
+Q.dnef_r += Q.other_r;
+Q.other_r = 0;
 
 Q.old_workers_dnef_display = 0
 Q.old_new_middle_dnef_display = 0

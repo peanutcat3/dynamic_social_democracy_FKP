@@ -181,6 +181,13 @@ if (new_party_sum > 0) {
 if (Q.dnef_formed) {
     Q.schleicher_dnef_r = Q.dnef_r;
     Q.schleicher_dnef_votes = Q.dnef_votes;
+    if (Q.other_dnef) {
+        if (Q.other_r) {
+            Q.dnef_r += Q.other_r;
+            Q.other_r = 0;
+        }
+        Q.dnef_votes += Q.other_votes;
+    }
     if (Q.dstp_dnef) {
         if (Q.ddp_r) {
             Q.dnef_r += Q.ddp_r;
@@ -866,7 +873,7 @@ go-to: coalition_menu
 = Election results
 
 {!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
-[? if dstp_dnef or kvp_dnef or dvp_dnef or z_dnef: Reichstag mandates for the other parties in the <span style="color: #BFC8CC;">German National Unity Front</span> organization are counted toward the party itself for simplicity's sake. ?]
+[? if dnef_formed: Reichstag mandates for the other parties in the <span style="color: #BFC8CC;">German National Unity Front</span> organization are counted toward the party itself for simplicity's sake. ?]
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Reichstag Seats</td><td>% Change</td></tr>!}
 [? if not dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_votes +]%** {!</td><td>!} **[+ str_votes_change_spd +]** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!} ?][? if dnef_formed: {!<tr><td><div class="box" style='background-color:#BFC8CC; outline: 2px; outline-style: solid;'> </div> !} **DNEF:** {!</td><td>!} **[+ dnef_votes +]%** {!</td><td>!} **[+ str_votes_change_dnef +]** {!</td><td>!} **[+ dnef_r +]%** {!</td><td>!} **[+ str_change_dnef +]** {!</td></tr>!} ?]
@@ -880,6 +887,8 @@ go-to: coalition_menu
 [? if z_dnef: {!<tr><td><div class="box2" style='background-color:#7aa7af'> </div> !} BVP: {!</td><td>!} [+ bvp_votes +]% {!</td><td>!} [+ str_votes_change_bvp +] {!</td><td>!} [+ bvp_r +]% {!</td><td>!} [+ str_change_bvp +] {!</td></tr>!} ?]
 
 [? if not lvp_formed and dvp_exist and dvp_dnef: {!<tr><td><div class="box2" style='background-color:#AA861F'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
+
+[? if other_dnef: {!<tr><td><div class="box2" style='background-color:#707070'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
 
 [? if kvp_formed and not cvp_kvp_formed and kvp_dnef: {!<tr><td><div class="box2" style='background-color:#0072C0'> </div> !}KVP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
 
@@ -901,7 +910,7 @@ go-to: coalition_menu
 
 [? if not lvp_formed and dvp_exist and not dvp_dnef: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_votes +]% {!</td><td>!} [+ str_votes_change_dvp +] {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!} ?]
  
-{!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+[? if not other_dnef: {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_votes +]% {!</td><td>!} [+ str_votes_change_other +] {!</td><td>!} [+ other_r +]% {!</td><td>!} [+ str_change_other +] {!</td></tr>!} ?]
 
 [? if kvp_formed and not cvp_kvp_formed and not kvp_dnef: {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_votes +]% {!</td><td>!} [+ str_votes_change_kvp +] {!</td><td>!} [+ kvp_r +]% {!</td><td>!} [+ str_change_kvp +] {!</td></tr>!} ?]
 

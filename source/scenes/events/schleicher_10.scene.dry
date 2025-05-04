@@ -42,4 +42,6 @@ Current composition of the <span style="color: #BFC8CC;">German National Unity F
 
 [? if dvp_dnef: - <span style="color: #C0A054;">**DVP**</span> ?]
 
+[? if other_dnef: - **Others** ?]
+
 [? if kvp_dnef: - <span style="color: #0087DC;">**KVP**</span> ?]
