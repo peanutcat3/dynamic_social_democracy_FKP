@@ -62,10 +62,10 @@ if (Q.interior_police_loyalty < 0) {
   Q.interior_police_loyalty = 0;
 }
 
-Q.dsu_interior += 1;
+Q.dsu_policy += 1;
 !}
-view-if: dsu_interior != 2
-go-to: interior_1 if not dsu_interior; interior_2 if dsu_interior
+view-if: dsu_policy != 2
+go-to: interior_1 if not dsu_policy; interior_2 if dsu_policy
 face-image: img/portraits/frick.jpg
 
 @interior_1
@@ -83,7 +83,7 @@ Lately, we have observed the police exclusively targeting Reichsbanner and <span
 @works
 title: "MEFO Bills"
 subtitle: Ordered by Hjalmar Schacht of the Economic Ministry.
-view-if: dsu_interior == 2
+view-if: dsu_policy == 2
 on-arrival: {!
 Q.schleicher_spd_r -= 1;
 Q.schleicher_spd_support -= 2;
@@ -98,6 +98,7 @@ Q.schleicher_approval += 2;
 Q.reichswehr_militancy += 2;
 
 Q.mefo_bills = 1;
+Q.dsu_policy += 1;
 !}
 face-image: img/portraits/SchachtHjalmar.jpg
 
