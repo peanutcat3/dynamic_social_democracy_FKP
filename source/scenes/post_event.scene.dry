@@ -352,11 +352,11 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
             Q.unemployed_dnef += 2/12;
             Q.catholics_dnef += 2/12;
         }
-        Q.z_relation -= 0.35;
-        Q.ddp_relation -= 0.35;
-        Q.dvp_relation -= 0.35;
-        Q.lvp_relation -= 0.35;
-        Q.dnef_relation -= 0.35;
+        Q.z_relation -= 0.5;
+        Q.ddp_relation -= 0.5;
+        Q.dvp_relation -= 0.5;
+        Q.lvp_relation -= 0.5;
+        Q.dnef_relation -= 0.5;
     }
     if (Q.chancellor == "Papen") {
         Q.papen_time += 1;
