@@ -37,6 +37,8 @@ Q.schleicher_spd_support += 2;
 Q.schleicher_spd_r += 2; 
 Q.schleicher_approval += 4;
 
+Q.adgb_explode = 1;
+
 Q.unemployed -= 1.8;
 Q.economic_growth += 0.8;
 Q.inflation += 1.4;

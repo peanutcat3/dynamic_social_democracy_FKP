@@ -1,6 +1,6 @@
 title: The <span style="color: #0087DC;">**KVP**</span> joins the <span style="color: #BFC8CC;">**DNEF**</span>
 subtitle: The party attempts to secure government participation by merging into Schleicher's bloc.
-view-if: chancellor = "Schleicher" and schleicher_post and kvp_formed and not kvp_dnef and ((kvp_votes < 6 and not bourgeois_list_kvp) or kvp_leader == "Treviranus") and dnef_formed and not schleicher_cabinet_weak
+view-if: chancellor = "Schleicher" and schleicher_post and kvp_formed and not kvp_dnef and ((kvp_votes < 6 and not bourgeois_list_kvp) or kvp_leader == "Treviranus") and nationalists_schleicher >= 6 and dnef_formed and not schleicher_cabinet_weak
 new-page: true
 priority: 1
 tags: event

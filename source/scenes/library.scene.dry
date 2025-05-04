@@ -97,6 +97,7 @@ Reichstag composition:
 [? if nsdap_split: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_hitler_r +]%?]
 [? if nvf_exist: <span class="tooltip-text" title="National People's Front" style="color: #142e20;">**NVF**</span>: [+ nvf_r +]%?]
 # 1928: 9, 1930: 10
+
 **Others**: [+ other_r +]%
 
 <span style="color: #c00000;">**SPD**</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
