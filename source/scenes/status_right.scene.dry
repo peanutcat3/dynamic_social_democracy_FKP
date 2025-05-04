@@ -1,6 +1,9 @@
 title: [? if not dnef_formed: Scheming?][? if dnef_formed: The Chancellery?]
 new-page: true
 is-special: true
+go-to: scheming if not dnef_formed; house_of_cards if dnef_formed
+
+@scheming
 
 = [? if not dnef_formed: Scheming?][? if dnef_formed: The Chancellery?]
 
@@ -42,7 +45,6 @@ is-special: true
 </div>
 
 @house_of_cards
-view-if: dnef_formed
 
 = The House of Cards
 
