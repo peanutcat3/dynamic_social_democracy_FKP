@@ -359,6 +359,7 @@ Q.old_nvf_r = 0;
 Q.previous_dsu_last_election_votes = 0.0;
 Q.previous_nsdap_hitler_last_election_votes = 0.0;
 Q.previous_nvf_last_election_votes = 0.0;
+Q.previous_schleicher_dnef_last_election_votes = 0.0;
 
 // prussian gov right now
 Q.spd_r_prussia = 25.3;
