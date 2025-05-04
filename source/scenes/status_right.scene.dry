@@ -60,9 +60,6 @@ is-special: true
 [? if dnef_formed: <img src="img/capitalism.jpg" alt="Big Business and Industrialists" style="width: 50%;"> ?]
 [? if dnef_formed: </div> ?]
 
-[? if dnef_formed: <img src="img/shitty_logo.png" alt="Shitty Logo" style=" position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10%; border: 2px solid black; box-shadow: 0 0 5px rgba(0,0,0,0.5);"> ?]
-[? if dnef_formed: </div> ?]
-
 [? if dnef_formed: <div style="display: flex; justify-content: space-between; gap: 0px; margin-bottom: 5px;"> ?]
 [? if dnef_formed: <div style="flex: 1;"> ?]
 [? if dnef_formed: <p style="font-weight: bold;margin-bottom: 2px;">Workers</p> ?]
@@ -70,7 +67,7 @@ is-special: true
 [? if dnef_formed: <p style="margin-bottom: 2px;">Loyalty: <span style="color: #c00000;">**SPD**</span></p> ?]
 [? if dnef_formed: </div> ?]
 [? if dnef_formed: <div style="flex: 1; margin-right: -8px;"> ?]
-[? if dnef_formed: <p style="white-space: nowrap;text-align: center;font-weight: bold;margin-bottom: 0px;">Industrialists</p> ?]
+[? if dnef_formed: <p style="white-space: nowrap;font-weight: bold;margin-bottom: 0px;">Industrialists</p> ?]
 [? if dnef_formed: <p style="margin-bottom: 2px;">Influence: Powerful</p> ?]
 [? if dnef_formed: <p style="margin-bottom: 2px;">Loyalty: <span style="color: #BFC8CC;">**DNEF**</span></p> ?]
 [? if dnef_formed: </div> ?]
