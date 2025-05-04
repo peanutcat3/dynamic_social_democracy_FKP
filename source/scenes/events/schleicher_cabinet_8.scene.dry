@@ -64,6 +64,7 @@ if (Q.interior_police_loyalty < 0) {
 
 Q.dsu_interior += 1;
 !}
+view-if: dsu_interior != 2
 go-to: interior_1 if not dsu_interior; interior_2 if dsu_interior
 face-image: img/portraits/frick.jpg
 

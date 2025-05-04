@@ -264,7 +264,7 @@ if (Q.bvp_votes > 3.6 && !Q.cvp_formed) {
 } else if (Q.bvp_votes > 3.9 && Q.cvp_formed) {
     Q.bvp_votes = 3.9;
 }
-Q.bvp_r = Q.bvp_votes*1.05;
+if (!Q.z_dnef) Q.bvp_r = Q.bvp_votes*1.05;
 if (Q.bvp_r > 3.7 && !Q.cvp_formed) {
     Q.bvp_r = 3.7;
 } else if (Q.bvp_r > 4.0 && Q.cvp_formed) {
