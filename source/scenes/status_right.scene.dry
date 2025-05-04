@@ -87,7 +87,6 @@ is-special: true
 [? if dnef_formed: <p style="font-weight: bold;margin-bottom: 2px;">Republicans</p>  ?]
 [? if dnef_formed: <p style="margin-bottom: 2px;">Influence: Sizable</p> ?]
 [? if dnef_formed: <p style="margin-bottom: 2px;">Loyalty: <span style="color: #c00000;">**SPD**</span></p> ?]
-[? if dnef_formed: </div> ?]
 [? if dnef_formed: <div style="flex: 1;"> ?]
 [? if dnef_formed: <p style="font-weight: bold; margin-bottom: 0px;">Nationalists</p> ?]
 [? if dnef_formed: <p style="margin-bottom: 2px;">Influence: Modest</p> ?]
