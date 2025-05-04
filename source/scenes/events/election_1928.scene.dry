@@ -208,6 +208,7 @@ if (Q.dnef_formed) {
         }
         Q.dnef_votes += Q.z_votes;
     }
+    Q.dnef_r = Math.round(Q.dnef_r * 10) / 10;
 }
     // Step 3: Calculate changes in results
     for (var party of Q.parties) {
