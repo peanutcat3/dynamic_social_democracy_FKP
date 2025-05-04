@@ -205,9 +205,11 @@ if (Q.dnef_formed) {
         if (Q.z_r) {
             Q.dnef_r += Q.z_r;
             Q.z_r = 0;
+            Q.bvp_r = 0;
         }
         Q.dnef_votes += Q.z_votes;
     }
+    Q.dnef_votes = Math.round(Q.dnef_votes * 10) / 10;
     Q.dnef_r = Math.round(Q.dnef_r * 10) / 10;
 }
     // Step 3: Calculate changes in results
@@ -249,7 +251,6 @@ if (Q.dnef_formed) {
     for (var party of Q.parties) {
         Q[party + '_last_election_votes'] = parseFloat(Q[party + '_votes']).toFixed(1);
         Q['previous_' + party + '_last_election_votes'] = parseFloat(parseFloat(Q[party + '_last_election_votes']).toFixed(1));
-        if (Q.dnef_formed) Q.previous_schleicher_dnef_last_election_votes = Q.schleicher_dnef_votes;
     }    
     
 Q.cnblp_r = Math.round(Q.cnblp_votes * Q.adjustmentFactors_other * 10) / 10;
@@ -409,6 +410,7 @@ if (Q.dnef_formed) {
         '<img src="img/arrowdown.png"> ' :
         '<img src="img/steady.png"> ';
     Q.str_votes_change_schleicher_dnef = sign2 + Math.abs(Q.str_votes_change_schleicher_dnef).toFixed(1);
+    Q.previous_schleicher_dnef_last_election_votes = Q.schleicher_dnef_votes;
 }
 
 // The largest party can only be the NSDAP or the SPD.

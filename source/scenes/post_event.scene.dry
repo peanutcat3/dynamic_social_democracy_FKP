@@ -315,6 +315,7 @@ if (Q.z_dnef) {
     if (Q.z_r) {
         Q.dnef_r += Q.z_r;
         Q.z_r = 0;
+        Q.bvp_r = 0;
     }
 }
 
