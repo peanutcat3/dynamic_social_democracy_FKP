@@ -325,10 +325,6 @@ window.enableDarkMode = function() {
     window.updateSidebar();
     window.statusTabRight = "status_right";
     window.updateSidebarRight();
-    var bar = document.getElementById('workersLoyaltyBar');
-    if (bar && dendryUI.dendryEngine.state.qualities.dnef_formed) {
-        bar.style.width = dendryUI.dendryEngine.state.qualities.workers_spd_normalized + "%";
-    }
   };
 
 }());
