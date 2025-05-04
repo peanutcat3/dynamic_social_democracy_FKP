@@ -1,58 +1,5 @@
 title: Election
 on-arrival: {!
-if (Q.dstp_dnef) {
-    Q.workers_ddp = 0;
-    Q.new_middle_ddp = 0;
-    Q.old_middle_ddp = 0;
-    Q.rural_ddp = 0;
-    Q.unemployed_ddp = 0;
-    Q.catholics_ddp = 0;
-
-    Q.ddp_votes = 0;
-
-    Q.ddp_relation = Q.dnef_relation;
-
-    if (Q.ddp_r) {
-        Q.dnef_r += Q.ddp_r;
-        Q.ddp_r = 0;
-    }
-}
-
-if (Q.kvp_dnef) {
-    Q.workers_kvp = 0;
-    Q.new_middle_kvp = 0;
-    Q.old_middle_kvp = 0;
-    Q.rural_kvp = 0;
-    Q.unemployed_kvp = 0;
-    Q.catholics_kvp = 0;
-
-    Q.kvp_votes = 0;
-
-    Q.kvp_relation = (Q.dnef_relation - 30);
-
-    if (Q.kvp_r) {
-        Q.dnef_r += Q.kvp_r;
-        Q.kvp_r = 0;
-    }
-}
-
-if (Q.dvp_dnef) {
-    Q.workers_dvp = 0;
-    Q.new_middle_dvp = 0;
-    Q.old_middle_dvp = 0;
-    Q.rural_dvp = 0;
-    Q.unemployed_dvp = 0;
-    Q.catholics_dvp = 0;
-
-    Q.dvp_votes = 0;
-
-    Q.dvp_relation = (Q.dnef_relation - 20);
-
-    if (Q.dvp_r) {
-        Q.dnef_r += Q.dvp_r;
-        Q.dvp_r = 0;
-    }
-}
 // calculate normalized class voting amounts (0 to 100)
 for (var c of Q.classes) {
     var class_votes = 0;

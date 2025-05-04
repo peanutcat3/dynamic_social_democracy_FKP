@@ -1,6 +1,6 @@
 title: Schleicher Founds a New Political Party!
 subtitle: He seeks to capitalize on his newfound popularity.
-view-if: chancellor = "Schleicher" and schleicher_time >= 11 and schleicher_approval >= 8 and next_election_time - time < 3
+view-if: chancellor = "Schleicher" and schleicher_time >= 11 and schleicher_approval >= 8
 new-page: true
 priority: 1
 tags: event
@@ -13,7 +13,7 @@ Schleicher, once reviled by the public, is now hailed as Germany’s savior. Thr
 
 The <span style="color: #808080;">reactionary</span> right will never win over the workers, and the <span style="color: #c00000;">**SPD**</span> is seen as unreliable when it comes to backing Schleicher’s government.
 
-In the past, Schleicher flirted with the idea of building a new "presidential party"—a direct vehicle for rallying public support behind his cabinet. Until now, he had taken no concrete steps. But with new ties to the working class and the moderate forces on the German Right, he now has an opportunity to bring such a party to life with the elections coming up.
+In the past, Schleicher flirted with the idea of building a new "presidential party"—a direct vehicle for rallying public support behind his cabinet. Until now, he had taken no concrete steps. But with new ties to the working class and the moderate forces on the German Right, he now has an opportunity to bring such a party to life[? if next_election_time - time < 3: with the elections coming up?].
 
 - @schleicher_2: The <i>Deutschnationale Einheitsfront</i> (<span style="color: #BFC8CC;">German National Unity Front</span>, <span style="color: #BFC8CC;">**DNEF**</span>) is formed!
 

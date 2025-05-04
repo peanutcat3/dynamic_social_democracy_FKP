@@ -864,6 +864,8 @@ Q.total_bruning_time = 0;
 Q.total_bruning_toleration_time = 0;
 Q.papen_time = 0;
 Q.schleicher_time = 0;
+Q.schleicher_post_time = 0;
+Q.z_in_gov_time = 0;
 Q.rubicon_time = 0; 
 Q.reichstag_rubicon = 0;
 Q.nazi_peak = 25;
@@ -903,6 +905,10 @@ Q.dsu_interior = 0;
 Q.mefo_bills = 0;
 Q.marburg_time = 0;
 Q.marburg_trigger = 0;
+Q.workers_dnef_bonus = 0;
+Q.unemployed_dnef_bonus = 0;
+Q.catholics_dnef_bonus = 0;
+Q.bracht_time = 0;
 
 // rubicon
 Q.hindenburg_schleicher_r = 5;
