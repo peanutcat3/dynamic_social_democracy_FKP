@@ -1,6 +1,6 @@
 title: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> joins the <span style="color: #BFC8CC;">**DNEF**</span>
 subtitle: The miniscule party can no longer survive on its own.
-view-if: chancellor = "Schleicher" and schleicher_time >= 25 and not lvp_formed and ddp_r < 2 and dnef_formed
+view-if: chancellor = "Schleicher" and schleicher_time >= 35 and not lvp_formed and ddp_r < 2 and dnef_formed
 new-page: true
 priority: 1
 tags: event
@@ -46,3 +46,5 @@ Current composition of the <span style="color: #BFC8CC;">German National Unity F
 [? if other_dnef: - **Others** ?]
 
 [? if kvp_dnef: - <span style="color: #0087DC;">**KVP**</span> ?]
+
+[? if dnvp_dnef: - <span style="color: #3E88B3;">**DNVP**</span> ?]

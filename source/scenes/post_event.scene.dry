@@ -319,6 +319,15 @@ if (Q.z_dnef) {
     }
 }
 
+if (Q.dnvp_dnef) {
+    Q.dnvp_relation = (Q.dnef_relation - 35);
+
+    if (Q.dnvp_r) {
+        Q.dnef_r += Q.dnvp_r;
+        Q.dnvp_r = 0;
+    }
+}
+
 if (Q.other_dnef) {
     if (Q.z_r) {
         Q.dnef_r += Q.other_r;
@@ -342,6 +351,9 @@ if (Q.dnef_formed) {
     }
     if (Q.other_dnef) {
         Q.dnef_total_votes += Q.other_votes;
+    }
+    if (Q.dnvp_dnef) {
+        Q.dnef_total_votes += Q.dnvp_votes;
     }
 }
 
@@ -424,7 +436,7 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
     if (Q.schleicher_economy_time >= Q.rubicon_time) {
         Q.unemployed -= 3.5/12;
         Q.economic_growth += 1.5/12;
-        Q.inflation += 1.5/12;
+        Q.inflation += 2/12;
     }
     if (!Q.nazi_peak_triggered) {
         Q.nazi_peak_base = 25;
