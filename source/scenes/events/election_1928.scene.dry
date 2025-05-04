@@ -74,7 +74,7 @@ on-arrival: {!
     }
     if (Q.cvp_formed) Q.adjustmentFactors_other = 0.6;
     Q.adjustmentFactors_ddp = 1.0;
-    if (!Q.bourgeois_list_ddp) {
+    if (!Q.bourgeois_list_ddp && !Q.dstp_dnef) {
         if (Q.ddp_votes < 1 && Q.year >= 1930) {
             Q.adjustmentFactors_ddp = 0.3;
         } else if (Q.ddp_votes < 1.5 && Q.year >= 1930) {
@@ -87,7 +87,8 @@ on-arrival: {!
     }
     if (Q.ddp_alliance) Q.adjustmentFactors_ddp = 0.8;
     if (Q.ddp_alliance_glaze) Q.adjustmentFactors_ddp = 1.1;
-    if (!Q.hugenberg_dvp && !Q.bourgeois_list) {
+    Q.adjustmentFactors_dvp = 1.0;
+    if (!Q.hugenberg_dvp && !Q.bourgeois_list && !Q.dvp_dnef) {
         if (Q.dvp_votes < 1.5) {
             Q.adjustmentFactors_dvp = 0.25;
         } else if (Q.dvp_votes < 2) {
