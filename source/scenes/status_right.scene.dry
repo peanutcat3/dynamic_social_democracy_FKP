@@ -69,7 +69,6 @@ is-special: true
 [? if dnef_formed: <p style="white-space: nowrap;margin-bottom: 2px;">Influence: Dominant</p> ?]
 [? if dnef_formed: <p style="margin-bottom: 2px;">Loyalty: <span style="color: #c00000;">**SPD**</span></p> ?]
 [? if dnef_formed: </div> ?]
-[? if dnef_formed: </div> ?]
 [? if dnef_formed: <div style="flex: 1; margin-right: -8px;"> ?]
 [? if dnef_formed: <p style="white-space: nowrap;text-align: center;font-weight: bold;margin-bottom: 0px;">Industrialists</p> ?]
 [? if dnef_formed: <p style="margin-bottom: 2px;">Influence: Powerful</p> ?]
