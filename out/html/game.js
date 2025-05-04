@@ -193,8 +193,7 @@ window.enableDarkMode = function() {
       dendryUI.dendryEngine._runActions(scene.onArrival);
       var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
       $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
-      document.getElementById('workersLoyaltyBar').style.width = 
-        dendryUI.dendryEngine.state.qualities.workers_spd_normalized + "%";
+      if (dendryUI.dendryEngine.state.qualities.dnef_formed) document.getElementById('workersLoyaltyBar').style.width = dendryUI.dendryEngine.state.qualities.workers_spd_normalized + "%";
   };
 
   window.changeTab = function(newTab, tabId, isRight) {
