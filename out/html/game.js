@@ -188,13 +188,12 @@ window.enableDarkMode = function() {
   };
 
   window.updateSidebarRight = function() {
-      $('#qualities_right').empty();
-      var scene = dendryUI.game.scenes[window.statusTabRight];
-      dendryUI.dendryEngine._runActions(scene.onArrival);
-      var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-      $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
-      if (dendryUI.dendryEngine.state.qualities.dnef_formed) document.getElementById('workersLoyaltyBar').style.width = dendryUI.dendryEngine.state.qualities.workers_spd_normalized + "%";
-  };
+    $('#qualities_right').empty();
+    var scene = dendryUI.game.scenes[window.statusTabRight];
+    dendryUI.dendryEngine._runActions(scene.onArrival);
+    var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+    $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
+};
 
   window.changeTab = function(newTab, tabId, isRight) {
       if (tabId == 'poll_tab' && (dendryUI.dendryEngine.state.qualities.historical_mode || dendryUI.dendryEngine.state.qualities.rubicon)) {
@@ -326,6 +325,10 @@ window.enableDarkMode = function() {
     window.updateSidebar();
     window.statusTabRight = "status_right";
     window.updateSidebarRight();
+    var bar = document.getElementById('workersLoyaltyBar');
+    if (bar && dendryUI.dendryEngine.state.qualities.dnef_formed) {
+        bar.style.width = dendryUI.dendryEngine.state.qualities.workers_spd_normalized + "%";
+    }
   };
 
 }());
