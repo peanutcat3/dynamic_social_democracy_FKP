@@ -1,7 +1,6 @@
 title: [? if not dnef_formed: Scheming?][? if dnef_formed: The House of Cards?]
 new-page: true
 is-special: true
-go-to: scheming if not dnef_formed; house_of_cards if dnef_formed
 
 @scheming
 
