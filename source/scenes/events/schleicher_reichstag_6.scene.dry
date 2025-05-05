@@ -52,6 +52,7 @@ Q.rfb_strength *= 0.5;
 Q.rb_militancy *= 0.95;
 Q.rb_strength *= 0.95;
 
+Q.reichstag_rubicon = 0;
 Q.reichstag_break = 1;
 
 Q.next_reichstag_time = Q.rubicon_time + 10000;
