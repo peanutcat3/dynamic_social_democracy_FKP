@@ -329,6 +329,10 @@ var sign2 = Q.str_votes_change_z > 0
   : '<img src="img/steady.png"> ';
 Q.str_votes_change_z = sign2 + Math.abs(Q.str_votes_change_z).toFixed(1);
 
+console.log(Q.dsu_votes)
+console.log(Q.nsdap_hitler_votes)
+console.log(Q.nvf_votes)
+
 if (Q.nsdap_split) {
     if ((Q.dsu_votes + Q.nvf_votes + Q.nsdap_hitler_votes) !== Q.nsdap_votes) {
         let total = Q.dsu_votes + Q.nvf_votes + Q.nsdap_hitler_votes;
