@@ -57,6 +57,8 @@ Q.sapd_banned = 1;
 Q.kpd_r = 0;
 Q.sapd_r = 0;
 
+total_r_sum = 0;
+
 for (var party of Q.parties) {
     total_r_sum += Q[party + '_r'];
 }
