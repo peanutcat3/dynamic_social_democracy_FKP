@@ -72,6 +72,9 @@ on-arrival: {!
     if (Q.other_votes >= 8 && Q.year >= 1931) {
         Q.adjustmentFactors_other += 0.1;
     }
+    if (Q.other_dnef) {
+        Q.adjustmentFactors_other = 0;
+    }
     if (Q.cvp_formed) Q.adjustmentFactors_other = 0.6;
     Q.adjustmentFactors_ddp = 1.0;
     if (!Q.bourgeois_list_ddp && !Q.dstp_dnef) {
