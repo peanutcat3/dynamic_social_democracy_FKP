@@ -1749,6 +1749,7 @@ Q.vice_chancellor = "Strasser";
 Q.workers_nsdap += 3;
 Q.new_middle_nsdap += 3;
 Q.unemployed_nsdap += 3;
+Q.hindenburg_schleicher_r += 2;
 
 Q.schleicher_approval += (Q.nsdap_votes / 10);
 Q.schleicher_approval -= (Q.spd_votes / 10);
@@ -1845,6 +1846,7 @@ if (Q.prussia_leader == "Schleicher") {
 Q.vice_chancellor = "Stegerwald";
 Q.workers_z += 2;
 Q.pro_republic += 5;
+Q.hindenburg_schleicher_r += 1;
 
 Q.schleicher_approval += ((Q.z_votes + Q.spd_votes) / 10);
 Q.schleicher_approval -= (Q.nsdap_votes / 10);
