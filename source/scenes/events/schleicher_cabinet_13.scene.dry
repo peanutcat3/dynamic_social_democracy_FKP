@@ -41,7 +41,7 @@ if (Q.total_r_alt < 100) {
     Q.dvp_r_alt = Math.round(Q.dvp_r_alt * scale * 10) / 10;
     Q.z_r_alt   = Math.round(Q.z_r_alt * scale * 10) / 10;
     Q.lvp_r_alt = Math.round(Q.lvp_r_alt * scale * 10) / 10;
-    
+
     Q.total_r_alt = Q.kpd_r_alt + Q.sapd_r_alt + Q.spd_r_alt + Q.ddp_r_alt + Q.dvp_r_alt + Q.z_r_alt + Q.lvp_r_alt;
 }
 
@@ -379,7 +379,7 @@ The Reichstag will convene on [+ next_reichstag_month : month +] [+ next_reichst
 @schemes
 title: Demand the above, and also guarantees for the continued independence of political organizations.
 subtitle: Including the <span style="color: #700000;">**KPD**</span>.
-unavailable-subtitle: [? if not spd_win or total_r_alt < 66: Not enough leverage. ?][? if pro_republic >= 50: Schleicher is dead-set on banning the <span style="color: #700000;">Communists</span>. ?]
+unavailable-subtitle: [? if not spd_win or total_r_alt < 66: Not enough leverage. ?][? if pro_republic < 50 and weimar_votes < 45: Schleicher is dead-set on banning the <span style="color: #700000;">Communists</span>. ?]
 view-if: dnef_formed
 choose-if: spd_win and (pro_republic >= 50 or weimar_votes >= 45) and total_r_alt >= 66
 on-arrival: {!
