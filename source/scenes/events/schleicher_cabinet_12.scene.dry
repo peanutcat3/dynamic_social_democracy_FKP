@@ -407,9 +407,11 @@ if (Q.z_against_schleicher) Q.spd_points += 5;
 if (Q.z_against_schleicher && Q.z_in_gov) Q.spd_points += 2;
 if (Q.libs_against_schleicher) Q.spd_points += 3;
 
+if (!Q.z_against_schleicher && !Q.libs_against_schleicher) Q.spd_alone = 1;
+
 if (Q.spd_points > Q.schleicher_points) {
     Q.spd_win = 1;
-} else if (Q.spd_points >= (schleicher_points / 2)) {
+} else if (Q.spd_points >= (Q.schleicher_points / 2)) {
     Q.spd_med = 1;
 } else {
     Q.spd_lose = 1;

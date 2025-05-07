@@ -375,7 +375,7 @@ if (Q.dnef_formed) {
     if (Q.schleicher_economy_time) Q.industrialists_schleicher += ((Q.economic_growth + 10) / 5);
     if (Q.schleicher_labor) Q.industrialists_schleicher -= 2;
     if (Q.dnef_formed) Q.industrialists_schleicher += Q.old_middle_dnef_normalized / 10;
-    if (Q.industrialists_schleicher) Q.industrialists_schleicher += Q.industrialists_schleicher_bonus;
+    if (Q.industrialists_schleicher_bonus) Q.industrialists_schleicher += Q.industrialists_schleicher_bonus;
     if (Q.industrialists_schleicher > 10) Q.industrialists_schleicher = 10;
 
     if (Q.schleicher_spd_influence) Q.republicans_schleicher += Q.schleicher_spd_r / 4;
