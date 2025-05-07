@@ -45,6 +45,13 @@ if (Q.total_r_alt < 100) {
 }
 
 !}
+go-to: reichstag_diagram
+
+In defiance of the illegal adjournment of the Reichstag, an alternative assembly has been convened. The parties participating are determined by their ties to us and their role in the ongoing demonstrations.
+
+[? if kpd_r_alt: With most <span style="color: #700000;">**KPD**</span> deputies imprisoned, substitute representatives have been appointed to fill their seats. ?]
+
+@reichstag_diagram
 on-display: {!
 data = [{
     "id": "kpd",
@@ -207,10 +214,6 @@ if (window && d3) {
 }
 !}
 go-to: negotiation_menu_med if spd_med; negotiation_menu_win if spd_win
-
-In defiance of the illegal adjournment of the Reichstag, an alternative assembly has been convened. The parties participating are determined by their ties to us and their role in the ongoing demonstrations.
-
-[? if kpd_r_alt: With most <span style="color: #700000;">**KPD**</span> deputies imprisoned, substitute representatives have been appointed to fill their seats. ?]
 
 = Reichstag composition
 
