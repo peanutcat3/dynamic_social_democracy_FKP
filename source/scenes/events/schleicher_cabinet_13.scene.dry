@@ -270,20 +270,20 @@ We have leverage, and we should use it to extract concessions. No one wants civi
 
 @negotiation_menu_med
 
-- @reichstag
+- @reichstag_reconvene
 - @rights
 - @schemes
 - @civil_war: Screw this! A civil war is necessary after all.
 
 @negotiation_menu_win
 
-- @reichstag
+- @reichstag_reconvene
 - @rights
 - @schemes
 - @democracy
 - @civil_war: Screw this! A civil war is necessary after all.
 
-@reichstag
+@reichstag_reconvene
 title: Demand a reconvening of the Reichstag, with no dirty tricks this time.
 on-arrival: {!
 Q.schleicher_post_protests = 1;
