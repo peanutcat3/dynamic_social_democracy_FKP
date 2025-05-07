@@ -378,7 +378,7 @@ if (Q.spd_prussia && Q.prussia_leader == "Braun" || Q.prussia_leader == "Rosenfe
     Q.spd_points += (Q.prussian_police_power / 20);
 }
 if (Q.prussia_leader == "Schleicher" || Q.z_in_gov && Q.prussia_leader == "Stegerwald" || Q.prussia_leader == "Strasser") {
-    Q.schleicher_points += Q.evil_prussian_police_power / 10;
+    Q.schleicher_points += Q.evil_prussian_police_power / 50;
 }
 Q.reichswehr_power = Q.reichswehr_strength*Q.reichswehr_militancy;
 Q.schleicher_points += Q.reichswehr_power/50;
