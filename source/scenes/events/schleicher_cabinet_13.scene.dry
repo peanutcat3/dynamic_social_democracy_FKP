@@ -44,6 +44,12 @@ if (Q.total_r_alt < 100) {
     Q.total_r_alt = 100;
 }
 
+for (var party of Q.parties) {
+    if (Q[party+'r_alt'] == null || Q[party+'r_alt'] == undefined) {
+        Q[party+'r_alt'] = 0;
+    }
+}
+
 !}
 go-to: reichstag_diagram
 
@@ -98,13 +104,7 @@ data = data.concat([{
         "id": "z",
         "legend": "Center",
         "name": "Center",
-        "seats": Math.round(Q.z_minus_bvp_r_alt * 5),
-    },
-    {
-        "id": "bvp",
-        "legend": "BVP",
-        "name": "BVP",
-        "seats": Math.round(Q.bvp_r_alt * 5),
+        "seats": Math.round(Q.z_r_alt * 5),
     }
 ]);
 
@@ -225,7 +225,7 @@ go-to: negotiation_menu_med if spd_med; negotiation_menu_win if spd_win
 
 [? if not lvp_formed and dstp_dnef and ddp_r_alt: {!<tr><td><div class="box" style='background-color:#A79A3F'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r_alt +]% {!</td></tr>!} ?]
 
-[? if z_dnef and z_r_alt: {!<tr><td><div class="box" style='background-color:#1A0000'> </div></td><td>!} [+ z_party_name +]: {!</td><td>!} [+ z_minus_bvp_r_alt +]% {!</td></tr>!} ?]
+[? if z_dnef and z_r_alt: {!<tr><td><div class="box" style='background-color:#1A0000'> </div></td><td>!} [+ z_party_name +]: {!</td><td>!} [+ z_r_alt +]% {!</td></tr>!} ?]
 
 [? if not lvp_formed and dvp_exist and dvp_dnef and dvp_r_alt: {!<tr><td><div class="box" style='background-color:#AA861F'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r_alt +]% {!</td></tr>!} ?]
 
@@ -245,9 +245,7 @@ go-to: negotiation_menu_med if spd_med; negotiation_menu_win if spd_win
 
 [? if lvp_formed and lvp_r_alt: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div></td><td>!} LVP: {!</td><td>!} [+ lvp_r_alt +]% {!</td></tr>!} ?]
 
-[? if not z_dnef and z_minus_bvp_r_alt: {!<tr><td><div class="box" style='background-color:#000'> </div></td><td>!} [+ z_party_name +]: {!</td><td>!} [+ z_minus_bvp_r_alt +]% {!</td></tr>!} ?]
-
-[? if not z_dnef and bvp_r_alt: {!<tr><td><div class="box" style='background-color:#A2D8E0'> </div></td><td>!} BVP: {!</td><td>!} [+ bvp_r_alt +]% {!</td></tr>!} ?]
+[? if not z_dnef and z_r_alt: {!<tr><td><div class="box" style='background-color:#000'> </div></td><td>!} [+ z_party_name +]: {!</td><td>!} [+ z_r_alt +]% {!</td></tr>!} ?]
 
 [? if not lvp_formed and dvp_exist and not dvp_dnef and dvp_r_alt: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div></td><td>!} DVP: {!</td><td>!} [+ dvp_r_alt +]% {!</td></tr>!} ?]
 
@@ -429,7 +427,7 @@ Q.new_middle_kpd += 2;
 Q.kpd_banned = 0;
 Q.sapd_banned = 0;
 
-for (party of Q.parties) {
+for (var party of Q.parties) {
     Q[party+'_r'] = Q[party+'_r_pre'];
 }
 

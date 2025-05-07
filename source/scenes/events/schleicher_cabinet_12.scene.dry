@@ -58,7 +58,7 @@ Q.unemployed_sapd -= 4;
 Q.kpd_banned = 1;
 Q.sapd_banned = 1;
 
-for (party of Q.parties) {
+for (var party of Q.parties) {
     Q[party+'_r_pre'] = Q[party+'_r'];
 }
 
