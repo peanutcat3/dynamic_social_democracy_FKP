@@ -365,21 +365,20 @@ if (Q.kpd_relation >= 40) {
 Q.spd_points += ((1 - Q.labor_dissent/100)*Q.normalized_workers_total*(1 - Q.unemployed/100)*2.5) / 5;
 
 Q.rb_power = Q.rb_strength*Q.rb_militancy;
-Q.spd_points += Q.rb_power / 50;
 if (Q.dissent > 0.15) {
     Q.rb_power *= (1 - Q.dissent/1.5);
 }
-Q.spd_points += Q.rb_power;
+Q.spd_points += Q.rb_power / 50;
 
 Q.prussian_police_power = Q.prussian_police_strength*Q.prussian_police_militancy*Q.prussian_police_loyalty;
 Q.evil_prussian_police_power = Q.prussian_police_strength*Q.prussian_police_militancy*(1 - Q.prussian_police_loyalty);
 if (Q.spd_prussia && Q.prussia_leader == "Braun" || Q.prussia_leader == "Rosenfeld") {
-    Q.spd_points += Q.prussian_police_power;
+    Q.spd_points += Q.prussian_police_power / 10;
 } else if (Q.spd_prussia && Q.prussia_leader !== "Braun" && Q.prussia_leader !== "Rosenfeld") {
-    Q.spd_points += (Q.prussian_police_power / 2);
+    Q.spd_points += (Q.prussian_police_power / 20);
 }
 if (Q.prussia_leader == "Schleicher" || Q.z_in_gov && Q.prussia_leader == "Stegerwald" || Q.prussia_leader == "Strasser") {
-    Q.schleicher_points += Q.evil_prussian_police_power;
+    Q.schleicher_points += Q.evil_prussian_police_power / 10;
 }
 Q.reichswehr_power = Q.reichswehr_strength*Q.reichswehr_militancy;
 Q.schleicher_points += Q.reichswehr_power/50;
@@ -395,7 +394,7 @@ Q.enemy_power = 0;
 Q.sa_power = Q.sa_strength*Q.sa_militancy / 50;
 // adjust if sa is friends with schleicher
 Q.enemy_power += Q.sa_power;
-Q.sh_power = Q.sh_strength*Q.sh_militancy;
+Q.sh_power = Q.sh_strength*Q.sh_militancy / 50;
 Q.enemy_power += Q.sh_power;
 
 Q.schleicher_points += Q.enemy_power;
