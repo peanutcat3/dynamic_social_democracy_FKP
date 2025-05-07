@@ -5,7 +5,7 @@ max-visits: 1
 new-page: true
 priority: -1
 tags: event
-face-image: img/schleicher_cool.jpg
+face-image: img/portraits/schleicher_cool.jpg
 go-to: reichstag
 
 = Schleicher's Turn to Play
@@ -190,32 +190,31 @@ if (Q.nvf_exist && Q.nvf_r_alt) {
         "seats": Math.round(Q.nvf_r_alt * 5),
     });
 }
-if (d3 && window) {
-    // get screen width
+if (window && d3) {
     var width = 500;
     var height = 500;
     var screenWidth = document.getElementById('content').offsetWidth;
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+        document.getElementById("alt_reichstag").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
+    d3.select("#alt_reichstag").datum(data).call(parliament);
 }
 !}
 go-to: negotiation_menu_med if spd_med; negotiation_menu_win if spd_win
 
 In defiance of the illegal adjournment of the Reichstag, an alternative assembly has been convened. The parties participating are determined by their ties to us and their role in the ongoing demonstrations.
 
-[? if kpd_boycott: With most <span style="color: #700000;">**KPD**</span> deputies imprisoned, substitute representatives have been appointed to fill their seats. ?]
+[? if kpd_r_alt: With most <span style="color: #700000;">**KPD**</span> deputies imprisoned, substitute representatives have been appointed to fill their seats. ?]
 
 = Reichstag composition
 
-{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="alt_reichstag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
 [? if not dnef_formed and dnef_r_alt: {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div></td><td>!} **SPD:** {!</td><td>!} **[+ spd_r_alt +]%** {!</td></tr>!} ?]
