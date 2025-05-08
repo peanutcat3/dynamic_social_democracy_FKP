@@ -3,7 +3,7 @@ subtitle: Proposal for a united labor front between the <span style="color: #000
 view-if: chancellor = "Schleicher" and dnef_formed and schleicher_post_time >= 6
 new-page: true
 priority: 2
-#tags: event
+tags: event
 max-visits: 1
 face-image: img/beauty_of_labor.jpg
 
