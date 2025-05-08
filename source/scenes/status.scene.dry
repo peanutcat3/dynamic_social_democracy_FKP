@@ -288,6 +288,8 @@ if (Q.sa_strength) {
 
 [? if year >= 1930 and not kpd_truce: <span style="color: #8B0000;">**RFB**</span>: [+ rfb_force +]%?]
 
+[? if year >= 1930 and (prussia_leader == "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Strasser") or reichswehr_street: <h4><span style="color: #BFC8CC;">**State**</span> strength: [+ state_force +]%</h4>?]
+
 [? if year >= 1930 and prussia_leader == "Papen" or prussia_leader == "Schleicher" or prussia_leader == "Strasser": <b>Prussian police: [+ prussia_force +]%</b>?]
 
 [? if year >= 1930 and reichswehr_street: <b>Reichswehr Gendarmerie: [+ reichswehr_force +]%</b>?]
