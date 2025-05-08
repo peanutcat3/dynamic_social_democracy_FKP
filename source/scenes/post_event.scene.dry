@@ -389,10 +389,10 @@ if (Q.dnef_formed) {
 }
 
 if (Q.dnef_formed) {
-    Q.workers_schleicher = 0;
-    Q.industrialists_schleicher = 0;
-    Q.republicans_schleicher = 0;
-    Q.nationalists_schleicher = 0;
+    Q.workers_schleicher = -2;
+    Q.industrialists_schleicher = -2;
+    Q.republicans_schleicher = -2;
+    Q.nationalists_schleicher = -2;
 
     if (Q.schleicher_rig && !Q.schleicher_rig_exposed) {
         Q.workers_schleicher += 1;
@@ -435,7 +435,7 @@ if (Q.dnef_formed) {
     if (Q.industrialists_dnef) Q.workers_schleicher -= 3;
     if (Q.united_labor) Q.workers_schleicher -= 3;
     if (Q.workers_schleicher_bonus) Q.workers_schleicher += Q.workers_schleicher_bonus;
-    if (Q.workers_schleicher > 10) Q.workers_schleicher = 10;
+    if (Q.workers_schleicher > 12) Q.workers_schleicher = 12;
 
     if (Q.z_in_gov) Q.industrialists_schleicher += 1;
     if (Q.dsu_in_gov) Q.industrialists_schleicher -= 1;
@@ -447,7 +447,7 @@ if (Q.dnef_formed) {
     if (Q.dnef_formed) Q.industrialists_schleicher += Q.old_middle_dnef_normalized / 10;
     if (Q.industrialists_dnef) Q.industrialists_schleicher += 5;
     if (Q.industrialists_schleicher_bonus) Q.industrialists_schleicher += Q.industrialists_schleicher_bonus;
-    if (Q.industrialists_schleicher > 10) Q.industrialists_schleicher = 10;
+    if (Q.industrialists_schleicher > 12) Q.industrialists_schleicher = 12;
 
     if (Q.schleicher_spd_influence) Q.republicans_schleicher += Q.schleicher_spd_r / 4;
     if (Q.schleicher_spd_support) Q.republicans_schleicher += Q.schleicher_spd_support / 6;
@@ -468,7 +468,7 @@ if (Q.dnef_formed) {
     if (Q.pro_republic >= 30) Q.republicans_schleicher -= Q.pro_republic / 10;
     if (Q.united_labor) Q.republicans_schleicher -= 1;
     if (Q.republicans_schleicher_bonus) Q.republicans_schleicher += Q.republicans_schleicher_bonus;
-    if (Q.republicans_schleicher > 10) Q.republicans_schleicher = 10;
+    if (Q.republicans_schleicher > 12) Q.republicans_schleicher = 12;
 
     if (Q.kvp_formed) Q.nationalists_schleicher += 1;
     if (Q.schleicher_kvp) Q.nationalists_schleicher += 1;
@@ -482,7 +482,7 @@ if (Q.dnef_formed) {
     if (Q.dsu_in_gov) Q.nationalists_schleicher += 1;
     if (Q.schleicher_spd_r) Q.nationalists_schleicher -= Q.schleicher_spd_r / 3;
     if (Q.nationalists_schleicher_bonus) Q.nationalists_schleicher += Q.nationalists_schleicher_bonus;
-    if (Q.nationalists_schleicher > 10) Q.nationalists_schleicher = 10;
+    if (Q.nationalists_schleicher > 12) Q.nationalists_schleicher = 12;
 }
 
 if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_checked) {
