@@ -422,21 +422,21 @@ if (Q.next_reichstag_month > 12) {
 
 Q.pro_republic += 10;
 
-Q.workers_spd += 8;
-Q.unemployed_spd += 8;
-Q.new_middle_spd += 4;
-Q.old_middle_spd += 4;
-Q.rural_spd += 4;
-Q.catholics_spd += 4;
-Q.new_middle_ddp += 4;
-Q.old_middle_ddp += 4;
-Q.new_middle_lvp += 4;
-Q.old_middle_lvp += 4;
-Q.rural_z += 4;
-Q.catholics_z += 4;
+Q.workers_spd += 6;
+Q.unemployed_spd += 6;
+Q.new_middle_spd += 3;
+Q.old_middle_spd += 3;
+Q.rural_spd += 3;
+Q.catholics_spd += 3;
+Q.new_middle_ddp += 3;
+Q.old_middle_ddp += 3;
+Q.new_middle_lvp += 3;
+Q.old_middle_lvp += 3;
+Q.rural_z += 3;
+Q.catholics_z += 3;
 
-Q.workers_kpd += 6;
-Q.unemployed_kpd += 6;
+Q.workers_kpd += 12;
+Q.unemployed_kpd += 12;
 Q.new_middle_kpd += 2;
 
 Q.kpd_banned = 0;
