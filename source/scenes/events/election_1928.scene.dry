@@ -3,7 +3,7 @@ new-page: true
 tags: event
 priority: -2
 view-if: (year = next_election_year and month >= next_election_month and (next_election_week == week or not rubicon)) or (year > next_election_year)
-on-departure: in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; last_election_time = time; hindenburg_angry = hindenburg_angry_old
+on-departure: in_election = 0; next_election_year = next_election_year + 4; n_elections += 1; next_election_time = time + 48; hindenburg_angry = hindenburg_angry_old
 set-jump: post_election_1928
 set-bg: img/map_2.jpg
 #face-image: img/Rothe_Wahlen_1903.jpg
@@ -448,43 +448,47 @@ if (Q.dnef_formed) {
     Q.previous_schleicher_dnef_last_election_votes = Q.schleicher_dnef_votes;
 }
 
-if (Q.spd_votes >= 50) {
-    Q.z_relation -= 20;
-    Q.ddp_relation -= 20;
-    Q.lvp_relation -= 20;
-    Q.dvp_relation -= 20;
-    Q.lvp_right += 10;
-    Q.dvp_right += 10;
-    Q.ddp_right += 8;
-    Q.ddp_cohesion -= 6;
-} else if (Q.spd_votes >= 45) {
-    Q.z_relation -= 15;
-    Q.ddp_relation -= 15;
-    Q.lvp_relation -= 15;
-    Q.dvp_relation -= 15;
-    Q.lvp_right += 8;
-    Q.dvp_right += 8;
-    Q.ddp_right += 6;
-    Q.ddp_cohesion -= 4;
-} else if (Q.spd_votes >= 40) {
-    Q.z_relation -= 10;
-    Q.ddp_relation -= 10;
-    Q.lvp_relation -= 10;
-    Q.dvp_relation -= 10;
-    Q.lvp_right += 5;
-    Q.dvp_right += 5;
-    Q.ddp_right += 4;
-    Q.ddp_cohesion -= 3;
-} else if (Q.spd_votes >= 35) {
-    Q.z_relation -= 5;
-    Q.ddp_relation -= 5;
-    Q.lvp_relation -= 5;
-    Q.dvp_relation -= 5;
-    Q.lvp_right += 3;
-    Q.dvp_right += 3;
-    Q.ddp_right += 2;
-    Q.ddp_cohesion -= 2;
+if (Q.time - Q.last_election_time >= 10) {
+    if (Q.spd_votes >= 50) {
+        Q.z_relation -= 12;
+        Q.ddp_relation -= 12;
+        Q.lvp_relation -= 12;
+        Q.dvp_relation -= 12;
+        Q.lvp_right += 6;
+        Q.dvp_right += 6;
+        Q.ddp_right += 5;
+        Q.ddp_cohesion -= 4;
+    } else if (Q.spd_votes >= 45) {
+        Q.z_relation -= 9;
+        Q.ddp_relation -= 9;
+        Q.lvp_relation -= 9;
+        Q.dvp_relation -= 9;
+        Q.lvp_right += 4;
+        Q.dvp_right += 4;
+        Q.ddp_right += 3;
+        Q.ddp_cohesion -= 3;
+    } else if (Q.spd_votes >= 40) {
+        Q.z_relation -= 6;
+        Q.ddp_relation -= 6;
+        Q.lvp_relation -= 6;
+        Q.dvp_relation -= 6;
+        Q.lvp_right += 3;
+        Q.dvp_right += 3;
+        Q.ddp_right += 2;
+        Q.ddp_cohesion -= 2;
+    } else if (Q.spd_votes >= 35) {
+        Q.z_relation -= 4;
+        Q.ddp_relation -= 4;
+        Q.lvp_relation -= 4;
+        Q.dvp_relation -= 4;
+        Q.lvp_right += 2;
+        Q.dvp_right += 2;
+        Q.ddp_right += 1;
+        Q.ddp_cohesion -= 1;
+    }
 }
+
+Q.last_election_time = Q.time;
 
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
@@ -1221,11 +1225,11 @@ title: Schleicher forms a majority government with only the <span style="color: 
 subtitle: <span style="color: #BFC8CC;">**DNEF**</span> ([+ dnef_r +]%)
 view-if: dnef_r >= 50 and chancellor == "Schleicher" and schleicher_time and dnef_formed
 unavailable-subtitle: <span style="color: #BFC8CC;">DNEF</span> ([+ dnef_r +]%)
-on-arrival: in_schleicher_majority_coalition = 1; vice_chancellor = "Hammerstein"; prussia_leader = "Goerdeler" if prussia_leader == "Schleicher" or prussia_leader == "Strasser" or (prussia_leader == "Stegerwald" and z_in_gov); dsu_in_gov = 0; z_in_gov = 0; foreign_minister_party = "DNEF"; interior_minister_party = "DNEF"; justice_minister_party = "DNEF"; labor_minister_party = "DNEF"; reichswehr_minister_party = "DNEF"; economic_minister_party = "DNEF"; finance_minister_party = "DNEF"; agriculture_minister_party = "DNEF"; reichswehr_minister = "Schleicher"; pro_republic = 0
+on-arrival: in_schleicher_majority_coalition = 1; vice_chancellor = "Hammerstein"; prussia_leader = "Goerdeler" if prussia_leader == "Schleicher" or prussia_leader == "Strasser" or (prussia_leader == "Stegerwald" and z_in_gov); dsu_in_gov = 0; z_in_gov = 0; foreign_minister_party = "DNEF"; interior_minister_party = "DNEF"; justice_minister_party = "DNEF"; labor_minister_party = "DNEF"; reichswehr_minister_party = "DNEF"; economic_minister_party = "DNEF"; finance_minister_party = "DNEF"; agriculture_minister_party = "DNEF"; reichswehr_minister = "Schleicher"; pro_republic = 0; schleicher_spd_r -= 4; schleicher_spd_support -= 2
 
-Immediately after the election, the chancellor has abandoned his dialogue with the other political parties. Power is his, and it's his to stay. 
+Immediately after the election, the chancellor abandoned both dialogue and the appearance of cordiality with the other political parties. Power is his, and he intends to keep it.
 
-Without being constrained
+Without the constraints of the parliamentary system, he can do whatever he pleases. Only the collapse of his delicately built house of cards could topple a <span style="color: #BFC8CC;">**DNEF**</span> majority government.
 
 @schleicher_left_coalition
 title: Schleicher forms a parliamentary cabinet with the left.
