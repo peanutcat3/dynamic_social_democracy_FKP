@@ -448,6 +448,44 @@ if (Q.dnef_formed) {
     Q.previous_schleicher_dnef_last_election_votes = Q.schleicher_dnef_votes;
 }
 
+if (Q.spd_votes >= 50) {
+    Q.z_relation -= 20;
+    Q.ddp_relation -= 20;
+    Q.lvp_relation -= 20;
+    Q.dvp_relation -= 20;
+    Q.lvp_right += 10;
+    Q.dvp_right += 10;
+    Q.ddp_right += 8;
+    Q.ddp_cohesion -= 6;
+} else if (Q.spd_votes >= 45) {
+    Q.z_relation -= 15;
+    Q.ddp_relation -= 15;
+    Q.lvp_relation -= 15;
+    Q.dvp_relation -= 15;
+    Q.lvp_right += 8;
+    Q.dvp_right += 8;
+    Q.ddp_right += 6;
+    Q.ddp_cohesion -= 4;
+} else if (Q.spd_votes >= 40) {
+    Q.z_relation -= 10;
+    Q.ddp_relation -= 10;
+    Q.lvp_relation -= 10;
+    Q.dvp_relation -= 10;
+    Q.lvp_right += 5;
+    Q.dvp_right += 5;
+    Q.ddp_right += 4;
+    Q.ddp_cohesion -= 3;
+} else if (Q.spd_votes >= 35) {
+    Q.z_relation -= 5;
+    Q.ddp_relation -= 5;
+    Q.lvp_relation -= 5;
+    Q.dvp_relation -= 5;
+    Q.lvp_right += 3;
+    Q.dvp_right += 3;
+    Q.ddp_right += 2;
+    Q.ddp_cohesion -= 2;
+}
+
 // The largest party can only be the NSDAP or the SPD.
 Q.largest_party = 'SPD';
 if (Q.nsdap_r >= Q.spd_r && Q.nsdap_r >= Q.kpd_r && Q.nsdap_r >= Q.z_r) {
@@ -1151,6 +1189,8 @@ go-to: coalition_menu
 
 [? if spd_votes < 20 and schleicher_spd_r >= 3: Our poor electoral results have led Schleicher to question the wisdom of collaborating with a party on the brink, one that can’t even secure a fifth of the vote. Many within our own party now blame our ties with the <span style="color: #808080;">reactionary</span> general as a major factor behind our disappointing electoral results. ?][? if spd_votes < 25 and spd_votes > 20 and schleicher_spd_r >= 5: Our poor electoral results have led Schleicher to question the wisdom of collaborating with a party on the brink, one that can’t even secure a quarter of the vote. Many within our own party now blame our ties with the <span style="color: #808080;">reactionary</span> general as a major factor behind our disappointing electoral results. ?]
 
+[? if spd_votes >= 35: Our strong performance has, unfortunately, driven our former bourgeois coalition partners to distance themselves from us. They blame their electoral defeats on their association with us and refuse to spend their dwindling influence supporting a government with the leverage to transform Germany into <span style="color: #c00000;">socialism</span>. ?]
+
 There are some potential coalition arrangements.
 
 @coalition_menu
@@ -1180,11 +1220,12 @@ There are some potential coalition arrangements.
 title: Schleicher forms a majority government with only the <span style="color: #BFC8CC;">**DNEF**</span>.
 subtitle: <span style="color: #BFC8CC;">**DNEF**</span> ([+ dnef_r +]%)
 view-if: dnef_r >= 50 and chancellor == "Schleicher" and schleicher_time and dnef_formed
-unavailable-subtitle: <span style="color: #BFC8CC;">DNEF</span> ([+ dnef_r +]%) [? if rubicon: - President Hindenburg will never permit Schleicher to bring <span style="color: #c00000;">socialists</span> into the government, no matter his ulterior motive. ?]
-choose-if: president != "Hindenburg"
-on-arrival: leverage -= 10; leverage += 5 if not lvp_formed; leverage += 5 if z_ideology == "Left"; in_schleicher_left_coalition = 1; spd_in_government = 1; vice_chancellor = "Stegerwald"; prussia_leader = "Stegerwald" if prussia_leader == "Schleicher" or prussia_leader == "Strasser"; foreign_minister_party = "DNEF"; interior_minister_party = "DNEF"; justice_minister_party = "Z"; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "DNEF"; economic_minister_party = "DNEF"; finance_minister_party = "DNEF"; agriculture_minister_party = "DNEF"; labor_minister = "Stegerwald"; reichswehr_minister = "Schleicher"; pro_republic += 5; schleicher_spd_influence += 4; hindenburg_angry = -500; schleicher_approval += 2
+unavailable-subtitle: <span style="color: #BFC8CC;">DNEF</span> ([+ dnef_r +]%)
+on-arrival: in_schleicher_majority_coalition = 1; vice_chancellor = "Hammerstein"; prussia_leader = "Goerdeler" if prussia_leader == "Schleicher" or prussia_leader == "Strasser" or (prussia_leader == "Stegerwald" and z_in_gov); dsu_in_gov = 0; z_in_gov = 0; foreign_minister_party = "DNEF"; interior_minister_party = "DNEF"; justice_minister_party = "DNEF"; labor_minister_party = "DNEF"; reichswehr_minister_party = "DNEF"; economic_minister_party = "DNEF"; finance_minister_party = "DNEF"; agriculture_minister_party = "DNEF"; reichswehr_minister = "Schleicher"; pro_republic = 0
 
-Placeholder
+Immediately after the election, the chancellor has abandoned his dialogue with the other political parties. Power is his, and it's his to stay. 
+
+Without being constrained
 
 @schleicher_left_coalition
 title: Schleicher forms a parliamentary cabinet with the left.
