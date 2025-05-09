@@ -572,6 +572,7 @@ Q.support_kpd_grand = 0;
 Q.support_kpd_weimar = 0;
 
 Q.bruning_coalition = Q.neo_weimar_coalition;
+if (Q.kvp_formed) Q.bruning_coalition += Q.kvp_r;
 if (Q.dnvp_ideology == "Moderate" && !Q.dnvp_defect) Q.bruning_coalition = Q.cordon_sanitaire;
 Q.bruning_coalition_loss = 0;
 if (Q.cnblp_defect) Q.bruning_coalition_loss += Q.cnblp_r;
@@ -1157,6 +1158,7 @@ There are some potential coalition arrangements.
 - @spd_majority
 - @weimar_coalition
 - @weimar_coalition_liberal_parliament
+- @schleicher_majority_coalition
 - @schleicher_left_coalition
 - @schleicher_right_coalition
 - @social_liberal_coalition
@@ -1174,6 +1176,15 @@ There are some potential coalition arrangements.
 - @center_right_coalition
 - @bourgeois_coalition
 
+@schleicher_majority_coalition
+title: Schleicher forms a majority government with only the <span style="color: #BFC8CC;">**DNEF**</span>.
+subtitle: <span style="color: #BFC8CC;">**DNEF**</span> ([+ dnef_r +]%)
+view-if: dnef_r >= 50 and chancellor == "Schleicher" and schleicher_time and dnef_formed
+unavailable-subtitle: <span style="color: #BFC8CC;">DNEF</span> ([+ dnef_r +]%) [? if rubicon: - President Hindenburg will never permit Schleicher to bring <span style="color: #c00000;">socialists</span> into the government, no matter his ulterior motive. ?]
+choose-if: president != "Hindenburg"
+on-arrival: leverage -= 10; leverage += 5 if not lvp_formed; leverage += 5 if z_ideology == "Left"; in_schleicher_left_coalition = 1; spd_in_government = 1; vice_chancellor = "Stegerwald"; prussia_leader = "Stegerwald" if prussia_leader == "Schleicher" or prussia_leader == "Strasser"; foreign_minister_party = "DNEF"; interior_minister_party = "DNEF"; justice_minister_party = "Z"; justice_minister_party = "LVP" if lvp_formed; labor_minister_party = "Z"; reichswehr_minister_party = "DNEF"; economic_minister_party = "DNEF"; finance_minister_party = "DNEF"; agriculture_minister_party = "DNEF"; labor_minister = "Stegerwald"; reichswehr_minister = "Schleicher"; pro_republic += 5; schleicher_spd_influence += 4; hindenburg_angry = -500; schleicher_approval += 2
+
+Placeholder
 
 @schleicher_left_coalition
 title: Schleicher forms a parliamentary cabinet with the left.
