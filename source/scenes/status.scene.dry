@@ -203,7 +203,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Industrial Backing
 
-[? if dnef_formed: <span class="tooltip-text" title="German National Unity Front" style="color: #BFC8CC;">**DNEF**</span> [? if industrial_dnef_backing == 3: high?][? if industrial_dnef_backing == 4: highest?] ?]
+[? if dnef_formed: <span class="tooltip-text" title="German National Unity Front" style="color: #BFC8CC;">**DNEF**</span>: [? if industrial_dnef_backing == 3: high?][? if industrial_dnef_backing == 4: highest?] ?]
 
 [? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party" style="color: #000000;">**[+ z_party_name +]**</span>: [? if industrial_z_backing == 3: high?][? if industrial_z_backing == 4: highest?]  ?]
 
