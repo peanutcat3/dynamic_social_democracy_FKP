@@ -1982,7 +1982,6 @@ if (Q.next_reichstag_month > 12) {
   Q.next_reichstag_year += 1;
 }
 !}
-!}
 
 Schleicher's supporting parties have failed to secure a majority coalition in the Reichstag—at least, not one the chancellor finds acceptable. [? if dnef_formed: He demands total power for the <span style="color: #BFC8CC;">**DNEF**</span>, unwilling to let other parties hold his government hostage. ?]
 
