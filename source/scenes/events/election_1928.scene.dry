@@ -1958,7 +1958,6 @@ The <span style="color: #FFCC00;">liberals</span> and minor bourgeois parties ha
 
 @no_majority_schleicher_2
 on-arrival: {!
-on-arrival: {!
 Q.schleicher_post_2 = 1;
 Q.pro_republic -= 3;
 Q.hindenburg_schleicher_r -= 1;
