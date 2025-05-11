@@ -148,6 +148,8 @@ go-to: boycott_elections_menu
 Boycott efficacy: [+ lib_boycott_efficacy : boycott_efficacy +]
 
 @right_boycott
+title: Hugenberg can be relied on.
+subtitle: We can count on him to boycott the elections.
 on-arrival: {!
 Q.boycott_count += 1;
 !}
