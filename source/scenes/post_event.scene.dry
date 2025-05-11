@@ -3696,6 +3696,7 @@ if (Q.president == "Hindenburg" && Q.chancellor == "Brüning" && !Q.spd_in_gover
     Q.bruning_time += 1;
     Q.total_bruning_time += 1;
     Q.bruning_coalition = Q.neo_weimar_coalition;
+    if (Q.kvp_formed) Q.bruning_coalition += Q.kvp_r;
     if (Q.dnvp_ideology == "Moderate") Q.bruning_coalition = Q.cordon_sanitaire;
     Q.bruning_coalition = Math.round((Q.bruning_coalition - Q.bruning_coalition_loss) * 10) / 10;
 } else {
