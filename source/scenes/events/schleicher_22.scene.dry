@@ -71,7 +71,6 @@ The <span style="color: #6A1E1E;">**DSU**</span> has since fallen under the cont
 Yet only a handful of fanatics remain in this rump organization, while the "tamed" <span style="color: #7A3C00;">Nazis</span> drift into the ranks of the <span style="color: #BFC8CC;">**DNEF**</span>, including most of its parliamentary delegation.
 
 @new_reichstag
-
 on-arrival: {!
 Q.z_minus_bvp_votes = parseFloat((Q.z_votes - Q.bvp_votes).toFixed(1));
 Q.z_minus_bvp_r = parseFloat((Q.z_r - Q.bvp_r).toFixed(1));
