@@ -172,6 +172,7 @@ go-to: boycott_elections_menu
 It appears that the <span style="color: #7A3C00;">**NSDAP**</span> and <span style="color: #6A1E1E;">**DSU**</span> haven’t abandoned their ballot-box tactics and have chosen to participate in the elections regardless. [? if nvf_exist and not nvf_dnef: The <span style="color: #142e20;">**NVF**</span>, however, have boycotted, preferring to pool their limited resources into the <span style="color: #7A3C00;">**SA**</span> rather than waste them on a costly electoral campaign. ?]
 
 @boycott_elections_3
+title: We have finished negotiations.
 on-arrival: {!
 Q.election_boycott = 1;
 !}
