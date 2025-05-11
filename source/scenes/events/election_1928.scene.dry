@@ -278,7 +278,7 @@ on-arrival: {!
     }
     if (Q.hugenberg_dvp) Q.adjustmentFactors_dvp = 1.0;
 
-    if (Q.election_boycott)
+    if (Q.election_boycott) {
         Q.adjustmentFactors_votes_spd = 1.0*(1-Q.spd_boycott_efficacy);
         Q.adjustmentFactors_votes_sapd = 0.0;
         Q.adjustmentFactors_votes_kpd = 0.0;
