@@ -1148,6 +1148,7 @@ if (Q.lvp_r && Q.lvp_formed) {
     });
 }
 
+
 if (Q.z_r) {
     data.push({
         "id": "z",
@@ -1155,6 +1156,9 @@ if (Q.z_r) {
         "name": "Center",
         "seats": Math.round(Q.z_minus_bvp_r * 5),
     });
+}
+
+if (Q.bvp_r) {
     data.push({
         "id": "bvp",
         "legend": "BVP",
