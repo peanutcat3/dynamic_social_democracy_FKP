@@ -362,6 +362,8 @@ on-arrival: {!
         }
     }
     
+console.log(Q.spd_r)
+
 // Step 2: Redistribute results among non-adjusted parties to ensure the total is 100%
 if (new_party_sum > 0) {
     for (var party of Q.parties) {
@@ -379,6 +381,8 @@ if (new_party_sum > 0) {
         }
     }
 
+    console.log(Q.spd_r)
+
     // Step 3: Normalize to ensure the total sums to exactly 100%
     let total_r_sum = 0;
 
@@ -394,6 +398,8 @@ if (new_party_sum > 0) {
             Q[party + '_r'] = Math.round(Q[party + '_r'] * normalization_factor * 10) / 10;
         }
     }
+
+    console.log(Q.spd_r)
 }
 if (Q.election_boycott) {
     Q.dnef_votes += Q.spd_votes;

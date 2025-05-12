@@ -574,6 +574,8 @@ if (Q.rubicon && Q.month_actions >= 1 && Q.month_actions != Q.month_actions_chec
     }
     Q.weimar_votes = Q.spd_votes + Q.ddp_votes + (Q.lvp_votes / 2) + Q.z_votes - Q.bvp_votes;
     Q.nationalist_votes = Q.dnvp_votes + Q.dnf_votes + Q.kvp_votes;
+    if (Q.next_election_week == 0) Q.new_election_week = 1;
+    if (Q.next_election_week_prussia == 0) Q.next_election_week_prussia = 1;
     if (Q.chancellor == "Papen") {
         Q.papen_time += 1;
         if (Q.marburg_trigger) Q.marburg_time += 1;
