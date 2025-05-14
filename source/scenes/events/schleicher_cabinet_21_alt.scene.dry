@@ -1,6 +1,6 @@
 title: The Grandest of Coalitions
 subtitle: The Reichstag Reconvenes.
-view-if: chancellor == "Treviranus" and dnef_formed and next_reichstag_time == rubicon_time and next_reichstag_time > 0
+view-if: chancellor == "Treviranus" and next_reichstag_time == rubicon_time and next_reichstag_time > 0
 on-arrival: pro_republic += 8
 max-visits: 1
 new-page: true

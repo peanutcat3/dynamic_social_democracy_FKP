@@ -1,6 +1,6 @@
 title: A "Constitutional" Coalition
 subtitle: A solution to the impasse?
-view-if: chancellor == "Treviranus" and treviranus_post and dnef_formed and next_reichstag_time == rubicon_time and next_reichstag_time > 0
+view-if: chancellor == "Treviranus" and treviranus_post and next_reichstag_time == rubicon_time and next_reichstag_time > 0
 max-visits: 1
 new-page: true
 tags: event
