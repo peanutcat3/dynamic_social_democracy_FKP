@@ -1411,12 +1411,30 @@ if (Q.left_dnef_r && Q.left_dnef) {
     });
 }
 
-if (Q.true_dnef_r && Q.dnef_formed) {
+if (Q.true_dnef_r && Q.dnef_formed && !Q.right_dnef && !Q.left_dnef) {
     data.push({
         "id": "dnef",
         "legend": "DNEF",
         "name": "DNEF",
         "seats": Math.round(Q.true_dnef_r * 5),
+    });
+}
+
+if (Q.true_dnef_r && Q.dnef_formed && Q.right_dnef && !Q.left_dnef) {
+    data.push({
+        "id": "dnef",
+        "legend": "DNEF",
+        "name": "DNEF",
+        "seats": Math.round((Q.true_dnef_r - Q.right_dnef_r) * 5),
+    });
+}
+
+if (Q.true_dnef_r && Q.dnef_formed && !Q.right_dnef && Q.left_dnef) {
+    data.push({
+        "id": "dnef",
+        "legend": "DNEF",
+        "name": "DNEF",
+        "seats": Math.round((Q.true_dnef_r - Q.left_dnef_r) * 5),
     });
 }
 
