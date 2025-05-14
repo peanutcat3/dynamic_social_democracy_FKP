@@ -1,6 +1,7 @@
 on-arrival: {!
 
 Q.dnef_formed = 1;
+Q.dnef_existed = 1;
 Q.parties.push('dnef');
 Q.parties_graph.push('dnef');
 
