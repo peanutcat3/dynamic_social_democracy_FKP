@@ -75,7 +75,7 @@ for (var party of Q.parties) {
 for (var party of Q.parties) {
     Q[party+'_normalized'] = Q[party + '_support']/total_support;
     if (party == "other") {
-        Q.cnblp_votes = (Q.csvd_normalized/total_support);
+        Q.cnblp_votes = (Q.cnblp_normalized/total_support);
         Q.wp_votes = (Q.wp_normalized/total_support);
         if (Q.csvd_formed && !Q.aspd_other) Q.csvd_votes = (Q.csvd_normalized/total_support);
         if (Q.aspd_other || Q.aspd_kvp) Q.aspd_votes = (Q.aspd_normalized/total_support);
