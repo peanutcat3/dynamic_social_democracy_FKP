@@ -713,12 +713,30 @@ if (Q.left_dnef_r && Q.left_dnef) {
     });
 }
 
-if (Q.true_dnef_r && Q.dnef_formed) {
+if (Q.true_dnef_r && Q.dnef_formed && !Q.right_dnef && !Q.left_dnef) {
     data.push({
         "id": "dnef",
         "legend": "DNEF",
         "name": "DNEF",
         "seats": Math.round(Q.true_dnef_r * 5),
+    });
+}
+
+if (Q.true_dnef_r && Q.dnef_formed && Q.right_dnef && !Q.left_dnef) {
+    data.push({
+        "id": "dnef",
+        "legend": "DNEF",
+        "name": "DNEF",
+        "seats": Math.round((Q.true_dnef_r - Q.right_dnef_r) * 5),
+    });
+}
+
+if (Q.true_dnef_r && Q.dnef_formed && !Q.right_dnef && Q.left_dnef) {
+    data.push({
+        "id": "dnef",
+        "legend": "DNEF",
+        "name": "DNEF",
+        "seats": Math.round((Q.true_dnef_r - Q.left_dnef_r) * 5),
     });
 }
 
@@ -776,12 +794,19 @@ if (Q.true_aspd_r && (Q.aspd_other || Q.aspd_kvp)) {
     });
 }
 
-if (Q.kvp_formed && Q.kvp_r) {
+if (Q.kvp_formed && Q.kvp_r && !Q.aspd_kvp) {
     data.push({
         "id": "kvp",
         "legend": "KVP",
         "name": "KVP",
         "seats": Math.round(Q.kvp_r * 5),
+    });
+} else if (Q.kvp_formed && Q.kvp_r && Q.aspd_kvp) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round((Q.kvp_r - Q.true_aspd_r) * 5),
     });
 }
 

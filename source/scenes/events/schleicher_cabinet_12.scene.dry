@@ -509,6 +509,7 @@ Meanwhile, in defiance of the indefinite adjournment of the Reichstag, the <span
 The next few days will be chaotic—and decisive for Germany as a whole.
 
 - @z_break
+- @schleicher_cabinet_13_pre_pre
 
 @spd_med
 title: Schleicher attempts to negotiate with us.
@@ -554,6 +555,7 @@ Meanwhile, in defiance of the indefinite adjournment of the Reichstag, the <span
 However, perhaps we have overestimated our strength—strikes rarely last with unemployment so high, especially with Schleicher’s sympathizers embedded within the unions themselves.
 
 - @z_break
+- @schleicher_cabinet_13_pre_pre
 
 @spd_lose
 title: Our protests are ineffective.
@@ -597,6 +599,13 @@ The ongoing negotiations to bring the <span style="color: #000000;">Center Party
 @schleicher_cabinet_13_pre
 title: Schleicher's Turn to Play
 subtitle: Will the general hold firm?
+go-to: schleicher_cabinet_13
+
+
+@schleicher_cabinet_13_pre_pre
+title: Schleicher's Turn to Play
+subtitle: Will the general hold firm?
+view-if: not z_against_schleicher
 go-to: schleicher_cabinet_13
 
 
