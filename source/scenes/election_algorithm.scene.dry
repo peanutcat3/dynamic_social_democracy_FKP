@@ -78,9 +78,9 @@ for (var party of Q.parties) {
         Q.cnblp_votes = (Q.csvd_normalized/total_support);
         Q.wp_votes = (Q.wp_normalized/total_support);
         if (Q.csvd_formed && !Q.aspd_other) Q.csvd_votes = (Q.csvd_normalized/total_support);
-        if (Q.aspd_other || Q.aspd_kvp) (Q.aspd_normalized/total_support);
-        if (Q.right_dnef) (Q.right_dnef_normalized/total_support);
-        if (Q.left_dnef) (Q.left_dnef_normalized/total_support);
+        if (Q.aspd_other || Q.aspd_kvp) Q.aspd_votes = (Q.aspd_normalized/total_support);
+        if (Q.right_dnef) Q.right_dnef_votes = (Q.right_dnef_normalized/total_support);
+        if (Q.left_dnef) Q.left_dnef_votes = (Q.left_dnef_normalized/total_support);
     }
     if (party == "nsdap" && Q.nsdap_split) {
         Q.nsdap_hitler_votes = Math.round((Q.nsdap_hitler_normalized / total_support) * 1000 / 10);
