@@ -1581,9 +1581,9 @@ go-to: coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td><td>Reichstag Seats</td><td>% Change</td></tr>!}
 [? if not dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_votes +]%** {!</td><td>!} **[+ str_votes_change_spd +]** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!} ?][? if dnef_formed: {!<tr><td><div class="box" style='background-color:#BFC8CC; outline: 2px; outline-style: solid;'> </div> !} **DNEF:** {!</td><td>!} **[+ dnef_votes +]%** {!</td><td>!} **[+ str_votes_change_dnef +]** {!</td><td>!} **[+ true_dnef_r +]%** {!</td><td>!} **[+ str_change_dnef +]** {!</td></tr>!} ?]
 
-[? if dnef_formed and not (right_dnef or left_dnef): {!<tr><td><div class="box2" style='background-color:#BFC8CC'> </div> !} DNEF: {!</td><td>!} [+ schleicher_dnef_votes +]% {!</td><td>!} [+ str_votes_change_schleicher_dnef +] {!</td><td>!} [+ true_dnef_r +]% {!</td><td>!} [+ str_change_dnef +] {!</td></tr>!} ?]
+[? if dnef_formed and not (right_dnef or left_dnef): {!<tr><td><div class="box2" style='background-color:#BFC8CC'> </div> !} DNEF: {!</td><td>!} [+ schleicher_dnef_votes +]% {!</td><td>!} [+ str_votes_change_schleicher_dnef +] {!</td><td>!} [+ schleicher_dnef_r +]% {!</td><td>!} [+ str_change_dnef +] {!</td></tr>!} ?]
 
-[? if dnef_formed and (right_dnef or left_dnef): {!<tr><td><div class="box3" style='background-color:#BFC8CC'> </div> !} DNEF: {!</td><td>!} [+ schleicher_dnef_votes +]% {!</td><td>!} [+ str_votes_change_schleicher_dnef +] {!</td><td>!} [+ true_dnef_r +]% {!</td><td>!} [+ str_change_dnef +] {!</td></tr>!} ?]
+[? if dnef_formed and (right_dnef or left_dnef): {!<tr><td><div class="box3" style='background-color:#BFC8CC'> </div> !} DNEF: {!</td><td>!} [+ schleicher_dnef_votes +]% {!</td><td>!} [+ str_votes_change_schleicher_dnef +] {!</td><td>!} [+ schleicher_dnef_r +]% {!</td><td>!} [+ str_change_dnef +] {!</td></tr>!} ?]
 
 [? if dnef_formed and left_dnef: {!<tr><td><div class="box2" style='background-color:#B86558'> </div> !} DNEF-SB: {!</td><td>!} [+ left_dnef_votes +]% {!</td><td>!} [+ str_votes_change_left_dnef +] {!</td><td>!} [+ left_dnef_r +]% {!</td><td>!} [+ str_change_left_dnef +] {!</td></tr>!} ?]
 
