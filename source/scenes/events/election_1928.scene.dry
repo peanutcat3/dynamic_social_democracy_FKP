@@ -443,6 +443,8 @@ if (Q.election_boycott) {
 if (Q.dnef_formed) {
     Q.schleicher_dnef_r = Q.dnef_r;
     Q.schleicher_dnef_votes = Q.dnef_votes;
+    if (Q.right_dnef) Q.schleicher_dnef_votes -= Q.right_dnef_votes;
+    if (Q.left_dnef) Q.schleicher_dnef_votes -= Q.left_dnef_votes;
 
     if (Q.ddp_r) Q.ddp_r_last = Q.ddp_r;
     if (Q.lvp_r) Q.lvp_r_last = Q.lvp_r;
@@ -883,6 +885,8 @@ if (Q.dnef_formed && Q.nvf_exist) {
 
 if (Q.dnef_formed) {
     Q.true_dnef_r = Math.round(Q.dnef_r * 10) / 10;
+    Q.right_dnef_r = 0;
+    Q.left_dnef_r = 0;
     Q.str_votes_change_schleicher_dnef = Q.schleicher_dnef_votes - Q.previous_schleicher_dnef_last_election_votes;
     
     var sign2 = Q.str_votes_change_schleicher_dnef > 0 ?
@@ -895,6 +899,7 @@ if (Q.dnef_formed) {
 
     if (Q.right_dnef) {
         Q.right_dnef_r = Q.right_dnef_votes*(Q.dnef_r / Q.dnef_votes);
+        Q.schleicher_dnef_r -= Q.right_dnef_r;
 
         Q.str_votes_change_right_dnef = Q.right_dnef_votes - Q.previous_right_dnef_last_election_votes;
         var sign2 = Q.str_votes_change_right_dnef > 0 ?
@@ -938,6 +943,7 @@ if (Q.dnef_formed) {
         Q.right_dnef_r = Math.round(Q.right_dnef_r * 10) / 10;
     } else if (Q.left_dnef) {
         Q.left_dnef_r = Q.left_dnef_votes*(Q.dnef_r / Q.dnef_votes);
+        Q.schleicher_dnef_r -= Q.left_dnef_r;
 
         Q.str_votes_change_left_dnef = Q.left_dnef_votes - Q.previous_left_dnef_last_election_votes;
         var sign2 = Q.str_votes_change_left_dnef > 0 ?
