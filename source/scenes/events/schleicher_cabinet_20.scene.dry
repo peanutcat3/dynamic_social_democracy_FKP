@@ -558,8 +558,8 @@ title: The <span style="color: #BFC8CC;">**DNEF**</span> undergoes a split.
 choose-if: dnef_collapse_points >= 15 and dnef_collapse_points < 25
 unavailable-subtitle: [? if dnef_collapse_points >= 15: The situation is far more unstable than Schleicher would ever publicly admit. ?][? if dnef_collapse_points < 10: Even in his current state, Schleicher still holds influence over the party. ?]
 on-arrival: {!
-if (Q.weimar_gang_points >= Q.reactionary_gang_points) Q.right_dnef = 1;
-if (Q.reactionary_gang_points > Q.weimar_gang_points) Q.left_dnef = 1;
+if (Q.reactionary_gang_points >= Q.weimar_gang_points) Q.right_dnef = 1;
+if (Q.weimar_gang_points > Q.reactionary_gang_points) Q.left_dnef = 1;
 
 if (Q.dnef_r) {
     if (Q.right_dnef) {
