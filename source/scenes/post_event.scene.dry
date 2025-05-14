@@ -217,6 +217,7 @@ if (Q.neorevisionism) {
 }
 if (Q.social_patriot) {
     total_dissent += Q.social_patriot_strength*Q.social_patriot_dissent;
+}
 else {
     Q.social_patriot_dissent = 0;
 }
