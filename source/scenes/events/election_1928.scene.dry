@@ -505,6 +505,7 @@ if (Q.dnef_formed) {
         Q.dnef_votes += Q.dnvp_votes;
     }
     Q.dnef_votes = Math.round(Q.dnef_votes * 10) / 10;
+    console.log(Q.dnef_r)
     Q.dnef_r = Math.round(Q.dnef_r * 10) / 10;
 }
     // Step 3: Calculate changes in results
