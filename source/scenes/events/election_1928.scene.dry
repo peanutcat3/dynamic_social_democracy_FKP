@@ -986,6 +986,7 @@ if (Q.dnef_formed) {
         Q.true_dnef_r = Math.round(Q.dnef_r * 10) / 10;
         Q.left_dnef_r = Math.round(Q.left_dnef_r * 10) / 10;
     }
+    Q.schleicher_dnef_r = Math.round(Q.schleicher_dnef_r * 10) / 10;
 }
 
 if (Q.time - Q.last_election_time >= 10 && (Q.left_strength >= Q.reformist_strength + Q.labor_strength)) {
