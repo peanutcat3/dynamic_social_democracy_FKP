@@ -933,7 +933,7 @@ if (Q.dnef_formed) {
             '<img src="img/steady.png"> ';
         Q.str_change_schleicher_dnef = sign2 + Math.abs(Q.str_change_schleicher_dnef).toFixed(1);
         Q.old_schleicher_dnef_r = Q.schleicher_dnef_r;
-        Q.true_dnef_r = Q.dnef_r -= Q.right_dnef_r;
+        Q.true_dnef_r = Q.dnef_r - Q.right_dnef_r;
     } else if (Q.left_dnef) {
         Q.left_dnef_r = Q.right_dnef_votes*(Q.dnef_r / Q.dnef_votes);
 
@@ -974,7 +974,7 @@ if (Q.dnef_formed) {
             '<img src="img/steady.png"> ';
         Q.str_change_schleicher_dnef = sign2 + Math.abs(Q.str_change_schleicher_dnef).toFixed(1);
         Q.old_schleicher_dnef_r = Q.schleicher_dnef_r;
-        Q.true_dnef_r = Q.dnef_r -= Q.left_dnef_r;
+        Q.true_dnef_r = Q.dnef_r - Q.left_dnef_r;
     }
 }
 
