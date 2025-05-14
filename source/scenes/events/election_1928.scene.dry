@@ -882,7 +882,7 @@ if (Q.dnef_formed && Q.nvf_exist) {
 }
 
 if (Q.dnef_formed) {
-    Q.true_dnef_r = Q.dnef_r;
+    Q.true_dnef_r = Math.round(Q.dnef_r * 10) / 10;
     Q.str_votes_change_schleicher_dnef = Q.schleicher_dnef_votes - Q.previous_schleicher_dnef_last_election_votes;
     
     var sign2 = Q.str_votes_change_schleicher_dnef > 0 ?
@@ -934,17 +934,19 @@ if (Q.dnef_formed) {
         Q.str_change_schleicher_dnef = sign2 + Math.abs(Q.str_change_schleicher_dnef).toFixed(1);
         Q.old_schleicher_dnef_r = Q.schleicher_dnef_r;
         Q.true_dnef_r = Q.dnef_r - Q.right_dnef_r;
+        Q.true_dnef_r = Math.round(Q.dnef_r * 10) / 10;
+        Q.right_dnef_r = Math.round(Q.right_dnef_r * 10) / 10;
     } else if (Q.left_dnef) {
-        Q.left_dnef_r = Q.right_dnef_votes*(Q.dnef_r / Q.dnef_votes);
+        Q.left_dnef_r = Q.left_dnef_votes*(Q.dnef_r / Q.dnef_votes);
 
-        Q.str_votes_change_right_dnef = Q.right_dnef_votes - Q.previous_right_dnef_last_election_votes;
-        var sign2 = Q.str_votes_change_right_dnef > 0 ?
+        Q.str_votes_change_left_dnef = Q.left_dnef_votes - Q.previous_left_dnef_last_election_votes;
+        var sign2 = Q.str_votes_change_left_dnef > 0 ?
             '<img src="img/arrowup.png"> ' :
-            Q.str_votes_change_right_dnef < 0 ?
+            Q.str_votes_change_left_dnef < 0 ?
             '<img src="img/arrowdown.png"> ' :
             '<img src="img/steady.png"> ';
-        Q.str_votes_change_right_dnef = sign2 + Math.abs(Q.str_votes_change_right_dnef).toFixed(1);
-        Q.previous_right_dnef_last_election_votes = Q.right_dnef_votes;
+        Q.str_votes_change_left_dnef = sign2 + Math.abs(Q.str_votes_change_left_dnef).toFixed(1);
+        Q.previous_left_dnef_last_election_votes = Q.left_dnef_votes;
 
         Q.str_votes_change_schleicher_dnef = Q.schleicher_dnef_votes - Q.previous_schleicher_dnef_last_election_votes;
         var sign2 = Q.str_votes_change_schleicher_dnef > 0 ?
@@ -957,13 +959,13 @@ if (Q.dnef_formed) {
 
         // reichstag share
 
-        Q.str_change_right_dnef = Q.left_dnef_r - Q.old_left_dnef_r;
-        var sign2 = Q.str_change_right_dnef > 0 ?
+        Q.str_change_left_dnef = Q.left_dnef_r - Q.old_left_dnef_r;
+        var sign2 = Q.str_change_left_dnef > 0 ?
             '<img src="img/arrowup.png"> ' :
-            Q.str_change_right_dnef < 0 ?
+            Q.str_change_left_dnef < 0 ?
             '<img src="img/arrowdown.png"> ' :
             '<img src="img/steady.png"> ';
-        Q.str_change_right_dnef = sign2 + Math.abs(Q.str_change_right_dnef).toFixed(1);
+        Q.str_change_left_dnef = sign2 + Math.abs(Q.str_change_left_dnef).toFixed(1);
         Q.old_left_dnef_r = Q.left_dnef_r;
 
         Q.str_change_schleicher_dnef = Q.schleicher_dnef_r - Q.old_schleicher_dnef_r;
@@ -975,6 +977,8 @@ if (Q.dnef_formed) {
         Q.str_change_schleicher_dnef = sign2 + Math.abs(Q.str_change_schleicher_dnef).toFixed(1);
         Q.old_schleicher_dnef_r = Q.schleicher_dnef_r;
         Q.true_dnef_r = Q.dnef_r - Q.left_dnef_r;
+        Q.true_dnef_r = Math.round(Q.dnef_r * 10) / 10;
+        Q.left_dnef_r = Math.round(Q.left_dnef_r * 10) / 10;
     }
 }
 
@@ -1577,7 +1581,7 @@ go-to: coalition_menu
 
 [? if dnef_formed and left_dnef: {!<tr><td><div class="box2" style='background-color:#B86558'> </div> !} DNEF-SB: {!</td><td>!} [+ left_dnef_votes +]% {!</td><td>!} [+ str_votes_change_left_dnef +] {!</td><td>!} [+ left_dnef_r +]% {!</td><td>!} [+ str_change_left_dnef +] {!</td></tr>!} ?]
 
-[? if dnef_formed and right_dnef: {!<tr><td><div class="box2" style='background-color:#8A99A0'> </div> !} DNEF-VLB: {!</td><td>!} [+ right_dnef_votes +]% {!</td><td>!} [+ str_votes_change_right_dnef +] {!</td><td>!} [+ right_dnef_r +]% {!</td><td>!} [+ str_change_right_dnef +] {!</td></tr>!} ?]
+[? if dnef_formed and right_dnef: {!<tr><td><div class="box2" style='background-color:#5F7278'> </div> !} DNEF-VLB: {!</td><td>!} [+ right_dnef_votes +]% {!</td><td>!} [+ str_votes_change_right_dnef +] {!</td><td>!} [+ right_dnef_r +]% {!</td><td>!} [+ str_change_right_dnef +] {!</td></tr>!} ?]
 
 [? if dnef_formed and (right_dnef or left_dnef): <tr><td colspan="5" style="text-align: center;"><hr id="read-marker"></td></tr> ?]
 
