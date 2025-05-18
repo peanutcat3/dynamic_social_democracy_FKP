@@ -382,7 +382,7 @@ Frick: "Wilhelm Frick of the <span style="color: #6A1E1E; font-weight: bold;">DS
 Goring: "Hermann Göring of the <span style="color: #7A3C00; font-weight: bold;">NSDAP</span>",
 Adenauer: "Konrad Adenauer of the <span style="color: #000000; font-weight: bold;">Center Party</span>",
 Heuss: "Theodor Heuss of the <span style="color: #D3C24D; font-weight: bold;">[+ ddp_name +]</span>",
-Schumacher: "Kurt Schumacher of the <span style="color: #c00000; font-weight: bold;">SPD</span>",
+Schumacher: "Kurt Schumacher of the <span style="color: #c00000; font-weight: bold;">SPD</span>"
 }
 if (Q.lvp_formed) {
     candidate_descs.Heuss = "Theodor Heuss of the <span style="color: #FFCC00; font-weight: bold;">LVP</span>";
