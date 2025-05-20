@@ -163,6 +163,8 @@ title: Moving on to the <span style="color: #3E88B3;">nationalists</span>.
 
 The <span style="color: #3E88B3;">nationalists</span> are unified in their support for [+ dnef_candidate +], joined by the various splinter factions and the minor bourgeois parties. Although Hugenberg is—somehow—still contemplating a presidential run, a strongly worded threat has convinced him to remain silent.
 
+- @candidates_dems
+
 @candidates_dems
 title: The <span style="color: #700000;">**Communists**</span>? The <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Parties? Who will they support?
 
@@ -176,6 +178,7 @@ With the <span style="color: #700000;">**Communists**</span> having been heavily
 
 @candidates_spd
 title: Finally, what about us?
+go-to: candidate_menu
 
 As for the <span style="color: #c00000;">**SPD**</span>, we could support a joint <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition candidate or run our own. The viability of a united front, however, depends entirely on our relations with former coalition partners—and whether they’ve fallen under Schleicher’s influence.
 
