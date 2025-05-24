@@ -781,10 +781,9 @@ go-to: round2_menu
 Unfortunately, we fail to turn them away from Hindenburg. [? if hindenburg_votes > spd_president_votes : Given that Hindenburg received more votes than Braun, they believe that we should turn to Hindenburg, not the other way around. ?]
 
 @round2_convince_kpd
-view-if: not eckener_campaign
 choose-if: spd_votes >= kpd_votes
 unavailable-subtitle: The <span style="color: #700000;">**KPD**</span> knows that they are more popular than us; they do not see a reason to support our candidate.
-view-if: spd_campaign > 0 and kpd_support_spd == 0 
+view-if: spd_campaign > 0 and kpd_support_spd == 0 and not eckener_campaign
 max-visits: 1
 
 The <span style="color: #700000;">**KPD**</span> is committed to supporting Ernst Thälmann. [? if (kpd_relation >= 55 and kpd_leader != "Conciliators" or kpd_relation >= 40 and kpd_leader == "Conciliators") : However, the <span style="color: #7A3C00;">Nazi</span>-Hindenburg coalition worries them enough that they are willing to be convinced to drop their campaign and support Braun. ?][? if (kpd_relation < 55 and kpd_leader != "Conciliators" or kpd_relation < 40 and kpd_leader == "Conciliators") : They do not seem willing to be convinced. ?]
