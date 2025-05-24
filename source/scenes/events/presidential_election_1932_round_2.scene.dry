@@ -56,13 +56,10 @@ if (!Q.hindenburg_run) {
 
     Q.reactionary_candidate_1_votes = 0;
     Q.reactionary_candidate_2_votes = 0;
-
-    const choices = {};
     
     for (const party of parties) {
             const choice = Q[`${party}_choice`];
-            choices[party] = choice;
-            const support = Q[`${party}_normalized`];
+            Q.choice_pre = choice;
     
             if (choice === Q.reactionary_candidate_1932) {
                 Q.reactionary_candidate_1_votes += support;
@@ -379,11 +376,11 @@ if (!Q.hindenburg_run) {
         const new_choice = Q[`${party}_choice`];
         const support = Q[`${party}_normalized`];
 
-        if (choice === new_choice) continue;
+        if (Q.choice_pre === new_choice) continue;
 
-        if (choice === Q.reactionary_candidate_1932) {
+        if (Q.choice_pre === Q.reactionary_candidate_1932) {
             Q.reactionary_candidate_1_votes -= support;
-        } else if (choice === Q.secondary_reactionary_candidate_1932) {
+        } else if (Q.choice_pre === Q.secondary_reactionary_candidate_1932) {
             Q.reactionary_candidate_2_votes -= support;
         }
     }
