@@ -808,6 +808,7 @@ on-arrival: spd_support_thalmann = 1; reformist_dissent += 15; center_dissent +=
 Fine. We have thrown our support to Chairman [+ communist_candidate_1932 +] of the <span style="color: #700000;">**KPD**</span> to the dismay of our bourgeois allies.
 
 @endorsements_braun
+on-arrival: z_support_spd = 0 if z_support_spd == 2
 
 We can't win this election alone, we need support from other parties. [? if spd_votes >= 50: Nevermind. We actually can win this election alone. ?]
 
