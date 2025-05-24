@@ -65,6 +65,7 @@ if (!Q.hindenburg_run) {
 
 for (const party of parties) {
         const choice = Q[`${party}_choice`];
+        const support = Q[`${party}_normalized`];
         Q.choice_pre = choice;
 
         if (choice === Q.reactionary_candidate_1932) {

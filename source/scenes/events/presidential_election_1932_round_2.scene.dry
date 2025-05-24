@@ -375,6 +375,7 @@ if (!Q.hindenburg_run) {
     for (const party of parties) {
         const new_choice = Q[`${party}_choice`];
         const support = Q[`${party}_normalized`];
+        const support = Q[`${party}_normalized`];
 
         if (Q.choice_pre === new_choice) continue;
 
