@@ -263,14 +263,14 @@ view-if: rosenfeld_campaign
 
 We have a plethora of campaign options at our disposal.
 
-- @iron_front
-- @media
-- @party_discipline
-- @communist_glaze
+- @iron_front_rosenfeld
+- @media_rosenfeld
+- @party_discipline_rosenfeld
+- @communist_glaze_rosenfeld
 - @campaigning
 - @campaigning_hindenburg_op: It's Hindenburg's turn to campaign.
 
-@iron_front
+@iron_front_rosenfeld
 title: Rally the full strength of the <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span> to support Rosenfeld.
 view-if: iron_front_formed
 on-arrival: radicalization = 3 if radicalization > 3; workers_spd += radicalization + 3; new_middle_spd += radicalization + 2; unemployed_spd += radicalization + 2; pro_republic += 3; nationalism -= 3; neorevisionist_dissent -= 10; neorevisionist_strength += 10; left_dissent -= 10; rb_strength += 100; workers_nsdap -= 3 if strife >= 5 and far_right_paramilitary; new_middle_nsdap -= 3 if strife >= 5 and far_right_paramilitary; unemployed_nsdap -= 3 if strife >= 5 and far_right_paramilitary
@@ -280,7 +280,7 @@ go-to: campaigning_rosenfeld
 
 The <span style="color: #c00000;">**Iron**</span> <span style="color: #1A1A1A;">**Front**</span> immediately gets to work, rallying around its slogan of opposing <span style="color: #7A3C00;">Fascism</span> and <span style="color: #808080;">Monarchism</span>, which is especially relevant in this election. This will help us shore up support among more reluctant workers.
 
-@media
+@media_rosenfeld
 title: Use our radio stations to broadcast in favor of Rosenfeld.
 subtitle: -1 resource
 choose-if: radio >= 2 and resources >= 1
@@ -292,7 +292,7 @@ go-to: campaigning_rosenfeld
 
 We are able to broadcast radio addresses urging turnout for Rosenfeld, spreading our message to the middle classes in hopes of overcoming their antipathy toward <span style="color: #c00000;">socialism</span> and Rosenfeld especially.
 
-@party_discipline
+@party_discipline_rosenfeld
 title: Impose party discipline.
 subtitle: Some reformist local organizations haven't been putting in the work.
 choose-if: dissent < 0.15
@@ -304,7 +304,7 @@ go-to: campaigning_rosenfeld
 
 We need a united front to win this election—internal factional politics must be set aside.
 
-@communist_glaze
+@communist_glaze_rosenfeld
 title: We persuade the <span style="color: #700000;">**Communists**</span> to take a more active role in our campaign efforts.
 subtitle: This will alienate the bourgeois parties! -1 resource
 choose-if: kpd_support_spd == 1 and (kpd_relation >= 60 or (kpd_relation >= 40 and kpd_leader == "Conciliators")) and resources >= 1
