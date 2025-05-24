@@ -486,6 +486,24 @@ if (Q.dnef_formed) {
         Q.republicans_schleicher -= 3;
     }
 
+    if (Q.dnef_total_votes) {
+        Q.workers_schleicher_pre = Q.workers_schleicher;
+        Q.republicans_schleicher_pre = Q.republicans_schleicher;
+        Q.nationalists_schleicher_pre = Q.nationalists_schleicher;
+        Q.industrialists_schleicher_pre = Q.industrialists_schleicher;
+    
+        const scale = 5; 
+        const vote_thresholds = [20, 25, 30, 35, 40];
+    
+        for (const threshold of vote_thresholds) {
+            if (Q.dnef_total_votes >= threshold) {
+                Q.workers_schleicher += 1 / (1 + Q.workers_schleicher / scale);
+                Q.republicans_schleicher += 1 / (1 + Q.republicans_schleicher / scale);
+                Q.nationalists_schleicher += 1 / (1 + Q.nationalists_schleicher / scale);
+                Q.industrialists_schleicher += 1 / (1 + Q.industrialists_schleicher / scale);
+            }
+        }
+    }
     if (Q.schleicher_spd_influence) Q.workers_schleicher += Q.schleicher_spd_influence / 2;
     if (Q.schleicher_spd_support) Q.workers_schleicher += Q.schleicher_spd_support / 4;
     if (Q.schleicher_spd_r < 2) Q.workers_schleicher -= (Q.workers_spd_normalized / 25);
