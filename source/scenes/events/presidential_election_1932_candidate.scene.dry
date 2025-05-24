@@ -914,8 +914,8 @@ The <span style="color: #700000;">**KPD**</span> now endorses Braun in the presi
 
 We can't win this election alone, we need support from other parties. [? if spd_votes >= 50: Nevermind. We actually can win this election alone. ?]
 
-- @convince_kpd_rosenfeld
-- @convince_z_rosenfeld
+- @convince_kpd_rosenfeld: Convince the <span style="color: #700000;">**Communists**</span> to back <span style="color: #c00000;">Rosenfeld</span>.
+- @convince_z_rosenfeld: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #c00000;">Rosenfeld</span>.
 - @view_candidates: View party endorsements.
 - @hope: We have concluded negotiations with other parties.
 
