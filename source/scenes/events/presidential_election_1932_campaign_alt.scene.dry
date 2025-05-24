@@ -318,13 +318,13 @@ view-if: eckener_campaign
 
 We have a plethora of campaign options at our disposal.
 
-- @media
+- @media_eckener
 - @against_communists_eckener
-- @party_discipline
-- @bourgeois_glaze
+- @party_discipline_eckener
+- @bourgeois_glaze_eckener
 - @campaigning
 
-@media
+@media_eckener
 title: Use our radio stations to broadcast in favor of Eckener.
 subtitle: -1 resource
 choose-if: radio >= 2 and resources >= 1
@@ -348,7 +348,7 @@ go-to: campaigning_eckener
 
 We have lost an alarming number of voters to the <span style="color: #700000;">**Communists**</span> due to our support for the bourgeois Eckener. To ensure Eckener secures most of the democratic vote, we must prevent further defections.
 
-@party_discipline
+@party_discipline_eckener
 title: Impose party discipline.
 subtitle: Some leftist local organizations haven't been putting in the work.
 choose-if: dissent < 0.15
@@ -360,7 +360,7 @@ go-to: campaigning_eckener
 
 We need a united front to win this election—internal factional politics must be set aside.
 
-@bourgeois_glaze
+@bourgeois_glaze_eckener
 title: Persuade the bourgeois parties to let us into their campaign committees.
 subtitle: This will allow for a more coordinated effort.
 choose-if: z_support_spd == 1 and ((z_relation >= 55 and z_ideology == "Right") or (z_relation >= 45 and z_ideology == "Left")) and ((ddp_relation >= 55 and not lvp_formed) or (lvp_relation >= 55 and lvp_formed)) and resources >= 1
