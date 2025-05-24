@@ -443,7 +443,7 @@ const candidate_votes = [
 ];
 
 let maxVotes = 0;
-for (const key of candidates) {
+for (const key of candidate_votes) {
   if (Q[key] > maxVotes) {
     maxVotes = Q[key];
   }
