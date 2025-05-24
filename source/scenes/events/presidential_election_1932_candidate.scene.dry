@@ -459,7 +459,7 @@ So, what's our choice?
 - @abstain: Abstain from endorsing any candidate.
 
 @view_candidates
-go-to: endorsements_braun
+go-to: endorsements_braun if braun_campaign; endorsements_eckener if eckener_campaign; endorsements_rosenfeld if rosenfeld_campaign
 
 [? if spd_campaign: [? if spd_candidate != "Eckener": <span style="color: #c00000;">**[+ spd_candidate_1932_disp +]**</span>?][? if spd_candidate == "Eckener": <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span> ?] - supported by: ?]
 
@@ -962,6 +962,7 @@ on-arrival: {!
 Q.z_support_spd = 0;
 !}
 max-visits: 1
+go-to: endorsements_rosenfeld
 
 It's a long shot, but some in our party believed we could convince the <span style="color: #000000;">Center Party</span> to back Rosenfeld. As expected, this effort failed—their leadership declared uncompromising opposition to cooperating with the <span style="color: #700000;">**Communists**</span> to elect a candidate from our left wing.
 
