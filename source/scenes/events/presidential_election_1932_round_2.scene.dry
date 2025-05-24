@@ -69,19 +69,28 @@ if (!Q.hindenburg_run) {
             }
         }
 }
-if (Q.dnvp_candidate_1932 == "Duesterberg") {
-    Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.8);
-    Q.dnvp_presidential_votes += Q.other_normalized / 2;
-} else if (Q.dnvp_candidate_1932 == "Hugenberg") {
-    if (Q.dnvp_ideology == "Radical") {
-        Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.7);
-        Q.dnvp_presidential_votes += Q.other_normalized / 4;
-        Q.hindenburg_votes += Q.other_normalized / 4;
+if (Q.hindenburg_run) {
+    if (Q.dnvp_candidate_1932 == "Duesterberg") {
+        Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.8);
+        Q.dnvp_presidential_votes += Q.other_normalized / 2;
+    } else if (Q.dnvp_candidate_1932 == "Hugenberg") {
+        if (Q.dnvp_ideology == "Radical") {
+            Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.7);
+            Q.dnvp_presidential_votes += Q.other_normalized / 4;
+            Q.hindenburg_votes += Q.other_normalized / 4;
+        } else {
+            Q.dnvp_presidential_votes += Q.dnf_normalized;
+        }
     } else {
-        Q.dnvp_presidential_votes += Q.dnf_normalized;
+        Q.hindenburg_votes += (Q.dnvp_normalized*0.8);
     }
-} else {
-    Q.hindenburg_votes += (Q.dnvp_normalized*0.8);
+} else if (Q.dnvp_ideology == "Radical") {
+    if (Q.reactionary_candidate_1932_ideology == "Conservative") Q.reactionary_candidate_1_votes += Q.dnvp_normalized*0.6;
+    if (Q.secondary_reactionary_candidate_1932_ideology == "Conservative") Q.reactionary_candidate_2_votes += Q.dnvp_normalized*0.6;
+    if (Q.reactionary_candidate_1932_ideology == "Liberal") Q.reactionary_candidate_1_votes += Q.dnvp_normalized*0.3;
+    if (Q.secondary_reactionary_candidate_1932_ideology == "Liberal") Q.reactionary_candidate_2_votes += Q.dnvp_normalized*0.3;
+    if (Q.reactionary_candidate_1932_ideology == "Centrist") Q.reactionary_candidate_1_votes += Q.dnvp_normalized*0.2;
+    if (Q.secondary_reactionary_candidate_1932_ideology == "Centrist") Q.reactionary_candidate_2_votes += Q.dnvp_normalized*0.2;
 }
 
 Q.ddp_president_crossover = 0;
