@@ -373,6 +373,7 @@ go-to: campaigning_eckener
 The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and the <span style="color: #FFCC00;">liberals</span> have been excluding us from their local campaign committees. However, by leveraging our ties to their left wings and affiliated trade unions, we manage to pressure them into allowing some <span style="color: #c00000;">socialists</span> to participate.
 
 @campaigning_reactionary
+view-if: spd_support_reactionary
 on-arrival: {!
 if (Q.industrial_total_backing) {
     if (Q.ddp_choice == Q.spd_choice) Q.reactionary_funds += Q.industrial_ddp_backing;
