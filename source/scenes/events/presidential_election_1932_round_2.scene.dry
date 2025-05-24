@@ -57,16 +57,20 @@ if (!Q.hindenburg_run) {
     Q.reactionary_candidate_1_votes = 0;
     Q.reactionary_candidate_2_votes = 0;
 
+    const choices = {};
+    
     for (const party of parties) {
-        const choice = Q[`${party}_choice`];
-        const support = Q[`${party}_normalized`];
-
-        if (choice === Q.reactionary_candidate_1932) {
-            Q.reactionary_candidate_1_votes += support;
-        } else if (choice === Q.secondary_reactionary_candidate_1932) {
-            Q.reactionary_candidate_2_votes += support;
+            const choice = Q[`${party}_choice`];
+            choices[party] = choice;
+            const support = Q[`${party}_normalized`];
+    
+            if (choice === Q.reactionary_candidate_1932) {
+                Q.reactionary_candidate_1_votes += support;
+            } else if (choice === Q.secondary_reactionary_candidate_1932) {
+                Q.reactionary_candidate_2_votes += support;
+            }
         }
-    }
+}
 }
 if (Q.dnvp_candidate_1932 == "Duesterberg") {
     Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.8);
