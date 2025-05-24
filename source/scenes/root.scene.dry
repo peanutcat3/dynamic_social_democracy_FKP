@@ -512,6 +512,7 @@ Q.economic_records = [];
 
 // State of the government
 Q.president = "Hindenburg";
+Q.president_ideology = "Hindenburg";
 // starting chancellor: Wilhelm Marx
 Q.chancellor = "Marx";
 Q.chancellor_party = 'Z';
