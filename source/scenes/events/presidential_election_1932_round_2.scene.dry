@@ -71,7 +71,6 @@ if (!Q.hindenburg_run) {
             }
         }
 }
-}
 if (Q.dnvp_candidate_1932 == "Duesterberg") {
     Q.dnvp_presidential_votes += (Q.dnvp_normalized*0.8);
     Q.dnvp_presidential_votes += Q.other_normalized / 2;
