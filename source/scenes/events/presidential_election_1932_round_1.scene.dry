@@ -1,5 +1,5 @@
 title: Presidential Election
-subtitle: Hindenburg runs for re-election...
+subtitle: [? if hindenburg_run: Hindenburg runs for re-election... ?][? if not hindenburg_run: The first round results have come in... ?]
 view-if: year = 1932 and month == 3 and presidential_election_seen = 0 and not hindenburg_term_extended
 frequency: 1000
 max-visits: 1

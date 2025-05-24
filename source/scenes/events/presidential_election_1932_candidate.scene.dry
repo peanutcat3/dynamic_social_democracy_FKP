@@ -117,6 +117,7 @@ With local elections fast approaching, many parties have opted not to field thei
 
 @jarres
 title: Karl Jarres, mayor of Duisburg, former Vice-Chancellor, and the <span style="color: #C0A054;">**DVP**</span>'s candidate in 1925.
+view-if: jarres_unlock_pres
 subtitle: Second times a charm.
 on-arrival: {!
 Q.jarres_run = 1; 
@@ -139,6 +140,7 @@ His candidacy is supported by the <span style="color: #C0A054;">**DVP**</span>.
 
 @luther
 title: Hans Luther, [? if luther_reichsbank: president of the Reichsbank?][? if not luther_reichsbank: leader of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?] and former chancellor.
+view-if: luther_unlock_pres
 subtitle: Witty subtitle here.
 on-arrival: {!
 Q.luther_run = 1; 
@@ -161,6 +163,7 @@ His candidacy is supported by the [? if not lvp_formed: <span style="color: #C0A
 
 @gessler
 title: Otto Gessler, controversial former Defense Minister and former <span style="color: #D3C24D;">**DDP**</span> member.
+view-if: gessler_unlock_pres
 subtitle: Witty subtitle here.
 on-arrival: {!
 Q.gessler_run = 1; 
@@ -183,6 +186,7 @@ His candidacy is supported by the [? if not lvp_formed: <span style="color: #C0A
 
 @adenauer
 title: Konrad Adenauer, Mayor of Cologne, and an advocate for the <span style="color: #000000;">Center Party</span> "leaving the tower".
+view-if: adenauer_unlock_pres
 subtitle: Witty subtitle here.
 on-arrival: {!
 Q.adenauer_run = 1; 
@@ -205,6 +209,7 @@ His candidacy is supported by the [? if z_party_name != "CVP": <span style="colo
 
 @bruning
 title: Heinrich Brüning, on the [? if not cvp_formed: right wing?][? if cvp_formed: left wing?] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and their[? if chancellor == "Brüning":&nbsp;candidate for?] chancellor.
+view-if: bruning_unlock_pres
 subtitle: Witty subtitle here.
 unavailable-subtitle: Words.
 on-arrival: {!
@@ -228,6 +233,7 @@ His candidacy is supported by the [? if z_party_name != "CVP": <span style="colo
 
 @vorbeck
 title: Paul von Lettow-Vorbeck, war hero of the Great War and [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?] member.
+view-if: vorbeck_unlock_pres
 subtitle: Lettow-Vorbeck is reluctant to lead, but perhaps his war hero status can unite the nation once more?
 unavailable-subtitle: Lettow-Vorbeck is reluctant to lead, and prefers his unglamorous life away from the public. Unless he is convinced, of course.
 on-arrival: {!
@@ -253,6 +259,7 @@ His candidacy is backed by the [? if not vorbeck_fallback: [? if dnvp_ideology =
 
 @westarp
 title: Kuno von Westarp, [? if dnvp_leader != "Westarp": former?] leader of the <span style="color: #3E88B3;">**DNVP**</span>, and an old friend of Hindenburg.
+view-if: westarp_unlock_pres
 subtitle: Witty subtitle here.
 on-arrival: {!
 Q.westarp_run = 1; 
