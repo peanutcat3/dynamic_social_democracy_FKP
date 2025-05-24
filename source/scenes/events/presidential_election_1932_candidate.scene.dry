@@ -99,6 +99,18 @@ if (count >= 2 && !Q.jarres_unlock_pres) {
     Q.luther_unlock_pres = 0;
     count--
 }
+
+
+let count2 = 0;
+if (Q.jarres_unlock_pres) count2++;
+if (Q.luther_unlock_pres) count2++;
+if (Q.gessler_unlock_pres) count2++;
+if (Q.adenauer_unlock_pres) count2++;
+if (Q.bruning_unlock_pres) count2++;
+if (Q.vorbeck_unlock_pres) count2++;
+if (Q.westarp_unlock_pres) count2++;
+
+Q.reactionary_candidate_1932_count = count2;
 !}
 view-if: not hindenburg_run
 go-to: reactionary_candidates
@@ -129,8 +141,11 @@ if (!Q.reactionary_candidate_1932) {
     Q.reactionary_candidate_1932 = "Jarres";
     Q.reactionary_candidate_1932_disp = "Karl Jarres";
 }
+Q.reactionary_candidate_1932_count -= 1;
 !}
 face-image: img/portraits/jarres.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
 
 Karl Jarres, having been compelled to withdraw his candidacy in 1925 in favor of Hindenburg, has once again entered the race. While not an overtly partisan figure—having remained relatively quiet in national politics in recent years—Jarres is expected to share many of the same anti-<span style="color: #c00000;">**SPD**</span> biases that Hindenburg currently harbors. Moreover, he subscribes to the "taming strategy" concerning the <span style="color: #7A3C00;">Nazis</span>. It is imperative that we field a candidate of our own to prevent such an outcome.
 
@@ -152,8 +167,11 @@ if (!Q.reactionary_candidate_1932) {
     Q.reactionary_candidate_1932 = "Luther";
     Q.reactionary_candidate_1932_disp = "Hans Luther";
 }
+Q.reactionary_candidate_1932_count -= 1;
 !}
 face-image: img/portraits/luther.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
 
 Hans Luther, former Chancellor of the first federal right-wing coalition and key figure in addressing the hyperinflationary crisis, is certainly not lacking in the experience required to assume the presidency of the Reich. Among his peers, he stands out as relatively open to constructive cooperation with the <span style="color: #c00000;">**SPD**</span>, though it is clear that he favors a presidential bourgeois government over continued <span style="color: #c00000;">socialist</span> participation in power. Despite his party affiliation, he is widely viewed as a non-partisan candidate.
 
@@ -175,8 +193,11 @@ if (!Q.reactionary_candidate_1932) {
     Q.reactionary_candidate_1932 = "Gessler";
     Q.reactionary_candidate_1932_disp = "Otto Gessler";
 }
+Q.reactionary_candidate_1932_count -= 1;
 !}
 face-image: img/portraits/gessler.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
 
 Otto Gessler, who served as Defense Minister for eight years following Noske’s departure and preceding Groener, is a conservative and a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> by reason rather than conviction—often at odds with his colleagues in the <span style="color: #D3C24D;">**DDP**</span> throughout his tenure. He made little effort to reform the Reichswehr and played an active role in the <i>Reichsexekution</i> against our United Left governments in Saxony and Thuringia during the German October. Now, after stepping away from politics in early 1928, he seeks a return to the national stage.
 
@@ -198,8 +219,11 @@ if (!Q.reactionary_candidate_1932) {
     Q.reactionary_candidate_1932 = "Adenauer";
     Q.reactionary_candidate_1932_disp = "Konrad Adenauer";
 }
+Q.reactionary_candidate_1932_count -= 1;
 !}
 face-image: img/portraits/adenauer.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
 
 Konrad Adenauer, a staunch advocate of the <span style="color: #000000;">Center Party</span>'s strategy to "leave the tower" and open itself to Protestant support, has decided to run for the presidency after achieving that very aim. Still relatively inexperienced in national politics, the Mayor is known for his strong anti-Prussian stance—going so far as to reject a chancellorship offer in 1926 on the grounds that Stresemann was "too Prussian." Aligned with Stegerwald and situated on the party's right wing, Adenauer has expressed interest in the so-called "taming strategy" toward the <span style="color: #7A3C00;">Nazis</span>.
 
@@ -222,8 +246,11 @@ if (!Q.reactionary_candidate_1932) {
     Q.reactionary_candidate_1932 = "Brüning";
     Q.reactionary_candidate_1932_disp = "Heinrich Brüning";
 }
+Q.reactionary_candidate_1932_count -= 1;
 !}
 face-image: img/portraits/BrüningHeinrich.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
 
 Heinrich Brüning, a politician we know all too well, is running for the most powerful position in the Reich. He has a long history, tracing back to the Christian Trade Unions and his mentorship under Stegerwald, eventually rising to become the leader of the party's parliamentary group and its candidate for Chancellor. Despite his record of favoring austerity and deflationary policies in response to the Great Depression, he is a flexible figure—intelligent enough to recognize the dangers of the "taming strategy," and not entirely opposed to governing alongside the <span style="color: #c00000;">**SPD**</span>.
 
@@ -246,8 +273,11 @@ if (!Q.reactionary_candidate_1932) {
     Q.reactionary_candidate_1932 = "Lettow-Vorbeck";
     Q.reactionary_candidate_1932_disp = "Paul von Lettow-Vorbeck";
 }
+Q.reactionary_candidate_1932_count -= 1;
 !}
 face-image: img/portraits/lettowvorbeck.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
 
 By some miracle for the German Right, they have managed to persuade Paul von Lettow-Vorbeck—renowned for his successful guerrilla campaign in German East Africa during the Great War—to run for the presidency. However, the circumstances now are far more dire than they were in 1925. The German Right is significantly less unified behind Lettow-Vorbeck than it had been for President Hindenburg.
 
@@ -271,8 +301,11 @@ if (!Q.reactionary_candidate_1932) {
     Q.reactionary_candidate_1932 = "Westarp";
     Q.reactionary_candidate_1932_disp = "Kuno von Westarp";
 }
+Q.reactionary_candidate_1932_count -= 1;
 !}
 face-image: img/portraits/Kuno_von_Westarp.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
 
 Kuno von Westarp, a familiar figure in German politics, has long been a stalwart of the <span style="color: #3E88B3;">**DNVP**</span>, once serving as both party leader and head of its parliamentary group. While not entirely opposed to his party’s participation in a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system, he has made no secret of his monarchist aspirations. His rigid partisanship and staunchly anti-<span style="color: #c00000;">socialist</span> convictions are likely to define his rule—perhaps even making him a more hostile figure than Hindenburg.
 

@@ -474,14 +474,14 @@ Q.thalmann_votes_disp = Q.thalmann_votes.toFixed(1);
 Q.dnvp_presidential_votes_disp = Q.dnvp_presidential_votes.toFixed(1);
 Q.vrp_presidential_votes_disp = Q.vrp_presidential_votes.toFixed(1);
 
-Q.hindenburg_votes_rnd_1 = Q.hindenburg_votes.toFixed(1);
-Q.reactionary_candidate_1_votes_rnd_1 = Q.reactionary_candidate_1_votes.toFixed(1);
-Q.reactionary_candidate_2_votes_rnd_1 = Q.reactionary_candidate_2_votes.toFixed(1);
-Q.spd_president_votes_rnd_1 = Q.spd_president_votes.toFixed(1);
-Q.nsdap_presidential_votes_rnd_1 = Q.nsdap_presidential_votes.toFixed(1);
-Q.thalmann_votes_rnd_1 = Q.thalmann_votes.toFixed(1);
-Q.dnvp_presidential_votes_rnd_1 = Q.dnvp_presidential_votes.toFixed(1);
-Q.vrp_presidential_votes_rnd_1 = Q.vrp_presidential_votes.toFixed(1);
+Q.hindenburg_votes_rnd_1 = Q.hindenburg_votes;
+Q.reactionary_candidate_1_votes_rnd_1 = Q.reactionary_candidate_1_votes;
+Q.reactionary_candidate_2_votes_rnd_1 = Q.reactionary_candidate_2_votes;
+Q.spd_president_votes_rnd_1 = Q.spd_president_votes;
+Q.nsdap_presidential_votes_rnd_1 = Q.nsdap_presidential_votes;
+Q.thalmann_votes_rnd_1 = Q.thalmann_votes;
+Q.dnvp_presidential_votes_rnd_1 = Q.dnvp_presidential_votes;
+Q.vrp_presidential_votes_rnd_1 = Q.vrp_presidential_votes;
 
 if (Q.thalmann_votes < 15 && Q.thalmann_votes) {
     Q.workers_kpd *= 0.85;
