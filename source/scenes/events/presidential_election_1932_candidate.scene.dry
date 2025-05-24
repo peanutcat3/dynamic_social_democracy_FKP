@@ -1040,7 +1040,7 @@ Unfortunately, we are unable to convince the <span style="color: #000000;">Cente
 
 The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is not satisfied with our arguments, but they are open to being convinced if we front the resources.
 
-- @pay_z: Give them the resources they need.
+- @pay_z_eckener: Give them the resources they need.
 - @endorsements_braun: Forget about the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 
 @pay_z_eckener

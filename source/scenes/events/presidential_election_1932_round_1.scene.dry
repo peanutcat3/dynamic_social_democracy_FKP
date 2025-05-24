@@ -562,13 +562,13 @@ The <span style="color: #FFCC00;">liberal</span> vote has been falling over time
 
 @convince_ddp_success_eckener
 on-arrival: ddp_support_spd = 1; ddp_left += 1; ddp_cohesion -= 1; ddp_relation += 3
-go-to: endorsements_eckener
+go-to: round2_menu
 
 Thanks to our friendly relations, connections with their left wing, and Eckener's non-partisanship, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is now campaigning for Eckener in the election.
 
 @convince_ddp_fail_eckener
 on-arrival: ddp_support_spd = 0; ddp_right += 1; ddp_cohesion -= 1; ddp_relation -= 3
-go-to: endorsements_eckener
+go-to: round2_menu
 
 Unfortunately, under the influence of its business wing, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has refused to support a <span style="color: #c00000;">socialist</span>-backed candidate for the presidency. This is a major blow—Eckener was meant to be a unity candidate, and we've clearly failed in that objective.
 
@@ -581,13 +581,13 @@ The <span style="color: #FFCC00;">liberal</span> vote has been falling over time
 
 @convince_lvp_success_eckener
 on-arrival: lvp_support_spd = 1; lvp_left += 3; lvp_relation += 4; old_middle_lvp -= 2; rural_lvp -= 2; old_middle_kvp += 2; rural_kvp += 2; old_middle_kvp += 2 if not kvp_formed; rural_kvp += 2 if not kvp_formed
-go-to: endorsements_eckener
+go-to: round2_menu
 
 We have convinced the <span style="color: #FFCC00;">**LVP**</span> to give Eckener an official endorsement, to the displeasure of the party's industrial backers. In response, they begin to withdraw their support from the party, and a notable portion of right-wing voters are opting to abstain.
 
 @convince_lvp_fail_eckener
 on-arrival: lvp_support_spd = 0; lvp_right += 3; lvp_relation -= 5
-go-to: endorsements_eckener
+go-to: round2_menu
 
 We have failed to persuade the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">Braun</span>, due to their deep antipathy toward cooperating with the <span style="color: #c00000;">socialists</span>—even with Eckener at the head of the ticket. This is a major blow—Eckener was meant to be a unity candidate, and we've clearly failed in that objective.
 
@@ -612,28 +612,28 @@ max-visits: 1
 We remind the <span style="color: #000000;">Center Party</span> of our past friendships, our support of Wilhelm Marx in 1925, and promote Eckener as a non-partisan unity candidate that can stop the <span style="color: #7A3C00;">Nazis</span>.
 
 @z_success_eckener
-go-to: endorsements_eckener
+go-to: round2_menu
 
 The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is convinced! They will be part of the Eckener coalition. [? if bvp_support_spd: The <span style="color: #A2D8E0;">**BVP**</span> has also, surprisingly, joined the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] in endorsing Eckener. ?][? if not bvp_support_spd: However, the <span style="color: #A2D8E0;">**BVP**</span> has split from the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and refuses to back Eckener. ?]
 
 @z_failed_eckener
-go-to: endorsements_eckener
+go-to: round2_menu
 
 Unfortunately, we are unable to convince the <span style="color: #000000;">Center Party</span> for some reason. 
 
-@z_partial
+@z_partial_eckener
 
 The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is not satisfied with our arguments, but they are open to being convinced if we front the resources.
 
-- @pay_z: Give them the resources they need.
-- @endorsements_braun: Forget about the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+- @pay_z_eckener: Give them the resources they need.
+- @round2_menu: Forget about the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 
-@pay_z
+@pay_z_eckener
 choose-if: resources >= 1
 subtitle: -1 resource
 unavailable-subtitle: Not enough resources
 on-arrival: resources -= 1; z_support_spd = 1; bvp_support_spd = 1 if z_relation >= 65
-go-to: endorsements_eckener
+go-to: round2_menu
 
 With our resources, the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] are convinced to support Eckener. [? if bvp_support_spd: The <span style="color: #A2D8E0;">**BVP**</span> has also, surprisingly, joined the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] in endorsing Eckener. ?][? if not bvp_support_spd: However, the <span style="color: #A2D8E0;">**BVP**</span> has split from the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and refuses to back Eckener. ?]
 
@@ -646,13 +646,13 @@ The <span style="color: #C0A054;">**DVP**</span> will be the most difficult of t
 
 @convince_dvp_success_eckener
 on-arrival: dvp_support_spd = 1; dvp_left += 3; dvp_relation += 5
-go-to: endorsements_eckener
+go-to: round2_menu
 
 Thanks to our friendly relations and Eckener's non-partisanship, the <span style="color: #C0A054;">**DVP**</span> is now campaigning for Eckener in the election. However, they refuse to join <span style="color: #c00000;">socialist</span>-led campaign committees and emphasize their independence from us.
 
 @convince_dvp_fail_eckener
 on-arrival: dvp_support_spd = 0; dvp_right += 1; dvp_relation -= 3
-go-to: endorsements_eckener
+go-to: round2_menu
 
 Unfortunately, under the influence of their industrialist wing, the <span style="color: #C0A054;">**DVP**</span> has rejected our overtures and will continue on their own path.
 
