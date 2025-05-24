@@ -111,222 +111,7 @@ if (Q.vorbeck_unlock_pres) count2++;
 if (Q.westarp_unlock_pres) count2++;
 
 Q.reactionary_candidate_1932_count = count2;
-!}
-view-if: not hindenburg_run
-go-to: reactionary_candidates
 
-With local elections fast approaching, many parties have opted not to field their own candidates, instead consolidating their support behind a select few.
-
-@reactionary_candidates
-
-- @jarres
-- @luther
-- @gessler
-- @adenauer
-- @bruning
-- @vorbeck
-- @westarp
-
-@jarres
-title: Karl Jarres, mayor of Duisburg, former Vice-Chancellor, and the <span style="color: #C0A054;">**DVP**</span>'s candidate in 1925.
-view-if: jarres_unlock_pres
-subtitle: Second times a charm.
-on-arrival: {!
-Q.jarres_run = 1; 
-if (Q.reactionary_candidate_1932) {
-    Q.secondary_reactionary_candidate_1932 = "Jarres";
-    Q.secondary_reactionary_candidate_1932_disp = "Karl Jarres";
-}
-if (!Q.reactionary_candidate_1932) {
-    Q.reactionary_candidate_1932 = "Jarres";
-    Q.reactionary_candidate_1932_disp = "Karl Jarres";
-}
-Q.reactionary_candidate_1932_count -= 1;
-!}
-face-image: img/portraits/jarres.jpg
-max-visits: 1
-go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
-
-Karl Jarres, having been compelled to withdraw his candidacy in 1925 in favor of Hindenburg, has once again entered the race. While not an overtly partisan figure—having remained relatively quiet in national politics in recent years—Jarres is expected to share many of the same anti-<span style="color: #c00000;">**SPD**</span> biases that Hindenburg currently harbors. Moreover, he subscribes to the "taming strategy" concerning the <span style="color: #7A3C00;">Nazis</span>. It is imperative that we field a candidate of our own to prevent such an outcome.
-
-His candidacy is supported by the <span style="color: #C0A054;">**DVP**</span>.
-
-- @harzburg: We await the decision of the Harzburg Front.
-
-@luther
-title: Hans Luther, [? if luther_reichsbank: president of the Reichsbank?][? if not luther_reichsbank: leader of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?] and former chancellor.
-view-if: luther_unlock_pres
-subtitle: Witty subtitle here.
-on-arrival: {!
-Q.luther_run = 1; 
-if (Q.reactionary_candidate_1932) {
-    Q.secondary_reactionary_candidate_1932 = "Luther";
-    Q.secondary_reactionary_candidate_1932_disp = "Hans Luther";
-}
-if (!Q.reactionary_candidate_1932) {
-    Q.reactionary_candidate_1932 = "Luther";
-    Q.reactionary_candidate_1932_disp = "Hans Luther";
-}
-Q.reactionary_candidate_1932_count -= 1;
-!}
-face-image: img/portraits/luther.jpg
-max-visits: 1
-go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
-
-Hans Luther, former Chancellor of the first federal right-wing coalition and key figure in addressing the hyperinflationary crisis, is certainly not lacking in the experience required to assume the presidency of the Reich. Among his peers, he stands out as relatively open to constructive cooperation with the <span style="color: #c00000;">**SPD**</span>, though it is clear that he favors a presidential bourgeois government over continued <span style="color: #c00000;">socialist</span> participation in power. Despite his party affiliation, he is widely viewed as a non-partisan candidate.
-
-His candidacy is supported by the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. [? if not lvp_formed: He is also nominally supported by the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. ?]
-
-- @harzburg: We await the decision of the Harzburg Front.
-
-@gessler
-title: Otto Gessler, controversial former Defense Minister and former <span style="color: #D3C24D;">**DDP**</span> member.
-view-if: gessler_unlock_pres
-subtitle: Witty subtitle here.
-on-arrival: {!
-Q.gessler_run = 1; 
-if (Q.reactionary_candidate_1932) {
-    Q.secondary_reactionary_candidate_1932 = "Gessler";
-    Q.secondary_reactionary_candidate_1932_disp = "Otto Gessler";
-}
-if (!Q.reactionary_candidate_1932) {
-    Q.reactionary_candidate_1932 = "Gessler";
-    Q.reactionary_candidate_1932_disp = "Otto Gessler";
-}
-Q.reactionary_candidate_1932_count -= 1;
-!}
-face-image: img/portraits/gessler.jpg
-max-visits: 1
-go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
-
-Otto Gessler, who served as Defense Minister for eight years following Noske’s departure and preceding Groener, is a conservative and a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> by reason rather than conviction—often at odds with his colleagues in the <span style="color: #D3C24D;">**DDP**</span> throughout his tenure. He made little effort to reform the Reichswehr and played an active role in the <i>Reichsexekution</i> against our United Left governments in Saxony and Thuringia during the German October. Now, after stepping away from politics in early 1928, he seeks a return to the national stage.
-
-His candidacy is supported by the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. [? if not lvp_formed: He is also nominally supported by the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, which has grown more right-wing and more accepting over the years. ?]
-
-- @harzburg: We await the decision of the Harzburg Front.
-
-@adenauer
-title: Konrad Adenauer, Mayor of Cologne, and an advocate for the <span style="color: #000000;">Center Party</span> "leaving the tower".
-view-if: adenauer_unlock_pres
-subtitle: Witty subtitle here.
-on-arrival: {!
-Q.adenauer_run = 1; 
-if (Q.reactionary_candidate_1932) {
-    Q.secondary_reactionary_candidate_1932 = "Adenauer";
-    Q.secondary_reactionary_candidate_1932_disp = "Konrad Adenauer";
-}
-if (!Q.reactionary_candidate_1932) {
-    Q.reactionary_candidate_1932 = "Adenauer";
-    Q.reactionary_candidate_1932_disp = "Konrad Adenauer";
-}
-Q.reactionary_candidate_1932_count -= 1;
-!}
-face-image: img/portraits/adenauer.jpg
-max-visits: 1
-go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
-
-Konrad Adenauer, a staunch advocate of the <span style="color: #000000;">Center Party</span>'s strategy to "leave the tower" and open itself to Protestant support, has decided to run for the presidency after achieving that very aim. Still relatively inexperienced in national politics, the Mayor is known for his strong anti-Prussian stance—going so far as to reject a chancellorship offer in 1926 on the grounds that Stresemann was "too Prussian." Aligned with Stegerwald and situated on the party's right wing, Adenauer has expressed interest in the so-called "taming strategy" toward the <span style="color: #7A3C00;">Nazis</span>.
-
-His candidacy is supported by the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
-
-- @harzburg: We await the decision of the Harzburg Front.
-
-@bruning
-title: Heinrich Brüning, on the [? if not cvp_formed: right wing?][? if cvp_formed: left wing?] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and their[? if chancellor == "Brüning":&nbsp;candidate for?] chancellor.
-view-if: bruning_unlock_pres
-subtitle: Witty subtitle here.
-unavailable-subtitle: Words.
-on-arrival: {!
-Q.bruning_run = 1; 
-if (Q.reactionary_candidate_1932) {
-    Q.secondary_reactionary_candidate_1932 = "Brüning";
-    Q.secondary_reactionary_candidate_1932_disp = "Heinrich Brüning";
-}
-if (!Q.reactionary_candidate_1932) {
-    Q.reactionary_candidate_1932 = "Brüning";
-    Q.reactionary_candidate_1932_disp = "Heinrich Brüning";
-}
-Q.reactionary_candidate_1932_count -= 1;
-!}
-face-image: img/portraits/BrüningHeinrich.jpg
-max-visits: 1
-go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
-
-Heinrich Brüning, a politician we know all too well, is running for the most powerful position in the Reich. He has a long history, tracing back to the Christian Trade Unions and his mentorship under Stegerwald, eventually rising to become the leader of the party's parliamentary group and its candidate for Chancellor. Despite his record of favoring austerity and deflationary policies in response to the Great Depression, he is a flexible figure—intelligent enough to recognize the dangers of the "taming strategy," and not entirely opposed to governing alongside the <span style="color: #c00000;">**SPD**</span>.
-
-His candidacy is supported by the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
-
-- @harzburg: We await the decision of the Harzburg Front.
-
-@vorbeck
-title: Paul von Lettow-Vorbeck, war hero of the Great War and [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?] member.
-view-if: vorbeck_unlock_pres
-subtitle: Lettow-Vorbeck is reluctant to lead, but perhaps his war hero status can unite the nation once more?
-unavailable-subtitle: Lettow-Vorbeck is reluctant to lead, and prefers his unglamorous life away from the public. Unless he is convinced, of course.
-on-arrival: {!
-Q.vorbeck_run = 1; 
-if (Q.reactionary_candidate_1932) {
-    Q.secondary_reactionary_candidate_1932 = "Lettow-Vorbeck";
-    Q.secondary_reactionary_candidate_1932_disp = "Paul von Lettow-Vorbeck";
-}
-if (!Q.reactionary_candidate_1932) {
-    Q.reactionary_candidate_1932 = "Lettow-Vorbeck";
-    Q.reactionary_candidate_1932_disp = "Paul von Lettow-Vorbeck";
-}
-Q.reactionary_candidate_1932_count -= 1;
-!}
-face-image: img/portraits/lettowvorbeck.jpg
-max-visits: 1
-go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
-
-By some miracle for the German Right, they have managed to persuade Paul von Lettow-Vorbeck—renowned for his successful guerrilla campaign in German East Africa during the Great War—to run for the presidency. However, the circumstances now are far more dire than they were in 1925. The German Right is significantly less unified behind Lettow-Vorbeck than it had been for President Hindenburg.
-
-How Lettow-Vorbeck would govern remains uncertain. It is highly likely that, much like Hindenburg, a camarilla of close advisors would shape his decisions from behind the scenes.
-
-His candidacy is backed by the [? if not vorbeck_fallback: [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?], along with a disparate coalition of minor bourgeois parties. ?][? if vorbeck_fallback: entirety of the Bürgerblock parties, who view him as their collective last hope at retaining power. ?]
-
-- @harzburg: We await the decision of the Harzburg Front.
-
-@westarp
-title: Kuno von Westarp, [? if dnvp_leader != "Westarp": former?] leader of the <span style="color: #3E88B3;">**DNVP**</span>, and an old friend of Hindenburg.
-view-if: westarp_unlock_pres
-subtitle: Witty subtitle here.
-on-arrival: {!
-Q.westarp_run = 1; 
-if (Q.reactionary_candidate_1932) {
-    Q.secondary_reactionary_candidate_1932 = "Westarp";
-    Q.secondary_reactionary_candidate_1932_disp = "Kuno von Westarp";
-}
-if (!Q.reactionary_candidate_1932) {
-    Q.reactionary_candidate_1932 = "Westarp";
-    Q.reactionary_candidate_1932_disp = "Kuno von Westarp";
-}
-Q.reactionary_candidate_1932_count -= 1;
-!}
-face-image: img/portraits/Kuno_von_Westarp.jpg
-max-visits: 1
-go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
-
-Kuno von Westarp, a familiar figure in German politics, has long been a stalwart of the <span style="color: #3E88B3;">**DNVP**</span>, once serving as both party leader and head of its parliamentary group. While not entirely opposed to his party’s participation in a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system, he has made no secret of his monarchist aspirations. His rigid partisanship and staunchly anti-<span style="color: #c00000;">socialist</span> convictions are likely to define his rule—perhaps even making him a more hostile figure than Hindenburg.
-
-It is imperative that we prevail over these forces of reaction if we are to have any hope of returning to government.
-
-His candidacy is backed by the [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?], along with a disparate coalition of minor bourgeois parties.
-
-- @harzburg: We await the decision of the Harzburg Front.
-
-@hindenburg
-view-if: hindenburg_run
-face-image: img/portraits/Hindenburg.jpg
-
-President Hindenburg is, of course, running for re-election, and many in our party are prepared to support him as the last bastion of democracy against Hitler and the <span style="color: #7A3C00;">Nazis</span>. The <span class="tooltip-text" title="Following Hindenburg's overseeing of Germany's crushing victory at Tannenberg in the Great War, Hindenburg has become the center of a massive personality cult, lauded as the living ideal of German masculinity and patriotism. He is the embodiment of the best virtues of Prussian tradition.">Hindenburg Mythos</span> serves as a powerful rallying point for all parties, as he maintains high personal popularity despite everything Germany has endured. However, the more support he receives from the German left and center, the more Hindenburg views it as a stain on his personal honor. The refusal of August von Mackensen and other high-ranking officers with whom he served during the war to embrace his candidacy proved particularly painful to the Reich president.
-
-In response, he may shift further to the right after the election in an effort to restore his sense of honor and to appease his former comrades and friends on the German Right. This urge has only been reinforced by the Harzburg Front’s refusal to support him without concessions, as they see Hindenburg as the greatest obstacle to their rise to power.
-
-- @harzburg: We await the decision of the Harzburg Front.
-
-@harzburg
-on-arrival: {!
 Q.z_choice = Q.reactionary_candidate_1932;
 Q.ddp_choice = Q.reactionary_candidate_1932;
 Q.dvp_choice = Q.reactionary_candidate_1932;
@@ -338,23 +123,97 @@ Q.dnvp_choice = Q.reactionary_candidate_1932;
 Q.reactionary_candidate_1932_ideology = 0;
 Q.secondary_reactionary_candidate_1932_ideology = 0;
 
-if (Q.reactionary_candidate_1932 == "Luther" || Q.reactionary_candidate_1932 == "Gessler") {
-    Q.reactionary_candidate_1932_ideology = "Liberal";
-} else if (Q.reactionary_candidate_1932 == "Westarp" || Q.reactionary_candidate_1932 == "Vorbeck") {
-    Q.reactionary_candidate_1932_ideology = "Conservative";
-} else if (Q.reactionary_candidate_1932 == "Adenauer" || Q.reactionary_candidate_1932 == "Brüning") {
-    Q.reactionary_candidate_1932_ideology = "Centrist";
-}
+if (Q.reactionary_candidate_1932_count > 0) {
+    if (Q.jarres_unlock_pres) {
+        Q.jarres_run = 1; 
+        if (Q.reactionary_candidate_1932) {
+            Q.secondary_reactionary_candidate_1932 = "Jarres";
+            Q.secondary_reactionary_candidate_1932_disp = "Karl Jarres";
+        }
+        if (!Q.reactionary_candidate_1932) {
+            Q.reactionary_candidate_1932 = "Jarres";
+            Q.reactionary_candidate_1932_disp = "Karl Jarres";
+        }
+        Q.reactionary_candidate_1932_count -= 1;
+    }
 
-if (Q.secondary_reactionary_candidate_1932 == "Luther" || Q.secondary_reactionary_candidate_1932 == "Gessler") {
-    Q.secondary_reactionary_candidate_1932_ideology = "Liberal";
-} else if (Q.secondary_reactionary_candidate_1932 == "Westarp" || Q.secondary_reactionary_candidate_1932 == "Vorbeck") {
-    Q.secondary_reactionary_candidate_1932_ideology = "Conservative";
-} else if (Q.secondary_reactionary_candidate_1932 == "Adenauer" || Q.secondary_reactionary_candidate_1932 == "Brüning") {
-    Q.secondary_reactionary_candidate_1932_ideology = "Centrist";
-}
+    if (Q.luther_unlock_pres) {
+        if (Q.reactionary_candidate_1932) {
+            Q.secondary_reactionary_candidate_1932 = "Luther";
+            Q.secondary_reactionary_candidate_1932_disp = "Hans Luther";
+        }
+        if (!Q.reactionary_candidate_1932) {
+            Q.reactionary_candidate_1932 = "Luther";
+            Q.reactionary_candidate_1932_disp = "Hans Luther";
+        }
+        Q.reactionary_candidate_1932_count -= 1;
+    }
 
-// screw jarres...
+    if (Q.gessler_unlock_pres) {
+        Q.gessler_run = 1; 
+        if (Q.reactionary_candidate_1932) {
+            Q.secondary_reactionary_candidate_1932 = "Gessler";
+            Q.secondary_reactionary_candidate_1932_disp = "Otto Gessler";
+        }
+        if (!Q.reactionary_candidate_1932) {
+            Q.reactionary_candidate_1932 = "Gessler";
+            Q.reactionary_candidate_1932_disp = "Otto Gessler";
+        }
+        Q.reactionary_candidate_1932_count -= 1;
+    }
+
+    if (Q.adenauer_unlock_pres) {
+        Q.adenauer_run = 1; 
+        if (Q.reactionary_candidate_1932) {
+            Q.secondary_reactionary_candidate_1932 = "Adenauer";
+            Q.secondary_reactionary_candidate_1932_disp = "Konrad Adenauer";
+        }
+        if (!Q.reactionary_candidate_1932) {
+            Q.reactionary_candidate_1932 = "Adenauer";
+            Q.reactionary_candidate_1932_disp = "Konrad Adenauer";
+        }
+        Q.reactionary_candidate_1932_count -= 1;
+    }
+
+    if (Q.bruning_unlock_pres) {
+        Q.bruning_run = 1; 
+        if (Q.reactionary_candidate_1932) {
+            Q.secondary_reactionary_candidate_1932 = "Brüning";
+            Q.secondary_reactionary_candidate_1932_disp = "Heinrich Brüning";
+        }
+        if (!Q.reactionary_candidate_1932) {
+            Q.reactionary_candidate_1932 = "Brüning";
+            Q.reactionary_candidate_1932_disp = "Heinrich Brüning";
+        }
+        Q.reactionary_candidate_1932_count -= 1;
+    }
+
+    if (Q.vorbeck_unlock_pres) {
+        Q.vorbeck_run = 1; 
+        if (Q.reactionary_candidate_1932) {
+            Q.secondary_reactionary_candidate_1932 = "Lettow-Vorbeck";
+            Q.secondary_reactionary_candidate_1932_disp = "Paul von Lettow-Vorbeck";
+        }
+        if (!Q.reactionary_candidate_1932) {
+            Q.reactionary_candidate_1932 = "Lettow-Vorbeck";
+            Q.reactionary_candidate_1932_disp = "Paul von Lettow-Vorbeck";
+        }
+        Q.reactionary_candidate_1932_count -= 1;
+    }
+
+    if (Q.westarp_unlock_pres) {
+        Q.westarp_run = 1; 
+        if (Q.reactionary_candidate_1932) {
+            Q.secondary_reactionary_candidate_1932 = "Westarp";
+            Q.secondary_reactionary_candidate_1932_disp = "Kuno von Westarp";
+        }
+        if (!Q.reactionary_candidate_1932) {
+            Q.reactionary_candidate_1932 = "Westarp";
+            Q.reactionary_candidate_1932_disp = "Kuno von Westarp";
+        }
+        Q.reactionary_candidate_1932_count -= 1;
+    }
+}
 
 if (Q.secondary_reactionary_candidate_1932) {
     if (Q.secondary_reactionary_candidate_1932 == "Westarp") {
@@ -391,11 +250,154 @@ if (Q.secondary_reactionary_candidate_1932) {
     }
 }
 
-if (Q.reactionary_candidate_1932 == "Luther" && Q.dvp_choice != "Luther") {
-    Q.reactionary_candidate_1932 = Q.secondary_reactionary_candidate_1932;
-    Q.secondary_reactionary_candidate_1932 = 0;
+if (Q.reactionary_candidate_1932 == "Luther" || Q.reactionary_candidate_1932 == "Gessler") {
+    Q.reactionary_candidate_1932_ideology = "Liberal";
+} else if (Q.reactionary_candidate_1932 == "Westarp" || Q.reactionary_candidate_1932 == "Vorbeck") {
+    Q.reactionary_candidate_1932_ideology = "Conservative";
+} else if (Q.reactionary_candidate_1932 == "Adenauer" || Q.reactionary_candidate_1932 == "Brüning") {
+    Q.reactionary_candidate_1932_ideology = "Centrist";
 }
+
+if (Q.secondary_reactionary_candidate_1932 == "Luther" || Q.secondary_reactionary_candidate_1932 == "Gessler") {
+    Q.secondary_reactionary_candidate_1932_ideology = "Liberal";
+} else if (Q.secondary_reactionary_candidate_1932 == "Westarp" || Q.secondary_reactionary_candidate_1932 == "Vorbeck") {
+    Q.secondary_reactionary_candidate_1932_ideology = "Conservative";
+} else if (Q.secondary_reactionary_candidate_1932 == "Adenauer" || Q.secondary_reactionary_candidate_1932 == "Brüning") {
+    Q.secondary_reactionary_candidate_1932_ideology = "Centrist";
+}
+
+// screw jarres...
 !}
+view-if: not hindenburg_run
+go-to: reactionary_candidates
+
+With local elections fast approaching, many parties have opted not to field their own candidates, instead consolidating their support behind a select few.
+
+@reactionary_candidates
+
+- @jarres
+- @luther
+- @gessler
+- @adenauer
+- @bruning
+- @vorbeck
+- @westarp
+
+@jarres
+title: Karl Jarres, mayor of Duisburg, former Vice-Chancellor, and the <span style="color: #C0A054;">**DVP**</span>'s candidate in 1925.
+view-if: jarres_unlock_pres
+subtitle: Second times a charm.
+face-image: img/portraits/jarres.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
+
+Karl Jarres, having been compelled to withdraw his candidacy in 1925 in favor of Hindenburg, has once again entered the race. While not an overtly partisan figure—having remained relatively quiet in national politics in recent years—Jarres is expected to share many of the same anti-<span style="color: #c00000;">**SPD**</span> biases that Hindenburg currently harbors. Moreover, he subscribes to the "taming strategy" concerning the <span style="color: #7A3C00;">Nazis</span>. It is imperative that we field a candidate of our own to prevent such an outcome.
+
+His candidacy is supported by the <span style="color: #C0A054;">**DVP**</span>.
+
+- @harzburg: We await the decision of the Harzburg Front.
+
+@luther
+title: Hans Luther, [? if luther_reichsbank: president of the Reichsbank?][? if not luther_reichsbank: leader of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?] and former chancellor.
+view-if: luther_unlock_pres
+subtitle: Witty subtitle here.
+face-image: img/portraits/luther.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
+
+Hans Luther, former Chancellor of the first federal right-wing coalition and key figure in addressing the hyperinflationary crisis, is certainly not lacking in the experience required to assume the presidency of the Reich. Among his peers, he stands out as relatively open to constructive cooperation with the <span style="color: #c00000;">**SPD**</span>, though it is clear that he favors a presidential bourgeois government over continued <span style="color: #c00000;">socialist</span> participation in power. Despite his party affiliation, he is widely viewed as a non-partisan candidate.
+
+His candidacy is supported by the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. [? if not lvp_formed: He is also nominally supported by the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. ?]
+
+- @harzburg: We await the decision of the Harzburg Front.
+
+@gessler
+title: Otto Gessler, controversial former Defense Minister and former <span style="color: #D3C24D;">**DDP**</span> member.
+view-if: gessler_unlock_pres
+subtitle: Witty subtitle here.
+face-image: img/portraits/gessler.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
+
+Otto Gessler, who served as Defense Minister for eight years following Noske’s departure and preceding Groener, is a conservative and a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> by reason rather than conviction—often at odds with his colleagues in the <span style="color: #D3C24D;">**DDP**</span> throughout his tenure. He made little effort to reform the Reichswehr and played an active role in the <i>Reichsexekution</i> against our United Left governments in Saxony and Thuringia during the German October. Now, after stepping away from politics in early 1928, he seeks a return to the national stage.
+
+His candidacy is supported by the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. [? if not lvp_formed: He is also nominally supported by the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, which has grown more right-wing and more accepting over the years. ?]
+
+- @harzburg: We await the decision of the Harzburg Front.
+
+@adenauer
+title: Konrad Adenauer, Mayor of Cologne, and an advocate for the <span style="color: #000000;">Center Party</span> "leaving the tower".
+view-if: adenauer_unlock_pres
+subtitle: Witty subtitle here.
+face-image: img/portraits/adenauer.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
+
+Konrad Adenauer, a staunch advocate of the <span style="color: #000000;">Center Party</span>'s strategy to "leave the tower" and open itself to Protestant support, has decided to run for the presidency after achieving that very aim. Still relatively inexperienced in national politics, the Mayor is known for his strong anti-Prussian stance—going so far as to reject a chancellorship offer in 1926 on the grounds that Stresemann was "too Prussian." Aligned with Stegerwald and situated on the party's right wing, Adenauer has expressed interest in the so-called "taming strategy" toward the <span style="color: #7A3C00;">Nazis</span>.
+
+His candidacy is supported by the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+
+- @harzburg: We await the decision of the Harzburg Front.
+
+@bruning
+title: Heinrich Brüning, on the [? if not cvp_formed: right wing?][? if cvp_formed: left wing?] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] and their[? if chancellor == "Brüning":&nbsp;candidate for?] chancellor.
+view-if: bruning_unlock_pres
+subtitle: Witty subtitle here.
+unavailable-subtitle: Words.
+face-image: img/portraits/BrüningHeinrich.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
+
+Heinrich Brüning, a politician we know all too well, is running for the most powerful position in the Reich. He has a long history, tracing back to the Christian Trade Unions and his mentorship under Stegerwald, eventually rising to become the leader of the party's parliamentary group and its candidate for Chancellor. Despite his record of favoring austerity and deflationary policies in response to the Great Depression, he is a flexible figure—intelligent enough to recognize the dangers of the "taming strategy," and not entirely opposed to governing alongside the <span style="color: #c00000;">**SPD**</span>.
+
+His candidacy is supported by the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
+
+- @harzburg: We await the decision of the Harzburg Front.
+
+@vorbeck
+title: Paul von Lettow-Vorbeck, war hero of the Great War and [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?] member.
+view-if: vorbeck_unlock_pres
+subtitle: Lettow-Vorbeck is reluctant to lead, but perhaps his war hero status can unite the nation once more?
+unavailable-subtitle: Lettow-Vorbeck is reluctant to lead, and prefers his unglamorous life away from the public. Unless he is convinced, of course.
+face-image: img/portraits/lettowvorbeck.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
+
+By some miracle for the German Right, they have managed to persuade Paul von Lettow-Vorbeck—renowned for his successful guerrilla campaign in German East Africa during the Great War—to run for the presidency. However, the circumstances now are far more dire than they were in 1925. The German Right is significantly less unified behind Lettow-Vorbeck than it had been for President Hindenburg.
+
+How Lettow-Vorbeck would govern remains uncertain. It is highly likely that, much like Hindenburg, a camarilla of close advisors would shape his decisions from behind the scenes.
+
+His candidacy is backed by the [? if not vorbeck_fallback: [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?], along with a disparate coalition of minor bourgeois parties. ?][? if vorbeck_fallback: entirety of the Bürgerblock parties, who view him as their collective last hope at retaining power. ?]
+
+- @harzburg: We await the decision of the Harzburg Front.
+
+@westarp
+title: Kuno von Westarp, [? if dnvp_leader != "Westarp": former?] leader of the <span style="color: #3E88B3;">**DNVP**</span>, and an old friend of Hindenburg.
+view-if: westarp_unlock_pres
+subtitle: Witty subtitle here.
+face-image: img/portraits/Kuno_von_Westarp.jpg
+max-visits: 1
+go-to: reactionary_candidates if reactionary_candidate_1932_count > 0
+
+Kuno von Westarp, a familiar figure in German politics, has long been a stalwart of the <span style="color: #3E88B3;">**DNVP**</span>, once serving as both party leader and head of its parliamentary group. While not entirely opposed to his party’s participation in a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system, he has made no secret of his monarchist aspirations. His rigid partisanship and staunchly anti-<span style="color: #c00000;">socialist</span> convictions are likely to define his rule—perhaps even making him a more hostile figure than Hindenburg.
+
+It is imperative that we prevail over these forces of reaction if we are to have any hope of returning to government.
+
+His candidacy is backed by the [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?], along with a disparate coalition of minor bourgeois parties.
+
+- @harzburg: We await the decision of the Harzburg Front.
+
+@hindenburg
+view-if: hindenburg_run
+face-image: img/portraits/Hindenburg.jpg
+
+President Hindenburg is, of course, running for re-election, and many in our party are prepared to support him as the last bastion of democracy against Hitler and the <span style="color: #7A3C00;">Nazis</span>. The <span class="tooltip-text" title="Following Hindenburg's overseeing of Germany's crushing victory at Tannenberg in the Great War, Hindenburg has become the center of a massive personality cult, lauded as the living ideal of German masculinity and patriotism. He is the embodiment of the best virtues of Prussian tradition.">Hindenburg Mythos</span> serves as a powerful rallying point for all parties, as he maintains high personal popularity despite everything Germany has endured. However, the more support he receives from the German left and center, the more Hindenburg views it as a stain on his personal honor. The refusal of August von Mackensen and other high-ranking officers with whom he served during the war to embrace his candidacy proved particularly painful to the Reich president.
+
+In response, he may shift further to the right after the election in an effort to restore his sense of honor and to appease his former comrades and friends on the German Right. This urge has only been reinforced by the Harzburg Front’s refusal to support him without concessions, as they see Hindenburg as the greatest obstacle to their rise to power.
+
+- @harzburg: We await the decision of the Harzburg Front.
+
+@harzburg
 go-to: duesterberg if dnvp_votes < 8 and dnvp_ideology == "Radical"; hugenberg if (dnvp_votes >= 8 and dnvp_ideology == "Radical") or dnvp_ideology == "Moderate"
 
 
