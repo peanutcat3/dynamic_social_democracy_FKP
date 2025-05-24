@@ -402,6 +402,10 @@ Q.vrp_presidential_votes = 0.003;
 if (Q.inflation >= 4) Q.vrp_presidential_votes += (Q.inflation / 1000);
 
 Q.total_votes_pres = Q.hindenburg_votes + Q.nsdap_presidential_votes + Q.thalmann_votes + Q.spd_president_votes + Q.dnvp_presidential_votes + Q.vrp_presidential_votes + Q.reactionary_candidate_1_votes + Q.reactionary_candidate_2_votes;
+if (!Q.hindenburg_run) {
+    Q.total_votes_pres -= Q.hindenburg_votes;
+    Q.hindenburg_votes = 0;
+}
 Q.hindenburg_votes_normalized = (Q.hindenburg_votes/Q.total_votes_pres);
 Q.reactionary_candidate_1_votes_normalized = (Q.reactionary_candidate_1_votes/Q.total_votes_pres);
 Q.reactionary_candidate_2_votes_normalized = (Q.reactionary_candidate_2_votes/Q.total_votes_pres);
