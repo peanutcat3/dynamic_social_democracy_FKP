@@ -31,6 +31,8 @@ set-jump: post_election
 
 @post_election
 on-arrival: {!
+Q.bvp_votes = Q.bvp_votes / 100;
+
 Q.spd_president_votes = 0;
 Q.hindenburg_votes = 0;
 Q.reactionary_candidate_1_votes = 0;
