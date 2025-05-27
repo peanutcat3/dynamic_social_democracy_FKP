@@ -195,6 +195,16 @@ Kurt Schumacher is an ambitious rising star in the party, and would be all too w
 - @adenauer_r1: Support Konrad Adenauer of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 - @heuss_r1: Support Theodor Heuss of the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?].
 - @schumacher_r1: Run Kurt Schumacher.
+- @abstain: Do nothing.
+
+@abstain
+view-if: resources < 2
+on-arrival: spd_candidate = "Boycott"; kpd_candidate = "Boycott"; sapd_candidate = "Boycott"
+go-to: r1_menu
+
+What an anticlimactic way to go.
+
+- @round_1: Let the voting begin.
 
 @hammerstein_r1
 unavailable-subtitle: We are a democratic party. 
@@ -558,8 +568,7 @@ view-if: round = 1
 
 
 @r2_vote
-go-to: election_algorithm
-set-jump: post_election
+go-to: post_election
 
 
 
