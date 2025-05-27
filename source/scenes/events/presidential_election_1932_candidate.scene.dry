@@ -919,7 +919,7 @@ if (Q.z_drop_out) {
 }
 !}
 
-Hopefully, the <span style="color: #c00000;">**[+ spd_candidate_1932 +]**</span> coalition is strong enough to rival [+ reactionary_candidate_1932 +][? if secondary_reactionary_candidate_1932:&nbsp;and [+ secondary_reactionary_candidate_1932 +] ?].
+Hopefully, the <span style="color: #c00000;">**[+ spd_candidate_1932 +]**</span> coalition is strong enough to rival [+ reactionary_candidate_1932 +][? if secondary_reactionary_candidate_1932:&nbsp;and [+ secondary_reactionary_candidate_1932 +]?].
 
 [? if lib_drop_out: Fortunately for us, [+ liberal_reactionary_candidate_1932 +] has dropped out due to our courting of the <span style="color: #FFCC00;">liberals</span>. ?][? if z_drop_out: Fortunately for us, [+ center_reactionary_candidate_1932 +] has dropped out due to our courting of the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. ?]
 
