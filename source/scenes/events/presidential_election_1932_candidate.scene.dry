@@ -112,14 +112,6 @@ if (Q.westarp_unlock_pres) count2++;
 
 Q.reactionary_candidate_1932_count = count2;
 
-Q.z_choice = Q.reactionary_candidate_1932;
-Q.ddp_choice = Q.reactionary_candidate_1932;
-Q.dvp_choice = Q.reactionary_candidate_1932;
-Q.lvp_choice = Q.reactionary_candidate_1932;
-Q.other_choice = Q.reactionary_candidate_1932;
-Q.kvp_choice = Q.reactionary_candidate_1932;
-Q.dnvp_choice = Q.reactionary_candidate_1932;
-
 Q.reactionary_candidate_1932_ideology = 0;
 Q.secondary_reactionary_candidate_1932_ideology = 0;
 
@@ -214,6 +206,14 @@ if (Q.reactionary_candidate_1932_count > 0) {
         Q.reactionary_candidate_1932_count -= 1;
     }
 }
+
+Q.z_choice = Q.reactionary_candidate_1932;
+Q.ddp_choice = Q.reactionary_candidate_1932;
+Q.dvp_choice = Q.reactionary_candidate_1932;
+Q.lvp_choice = Q.reactionary_candidate_1932;
+Q.other_choice = Q.reactionary_candidate_1932;
+Q.kvp_choice = Q.reactionary_candidate_1932;
+Q.dnvp_choice = Q.reactionary_candidate_1932;
 
 if (Q.secondary_reactionary_candidate_1932) {
     if (Q.secondary_reactionary_candidate_1932 == "Westarp") {
