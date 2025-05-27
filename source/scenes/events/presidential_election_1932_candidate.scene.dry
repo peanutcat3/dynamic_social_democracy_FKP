@@ -840,10 +840,10 @@ on-arrival: z_support_spd = 0 if z_support_spd == 2
 
 We can't win this election alone, we need support from other parties. [? if spd_votes >= 50: Nevermind. We actually can win this election alone. ?]
 
-- @convince_z: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #c00000;">Braun</span>[? if center_reactionary_candidate_1932:&nbsp;and withdraw support from [+ center_reactionary_candidate_1932 +]?].
+- @convince_z: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #c00000;">Braun</span>[? if center_reactionary_candidate_1932:&nbsp;and withdraw support from [+ center_reactionary_candidate_1932_name +]?].
 - @convince_kpd: Convince the <span style="color: #700000;">**Communists**</span> to back <span style="color: #c00000;">Braun</span>.
-- @convince_ddp: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #c00000;">Braun</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932 +]?].
-- @convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">Braun</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932 +]?].
+- @convince_ddp: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #c00000;">Braun</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
+- @convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">Braun</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @view_candidates: View party endorsements.
 - @hope: We have concluded negotiations with other parties.
 
@@ -1049,7 +1049,7 @@ The <span style="color: #700000;">**KPD**</span> now endorses Braun in the presi
 We can't win this election alone, we need support from other parties. [? if spd_votes >= 50: Nevermind. We actually can win this election alone. ?]
 
 - @convince_kpd_rosenfeld: Convince the <span style="color: #700000;">**Communists**</span> to back <span style="color: #c00000;">Rosenfeld</span>.
-- @convince_z_rosenfeld: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #c00000;">Rosenfeld</span>.
+- @convince_z_rosenfeld: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #c00000;">Rosenfeld</span>[? if center_reactionary_candidate_1932:&nbsp;and withdraw support from [+ center_reactionary_candidate_1932_name +]?].
 - @view_candidates: View party endorsements.
 - @hope: We have concluded negotiations with other parties.
 
@@ -1097,10 +1097,10 @@ It's a long shot, but some in our party believed we could convince the <span sty
 
 Eckener can't win this election alone, he needs support from other parties.
 
-- @convince_z_eckener: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span>.
-- @convince_ddp_eckener: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span>.
-- @convince_lvp_eckener: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span>.
-- @convince_dvp_eckener: Convince the <span style="color: #C0A054;">**DVP**</span> to back <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span>.
+- @convince_z_eckener: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span>[? if center_reactionary_candidate_1932:&nbsp;and withdraw support from [+ center_reactionary_candidate_1932_name +]?].
+- @convince_ddp_eckener: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
+- @convince_lvp_eckener: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
+- @convince_dvp_eckener: Convince the <span style="color: #C0A054;">**DVP**</span> to back <span style="color: #000000;">Ec</span><span style="color: #DD0000;">ken</span><span style="color: #FFCC00;">er</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @view_candidates: View party endorsements.
 - @hope: We have concluded negotiations with other parties.
 

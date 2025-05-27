@@ -475,9 +475,9 @@ Election results:
 
 [? if Goring_running : <span style="color: #7A3C00;">**Göring**</span> - [+ Goring_votes_disp +]% ?]
 
-[? if Strasser_running : <span style="color: #7A3C00;">**Strasser**</span> - [+ Strasser_votes_disp +]% ?]
+[? if Strasser_running : <span style="color: #6A1E1E;">**Strasser**</span> - [+ Strasser_votes_disp +]% ?]
 
-[? if Frick_running : <span style="color: #7A3C00;">**Frick**</span> - [+ Frick_votes_disp +]% ?]
+[? if Frick_running : <span style="color: #6A1E1E;">**Frick**</span> - [+ Frick_votes_disp +]% ?]
 
 [? if Hammerstein_running : <span style="color: #BFC8CC;">**Hammerstein**</span> - [+ Hammerstein_votes_disp +]% ?]
 
