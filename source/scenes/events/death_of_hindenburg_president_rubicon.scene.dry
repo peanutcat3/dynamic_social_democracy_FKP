@@ -398,6 +398,7 @@ var candidate_descs = {
   Strasser: "Otto Strasser of the <span style='color: #6A1E1E; font-weight: bold;'>DSU</span>",
   Frick: "Wilhelm Frick of the <span style='color: #6A1E1E; font-weight: bold;'>DSU</span>",
   Goring: "Hermann Göring of the <span style='color: #7A3C00; font-weight: bold;'>NSDAP</span>",
+  Hammerstein: "Kurt von Hammerstein-Equord of the <span style='color: #BFC8CC; font-weight: bold;'>DNEF</span>",
   Adenauer: "Konrad Adenauer of the <span style='color: #000000; font-weight: bold;'>Center Party</span>",
   Heuss: "Theodor Heuss of the <span style='color: #D3C24D; font-weight: bold;'>[+ ddp_name +]</span>",
   Schumacher: "Kurt Schumacher of the <span style='color: #c00000; font-weight: bold;'>SPD</span>"
@@ -416,11 +417,11 @@ var candidate_votes = {};
 Q.parties_election = Q.parties;
 if (Q.dsu_exist) {
     Q.parties_election.push('dsu');
-    Q.nsdap_votes -= Q.dsu_votes;
+    Q.nsdap_normalized -= Q.dsu_normalized;
 }
 if (Q.nvf_exist) {
     Q.parties_election.push('nvf');
-    Q.nsdap_votes -= Q.nvf_votes;
+    Q.nsdap_normalized -= Q.nvf_normalized;
 }
 if (Q.center_bvp_votes) {
     Q.z_votes -= Q.bvp_votes;
@@ -460,6 +461,13 @@ Q.winner_votes_disp = Q.winner_votes.toFixed(1);
 Q.winner_desc = candidate_descs[Q.winner];
 
 Q.round += 1
+
+if (Q.spd_candidate == "Boycott" || Q.sapd_candidate == "Boycott" || Q.kpd_candidate == "Boycott"){
+    Q.boycott_votes = 0;
+    if (Q.kpd_candidate == "Boycott") Q.boycott_votes += Q.kpd_votes;
+    if (Q.sapd_candidate == "Boycott") Q.boycott_votes += Q.sapd_votes;
+    if (Q.spd_candidate == "Boycott") Q.boycott_votes += Q.spd_votes;
+}
 !}
 go-to: r2_start if round = 1 and not has_majority; election_end if round > 1; r1_winner if has_majority
 
@@ -478,6 +486,8 @@ Election results:
 [? if Heuss_running : [? if not lvp_formed: <span style="color: #D3C24D;">**Heuss**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Heuss**</span>?] - [+ Heuss_votes_disp +]% ?]
 
 [? if Schumacher_running : <span style="color: #c00000;">**Schumacher**</span> - [+ Schumacher_votes_disp +]% ?]
+
+[? if spd_candidate == "Boycott" or sapd_candidate == "Boycott" or kpd_candidate == "Boycott" : None of the Above - [+ boycott_votes +]% ?]
 
 @r2_start
 on-arrival: {!
@@ -532,7 +542,7 @@ I hope you had a reason in mind.
 @r2_endorse_adenauer
 title: Switch our support to Konrad Adenauer of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 view-if: z_candidate = "Adenauer" and spd_candidate != z_candidate
-on-departure: kpd_candidate = "Boycott"; sapd_candidate = "Boycott"; z_relation += 5; center_bvp_votes = 1 if z_relation < 50; is_unity_candidate = 1
+on-departure: kpd_candidate = "Boycott"; sapd_candidate = "Boycott"; spd_candidate = "Adenauer"; z_relation += 5; center_bvp_votes = 1 if z_relation < 50; is_unity_candidate = 1
 go-to: r2_campaigning
 
 We have endorsed Konrad Adenauer of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. Perhaps we can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Bloc against Schleicher.
