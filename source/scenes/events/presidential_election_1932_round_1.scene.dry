@@ -394,7 +394,7 @@ if (!Q.hindenburg_run) {
         Q.lvp_president_crossover = 0;
     }
 
-    if (Q.z_choice == Q.spd_candidate_1932 && Q.z_president_crossover) {
+    if (Q.z_choice == Q.spd_candidate_1932 && Q.center_president_crossover) {
         if (Q.reactionary_candidate_1932 && Q.reactionary_candidate_1932_ideology == "Liberal" && Q.center_president_crossover) {
             Q.reactionary_candidate_1932 += Q.center_president_crossover;
             Q.center_president_crossover = 0;
@@ -412,10 +412,10 @@ if (!Q.hindenburg_run) {
     }
 
     if (Q.ddp_choice == Q.spd_candidate_1932 && Q.ddp_president_crossover) {
-        if (Q.reactionary_candidate_1932 && Q.reactionary_candidate_1932_ideology == "Centrist" && Q.ddp_president_crossover) {
+        if (Q.reactionary_candidate_1932 && (Q.reactionary_candidate_1932_ideology == "Centrist" || Q.reactionary_candidate_1932_ideology == "Liberal") && Q.ddp_president_crossover) {
             Q.reactionary_candidate_1932 += Q.ddp_president_crossover;
             Q.ddp_president_crossover = 0;
-        } else if (Q.secondary_reactionary_candidate_1932 && Q.secondary_reactionary_candidate_1932_ideology == "Centrist" && Q.ddp_president_crossover) {
+        } else if (Q.secondary_reactionary_candidate_1932 && (Q.secondary_reactionary_candidate_1932_ideology == "Centrist" || Q.secondary_reactionary_candidate_1932_ideology == "Liberal") && Q.ddp_president_crossover) {
             Q.secondary_reactionary_candidate_1932 += Q.ddp_president_crossover;
             Q.ddp_president_crossover = 0;
         }
@@ -429,10 +429,10 @@ if (!Q.hindenburg_run) {
     }
 
     if (Q.dvp_choice == Q.spd_candidate_1932 && Q.dvp_president_crossover) {
-        if (Q.reactionary_candidate_1932 && Q.reactionary_candidate_1932_ideology == "Centrist" && Q.dvp_president_crossover) {
+        if (Q.reactionary_candidate_1932 && (Q.reactionary_candidate_1932_ideology == "Centrist" || Q.reactionary_candidate_1932_ideology == "Liberal") && Q.dvp_president_crossover) {
             Q.reactionary_candidate_1932 += Q.dvp_president_crossover;
             Q.dvp_president_crossover = 0;
-        } else if (Q.secondary_reactionary_candidate_1932 && Q.secondary_reactionary_candidate_1932_ideology == "Centrist" && Q.dvp_president_crossover) {
+        } else if (Q.secondary_reactionary_candidate_1932 && (Q.secondary_reactionary_candidate_1932_ideology == "Centrist" || Q.secondary_reactionary_candidate_1932_ideology == "Liberal") && Q.dvp_president_crossover) {
             Q.secondary_reactionary_candidate_1932 += Q.dvp_president_crossover;
             Q.dvp_president_crossover = 0;
         }
@@ -446,10 +446,10 @@ if (!Q.hindenburg_run) {
     }
 
     if (Q.lvp_choice == Q.spd_candidate_1932 && Q.lvp_president_crossover) {
-        if (Q.reactionary_candidate_1932 && Q.reactionary_candidate_1932_ideology == "Centrist" && Q.lvp_president_crossover) {
+        if (Q.reactionary_candidate_1932 && (Q.reactionary_candidate_1932_ideology == "Centrist" || Q.reactionary_candidate_1932_ideology == "Liberal") && Q.lvp_president_crossover) {
             Q.reactionary_candidate_1932 += Q.lvp_president_crossover;
             Q.lvp_president_crossover = 0;
-        } else if (Q.secondary_reactionary_candidate_1932 && Q.secondary_reactionary_candidate_1932_ideology == "Centrist" && Q.lvp_president_crossover) {
+        } else if (Q.secondary_reactionary_candidate_1932 && (Q.secondary_reactionary_candidate_1932_ideology == "Centrist" || Q.secondary_reactionary_candidate_1932_ideology == "Liberal") && Q.lvp_president_crossover) {
             Q.secondary_reactionary_candidate_1932 += Q.lvp_president_crossover;
             Q.lvp_president_crossover = 0;
         }

@@ -395,7 +395,7 @@ if (!Q.hindenburg_run) {
         Q.lvp_president_crossover = 0;
     }
 
-    if (Q.z_choice == Q.spd_candidate_1932 && Q.z_president_crossover) {
+    if (Q.z_choice == Q.spd_candidate_1932 && Q.center_president_crossover) {
         if (Q.reactionary_candidate_1932 && Q.reactionary_candidate_1932_ideology == "Liberal" && Q.center_president_crossover) {
             Q.reactionary_candidate_1932 += Q.center_president_crossover;
             Q.center_president_crossover = 0;
