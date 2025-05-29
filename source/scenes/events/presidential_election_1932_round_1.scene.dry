@@ -328,7 +328,7 @@ if (Q.spd_campaign) {
         Q.reactionary_votes += Q.spd_normalized;
     }
 
-    if (!Q.reactionary_democracy_bonus && Q.spd_support_reactionary && && !Q.hindenburg_run && !Q.spd_abstain_1932) {
+    if (!Q.reactionary_democracy_bonus && Q.spd_support_reactionary && !Q.hindenburg_run && !Q.spd_abstain_1932) {
         Q.reactionary_votes += Q.spd_normalized*0.95;
     }
 

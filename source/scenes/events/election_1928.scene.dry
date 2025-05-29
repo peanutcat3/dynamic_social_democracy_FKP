@@ -2329,7 +2329,7 @@ The Bourgeois Coalition is formed, with Brüning as its chancellor. We will have
 title: There is no clear governing majority.
 view-if: (center_right_coalition < 50 or (bourgeois_coalition < 50 and dnvp_ideology == "Radical")) and president_ideology == "Moderate"
 on-arrival: no_majority_elections += 1
-go-to: no_majority_bruning_moderate if (chancellor = "Brüning" or chancellor = "Wirth") and president == "Hindenburg"; no_majority_spd_moderate if chancellor_party = "SPD"
+go-to: no_majority_bruning_moderate_2 if (chancellor = "Brüning" or chancellor = "Wirth"); no_majority_spd_moderate if chancellor_party = "SPD"
 
 @no_majority_spd_moderate
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
@@ -2351,14 +2351,14 @@ There is no path to an obviously workable majority. Since President [+ president
 - @toleration_bruning_right: We will tolerate Brüning's right coalition.
 - @new_elections: We will have new elections.
 
-@no_majority_bruning_moderate
+@no_majority_bruning_moderate_2
 go-to: no_majority_bruning_toleration
 
 @no_majority_right
 title: There is no clear governing majority.
 view-if: (center_right_coalition < 50 or (bourgeois_coalition < 50 and dnvp_ideology == "Radical")) and president_ideology == "Right"
 on-arrival: no_majority_elections += 1
-go-to: no_majority_bruning_right if (chancellor = "Brüning" or chancellor = "Wirth") and president == "Hindenburg"; no_majority_spd_right if chancellor_party = "SPD"
+go-to: no_majority_bruning_right_2 if (chancellor = "Brüning" or chancellor = "Wirth"); no_majority_spd_right if chancellor_party = "SPD"
 
 @no_majority_spd_right
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
@@ -2378,7 +2378,7 @@ There is no path to an obviously workable majority. Since President [+ president
 - @toleration_bruning_right: We will tolerate Brüning's right coalition.
 - @new_elections: We will have new elections.
 
-@no_majority_bruning_right
+@no_majority_bruning_right_2
 go-to: no_majority_bruning_toleration
 
 @no_majority
