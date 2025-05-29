@@ -439,6 +439,15 @@ if (!Q.hindenburg_run) Q.hindenburg_votes = 0;
 Q.vrp_presidential_votes = 0.003;
 if (Q.inflation >= 4) Q.vrp_presidential_votes += (Q.inflation / 1000);
 
+console.log("Hindenburg votes: " + Q.hindenburg_votes);
+console.log("NSDAP votes: " + Q.nsdap_presidential_votes);
+console.log("SPD votes: " + Q.spd_president_votes);
+console.log("Reactionary1 votes: " + Q.reactionary_candidate_1_votes);
+console.log("Reactionary2 votes: " + Q.reactionary_candidate_2_votes);
+console.log("DNVP votes: " + Q.dnvp_presidential_votes);
+console.log("VRP votes: " + Q.vrp_presidential_votes);
+console.log("Communists votes: " + Q.thalmann_votes);
+
 Q.total_votes_pres = Q.hindenburg_votes + Q.nsdap_presidential_votes + Q.thalmann_votes + Q.spd_president_votes + Q.dnvp_presidential_votes + Q.vrp_presidential_votes + Q.reactionary_candidate_1_votes + Q.reactionary_candidate_2_votes;
 if (!Q.hindenburg_run) {
     Q.total_votes_pres -= Q.hindenburg_votes;
