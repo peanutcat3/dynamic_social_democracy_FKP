@@ -400,10 +400,13 @@ var candidate_descs = {
   Goring: "Hermann Göring of the <span style='color: #7A3C00; font-weight: bold;'>NSDAP</span>",
   Hammerstein: "Kurt von Hammerstein-Equord of the <span style='color: #BFC8CC; font-weight: bold;'>DNEF</span>",
   Adenauer: "Konrad Adenauer of the <span style='color: #000000; font-weight: bold;'>Center Party</span>",
-  Heuss: "Theodor Heuss of the <span style='color: #D3C24D; font-weight: bold;'>[+ ddp_name +]</span>",
+  Heuss: "Theodor Heuss of the <span style='color: #D3C24D; font-weight: bold;'>DDP</span>",
   Schumacher: "Kurt Schumacher of the <span style='color: #c00000; font-weight: bold;'>SPD</span>"
 };
 
+if (Q.dstp_formed) {
+    candidate_descs.Heuss = "Theodor Heuss of the <span style='color: #D3C24D; font-weight: bold;'>DStP</span>";
+}
 if (Q.lvp_formed) {
     candidate_descs.Heuss = "Theodor Heuss of the <span style='color: #FFCC00; font-weight: bold;'>LVP</span>";
 }
