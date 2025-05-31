@@ -105,7 +105,7 @@ if (Q.Heuss_votes_pre < 8) {
     Q.heuss_run = 0;
 }
 Q.nsdap_candidate = "Göring";
-Q.nsdap_hitler = "Göring";
+Q.nsdap_hitler_candidate = "Göring";
 if (Q.dsu_leader != "Otto Strasser") Q.dsu_candidate = "Frick";
 if (Q.dsu_leader == "Otto Strasser") Q.dsu_candidate = "Strasser";
 Q.nvf_candidate = "Boycott";
@@ -419,12 +419,14 @@ for (var k in candidate_descs) {
 var candidate_votes = {};
 Q.parties_election = Q.parties;
 if (Q.dsu_exist) {
+    Q.parties_election.push('nsdap_hitler');
     Q.parties_election.push('dsu');
-    Q.nsdap_normalized -= Q.dsu_normalized;
+    Q.nsdap_normalized = 0;
 }
 if (Q.nvf_exist) {
     Q.parties_election.push('nvf');
     Q.nsdap_normalized -= Q.nvf_normalized;
+    Q.nsdap_normalized = 0;
 }
 if (Q.center_bvp_votes) {
     Q.z_votes -= Q.bvp_votes;

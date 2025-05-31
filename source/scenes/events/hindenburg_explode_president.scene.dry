@@ -276,7 +276,7 @@ var candidate_descs = {
 Seeckt: "Hans von Seeckt, an independent formerly of the <span style='color: #C0A054; font-weight: bold;'>DVP</span>",
 Eckener: "the independent <span style='color: #000000;'>rep</span><span style='color: #DD0000;'>ubl</span><span style='color: #FFCC00;'>ican</span> candidate Hugo Eckener",
 Adenauer: "Konrad Adenauer of the <span style='color: #000000; font-weight: bold;'>Center Party</span>",
-Gessler: "Otto Gessler, independent formerly of the <span style='color: #D3C24D; font-weight: bold;'>[+ ddp_name +]</span>",
+Gessler: "Otto Gessler, independent formerly of the <span style='color: #D3C24D; font-weight: bold;'>DDP</span>",
 Wels: "Otto Wels of the <span style='color: #c00000; font-weight: bold;'>SPD</span>",
 Grzesinski: "Albert Grzesinski of the <span style='color: #c00000; font-weight: bold;'>SPD</span>"
 }
