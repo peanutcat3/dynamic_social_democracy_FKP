@@ -487,7 +487,7 @@ Election results:
 
 [? if Schumacher_running : <span style="color: #c00000;">**Schumacher**</span> - [+ Schumacher_votes_disp +]% ?]
 
-[? if spd_candidate == "Boycott" or sapd_candidate == "Boycott" or kpd_candidate == "Boycott" : None of the Above - [+ boycott_votes +]% ?]
+[? if spd_candidate == "Boycott" or sapd_candidate == "Boycott" or kpd_candidate == "Boycott" : Spoiled Ballots - [+ boycott_votes +]% ?]
 
 @r2_start
 on-arrival: {!

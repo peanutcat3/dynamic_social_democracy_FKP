@@ -321,6 +321,12 @@ Q.winner_votes = Math.round(1000*Q.winner_votes/total_votes)/10;
 Q.winner_votes_disp = Q.winner_votes.toFixed(1);
 Q.winner_desc = candidate_descs[Q.winner];
 
+if (Q.sapd_candidate == "Boycott" || Q.kpd_candidate == "Boycott"){
+    Q.boycott_votes = 0;
+    if (Q.kpd_candidate == "Boycott") Q.boycott_votes += Q.kpd_votes;
+    if (Q.sapd_candidate == "Boycott") Q.boycott_votes += Q.sapd_votes;
+}
+
 Q.round += 1
 !}
 go-to: r2_start if round = 1 and not has_majority; election_end if round > 1; r1_winner if has_majority
@@ -337,6 +343,8 @@ Election results:
 
 [? if Grzesinski_running : <span style="color: #c00000;">**Grzesinski**</span> - [+ Grzesinski_votes_disp +]% ?]
 [? if Wels_running : <span style="color: #c00000;">**Wels**</span> - [+ Wels_votes_disp +]% ?]
+
+[? if sapd_candidate == "Boycott" or kpd_candidate == "Boycott" : Spoiled Ballots - [+ boycott_votes +]% ?]
 
 @r2_start
 on-arrival: {!
@@ -459,7 +467,7 @@ if (Q.president == "Thalmann") Q.president = "Thälmann";
 if (Q.president == "Munzenberg") Q.president = "Münzenberg";
 if (Q.president == "Goring") Q.president = "Göring";
 
-if (Q.president == "Thälmann" || Q.president == "Münzenberg" || Q.president == "Schumacher" || Q.president == "Wels" || Q.president == "Juchacz" || Q.president == "Braun" || Q.president == "Ossietzky" || Q.president == "Mann" || Q.president == "Einstein") {
+if (Q.president == "Thälmann" || Q.president == "Münzenberg" || Q.president == "Schumacher" || Q.president == "Wels" || Q.president == "Grzesinski" || Q.president == "Juchacz" || Q.president == "Braun" || Q.president == "Ossietzky" || Q.president == "Mann" || Q.president == "Einstein") {
     Q.president_ideology = "Left";
 } else if (Q.president == "Eckener" || Q.president == "Adenauer" || Q.president == "Gessler") {
     Q.president_ideology = "Moderate";

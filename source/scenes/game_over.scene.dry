@@ -214,6 +214,14 @@ go-to: eg_menu
 
 Kurt Schumacher has been elected as President of Germany. As a young and ambitious <span style="color: #c00000;">**SPD**</span> member, he will be shaping Germany for years to come.
 
+@president_grzesinski
+title: Albert Grzesinski victorious
+view-if: president == "Grzesinski"
+tags: endings
+go-to: eg_menu
+
+Albert Grzesinski has been elected President of Germany. As a young and ambitious <span style="color: #c00000;">**SPD**</span> member, he will be shaping Germany for years to come.
+
 @president_wels
 title: Otto Wels victorious
 view-if: president == "Wels"
