@@ -121,7 +121,7 @@ Method of governing: Presidential decrees
 [? if chancellor == "Schleicher": Hindenburg's confidence: [+ hindenburg_schleicher_r : confidence +]<br> ?]
 [? if chancellor == "Schleicher" or chancellor == "Bredow" or chancellor == "Goerdeler" or chancellor == "Treviranus": [+ chancellor +]'s public popularity: [+ schleicher_approval : schleicher_popularity +]<br> ?]
 [? if chancellor == "Papen": Schleicher's confidence: [+ schleicher_papen_r : confidence +]<br> ?]
-[? if red_general_unlock: [? if chancellor == "Schleicher": Schleicher?][? if chancellor != "Schleicher" and schleicher_post: State?]<span style="color: #c00000;">**SPD**</span> relations: [+ schleicher_spd_r : schleicher_spd +]<br> ?]
+[? if red_general_unlock: [? if chancellor == "Schleicher" or not schleicher_post: Schleicher?][? if chancellor != "Schleicher" and schleicher_post: State?]-<span style="color: #c00000;">**SPD**</span> relations: [+ schleicher_spd_r : schleicher_spd +]<br> ?]
 [? if reichswehr_strength > 100 and chancellor == "Schleicher": Reichswehr: 100 thousand troops.<br> ?]
 [? if reichswehr_strength > 100 and chancellor == "Schleicher": State "Militia": [+ reichswehr_strength - 100 +] thousand troops. ?]
 
