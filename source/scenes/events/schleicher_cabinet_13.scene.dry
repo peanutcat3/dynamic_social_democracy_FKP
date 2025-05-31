@@ -351,6 +351,8 @@ Q.schleicher_post_protests = 1;
 Q.schleicher_rights = 1;
 Q.reichstag_break = 0;
 
+Q.reichswehr_strength -= 50;
+
 Q.workers_schleicher_bonus -= 2;
 Q.republicans_schleicher_bonus -= 2;
 
@@ -420,6 +422,8 @@ Q.schleicher_post_protests = 1;
 Q.schleicher_rights = 1;
 Q.schleicher_pause = 1;
 Q.reichstag_break = 0;
+
+Q.reichswehr_strength -= 100;
 
 Q.workers_schleicher_bonus -= 3;
 Q.republicans_schleicher_bonus -= 3;

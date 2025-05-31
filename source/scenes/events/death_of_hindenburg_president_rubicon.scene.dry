@@ -605,6 +605,7 @@ if (rightTools) {
     rightTools.style.display = 'none';
 }
 !}
+achievement: bundesrepublik
 
 Theodor Heuss has unexpectedly won the presidency! With a committed <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">can</span> at the helm of Germany, the threat to the Republic has, for the most part, subsided.
 
@@ -620,6 +621,7 @@ if (rightTools) {
     rightTools.style.display = 'none';
 }
 !}
+achievement: bundesrepublik
 
 Konrad Adenauer has won the presidency! With a committed <span style="color: #000000;">repu</span><span style="color: #DD0000;">bli</span><span style="color: #FFCC00;">can</span> at the helm of Germany, the threat to the Republic has, for the most part, subsided.
 
