@@ -158,6 +158,7 @@ Heuss's victory empowers the '<span style="color: #c00000;">Social</span> <span 
 title: Reinhold Maier is elected!
 subtitle: A major player in Württemberg politics, and a former <span style="color: #D3C24D;">**[+ ddp_name +]**</span> member. 
 unavailable-subtitle: [? if not heuss_lead: The wider <span style="color: #FFCC00;">LVP</span> perceive him as too left-wing, despite his previous affiliation with the <span style="color: #D3C24D;">[+ ddp_name +]</span>'s business wing. ?][? if heuss_lead: Surprisingly, Maier is seen as too conservative by the party. ?]
+choose-if: maier_lead
 on-arrival:  lvp_leader = "Maier"; lvp_relation += 3; lvp_left += 1; pro_republic += 5; new_middle_lvp += 6; old_middle_lvp += 2; rural_lvp += 4; catholics_lvp += 8
 face-image: img/portraits/maier.jpg
 
