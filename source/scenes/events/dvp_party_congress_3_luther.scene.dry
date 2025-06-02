@@ -1,13 +1,12 @@
-title: <span style="color: #C0A054;">**DVP**</span> Party Vote
-subtitle: Julius Curtius has resigned!
-view-if: curtius_explosion_timer == time and dvp_leader == "Curtius" and not lvp_formed
+title: <span style="color: #C0A054;">**DVP**</span> Party Congress
+subtitle: Luther resigns from his party positions to accept the presidency.
+view-if: president == "Luther" and dvp_leader == "Luther" and not lvp_formed and dvp_exist
 on-arrival: {!
-
 if (Q.dvp_relation < 35) Q.dvp_right += 3;
 if (Q.dvp_relation >= 60) Q.dvp_left += 3;
 if (Q.in_grand_coalition) Q.dvp_left += 2;
 if (Q.liberal_parliament) Q.dvp_left += 2;
-Q.dvp_right += 8;
+Q.dvp_right += 4;
 
 if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 4))) {
     Q.dvp_ideology = "Right"
@@ -19,25 +18,39 @@ if (Q.dvp_right > (Q.dvp_left*1.5) || (Q.dvp_right > (Q.dvp_left + 4))) {
 
 if ((Q.pro_republic >= 80 && Q.dvp_ideology == "Left") && Q.dvp_reform && Q.dnvp_leader != "Lambach") Q.thiel_unlock = 1;
 if ((Q.pro_republic < 80 || Q.dvp_ideology != "Left") && Q.dvp_reform && Q.dnvp_leader != "Lambach") Q.glatzel_unlock = 1;
-if (Q.dvp_ideology == "Right" && !Q.thiel_unlock && !Q.glatzel_unlock) Q.dingeldey_unlock = 1;
+if (!Q.glatzel_unlock && !Q.thiel_unlock && Q.dvp_ideology == "Right") Q.hugo_unlock = 1;
 if ((Q.dvp_ideology == "Moderate" || Q.dvp_ideology == "Left") && !Q.thiel_unlock && !Q.glatzel_unlock) Q.kardorff_unlock = 1;
 
+if (!Q.kardorff_unlock && !Q.thiel_unlock && !Q.glatzel_unlock && !Q.hugo_unlock) Q.kardorff_unlock = 1;
 !}
 max-visits: 1
 tags: event
-face-image: img/dvp.jpg
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/dvp_poster.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
 new-page: true
 
-= <span style="color: #C0A054;">**DVP**</span> Party Vote
+= <span style="color: #C0A054;">**DVP**</span> Party Congress
 
-Following the disastrous Austrian customs union project, of which he was the architect, he has tendered his resignation from both the Foreign Ministry and the leadership of the <span style="color: #C0A054;">**DVP**</span>. This debacle has significantly discredited him and his allies on the party’s left wing, leading to a rightward shift within the <span style="color: #C0A054;">**DVP**</span>, particularly at the local level.
+With Luther elected president, he naturally cannot continue serving as the <span style="color: #C0A054;">**DVP**</span>'s chairman. A party congress is convened to select his successor. This marks the first time Germany has elected a president from the political middle, and optimism within the party is running high.
 
-An internal election must now be held to determine Curtius’s successor. With the industrial wing largely weakened, none of the leading candidates have particularly strong ties to big business. Otto Thiel and Frank Glatzel, both members of the DHV - a conservative white-collar union - and leaders of the <span style="color: #C0A054;">**DVP**</span>'s Young Liberal wing, [? if not dvp_reform: are the leading voices pushing for a genuine People's Party?][? if dvp_reform: were instrumental in pushing the <span style="color: #C0A054;">**DVP**</span> toward reform years ago?]. Meanwhile, Siegfried von Kardorff, a veteran parliamentarian despite his past affiliation with the <span style="color: #3E88B3;">**DNVP**</span>, has significantly moderated over the years and was a close follower of Stresemann, advocating for a Grand Coalition with the <span style="color: #c00000;">**SPD**</span>. And, of course, Dingeldey is running again, undeterred by his previous defeat.
+In contention is <span style="color: #C0A054;">**DVP**</span> veteran and parliamentarian Siegfried von Kardorff—a conventional politician endorsed by Luther and expected to continue his moderate course of supporting Bürgerblocks while keeping the door open to cooperation with the <span style="color: #c00000;">**SPD**</span>. Also in the running are Otto Thiel and Frank Glatzel, both prominent figures within the DHV, a white-collar union that has long played a role in shaping <span style="color: #C0A054;">**DVP**</span> policy—though they likely lack the influence to carry one of their own to the chairmanship.
+
+Meanwhile, the <span style="color: #C0A054;">**DVP**</span>'s right wing—despite previous setbacks—remains very much alive. Their candidate is Otto Hugo, a co-founder of the party and a lobbyist for Ruhr heavy industry. Ideologically, he closely aligns with Scholz, maintaining a staunch and irreconcilable opposition to any cooperation with the <span style="color: #c00000;">**SPD**</span>.
 
 - @thiel: Otto Thiel is elected!
 - @glatzel: Frank Glatzel is elected!
 - @kardorff: Siegfried von Kardorff is elected!
-- @dingeldey: Eduard Dingeldey is elected.
+- @hugo: Otto Hugo is elected.
 
 @thiel
 subtitle: Thiel is a controversial unionist within the party, being more left wing than Glatzel.
@@ -62,26 +75,25 @@ Frank Glatzel is elected to become the new leader of the <span style="color: #C0
 As expected, the remaining industrialists within the <span style="color: #C0A054;">**DVP**</span> are worried, as the party begins to shift towards including the demands of the worker. This has led to a dramatic shift in the party’s financial backing, as funding from big business dwindles and is replaced by donations and dues from the DHV and its affiliated members. His <span class="tooltip-text" title="good mod">dynamic</span> leadership should be closely watched.
 
 @kardorff
-subtitle: Kardorff is able to secure the continuation of Curtius's leadership.
-unavailable-subtitle: [? if dingeldey_unlock: His closeness to Curtius has undermined his position. ?][? if thiel_unlock or glatzel_unlock: The party prefers a new and dynamic leader, preferably not one with closeness to Curtius. ?]
+subtitle: Kardorff is able to secure the continuation of Luther's leadership.
+unavailable-subtitle: [? if hugo_unlock: The right-industrial faction blocks Kardorff’s ascension, ensuring the party veers further to the right. ?][? if thiel_unlock or glatzel_unlock: The party prefers a new and dynamic leader, preferably not one with closeness to Luther. ?]
 choose-if: kardorff_unlock
 on-arrival: dvp_leader = "Kardorff"; dvp_left += 3 if in_grand_coalition; liberal_cooperation += 3; bourgeois_cooperation += 3; dvp_relation += 5 if in_grand_coalition; new_middle_dvp += 4; catholics_dvp += 2; rural_dvp += 2; old_middle_dvp += 2; pro_republic += 3
 face-image: img/portraits/kardorff.jpg
 
-Kardorff is elected to succeed Curtius as the leader of the <span style="color: #C0A054;">**DVP**</span>. He is expected to be a continuation of Curtius's leadership, being another Stresemann follower and supporter of constructive cooperation with the <span style="color: #c00000;">**SPD**</span>. [? if ui0_seen: He even rallied his parliamentary faction to save our Grand Coalition back in 1929.?]
+Kardorff is elected to succeed Luther as the leader of the <span style="color: #C0A054;">**DVP**</span>. He is expected to be a continuation of Luther's leadership, being another Stresemann follower and supporter of constructive cooperation with the <span style="color: #c00000;">**SPD**</span>. [? if ui0_seen: He even rallied his parliamentary faction to save our Grand Coalition back in 1929.?]
 
 [? if bruning_time: He is also one of the strongest supporters of the Brüning government, frequently coming into conflict with the right of the party over support for it. ?]
 
-@dingeldey
-subtitle: Dingeldey aims to revert all of Curtius's progress.
+@hugo
+subtitle: Otto Hugo aims to consolidate party control in the hands of the industrialists.
 unavailable-subtitle: The right-industrial faction of <span style='color: #C0A054;'>DVP</span> lacks the required influence.
-choose-if: dingeldey_unlock
-on-arrival: old_dvp_leader = dvp_leader; dvp_leader = "Dingeldey"; dvp_right += 10; dvp_relation -= 25; old_middle_dvp -= 3; new_middle_dvp -= 6; rural_dvp -= 4; pro_republic -= 5; ddp_cohesion -= 1; liberal_cooperation -= 5; bourgeois_cooperation -= 5
-face-image: img/portraits/dingeldey.jpg
+choose-if: hugo_unlock
+on-arrival: old_dvp_leader = dvp_leader; dvp_leader = "Hugo"; dvp_right += 10; dvp_relation -= 25; old_middle_ddp += 2; new_middle_ddp += 6; rural_ddp += 4; old_middle_dvp -= 2; new_middle_dvp -= 6; rural_dvp -= 4; pro_republic -= 5; ddp_cohesion -= 1; liberal_cooperation -= 5; bourgeois_cooperation -= 5; ddp_right += 5; ddp_cohesion -= 3; ddp_relation -= 10
+face-image: img/portraits/hugo.jpg
 
-Eduard Dingeldey has unexpectedly won the vote to replace [+ old_dvp_leader +] as chairman of the <span style="color: #C0A054;">**DVP**</span>. Backed by broad and unified support from the party’s right wing, and endorsed by Ernst Scholz, he has narrowly clinched victory against Kardorff.
+Otto Hugo has unexpectedly won the vote to replace [+ old_dvp_leader +] as chairman of the <span style="color: #C0A054;">DVP</span>. Backed by unified support from the party’s right wing and endorsed by Ernst Scholz, he narrowly defeated Kardorff.
 
-Dingeldey's election represents a significant and irreversible shift to the right,[? if dvp_reform:&nbsp;with him even repealing Stresemann's reform of the internal party structure,?] granting the industrialists back their lost influence on the <span style="color: #C0A054;">**DVP**</span>'s decision making. [? if chancellor == "Brüning" and not spd_in_government: Dingeldey doesn't even feel great loyalty toward the Brüning government and believes that the party could only fulfill its mission towards bourgeois concentration after it is freed from the burden of governmental responsibility.?] 
+His election marks a decisive and likely irreversible shift to the right[? if dvp_reform:, even repealing Stresemann’s reforms to the party’s internal structure?], as Hugo moves to ensure industrialist dominance over the <span style="color: #C0A054;">**DVP**</span>’s decision-making apparatus. He holds openly hostile views toward parties to the left of the <span style="color: #C0A054;">**DVP**</span>, and prefers alignment with the <span style="color: #3E88B3;">**DNVP**</span> and even the <span style="color: #7A3C00;">**NSDAP**</span> over cooperation with us.
 
-Furthermore, Dingeldey is not particularly interested in a closer relationship with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and definitely not with us, but rather with parties to the right, such as the <span style="color: #3E88B3;">**DNVP**</span> and even the <span style="color: #7A3C00;">**NSDAP**</span>, to transform them into a 'constructive component of the state.' This does not bode well for the future of <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> democracy.
-
+Unsurprisingly, Hugo’s industrial ties and lack of public appeal—especially in contrast to Luther—have caused the <span style="color: #C0A054;">**DVP**</span> to suffer in the polls. The primary beneficiary is the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, which is shifting rightward to capture the disaffected middle-class vote.

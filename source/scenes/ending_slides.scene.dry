@@ -1,4 +1,5 @@
 title: Ending Slides
+view-if: chancellor != "Hitler" and president != "Hitler" and president != "Göring"
 on-arrival: {!
 const toolsWrapper = document.getElementById('tools_wrapper');
 if (toolsWrapper) {
