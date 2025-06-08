@@ -3797,6 +3797,15 @@ if (Q.hindenburg_angry_pause_time >= Q.time) {
     Q.hindenburg_angry = Q.hindenburg_angry_base;
 }
 
+if (Q.president == "Hindenburg" && Q.chancellor == "Goerdeler" && !Q.spd_in_government && Q.year >= 1930) {
+    Q.goerdeler_pre_time += 1;
+    Q.total_goerdeler_time += 1;
+} else {
+    Q.goerdeler_pre_time = 0;
+}
+
+if (Q.rubicon_mini) Q.rubicon_mini_time += 1;
+
 if (Q.president == "Hindenburg" && Q.chancellor == "Brüning" && !Q.spd_in_government && Q.year >= 1930) {
     if (Q.spd_toleration) {
         Q.bruning_toleration_time += 1; 
@@ -4483,6 +4492,8 @@ if (Q.kvp_formed && Q.lvp_formed) {
 }
 
 Q.hitler_right_coalition = parseFloat((Q.z_r + Q.nsdap_r).toFixed(1));
+
+Q.goerdeler_right_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.lvp_r + Q.other_r + Q.kvp_r + Q.dnvp_r + Q.dnf_r).toFixed(1));
 
 if (Q.lvp_formed) {
     Q.progressive_coalition = parseFloat((Q.spd_r + Q.kpd_r + (Q.lvp_r / 3) + Q.sapd_r).toFixed(1));
