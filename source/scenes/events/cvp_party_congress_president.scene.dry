@@ -3,7 +3,7 @@ subtitle: [+ cvp_leader +] will be resigning his positions to accept the preside
 view-if: cvp_formed and cvp_leader == president
 on-arrival: {!
 
-if (Q.president == "Adenauer") Q.cvp_left += 10;
+if (Q.president == "Adenauer" || Q.president == "Stegerwald") Q.cvp_left += 10;
 if (Q.president == "Westarp" || Q.president == "Lettow-Vorbeck") Q.cvp_right += 10;
 
 if (Q.in_social_catholic_coalition) Q.cvp_left += 5;
@@ -219,6 +219,10 @@ if (Q.democratic_points_lead && Q.tory_democratic_points_lead) {
 
 if (Q.labor_left_points_lead) {
     Q.stegerwald_unlock = 1;
+    if (Q.president == "Stegerwald") {
+        Q.adenauer_unlock = 1;
+        Q.stegerwald_unlock = 0;
+    }
     Q.treviranus_unlock = 0;
     Q.adenauer_unlock = 0;
     Q.gereke_unlock = 0;
@@ -295,6 +299,7 @@ The vote for the party's leadership has begun.
 title: Adam Stegerwald, formerly of the <span style="color: #000000;">Center</span>, is elected, no longer an interim leader.
 subtitle: Stegerwald is relatively moderate, and his trade union roots are good news for our cooperation. - <span style="color: #000000;">Catholic Labor</span> Wing
 unavailable-subtitle: Stegerwald is seen as too friendly toward us, and the party needs a new face. - <span style="color: #000000;">Catholic Labor</span> Wing
+view-if: president != "Stegerwald"
 choose-if: stegerwald_unlock
 on-arrival: z_relation += 15; pro_republic += 5; ddp_relation += 5; dvp_relation += 5; lvp_relation += 5; workers_z += 5; unemployed_z += 3; workers_spd -= 3; workers_kpd -= 2; unemployed_spd -= 3; rural_z -= 4; old_middle_z -= 4; rural_dnf += 4; old_middle_dnf += 4; catholics_z += 8; cvp_leader = "Stegerwald"; cvp_left += 5; cvp_ideology = "Left"; old_middle_z = 25 if old_middle_z < 25; rural_z = 25 if rural_z < 25
 face-image: img/portraits/stegerwald.jpg

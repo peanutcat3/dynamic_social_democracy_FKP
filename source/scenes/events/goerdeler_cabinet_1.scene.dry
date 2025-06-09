@@ -46,7 +46,55 @@ This is, however, entirely unacceptable to Goerdeler—and even more so to Presi
 @goerdeler_3
 title: What a mess.
 subtitle: No agreement is able to be reached.
-on-arrival: nazi_peak_triggered = 1; nazi_peak_votes = nsdap_votes; nazi_decay_timer = 24; coup_progress += 4; new_middle_nsdap -= 10; old_middle_nsdap -= 10; rural_nsdap -= 10; new_middle_dnvp += 4; old_middle_dnvp += 4; rural_dnvp += 4; new_middle_kvp += 4; old_middle_kvp += 4; rural_kvp += 4; new_middle_other += 4; old_middle_other += 4; rural_other += 4; new_middle_dnf += 6; old_middle_dnf += 6; rural_dnf += 6; new_middle_dnvp += 6 if dnvp_ideology == "Radical"; old_middle_dnvp += 6 if dnvp_ideology == "Radical"; rural_dnvp += 6 if dnvp_ideology == "Radical"
+on-arrival: {!
+Q.nazi_peak_triggered = 1;
+Q.nazi_peak_votes = Q.nsdap_votes;
+Q.nazi_decay_timer = 24;
+Q.coup_progress += 4;
+
+Q.new_middle_nsdap -= 10;
+Q.old_middle_nsdap -= 10;
+Q.rural_nsdap -= 10;
+Q.catholics_nsdap -= 6;
+
+Q.new_middle_dnvp += 4;
+Q.old_middle_dnvp += 4;
+Q.rural_dnvp += 4;
+
+Q.new_middle_kvp += 4;
+Q.old_middle_kvp += 4;
+Q.rural_kvp += 4;
+
+Q.new_middle_other += 4;
+Q.old_middle_other += 4;
+Q.rural_other += 4;
+
+Q.new_middle_dvp += 4;
+Q.old_middle_dvp += 4;
+Q.rural_dvp += 2;
+
+Q.new_middle_lvp += 6;
+Q.old_middle_lvp += 6;
+Q.rural_lvp += 2;
+
+Q.new_middle_dnf += 6;
+Q.old_middle_dnf += 6;
+Q.rural_dnf += 6;
+
+Q.catholics_z += 6;
+if (Q.stegerwald_path) {
+    Q.workers_z += 2;
+    Q.new_middle_z += 4;
+    Q.old_middle_z += 4;
+    Q.rural_z += 4;
+}
+
+if (Q.dnvp_ideology === "Radical") {
+    Q.new_middle_dnvp += 6;
+    Q.old_middle_dnvp += 6;
+    Q.rural_dnvp += 6;
+}
+!}
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
