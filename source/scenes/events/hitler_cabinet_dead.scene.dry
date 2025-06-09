@@ -1,5 +1,5 @@
 title: [+ chancellor +] is Sacked!
-view-if: chancellor_party == "NSDAP" and rubicon_mini and president != "Hindenburg"
+view-if: chancellor_party == "NSDAP" and rubicon_mini and president != "Hindenburg" and president != "Hitler" and president != "Göring" and president != "Frick"
 new-page: true
 tags: event
 max-visits: 1
