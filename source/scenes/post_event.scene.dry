@@ -3797,7 +3797,7 @@ if (Q.hindenburg_angry_pause_time >= Q.time) {
     Q.hindenburg_angry = Q.hindenburg_angry_base;
 }
 
-if (Q.president == "Hindenburg" && Q.chancellor == "Goerdeler" && !Q.spd_in_government && Q.year >= 1930) {
+if (Q.president == "Hindenburg" && Q.chancellor == "Goerdeler" && !Q.spd_in_government && Q.year >= 1930 && !Q.rubicon) {
     Q.goerdeler_pre_time += 1;
     Q.total_goerdeler_time += 1;
 } else {
