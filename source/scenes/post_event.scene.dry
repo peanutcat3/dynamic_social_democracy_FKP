@@ -498,20 +498,6 @@ if (Q.dnef_formed) {
         Q.republicans_schleicher += 1;
     }
 
-    if (Q.spd_votes < 15) {
-        Q.workers_schleicher += 4;
-        Q.republicans_schleicher += 4;
-    } else if (Q.spd_votes < 20) {
-        Q.workers_schleicher += 3;
-        Q.republicans_schleicher += 3;
-    } else if (Q.spd_votes < 25) {
-        Q.workers_schleicher += 2;
-        Q.republicans_schleicher += 2;
-    } else if (Q.spd_votes < 30) {
-        Q.workers_schleicher += 1;
-        Q.republicans_schleicher += 1;
-    }
-
     Q.workers_schleicher_pre = Q.workers_schleicher;
     Q.republicans_schleicher_pre = Q.republicans_schleicher;
     Q.nationalists_schleicher_pre = Q.nationalists_schleicher;
@@ -522,10 +508,10 @@ if (Q.dnef_formed) {
 
         for (const threshold of vote_thresholds) {
             if (Q.dnef_total_votes >= threshold) {
-                Q.workers_schleicher += 2;
-                Q.republicans_schleicher += 2;
-                Q.nationalists_schleicher += 1;
-                Q.industrialists_schleicher += 1;
+                Q.workers_schleicher += 0.5;
+                Q.republicans_schleicher += 1;
+                Q.nationalists_schleicher += 0.5;
+                Q.industrialists_schleicher += 0.5;
             }
         }
     }
