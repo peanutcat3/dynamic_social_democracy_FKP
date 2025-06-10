@@ -2095,13 +2095,15 @@ The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][?
 title: <span style="color: #7A3C00;">Far</span>-[? if not dnf_formed:<span style="color: #3E88B3;">right</span>?][? if dnf_formed:<span style="color: #003755;">right</span>?] Coalition
 subtitle: <span style="color: #7A3C00;">**NSDAP**</span> + [? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNF**</span> ?] ([+ far_right_coalition +]%)
 view-if: far_right_coalition >= 50
+unavailable-subtitle: Rosenfeld would never allow this.
+choose-if: president != "Rosenfeld"
 go-to: far_right_win if (year >= 1932 or nsdap_r >= 44) and president != "Braun"; far_right_fail if (year < 1932 and nsdap_r < 44) and president != "Braun"; far_right_braun if president == "Braun"
 priority: 2
 
 There are enough votes for the <span style="color: #7A3C00;">Nazis</span> and the [? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span> ?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNF**</span> ?] to form a coalition. [+ nsdap_leader +] has made his participation in government contingent on being appointed chancellor. It is up to President [+ president +] to decide. As this is a parliamentary cabinet, [+ president +] is more likely to appoint [+ nsdap_chancellor +].
 
 @far_right_win
-on-arrival: chancellor = nsdap_leader; chancellor_party = "NSDAP"
+on-arrival: chancellor = nsdap_chancellor; chancellor_party = "NSDAP"
 
 [? if president == "Hindenburg" : President Hindenburg's camarilla ?][? if president == "Braun" : President Braun somehow ?] has decided that [+ nsdap_leader +] must be chancellor [? if president == "Hindenburg": , and the aging president accepts their recommendations. ?][? if president == "Braun" : because it is what the constitution would stipulate. ?]
 

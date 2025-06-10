@@ -61,6 +61,50 @@ if (!Q.hindenburg_run) {
         parties.push('lvp');
     }
 
+    if (Q.z_drop_out_bourgeois) {
+        if (Q.center_reactionary_candidate_1932_name === Q.reactionary_candidate_1932) {
+            for (let i = 0; i < parties.length; i++) {
+                let party = parties[i];
+                if (Q[party + '_choice'] === Q.reactionary_candidate_1932) {
+                    Q[party + '_choice'] = Q.secondary_reactionary_candidate_1932;
+                }
+            }
+            Q.reactionary_candidate_1932 = 0;
+            Q.reactionary_candidate_1932_disp = 0;
+        } else if (Q.center_reactionary_candidate_1932_name === Q.secondary_reactionary_candidate_1932) {
+            for (let i = 0; i < parties.length; i++) {
+                let party = parties[i];
+                if (Q[party + '_choice'] === Q.secondary_reactionary_candidate_1932) {
+                    Q[party + '_choice'] = Q.reactionary_candidate_1932;
+                }
+            }
+            Q.secondary_reactionary_candidate_1932 = 0;
+            Q.secondary_reactionary_candidate_1932_disp = 0;
+        }
+    }
+
+    if (Q.lib_drop_out_bourgeois) {
+        if (Q.liberal_reactionary_candidate_1932_name === Q.reactionary_candidate_1932) {
+            for (let i = 0; i < parties.length; i++) {
+                let party = parties[i];
+                if (Q[party + '_choice'] === Q.reactionary_candidate_1932) {
+                    Q[party + '_choice'] = Q.secondary_reactionary_candidate_1932;
+                }
+            }
+            Q.reactionary_candidate_1932 = 0;
+            Q.reactionary_candidate_1932_disp = 0;
+        } else if (Q.liberal_reactionary_candidate_1932_name === Q.secondary_reactionary_candidate_1932) {
+            for (let i = 0; i < parties.length; i++) {
+                let party = parties[i];
+                if (Q[party + '_choice'] === Q.secondary_reactionary_candidate_1932) {
+                    Q[party + '_choice'] = Q.reactionary_candidate_1932;
+                }
+            }
+            Q.secondary_reactionary_candidate_1932 = 0;
+            Q.secondary_reactionary_candidate_1932_disp = 0;
+        }
+    }
+    
     Q.reactionary_candidate_1_votes = 0;
     Q.reactionary_candidate_2_votes = 0;
     
