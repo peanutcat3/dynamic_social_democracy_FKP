@@ -343,7 +343,7 @@ The finances of the Hindenburg campaign are in disarray. Influential industriali
 
 @embezzle
 title: Gunther Gereke has miraculously presented millions of Reichsmarks from an unknown source.
-view-if: bruning_time
+view-if: bruning_time or chancellor == "Goerdeler"
 max-visits: 1
 on-arrival: hindenburg_funds += 3; new_middle_kvp += 2; old_middle_kvp += 2; rural_kvp += 4; new_middle_dnvp += 2 if dnvp_ideology == "Moderate"; old_middle_dnvp += 2 if dnvp_ideology == "Moderate"; rural_dnvp += 4 if dnvp_ideology == "Moderate"; rural_other += 4 if not kvp_formed; rural_nsdap -= 4 if rural_nsdap_normalized >= 35; pro_republic += 3; embezzle_1 = 1
 go-to: embezzlement_options

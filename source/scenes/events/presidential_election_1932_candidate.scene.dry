@@ -424,7 +424,7 @@ go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
 
 Adam Stegerwald, situated on the right wing of the <span style="color: #000000;">Center Party</span>, and having advocated for it to "leave the tower" and open up the party to Protestants, has made himself a controversial figure among many. However, perhaps a man with his ideals—of a <span style="color: #000000;">Christian</span>, <span style="color: #586593;">democratic</span>, <span style="color: #000000;">German</span>, and <span style="color: #c00000;">social</span> Germany—can be the one to unite it. Despite his background as a unionist, he would rather work with the political Right than the <span style="color: #c00000;">**SPD**</span> if possible.
 
-His candidacy is supported by the[? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. [? if kvp_formed or dnvp_ideology == "Moderate": He may attract some crossover support from the <span style="color: #3E88B3;">nationalists</span>. ?]
+His candidacy is supported by the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. [? if kvp_formed or dnvp_ideology == "Moderate": He may attract some crossover support from the <span style="color: #3E88B3;">nationalists</span>. ?]
 
 - @harzburg: We await the decision of the Harzburg Front.
 

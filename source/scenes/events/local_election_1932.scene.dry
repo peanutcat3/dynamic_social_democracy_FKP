@@ -103,7 +103,7 @@ if (Q.spd_local_elections_vote >= 30) {
     Q.hindenburg_angry += 30;
 }
 
-if (Q.kpd_local_elections_vote + sapd_local_elections_vote >= 16) {
+if (Q.kpd_local_elections_vote + Q.sapd_local_elections_vote >= 16) {
     Q.kpd_relation += 20;
     Q.communist_coalition += 1;
     Q.workers_kpd += 3;
