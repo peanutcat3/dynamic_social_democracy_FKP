@@ -1322,6 +1322,19 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         Q.reformist_dissent_decay *= 0.5;
     }
 
+    if (Q.chancellor == "Schleicher" && Q.schleicher_spd_influence) {
+        Q.left_dissent_decay += Q.schleicher_spd_influence*2;
+    }
+    // to represent schleicher glazers bullying lefties out of the party
+
+    if (Q.chancellor == "Schleicher" && Q.schleicher_spd_r) {
+        Q.left_dissent_decay += Q.schleicher_spd_r*2;
+        Q.center_dissent_decay += Q.schleicher_spd_r*2;
+        Q.labor_dissent_decay += Q.schleicher_spd_r;
+        Q.reformist_dissent_decay += Q.schleicher_spd_r;
+    }
+    // to represent general dissatisfaction with schleicher
+
     if (Q.center_advisor_n) {
         if (Q.center_advisor_n == 2) {
             Q.center_dissent_decay = -0.25;
