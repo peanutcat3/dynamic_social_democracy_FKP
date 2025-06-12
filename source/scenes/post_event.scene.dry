@@ -1267,6 +1267,12 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     if (Q.labor_strength < 10) Q.labor_dissent_decay += 1;
     if (Q.reformist_strength < 10) Q.reformist_dissent_decay += 1;
 
+    if (Q.centrists_resign) {
+        Q.left_dissent_decay += 1;
+        Q.labor_dissent_decay += 1;
+        Q.reformist_dissent_decay += 1;
+    }
+
     Q.center_advisor_n = 0;
     if (Q.hilferding_advisor) Q.center_advisor_n += 1;
     if (Q.wels_advisor) Q.center_advisor_n += 1;

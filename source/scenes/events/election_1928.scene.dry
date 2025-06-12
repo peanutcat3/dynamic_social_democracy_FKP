@@ -2344,7 +2344,12 @@ The Bourgeois Coalition is formed, with Brüning as its chancellor. We will have
 title: There is no clear governing majority.
 view-if: (center_right_coalition < 50 or (bourgeois_coalition < 50 and dnvp_ideology == "Radical")) and president_ideology == "Moderate"
 on-arrival: no_majority_elections += 1
-go-to: no_majority_bruning_moderate_2 if (chancellor = "Brüning" or chancellor = "Wirth"); no_majority_spd_moderate if chancellor_party = "SPD"
+go-to: no_majority_bruning_moderate_2 if (chancellor = "Brüning" or chancellor = "Wirth" or chancellor = "Adenauer"); no_majority_spd_moderate if chancellor_party = "SPD"; taming_abandoned if chancellor = "Goerdeler" or chancellor_party == "NSDAP"
+
+@taming_abandoned
+on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; spd_toleration = 1; spd_toleration_right = 1 if dnvp_ideology == "Moderate"; rubicon_mini = 0
+
+i'm too lazy to implement this right now, anyway [+ chancellor +] is ousted and replaced by good ol bruning
 
 @no_majority_spd_moderate
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
@@ -2373,7 +2378,7 @@ go-to: no_majority_bruning_toleration
 title: There is no clear governing majority.
 view-if: (center_right_coalition < 50 or (bourgeois_coalition < 50 and dnvp_ideology == "Radical")) and president_ideology == "Right"
 on-arrival: no_majority_elections += 1
-go-to: no_majority_bruning_right_2 if (chancellor = "Brüning" or chancellor = "Wirth"); no_majority_spd_right if chancellor_party = "SPD"
+go-to: no_majority_bruning_right_2 if (chancellor = "Brüning" or chancellor = "Wirth" or chancellor = "Adenauer"); no_majority_spd_right if chancellor_party = "SPD"; taming_abandoned if chancellor = "Goerdeler" or chancellor_party == "NSDAP"
 
 @no_majority_spd_right
 on-arrival: chancellor = "Brüning"; chancellor_party = "Z"
@@ -2400,7 +2405,7 @@ go-to: no_majority_bruning_toleration
 title: There is no clear governing majority.
 view-if: (((weimar_coalition < 50 or weimar_coalition_failed == 1 or ddp_relation < 30 or z_relation < 30 or lvp_relation < 30) and (grand_coalition < 50 or grand_coalition_failed == 1) or (grand_coalition >= 50 and ((dvp_ideology == "Right" and black_thursday_seen == 1) or not dvp_exist)) and president == "Hindenburg" and far_right_coalition < 50 and ((right_coalition < 50) or (right_coalition >= 50 and dnvp_ideology == "Radical") and center_right_coalition < 50 or (center_right_coalition >= 50 and ((dnvp_ideology == "Radical") or (year = 1929 and month >= 7))))) or rubicon or cvp_formed) and dnef_r < 50
 on-arrival: no_majority_elections += 1
-go-to: no_majority_bruning if (chancellor = "Brüning" or chancellor = "Wirth") and president == "Hindenburg"; no_majority_goerdeler_2 if chancellor == "Goerdeler" and not rubicon_mini_trigger; no_majority_papen if chancellor = "Papen" and papen_post == 0; no_majority_papen_2 if chancellor == "Papen" and papen_post >= 1; no_majority_schleicher if chancellor = "Schleicher" and not schleicher_post; no_majority_schleicher_2 if chancellor = "Schleicher" and schleicher_post; no_majority_trev if chancellor == "Treviranus"; no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
+go-to: no_majority_bruning if (chancellor = "Brüning" or chancellor = "Wirth" or chancellor = "Adenauer") and president == "Hindenburg"; no_majority_goerdeler_2 if chancellor == "Goerdeler" and not rubicon_mini_trigger; no_majority_papen if chancellor = "Papen" and papen_post == 0; no_majority_papen_2 if chancellor == "Papen" and papen_post >= 1; no_majority_schleicher if chancellor = "Schleicher" and not schleicher_post; no_majority_schleicher_2 if chancellor = "Schleicher" and schleicher_post; no_majority_trev if chancellor == "Treviranus"; no_majority_spd if chancellor_party = "SPD" or chancellor == "Marx"
 
 
 # either new elections, or Hindenburg appoints either Brüning, Papen, Schleicher, or Hitler.
