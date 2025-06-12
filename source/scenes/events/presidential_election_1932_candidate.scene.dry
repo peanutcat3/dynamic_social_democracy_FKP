@@ -1011,7 +1011,7 @@ Hopefully, the <span style="color: #c00000;">**[+ spd_candidate_1932 +]**</span>
 
 [? if lib_drop_out: Fortunately for us, [+ liberal_reactionary_candidate_1932_name +] has dropped out due to our courting of the <span style="color: #FFCC00;">liberals</span>. ?][? if z_drop_out: Fortunately for us, [+ center_reactionary_candidate_1932_name +] has dropped out due to our courting of the [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]. ?]
 
-[? if lib_drop_out and z_drop_out: However, the withdrawal of [+ liberal_reactionary_candidate_1932_name +] and [+ center_reactionary_candidate_1932_name +] has forced the entry of [+ reactionary_candidate_1932 +] into the race, serving as a candidate for the moderate right. ?]
+[? if lib_drop_out and z_drop_out: However, the withdrawal of [+ liberal_reactionary_candidate_1932_name +] and [+ center_reactionary_candidate_1932_name +] has forced the entry of [+ reactionary_candidate_1932 +] into the race, serving as a candidate for the moderate right. ?][? if z_drop_out and not liberal_reactionary_candidate_1932: However, the withdrawal of [+ center_reactionary_candidate_1932_name +] has forced the entry of [+ reactionary_candidate_1932 +] into the race, serving as a candidate for the moderate right. ?][? if lib_drop_out and not center_reactionary_candidate_1932: However, the withdrawal of [+ liberal_reactionary_candidate_1932_name +] has forced the entry of [+ reactionary_candidate_1932 +] into the race, serving as a candidate for the moderate right. ?]
 
 @convince_ddp
 view-if: not lvp_formed

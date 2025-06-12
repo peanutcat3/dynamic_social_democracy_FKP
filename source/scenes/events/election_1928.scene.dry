@@ -2347,7 +2347,7 @@ on-arrival: no_majority_elections += 1
 go-to: no_majority_bruning_moderate_2 if (chancellor = "Brüning" or chancellor = "Wirth" or chancellor = "Adenauer"); no_majority_spd_moderate if chancellor_party = "SPD"; taming_abandoned if chancellor = "Goerdeler" or chancellor_party == "NSDAP"
 
 @taming_abandoned
-on-arrival: chancellor = "Brüning"; chancellor_party = "Z"; spd_toleration = 1; spd_toleration_right = 1 if dnvp_ideology == "Moderate"; rubicon_mini = 0
+on-departure: chancellor = "Brüning"; chancellor_party = "Z"; spd_toleration = 1; spd_toleration_right = 1 if dnvp_ideology == "Moderate"; rubicon_mini = 0
 
 i'm too lazy to implement this right now, anyway [+ chancellor +] is ousted and replaced by good ol bruning
 
