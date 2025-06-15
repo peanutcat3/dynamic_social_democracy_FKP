@@ -1177,6 +1177,9 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     if (Q.sapd_formed == 1 && Q.pro_republic >= 75 && Q.kpd_leader != "Conciliators") {
         Q.workers_kpd -= 3/12;
         Q.workers_sapd += 3/12;
+    } else if (Q.sapd_formed && Q.kpd_leader == "Conciliators") {
+        Q.workers_kpd += 3/12;
+        Q.workers_sapd -= 3/12;
     }
     if (Q.dvp_left + Q.dvp_right >= 35) {
         Q.dvp_left *= 0.9;
@@ -1766,7 +1769,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
             Q.sa_strength -= (50*(100 - Q.pro_republic) / 100) /12;
         }
         Q.new_middle_nsdap += 4/12;
-        Q.old_middle_nsdap += 4/12;
+        Q.old_middle_nsdap += 6/12;
         Q.rural_other -= 2/12;
         Q.rural_nsdap += 6/12;
         Q.catholics_dvp -= 2/12;
@@ -2805,6 +2808,11 @@ if (Q.year >= 1930 && Q.chancellor == "Brüning" && !Q.spd_in_government && (Q.d
 
 if (Q.year >= 1930 && Q.dvp_relation < 30) {
     Q.dvp_right += 1;
+}
+
+if (Q.year >= 1930 && Q.in_grand_coalition && Q.dvp_leader != "Scholz" && Q.dvp_leader != "Dingeldey" && Q.dvp_ideology != "Right") {
+    Q.dvp_right += 0.5;
+    if (Q.dvp_relation >= 35) Q.dvp_relation -= 1;
 }
 
 if (Q.year >= 1930 && Q.lvp_relation < 30) {
@@ -4579,7 +4587,7 @@ Q.rural_nsdap_difference = Q.rural_nsdap - Q.rural_nsdap_old;
 Q.unemployed_nsdap_difference = Q.unemployed_nsdap - Q.unemployed_nsdap_old;
 Q.catholics_nsdap_difference = Q.catholics_nsdap - Q.catholics_nsdap_old;
 
-if (Q.spd_toleration) {
+if (Q.spd_toleration || Q.rubicon) {
     if (Q.workers_spd_difference > 0) {
         Q.workers_spd -= Q.workers_spd_difference / 3;
     }
