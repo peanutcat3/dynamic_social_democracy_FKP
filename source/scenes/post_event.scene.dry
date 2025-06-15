@@ -1,6 +1,39 @@
 title: Post Event
 new-page: true
 on-arrival: {!
+
+const q = dendryUI.dendryEngine.state.qualities;
+const dynamicMode = q.dynamic_mode;
+const historicalMode = q.historical_mode;
+
+const newlyAddedAchievements = [];
+
+let initialAchievements = new Set();
+
+if (Q.year == 1928 && Q.month <= 2) {
+    const initialAchievements = new Set(
+    Object.keys(q).filter(key => key.startsWith("game_achievement") || key.startsWith("achievement"))
+    );
+}
+
+for (const key in q) {
+  if ((key.startsWith("game_achievement") || key.startsWith("achievement")) && q[key] === 1) {
+    // Check if the key is newly added (not in initial achievements) OR has just been set to 1
+    if (!initialAchievements.has(key)) {
+      newlyAddedAchievements.push(key); // This is a new achievement added
+    }
+  }
+}
+
+// Step 3: If both dynamic and historical modes are off, reset newly added achievements to 0
+if (!dynamicMode && !historicalMode) {
+  for (const key of newlyAddedAchievements) {
+    q[key] = 0; // Reset the new achievement to 0
+  }
+
+  console.log("New achievements reset to 0:", newlyAddedAchievements);
+}
+
 if (Q.rubicon && Q.chancellor != Q.nsdap_chancellor) {
 const contentElement = document.getElementById('content');
 contentElement.style.backgroundColor = '#645E51';
@@ -563,7 +596,21 @@ if (Q.dnef_formed) {
     if (Q.dnef_total_votes >= Q.pro_republic + 5) Q.republicans_schleicher += 1;
     if (Q.dnef_total_votes >= Q.pro_republic + 10) Q.republicans_schleicher += 1;
     if (Q.reichstag_break) Q.republicans_schleicher -= (Q.pro_republic / 10);
-    if (Q.pro_republic < 30) Q.republicans_schleicher += (30 - Q.pro_republic) / 5;
+    if (Q.pro_republic <= 0) {
+        Q.republicans_schleicher += 7;
+    } else if (Q.pro_republic < 5) {
+        Q.republicans_schleicher += 6;
+    } else if (Q.pro_republic < 10) {
+        Q.republicans_schleicher += 5;
+    } else if (Q.pro_republic < 15) {
+        Q.republicans_schleicher += 4;
+    } else if (Q.pro_republic < 20) {
+        Q.republicans_schleicher += 3;
+    } else if (Q.pro_republic < 25) {
+        Q.republicans_schleicher += 2;
+    } else if (Q.pro_republic < 30) {
+        Q.republicans_schleicher += 1;
+    }
     if (Q.pro_republic >= 30) Q.republicans_schleicher -= Q.pro_republic / 10;
     if (Q.united_labor) Q.republicans_schleicher -= 1;
     Q.republicans_schleicher += Q.republicans_schleicher_bonus;
@@ -3652,6 +3699,14 @@ if (Q.kpd_relation < 50 && Q.year >= 1930) {
         Q.kpd_relation_gain = Q.kpd_relation_gain * 0.5;
     } else if (Q.kpd_leader != "Conciliators") {
         Q.kpd_relation_gain = Q.kpd_relation_gain * 0.8;
+    }
+
+    if (Q.left_split) {
+        Q.kpd_relation_gain = Q.kpd_relation_gain * 0.75;
+    }
+
+    if (!Q.communist_coalition) {
+        Q.kpd_relation_gain = Q.kpd_relation_gain * 0.75;
     }
 
     if (Q.kpd_relation_gain > 1) {

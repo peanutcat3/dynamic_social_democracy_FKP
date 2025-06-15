@@ -482,8 +482,8 @@ Goring: "Hermann Göring of the <span style='color: #7A3C00; font-weight: bold;'
 Seldte: "Franz Seldte of the <span style='color: #3E88B3; font-weight: bold;'>Stahlhelm</span>/<span style='color: #3E88B3; font-weight: bold;'>DNVP</span>",
 Hergt: "Oskar Hergt of the <span style='color: #3E88B3; font-weight: bold;'>DNVP</span>",
 Eckener: "the independent <span style='color: #000000;'>rep</span><span style='color: #DD0000;'>ubl</span><span style='color: #FFCC00;'>ican</span> candidate Hugo Eckener",
-Adenauer: "Konrad Adenauer of the <span style='color: #000000; font-weight: bold;'>Center Party</span>",
-Bruning: "Heinrich Brüning of the <span style='color: #000000; font-weight: bold;'>Center Party</span>",
+Adenauer: "Konrad Adenauer of the <span style='color: #000000;'>Center Party</span>",
+Bruning: "Heinrich Brüning of the <span style='color: #000000;'>Center Party</span>",
 Gessler: "Otto Gessler, independent formerly of the <span style='color: #D3C24D; font-weight: bold;'>DDP</span>",
 Heuss: "Theodor Heuss of the <span style='color: #D3C24D; font-weight: bold;'>DDP</span>",
 Thalmann: "Ernst Thälmann of the <span style='color: #700000; font-weight: bold;'>KPD</span>",
@@ -503,17 +503,25 @@ if (Q.lvp_formed) {
     candidate_descs.Heuss = "Theodor Heuss of the <span style='color: #D3C24D; font-weight: bold;'>LVP</span>";
 }
 
+if (typeof Q.last_round_candidates === 'undefined') {
+    Q.last_round_candidates = [];
+}
+
+var candidate_votes = {};
+var current_round_candidates = [];
 
 for (var k in candidate_descs) {
     Q[k + '_running'] = 0;
 }
-var candidate_votes = {};
 for (var i = 0; i < Q.parties.length; i++) {
     var party = Q.parties[i];
     var supported_candidate = Q[party + '_candidate'];
     //console.log(party, supported_candidate);
     supported_candidate = supported_candidate.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     Q[supported_candidate + '_running'] = 1;
+    if (!current_round_candidates.includes(supported_candidate)) {
+        current_round_candidates.push(supported_candidate);
+    }
     if (supported_candidate in candidate_votes) {
         candidate_votes[supported_candidate] += Q[party+'_normalized'];
     } else {
@@ -549,11 +557,22 @@ for (var k in candidate_votes) {
     if (candidate_votes[k] >= 0.5) {
         Q.has_majority = 1;
     }
-}
+} 
+
 for (var k in candidate_votes) {
     Q[k + '_votes'] = Math.round(1000*candidate_votes[k]/total_votes)/10;
     Q[k + '_votes_disp'] = Q[k + '_votes'].toFixed(1);
 }
+
+for (var lastCandidate of Q.last_round_candidates) {
+    if (!current_round_candidates.includes(lastCandidate)) {
+        delete Q[lastCandidate + '_votes'];
+        delete Q[lastCandidate + '_votes_disp'];
+    }
+}
+
+Q.last_round_candidates = current_round_candidates;
+
 Q.winner_votes = Math.round(1000*Q.winner_votes/total_votes)/10;
 Q.winner_votes_disp = Q.winner_votes.toFixed(1);
 Q.winner_desc = candidate_descs[Q.winner];
@@ -563,6 +582,8 @@ if (Q.Braun_votes || Q.Schumacher_votes || Q.Juchacz_votes) {
     if (Q.Braun_votes_disp) Q.Socialist_votes_disp = Q.Braun_votes_disp;
     if (Q.Schumacher_votes_disp) Q.Socialist_votes_disp = Q.Schumacher_votes_disp;
     if (Q.Juchacz_votes_disp) Q.Socialist_votes_disp = Q.Juchacz_votes_disp;
+} else {
+    Q.spd_running = 0;
 }
 
 
@@ -576,6 +597,8 @@ if (Q.Gessler_votes || Q.Heuss_votes) {
         Q.Liberal_votes = Q.Heuss_votes;
         Q.Liberal_votes_disp = Q.Heuss_votes_disp;
     }
+} else {
+    Q.lib_running = 0;
 }
 
 if (Q.Adenauer_votes || Q.Bruning_votes) {
@@ -588,6 +611,8 @@ if (Q.Adenauer_votes || Q.Bruning_votes) {
         Q.Center_votes = Q.Bruning_votes;
         Q.Center_votes_disp = Q.Bruning_votes_disp;
     }
+} else {
+    Q.center_running = 0;
 }
 
 if (Q.Hergt_votes || Q.Seldte_votes) {
@@ -600,10 +625,14 @@ if (Q.Hergt_votes || Q.Seldte_votes) {
         Q.Reactionary_votes = Q.Seldte_votes;
         Q.Reactionary_votes_disp = Q.Seldte_votes_disp;
     }
+} else {
+    Q.reactionary_running = 0;
 }
 
 if (Q.Hugenberg_votes) {
     Q.hamster_running = 1;
+} else {
+    Q.hamster_running = 0;
 }
 
 Q.round += 1
@@ -759,7 +788,7 @@ We have switched our endorsement to Willi Münzenberg of the <span style="color:
 @r2_endorse_adenauer
 title: Switch our support to [+ center_candidate_1934_disp +] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
 view-if: z_candidate = center_candidate_1934 and spd_candidate != z_candidate
-on-departure: kpd_candidate = "Thälmann" if kpd_candidate == spd_candidate and kpd_leader != "Conciliators"; kpd_candidate = "Münzenberg" if kpd_candidate == spd_candidate and kpd_leader == "Conciliators"; sapd_candidate = kpd_candidate; spd_candidate = center_candidate_1934; z_relation += 4; Center_bonus -= 2.5 if ((z_relation < 40 and reactionary_candidate_1934 == "Seldte") or (z_relation < 55 and reactionary_candidate_1934 != "Seldte")) and reactionary_running; Reactionary_bonus += 2.5 if ((z_relation < 40 and reactionary_candidate_1934 == "Seldte") or (z_relation < 55 and reactionary_candidate_1934 != "Seldte")) and reactionary_running; is_unity_candidate = 1; kvp_candidate = dnvp_candidate
+on-departure: kpd_candidate = "Thälmann" if kpd_candidate == spd_candidate and kpd_leader != "Conciliators"; kpd_candidate = "Münzenberg" if kpd_candidate == spd_candidate and kpd_leader == "Conciliators"; sapd_candidate = kpd_candidate; ddp_candidate = center_candidate_1934 if ddp_candidate == spd_candidate and spd_running; dvp_candidate = center_candidate_1934 if dvp_candidate == spd_candidate and spd_running; lvp_candidate = center_candidate_1934 if lvp_candidate == spd_candidate and spd_running; spd_candidate = center_candidate_1934; z_relation += 4; Center_bonus -= 2.5 if ((z_relation < 40 and reactionary_candidate_1934 == "Seldte") or (z_relation < 55 and reactionary_candidate_1934 != "Seldte")) and reactionary_running; Reactionary_bonus += 2.5 if ((z_relation < 40 and reactionary_candidate_1934 == "Seldte") or (z_relation < 55 and reactionary_candidate_1934 != "Seldte")) and reactionary_running; is_unity_candidate = 1; kvp_candidate = dnvp_candidate
 go-to: r2_campaigning
 
 We have endorsed [+ center_candidate_1934_disp +] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
@@ -771,7 +800,7 @@ We have endorsed [+ center_candidate_1934_disp +] of the [? if z_party_name != "
 @r2_endorse_gessler
 title: Switch our support to [+ lib_candidate_1934_disp +].
 view-if: ddp_candidate = lib_candidate_1934 and spd_candidate != ddp_candidate
-on-departure: kpd_candidate = "Thälmann" if kpd_candidate == spd_candidate and kpd_leader != "Conciliators"; kpd_candidate = "Münzenberg" if kpd_candidate == spd_candidate and kpd_leader == "Conciliators"; sapd_candidate = kpd_candidate; spd_candidate = lib_candidate_1934; ddp_relation += 4; lvp_relation += 4; dvp_candidate = reactionary_candidate_1934 if dvp_relation < 40 and not lvp_formed and dvp_exist; is_unity_candidate = 1
+on-departure: ddp_candidate = lib_candidate_1934 if ddp_candidate == spd_candidate and spd_running; dvp_candidate = lib_candidate_1934 if dvp_candidate == spd_candidate and spd_running; z_candidate = lib_candidate_1934 if z_candidate == spd_candidate and spd_running; kpd_candidate = "Thälmann" if kpd_candidate == spd_candidate and kpd_leader != "Conciliators"; kpd_candidate = "Münzenberg" if kpd_candidate == spd_candidate and kpd_leader == "Conciliators"; sapd_candidate = kpd_candidate; spd_candidate = lib_candidate_1934; ddp_relation += 4; lvp_relation += 4; dvp_candidate = reactionary_candidate_1934 if dvp_relation < 40 and not lvp_formed and dvp_exist; is_unity_candidate = 1
 go-to: r2_campaigning
 
 [? if gessler_run_1934: We have endorsed Otto Gessler, independent formerly of the <span style="color: #D3C24D;">**DDP**</span>. ?][? if heuss_run_1934: We have endorsed Theodor Heuss of the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. ?]
