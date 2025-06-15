@@ -527,6 +527,14 @@ if (Q.ddp_r < 0.5 && ((Q.time - Q.flavour_60_trigger_time > 3 && !Q.rubicon) || 
         Q.flavour_61_trigger_shown = 1;
     }
 }
+if (Q.kpd_wholesome) {
+    Q.flavour_62_trigger += 1;
+    if (Q.flavour_62_trigger && !Q.flavour_62_trigger_shown) {
+        Q.flavour_62_trigger_time = Q.time;
+        if (Q.rubicon) Q.flavour_62_trigger_time = Q.rubicon_time;
+        Q.flavour_62_trigger_shown = 1;
+    }
+}
 const boxes = document.querySelectorAll('.scrollable-box');
 if (boxes.length >= 2) {
     boxes[1].remove();
@@ -1122,6 +1130,8 @@ max-cards: 3
 {!<p class="other">!}[? if year = 1932 and month = 5 and not lvp_formed and not bourgeois_parliament and not bourgeois_list and liberal_vote < 5 and dvp_exist: The destruction of the bourgeois and liberal parties in the face of the <span style="color: #7A3C00;">Nazi</span> movement has left the leadership of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> convinced that their parties—and liberalism in general—are remnants of the past, and that they have a patriotic duty to die as quickly as possible so that a new, united bourgeois party can emerge from the ashes. [? if dvp_leader == "Dingeldey": Despite the present situation, the <span style="color: #C0A054;">**DVP**</span> still demands unity on their terms. ?] ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 5 : The Austrian government has resigned due to the significant gains of the Austrian <span style="color: #7A3C00;">**NSDAP**</span> in recent local elections, leading to Engelbert Dollfuß being appointed chancellor by the President. Dollfuß now rules in a coalition with the <span style="color: #ABDDA4;">Heimwehr</span>. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_62_trigger and (flavour_62_trigger_time == time or (flavour_62_trigger_time == rubicon_time and rubicon)): Surprisingly, we've observed a slight thaw in our usually hostile relationship with the <span style="color: #700000;">**KPD**</span>. This shift stems from their leadership finally recognizing that the <span style="color: #7A3C00;">**NSDAP**</span> now poses the greatest threat to their survival. Increasingly, workers are coming to understand that <span style="color: #9B0000;">Marxist</span> unity is essential in the face of rising <span style="color: #7A3C00;">fascism</span>. ?]{!</p>!}
 
 {!<p class="other">!}[? if papen_time == 1 and z_leader == "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center Party</span> has announced his intention to resign as party chairman, citing ill health and proposing Heinrich Brüning as his successor. However, he has been persuaded to remain in office—on the condition that his deputy chairman, Joseph Joos, and Brüning handle most of the party’s day-to-day affairs. Kaas has since departed for an extended convalescent leave in South Tyrol. ?]{!</p>!}
 
@@ -1782,6 +1792,14 @@ if (Q.ddp_r < 0.5 && ((Q.time - Q.flavour_60_trigger_time > 3 && !Q.rubicon) || 
         Q.flavour_61_trigger_shown = 1;
     }
 }
+if (Q.kpd_wholesome) {
+    Q.flavour_62_trigger += 1;
+    if (Q.flavour_62_trigger && !Q.flavour_62_trigger_shown) {
+        Q.flavour_62_trigger_time = Q.time;
+        if (Q.rubicon) Q.flavour_62_trigger_time = Q.rubicon_time;
+        Q.flavour_62_trigger_shown = 1;
+    }
+}
 const boxes = document.querySelectorAll('.scrollable-box');
 if (boxes.length >= 2) {
     boxes[1].remove();
@@ -2377,6 +2395,8 @@ max-cards: 4
 {!<p class="other">!}[? if year = 1932 and month = 5 and not lvp_formed and not bourgeois_parliament and not bourgeois_list and liberal_vote < 5 and dvp_exist: The destruction of the bourgeois and liberal parties in the face of the <span style="color: #7A3C00;">Nazi</span> movement has left the leadership of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #C0A054;">**DVP**</span> convinced that their parties—and liberalism in general—are remnants of the past, and that they have a patriotic duty to die as quickly as possible so that a new, united bourgeois party can emerge from the ashes. [? if dvp_leader == "Dingeldey": Despite the present situation, the <span style="color: #C0A054;">**DVP**</span> still demands unity on their terms. ?] ?]{!</p>!}
 
 {!<p class="other">!}[? if year = 1932 and month = 5 : The Austrian government has resigned due to the significant gains of the Austrian <span style="color: #7A3C00;">**NSDAP**</span> in recent local elections, leading to Engelbert Dollfuß being appointed chancellor by the President. Dollfuß now rules in a coalition with the <span style="color: #ABDDA4;">Heimwehr</span>. ?]{!</p>!}
+
+{!<p class="other">!}[? if flavour_62_trigger and (flavour_62_trigger_time == time or (flavour_62_trigger_time == rubicon_time and rubicon)): Surprisingly, we've observed a slight thaw in our usually hostile relationship with the <span style="color: #700000;">**KPD**</span>. This shift stems from their leadership finally recognizing that the <span style="color: #7A3C00;">**NSDAP**</span> now poses the greatest threat to their survival. Increasingly, workers are coming to understand that <span style="color: #9B0000;">Marxist</span> unity is essential in the face of rising <span style="color: #7A3C00;">fascism</span>. ?]{!</p>!}
 
 {!<p class="other">!}[? if papen_time == 1 and z_leader == "Kaas": Ludwig Kaas of the <span style="color: #000000;">Center Party</span> has announced his intention to resign as party chairman, citing ill health and proposing Heinrich Brüning as his successor. However, he has been persuaded to remain in office—on the condition that his deputy chairman, Joseph Joos, and Brüning handle most of the party’s day-to-day affairs. Kaas has since departed for an extended convalescent leave in South Tyrol. ?]{!</p>!}
 
