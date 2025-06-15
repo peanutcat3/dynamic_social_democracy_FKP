@@ -163,7 +163,7 @@ We have convinced Hugo Eckener to run on behalf of the <span style="color: #c000
 
 @adenauer_r1
 view-if: center_running
-on-arrival: spd_candidate = center_candidate_1934; z_relation += 4; Center_bonus -= 2.5 and ((z_relation < 40 and reactionary_candidate_1934 == "Seldte") or (z_relation < 55 and reactionary_candidate_1934 != "Seldte")) and reactionary_running; Reactionary_bonus += 2.5 if ((z_relation < 40 and reactionary_candidate_1934 == "Seldte") or (z_relation < 55 and reactionary_candidate_1934 != "Seldte")) and reactionary_running; is_unity_candidate = 1; kvp_candidate = dnvp_candidate
+on-arrival: spd_candidate = center_candidate_1934; z_relation += 4; Center_bonus -= 2.5 if ((z_relation < 40 and reactionary_candidate_1934 == "Seldte") or (z_relation < 55 and reactionary_candidate_1934 != "Seldte")) and reactionary_running; Reactionary_bonus += 2.5 if ((z_relation < 40 and reactionary_candidate_1934 == "Seldte") or (z_relation < 55 and reactionary_candidate_1934 != "Seldte")) and reactionary_running; is_unity_candidate = 1; kvp_candidate = dnvp_candidate
 go-to: r1_menu
 
 We have endorsed [+ center_candidate_1934_disp +] of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
