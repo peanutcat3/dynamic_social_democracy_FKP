@@ -60,18 +60,18 @@ on-arrival: {!
     Q.industrialists_fkp = 0;
     Q.pp_conservatives_fkp = 0;
     if (Q.kvp_formed == 0) {
-        Q.dhv_fkp = Q.workers_dvp_normalized + Q.workers_dnvp_normalized + (Q.new_middle_dnvp_normalized*0.5) + (Q.new_middle_dvp_normalized*0.5);
-        Q.natcons_fkp = Q.old_middle_dnvp_normalized;
-        Q.pp_conservatives_fkp = Q.new_middle_dnvp_normalized;
+        Q.dhv_fkp = (Q.workers_dvp_normalized + Q.workers_dnvp_normalized + (Q.new_middle_dnvp_normalized*0.5) + (Q.new_middle_dvp_normalized*0.5)*0.6);
+        Q.natcons_fkp = Q.old_middle_dnvp_normalized*1.5;
+        Q.pp_conservatives_fkp = Q.new_middle_dnvp_normalized*1.5;
         Q.stressmanites_fkp = Q.new_middle_dvp_normalized*0.5;
         Q.industrialists_fkp = Q.old_middle_dvp_normalized;
         Q.agrarians_fkp = Q.rural_dnvp_normalized + Q.rural_dvp_normalized;
     }
     if (Q.kvp_formed == 1) {
-        Q.dhv_fkp = Q.workers_dvp_normalized + Q.workers_kvp_normalized + (Q.new_middle_kvp_normalized*0.5) + (Q.new_middle_dvp_normalized*0.5);
-        Q.natcons_fkp = Q.old_middle_kvp_normalized;
-        Q.pp_conservatives_fkp = Q.new_middle_kvp_normalized;
-        Q.stressmanites_fkp = Q.new_middle_dvp_normalized;
+        Q.dhv_fkp = (Q.workers_dvp_normalized + Q.workers_kvp_normalized + (Q.new_middle_kvp_normalized*0.5) + (Q.new_middle_dvp_normalized*0.5)*0.6);
+        Q.natcons_fkp = Q.old_middle_kvp_normalized*1.5;
+        Q.pp_conservatives_fkp = Q.new_middle_kvp_normalized*1.5;
+        Q.stressmanites_fkp = Q.new_middle_dvp_normalized*0.5;
         Q.industrialists_fkp = Q.old_middle_dvp_normalized;
         Q.agrarians_fkp = Q.rural_kvp_normalized + Q.rural_dvp_normalized;
     }
@@ -165,19 +165,19 @@ Now that the <span style="color: #C0A054;">**DVP**</span> and [? if dnvp_ideolog
 
 Major Factions:
 
-<span style="color: #3E88B3;">National Conservatives</span> ([? if dnvp_ideology == "Moderate":<span style="color: #3E88B3;">**DNVP**</span> ?][? if kvp_formed:<span style="color: #0087DC;">**KVP**</span>?]) [+ natcons_fkp : strength +]
+<span style="color: #3E88B3;">National Conservatives</span> ([? if dnvp_ideology == "Moderate":<span style="color: #3E88B3;">**DNVP**</span> ?][? if kvp_formed:<span style="color: #0087DC;">**KVP**</span>?]) [+ natcons_fkp +]
 
-<span style="color: #385A38;">Agrarians</span> ([? if dnvp_ideology == "Moderate":<span style="color: #3E88B3;">**DNVP**</span> ?][? if kvp_formed:<span style="color: #0087DC;">**KVP**</span>?]) [+ agrarians_fkp : strength +]
+<span style="color: #385A38;">Agrarians</span> ([? if dnvp_ideology == "Moderate":<span style="color: #3E88B3;">**DNVP**</span> ?][? if kvp_formed:<span style="color: #0087DC;">**KVP**</span>?]) [+ agrarians_fkp +]
 
-<span style="color: #8C7A3C;">Industrialists</span> (<span style="color: #C0A054;">**DVP**</span>) [+ industrialists_fkp : strength +]
+<span style="color: #8C7A3C;">Industrialists</span> (<span style="color: #C0A054;">**DVP**</span>) [+ industrialists_fkp +]
 
 <hr id="read-marker">
 
-<span style="color: #D8B868;">Right-wing Unions</span> (<span style="color: #C0A054;">**DVP**</span> and [? if dnvp_ideology == "Moderate":<span style="color: #3E88B3;">**DNVP**</span> ?][? if kvp_formed:<span style="color: #0087DC;">**KVP**</span>?]) [+ dhv_fkp : strength +]
+<span style="color: #D8B868;">Right-wing Unions</span> (<span style="color: #C0A054;">**DVP**</span> and [? if dnvp_ideology == "Moderate":<span style="color: #3E88B3;">**DNVP**</span> ?][? if kvp_formed:<span style="color: #0087DC;">**KVP**</span>?]) [+ dhv_fkp +]
 
-<span style="color: #D8B868;">Stresemannites</span> (<span style="color: #C0A054;">**DVP**</span>) [+ stressmanites_fkp : strength +]
+<span style="color: #D8B868;">Stresemannites</span> (<span style="color: #C0A054;">**DVP**</span>) [+ stressmanites_fkp +]
 
-<span style="color: #0087DC;">People's Conservatives</span> ([? if dnvp_ideology == "Moderate":<span style="color: #3E88B3;">**DNVP**</span> ?][? if kvp_formed:<span style="color: #0087DC;">**KVP**</span>?]) [+ ppconservatives_fkp : strength +]
+<span style="color: #0087DC;">People's Conservatives</span> ([? if dnvp_ideology == "Moderate":<span style="color: #3E88B3;">**DNVP**</span> ?][? if kvp_formed:<span style="color: #0087DC;">**KVP**</span>?]) [+ ppconservatives_fkp +]
 
 - @glatzel: Wip Glatzel
 - @treviranus: Wip Treviranus
