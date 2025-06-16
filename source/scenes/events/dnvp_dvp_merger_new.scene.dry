@@ -39,7 +39,7 @@ If Stresemann were alive, he would be quite disappointed in what has become of h
 
 @leadership
 face-image: img/
-on-arrival: {
+on-arrival: {!
     Q.dhv_fkp = 0;
     Q.natcons_fkp = 0;
     Q.stressmanites_fkp = 0;
@@ -140,7 +140,7 @@ on-arrival: {
             Q.winner_fkp = "Westarp";
         }
     }
-}
+!}
 new-page: true
 
 = <span style="color: #87CEEB;">**FKP**</span> Leadership Election
