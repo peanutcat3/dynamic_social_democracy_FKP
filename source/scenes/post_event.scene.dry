@@ -2987,7 +2987,7 @@ if (Q.year == 1929 && Q.stolper_program_adopted && Q.dvp_reform && Q.dvp_ideolog
 }
 
 if ((Q.dnvp_ideology == "Moderate" || Q.kvp_formed == 1) && ["Glatzel", "Hugo", "Dingeldey"].includes(Q.dvp_leader) && Q.lvp_formed == 0 && Q.lvp_merger_2_timer == 0 && Q.in_grand_coalition == 0 && Q.in_grand_coalition_prussia == 0 && Q.cvp_formed == 0 && year >= 1931) {
-    if (Q.nsdap_votes > 30 || Q.spd_votes + Q.kpd_votes > 45 || (Q.year == 1932 && Q.month == 4 or Q.month == 5)){
+    if (Q.nsdap_votes > 30 || Q.spd_votes + Q.kpd_votes > 45 || (Q.year == 1932 && (Q.month == 4 || Q.month == 5))){
         Q.dkp_merger_timer = Q.time + 3;
     }
 }
