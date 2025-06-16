@@ -170,26 +170,26 @@ Major Factions:
 - @westarp: Wip Westarp
 
 @glatzel
-choose-if: winner_fkp == "Glatzel"
+choose-if: winner_fkp = "Glatzel"
 
 Blah Blah Blah Gyattzel Wins
 
 @raumer
-choose-if: winner_fkp == "Raumer"
+choose-if: winner_fkp = "Raumer"
 
 Blah Blah Blah Raumy Wins
 
 @treviranus
-choose-if: winner_fkp == "Treviranus"
+choose-if: winner_fkp = "Treviranus"
 
 Blah Blah Blah Trevy Wins
 
 @hergt
-choose-if: winner_fkp == "Hergt"
+choose-if: winner_fkp = "Hergt"
 
 Blah Blah Blah Hergt Wins
 
 @westarp
-choose-if: winner_fkp == "Westarp"
+choose-if: winner_fkp = "Westarp"
 
 Blah Blah Blah Westarp Wins
