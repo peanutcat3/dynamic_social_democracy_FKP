@@ -101,11 +101,11 @@ on-arrival: {!
         Q.natcons_fkp = Q.natcons_fkp*1.5;
         Q.agrarians_fkp = Q.agrarians_fkp*1.5;
     }
-    Q.raumer_points_fkp = industrialists_fkp + stressmanites_fkp*0.5;
-    Q.glatzel_points_fkp = dhv_fkp + stressmanites_fkp*0.5;
-    Q.westarp_points_fkp = agrarians_fkp*0.6 + natcons_fkp*0.4;
-    Q.hergt_points_fkp = agrarians_fkp*0.4 + natcons_fkp*0.6;
-    Q.treviranus_points_fkp = pp_conservatives_fkp;
+    Q.raumer_points_fkp = Q.industrialists_fkp + Q.stressmanites_fkp*0.5;
+    Q.glatzel_points_fkp = Q.dhv_fkp + Q.stressmanites_fkp*0.5;
+    Q.westarp_points_fkp = Q.agrarians_fkp*0.6 + Q.natcons_fkp*0.4;
+    Q.hergt_points_fkp = Q.agrarians_fkp*0.4 + Q.natcons_fkp*0.6;
+    Q.treviranus_points_fkp = Q.pp_conservatives_fkp;
     Q.winner_fkp = "Hergt"
     if (Q.glatzel_points_fkp > Q.raumer_points_fkp && Q.republic_support > 65) {
         Q.glatzel_points_fkp += Q.raumer_points_fkp;
