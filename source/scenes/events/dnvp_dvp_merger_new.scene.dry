@@ -107,7 +107,7 @@ on-arrival: {!
     if (Q.dvp_leader == "Hugo" || Q.dvp_leader == "Dingeldey") {
         Q.industrialists_fkp = Q.industrialists_fkp*1.5;
     }
-    if (pro_republic >= 60) {
+    if (Q.pro_republic >= 60) {
         Q.pp_conservatives_fkp = Q.pp_conservatives_fkp*1.5;
         Q.stressmanites_fkp = Q.stressmanites_fkp*1.5;
     } else {
@@ -120,7 +120,7 @@ on-arrival: {!
     Q.hergt_points_fkp = Q.agrarians_fkp*0.4 + Q.natcons_fkp*0.6;
     Q.treviranus_points_fkp = Q.pp_conservatives_fkp;
     Q.winner_fkp = "Hergt";
-    if (Q.glatzel_points_fkp > Q.raumer_points_fkp && Q.republic_support > 65) {
+    if (Q.glatzel_points_fkp > Q.raumer_points_fkp && Q.pro_republic > 65) {
         Q.glatzel_points_fkp += Q.raumer_points_fkp;
         Q.raumer_points_fkp = 0;
     } else {
@@ -128,7 +128,7 @@ on-arrival: {!
          Q.glatzel_points_fkp == 0;
     }
     if (Q.glatzel_points_fkp + Q.treviranus_points_fkp + Q.raumer_points_fkp > (Q.hergt_points_fkp + Q.westarp_points_fkp)/2) {
-        if (Q.republic_support > 55) {
+        if (Q.pro_republic > 55) {
             Q.hergt_points_fkp += Q.westarp_points_fkp;
             Q.westarp_points_fkp == 0;
         } else {
